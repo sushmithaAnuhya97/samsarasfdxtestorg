@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Co_term_active_timeframe__c</fullName>
+    <description>Enable reps to auto co-term to this contract without an approval process given the contract end date is at least X months in the future</description>
+    <formula>EndDate &gt;= AddMONTHs(TODAY(),23)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Co-term active timeframe</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

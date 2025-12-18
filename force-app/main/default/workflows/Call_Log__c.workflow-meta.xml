@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Stamp_owner_role_copy</fullName>
+        <description>Stamp the owner role name into owner role copy field whenever a call is logged</description>
+        <field>Owner_Role_Copy__c</field>
+        <formula>Owner__r.UserRole.Name</formula>
+        <name>Stamp owner role copy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Copy Owner Roll for Call Log</fullName>
+        <actions>
+            <name>Stamp_owner_role_copy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Call_Log__c.Call_Duration__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>This rule copies the role of the owner when the owner logs a call so we can keep track of that information for future reports.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

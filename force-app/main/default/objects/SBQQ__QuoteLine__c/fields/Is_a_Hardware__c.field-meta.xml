@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_a_Hardware__c</fullName>
+    <formula>OR(BEGINS(SBQQ__ProductCode__c, &quot;HW-&quot;),CONTAINS(SBQQ__ProductCode__c, &quot;ACC-DRIVERID&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is a Hardware ?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

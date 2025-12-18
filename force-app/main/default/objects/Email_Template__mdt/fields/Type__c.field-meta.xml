@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Free Trail</fullName>
+                <default>true</default>
+                <label>Free Trail</label>
+            </value>
+            <value>
+                <fullName>Express Agreement</fullName>
+                <default>false</default>
+                <label>Express Agreement</label>
+            </value>
+            <value>
+                <fullName>Return Label</fullName>
+                <default>false</default>
+                <label>Return Label</label>
+            </value>
+            <value>
+                <fullName>Trial Acceptance</fullName>
+                <default>false</default>
+                <label>Trial Acceptance</label>
+            </value>
+            <value>
+                <fullName>Return Label - Remorse Refund</fullName>
+                <default>false</default>
+                <label>Return Label - Remorse Refund</label>
+            </value>
+            <value>
+                <fullName>Return Label - Warranty/Exchange</fullName>
+                <default>false</default>
+                <label>Return Label - Warranty/Exchange</label>
+            </value>
+            <value>
+                <fullName>Return Label - Reminder Email</fullName>
+                <default>false</default>
+                <label>Return Label - Reminder Email</label>
+            </value>
+            <value>
+                <fullName>Return Label - Second Reminder Email</fullName>
+                <default>false</default>
+                <label>Return Label - Second Reminder Email</label>
+            </value>
+            <value>
+                <fullName>Free Trial Return</fullName>
+                <default>false</default>
+                <label>Free Trial Return</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

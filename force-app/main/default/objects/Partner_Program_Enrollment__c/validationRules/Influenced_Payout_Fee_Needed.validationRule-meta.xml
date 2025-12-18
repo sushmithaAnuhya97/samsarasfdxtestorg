@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Influenced_Payout_Fee_Needed</fullName>
+    <active>true</active>
+    <description>GTMS-26117: Created as part of Partners H1 project to throw error if Influence Payout Fee field is empty when Influence Payout Model is selected as Flat Rate</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Influence_Payout_Model__c ,&apos;Flat Rate&apos;),
+				OR(
+				    ISNULL( Influence_Payout_Fee__c ),
+        Influence_Payout_Fee__c &lt;= 0
+				)
+
+)</errorConditionFormula>
+    <errorDisplayField>Influence_Payout_Fee__c</errorDisplayField>
+    <errorMessage>You’ve selected ‘Flat Rate’ for the Influence Payout Model, but have not included the desired fee amount. Please update the &apos;Influence Flat Fee” to a number greater than 0 to save this program</errorMessage>
+</ValidationRule>

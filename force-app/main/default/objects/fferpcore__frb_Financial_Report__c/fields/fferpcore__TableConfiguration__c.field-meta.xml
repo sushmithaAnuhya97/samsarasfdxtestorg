@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__TableConfiguration__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies the number of table configurations selected for your custom report.</description>
+    <label>Number of Table Configurations</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>fferpcore__Report_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1</fullName>
+                <default>true</default>
+                <label>1</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <label>2</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>3</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>FR - Balance Sheet</controllingFieldValue>
+            <controllingFieldValue>General</controllingFieldValue>
+            <controllingFieldValue>TPAR</controllingFieldValue>
+            <controllingFieldValue>ES - Balance Sheet</controllingFieldValue>
+            <valueName>2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FR - Income Statement</controllingFieldValue>
+            <controllingFieldValue>DE - E-Bilanz</controllingFieldValue>
+            <controllingFieldValue>Billing Contracts Subledger</controllingFieldValue>
+            <controllingFieldValue>General</controllingFieldValue>
+            <controllingFieldValue>Trial Balance</controllingFieldValue>
+            <controllingFieldValue>Income Statement</controllingFieldValue>
+            <controllingFieldValue>Balance Sheet</controllingFieldValue>
+            <controllingFieldValue>Cross Border</controllingFieldValue>
+            <controllingFieldValue>Trial Balance Extract for XBRL</controllingFieldValue>
+            <controllingFieldValue>ES - Income Statement</controllingFieldValue>
+            <valueName>1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General</controllingFieldValue>
+            <controllingFieldValue>Cash Flow Statement</controllingFieldValue>
+            <valueName>3</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

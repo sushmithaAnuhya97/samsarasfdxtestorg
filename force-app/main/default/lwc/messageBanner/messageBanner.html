@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-09-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class={alertDivClass} role="alert">
+        <span class="slds-assistive-text">error</span>
+        <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+
+        </span>
+        <h2>
+            <span>
+                <template lwc:if={isAlertBaseLite}>
+                    <lightning-icon icon-name='utility:check' class="slds-m-right_x-small" alternative-text='check' size='x-small' title='check'></lightning-icon>
+                </template>
+                <template lwc:if={isAlertInfo}>
+                    <lightning-icon icon-name='utility:info' variant="inverse" class="slds-m-right_x-small" alternative-text='info' size='small' title='info'></lightning-icon>
+                </template>
+                <template lwc:if={isWarning}>
+                    <lightning-icon icon-name='utility:warning' variant="inverse" class="slds-m-right_x-small" alternative-text='warning' size='small' title='warning'></lightning-icon>
+                </template>                
+                {message}</span>
+        </h2>
+      </div>
+</template>

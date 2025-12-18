@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sbaa__FilterField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field to evaluate the the Tested Field/Variable against</description>
+    <inlineHelpText>Field to evaluate the the Tested Field/Variable against</inlineHelpText>
+    <label>Filter Field</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Name</fullName>
+                <default>false</default>
+                <label>Name</label>
+            </value>
+            <value>
+                <fullName>License_Term__c</fullName>
+                <default>false</default>
+                <label>License_Term__c</label>
+            </value>
+            <value>
+                <fullName>Blended_Discount__c</fullName>
+                <default>false</default>
+                <label>Blended_Discount__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Weekend_Color_Code__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Given field/config is used to color code Scheduled 0-hour days. On a typical 8-hour/5-day schedule, this would be the weekend days, Saturday and Sunday, but this would work for any days that are explicitly 0 hours in the Schedule Pattern (not Holidays) on the selected Resource&apos;s Work Calendar. Customers could set this to a color (could be different than any color chosen for Holidays) and the date-column heading would be color-coded in the same way, with a legend off to the right showing.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Given field/config is used to color code the date-column heading for Scheduled 0-hour days as per the Schedule Pattern (not Holidays) on the selected Resource&apos;s Work Calendar.</inlineHelpText>
+    <label>Weekend Color Code</label>
+    <length>40</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

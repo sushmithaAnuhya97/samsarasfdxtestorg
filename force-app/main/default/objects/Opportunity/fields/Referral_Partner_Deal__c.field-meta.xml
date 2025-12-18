@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Partner_Deal__c</fullName>
+    <formula>AND( Partner_Referral_Payout_Amount_V2__c &lt;&gt; 0,   NOT(ISNULL(Referral_Partner__c)),  NOT(ISBLANK(Referral_Partner__c)) )</formula>
+    <label>Referral Partner Deal</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

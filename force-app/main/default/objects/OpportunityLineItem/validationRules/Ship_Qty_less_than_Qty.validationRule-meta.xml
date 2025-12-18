@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_Qty_less_than_Qty</fullName>
+    <active>false</active>
+    <description>Ensure the Shipped Quantity is not more than Quantity</description>
+    <errorConditionFormula>AND( Shipped_Quantity__c &gt;  Quantity ,
+ OR (
+ISPICKVAL( Opportunity.Type ,&quot;Revenue Opportunity&quot;),
+ISPICKVAL( Opportunity.Type ,&quot;Revenue Opportunity - Bill Only&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>Shipped Quantity cannot be greater than Quantity</errorMessage>
+</ValidationRule>

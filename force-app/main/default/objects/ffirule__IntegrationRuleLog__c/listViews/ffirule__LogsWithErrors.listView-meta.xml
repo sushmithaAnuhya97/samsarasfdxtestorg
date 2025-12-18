@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__LogsWithErrors</fullName>
+    <columns>NAME</columns>
+    <columns>ffirule__IntegrationRule__c</columns>
+    <columns>ffirule__IntegrationRuleButton__c</columns>
+    <columns>ffirule__IntegrationRuleJob__c</columns>
+    <columns>ffirule__Summary__c</columns>
+    <columns>ffirule__Errors__c</columns>
+    <columns>ffirule__Lines__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ffirule__Errors__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Logs with Errors</label>
+</ListView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLONE_DONT_EDIT_Previous_Demo_Completed</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Inbound_Form_Message__c</columns>
+    <columns>Last_Call__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Patrick Darke,Poonam Amin</value>
+    </filters>
+    <filters>
+        <field>Demo_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Patrick,Poonam</value>
+    </filters>
+    <filters>
+        <field>Account.Status__c</field>
+        <operation>notEqual</operation>
+        <value>current customer</value>
+    </filters>
+    <label>CLONE DONT EDIT- Previous Demo Completed</label>
+</ListView>

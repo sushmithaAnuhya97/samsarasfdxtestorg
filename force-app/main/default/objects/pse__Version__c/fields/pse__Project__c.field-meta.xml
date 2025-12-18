@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The project related to the version.</description>
+    <inlineHelpText>The project related to the version.</inlineHelpText>
+    <label>Project</label>
+    <referenceTo>pse__Proj__c</referenceTo>
+    <relationshipLabel>Managed Versions</relationshipLabel>
+    <relationshipName>Version</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

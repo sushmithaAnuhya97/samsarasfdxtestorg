@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Express_Discount_Must_be_Whole_Number</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND( 
+
+NOT(OR( 
+($Permission.Validation_Rule_Exemption),
+($Profile.Name=&quot;Order Operations Admin&quot;) 
+)), 
+
+OR(Opportunity.Pricebook2.Name = &quot;Samsara Express&quot;,Opportunity.Pricebook2.Name = &quot;UK - Samsara Express&quot;),
+
+OR(MOD( Other_Discount__c *100,1) &lt;&gt; 0,
+MOD( Discount *100,1) &lt;&gt; 0
+)
+
+)</errorConditionFormula>
+    <errorMessage>Express discounts must be whole numbers</errorMessage>
+</ValidationRule>

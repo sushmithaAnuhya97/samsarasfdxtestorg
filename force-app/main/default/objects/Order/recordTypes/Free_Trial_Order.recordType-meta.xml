@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_Order</fullName>
+    <active>true</active>
+    <label>Free Trial Order</label>
+    <picklistValues>
+        <picklist>SBQQ__ContractingMethod__c</picklist>
+        <values>
+            <fullName>By Subscription End Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Contract</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__PaymentTerm__c</picklist>
+        <values>
+            <fullName>Due in advance</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Due on Contract Start</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due on receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 120</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 150</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 65</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 75</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__PriceCalcStatus__c</picklist>
+        <values>
+            <fullName>Aborted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Queued</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Carrier__c</picklist>
+        <values>
+            <fullName>DHL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estafeta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FEDEX FREIGHT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fedex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freight Forwarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Method__c</picklist>
+        <values>
+            <fullName>3 Day Select</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECONOMY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fedex Freight Economy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ground - Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX LTL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next Day Air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Will Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Worldwide Expedited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Activated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Fulfillment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Completed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fulfilled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Fulfillment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Completed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Free Trial Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Trial Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remorse Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Return</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Free Trial Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Trial Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remorse Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Return</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

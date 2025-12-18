@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__RunCompareTool</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Run Compare Tool</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/lightning/n/FLODocs__Enviroment_Compare#crId={!CASESAFEID(FLODocs__FLO_Change_Request__c.Id)}&amp;sId={!FLODocs__FLO_Change_Request__c.FLODocs__SourceId__c}&amp;tId={!FLODocs__FLO_Change_Request__c.FLODocs__TargetId__c}</url>
+</WebLink>

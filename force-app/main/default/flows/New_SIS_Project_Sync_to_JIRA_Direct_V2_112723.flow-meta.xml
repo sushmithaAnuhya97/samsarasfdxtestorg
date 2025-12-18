@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>New SIS Project Sync to JIRA Direct {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New SIS Project Sync to JIRA Direct V2 112723</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>When a new project is created with an engagement type = SIS (Services Opportunity) set the JIRA Direct fields to pass project details to JIRA.</description>
+        <name>PSA_Direct_for_JIRA</name>
+        <label>PSA Direct for JIRA</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <filterLogic>1</filterLogic>
+        <filters>
+            <field>Engagement_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Services Opportunity</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>pse__Jira_Project__c</field>
+            <value>
+                <stringValue>SIS</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Sync_With_Jira__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>PSA_Direct_for_JIRA</targetReference>
+        </connector>
+        <filterLogic>1</filterLogic>
+        <filters>
+            <field>Engagement_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Services Opportunity</stringValue>
+            </value>
+        </filters>
+        <object>pse__Proj__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

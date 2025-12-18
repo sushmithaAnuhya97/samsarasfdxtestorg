@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_Purchase_Field_Mandatory</fullName>
+    <active>true</active>
+    <description>GTMS-7075</description>
+    <errorConditionFormula>AND( Probability = 0.95, TEXT(Type) = &apos;Revenue Opportunity&apos;, ISBLANK(TEXT(Free_Trial_Purchase__c)), NOT(CONTAINS(Owner_Role_Copy__c,&quot;AE1&quot;)),NOT(CONTAINS(Owner_Role_Copy__c,&quot;Samsara Small Fleets&quot;)), NOT(CONTAINS(Owner_Role_Copy__c,&quot;Renewal&quot;)),NOT(CONTAINS( Name,&quot;Webstore&quot;)), NOT(CONTAINS( Name,&quot;Evergreen&quot;)))</errorConditionFormula>
+    <errorMessage>Free Trial Purchase Field Mandatory when moving opportunity to closing</errorMessage>
+</ValidationRule>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Oppty_Feature_Request_Status_Update</fullName>
+        <ccEmails>fr_updates@samsara.com</ccEmails>
+        <description>Oppty Feature Request Status Update</description>
+        <protected>false</protected>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Feature_Request_Status</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Set_Oppty_Feature_Close_Date_Copy</fullName>
+        <field>Copy_of_Oppty_Close_Date__c</field>
+        <formula>Oppty_Close_Date__c</formula>
+        <name>Set Oppty Feature Close Date Copy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Oppty_Feature_Stage_Copy</fullName>
+        <field>Copy_of_Oppty_Stage__c</field>
+        <formula>Oppty_Stage__c</formula>
+        <name>Set Oppty Feature Stage Copy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Set Oppty Feature Close Date Copy</fullName>
+        <actions>
+            <name>Set_Oppty_Feature_Close_Date_Copy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity_Feature_Assignment__c.Oppty_Close_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Oppty Feature Stage Copy</fullName>
+        <actions>
+            <name>Set_Oppty_Feature_Stage_Copy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity_Feature_Assignment__c.Oppty_Stage__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

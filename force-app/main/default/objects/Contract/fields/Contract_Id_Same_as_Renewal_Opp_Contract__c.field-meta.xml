@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Id_Same_as_Renewal_Opp_Contract__c</fullName>
+    <formula>IF(Id  =  SBQQ__RenewalOpportunity__r.SBQQ__RenewedContract__c,true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contract Id Same as Renewal Opp Contract</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Health__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IMAGE(
+CASE( PDLM__Status__c ,
+&quot;In Progress (On Track)&quot;, &quot;/img/samples/light_green.gif&quot;,
+&quot;In Progress (Some Issues)&quot;, &quot;/img/samples/light_yellow.gif&quot;,
+&quot;In Progress (Off Track)&quot;, &quot;/img/samples/light_red.gif&quot;,
+&quot;/s.gif&quot;),
+&quot;status color&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Health</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

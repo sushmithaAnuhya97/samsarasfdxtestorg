@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Calendar_Coordination_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>To store Calendar Coordination status for Calendar Coordination Event</description>
+    <inlineHelpText>The current status of a Calendar Coordination event</inlineHelpText>
+    <label>Calendar Coordination Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Reference Notification Sent</fullName>
+                <default>false</default>
+                <label>Reference Notification Sent</label>
+            </value>
+            <value>
+                <fullName>Reference Reminder Sent</fullName>
+                <default>false</default>
+                <label>Reference Reminder Sent</label>
+            </value>
+            <value>
+                <fullName>Seller Reference Initial Alert</fullName>
+                <default>false</default>
+                <label>Seller Reference Initial Alert</label>
+            </value>
+            <value>
+                <fullName>Seller Reference Second Alert Sent</fullName>
+                <default>false</default>
+                <label>Seller Reference Second Alert Sent</label>
+            </value>
+            <value>
+                <fullName>Reference Availability Provided</fullName>
+                <default>false</default>
+                <label>Reference Availability Provided</label>
+            </value>
+            <value>
+                <fullName>Prospect Notification Sent</fullName>
+                <default>false</default>
+                <label>Prospect Notification Sent</label>
+            </value>
+            <value>
+                <fullName>Prospect Reminder Sent</fullName>
+                <default>false</default>
+                <label>Prospect Reminder Sent</label>
+            </value>
+            <value>
+                <fullName>Seller Prospect Initial Alert</fullName>
+                <default>false</default>
+                <label>Seller Prospect Initial Alert</label>
+            </value>
+            <value>
+                <fullName>Seller Prospect Second Alert Sent</fullName>
+                <default>false</default>
+                <label>Seller Prospect Second Alert Sent</label>
+            </value>
+            <value>
+                <fullName>Prospect Selected Date and Time</fullName>
+                <default>false</default>
+                <label>Prospect Selected Date and Time</label>
+            </value>
+            <value>
+                <fullName>New dates and times proposed by Prospect</fullName>
+                <default>false</default>
+                <label>New dates and times proposed by Prospect</label>
+            </value>
+            <value>
+                <fullName>Reference No Date works</fullName>
+                <default>false</default>
+                <label>Reference No Date works</label>
+            </value>
+            <value>
+                <fullName>Reference Selected Date and Time</fullName>
+                <default>false</default>
+                <label>Reference Selected Date and Time</label>
+            </value>
+            <value>
+                <fullName>Prospect No Date works</fullName>
+                <default>false</default>
+                <label>Prospect No Date works</label>
+            </value>
+            <value>
+                <fullName>No Dates Work</fullName>
+                <default>false</default>
+                <label>No Dates Work</label>
+            </value>
+            <value>
+                <fullName>Confirmation Notification Sent</fullName>
+                <default>false</default>
+                <label>Confirmation Notification Sent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

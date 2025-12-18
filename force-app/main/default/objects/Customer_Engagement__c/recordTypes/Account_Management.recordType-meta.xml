@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Management</fullName>
+    <active>true</active>
+    <description>Customer Success Account Management Activity</description>
+    <label>Account Management</label>
+    <picklistValues>
+        <picklist>Action_Status__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attempting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unresponsive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Engagement_Type__c</picklist>
+        <values>
+            <fullName>Business Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding Wrap Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optimization Session</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Success Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Future_Sales_Opportunity_Identified__c</picklist>
+        <values>
+            <fullName>Cross sell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Likelihood_to_Renew__c</picklist>
+        <values>
+            <fullName>High %2895%25%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low %28%3C50%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium %2875-85%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium-High %2885-95%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium-Low %2850-75%25%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Category__c</picklist>
+        <values>
+            <fullName>AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sources_of_Value__c</picklist>
+        <values>
+            <fullName>Confirmed customer receiving value from products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer provided a success story %2F ROI or identified as an advocate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer referrals or lead generation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature feedback %2F request %2F commit management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOLD %233</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identified new sources of value or new business objectives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Met new stakeholders critical to technical %26 economic decision making</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical issue management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training opportunity identification</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Topic_if_Other__c</picklist>
+        <values>
+            <fullName>Bug Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How-To</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Process Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

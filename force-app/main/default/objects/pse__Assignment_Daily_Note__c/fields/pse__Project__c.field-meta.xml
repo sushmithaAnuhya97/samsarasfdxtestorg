@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Formula hyperlink to Assignment Project associated with Daily Note</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(ISNULL(pse__Assignment__c),(pse__Assignment__c=&apos;&apos;),ISNULL(pse__Assignment__r.pse__Project__c),(pse__Assignment__r.pse__Project__c=&apos;&apos;)),null,HYPERLINK(&apos;/&apos;&amp;pse__Assignment__r.pse__Project__c,pse__Assignment__r.pse__Project__r.Name))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Project</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

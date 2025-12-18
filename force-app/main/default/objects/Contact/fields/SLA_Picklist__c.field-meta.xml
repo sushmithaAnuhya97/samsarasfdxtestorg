@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SLA_Picklist__c</fullName>
+    <label>SLA Picklist</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Start SLA</fullName>
+                <default>false</default>
+                <label>Start SLA</label>
+            </value>
+            <value>
+                <fullName>End SLA</fullName>
+                <default>false</default>
+                <label>End SLA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Snow_Ops_Copy_of_Phelps_Contact_N_PW</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Status__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Account.Number_of_Citizens__c</columns>
+    <columns>Number_of_Vehicles_from_Account__c</columns>
+    <columns>Account.Account_Assignment_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Status__c</field>
+        <operation>contains</operation>
+        <value>assigned,attempting,contact established,closed lost</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Fleet</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>mkora</value>
+    </filters>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>contains</operation>
+        <value>public works,highway,streets,fleet,street,environ</value>
+    </filters>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>notContain</operation>
+        <value>police,captain</value>
+    </filters>
+    <filters>
+        <field>CONTACT.ADDRESS2_STATE_CODE</field>
+        <operation>equals</operation>
+        <value>IN,MO</value>
+    </filters>
+    <label>Snow Ops Contact List - Contact (N PW)</label>
+    <sharedTo>
+        <group>AE_Sales_Team</group>
+    </sharedTo>
+</ListView>

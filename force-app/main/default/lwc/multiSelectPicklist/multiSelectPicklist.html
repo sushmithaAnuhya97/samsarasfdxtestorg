@@ -1,0 +1,100 @@
+<template>
+    <div class="multiselect-container" ontouchstart={handleContainerTouchStart}>
+        <!-- Search input with better styling -->
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="search-input">
+                <abbr class="slds-required" if:true={required}>*</abbr>
+                {label}
+            </label>
+            <div class="slds-form-element__control">
+                <div class="slds-combobox_container" onclick={clickhandler} ontouchstart={handleInputTouchStart}>
+                    <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click">
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                            <input type="text" 
+                                   class="slds-input slds-combobox__input" 
+                                   id="search-input"
+                                   placeholder={itemcounts}
+                                   value={searchTerm}
+                                   onchange={handleSearch}
+                                   onblur={blurhandler}
+                                   onfocus={focusHandler}
+                                   disabled={disabled}
+                                   autocomplete="off"
+                                   role="combobox"
+                                   aria-expanded={isOpen}
+                                   aria-haspopup="listbox"
+                                   aria-activedescendant={activeDescendant}>
+                            <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                <lightning-icon icon-name="utility:search" size="x-small"></lightning-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Selected items display below input - hide when dropdown is open -->
+                <div class="selection-summary" if:true={hasSelectedItemsAndClosed}>
+                    <template for:each={selectedItems} for:item="selectedItem">
+                        <lightning-pill key={selectedItem.value} 
+                                       label={selectedItem.label} 
+                                       name={selectedItem.value}
+                                       onremove={handleRemove}
+                                       class="selected-pill">
+                        </lightning-pill>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown options -->
+        <template if:true={isOpen}>
+            <div class="dropdown-container" onmouseenter={handleDropdownMouseEnter}>
+                <ul class="dropdown-list" role="listbox" aria-label={label}>
+                    <template for:each={filteredResults} for:item="profile">
+                        <li key={profile.value} 
+                            class="dropdown-item" 
+                            role="option"
+                            data-value={profile.value}
+                            onclick={handleOptionClick}
+                            ontouchstart={handleOptionTouchStart}
+                            ontouchend={handleOptionTouchEnd}
+                            onmouseenter={handleOptionHover}>
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <span class="slds-checkbox">
+                                        <input type="checkbox" 
+                                               checked={profile.isChecked} 
+                                               value={profile.value} 
+                                               class="slds-checkbox__input">
+                                        <span class="slds-checkbox_faux"></span>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <span class="slds-truncate" title={profile.label}>{profile.label}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </template>
+                    <template if:true={noResults}>
+                        <li class="empty-state">
+                            <lightning-icon icon-name="utility:info" size="small" class="slds-m-right_x-small"></lightning-icon>
+                            No results found for "{searchTerm}"
+                        </li>
+                    </template>
+                </ul>
+                
+                <!-- Action buttons in dropdown footer -->
+                <div class="dropdown-footer">
+                    <button type="button" class="action-button" onclick={selectall}>
+                        <lightning-icon icon-name="utility:add" size="xx-small" class="slds-m-right_x-small"></lightning-icon>
+                        Select All
+                    </button>
+                    <button type="button" class="action-button" onclick={handleclearall}>
+                        <lightning-icon icon-name="utility:clear" size="xx-small" class="slds-m-right_x-small"></lightning-icon>
+                        Clear All
+                    </button>
+                </div>
+            </div>
+        </template>
+
+    </div>
+</template>

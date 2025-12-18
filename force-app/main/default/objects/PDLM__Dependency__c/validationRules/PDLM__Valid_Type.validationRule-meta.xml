@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Valid_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>FIND( PDLM__Type__c , &quot;0123&quot;)=0</errorConditionFormula>
+    <errorDisplayField>PDLM__Type__c</errorDisplayField>
+    <errorMessage>Type is one of :0 (Finish-Finish), 1 (Finish-Start), 2 (Start-Finish), 3 (Start-Start).</errorMessage>
+</ValidationRule>

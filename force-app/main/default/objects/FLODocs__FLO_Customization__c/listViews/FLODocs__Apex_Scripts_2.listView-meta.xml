@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Apex_Scripts_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__Salesforce_Types__c</columns>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>FLODocs__Script_Fields__c</columns>
+    <columns>FLODocs__Scripts__c</columns>
+    <columns>FLODocs__Attempt__c</columns>
+    <columns>FLODocs__FLO_Change_Approval_Policy__c</columns>
+    <columns>FLODocs__Clean_up_Classification__c</columns>
+    <columns>FLODocs__Improvement_Comments__c</columns>
+    <columns>FLODocs__Clean_up_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>equals</operation>
+        <value>ApexClass,ApexComponent,ApexPage,ApexTrigger</value>
+    </filters>
+    <label>Apex Scripts (v2)</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_filter_out__c</fullName>
+    <description>This is used in contact related list on Account lightning record pages to filter out unwanted contacts where Mobile and Phone and Last Activity and Email are Null</description>
+    <formula>OR(
+  NOT(ISBLANK(Phone)),
+  NOT(ISBLANK(Email)),
+  NOT(ISBLANK(MobilePhone)),
+  NOT(ISBLANK(LastActivityDate))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contact filter out</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

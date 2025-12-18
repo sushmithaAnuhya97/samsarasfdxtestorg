@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rebate_Type_Formula__c</fullName>
+    <description>Used to replace the rebate opp created? nodes (Buyout, Subsidy, Partner Referral( on the Opportunity Consolidated Process Builder</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+AND( 
+TEXT(Type) = &apos;Rebate&apos;, 
+TEXT(Rebate_Type__c) = &apos;Buyout&apos;, 
+NOT(ISBLANK(Returning_Opportunity__c)), 
+ISBLANK(Returning_Opportunity__r.Buyout_Opportunity__c) 
+), 
+&apos;Buyout&apos;, 
+IF( 
+AND( 
+TEXT(Type) = &apos;Rebate&apos;, 
+TEXT(Rebate_Type__c) = &apos;Subsidy&apos;, 
+NOT(ISBLANK(Returning_Opportunity__c)), 
+ISBLANK(Returning_Opportunity__r.Subsidy_Opportunity__c) 
+), 
+&apos;Subsidy&apos;, 
+IF( 
+AND( 
+TEXT(Type) = &apos;Rebate&apos;, 
+TEXT(Rebate_Type__c) = &apos;Partner Referral&apos;, 
+NOT(ISBLANK(Returning_Opportunity__c)), 
+ISBLANK(Returning_Opportunity__r.Partner_Referral_Opportunity__c) 
+), 
+&apos;Partner Referral&apos;, 
+&apos;&apos; 
+)))</formula>
+    <label>Rebate Type Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

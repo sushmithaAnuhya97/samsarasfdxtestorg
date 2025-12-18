@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Cases</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4 OR 5) AND 6</booleanFilter>
+    <columns>CASES.STATUS</columns>
+    <columns>Case_Age__c</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>Escalated_Case__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Touched__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Feedback Queue</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>Kgonz,ddeng,ghutc,mdea,gblan,jrive,doyl,jseo,jclar,jlawr,wmill,bbodn</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>agova,eshre,mbalz,earaujo,dsloa,dli,krie</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>New Case Queue</value>
+    </filters>
+    <filters>
+        <field>CASES.LAST_UPDATE</field>
+        <operation>lessThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>*** 0. All Untouched Cases (&gt;24 hrs) ***</label>
+</ListView>

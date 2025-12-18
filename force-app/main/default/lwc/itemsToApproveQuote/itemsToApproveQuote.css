@@ -1,0 +1,86 @@
+/* Allow header labels to wrap to two lines and keep cells responsive */
+.approvals-table .slds-table th .slds-truncate {
+  white-space: normal;
+}
+.approvals-table .slds-table th {
+  line-height: 1.1rem;
+}
+.approvals-table .slds-table td .slds-truncate {
+  white-space: normal;
+}
+/* Header row and labels */
+.header-row { font-weight: 600; }
+.label {
+  color: var(--lwc-colorTextLabel,rgb(62,62,60));
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  font-size: .75rem; /* fixed to avoid token resolution issues */
+  margin-right: .25rem;
+}
+.value {
+  color: var(--lwc-colorTextDefault,rgb(8,7,7));
+  font-size: .75rem; /* fixed to avoid token resolution issues */
+}
+.row .wrap { white-space: normal; }
+.row div { margin-bottom: 0.25rem; }
+
+/* Clamp long reason text to 3 lines by default */
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.pill-bar { gap: .25rem; display: inline-flex; }
+
+/* Sticky footer pinned to bottom of viewport within card area */
+.sticky-footer {
+  position: sticky;
+  bottom: 0;
+  background: var(--lwc-colorBackgroundAlt, #f3f2f2);
+  border-top: 1px solid var(--lwc-colorBorder, #dddbda);
+  z-index: 1;
+}
+
+/* Layout to keep header and footer fixed with a scrolling body */
+.lwc-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+}
+.scroll-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1 1 auto;
+  padding-left: .5rem; /* offsets negative gutter margins in rows */
+  padding-right: .5rem;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------------
+   Outline buttons for Approve (green) / Reject (red) on white bg
+   Using neutral variant + custom classes to override colors safely
+------------------------------------------------------------------- */
+.btn-outline.slds-button_neutral {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
+.btn-approve.slds-button_neutral {
+  border-color: #2e844a; /* SLDS green 700 */
+  color: #2e844a;
+}
+.btn-approve.slds-button_neutral:hover,
+.btn-approve.slds-button_neutral:focus {
+  background-color: #f6fffb;
+}
+.btn-reject.slds-button_neutral {
+  border-color: #ba0517; /* SLDS red 700 */
+  color: #ba0517;
+}
+.btn-reject.slds-button_neutral:hover,
+.btn-reject.slds-button_neutral:focus {
+  background-color: #fff5f6;
+}

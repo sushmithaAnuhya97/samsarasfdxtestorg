@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Total_Submitted_Hours__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The number of hours spent on a project. Calculated using the total hours on submitted or approved timecards, when the Assignment lookup is not blank and the end date is before or the same as the date in the Hours Cut Off Date field.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of hours spent on a project. Calculated using the total hours on submitted or approved timecards, when the Assignment lookup is not blank and the end date is before or the same as the date in the Hours Cut Off Date field.</inlineHelpText>
+    <label>Total Submitted Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

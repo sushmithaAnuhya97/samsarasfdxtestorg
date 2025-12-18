@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__RelatedRecord__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Contains the value of Related Record ID. Displays the Record ID if there is no Related Record ID available.</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(fferpcore__RelatedRecordId__c)), HYPERLINK(&apos;/&apos;+fferpcore__RelatedRecordId__c, fferpcore__RelatedRecordId__c) , HYPERLINK(&apos;/&apos;+ fferpcore__RecordId__c , fferpcore__RecordId__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Related Record</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

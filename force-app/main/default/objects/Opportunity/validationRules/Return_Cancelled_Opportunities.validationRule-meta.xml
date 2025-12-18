@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Cancelled_Opportunities</fullName>
+    <active>true</active>
+    <description>This validation rule is for Opportunities that are placed in Return Cancelled Stage.</description>
+    <errorConditionFormula>AND ( 
+NOT( $Permission.Validation_Rule_Exemption ), 
+NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)), 
+NOT($Profile.Name = &quot;Order Operations Admin&quot;),  
+ISPICKVAL(PRIORVALUE(StageName), &quot;Return Cancelled&quot;), 
+ ISCHANGED(StageName) 
+)</errorConditionFormula>
+    <errorMessage>Only Administrators can modify opportunities in Return Cancelled stage.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Recognition_Type_Required</fullName>
+    <active>true</active>
+    <description>Must enter revenue recognition type before submitting for approval</description>
+    <errorConditionFormula>AND(
+TEXT(PRIORVALUE(Status__c)) != &apos;Ready to Approve&apos;,
+TEXT(Status__c) = &apos;Ready to Approve&apos;,
+TEXT( Revenue_Recognition_Type__c )= &apos;&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Revenue_Recognition_Type__c</errorDisplayField>
+    <errorMessage>Revenue Recognition type must be filled out prior to moving into &apos;Ready to Approve&apos; status. Please reach out to finance ops to get this information.</errorMessage>
+</ValidationRule>

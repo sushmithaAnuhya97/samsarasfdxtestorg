@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trial_Success_Manager_Status__c</fullName>
+    <label>Trial Success Manager Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trial Desk Only</fullName>
+                <default>false</default>
+                <label>Trial Desk Only</label>
+            </value>
+            <value>
+                <fullName>Full TSM Declined</fullName>
+                <default>false</default>
+                <label>Full TSM Declined</label>
+            </value>
+            <value>
+                <fullName>Sales Declined</fullName>
+                <default>false</default>
+                <label>Sales Declined</label>
+            </value>
+            <value>
+                <fullName>Watchlist</fullName>
+                <default>false</default>
+                <label>Watchlist</label>
+            </value>
+            <value>
+                <fullName>TSM Planned</fullName>
+                <default>false</default>
+                <label>TSM Planned</label>
+            </value>
+            <value>
+                <fullName>TSM In Progress</fullName>
+                <default>false</default>
+                <label>TSM In Progress</label>
+            </value>
+            <value>
+                <fullName>TSM On Hold</fullName>
+                <default>false</default>
+                <label>TSM On Hold</label>
+            </value>
+            <value>
+                <fullName>TSM Complete</fullName>
+                <default>false</default>
+                <label>TSM Complete</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

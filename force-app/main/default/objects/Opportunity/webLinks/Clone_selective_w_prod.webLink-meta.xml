@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clone_selective_w_prod</fullName>
+    <availability>online</availability>
+    <description>Override clone button to clear Quote Selected checkbox</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Clone With Products</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://samsara.my.salesforce.com/{!Opportunity.Id}/e?clone=1&amp;retURL=%2{!Opportunity.Id}&amp;cloneli=1&amp;00N1a0000086pM7=&amp;CF00N1a00000A8GWY={!Opportunity.Name}&amp;CF00N1a00000A8GWY_lkid={!Opportunity.Id}</url>
+</WebLink>

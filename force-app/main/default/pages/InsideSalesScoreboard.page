@@ -1,0 +1,110 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="InsideSalesScoreboardController">
+    <html>
+        <head>
+            <META http-equiv="refresh" content="30"/>
+        </head>
+    </html>
+    <style>
+        .tabhead {
+            background:darkgray;
+            border-bottom: 2px solid black;
+        }
+        .tabhead:not(.TotalColumn):not(.firstColHeader) {
+            border-right: 1px solid black;
+        }
+        .tabhead.TotalColumn {
+            background:peachpuff;
+        }
+        .odd td {
+            border-bottom: 1px solid black;
+        }
+        
+        .even td {
+            border-bottom: 1px solid black;
+        }
+
+        .PastWeek.WinWeek{
+            background:limegreen;
+            color:white;
+        }
+        .PastWeek.LoseWeek{
+            background:lightgray;
+            color:dimgray;
+        } 
+        .CurrentWeek{
+        }
+        .FutureWeek{
+            color:white;
+        }
+        
+        .MostAccounts {
+            background:LimeGreen;
+            color:white;
+        }
+        .NotMostAccounts {
+        }
+        
+        div#center {
+            width: 1850px; <!--USE THIS FOR NON COURTNEY VERSION-->
+            <!-- width: 2200px; COURTNEY VERSION -->
+            height:35%;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }      
+        
+        div#imageCenter{
+            position:absolute;
+            top:10%;
+            left:50%;
+            margin-left:-55px;
+        }
+        
+        .firstColHeader{
+            font:14px verdana;
+            font-style:italic;
+            text-align:right;
+            background:white;
+            border-right: 2px solid black;
+        }
+    </style>
+    <div id="imageCenter">
+        <apex:image url="{!$Resource.samsaraLogo}" width="110px"/>
+    </div>
+    <div id="center">
+        <apex:dataTable value="{!InsideSalesScoreboardTeams}" var="team" headerClass="tabhead" style="font: 19px 'verdana'; border-right: 2px solid black;" rowClasses="odd, even">
+            <apex:column width="8%" style="font-weight: bold; border-right: 2px solid black;" headerClass="firstColHeader">
+                <apex:facet name="header">
+                    Week-starts: 
+                </apex:facet>
+                <apex:outputText value="{!team.name}"/>
+            </apex:column> 
+            <apex:repeat var="week" value="{!CQWeeks}">
+                <apex:column width="110px" style="text-align:center; border-right: 1px solid black;" styleClass="{!if(week-today() > 0,'FutureWeek',if(week-today()>-7,'CurrentWeek','PastWeek'))} {!if(team.weekWins[week],'WinWeek','LoseWeek')}">
+                    <apex:facet name="header">
+                        <apex:outputText value="{0,date,MMM-d}"><apex:param value="{!week}"/></apex:outputText>
+                    </apex:facet>
+                    <apex:outputText value="{0,number,##0}">
+                        <apex:param value="{!floor(team.weekSales[week])}"/>
+                    </apex:outputText>
+                </apex:column>
+            </apex:repeat>
+            <apex:column width="7%" style="font-weight: bold; background:linen; text-align:right;" headerClass="TotalColumn">
+                <apex:facet name="header">{!CQName} Total</apex:facet>
+                <apex:outputText value="{0,number,###,##0}">
+                    <apex:param value="{!floor(team.total)}"/>
+                </apex:outputText>
+            </apex:column> 
+        </apex:dataTable>
+        <div style="font-size:42px; font-weight:bold; font-family:verdana; text-align:center; margin-top:85px;">
+            <apex:outputText >Inside Demos - {!CQName}</apex:outputText>
+        </div>
+        <div style="font-size:20px; font-weight:bold; font-family:verdana; text-align:center; margin-top:5px;">
+            ({!if(sellingDaysLeft>=0,sellingDaysLeft,0)} selling days remaining)
+        </div>
+        
+    </div>
+</apex:page>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Express_rules_before_Purchase</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Configuration_Segment__c, &quot;Express&quot;),
+ISPICKVAL(Type, &quot;Revenue Opportunity&quot;),
+CONTAINS($Label.Revenue_Opportunity_Record_Type , RecordTypeId), 
+NOT(OR( 
+($Permission.Validation_Rule_Exemption),
+($Profile.Name=&quot;Order Operations Admin&quot;)
+)), 
+
+OR(
+ISPICKVAL (  StageName  , &quot;Decision&quot;),
+ISPICKVAL (  StageName  , &quot;Purchase&quot;),
+ISPICKVAL (  StageName  , &quot;Closing&quot;),
+ISPICKVAL (  StageName  , &quot;Ready to Ship&quot;)
+),
+
+!ISPICKVAL( Payment_Terms__c ,&quot;Net 30&quot;),
+!ISPICKVAL( Payment_Terms__c ,&quot;Due in advance&quot;)
+)</errorConditionFormula>
+    <errorMessage>Must select Payment Terms Option before moving to Decision</errorMessage>
+</ValidationRule>

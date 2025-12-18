@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MM_Delinquent__c</fullName>
+    <formula>Delinquent__c = TRUE &amp;&amp;
+(
+(Overdue_Balance__c &gt; 5000 &amp;&amp; Account_Size_Segment__c = &quot;AE2/AE3&quot;) ||
+(Account_Size_Segment__c = &quot;AE1&quot;) ||
+(Overdue_Balance__c &gt; 24999 &amp;&amp; Account_Size_Segment__c = &quot;ENT&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Delinquent: Cannot Sell</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

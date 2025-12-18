@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Unit_Price_Delta__c</fullName>
+    <description>Compares Net Unit Price against the previous Net Unit Price. Used for metrics.
+Created as part of GTMS-6113</description>
+    <formula>/* IF(SBQQ__RenewedSubscription__c &lt;&gt; null,SBQQ__NetPrice__c - Previous_Net_Unit_Rate__c, 0) */ 
+
+
+IF(NOT(ISBLANK(SBQQ__RenewedSubscription__c)),
+(SBQQ__NetPrice__c / SBQQ__ProrateMultiplier__c) - ( SBQQ__RenewedSubscription__r.SBQQ__NetPrice__c / SBQQ__RenewedSubscription__r.SBQQ__ProrateMultiplier__c),
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Net Unit Price Delta</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

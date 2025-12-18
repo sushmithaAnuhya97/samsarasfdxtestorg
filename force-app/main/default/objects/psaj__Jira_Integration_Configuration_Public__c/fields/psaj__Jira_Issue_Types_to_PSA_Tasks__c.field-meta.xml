@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psaj__Jira_Issue_Types_to_PSA_Tasks__c</fullName>
+    <defaultValue>&apos;Epic&apos;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When the Sync Jira Issues to PSA Project Tasks is enabled, it determines the type of Jira issues which is sync to PSA project tasks. This value is case-sensitive and the issue types must exist in your Jira application.</description>
+    <inlineHelpText>When the Sync Jira Issues to PSA Project Tasks is enabled, it determines the type of Jira issues which is sync to PSA project tasks. This value is case-sensitive and the issue types must exist in your Jira application.</inlineHelpText>
+    <label>Project Task Jira Issue Types</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

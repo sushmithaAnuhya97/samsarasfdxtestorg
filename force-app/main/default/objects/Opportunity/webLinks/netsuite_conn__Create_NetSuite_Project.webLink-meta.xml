@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>netsuite_conn__Create_NetSuite_Project</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create NetSuite Project</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var Celigo = {}; 
+	Celigo.SFDC = (function() { 
+	var opportunitySyncManager = function() { 
+	this.triggerSync = function() { 
+	this.openPopup(); 
+	}; 
+
+	this.openPopup = function() { 
+
+		var top = screen.height - (screen.height * .7) - 80, 
+		left = screen.width - (screen.width * .65) - 87, 
+		params = &apos;dependent = yes,resizable=yes,scrollbars=false,toolbar=false,menubar=false,location=false,status=true,directories=false,width=575,height=200,top=&apos;; 
+
+		params += top.toString(); 
+		params += &apos;,left=&apos; + left.toString() + &apos;\&apos;&apos;; 
+
+		{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/connection.js&quot;)} 
+		
+		var oppId = &quot;{!Opportunity.Id}&quot;;
+		var popup_window = window.open(&apos;/apex/netsuite_conn__Opportunity_Sync?whence=&apos;+&quot;{!Opportunity.Id}&quot;+&apos;&amp;create=project&apos;, &apos;NetSuite_Synchronization&apos;+ oppId, params); 
+		var intervalId = window.setInterval(function(){	
+			if(popup_window.closed){ 
+				window.clearInterval(intervalId); 
+				window.location.reload(); 
+			} 
+		},1000); 
+	}; 
+	}; 
+
+	return { 
+	main : function() { 
+	Celigo.opportunitySyncMgr = new opportunitySyncManager(); 
+	Celigo.opportunitySyncMgr.triggerSync(); 
+	} 
+	}; 
+	})(); 
+	Celigo.SFDC.main();</url>
+</WebLink>

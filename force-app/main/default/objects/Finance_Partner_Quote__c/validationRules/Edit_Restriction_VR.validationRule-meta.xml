@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Edit_Restriction_VR</fullName>
+    <active>true</active>
+    <description>GTMS-16419: Created as part of 3PF phase 2 project to restrict user from editing the FPQ record if opportunity stage &gt; 90%</description>
+    <errorConditionFormula>AND(
+				Opportunity__r.Probability &gt; 0.90,
+				OR(
+				    ISPICKVAL(Financing_Decision__c, &apos;Approved&apos;),
+				    ISPICKVAL(Financing_Decision__c, &apos;Declined&apos;),
+				    ISPICKVAL(Financing_Decision__c, &apos;Need More Info&apos;),
+								ISPICKVAL(Financing_Decision__c, &apos;Resubmit For Review&apos;),
+								ISPICKVAL(Financing_Decision__c, &apos;Pending - Under Partner Review&apos;),
+								ISPICKVAL(Financing_Decision__c, &apos;Pending&apos;)
+				),
+				CASESAFEID($Profile.Id) != &apos;00e1a000000dxEqAAI&apos;,/*System Admin API*/
+    CASESAFEID($Profile.Id) != &apos;00e1a000000UoNcAAK&apos;/*System Admin*/
+)</errorConditionFormula>
+    <errorMessage>You cannot make changes on this record as the related opportunity stage &gt; 90%</errorMessage>
+</ValidationRule>

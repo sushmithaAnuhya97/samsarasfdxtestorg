@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UG_Account_Employees__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(UserGem__CurrentCompanyEmployees__c &lt;=99, &apos;1 - 99&apos;,
+IF(UserGem__CurrentCompanyEmployees__c &lt;=499,&apos;100 - 499&apos;,
+IF(UserGem__CurrentCompanyEmployees__c &lt;=999, &apos;500 - 999&apos;,
+IF(UserGem__CurrentCompanyEmployees__c &lt;=4999, &apos;1000 - 4999&apos;,
+IF(UserGem__CurrentCompanyEmployees__c &gt;5000, &apos;5000+&apos;, NULL
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>UG Account Employees</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>netsuite_conn__sync_to_netsuite</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Sync To NetSuite</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var Celigo = {}; 
+Celigo.SFDC = (function() { 
+var productSyncManager = function() { 
+this.triggerSync = function() { 
+this.openPopup(); 
+}; 
+
+this.openPopup = function() { 
+var button = document.getElementsByName(&apos;netsuite_conn__sync_to_netsuite&apos;)[0]; 
+button.value = &apos;Processing...&apos;; 
+button.disabled = true; 
+{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/connection.js&quot;)} 
+var resultProdSetting = sforce.connection.query(&quot;select netsuite_conn__Flow_Select_Field__c from netsuite_conn__Product_Sync_Settings__c where Name = \&apos;Product Sync Settings\&apos;&quot;); 
+var recordsProdSetting = resultProdSetting.getArray(&quot;records&quot;); 
+if (recordsProdSetting[0].netsuite_conn__Flow_Select_Field__c == &apos;&apos; || recordsProdSetting[0].netsuite_conn__Flow_Select_Field__c == null) {
+	alert(&quot;Please map Salesforce Products with NetSuite Item types in the Connector settings before initiating the sync.&quot;); 
+	window.location.reload(); 
+	return; 
+}
+var selectedId = recordsProdSetting[0].netsuite_conn__Flow_Select_Field__c.split(&quot;$$$&quot;)[0];
+var selectedValue = recordsProdSetting[0].netsuite_conn__Flow_Select_Field__c.split(&quot;$$$&quot;)[1];
+var oppRecQuery = &quot;select &quot;+selectedId+&quot; from Product2 where Id = &apos;&quot;+ &quot;{!Product2.Id}&quot; +&quot;&apos;&quot;; 
+var oppRec = sforce.connection.query(oppRecQuery); 
+var resultProdRec = oppRec.getArray(&quot;records&quot;); 
+if (!resultProdRec[0][selectedId]) { 
+	alert(&quot;Please select a value for &quot;+selectedValue+&quot; to start the sync.&quot;); 
+	window.location.reload(); 
+	return; 
+} 
+
+
+var prod = new sforce.SObject(&quot;Product2&quot;); 
+prod.id = &quot;{!Product2.Id}&quot;; 
+
+// make the field change 
+prod.netsuite_conn__Push_to_NetSuite__c = true; 
+
+// save the change 
+sforce.connection.update([prod]); 
+
+window.location.reload(); 
+}; 
+}; 
+
+return { 
+main : function() { 
+Celigo.productSyncMgr = new productSyncManager(); 
+Celigo.productSyncMgr.triggerSync(); 
+} 
+}; 
+})(); 
+Celigo.SFDC.main();</url>
+</WebLink>

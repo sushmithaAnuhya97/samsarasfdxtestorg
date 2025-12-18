@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty_Qualified__c</fullName>
+    <description>Checkbox is blank if Related Account&apos;s First Revenue Opportunity Qualification date is blank</description>
+    <formula>IF( ISBLANK(Related_Contact__r.Account.First_Purchase_Opportunity__r.Qualified_Date__c) ,FALSE,TRUE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Oppty Qualified</label>
+    <type>Checkbox</type>
+</CustomField>

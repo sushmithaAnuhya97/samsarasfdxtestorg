@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Users can manage two factor authentication</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>zzzManage two factor authentication</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>DelegatedTwoFactor</name>
+    </userPermissions>
+</PermissionSet>

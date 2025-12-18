@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limits_Changes_to_Payment_Terms</fullName>
+    <active>true</active>
+    <description>This validation rule is to limit who can make changes to payment terms field</description>
+    <errorConditionFormula>/*
+Payment Terms for AE1 Opps can only be changed to Net30 or Due in Advance and only if UserRole&apos;s Name contains Manager or Director
+Non-AE1s have to go through an IFR (BSO Project)
+*/
+
+AND(
+	NOT($Permission.Validation_Rule_Exemption),
+        NOT($Profile.Name = &apos;Samsara - Finance&apos;),
+        NOT($Profile.Name = &apos;Samsara - Finance Admin&apos;),
+	ISCHANGED(Payment_Terms__c),
+	Segment_Sales_Role__c = &apos;AE1&apos;,
+	
+	OR (
+		AND(
+			NOT((ISPICKVAL(Payment_Terms__c, &apos;Net 30&apos;))),
+			NOT((ISPICKVAL(Payment_Terms__c, &apos;Due in Advance&apos;)))
+		),
+		AND(
+			OR( 
+				CONTAINS($UserRole.Name, &apos; AE1&apos;)
+			),
+			NOT(OR(
+				CONTAINS($UserRole.Name, &apos; Manager&apos;),
+				CONTAINS($UserRole.Name, &apos;ISD&apos;)
+				)
+			)
+		)
+	)
+)</errorConditionFormula>
+    <errorMessage>You may not change the Payment Terms field, please reach out to Finance</errorMessage>
+</ValidationRule>

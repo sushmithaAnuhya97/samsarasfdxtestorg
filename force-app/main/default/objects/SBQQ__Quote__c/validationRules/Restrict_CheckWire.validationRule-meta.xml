@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_CheckWire</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+    NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+    NOT($Profile.Name = &quot;Samsara - Finance&quot;),
+    ISPICKVAL(SBQQ__Opportunity2__r.Type ,&quot;Revenue Opportunity&quot;),
+    NOT(ISPICKVAL(Customer_Preferred_Payment_Method__c, &quot;Credit Card/ACH Debit&quot;)),
+    SBQQ__Opportunity2__r.Owner_Segment__c = &apos;AE2&apos;, 
+    ISCHANGED(Customer_Preferred_Payment_Method__c),
+    ISBLANK(Finance_Partner_Account__c),
+    ISBLANK(Reseller_Account__c),
+    NOT(SLED_Role__c),
+    NOT(SBQQ__Opportunity2__r.Is_Webstore_Upsell_Opportunity__c),
+    OR(
+        ISPICKVAL(CurrencyIsoCode, &quot;USD&quot;),
+        ISPICKVAL(CurrencyIsoCode, &quot;CAD&quot;)
+    ),
+    First_Purchase__c = TRUE
+)</errorConditionFormula>
+    <errorMessage>Deal Desk approval is required to permit check/wire payments. Please submit a ticket to Deal Desk.</errorMessage>
+</ValidationRule>

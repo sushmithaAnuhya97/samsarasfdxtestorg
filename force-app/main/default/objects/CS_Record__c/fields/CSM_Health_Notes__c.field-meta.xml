@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Health_Notes__c</fullName>
+    <description>Notes specifically to describe current health status
+
+The Field Label has been changed form &quot;CS Health Notes&quot; to &quot;CS Sentiment Notes&quot; as per the request of Cs team Jira- GTMS-2302</description>
+    <inlineHelpText>Sentiment rationale: (1-2 sentences; high-level, factual and concrete examples)
+Open technical issues - (pending/in progress technical issues or incompleted feature commits)
+Actions to address issues - (asks for product or support)</inlineHelpText>
+    <label>CS Sentiment Notes</label>
+    <length>100000</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

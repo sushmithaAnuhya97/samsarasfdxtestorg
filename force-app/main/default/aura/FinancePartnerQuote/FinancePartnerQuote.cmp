@@ -1,0 +1,130 @@
+<aura:component controller="FinancePartnerQuoteController" implements="force:lightningQuickAction,lightning:isUrlAddressable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="filetype" type="List"  />
+    <aura:attribute name="multiple" type="Boolean" default="true" />
+    <aura:attribute name="disabled" type="Boolean" default="true" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" description="Handler for valueInit event fired when the component has been initialised"/>
+    <aura:attribute name="QuoteId" type="String" default="{!v.pageReference.state.c__QuoteId}"/>
+    <aura:attribute name="LegalName" type="String" default=""/>
+    <aura:attribute name="Tcv" type="String" default=""/>
+    <aura:attribute name="Term" type="String" default=""/>
+    <aura:attribute name="ExpCloseDate" type="String" default=""/>
+    <aura:attribute name="Address" type="String" default=""/>
+    <aura:attribute name="Duns" type="String" default=""/>
+    <aura:attribute name="opportunityOwner" type="String" default=""/>
+    <aura:attribute name="hasDocument" type="Boolean" default="false" />
+    <aura:attribute name="showExpDate" type="Boolean" default="false"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="oldFdValue" type="string"/> 
+    <aura:attribute name="oldExpDateValue" type="Date"/>
+    <aura:html tag="style">             
+        .slds-modal__container{        
+        width: 100% !important;
+        max-width: 70rem !important;
+        }        
+    </aura:html>
+    
+   <article class="slds-card">
+       <div class="slds-card__header slds-grid">
+        	<header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+            			<span class="slds-text-heading_small"><b>Finance Partner Quote </b></span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+       <div class="slds-card__body slds-card__body_inner">
+            <lightning:recordEditForm  aura:id="form"  recordId="{!v.recordId}" onload="{!c.handleOnLoad}" onsuccess="{!c.handleSuccess}" onsubmit="{!c.handleOnSubmit}" onerror="{!c.handleOnError}" objectApiName="Finance_Partner_Quote__c" density="Comfy">
+            <div class="slds-grid slds-wrap slds-p-vertical_small">	
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                <lightning:input type="text" readonly="true" label="Legal Name" value="{!v.LegalName}" />
+            	</div>
+            	<div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                <lightning:input type="text" readonly="true" label="TCV" value="{!v.Tcv}" />
+            	</div>
+            	<div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                <lightning:input type="text" readonly="true" label="Term" value="{!v.Term}" />
+            	</div>
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                <lightning:input type="text" readonly="true" label="Expected Close Date" value="{!v.ExpCloseDate}" />
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                <lightning:input type="text" readonly="true" label="Address" value="{!v.Address}" />
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                <lightning:input type="text" readonly="true" label="DUNS" value="{!v.Duns}" />
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                <lightning:input type="text" readonly="true" label="Samsara Rep/Manager" value="{!v.opportunityOwner}" />
+            </div>
+                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Partner_Contact__c" fieldName="Partner_Contact__c"  />
+                    </div>
+                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Credit_Limit__c" fieldName="Credit_Limit__c"  />
+                    </div>
+                
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Approved_Amount__c" fieldName="Approved_Amount__c"  />
+                 
+                </div>
+                    <aura:if isTrue="{!v.showSpinner}" >
+                         <lightning:spinner alternativeText="Loading" size="medium" />
+                    </aura:if>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Financing_Decision__c" onchange = "{!c.handleFieldChange}" fieldName="Financing_Decision__c"  />
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField required="{!v.showExpDate}" disabled="{!!v.showExpDate}"  aura:id="Expiration_Date__c" fieldName="Expiration_Date__c"  />
+                    </div>
+                     <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Finance_Partner_Credit_Notes__c" fieldName="Finance_Partner_Credit_Notes__c"  />
+                    </div>
+                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Notes_to_Deal_Desk__c" fieldName="Notes_to_Deal_Desk__c"  />
+                    </div>
+                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Additional_Deferral_Decision__c" fieldName="Additional_Deferral_Decision__c"  />
+                    </div>
+                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField required="{!v.showExpDate}" aura:id="Subsidy_Amount__c" fieldName="Subsidy_Amount__c"  />
+                
+                </div>
+            	<div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">    
+            		<lightning:inputField  aura:id="Notes__c" fieldName="Notes__c"  />
+            
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:inputField  aura:id="Response_Received__c" fieldName="Response_Received__c"  />
+                        
+                    </div>
+                    <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                        <lightning:fileUpload label="Upload Documents"
+                            name="fileUploader"
+                            multiple="true"
+                            accept="{!v.filetype}"
+                            recordId="{!v.recordId}"
+                            onuploadfinished="{!c.handleUploadFinished}" />
+                
+                </div>
+                  
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal_xx-large slds-p-vertical_xx-small">
+                  <aura:if isTrue="{!v.hasDocument}">
+                      	<b style="color: green;">Note: Successfully uploaded PO Document</b>
+                  </aura:if>
+                </div>
+                
+                <div class="slds-col">
+                    <div class="slds-grid slds-grid_align-center">
+                        <div class="slds-col slds-p-vertical_medium">
+                                <lightning:button variant="brand" label="Submit" type="submit"/>
+                        </div>
+                    </div>
+                </div>
+           </div> 
+        </lightning:recordEditForm>
+    	</div>
+    </article> 
+      
+</aura:component>

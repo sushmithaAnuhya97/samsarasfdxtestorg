@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Unused_Custom_Fields_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__Customization_Created_By__c</columns>
+    <columns>FLODocs__Records__c</columns>
+    <columns>FLODocs__Populate__c</columns>
+    <columns>FLODocs__Clean_up_Classification__c</columns>
+    <columns>FLODocs__Improvement_Comments__c</columns>
+    <columns>FLODocs__Clean_up_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>equals</operation>
+        <value>CustomField</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Populated_on__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Unused Custom Fields (v2)</label>
+    <language>en_US</language>
+</ListView>

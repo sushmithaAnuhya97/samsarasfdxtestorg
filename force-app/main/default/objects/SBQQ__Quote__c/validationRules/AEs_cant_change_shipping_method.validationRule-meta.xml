@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AEs_cant_change_shipping_method</fullName>
+    <active>false</active>
+    <description>AEs cannot change default shipping method if the shipping address is in Mexico or Canada</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+  !ISBLANK(PRIORVALUE( Shipping_Address_NEW__c ) ),
+OR(
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&apos;Mexico&apos;), ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&apos;Canada&apos;)),
+ISCHANGED(Shipping_Method__c),
+CONTAINS($UserRole.Name,&apos;AE&apos;)
+
+
+)</errorConditionFormula>
+    <errorMessage>Shipping Method cannot be changed if the shipping address is in Mexico or Canada.</errorMessage>
+</ValidationRule>

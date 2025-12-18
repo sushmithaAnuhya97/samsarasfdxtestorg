@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidationOnReturnOpportunityField</fullName>
+    <active>true</active>
+    <description>GTMS-26995: Remove Validation for &quot;Returning Opportunity&quot; field on C&amp;R Transactions</description>
+    <errorConditionFormula>IF(
+AND(
+ISBLANK(Returning_Opportunity__c),
+ISPICKVAL(Type, &quot;Remorse Refund&quot;),
+NOT(ISPICKVAL(Sub_Type__c, &quot;Contract Cancellation&quot;)),
+NOT(ISPICKVAL(Sub_Type__c, &quot;&quot;)),
+NOT($Permission.Validation_Exemption_Opportunity),
+$Profile.Name &lt;&gt; &apos;System Administrator API&apos;,
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$Profile.Name &lt;&gt; &apos;Minimum Access - API Only Integrations&apos;
+),
+true,
+false)</errorConditionFormula>
+    <errorDisplayField>Returning_Opportunity__c</errorDisplayField>
+    <errorMessage>Please enter a Returning Opportunity</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VertexStatusQuoteLineTotalNull</fullName>
+    <active>true</active>
+    <description>Check TaxStatus = Null Net Total</description>
+    <errorConditionFormula>AND(
+ISCHANGED( StageName ),
+ISPICKVAL(StageName,&apos;Closing&apos;),
+SBQQ__PrimaryQuote__r.VertexCPQ__Tax_Status__c=&apos;One or more Quote Lines have a null Net Total&apos;,
+ISPICKVAL(Type,&apos;Revenue Opportunity&apos;),
+NOT(
+OR($Profile.Name=&apos;System Administrator&apos;,$Profile.Name = &apos;System Administrator API&apos;, $Permission.Override_Tax_Error_VRExempt)),
+NOT(AND(Owner.FirstName=&apos;Samsara&apos;, Owner.LastName=&apos;Small Fleets&apos;))
+)</errorConditionFormula>
+    <errorMessage>There was an issue with Tax calculation on the Quote. Please recalculate the Quote or reach out to the Tax team</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__FLO_Change_Request_Target__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to FLO Change request as Target in the relationship between FLO Objects (e.g: Process to CR, Customizations with Change Request)</description>
+    <inlineHelpText>Lookup to FLO Change request as Target in the relationship between FLO Objects (e.g: Process to CR, Customizations with Change Request)</inlineHelpText>
+    <label>Change Request Target</label>
+    <referenceTo>FLODocs__FLO_Change_Request__c</referenceTo>
+    <relationshipLabel>Junctions (Change Request Target)</relationshipLabel>
+    <relationshipName>FLO_Junctions1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

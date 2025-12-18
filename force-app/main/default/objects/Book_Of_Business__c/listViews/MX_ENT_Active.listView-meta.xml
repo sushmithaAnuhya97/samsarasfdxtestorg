@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MX_ENT_Active</fullName>
+    <columns>NAME</columns>
+    <columns>AE__c</columns>
+    <columns>Active__c</columns>
+    <columns>ADR__c</columns>
+    <columns>POD_Name__c</columns>
+    <columns>AE_LoA_End_Date__c</columns>
+    <columns>AE_LoA_Start_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>ENT_PVT_NA_MX</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>MX ENT Active</label>
+</ListView>

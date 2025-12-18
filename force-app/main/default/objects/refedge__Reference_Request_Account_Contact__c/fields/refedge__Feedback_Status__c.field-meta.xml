@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Feedback_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Use Feedback</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Use will not occur</fullName>
+                <default>false</default>
+                <label>Use will not occur</label>
+            </value>
+            <value>
+                <fullName>Use not yet completed</fullName>
+                <default>false</default>
+                <label>Use not yet completed</label>
+            </value>
+            <value>
+                <fullName>Use completed - Successful</fullName>
+                <default>false</default>
+                <label>Use completed - Successful</label>
+            </value>
+            <value>
+                <fullName>Use completed - Unsuccessful</fullName>
+                <default>false</default>
+                <label>Use completed - Unsuccessful</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

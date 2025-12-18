@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__TestedField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field on Quote, Quote Line or Product Option object that is evaluated by this query. Required if Match Type = Field Value.</description>
+    <inlineHelpText>Field on Quote, Quote Line or Product Option object that is evaluated by this query. Required if Match Type = Field Value.</inlineHelpText>
+    <label>Tested Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Code</fullName>
+                <default>false</default>
+                <label>Product Code</label>
+            </value>
+            <value>
+                <fullName>Ship_From_Location__c</fullName>
+                <default>false</default>
+                <label>Ship_From_Location__c</label>
+            </value>
+            <value>
+                <fullName>VG_Tier__c</fullName>
+                <default>false</default>
+                <label>VG_Tier__c</label>
+            </value>
+            <value>
+                <fullName>VG_Platform_Tier__c</fullName>
+                <default>false</default>
+                <label>VG_Platform_Tier__c</label>
+            </value>
+            <value>
+                <fullName>CM_Tier__c</fullName>
+                <default>false</default>
+                <label>CM_Tier__c</label>
+            </value>
+            <value>
+                <fullName>CM_Platform_Tier__c</fullName>
+                <default>false</default>
+                <label>CM_Platform_Tier__c</label>
+            </value>
+            <value>
+                <fullName>Platform_Premium__c</fullName>
+                <default>false</default>
+                <label>Platform_Premium__c</label>
+            </value>
+            <value>
+                <fullName>Platform_Type__c</fullName>
+                <default>false</default>
+                <label>Platform_Type__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

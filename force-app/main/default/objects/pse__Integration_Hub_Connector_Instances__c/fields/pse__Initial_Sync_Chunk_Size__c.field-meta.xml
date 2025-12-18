@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Initial_Sync_Chunk_Size__c</fullName>
+    <defaultValue>2000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Maximum number of projects, resources, and assignments that are synced in a single initial synchronization chunk.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maximum number of projects, resources, and assignments that are synced in a single initial synchronization chunk. An additional chunk is created each time this limit is reached. The default is 2000.</inlineHelpText>
+    <label>Initial Sync Chunk Size</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

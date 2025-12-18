@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Homerun_Evaluation__c</fullName>
+    <formula>AND(
+ISPICKVAL(StageName, &quot;Trial&quot;),
+ISPICKVAL(Type, &quot;Revenue Opportunity&quot;),
+ACV_Bookings_USD__c &gt; 49999,
+OR(AND(CONTAINS(Owner.UserRole.Name,&apos;EMEA&apos;),OR(CONTAINS(Owner.UserRole.Name,&apos;SEL&apos;),CONTAINS(Owner.UserRole.Name,&apos;STR&apos;))),
+AND(CONTAINS(Owner.UserRole.Name,&apos;NA&apos;),OR(CONTAINS(Owner.UserRole.Name,&apos;COR&apos;),CONTAINS(Owner.UserRole.Name,&apos;SEL&apos;),CONTAINS(Owner.UserRole.Name,&apos;STR&apos;)))))</formula>
+    <label>Homerun Evaluation</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

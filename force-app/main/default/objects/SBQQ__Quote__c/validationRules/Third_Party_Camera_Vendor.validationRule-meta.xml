@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Third_Party_Camera_Vendor</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c), HW_CM_AHD1_count__c &gt; 0, ISBLANK(TEXT(X3rd_Party_Camera_Vendor__c)),
+$User.X18_Digit_User_ID__c &lt;&gt; &apos;0051a000001hOJtAAM&apos;)</errorConditionFormula>
+    <errorDisplayField>X3rd_Party_Camera_Vendor__c</errorDisplayField>
+    <errorMessage>Please fill in &quot;3rd Party Camera Vendor&quot; on the page below</errorMessage>
+</ValidationRule>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sbaa__ApproverField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Used with Dynamic Approvals, the field containing the Approver value used for this Rule</description>
+    <inlineHelpText>Used with Dynamic Approvals, the field containing the Approver value used for this Rule</inlineHelpText>
+    <label>Approver Field</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Created By</fullName>
+                <default>false</default>
+                <label>Created By</label>
+            </value>
+            <value>
+                <fullName>Manager_2__c</fullName>
+                <default>false</default>
+                <label>Manager_2__c</label>
+            </value>
+            <value>
+                <fullName>Manager_1__c</fullName>
+                <default>false</default>
+                <label>Manager_1__c</label>
+            </value>
+            <value>
+                <fullName>Manager_3__c</fullName>
+                <default>false</default>
+                <label>Manager_3__c</label>
+            </value>
+            <value>
+                <fullName>Manager_4__c</fullName>
+                <default>false</default>
+                <label>Manager_4__c</label>
+            </value>
+            <value>
+                <fullName>Coordinator_UserID__c</fullName>
+                <default>false</default>
+                <label>Coordinator_UserID__c</label>
+            </value>
+            <value>
+                <fullName>Initial_Approver_Id__c</fullName>
+                <default>false</default>
+                <label>Initial_Approver_Id__c</label>
+            </value>
+            <value>
+                <fullName>Manager1__c</fullName>
+                <default>false</default>
+                <label>Manager1__c</label>
+            </value>
+            <value>
+                <fullName>Manager2__c</fullName>
+                <default>false</default>
+                <label>Manager2__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

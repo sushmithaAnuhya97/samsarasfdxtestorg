@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Unresolved_Material_Risks_2</fullName>
+    <columns>FLODocs__Process__c</columns>
+    <columns>NAME</columns>
+    <columns>FLODocs__Type__c</columns>
+    <columns>FLODocs__Issue_Description__c</columns>
+    <columns>FLODocs__Control__c</columns>
+    <columns>FLODocs__Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Type__c</field>
+        <operation>equals</operation>
+        <value>Material Risk</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed As Process Issue,Converted to Change Request,Closed</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Unresolved Material Risks (v2)</label>
+</ListView>

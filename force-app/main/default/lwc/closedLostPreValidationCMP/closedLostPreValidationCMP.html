@@ -1,0 +1,158 @@
+<template>
+     <template if:true={readyToRender}>
+    <div class="slds-is-relative">
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-spinner_container">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+
+        <div class="slds-card main-container">
+            <!-- Header Section -->
+            <div class="header-section">
+                <header class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:opportunity" size="small" class="header-icon"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-text-heading_medium">Closed Lost - Pre-Validation</h2>
+                    </div>
+                </header>
+            </div>
+            
+            <div class="content-section">
+                <!-- Pre-validation Information -->
+                <div class="info-banner">
+                    <div class="info-container">
+                        <lightning-icon icon-name="utility:info_alt" size="small" class="info-icon"></lightning-icon>
+                        <div class="info-text">Pre-Closing Validation Check</div>
+                    </div>
+                </div>
+                
+                <!-- Validation Results -->
+                <template if:true={hasErrors}>
+                    <div class="section-container">
+                        <div class="section-card">
+                            <div class="slds-p-around_medium">
+                                <p class="slds-text-heading_small">Please review any data validation issues before proceeding to the next steps.</p>
+                                
+                                <div class="slds-m-top_medium">                                    
+                                    <div class="slds-grid slds-wrap slds-p-top_medium">
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <div class="slds-p-horizontal_medium">
+                                                <h3 class="slds-text-title_caps slds-text-color_error"><b>Issues Found</b></h3>
+                                                <ul class="slds-p-left_small">
+                                                    <template for:each={errorDetails} for:item="errorItem">
+                                                        <li key={errorItem.errorMessage} class="error-item">
+                                                            {errorItem.errorMessage}
+                                                        </li>
+                                                    </template>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <div class="slds-p-horizontal_medium">
+                                                <h3 class="slds-text-title_caps slds-text-color_success"><b>Resolution Steps</b></h3>
+                                                <ul class="slds-p-left_small">
+                                                    <template for:each={errorDetails} for:item="errorItem">
+                                                        <li key={errorItem.nextStep} class="next-step-item">
+                                                            {errorItem.nextStep}
+                                                        </li>
+                                                    </template>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                
+                <!-- Warnings Section -->
+                <template if:true={hasWarnings}>
+                    <div class="section-container">
+                        <div class="section-card warning-card">
+                            <div class="slds-p-around_medium">
+                                <div class="slds-grid slds-grid_vertical-align-center slds-m-bottom_medium">
+                                    <div class="slds-media__figure">
+                                        <lightning-icon icon-name="utility:warning" size="small" variant="warning" class="warning-icon"></lightning-icon>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <h3 class="slds-text-heading_small">Potential Issues to Consider</h3>
+                                    </div>
+                                </div>
+                                
+                                <p class="slds-text-body_regular slds-m-bottom_medium">
+                                    The following items are not blocking issues, but you may want to review them before proceeding.
+                                </p>
+                                
+                                <div class="slds-grid slds-wrap slds-p-top_medium">
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-p-horizontal_medium">
+                                            <h3 class="slds-text-title_caps slds-text-color_warning"><b>Warnings</b></h3>
+                                            <ul class="slds-p-left_small">
+                                                <template for:each={warningDetails} for:item="warningItem">
+                                                    <li key={warningItem.warningMessage} 
+                                                        class={warningItem.cssClass}>
+                                                        {warningItem.warningMessage}
+                                                    </li>
+                                                </template>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-p-horizontal_medium">
+                                            <h3 class="slds-text-title_caps slds-text-color_default"><b>Recommendations</b></h3>
+                                            <ul class="slds-p-left_small">
+                                                <template for:each={warningDetails} for:item="warningItem">
+                                                    <li key={warningItem.recommendation} class="recommendation-item">
+                                                        {warningItem.recommendation}
+                                                    </li>
+                                                </template>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                
+                <template if:false={errorDetails}>
+                    <div class="section-container">
+                        <div class="section-card">
+                            <div class="slds-p-around_medium slds-text-align_center">
+                                <lightning-icon icon-name="action:approval" size="large" class="slds-m-bottom_medium" alternative-text="All Validations Passed"></lightning-icon>
+                                <p class="slds-text-heading_small">All validation checks have passed successfully!</p>
+                                <p class="slds-m-top_medium">You can proceed to the next step in the process.</p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                
+                <!-- Navigation Buttons -->
+                <div class="button-container">
+                    <div class="button-left">
+                        <lightning-button
+                            label="Back"
+                            onclick={handleBack}
+                            variant="neutral"
+                            class="back-button">
+                        </lightning-button>
+                    </div>
+                    <div class="button-right">
+                        <lightning-button if:false={hasErrors}
+                            label="Next"
+                            onclick={handleNext}
+                            variant="brand"
+                            class="next-button">
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </template>
+</template>

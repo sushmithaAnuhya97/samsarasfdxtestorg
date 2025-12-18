@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" role="inputOnly" label="Record Id" description="Account record Id to display."/>
+            <property name="submissionReason" type="String" role="inputOnly" label="Submission Reason" description="Value to match Submission_Reason__c on metadata."/>
+            <property name="showDebug" type="Boolean" role="inputOnly" label="Show Debug" description="Show debug info (field list, invalid fields)."/>
+            <property name="value" type="String" role="outputOnly" label="Value" description="JSON map of field API name to value from the screen."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjusted_Role_Start_Date__c</fullName>
+    <description>GTMS-9708:  If Role Start Date is in the first half of the FQ -&gt; have the field read the first day of the FQ; If Role Start Date is in the second half of the FQ -&gt; have the field read the first day of the next FQ</description>
+    <formula>if(NOT(ISBLANK(Role_Start_Date__c)),
+	if((DATE(YEAR(Role_Start_Date__c),02,01)+ 45) &gt;=Role_Start_Date__c, DATE(YEAR(Role_Start_Date__c),02,01), 
+		If((DATE(YEAR(Role_Start_Date__c),02,01)+ 135) &gt;=Role_Start_Date__c, DATE(YEAR(Role_Start_Date__c),02,01)+90, 
+			if((DATE(YEAR(Role_Start_Date__c),02,01)+ 225) &gt;=Role_Start_Date__c,DATE(YEAR(Role_Start_Date__c),02,01)+180, 
+				if((DATE(YEAR(Role_Start_Date__c),02,01)+ 315) &gt;=Role_Start_Date__c,DATE(YEAR(Role_Start_Date__c),02,01)+270, DATE(YEAR(Role_Start_Date__c),02,01)+360) 				
+			) 
+		) 
+	),null
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used for provisioning US AE2 Load &amp; Pool Credits</inlineHelpText>
+    <label>Adjusted Role Start Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_Update_of_Log</fullName>
+    <active>true</active>
+    <description>Ensure logs are accurate fo,r SFDC and Xactly when they&apos;re being manually updated.</description>
+    <errorConditionFormula>And(
+  NOT(CONTAINS(AE_Demo_Transfer_To__r.UserRole.Name,&apos;CD&apos;)),
+		NOT(CONTAINS(AE_Demo_Transfer_To__r.UserRole.Name,&apos;SR&apos;)),
+NOT(CONTAINS(AE_Demo_Transfer_To__r.UserRole.Name,&apos;COR&apos;)),
+NOT(CONTAINS(AE_Demo_Transfer_To__r.UserRole.Name,&apos;SEL&apos;)),
+NOT(CONTAINS(AE_Demo_Transfer_To__r.UserRole.Name,&apos;STR&apos;)),
+NOT(CONTAINS(AE_Demo_Transfer_To__r.UserRole.Name,&apos;ENT&apos;)),
+        AND(
+            ADR_Transfer_Qualified__c,
+            Not(Isblank(ADR_Transfer_Qualified_Date__c)),
+            ISPICKVAL(ADR_Transfer_Status__c, &quot;Accepted and Qualified&quot;),
+            !$Permission.Validation_Rule_Exemption  
+            ), 
+        Or(
+            Isblank(Contact__c),
+            Isblank(Opportunity__c),
+            Owner:User.Profile.Name = &quot;Sales Ops Profile&quot;
+        )
+    )</errorConditionFormula>
+    <errorMessage>This ADR Transfer Log is missing a Contact or Opportunity, and/or is owned by a Sales Ops user. Please review to ensure the Contact or Opportunity is populated, and the log owner is transferred to the ADR before saving.</errorMessage>
+</ValidationRule>

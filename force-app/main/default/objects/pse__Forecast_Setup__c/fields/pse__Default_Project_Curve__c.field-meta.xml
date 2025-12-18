@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Default_Project_Curve__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The billing forecast curve applied to a project during a billing forecast calculation if the project does not have a curve assigned to it.</description>
+    <inlineHelpText>The billing forecast curve applied to a project during a billing forecast calculation if the project does not have a curve assigned to it.</inlineHelpText>
+    <label>Default Project Curve</label>
+    <referenceTo>pse__Forecast_Curve__c</referenceTo>
+    <relationshipLabel>Billing Forecast Setup Default Project Curve</relationshipLabel>
+    <relationshipName>Forecast_Setup_Project_Curve</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

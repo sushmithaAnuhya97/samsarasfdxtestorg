@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Propensity_to_First_Purchase_Score__c</fullName>
+    <label>Propensity to First Purchase Score</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Very Unlikely</fullName>
+                <default>false</default>
+                <label>1 - Very Unlikely</label>
+            </value>
+            <value>
+                <fullName>2 - Unlikely</fullName>
+                <default>false</default>
+                <label>2 - Unlikely</label>
+            </value>
+            <value>
+                <fullName>3 - Moderate</fullName>
+                <default>false</default>
+                <label>3 - Moderate</label>
+            </value>
+            <value>
+                <fullName>4 - Likely</fullName>
+                <default>false</default>
+                <label>4 - Likely</label>
+            </value>
+            <value>
+                <fullName>5 - Very Likely</fullName>
+                <default>false</default>
+                <label>5 - Very Likely</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

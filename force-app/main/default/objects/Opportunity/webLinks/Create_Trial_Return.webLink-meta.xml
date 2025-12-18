@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Trial_Return</fullName>
+    <availability>online</availability>
+    <description>Creates a Return Opportunity</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create Trial Return</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://samsara.my.salesforce.com/{!Opportunity.Id}/e?clone=1&amp;retURL=%2{!Opportunity.Id}&amp;cloneli=1&amp;00N1a0000086pM7=
+&amp;RecordType=0121a000000ARoK
+&amp;opp3={!Opportunity.Name}%20-RTN
+&amp;opp9={!TODAY()}
+&amp;opp11=Return%20Created
+&amp;opp12=10 
+&amp;opp5=Free%20Trial%20Return 
+&amp;CF00N1a000008bLcs={!Opportunity.Name}&amp;CF00N1a000008bLcs_lkid={!Opportunity.Id}
+&amp;00N1a000008ztGB=Operations
+&amp;00N1a000007jg9f=
+&amp;00N1a000008cDF0=
+&amp;00N1a00000A84ld=ShipmatePreference-0238
+&amp;CF00N1a000009fpLK_lkid={!Opportunity.Shipping_Address_NEW__c}</url>
+</WebLink>

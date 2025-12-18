@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regimen_Fiscal_Receptor__c</fullName>
+    <description>Used for the MX Invoice Certification process going live in Jan 2023.  This field will be synced w/ NetSuite.  Contact Christian Riel for more information.</description>
+    <label>Regimen Fiscal Receptor</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>601 - General of Legal Entities</fullName>
+                <default>false</default>
+                <label>601 - General de Ley Personas Morales</label>
+            </value>
+            <value>
+                <fullName>603 - Nonprofit Organizations</fullName>
+                <default>false</default>
+                <label>603 - Personas Morales con Fines no Lucrativos</label>
+            </value>
+            <value>
+                <fullName>605 - Wages, Salaries and Income Assimilated to Salaries</fullName>
+                <default>false</default>
+                <label>605 - Sueldos y Salarios e Ingresos Asimilados a Salarios</label>
+            </value>
+            <value>
+                <fullName>606 - Lease</fullName>
+                <default>false</default>
+                <label>606 - Arrendamiento</label>
+            </value>
+            <value>
+                <fullName>607 - System of Disposal or Acquisition of Goods</fullName>
+                <default>false</default>
+                <label>607 - Régimen de Enajenación o Adquisición de Bienes</label>
+            </value>
+            <value>
+                <fullName>608 - Other Incomes</fullName>
+                <default>false</default>
+                <label>608 - Demás ingresos</label>
+            </value>
+            <value>
+                <fullName>609 - Consolidation</fullName>
+                <default>false</default>
+                <label>609 - Consolidación</label>
+            </value>
+            <value>
+                <fullName>610 - Residents Abroad without Permanent Residence in Mexico</fullName>
+                <default>false</default>
+                <label>610 - Residentes en el Extranjero sin Establecimiento Permanente en México</label>
+            </value>
+            <value>
+                <fullName>611 - Income from Dividends (Partners and Shareholders)</fullName>
+                <default>false</default>
+                <label>611 - Ingresos por Dividendos (socios y accionistas)</label>
+            </value>
+            <value>
+                <fullName>612 - Individuals with Business and Professional Activities</fullName>
+                <default>false</default>
+                <label>612 - Personas Físicas con Actividades Empresariales y Profesionales</label>
+            </value>
+            <value>
+                <fullName>614 - Income from Interests</fullName>
+                <default>false</default>
+                <label>614 - Ingresos por intereses</label>
+            </value>
+            <value>
+                <fullName>615 - Revenue Regime for Obtaining Prizes</fullName>
+                <default>false</default>
+                <label>615 - Régimen de los ingresos por obtención de premios</label>
+            </value>
+            <value>
+                <fullName>616 - Without Tax Obligations</fullName>
+                <default>false</default>
+                <label>616 - Sin obligaciones fiscales</label>
+            </value>
+            <value>
+                <fullName>620 - Production Cooperatives that Choose to Defer their Income</fullName>
+                <default>false</default>
+                <label>620 - Sociedades Cooperativas de Producción que optan por diferir sus ingresos</label>
+            </value>
+            <value>
+                <fullName>621 - Fiscal Incorporation</fullName>
+                <default>false</default>
+                <label>621 - Incorporación Fiscal</label>
+            </value>
+            <value>
+                <fullName>622 - Agricultural, Cattle, Silvicultural and Fishing Activities</fullName>
+                <default>false</default>
+                <label>622 - Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras</label>
+            </value>
+            <value>
+                <fullName>623 - Optional for Groups of Companies</fullName>
+                <default>false</default>
+                <label>623 - Opcional para Grupos de Sociedades</label>
+            </value>
+            <value>
+                <fullName>624 - Coordinated</fullName>
+                <default>false</default>
+                <label>624 - Coordinados</label>
+            </value>
+            <value>
+                <fullName>626 - Régimen Simplificado de Confianza</fullName>
+                <default>false</default>
+                <label>626 - Régimen Simplificado de Confianza</label>
+            </value>
+            <value>
+                <fullName>628 - Hydrocarbons</fullName>
+                <default>false</default>
+                <label>628 - Hidrocarburos</label>
+            </value>
+            <value>
+                <fullName>629 - Preferential Tax Regimes and Multinational Companies</fullName>
+                <default>false</default>
+                <label>629 - De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales</label>
+            </value>
+            <value>
+                <fullName>630 - Disposal of Shares in the Stock Exchange</fullName>
+                <default>false</default>
+                <label>630 - Enajenación de acciones en bolsa de valores</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

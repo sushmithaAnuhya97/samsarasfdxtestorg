@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Reference_Profile_Form_Settings__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos; + $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c + &apos;ReferenceProfileSettingPage&apos;, &apos;Manage&apos;,&apos;_self&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Allows configuration of the Reference Profile Form. If it is preferred that a new Contact becomes an immediate Reference Program Member (i.e. &quot;New Contact Creates Nomination&quot; is unchecked), then the Reference Profile Form Settings must be configured.</inlineHelpText>
+    <label>Reference Profile Form Settings</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Team_Cannot_pass_stage_Closing</fullName>
+    <active>true</active>
+    <description>Sales team cannot pass the stage &quot;Closing&quot;. Order can move only via admin, finance or operations team.</description>
+    <errorConditionFormula>AND( NOT(ISCHANGED(Bypass_Validation_Rule_DateTime__c)),
+    OR(
+    AND(
+        NOT(
+            OR( $Permission.PM_validation_rule_exception,
+                $Permission.Validation_Rule_Exemption, 
+                CONTAINS($Profile.Name, &quot;Finance&quot;), 
+                contains($Profile.Name, &quot;Order&quot;),
+                $Profile.Name = &quot;Samsara SE&quot;, 
+                Contains ($Profile.Name, &quot;System Administrator&quot;),        
+                Overwrite_Validation_Rule__c,
+                Bypass_Validation_rule__c
+                )
+            ),
+        OR(
+            AND(
+                Probability &gt; 0.95,
+                OR(
+                    TEXT(Type) = &quot;Revenue Opportunity&quot;,
+                    TEXT(Type) = &quot;Promo Opportunity&quot;
+                ), 
+                OR(
+                    ISCHANGED(of_Accessories__c),
+                    ISCHANGED(of_HW_Products__c),
+                    ISCHANGED(of_LIC_Products__c),
+                    ISCHANGED(of_LIC_Products__c),
+                    ISCHANGED(CloseDate),
+                    ISCHANGED(Pricebook2Id),
+                    ISCHANGED(StageName),
+                    ISCHANGED(Type), 
+                    ISCHANGED(RecordTypeId)
+                )
+            ),
+            AND(
+                Probability &gt; 0.25,
+                RecordTypeId = &quot;0121a000000ARoKAAW&quot;
+            ),
+            AND(
+                TEXT(Type) = &quot;Free Trial Opportunity&quot;,
+                RecordTypeId = &quot;0121a000000eOkY&quot;,
+                Probability &gt; 0.95,
+                OR(
+                    ISCHANGED(of_Accessories__c),
+                    ISCHANGED(of_HW_Products__c),
+                    ISCHANGED(of_LIC_Products__c),
+                    ISCHANGED(of_LIC_Products__c),
+                    ISCHANGED(CloseDate),
+                    ISCHANGED(Pricebook2Id),
+                    ISCHANGED(StageName),
+                    ISCHANGED(Type), 
+                    ISCHANGED(RecordTypeId)
+                )  
+            )
+        )
+    ),
+    AND(
+        NOT(Overwrite_Validation_Rule__c),
+        ISCHANGED(OwnerId), 
+        IsClosed=TRUE, 
+        NOT($Permission.Validation_Rule_Exemption), 
+        NOT($Permission.Finance_Contractor),
+        NOT($Permission.PM_validation_rule_exception)
+    )
+    )
+)</errorConditionFormula>
+    <errorMessage>You are not authorized to edit this opportunity because of its current stage. Please reach out to salesops@samsara.com for help with this error.</errorMessage>
+</ValidationRule>

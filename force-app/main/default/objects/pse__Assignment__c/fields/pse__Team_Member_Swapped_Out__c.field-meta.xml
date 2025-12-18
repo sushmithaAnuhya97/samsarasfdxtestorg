@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Team_Member_Swapped_Out__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This field shows the most recent resource who was previously assigned to the assignment before the action of shift swap. Note this field is used in the swap shift functionality in Team Schedule Planner.</description>
+    <inlineHelpText>This field shows the most recent resource who was previously assigned to the assignment before the action of shift swap. Note this field is used in the swap shift functionality in Team Schedule Planner.</inlineHelpText>
+    <label>Team Member Swapped Out</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Assignments (Team Member Swapped Out)</relationshipLabel>
+    <relationshipName>Assignments2</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

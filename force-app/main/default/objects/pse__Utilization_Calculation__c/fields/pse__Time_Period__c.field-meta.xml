@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Time_Period__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Select a time period to calculate utilization for. The dates will be adjusted for you automatically after selection.</inlineHelpText>
+    <label>Time Period</label>
+    <referenceTo>pse__Time_Period__c</referenceTo>
+    <relationshipLabel>Utilization Calculations</relationshipLabel>
+    <relationshipName>Utilization_Calculations</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

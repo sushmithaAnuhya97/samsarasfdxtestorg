@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Assignment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Related assignment - applies only if Resource is also set</description>
+    <inlineHelpText>Related assignment - applies only if Resource is also set</inlineHelpText>
+    <label>Assignment</label>
+    <referenceTo>pse__Assignment__c</referenceTo>
+    <relationshipLabel>Backlog Details</relationshipLabel>
+    <relationshipName>Backlog_Details</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

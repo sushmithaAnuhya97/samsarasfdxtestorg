@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inside_Named_List_Cannot_be_HT</fullName>
+    <active>true</active>
+    <description>Prevents an ADR from using the HT process for an account that is on the inside sales AE3 named list.  These should be scheduled transfers to AE3s.</description>
+    <errorConditionFormula>AND(ISCHANGED( Hot_Transfer_To__c), NOT(ISBLANK( Hot_Transfer_To__c )),Account.SLED_Account__c = False,
+OR( Account.Global_Geography__c =&quot;West&quot;,Account.Global_Geography__c =&quot;East&quot;,Account.Global_Geography__c =&quot;Central&quot;),
+OR(NOT(ISBLANK(TEXT(Account.Inside_Sales_Assignment__c))),
+OR(Account.Number_of_Vehicles__c&gt;175,Account.Number_of_Powered_Assets__c&gt;350, Account.Number_of_Unpowered_Assets__c&gt;1000
+)))</errorConditionFormula>
+    <errorMessage>This account is on the inside sales named account list.  Transfers must be performed via the &quot;ADR Transfer&quot; button.</errorMessage>
+</ValidationRule>

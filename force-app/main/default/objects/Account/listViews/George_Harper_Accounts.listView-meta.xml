@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>George_Harper_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Last_Call__c</columns>
+    <columns>Status__c</columns>
+    <columns>Owner_Name__c</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Prospecting_Status__c</columns>
+    <columns>Account_Book_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Book_Owner__c</field>
+        <operation>startsWith</operation>
+        <value>George Harper</value>
+    </filters>
+    <label>George Harper Accounts</label>
+</ListView>

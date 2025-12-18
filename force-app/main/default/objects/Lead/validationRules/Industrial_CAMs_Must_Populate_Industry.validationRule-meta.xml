@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_CAMs_Must_Populate_Industry</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND($Profile.Name = &apos;Samsara Channel Account Managers&apos;,
+    ISPICKVAL(Business_Unit__c, &apos;Industrial&apos;), 
+    OR(ISPICKVAL(Industry, &apos;&apos;),
+       AND(NOT(ISPICKVAL(Industry, &apos;Manufacturing&apos;)), 
+           NOT(ISPICKVAL(Industry, &apos;Remote Infrastructure&apos;))
+       )
+    )
+)</errorConditionFormula>
+    <errorMessage>Industrial Channel Leads must be populated with an Industry value of either Manufacturing or Remote Infrastructure</errorMessage>
+</ValidationRule>

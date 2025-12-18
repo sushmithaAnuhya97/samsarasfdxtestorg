@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Region Tagging CoE</label>
+    <protected>false</protected>
+    <values>
+        <field>Logic_Type__c</field>
+        <value xsi:type="xsd:string">Formula</value>
+    </values>
+    <values>
+        <field>Logic__c</field>
+        <value xsi:type="xsd:string">CASE(Global_Geography__c,
+&apos;Central&apos;,&apos;US&apos;,
+&apos;East&apos;,&apos;US&apos;,
+&apos;Northeast&apos;,&apos;US&apos;,
+&apos;South &amp; Midwest&apos;,&apos;US&apos;,
+&apos;USA&apos;,&apos;US&apos;,
+&apos;West&apos;,&apos;US&apos;,
+&apos;BENELUX&apos;,&apos;Other&apos;,
+&apos;DACH&apos;,&apos;Other&apos;,
+&apos;France&apos;,&apos;Other&apos;,
+&apos;Iberia&apos;,&apos;Other&apos;,
+&apos;Italy&apos;,&apos;Other&apos;,
+&apos;Other&apos;,&apos;Other&apos;,
+&apos;UK &amp; I&apos;,&apos;Other&apos;,
+&apos;United States Central&apos;,&apos;US&apos;,
+&apos;United States East&apos;,&apos;US&apos;,
+&apos;United States Other&apos;,&apos;US&apos;,
+&apos;United States Northeast&apos;,&apos;US&apos;,
+&apos;United States UK &amp; I&apos;,&apos;US&apos;,
+&apos;United States West&apos;,&apos;US&apos;,
+&apos;Mexico&apos;,&apos;Mexico&apos;,
+&apos;Canada East&apos;,&apos;Canada&apos;,
+&apos;Canada West&apos;,&apos;Canada&apos;,&apos;&apos;)</value>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Source_Field__c</field>
+        <value xsi:type="xsd:string">Region_Tagging_CoE__c</value>
+    </values>
+    <values>
+        <field>Target_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

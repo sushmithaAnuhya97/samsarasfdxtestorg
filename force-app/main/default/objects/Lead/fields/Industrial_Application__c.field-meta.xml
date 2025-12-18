@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Application__c</fullName>
+    <description>Industriual product applications. Only using for Machine Vision currently.</description>
+    <label>Industrial Application</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Date Verification</fullName>
+                <default>false</default>
+                <label>Date Verification</label>
+            </value>
+            <value>
+                <fullName>Barcode Reading</fullName>
+                <default>false</default>
+                <label>Barcode Reading</label>
+            </value>
+            <value>
+                <fullName>Label Matching</fullName>
+                <default>false</default>
+                <label>Label Matching</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

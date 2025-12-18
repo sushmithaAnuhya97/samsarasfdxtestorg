@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Email_Alert_Recipient__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to available contacts. An email is sent to the selected contact when the value in the Percentage Used field equals or exceeds the value in the Alert Threshold field. No email is sent if this field is blank or if no email address is recorded for the selected contact. Apply Billing Cap must be selected and there must also be a value in the Alert Threshold field.</description>
+    <inlineHelpText>Use the lookup to select the contact who will receive an email when the value in Percentage Used equals or exceeds the value in Alert Threshold. No email is sent if blank. You must also select Apply Billing Cap and enter a value in Alert Threshold.</inlineHelpText>
+    <label>Alert Recipient</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>ProjectEmailAlertRecipient</relationshipLabel>
+    <relationshipName>ProjectEmailAlertRecipient</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sfsp__SalesDataSourceId__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Sales Data Source that this mapping belongs to</description>
+    <label>Sales Data Source</label>
+    <referenceTo>sfsp__SalesDataSource__c</referenceTo>
+    <relationshipLabel>Sales Data Source CRM Field Mappings</relationshipLabel>
+    <relationshipName>SalesDataSourceCRMFieldMappings</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

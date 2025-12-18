@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupColumn>OPPORTUNITY_ID</groupColumn>
+    <mappings>
+        <sourceField>FULL_NAME</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Snapshot_Opportunity_Trend__c.Opportunity_Owner__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>OPPORTUNITY_NAME</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Snapshot_Opportunity_Trend__c.Opportunity_Name__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>JobName</sourceField>
+        <sourceType>snapshot</sourceType>
+        <targetField>Snapshot_Opportunity_Trend__c.Forecast_Category_Stage_Name__c</targetField>
+    </mappings>
+    <mappings>
+        <aggregateType>Sum</aggregateType>
+        <sourceField>AMOUNT.CONVERT</sourceField>
+        <sourceType>summary</sourceType>
+        <targetField>Snapshot_Opportunity_Trend__c.Amount__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>OPPORTUNITY_ID</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Snapshot_Opportunity_Trend__c.Opportunity_ID__c</targetField>
+    </mappings>
+    <name>Best Case</name>
+    <runningUser>tommy.cameron@samsara.com</runningUser>
+    <sourceReport>Reporting_Snapshots/Best_Case</sourceReport>
+    <targetObject>Snapshot_Opportunity_Trend__c</targetObject>
+</AnalyticSnapshot>

@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>CreatedDate</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>melanie.johnson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Strategic Basic, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Strategic Basic, NA US</label>
+        <name>Pre_sale_support_Strategic_Basic_NA_US</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>megan.combs@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Select Basic, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Select Basic, NA US</label>
+        <name>Custom_Reporting_Select_Basic_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>adam.wrobel@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Core Basic, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Core Basic, NA US</label>
+        <name>Custom_Reporting_Core_Basic_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Strategic Standard, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico )</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Strategic Standard, NA US</label>
+        <name>Custom_Reporting_Strategic_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Select Standard, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Select Standard, NA US</label>
+        <name>Custom_Reporting_Select_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Core Standard, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Core Standard, NA US</label>
+        <name>Custom_Reporting_Core_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Strategic High, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Strategic High, NA US</label>
+        <name>Custom_Reporting_Strategic_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Select High, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Select High, NA US</label>
+        <name>Custom_Reporting_Select_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Core High, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Core High, NA US</label>
+        <name>Custom_Reporting_Core_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>etienne.regnier@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, (Starter,Plus,Premier,Elite), NA CA</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 7) AND 8</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA CA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, (Starter,Plus,Premier,Elite), NA CA</label>
+        <name>Custom_Reporting_Starter_Plus_Premier_Elite_NA_CA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>pierre.gross@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, (Starter,Plus,Premier,Elite), SLED</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 7) AND 8</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>SLED</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, (Starter,Plus,Premier,Elite), SLED</label>
+        <name>Custom_Reporting_Starter_Plus_Premier_Elite_SLED</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>adam.wrobel@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Plus, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Plus, NA US</label>
+        <name>Custom_Reporting_Plus_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gillian.kershaw@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Starter, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Starter, NA US</label>
+        <name>Custom_Reporting_Starter_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gillian.kershaw@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Null</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA CA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>SLED</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Null</label>
+        <name>Custom_Reporting_Null</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Elite, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Elite, EMEA</label>
+        <name>Custom_Reporting_Elite_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Premier, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Premier, EMEA</label>
+        <name>Custom_Reporting_Premier_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Plus, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Plus, EMEA</label>
+        <name>Custom_Reporting_Plus_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Starter, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Starter, EMEA</label>
+        <name>Custom_Reporting_Starter_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Null, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Null, EMEA</label>
+        <name>Custom_Reporting_Null_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Elite, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Elite, MX</label>
+        <name>Custom_Reporting_Elite_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting,Premier, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting,Premier, MX</label>
+        <name>Custom_Reporting_Premier_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Plus, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Plus, MX</label>
+        <name>Custom_Reporting_Plus_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting, Starter,MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting, Starter,MX</label>
+        <name>Custom_Reporting_Starter_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting,Null, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Custom Reporting,Null, MX</label>
+        <name>Custom_Reporting_Null_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Custom Reporting, (NA US, NA CA,SLED)</description>
+    <emailTemplate>unfiled$public/CS_Request_Log_Approval_Submission</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Custom Reporting, (NA US, NA CA,SLED)</label>
+    <processOrder>13</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

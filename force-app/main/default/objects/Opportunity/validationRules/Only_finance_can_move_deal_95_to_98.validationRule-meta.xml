@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_finance_can_move_deal_95_to_98</fullName>
+    <active>true</active>
+    <description>Requested by Chloe/Cody for finance/order opps.</description>
+    <errorConditionFormula>AND(
+    PRIORVALUE( Probability ) = 95, 
+    Probability = 98,  
+    OR(
+        NOT(
+            CONTAINS($Profile.Name, &quot;Finance&quot;)
+        ),
+        NOT(
+            $Permission.Validation_Rule_Exemption
+        )
+        
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Probability</errorDisplayField>
+    <errorMessage>Only finance can change a deal from 95% to 98%!</errorMessage>
+</ValidationRule>

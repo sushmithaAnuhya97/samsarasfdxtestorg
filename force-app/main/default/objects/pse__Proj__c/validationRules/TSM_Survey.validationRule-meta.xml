@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TSM_Survey</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+TEXT( TSM_survey__c ) = &apos;Survey Sent&apos;,
+NOT(
+AND(
+ISPICKVAL( TSM_Project_Type__c , &apos;Full TSM Engagement&apos;),
+ISPICKVAL(pse__Stage__c, &apos;Completed&apos;),
+pse__End_Date__c &gt;= TODAY() - 30,
+pse__Credited_Non_Billable_Internal_Hours__c &gt; 5,
+pse__Group__r.Name = &apos;Trial Success Manager&apos;
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>TSM_survey__c</errorDisplayField>
+    <errorMessage>Required conditions are not met TSM Survey</errorMessage>
+</ValidationRule>

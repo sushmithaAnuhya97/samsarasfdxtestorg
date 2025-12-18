@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cable_Selection_Method__c</fullName>
+    <label>Cable Selection Method</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vin Tool</fullName>
+                <default>false</default>
+                <label>Vin Tool</label>
+            </value>
+            <value>
+                <fullName>Manual Input</fullName>
+                <default>false</default>
+                <label>Manual Input</label>
+            </value>
+            <value>
+                <fullName>Requested AE Help</fullName>
+                <default>false</default>
+                <label>Requested AE Help</label>
+            </value>
+            <value>
+                <fullName>MMY Tool Selection</fullName>
+                <default>false</default>
+                <label>MMY Tool Selection</label>
+            </value>
+            <value>
+                <fullName>VIN + MMY Tool Selection</fullName>
+                <default>false</default>
+                <label>VIN + MMY Tool Selection</label>
+            </value>
+            <value>
+                <fullName>MMY Tool</fullName>
+                <default>false</default>
+                <label>MMY Tool</label>
+            </value>
+            <value>
+                <fullName>VIN Tool + MMY Tool</fullName>
+                <default>false</default>
+                <label>VIN Tool + MMY Tool</label>
+            </value>
+            <value>
+                <fullName>MMY Tool + VIN Tool</fullName>
+                <default>false</default>
+                <label>MMY Tool + VIN Tool</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

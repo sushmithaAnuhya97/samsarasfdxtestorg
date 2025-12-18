@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Top_Level__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>AND(ISBLANK(PDLM__Item_Revision__c),PDLM__Item__r.PDLM__Has_Bom__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>An Assembly is Top Level if it has a BOM and no parent</inlineHelpText>
+    <label>Top Level</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Stage__c</fullName>
+    <label>Tech Stage</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Key Account Identified</fullName>
+                <default>false</default>
+                <label>New Key Account Identified</label>
+            </value>
+            <value>
+                <fullName>Technical Discovery</fullName>
+                <default>false</default>
+                <label>Technical Discovery</label>
+            </value>
+            <value>
+                <fullName>Trial Management</fullName>
+                <default>false</default>
+                <label>Trial Management</label>
+            </value>
+            <value>
+                <fullName>Technical Proposal</fullName>
+                <default>false</default>
+                <label>Technical Proposal</label>
+            </value>
+            <value>
+                <fullName>Tech Win</fullName>
+                <default>false</default>
+                <label>Tech Win</label>
+            </value>
+            <value>
+                <fullName>Tech Loss</fullName>
+                <default>false</default>
+                <label>Tech Loss</label>
+            </value>
+            <value>
+                <fullName>Solution Design</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Solution Design</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

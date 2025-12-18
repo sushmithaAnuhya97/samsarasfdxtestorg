@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Copy_1_of_Send_Email_for_Auto_Renewal</name>
+        <label>Email for Auto Renewal (EngTemp)</label>
+        <locationX>184</locationX>
+        <locationY>679</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>BodyTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>SenderEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Send_Email_for_Auto_Renewal_0</name>
+        <label>Email for Auto Renewal(Spanish Template)</label>
+        <locationX>437</locationX>
+        <locationY>834</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>SpanishTempBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>SenderEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>SpanishTempSub</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Send_Email_for_Auto_Renewal_0_0</name>
+        <label>Email for Auto Renewal (French template)</label>
+        <locationX>637</locationX>
+        <locationY>903</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>FrenchTempBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>SenderEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>FrenchTempSub</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Send_Email_for_Auto_Renewal_0_0_0</name>
+        <label>Email for Auto Renewal(Dutch)</label>
+        <locationX>817</locationX>
+        <locationY>831</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>DutchTempBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>SenderEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>DutchTempSub</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_1_of_Send_Email_for_Auto_Renewal_0_0_0_0</name>
+        <label>Email for Auto Renewal(German)</label>
+        <locationX>1118</locationX>
+        <locationY>672</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>GermanTempBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>SenderEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>GermanTempSub</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_CS_Email</name>
+        <label>Assign CS Email</label>
+        <locationX>759</locationX>
+        <locationY>326</locationY>
+        <assignmentItems>
+            <assignToReference>Recipients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>ApexDef.AccountPOCEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Written_Language</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_CS_POC_Email_Address</name>
+        <label>CS POC Email Address</label>
+        <locationX>495</locationX>
+        <locationY>326</locationY>
+        <assignmentItems>
+            <assignToReference>Recipients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>ApexDef.AccountPOCEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Recipients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>ApexDef.BillingContact</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Written_Language</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Copy_1_of_Check_email_Address</name>
+        <label>Check email Address</label>
+        <locationX>627</locationX>
+        <locationY>206</locationY>
+        <defaultConnector>
+            <targetReference>Assign_CS_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Email_Address</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApexDef.AccountPOCFirstName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>ApexDef.BillingContact</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_CS_POC_Email_Address</targetReference>
+            </connector>
+            <label>Copy 1 of Email Address</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Written_Language</name>
+        <label>Written Language</label>
+        <locationX>627</locationX>
+        <locationY>542</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Send_Email_for_Auto_Renewal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SpanishTemplate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApexDef.WrittenLanguage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Spanish</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Send_Email_for_Auto_Renewal_0</targetReference>
+            </connector>
+            <label>SpanishTemplate</label>
+        </rules>
+        <rules>
+            <name>GermanTemplate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApexDef.WrittenLanguage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>German</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Send_Email_for_Auto_Renewal_0_0_0_0</targetReference>
+            </connector>
+            <label>GermanTemplate</label>
+        </rules>
+        <rules>
+            <name>FrenchTemplate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApexDef.WrittenLanguage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>French</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Send_Email_for_Auto_Renewal_0_0</targetReference>
+            </connector>
+            <label>FrenchTemplate</label>
+        </rules>
+        <rules>
+            <name>DutchTemplate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApexDef.WrittenLanguage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dutch</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Send_Email_for_Auto_Renewal_0_0_0</targetReference>
+            </connector>
+            <label>DutchTemplate</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Contract renewal flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract renewal flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>501</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Check_email_Address</targetReference>
+        </connector>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>BodyTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi there,
+
+Your Samsara subscription will automatically renew soon.
+
+‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+
+Renewal details:
+
+Account: {!ApexDef.AccountName}
+Licenses: {!ApexDef.LicenseInfo}
+Renewal term: {!ApexDef.RenewalTerm}
+Updated payment (subject to applicable taxes): {!ApexDef.UpdatedPayment}
+Payment frequency:  {!ApexDef.AccountFrequency}
+End of current term: {!ApexDef.ContractEndDate}
+Deadline to turn off automatic renewal: {!ApexDef.EmailDeadline}
+
+‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+
+Samsara is committed to delivering the highest quality product and service. Due to higher costs and inflation, we are raising prices as shown above. This price increase allows us to provide world class support (24/7/365 availability, best-in-industry response times), ship 200+ new features every year, and minimize shipping delays despite global supply chain issues. We have and will continue to work hard to keep prices as low as possible, and we appreciate your continued business.
+
+Automatic renewal of your subscription and payment will take place at the end of your current term. Your designated payment method will be charged the amount required. If your payment method fails, your automatic renewal will not take place.
+
+Samsara Terms of Service are available at https://www.samsara.com/legal/platform-terms-of-service/
+
+If you have questions about your renewal, please reply to this email.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DutchTempBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hallo,
+
+
+Uw Samsara-abonnement wordt binnenkort automatisch verlengd.
+
+
+
+
+ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+
+
+  Verlengingsgegevens:
+
+  Rekening: {!ApexDef.AccountName}
+  Licenties: {!ApexDef.LicenseInfo}
+  Verlengingstermijn: {!ApexDef.RenewalTerm}
+  Bijgewerkte betaling: {!ApexDef.UpdatedPayment}
+  Betalings frequentie: {!ApexDef.AccountFrequency}
+  Einde huidige termijn: {!ApexDef.ContractEndDate}
+  Deadline om automatische verlenging uit te schakelen: {!ApexDef.EmailDeadline}
+
+
+ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+                       
+                   
+Samsara zet zich in voor het leveren van producten en diensten van de hoogste kwaliteit. Vanwege hogere kosten en inflatie verhogen we de prijzen zoals hierboven weergegeven. Deze prijsverhoging stelt ons in staat om de beste ondersteuning te blijven bieden (24/7/365 beschikbaarheid, best-in-industry responstijden), elk jaar meer dan 200 nieuwe functies te bieden en leveringsvertragingen tot een minimum te beperken ondanks wereldwijde supply chain problemen. We blijven ons best doen om de prijzen zo laag mogelijk te houden, en we stellen het zeer op prijs dat u zaken met ons blijft doen.
+
+De automatische verlenging van uw abonnement en betaling gebeuren aan het einde van uw huidige termijn. Het vereiste bedrag wordt in rekening gebracht via de door u gekozen betaalmethode. Als uw betalingsmethode mislukt, vindt uw automatische verlenging niet plaats.
+
+De Servicevoorwaarden van Samsara zijn beschikbaar op: https://www.samsara.com/de/legal/platform-terms-of-service/
+
+Als u vragen heeft over uw verlenging, kunt u deze e-mail beantwoorden.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DutchTempSub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Informatie over uw automatische verlenging</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FrenchTempBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Bonjour, 
+
+Votre abonnement Samsara sera bientôt renouvelé de manière automatique. 
+
+ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+
+Details du renouvellement : 
+
+Compte: {!ApexDef.AccountName}
+Nombre de licenses: {!ApexDef.LicenseInfo}
+Durée :  {!ApexDef.RenewalTerm}
+Montant mis à jour :  {!ApexDef.UpdatedPayment}
+Fréquence de paiement : {!ApexDef.AccountFrequency}
+Date d’échéance de l’abonnement actuel : {!ApexDef.ContractEndDate}
+Date limite pour annuler le renouvellement automatique : {!ApexDef.EmailDeadline}
+
+ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+
+
+Samsara est engagé à fournir la plus grande qualité de produit et service à ses clients. En raison de l’augmentation des coûts et de l’inflation, nous augmenterons nos tarifs comme indiqué ci-dessus. 
+Cette augmentation de tarif nous permettra de fournir un support technique de calibre mondial (disponible 24h/24 et 7j/7, avec les meilleurs temps de réponse du secteur), de présenter plus de 200 nouvelles fonctionnalités chaque année et de diminuer les délais de livraison malgré les soucis globaux de supply chain. Nous avons travaillé et nous continuerons à travailler pour maintenir les prix les plus bas possible, et nous apprécions votre collaboration continue.  
+
+
+Le renouvellement automatique de votre abonnement et le paiement prendront place au terme de votre abonnement actuel. 
+Le moyen de paiement que vous avez désigné préalablement sera débité du montant requis. Si le paiement échoue, le renouvellement automatique ne sera pas effectué. 
+
+
+Les Conditions Générales de d’Utilisation de Samsara sont disponibles ici : https://www.samsara.com/fr/legal/platform-terms-of-service/
+
+
+Si vous avez des questions au sujet de votre renouvellement, veuillez répondre directement à cet email.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>FrenchTempSub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Informations sur votre renouvellement automatique</text>
+    </textTemplates>
+    <textTemplates>
+        <name>GermanTempBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Guten Tag,
+
+
+Ihre Vertragsverlängerung mit Samsara steht kurz bevor.
+
+
+ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+
+
+Nachfolgend die Einzelheiten dazu:
+
+
+Organisation: {!ApexDef.AccountName}
+Lizenzen: {!ApexDef.LicenseInfo}
+Vertragslaufzeit: {!ApexDef.RenewalTerm}
+Aktualisierte Zahlung: {!ApexDef.UpdatedPayment}
+Zahlungsintervall: {!ApexDef.AccountFrequency}
+Ende der laufenden Vertragslaufzeit: {!ApexDef.ContractEndDate}
+Frist um die automatische Vertragsverlängerung zu deaktivieren: {!ApexDef.EmailDeadline}
+
+
+ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+
+
+Samsara bekennt sich weiterhin dazu, hochstehende Produkte und Servicequalität zu liefern. Aufgrund steigender Kosten und Inflation erhöhen wir unsere Preise, wie oben aufgeführt. Diese Preiserhöhung erlaubt es uns, weiterhin bestmöglichen Support anzubieten (rund um die Uhr Verfügbarkeit, branchenführend in Bezug auf Antwortzeit), über 200 neue Funktionen pro Jahr zu veröffentlichen und trotz globaler Lieferkettenprobleme, die Lieferverzögerungen zu minimieren. Wir haben immer und wir werden auch weiterhin alles daran setzen, die Preise so tief wie möglich zu halten, und wir schätzen die Zusammenarbeit mit Ihnen sehr.
+
+
+Die automatische Vertragsverlängerung sowie auch die Zahlung werden am Ende der aktuellen Vertragslaufzeit vollzogen. Ihre bestehende Bezahlart wird mit dem entsprechenden Betrag belastet werden. Falls die Zahlung nicht erfolgreich sein sollte, wird der Vertrag nicht automatisch verlängert.
+
+
+Die Samsara Nutzungsbedingungen finden Sie hier: https://www.samsara.com/legal/platform-terms-of-service/
+
+
+Falls Sie Fragen zu Ihrer Vertragsverlängerung haben sollten, antworten Sie bitte direkt auf diese E-Mail.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>GermanTempSub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Informationen zu Ihrer automatischen Verlängerung</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SpanishTempBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hola a todos,
+
+
+Tu suscripción a Samsara se renovará automáticamente en breve.
+
+
+ -------------------------
+
+
+ Detalles de la renovación:
+
+
+ Cuenta: 
+ Licencias: 
+ Plazo de renovación: 
+ Pago actualizado 
+ Frecuencia de pago: 
+ Fin del plazo actual: 
+ Fecha límite para desactivar la renovación automática: 
+
+
+ -------------------------
+
+
+Samsara se compromete a ofrecer productos y servicios de la máxima calidad. Debido al aumento de los costes y a la inflación, estamos subiendo los precios como se muestra arriba. Este aumento de precios nos permite ofrecer un soporte de primera clase (disponibilidad 24/7/365, los mejores tiempos de respuesta del sector), ofrecer más de 200 nuevas funciones cada año y minimizar los retrasos en los envíos a pesar de los problemas de la cadena de suministro global. Nos hemos esforzado y seguiremos esforzándonos por mantener los precios lo más bajos posible, y le agradecemos que continúe con nosotros.
+
+
+La renovación automática de su suscripción y el pago se realizarán al final de su período actual. Se cargará el importe correspondiente al método de pago designado. Si su método de pago falla, su renovación automática no tendrá lugar.
+
+
+Las Condiciones de Servicio de Samsara están disponibles en https://www.samsara.com/mx/legal/platform-terms-of-service
+
+
+Si tiene alguna pregunta sobre su renovación, responda a este correo electrónico.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SpanishTempSub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Información sobre su renovación automática</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Information About Your Automatic Renewal</text>
+    </textTemplates>
+    <variables>
+        <name>AccountEmailValues</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>AccountList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>ApexDef</name>
+        <apexClass>VariablesForContractFlow</apexClass>
+        <dataType>Apex</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CollecationVariable</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ContractIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ListOfContracts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contract</objectType>
+    </variables>
+    <variables>
+        <name>Recipients</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SenderEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>renewals@samsara.com</stringValue>
+        </value>
+    </variables>
+</Flow>

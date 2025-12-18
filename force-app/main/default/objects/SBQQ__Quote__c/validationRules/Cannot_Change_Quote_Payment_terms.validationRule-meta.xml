@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Quote_Payment_terms</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator API&quot;,
+$Profile.Name &lt;&gt; &quot;Sales Ops&quot;,
+NOT($Permission.Validation_Rule_Exemption),
+SBQQ__Opportunity2__r.SBQQ__RenewedContract__c = null,
+SBQQ__Opportunity2__r.SBQQ__Renewal__c = false,
+AND(ISCHANGED( Selected_Payment_Type__c)),
+SBQQ__Opportunity2__r.SBQQ__AmendedContract__c != null,
+ISPICKVAL(SBQQ__Opportunity2__r.Type, &apos;Revenue Opportunity&apos;),
+SBQQ__Opportunity2__r.Payment_Type_Opportunity_only_Exception__c = false,
+Finance_Partner_Account__c = null,
+Reseller_Account__c = null,
+SBQQ__Opportunity2__r.Insurance_Partner__c = null,
+NOT(CONTAINS(SBQQ__Opportunity2__r.Owner_Segment__c, &apos;AE1&apos;)),
+TEXT(Selected_Payment_Type__c) != Approved_Payment_Type__c,
+TEXT(SBQQ__Opportunity2__r.Internal_Finance_Payment_Type__c) != TEXT(Selected_Payment_Type__c),
+OR(Of_LIC_Products__c != 0, AND(Of_LIC_Products__c = 0, NOT(ISPICKVAL(Selected_Payment_Type__c, &apos;Upfront Payments&apos;)))),
+NOT(AND(Approved_Payment_Type__c = &apos;Direct Annual&apos;, VALUE(TEXT(License_Term__c)) &lt; 12)),
+NOT(AND(Approved_Payment_Type__c = &apos;Direct Semi-Annual&apos;, VALUE(TEXT(License_Term__c)) &lt; 6)),
+NOT(AND(Approved_Payment_Type__c = &apos;Direct Quarterly&apos;, VALUE(TEXT(License_Term__c)) &lt; 3))
+)</errorConditionFormula>
+    <errorMessage>Please use the CPQ Quote’s ‘Request for Payment Frequency or Terms’ button to request this Payment Frequency</errorMessage>
+</ValidationRule>

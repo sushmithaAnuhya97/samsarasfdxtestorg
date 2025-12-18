@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Manual_Automatic_Launch__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Manual Launch lets you decide the exact date to request the Profile Updates; with Automatic Launch Profile Updates are sent based on the Launch Frequency.</description>
+    <inlineHelpText>Manual Launch lets you decide the exact date to request the Profile Updates; with Automatic Launch Profile Updates are sent based on the Launch Frequency.</inlineHelpText>
+    <label>Manual/Automatic Launch</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Manual</fullName>
+                <default>false</default>
+                <label>Manual</label>
+            </value>
+            <value>
+                <fullName>Automatic</fullName>
+                <default>false</default>
+                <label>Automatic</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

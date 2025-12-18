@@ -1,0 +1,19 @@
+<template>
+    <lightning-modal-body>
+		<div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_success" role="status">
+            <span>
+                <lightning-icon variant="inverse" size="small" aria-hidden="true" icon-name="utility:success" alternative-text="Success"></lightning-icon> </span>
+		</div>
+		<ul class="slds-align_absolute-center slds-m-top_medium slds-list_dotted disk-style">
+			<template class=" slds-align_absolute-center" for:each={parsedValues} for:item="msgValue">
+				<li key={msgValue}>
+					<b>{msgValue}</b>
+				</li>
+			</template>
+		</ul>
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<lightning-button class="slds-button slds-float_left" variant="neutral" label="Back to Opportunity" onclick={handleBack}></lightning-button>
+		<lightning-button class="slds-button " variant="brand" label={buttonLabel} onclick={handleGoNext}></lightning-button>
+	</lightning-modal-footer>
+</template>

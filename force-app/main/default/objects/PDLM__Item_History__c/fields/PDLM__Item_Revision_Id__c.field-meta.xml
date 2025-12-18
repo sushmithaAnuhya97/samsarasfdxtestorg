@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Item_Revision_Id__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Points to Item_Revision__c</description>
+    <label>Item Revision</label>
+    <referenceTo>PDLM__Item_Revision__c</referenceTo>
+    <relationshipLabel>Item Audit Trail</relationshipLabel>
+    <relationshipName>Item_Histories</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

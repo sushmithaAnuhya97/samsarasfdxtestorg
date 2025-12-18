@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acn_ttn__test</fullName>
+    <active>true</active>
+    <label>test</label>
+    <picklistValues>
+        <picklist>acn_ttn__Analysis_Type__c</picklist>
+        <values>
+            <fullName>CustomSetting Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PageLayout Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RecordType Analysis</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>acn_ttn__ProcessingStage__c</picklist>
+        <values>
+            <fullName>In Deployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>acn_ttn__Some_Field__c</picklist>
+        <values>
+            <fullName>value 1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

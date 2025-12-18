@@ -1,0 +1,1147 @@
+<template>
+    <div class="footer-container">
+        <div class="footer-wrapper">
+            <!-- Main Navigation Grid -->
+            <template if:true = {isUsSelected}>            
+            <div class="main-grid">
+                <!-- Logo Section -->
+                <div class="logo-section">
+                    <img src={samsaraLogo} alt="Samsara" class="logo">
+                </div>
+
+                <!-- Navigation Links Grid -->
+                <div class="nav-grid">
+                    <!-- Products Column -->
+                    <div class="nav-column">
+                        <div class="nav-header">
+                            <a href="https://www.samsara.com/products">Products</a>
+                        </div>
+                        <div class="nav-links">
+                            <a href="http://samsara.com/products/safety">Cameras and Video</a>
+                            <a href="https://www.samsara.com/products/equipment-monitoring">Equipment Tracking</a>
+                            <a href="https://www.samsara.com/products/telematics">Fleet Telematics</a>
+                            <a href="https://www.samsara.com/products/apps-and-workflows">Samsara Apps</a>
+                            <a href="https://www.samsara.com/products/site-visibility">Site Security</a>
+                            <a href="https://www.samsara.com/products/models">All Product Hardware</a>
+                        </div>
+
+                        <div class="nav-header secondary">Integrations</div>
+                        <div class="nav-links">
+                            <a href="https://www.samsara.com/products/telematics/oem-integrations">OEM Integrations</a>
+                            <a href="https://www.samsara.com/products/app-marketplace">App Marketplace</a>
+                                <a href="https://www.samsara.com/resources/experts">Expert Marketplace</a>
+                        </div>
+                    </div>
+
+                    <!-- For Developers Column -->
+                    <div class="nav-column">
+                        <div class="nav-header">For Developers</div>
+                        <div class="nav-links">
+                            <a href="https://developers.samsara.com/reference/overview">Developer APIs</a>
+                                <a href="https://developers.samsara.com/changelog">API Changelog</a>
+                                <a href="https://www.samsara.com/support/developers">Developer Portal</a>
+                        </div>
+
+                        <div class="nav-header secondary">Resources</div>
+                        <div class="nav-links">
+                            <a href="https://www.samsara.com/customers">Customer Stories</a>
+                            <a href="https://kb.samsara.com/hc/en-us">Support Center</a>
+                            <a href="https://www.samsara.com/referrals">Customer Referral Program</a>
+                            <a href="https://www.samsara.com/resources/partner-programs">Partner Programs</a>
+                            <a href="https://www.samsara.com/events/live">Events</a>
+                            <a href="https://www.samsara.com/webinars">Webinars</a>
+                            <a href="https://www.samsara.com/guides">Guides</a>
+                            <a href="https://www.samsara.com/customers/unrivaled-ai">Unrivaled AI</a>
+                            <a href="https://www.samsara.com/resources/brand-assets">Brand Assets</a>
+                            <a href="https://cloud.samsara.com/webstore">Customer Webstore</a>
+                        </div>
+                    </div>
+
+                    <!-- Company Column -->
+                    <div class="nav-column">
+                        <div class="nav-header">Company</div>
+                        <div class="nav-links">
+                            <a href="https://www.samsara.com/company/about">About Us</a>
+                            <a href="https://www.samsara.com/company/careers">Careers</a>
+                            <a href="https://www.samsara.com/company/belonging">Belonging</a>
+                            <a href="https://investors.samsara.com/overview/default.aspx">Investor Relations</a>
+                            <a href="https://www.samsara.com/samsara-ventures">Samsara Ventures</a>
+                            <a href="https://www.samsara.com/company/news">News</a>
+                            <a href="https://www.samsara.com/blog">Blog</a>
+                            <a href="https://www.samsara.com/company/privacy">Privacy</a>
+                            <a href="https://www.samsara.com/legal/security">Security</a>
+                            <a href="https://www.samsara.com/company/contact">Contact</a>
+                            <a href="https://www.samsara.com/resources/why-samsara">Why Choose Samsara</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <!-- Country Selector -->
+                <button class="country-selector" onclick={handleCountryClick}>
+                    <span>🌐</span>
+                    {selectedCountryLabel}
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <template if:true={isDropdownVisible}>
+                    <ul class="dropdown-menu">
+                        <template for:each={languageOptions} for:item="option">
+                            <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                {option.label}
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                        <img src={facebookIcon} alt="Facebook">
+                    </a>
+                    <a href="https://x.com/Samsara" target="_blank">
+                        <img src={xIcon} alt="X">
+                    </a>
+                    <a href="https://www.instagram.com/lifeatsamsara/" target="_blank">
+                        <img src={instagramIcon} alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                        <img src={linkedinIcon} alt="LinkedIn">
+                    </a>
+                    <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                        <img src={youtubeIcon} alt="YouTube">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="legal-section">
+                <div class="legal-links">
+                    <a href="https://www.samsara.com/support/privacy">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/candidate-privacy-notice">Candidate Privacy Notice</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/website-terms-of-service">Website Terms of Service</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/cookie-policy">Cookie Policy</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/your-privacy-choices">Your Privacy Choices</a>
+                </div>
+
+                <div class="legal-links">
+                    <a href="https://www.samsara.com/support/hardware-warranty">Hardware Warranty</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/platform-terms-of-service">Product Terms of Service</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/hosted-software-sla">Hosted Software SLA</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/partner-code-of-conduct">Partner Code of Conduct</a>
+                </div>
+
+                <div class="legal-links">
+                    <a href="https://www.samsara.com/legal/data-protection-addendum">Data Protection Addendum</a>
+                    <span>|</span>
+                    <a href="https://www.samsara.com/legal/modern-slavery-statement">Modern Slavery Statement</a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="copyright">
+                    © 2025 Samsara Inc.
+                </div>
+            </div>
+            </template>
+            <template if:true = {isCaSelected}>            
+                <div class="main-grid">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src={samsaraLogo} alt="Samsara" class="logo">
+                    </div>
+    
+                    <!-- Navigation Links Grid -->
+                    <div class="nav-grid">
+                        <!-- Products Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">
+                                <a href="https://www.samsara.com/ca/products">Products</a>
+                            </div>
+                            <div class="nav-links">
+                                <a href="http://samsara.com/ca/products/safety">Cameras and Video</a>
+                                <a href="https://www.samsara.com/ca/products/equipment-monitoring">Equipment Tracking</a>
+                                <a href="https://www.samsara.com/ca/products/telematics">Fleet Telematics</a>
+                                <a href="https://www.samsara.com/ca/products/apps-and-workflows">Samsara Apps</a>
+                                <a href="https://www.samsara.com/ca/products/site-visibility">Site Security</a>
+                                <a href="https://www.samsara.com/ca/products/models">All Product Hardware</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Integrations</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/ca/products/telematics/oem-integrations">OEM Integrations</a>
+                                <a href="https://www.samsara.com/ca/products/app-marketplace">App Marketplace</a>
+                                <a href="https://www.samsara.com/ca/resources/experts">Expert Marketplace</a>
+                            </div>
+                        </div>
+    
+                        <!-- For Developers Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">For Developers</div>
+                            <div class="nav-links">
+                                <a href="https://developers.samsara.com/reference/overview">Developer APIs</a>
+                                <a href="https://developers.samsara.com/changelog">API Changelog</a>
+                                <a href="https://www.samsara.com/ca/support/developers">Developer Portal</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Resources</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/ca/customers">Customer Stories</a>
+                                <a href="https://www.samsara.com/ca/support">Support Center</a>
+                                <a href="https://www.samsara.com/ca/referrals">Customer Referral Program</a>
+                                <a href="https://www.samsara.com/ca/resources/partner-programs">Partner Programs</a>
+                                <a href="https://www.samsara.com/ca/events/live">Events</a>
+                                <a href="https://www.samsara.com/ca/webinars">Webinars</a>
+                                <a href="https://www.samsara.com/ca/guides">Guides</a>
+                                <a href="https://www.samsara.com/ca/customers/unrivaled-ai">Unrivaled AI</a>
+                                <a href="https://www.samsara.com/ca/resources/brand-assets">Brand Assets</a>
+                                <a href="https://www.samsara.com/customer-webstore">Customer Webstore</a>
+                            </div>
+                        </div>
+    
+                        <!-- Company Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Company</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/ca/company/about">About Us</a>
+                                <a href="https://www.samsara.com/ca/company/careers">Careers</a>
+                                <a href="https://www.samsara.com/ca/company/news">News</a>
+                                <a href="https://www.samsara.com/ca/blog">Blog</a>
+                                <a href="https://www.samsara.com/ca/company/privacy">Privacy</a>
+                                <a href="https://www.samsara.com/ca/legal/security">Security</a>
+                                <a href="https://www.samsara.com/ca/company/contact">Contact</a>
+                                <a href="https://www.samsara.com/ca/resources/why-samsara">Why Choose Samsara</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Country Selector -->
+                    <button class="country-selector" onclick={handleCountryClick}>
+                        <span>🌐</span>
+                        {selectedCountryLabel}
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <template if:true={isDropdownVisible}>
+                        <ul class="dropdown-menu">
+                            <template for:each={languageOptions} for:item="option">
+                                <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                    <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                    {option.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                            <img src={facebookIcon} alt="Facebook">
+                        </a>
+                        <a href="https://x.com/Samsara" target="_blank">
+                            <img src={xIcon} alt="X">
+                        </a>
+                        <a href="https://www.instagram.com/lifeatsamsara/" target="_blank">
+                            <img src={instagramIcon} alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                            <img src={linkedinIcon} alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                            <img src={youtubeIcon} alt="YouTube">
+                        </a>                        
+                    </div>
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="legal-section">
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/ca/support/privacy">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/candidate-privacy-notice">Candidate Privacy Notice</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/website-terms-of-service">Website Terms of Service</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/cookie-policy">Cookie Policy</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/cookie-consent">Cookie Preferences</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/ca/support/hardware-warranty">Hardware Warranty</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/platform-terms-of-service">Product Terms of Service</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/hosted-software-sla">Hosted Software SLA</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/partner-code-of-conduct">Partner Code of Conduct</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/ca/legal/data-protection-addendum">Data Protection Addendum</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/ca/legal/modern-slavery-statement">Modern Slavery Statement</a>
+                    </div>
+    
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        © 2025 Samsara Inc.
+                    </div>
+                </div>
+            </template>
+            <template if:true = {isDeSelected}>            
+                <div class="main-grid">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src={samsaraLogo} alt="Samsara" class="logo">
+                    </div>
+    
+                    <!-- Navigation Links Grid -->
+                    <div class="nav-grid">
+                        <!-- Products Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">
+                                <a>Produkte</a>
+                            </div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/de/products/safety">Kameras und Video</a>
+                                <a href="https://www.samsara.com/de/products/equipment-monitoring">Asset-Tracking</a>
+                                <a href="https://www.samsara.com/de/products/telematics">Telematik für den Fuhrpark</a>
+                                <a href="https://www.samsara.com/de/products/apps-and-workflows">Samsara Apps</a>
+                                <a href="https://www.samsara.com/de/products/models">Alle Hardwareprodukte</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Integrations</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/de/resources/marketplace">App Marketplace</a>
+                            </div>
+                        </div>
+    
+                        <!-- For Developers Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Für Entwickler</div>
+                            <div class="nav-links">
+                                <a href="https://developers.samsara.com/reference/overview">API-Entwickler</a>
+                                <a href="https://developers.samsara.com/changelog">API-Änderungsbericht</a>
+                                <a href="https://www.samsara.com/de/support/developers">Samsara API-Übersicht</a>
+                            </div>
+    
+                            <div class="nav-header secondary"><a href="https://www.samsara.com/de/resources">Ressourcen</a></div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/de/customers">Kunden Fallstudie</a>
+                                <a href="https://kb.samsara.com/hc/de">Hilfezentrum</a>
+                                <a href="https://www.samsara.com/de/referrals">Kundenempfehlungs-programm</a>
+                                <a href="https://www.samsara.com/de/events/live">Events</a>
+                                <a href="https://www.samsara.com/de/webinars">Webinare</a>
+                                <a href="https://www.samsara.com/de/guides">Anleitungen</a>
+                                <a href="https://www.samsara.com/de/resources/brand-assets">Brand Assets</a>
+                            </div>
+                        </div>
+    
+                        <!-- Company Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Unternehmen</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/de/company/about">Über uns</a>
+                                <a href="https://www.samsara.com/uk/company/careers">Karriere</a>
+                                <a href="https://www.samsara.com/de/blog">Blog</a>
+                                <a href="https://www.samsara.com/de/company/privacy">Privacy</a>
+                                <a href="https://www.samsara.com/de/legal/security">Security</a>
+                                <a href="https://www.samsara.com/de/company/contact">Contact</a>
+                                <a href="https://www.samsara.com/de/resources/why-samsara">Why Choose Samsara</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Country Selector -->
+                    <button class="country-selector" onclick={handleCountryClick}>
+                        <span>🌐</span>
+                        {selectedCountryLabel}
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <template if:true={isDropdownVisible}>
+                        <ul class="dropdown-menu">
+                            <template for:each={languageOptions} for:item="option">
+                                <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                    <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                    {option.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                            <img src={facebookIcon} alt="Facebook">
+                        </a>
+                        <a href="https://x.com/Samsara" target="_blank">
+                            <img src={xIcon} alt="X">
+                        </a>
+                        <a href="https://www.instagram.com/lifeatsamsara/" target="_blank">
+                            <img src={instagramIcon} alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                            <img src={linkedinIcon} alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                            <img src={youtubeIcon} alt="YouTube">
+                        </a>                        
+                    </div>
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="legal-section">
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/de/support/privacy">Datenschutzerklärung</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/de/legal/candidate-privacy-notice">Datenschutzhinweis für bewerber</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/de/legal/website-terms-of-service">Nutzungsbedingungen der website</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/de/legal/cookie-policy">Cookie-Richtlinie</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://samsara.com/de/legal/cookie-consent">Cookie-Einstellungen</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/de/support/hardware-warranty">Hardware-Garantie</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/de/legal/platform-terms-of-service">Nutzungsbedingungen</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/de/legal/hosted-software-sla">Software SLA (Service-Level-Vereinbarung)</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/de/legal/partner-code-of-conduct">Verhaltenskodex für geschäftspartner</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/de/legal/data-protection-addendum">Datenverarbeitungsvertrag</a>
+                        <span>|</span>
+                        <a href="https://samsara.com/de/support/impressum">Impressum</a>
+                    </div>
+    
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        © 2025 Samsara Inc.
+                    </div>
+                </div>
+            </template>
+            <template if:true = {isFrSelected}>            
+                <div class="main-grid">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src={samsaraLogo} alt="Samsara" class="logo">
+                    </div>
+    
+                    <!-- Navigation Links Grid -->
+                    <div class="nav-grid">
+                        <!-- Products Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">
+                                <a>Produits</a>
+                            </div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr/products/safety">Caméras et vidéo</a>
+                                <a href="https://www.samsara.com/fr/products/equipment-monitoring">Suivi des actifs</a>
+                                <a href="https://www.samsara.com/fr/products/telematics">Télématique de flotte</a>
+                                <a href="https://www.samsara.com/fr/products/apps-and-workflows">Applications Samsara</a>
+                                <a href="https://www.samsara.com/fr/products/models">Tout le matériel produit</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Integrations</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr/resources/marketplace">App Marketplace</a>
+                            </div>
+                        </div>
+    
+                        <!-- For Developers Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Pour les développeurs</div>
+                            <div class="nav-links">
+                                <a href="https://developers.samsara.com/reference/overview">API développeurs</a>
+                                <a href="https://developers.samsara.com/changelog">Changements API</a>
+                                <a href="https://www.samsara.com/fr/support/developers">Portail des développeurs</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Ressources</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr/customers">Témoignages clients</a>
+                                <a href="https://kb.samsara.com/hc/fr">Centre d’assistance</a>
+                                <a href="https://www.samsara.com/fr/referrals">Recommandez Samsara</a>
+                                <a href="https://www.samsara.com/fr/events/live">Evenements</a>
+                                <a href="https://www.samsara.com/fr/webinars">Webinaires</a>
+                                <a href="https://www.samsara.com/fr/guides">Guides</a>
+                                <a href="https://www.samsara.com/fr/resources/brand-assets">Brand Assets</a>
+                            </div>
+                        </div>
+    
+                        <!-- Company Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Companie</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr/company/about">À propos de</a>
+                                <a href="https://www.samsara.com/uk/company/careers">Carrières</a>
+                                <a href="https://www.samsara.com/fr/blog">Blog</a>
+                                <a href="https://www.samsara.com/fr/company/privacy">Privacy</a>
+                                <a href="https://www.samsara.com/frlegal/security">Security</a>
+                                <a href="https://www.samsara.com/fr/company/contact">Contact</a>
+                                <a href="https://www.samsara.com/fr/resources/why-samsara">Why Choose Samsara</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Country Selector -->
+                    <button class="country-selector" onclick={handleCountryClick}>
+                        <span>🌐</span>
+                        {selectedCountryLabel}
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <template if:true={isDropdownVisible}>
+                        <ul class="dropdown-menu">
+                            <template for:each={languageOptions} for:item="option">
+                                <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                    <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                    {option.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                            <img src={facebookIcon} alt="Facebook">
+                        </a>
+                        <a href="https://x.com/Samsara" target="_blank">
+                            <img src={xIcon} alt="X">
+                        </a>
+                        <a href="https://www.instagram.com/lifeatsamsara/" target="_blank">
+                            <img src={instagramIcon} alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                            <img src={linkedinIcon} alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                            <img src={youtubeIcon} alt="YouTube">
+                        </a>                        
+                    </div>
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="legal-section">
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/fr/support/privacy">Politique de confidentialité</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr/legal/candidate-privacy-notice">Données personnelles des candidats</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr/legal/website-terms-of-service">Conditions d'utilisation du site</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/fr/legal/cookie-policy">Politique en matière de cookies</a>
+                        <span>|</span>
+                        <a href="https://samsara.com/fr/legal/cookie-consent">Préférences de cookies</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr/support/hardware-warranty">Garanties et retours</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr/legal/platform-terms-of-service">Conditions générales d’utilisation</a>   
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/fr/legal/hosted-software-sla">Engagement de service</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr/legal/partner-code-of-conduct">Code de conduite partenaires</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr/legal/data-protection-addendum">Avenant relatif à la protection des données</a>
+                    </div>
+    
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        © 2025 Samsara Inc.
+                    </div>
+                </div>
+            </template>
+            <template if:true = {isFrCaSelected}>            
+                <div class="main-grid">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src={samsaraLogo} alt="Samsara" class="logo">
+                    </div>
+    
+                    <!-- Navigation Links Grid -->
+                    <div class="nav-grid">
+                        <!-- Products Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">
+                                <a>Produits</a>
+                            </div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr-ca/products/safety">Caméras et vidéo</a>
+                                <a href="https://www.samsara.com/fr-ca/products/equipment-monitoring">Suivi d'équipement</a>
+                                <a href="https://www.samsara.com/fr-ca/products/telematics">Télématique de flotte</a>
+                                <a href="https://www.samsara.com/fr-ca/products/apps-and-workflows">Applications Samsara</a>
+                                <a href="https://www.samsara.com/fr-ca/products/models">Tout le matériel produit</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Integrations</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr-ca/resources/marketplace">App Marketplace</a>
+                            </div>
+                        </div>
+    
+                        <!-- For Developers Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Pour les développeurs</div>
+                            <div class="nav-links">
+                                <a href="https://developers.samsara.com/reference/overview">API développeurs</a>
+                                <a href="https://developers.samsara.com/changelog">Changements API</a>
+                                <a href="https://www.samsara.com/fr-ca/support/developers">Portail des développeurs</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Ressources</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr-ca/customers">Témoignages clients</a>
+                                <a href="https://kb.samsara.com/hc/fr-ca">Centre d’assistance</a>
+                                <a href="https://www.samsara.com/fr-ca/referrals">Recommandez Samsara</a>
+                                <a href="https://www.samsara.com/fr-ca/events/live">Evenements</a>
+                                <a href="https://www.samsara.com/fr-ca/webinars">Webinaires</a>
+                                <a href="https://www.samsara.com/fr-ca/guides">Guides</a>
+                                <a href="https://www.samsara.com/fr-ca/resources/brand-assets">Brand Assets</a>
+                                <a href="https://cloud.samsara.com/webstore?_gl">Boutique client en ligne</a>
+                            </div>
+                        </div>
+    
+                        <!-- Company Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Companie</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/fr-ca/company/about">À propos de</a>
+                                <a href="https://www.samsara.com/ca/company/careers">Carrières</a>
+                                <a href="https://www.samsara.com/fr-ca/blog">Blog</a>
+                                <a href="https://www.samsara.com/fr-ca/company/privacy">Privacy</a>
+                                <a href="https://samsara.com/fr-ca/company/privacy">Security</a>
+                                <a href="https://www.samsara.com/fr-ca/company/contact">Contact</a>
+                                <a href="https://www.samsara.com/fr-ca/resources/why-samsara">Why Choose Samsara</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Country Selector -->
+                    <button class="country-selector" onclick={handleCountryClick}>
+                        <span>🌐</span>
+                        {selectedCountryLabel}
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <template if:true={isDropdownVisible}>
+                        <ul class="dropdown-menu">
+                            <template for:each={languageOptions} for:item="option">
+                                <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                    <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                    {option.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                            <img src={facebookIcon} alt="Facebook">
+                        </a>
+                        <a href="https://x.com/Samsara" target="_blank">
+                            <img src={xIcon} alt="X">
+                        </a>
+                        <a href="https://www.instagram.com/samsara.iot/#" target="_blank">
+                            <img src={instagramIcon} alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                            <img src={linkedinIcon} alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                            <img src={youtubeIcon} alt="YouTube">
+                        </a>                        
+                    </div>
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="legal-section">
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/fr-ca/support/privacy">Politique de confidentialité</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr-ca/legal/candidate-privacy-notice">Données personnelles des candidats</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr-ca/legal/website-terms-of-service">Conditions d'utilisation du site</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/fr-ca/legal/cookie-policy">Politique en matière de cookies</a>
+                        <span>|</span>
+                        <a href="https://samsara.com/fr-ca/legal/cookie-consent">Préférences de cookies</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr-ca/support/hardware-warranty">Garanties et retours</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr-ca/legal/platform-terms-of-service">Conditions générales d’utilisation</a>   
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/fr-ca/legal/hosted-software-sla">Engagement de service</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr-ca/legal/partner-code-of-conduct">Code de conduite partenaires</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/fr-ca/legal/data-protection-addendum">Avenant relatif à la protection des données</a>
+                    </div>
+                    
+                    <div class="legal-links">
+                        <a href="https://samsara.com/fr-ca/support/modern-slavery-statement">Déclaration sur l'esclavage moderne</a>
+                    </div>
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        © 2025 Samsara Inc.
+                    </div>
+                </div>
+            </template>
+            <template if:true = {isMxSelected}>            
+                <div class="main-grid">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src={samsaraLogo} alt="Samsara" class="logo">
+                    </div>
+    
+                    <!-- Navigation Links Grid -->
+                    <div class="nav-grid">
+                        <!-- Products Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">
+                                <a>Productos</a>
+                            </div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/mx/products/safety">Cámaras y video</a>
+                                <a href="https://samsara.com/mx/products/equipment-monitoring">Seguimiento de equipos</a>
+                                <a href="https://samsara.com/mx/products/flota">Telemática de flotas</a>
+                                <a href="https://samsara.com/mx/products/apps-and-workflows">Apps de Samsara</a>
+                                <a href="https://www.samsara.com/mx/products/models">Todo el hardware del producto</a>
+                            </div>
+    
+                            <div class="nav-header secondary"><a href="https://samsara.com/mx/integrations">Desarrolladores y APIs</a></div>
+                            <div class="nav-links">
+                                <a href="https://samsara.com/mx/resources/marketplace">Mercado de aplicaciones</a>
+                            </div>
+                        </div>
+    
+                        <!-- For Developers Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Para desarrolladores</div>
+                            <div class="nav-links">
+                                <a href="https://developers.samsara.com/reference/overview">Desarrolladores de APIs</a>
+                                <a href="https://developers.samsara.com/changelog">Registro de cambios de API</a>
+                                <a href="https://www.samsara.com/mx/support/developers">Portal de desarrolladores</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Recursos</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/mx/customers">Historias de clientes</a>
+                                <a href="https://kb.samsara.com/hc/es?_gl">Centro de ayuda</a>
+                                <a href="https://www.samsara.com/mx/referrals">Programa de referencia de clientes</a>
+                                <a href="https://www.samsara.com/mx/events/live">Eventos</a>
+                                <a href="https://www.samsara.com/mx/webinars">Webinar</a>
+                                <a href="https://www.samsara.com/mx/guides">Guías</a>
+                                <a href="https://www.samsara.com/mx/resources/brand-assets">Recursos de marca</a>
+                                <a href="https://cloud.samsara.com/webstore?_gl">Tienda web del cliente</a>
+                            </div>
+                        </div>
+    
+                        <!-- Company Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Compañía</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/mx/company/about">Sobre nosotros</a>
+                                <a href="https://samsara.com/company/careers">Carreras</a>
+                                <a href="https://samsara.com/mx/company/news">News</a>
+                                <a href="https://www.samsara.com/mx/blog">Blog</a>
+                                <a href="https://www.samsara.com/mx/company/privacy">Privacy</a>
+                                <a href="https://samsara.com/mx/legal/security">Security</a>
+                                <a href="https://www.samsara.com/mx/company/contact">Contact</a>
+                                <a href="https://www.samsara.com/mx/resources/why-samsara">Why Choose Samsara</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Country Selector -->
+                    <button class="country-selector" onclick={handleCountryClick}>
+                        <span>🌐</span>
+                        {selectedCountryLabel}
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <template if:true={isDropdownVisible}>
+                        <ul class="dropdown-menu">
+                            <template for:each={languageOptions} for:item="option">
+                                <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                    <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                    {option.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                            <img src={facebookIcon} alt="Facebook">
+                        </a>
+                        <a href="https://x.com/Samsara" target="_blank">
+                            <img src={xIcon} alt="X">
+                        </a>
+                        <a href="https://www.instagram.com/samsara.iot/#" target="_blank">
+                            <img src={instagramIcon} alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                            <img src={linkedinIcon} alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                            <img src={youtubeIcon} alt="YouTube">
+                        </a>                        
+                    </div>
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="legal-section">
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/mx/support/privacy">Políticas de privacidad</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/mx/legal/candidate-privacy-notice">Aviso de privacidad para candidatos</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/mx/legal/website-terms-of-service">Términos de servicio de la página web</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/mx/legal/cookie-policy">Cookie Policy</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://samsara.com/mx/legal/cookie-consent">Configuración de cookies</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/mx/support/hardware-warranty">Garantía del hardware</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/mx/legal/platform-terms-of-service">Término de servicio del producto</a>   
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/mx/legal/hosted-software-sla">Acuerdo de servicio del software</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/mx/legal/partner-code-of-conduct">Partner Code of Conduct</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/mx/legal/data-protection-addendum">Anexo de protección de datos</a>
+                    </div>
+                    
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        © 2025 Samsara Inc.
+                    </div>
+                </div>
+            </template>
+            <template if:true = {isNlSelected}>            
+                <div class="main-grid">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src={samsaraLogo} alt="Samsara" class="logo">
+                    </div>
+    
+                    <!-- Navigation Links Grid -->
+                    <div class="nav-grid">
+                        <!-- Products Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">
+                                <a>Producten</a>
+                            </div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/nl/products/safety">Camera's en video</a>
+                                <a href="https://samsara.com/nl/products/equipment-monitoring">Apparatuurtracking</a>
+                                <a href="https://samsara.com/nl/products/telematics">Wagenparktelematica</a>
+                                <a href="https://samsara.com/nl/products/apps-and-workflows">Samsara Apps</a>
+                                <a href="https://www.samsara.com/nl/products/models">Alle producthardware</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Integratie</div>
+                            <div class="nav-links">
+                                <a href="https://samsara.com/nl/products/telematics/oem-integrations">OEM-Ingratie</a>
+                                <a href="https://samsara.com/nl/resources/marketplace">App Marketplace</a>
+                            </div>
+                        </div>
+    
+                        <!-- For Developers Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Voor ontwikkelaars</div>
+                            <div class="nav-links">
+                                <a href="https://developers.samsara.com/reference/overview">Opensource-API's</a>
+                                <a href="https://developers.samsara.com/changelog">API changelog</a>
+                                <a href="https://www.samsara.com/nl/support/developers">Ontwikkelaarsportaal</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Informatiebronnen</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/nl/customers">Klanten aan het woord</a>
+                                <a href="https://kb.samsara.com/hc/nl?_gl">Support Center</a>
+                                <a href="https://www.samsara.com/nl/referrals">Klantverwijzingsprogramma</a>
+                                <a href="https://www.samsara.com/nl/events/live">Events</a>
+                                <a href="https://www.samsara.com/nl/webinars">Webinars</a>
+                                <a href="https://www.samsara.com/nl/guides">Gidsen</a>
+                                <a href="https://www.samsara.com/nl/resources/brand-assets">Brand Assets</a>
+                            </div>
+                        </div>
+    
+                        <!-- Company Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Bedrijf</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/nl/company/about">Over ons</a>
+                                <a href="https://samsara.com/uk/company/careers">Careers</a>
+                                <a href="https://www.samsara.com/nl/company/privacy">Privacy</a>
+                                <a href="https://samsara.com/nl/legal/security">Security</a>
+                                <a href="https://www.samsara.com/nl/company/contact">Contact</a>
+                                <a href="https://www.samsara.com/nl/resources/why-samsara">Why Choose Samsara</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Country Selector -->
+                    <button class="country-selector" onclick={handleCountryClick}>
+                        <span>🌐</span>
+                        {selectedCountryLabel}
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <template if:true={isDropdownVisible}>
+                        <ul class="dropdown-menu">
+                            <template for:each={languageOptions} for:item="option">
+                                <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                    <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                    {option.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                            <img src={facebookIcon} alt="Facebook">
+                        </a>
+                        <a href="https://x.com/Samsara" target="_blank">
+                            <img src={xIcon} alt="X">
+                        </a>
+                        <a href="https://www.instagram.com/samsara.iot/#" target="_blank">
+                            <img src={instagramIcon} alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                            <img src={linkedinIcon} alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                            <img src={youtubeIcon} alt="YouTube">
+                        </a>                        
+                    </div>
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="legal-section">
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/nl/support/privacy">Privacybeleid</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/nl/legal/candidate-privacy-notice">Privacyverklaring voor sollicitanten</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/nl/legal/website-terms-of-service">Dienstverleningsvoorwaarden website</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/nl/legal/cookie-policy">Cookiebeleid</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://samsara.com/nl/legal/cookie-consent">Cookie-instellingen</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/nl/support/hardware-warranty">Hardware Warranty</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/nl/legal/platform-terms-of-service">Dienstverleningsvoorwaarden producten</a>   
+                        <span>|</span>
+                        <a href="https://www.samsara.com/nl/legal/hosted-software-sla">Hosted Software SLA</a>   
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/nl/legal/partner-code-of-conduct">Gedragscode partners</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/nl/legal/data-protection-addendum">Data Protection Addendum</a>
+                    </div>
+                    
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        © 2025 Samsara Inc.
+                    </div>
+                </div>
+            </template>
+            <template if:true = {isUkSelected}>            
+                <div class="main-grid">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <img src={samsaraLogo} alt="Samsara" class="logo">
+                    </div>
+    
+                    <!-- Navigation Links Grid -->
+                    <div class="nav-grid">
+                        <!-- Products Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">
+                                <a>Products</a>
+                            </div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/uk/products/safety">Cameras and Video</a>
+                                <a href="https://samsara.com/uk/products/equipment-monitoring">Equipment Tracking</a>
+                                <a href="https://samsara.com/uk/products/telematics">Fleet Telematics</a>
+                                <a href="https://samsara.com/uk/products/apps-and-workflows">Samsara Apps</a>
+                                <a href="https://www.samsara.com/uk/products/models">All Product Hardware</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Integrations</div>
+                            <div class="nav-links">
+                                <a href="https://samsara.com/uk/products/telematics/oem-integrations">OEM Integrations</a>
+                                <a href="https://samsara.com/uk/resources/marketplace">App Marketplace</a>
+                            </div>
+                        </div>
+    
+                        <!-- For Developers Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">For Developers</div>
+                            <div class="nav-links">
+                                <a href="https://developers.samsara.com/reference/overview">Developer APIs</a>
+                                <a href="https://developers.samsara.com/changelog">API Changelog</a>
+                                <a href="https://www.samsara.com/uk/support/developers">Developer Portal</a>
+                            </div>
+    
+                            <div class="nav-header secondary">Resources</div>
+                            <div class="nav-links">
+                                <a href="https://samsara.com/uk/resources/brand-assets">Brand Assets</a>
+                                <a href="https://www.samsara.com/nl/customers">Customer Stories</a>
+                                <a href="https://kb.samsara.com/hc/en-us?_gl">Support Center</a>
+                                <a href="https://www.samsara.com/uk/referrals">Customer Referral Program</a>
+                                <a href="http://samsara.com/uk/resources/partner-programs">Partner Programs</a>
+                                <a href="https://www.samsara.com/uk/events/live">Events</a>
+                                <a href="https://www.samsara.com/uk/webinars">Webinars</a>
+                                <a href="https://www.samsara.com/uk/guides">Guides</a>
+                                <a href="https://www.samsara.com/uk/resources/brand-assets">Brand Assets</a>
+                                <a href="https://cloud.samsara.com/webstore?_gl">Customer Webstore</a>
+                            </div>
+                        </div>
+    
+                        <!-- Company Column -->
+                        <div class="nav-column">
+                            <div class="nav-header">Company</div>
+                            <div class="nav-links">
+                                <a href="https://www.samsara.com/uk/company/about">About Us</a>
+                                <a href="https://samsara.com/uk/company/careers">Careers</a>
+                                <a href="https://samsara.com/uk/company/news">News</a>
+                                <a href="https://samsara.com/uk/blog">Blog</a>
+                                <a href="https://www.samsara.com/uk/company/privacy">Privacy</a>
+                                <a href="https://samsara.com/uk/legal/security">Security</a>
+                                <a href="https://www.samsara.com/uk/company/contact">Contact</a>
+                                <a href="https://www.samsara.com/uk/resources/why-samsara">Why Choose Samsara</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Country Selector -->
+                    <button class="country-selector" onclick={handleCountryClick}>
+                        <span>🌐</span>
+                        {selectedCountryLabel}
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <template if:true={isDropdownVisible}>
+                        <ul class="dropdown-menu">
+                            <template for:each={languageOptions} for:item="option">
+                                <li key={option.value} onclick={handleCountryChange} data-value={option.value}>
+                                    <!--lightning-icon icon-name={option.iconName} size="small"></lightning-icon-->
+                                    {option.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SamsaraHQ/" target="_blank">
+                            <img src={facebookIcon} alt="Facebook">
+                        </a>
+                        <a href="https://x.com/Samsara" target="_blank">
+                            <img src={xIcon} alt="X">
+                        </a>
+                        <a href="https://www.instagram.com/samsara.iot/#" target="_blank">
+                            <img src={instagramIcon} alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/samsara/" target="_blank">
+                            <img src={linkedinIcon} alt="LinkedIn">
+                        </a>
+                        <a href="https://www.youtube.com/c/SamsaraHQ" target="_blank">
+                            <img src={youtubeIcon} alt="YouTube">
+                        </a>                        
+                    </div>
+                </div>
+    
+                <!-- Legal Links -->
+                <div class="legal-section">
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/uk/support/privacy">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/uk/legal/candidate-privacy-notice">Candidate Privacy Notice</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/uk/legal/website-terms-of-service">Website Terms of Service</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/uk/legal/cookie-policy">Cookie Policy</a>
+                        <span>|</span>
+                        <a href="https://samsara.com/uk/legal/cookie-consent">Cookie Preferences</a>
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://www.samsara.com/uk/support/hardware-warranty">Hardware Warranty</a>
+                        <span>|</span>
+                        <a href="https://www.samsara.com/uk/legal/platform-terms-of-service">Product Terms of Service</a>   
+                        <span>|</span>
+                        <a href="https://www.samsara.com/uk/legal/hosted-software-sla">Hosted Software SLA</a>   
+                        <span>|</span>
+                        <a href="https://samsara.com/uk/legal/partner-code-of-conduct">Partner Code of Conduct</a>   
+                    </div>
+    
+                    <div class="legal-links">
+                        <a href="https://samsara.com/uk/legal/data-protection-addendum">Data Protection Addendum</a>
+                        <span>|</span>
+                        <a href="https://samsara.com/uk/support/modern-slavery-statement">Modern Slavery Statement</a>
+                    </div>
+                    
+                    <!-- Copyright -->
+                    <div class="copyright">
+                        © 2025 Samsara Inc.
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

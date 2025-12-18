@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Sub_Status__c</fullName>
+    <label>CSM Sub-Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internal Planning</fullName>
+                <default>false</default>
+                <label>Internal Planning</label>
+            </value>
+            <value>
+                <fullName>On-Hold</fullName>
+                <default>false</default>
+                <label>On-Hold</label>
+            </value>
+            <value>
+                <fullName>Attempting Kick-off</fullName>
+                <default>false</default>
+                <label>Attempting Kick-off</label>
+            </value>
+            <value>
+                <fullName>Scheduled Kick off</fullName>
+                <default>false</default>
+                <label>Scheduled Kick off</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Project Planning</fullName>
+                <default>false</default>
+                <label>Project Planning</label>
+            </value>
+            <value>
+                <fullName>Installations and Training</fullName>
+                <default>false</default>
+                <label>Installations and Training</label>
+            </value>
+            <value>
+                <fullName>Go-Live</fullName>
+                <default>false</default>
+                <label>Go-Live</label>
+            </value>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <label>Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Steady State</fullName>
+                <default>false</default>
+                <label>Steady State</label>
+            </value>
+            <value>
+                <fullName>Technical Issues</fullName>
+                <default>false</default>
+                <label>Technical Issues</label>
+            </value>
+            <value>
+                <fullName>Escalation</fullName>
+                <default>false</default>
+                <label>Escalation</label>
+            </value>
+            <value>
+                <fullName>Health Check</fullName>
+                <default>false</default>
+                <label>Health Check</label>
+            </value>
+            <value>
+                <fullName>Disqualified</fullName>
+                <default>false</default>
+                <label>Disqualified</label>
+            </value>
+            <value>
+                <fullName>Delinquency</fullName>
+                <default>false</default>
+                <label>Delinquency</label>
+            </value>
+            <value>
+                <fullName>Onboarding Complete</fullName>
+                <default>false</default>
+                <label>Onboarding Complete</label>
+            </value>
+            <value>
+                <fullName>Attempting Training</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Attempting Training</label>
+            </value>
+            <value>
+                <fullName>Scheduled Training</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Scheduled Training</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

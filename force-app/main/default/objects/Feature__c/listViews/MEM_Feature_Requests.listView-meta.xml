@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MEM_Feature_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>Category__c</columns>
+    <columns>PM_Owner__c</columns>
+    <columns>Status__c</columns>
+    <columns>Sum_Opportunity_Amounts__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>equals</operation>
+        <value>Enterprise Mobility Management,Mobile Device Management,Mobile Experience Management</value>
+    </filters>
+    <label>MEM Feature Requests</label>
+</ListView>

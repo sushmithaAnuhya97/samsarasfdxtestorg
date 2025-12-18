@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reps_Cant_Change_Remorse_Refund_Stage</fullName>
+    <active>true</active>
+    <description>Prevents reps from changing remorse refund stage to anything but return canceled</description>
+    <errorConditionFormula>IF(
+AND(
+ISPICKVAL(Type, &quot;Remorse Refund&quot;),
+ISCHANGED(StageName),
+NOT(ISCHANGED(Bypass_Validation_Rule_DateTime__c))
+),
+IF($Permission.Validation_Exemption_Opportunity,
+IF(AND(ISPICKVAL(PRIORVALUE(StageName),&quot;Return Initiated&quot;),
+NOT(ISPICKVAL(StageName, &quot;Return Label Sent&quot;))
+),true,
+IF(NOT(ISPICKVAL(PRIORVALUE(StageName),&quot;Return Initiated&quot;)),
+true,false)),
+IF(AND(
+NOT(ISPICKVAL(StageName, &quot;Return Cancelled&quot;)),
+NOT(
+OR(
+$Profile.Name = &quot;Samsara - Finance&quot;,
+$Profile.Name = &quot;Samsara - Finance	Admin&quot;,
+$Profile.Name = &quot;Sales Ops Profile&quot;,
+$Profile.Name = &quot;Order Operations Admin&quot;,
+$Permission.Validation_Rule_Exemption
+)
+)
+),
+true,false)),
+false
+)</errorConditionFormula>
+    <errorMessage>You can not move the stage past &apos;Return Created&apos;, please allow Finance to process this return.</errorMessage>
+</ValidationRule>

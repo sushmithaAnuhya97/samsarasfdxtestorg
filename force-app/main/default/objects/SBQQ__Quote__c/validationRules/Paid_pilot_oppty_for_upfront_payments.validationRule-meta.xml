@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Paid_pilot_oppty_for_upfront_payments</fullName>
+    <active>true</active>
+    <description>Selected Payment Type can only be Upfront Payments for paid pilot.</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+NOT(ISPICKVAL(Selected_Payment_Type__c, &apos;Upfront Payments&apos;)), SBQQ__Primary__c = true, Opportunity_Sub_Type__c = &apos;Paid Pilot&apos;, CONTAINS($UserRole.Name,&apos;AE&apos;))</errorConditionFormula>
+    <errorMessage>Selected Payment Type must be &apos;Upfront Payments&apos; for AEs when the Associated Opportunity Sub Type is &apos;paid pilot&apos;</errorMessage>
+</ValidationRule>

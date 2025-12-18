@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acn_ttn__ProcessingStage__c</fullName>
+    <deprecated>false</deprecated>
+    <label>ProcessingStage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Deployment</fullName>
+                <default>false</default>
+                <label>In Deployment</label>
+            </value>
+            <value>
+                <fullName>No Error</fullName>
+                <default>false</default>
+                <label>No Error</label>
+            </value>
+            <value>
+                <fullName>Processed</fullName>
+                <default>false</default>
+                <label>Processed</label>
+            </value>
+            <value>
+                <fullName>Report Generated</fullName>
+                <default>false</default>
+                <label>Report Generated</label>
+            </value>
+            <value>
+                <fullName>PageLayout Analysis Report Generated</fullName>
+                <default>false</default>
+                <label>PageLayout Analysis Report Generated</label>
+            </value>
+            <value>
+                <fullName>PageLayout Analysis Initiated</fullName>
+                <default>false</default>
+                <label>PageLayout Analysis Initiated</label>
+            </value>
+            <value>
+                <fullName>Record Type Analysis Initiated</fullName>
+                <default>false</default>
+                <label>Record Type Analysis Initiated</label>
+            </value>
+            <value>
+                <fullName>Record Type Analysis Report Generated</fullName>
+                <default>false</default>
+                <label>Record Type Analysis Report Generated</label>
+            </value>
+            <value>
+                <fullName>Profile Analysis Started</fullName>
+                <default>false</default>
+                <label>Profile Analysis Started</label>
+            </value>
+            <value>
+                <fullName>Profile Analysis Completed</fullName>
+                <default>false</default>
+                <label>Profile Analysis Completed</label>
+            </value>
+            <value>
+                <fullName>PermissionSet Analysis Initiated</fullName>
+                <default>false</default>
+                <label>PermissionSet Analysis Initiated</label>
+            </value>
+            <value>
+                <fullName>PermissionSet Analysis Report Generated</fullName>
+                <default>false</default>
+                <label>PermissionSet Analysis Report Generated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

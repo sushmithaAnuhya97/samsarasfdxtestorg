@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Data_Error_Category__c</fullName>
+    <description>Renewal_Data_Error_Category__c picklist field will identify any errors in the oppty quote data and this field is used by jobRecalculateQuote Batch class if it is true</description>
+    <label>Renewal Data Error Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACVDidNotMatch</fullName>
+                <default>false</default>
+                <label>ACV Did Not Match</label>
+            </value>
+            <value>
+                <fullName>AmountDidNotMatch</fullName>
+                <default>false</default>
+                <label>Amount Did Not Match</label>
+            </value>
+            <value>
+                <fullName>LicenseTermDidNotMatch</fullName>
+                <default>false</default>
+                <label>License Term Did Not Match</label>
+            </value>
+            <value>
+                <fullName>ShippingAddressDidNotMatch</fullName>
+                <default>false</default>
+                <label>Shipping Address Did Not Match</label>
+            </value>
+            <value>
+                <fullName>PaymentTypeDidNotMatch</fullName>
+                <default>false</default>
+                <label>Payment Type Did Not Match</label>
+            </value>
+            <value>
+                <fullName>TaxIssue</fullName>
+                <default>false</default>
+                <label>Tax Issue</label>
+            </value>
+            <value>
+                <fullName>CalculationIssue</fullName>
+                <default>false</default>
+                <label>Calculation Issue</label>
+            </value>
+            <value>
+                <fullName>CleanData</fullName>
+                <default>false</default>
+                <label>Clean Data</label>
+            </value>
+            <value>
+                <fullName>NegativeBlendedDiscount</fullName>
+                <default>false</default>
+                <label>Negative Blended Discount</label>
+            </value>
+            <value>
+                <fullName>UpliftIsNull</fullName>
+                <default>false</default>
+                <label>Uplift is Null</label>
+            </value>
+            <value>
+                <fullName>UpliftNotMatch</fullName>
+                <default>false</default>
+                <label>Quote Uplift Did Not Match with Contract Uplift</label>
+            </value>
+            <value>
+                <fullName>DigitalRenewalJobFailed</fullName>
+                <default>false</default>
+                <label>Digital Renewal Job Failed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message channel for sending resource filter information.</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>Resource Filter data.</description>
+        <fieldName>filter</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Set true to force a filter reload from the database.</description>
+        <fieldName>reload</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Object mapping fuzzy match setting API names to values.</description>
+        <fieldName>fuzzyMatchSettings</fieldName>
+    </lightningMessageFields>
+    <masterLabel>ResourceFilterMessageChannel</masterLabel>
+</LightningMessageChannel>

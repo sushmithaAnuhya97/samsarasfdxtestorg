@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_PM_Edits_After_Product_Creation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND($Profile.Name  &lt;&gt;  &apos;System Administrator&apos;,  $User.X18_Digit_User_ID__c &lt;&gt; &apos;0051P000003IKiJQAW&apos;,
+OR(
+((TEXT(PRIORVALUE( Status__c ) )) = &apos;Ready to Launch&apos; &amp;&amp;
+TEXT(Status__c) = &apos;Ready to Launch&apos;),
+((TEXT(PRIORVALUE( Status__c ) )) = &apos;Launched GA&apos; &amp;&amp;
+TEXT(Status__c) = &apos;Launched GA&apos;),
+((TEXT(PRIORVALUE( Status__c ) )) = &apos;Product Creation&apos; &amp;&amp;
+TEXT(Status__c) = &apos;Product Creation&apos;),
+((TEXT(PRIORVALUE( Status__c ) )) = &apos;Launched EA&apos; &amp;&amp;
+TEXT(Status__c) = &apos;Launched EA&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>This product has already been approved. You may not make further edits except for updating the &apos;status&apos; field.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserGem__PastLead__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Past Lead</label>
+    <referenceTo>Lead</referenceTo>
+    <relationshipLabel>UserGems (Past Lead)</relationshipLabel>
+    <relationshipName>UserGemsPastLead</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

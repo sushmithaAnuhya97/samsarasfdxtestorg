@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Backlog_Calculation__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>A lookup to the related backlog calculation.</description>
+    <inlineHelpText>A lookup to the related backlog calculation.</inlineHelpText>
+    <label>Backlog Calculation</label>
+    <referenceTo>pse__Backlog_Calculation__c</referenceTo>
+    <relationshipLabel>Forecast Calculations</relationshipLabel>
+    <relationshipName>Forecast_Enhanced_Calculations</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

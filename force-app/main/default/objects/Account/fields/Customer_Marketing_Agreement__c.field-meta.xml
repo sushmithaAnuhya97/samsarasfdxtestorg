@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Marketing_Agreement__c</fullName>
+    <label>Customer Marketing Agreement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Publicity Rights</fullName>
+                <default>true</default>
+                <label>Full Publicity Rights</label>
+            </value>
+            <value>
+                <fullName>No Publicity Rights</fullName>
+                <default>false</default>
+                <label>No Publicity Rights</label>
+            </value>
+            <value>
+                <fullName>Limited Publicity Rights</fullName>
+                <default>false</default>
+                <label>Limited Publicity Rights</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

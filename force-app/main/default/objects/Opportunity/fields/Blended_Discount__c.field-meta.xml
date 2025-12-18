@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blended_Discount__c</fullName>
+    <description>Calculates discount based on Primary Quote. Uses Blended Discount if available; otherwise, computes from list price, amount, and rebates.</description>
+    <formula>IF(NOT(ISBLANK(SBQQ__PrimaryQuote__c)), Blended_Discount_CPQ__c,IF(List_Price__c &gt; 0,(List_Price__c-Amount+ABS(Sum_of_Rebates__c))/List_Price__c,0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Blended Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

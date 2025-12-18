@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OF_DC_Total__c</fullName>
+    <description>GTMS-27663 - -1*(FFM Amount + IF 3PF is not null, then + Competitor Buyout, If Is reimburable = Yes, then + Install costs)</description>
+    <formula>-1 * (Future_Free_Months_Amount__c + IF( Finance_Partner_Account__c = null,  Competitor_Buyout_Amount__c, IF(  TEXT(Is_Installation_Reimbursable__c) = &apos;Yes&apos;,  Total_Estimated_Installation_Costs__c, 0)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OF DC Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

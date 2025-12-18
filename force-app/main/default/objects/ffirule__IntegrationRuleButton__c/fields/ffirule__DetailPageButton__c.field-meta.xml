@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__DetailPageButton__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( OR(ffirule__ListObject__c==null,ffirule__ListObject__c == &apos;&apos; ) ,
+
+&apos;&lt;apex:page standardController=&quot;&apos; + ffirule__IntegrationRule__r.ffirule__SourceObject__c + &apos;&quot; extensions=&quot;ffirule.IntegrationRuleEngine&quot; action=&quot;&apos;+&apos;{&apos;+&apos;!&apos;+&apos;convert&apos;+&apos;}&apos;+&apos;&quot; lightningStylesheets=&quot;true&quot;&gt;&apos;+ BR() +&apos;&lt;ffirule:IntegrationRule engine=&quot;&apos;+&apos;{&apos;+&apos;!&apos;+&apos;engine&apos;+&apos;}&apos;+&apos;&quot;/&gt;&apos;+ BR() + &apos;&lt;/apex:page&gt;&apos;,
+
+&apos;&lt;apex:page standardController=&quot;&apos; + ffirule__ListObject__c + &apos;&quot; extensions=&quot;ffirule.IntegrationRuleEngine&quot; action=&quot;&apos;+&apos;{&apos;+&apos;!&apos;+&apos;convert&apos;+&apos;}&apos;+&apos;&quot; lightningStylesheets=&quot;true&quot;&gt;&apos;+ BR() +&apos;&lt;ffirule:IntegrationRule engine=&quot;&apos;+&apos;{&apos;+&apos;!&apos;+&apos;engine&apos;+&apos;}&apos;+&apos;&quot;/&gt;&apos;+ BR() + &apos;&lt;/apex:page&gt;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Detail Page Button</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

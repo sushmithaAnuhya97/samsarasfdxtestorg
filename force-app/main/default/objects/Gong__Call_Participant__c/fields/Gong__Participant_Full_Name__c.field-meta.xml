@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gong__Participant_Full_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(Gong__Contact_Participant__c) , 
+	IF( ISBLANK(Gong__Lead_Participant__c) , 
+		IF( ISBLANK(Gong__User_Participant__c) , Gong__Full_Name_Temp__c , Gong__User_Participant__r.FirstName &amp; &quot; &quot; &amp;Gong__User_Participant__r.LastName),
+			Gong__Lead_Participant__r.FirstName &amp;&quot; &quot; &amp;Gong__Lead_Participant__r.LastName ), 
+				Gong__Contact_Participant__r.FirstName  &amp; &quot; &quot; &amp; Gong__Contact_Participant__r.LastName )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Participant Full Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

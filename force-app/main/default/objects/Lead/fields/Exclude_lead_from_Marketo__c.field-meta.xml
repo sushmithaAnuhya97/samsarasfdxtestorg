@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_lead_from_Marketo__c</fullName>
+    <description>Evaluates as true if lead is NOT created by Marketo. Only leads created by the Marketo user should sync immediately to Marketo.</description>
+    <formula>IF( 
+OR(CreatedById  &lt;&gt; &quot;0051P000003HZK5&quot;, mkto71_Exclude_from_Marketo_Sync__c =TRUE)
+,
+TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Evaluates as true if lead is NOT created by Marketo</inlineHelpText>
+    <label>Exclude lead from Marketo</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

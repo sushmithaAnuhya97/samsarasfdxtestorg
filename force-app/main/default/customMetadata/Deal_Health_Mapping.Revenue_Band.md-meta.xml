@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Revenue Band</label>
+    <protected>false</protected>
+    <values>
+        <field>Logic_Type__c</field>
+        <value xsi:type="xsd:string">Formula</value>
+    </values>
+    <values>
+        <field>Logic__c</field>
+        <value xsi:type="xsd:string">IF(OR(ISBLANK(Total_parent_child_ARR__c ),Total_parent_child_ARR__c &lt;= 50000),&apos;Revenue Band 1&apos;,IF(AND(50000 &lt; Total_parent_child_ARR__c,Total_parent_child_ARR__c &lt;= 250000), &apos;Revenue Band 2&apos;,IF(250000 &lt; Total_parent_child_ARR__c,&apos;Revenue Band 3&apos;,&apos;&apos;)))</value>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Source_Field__c</field>
+        <value xsi:type="xsd:string">Revenue_Band__c</value>
+    </values>
+    <values>
+        <field>Target_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

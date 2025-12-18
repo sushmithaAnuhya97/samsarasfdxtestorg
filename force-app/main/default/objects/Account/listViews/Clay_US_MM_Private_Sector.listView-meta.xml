@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clay_US_MM_Private_Sector</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>X18_Digit_Account_ID__c</columns>
+    <columns>Domain_Name__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>Billing_State__c</columns>
+    <columns>ACCOUNT.ADDRESS1_ZIP</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>LinkedIn_URL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_COUNTRY_CODE</field>
+        <operation>equals</operation>
+        <value>US</value>
+    </filters>
+    <filters>
+        <field>Owner_Role__c</field>
+        <operation>contains</operation>
+        <value>MM</value>
+    </filters>
+    <filters>
+        <field>Public_Sector__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notContain</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>Owner_Role__c</field>
+        <operation>notContain</operation>
+        <value>SLED</value>
+    </filters>
+    <label>Clay - US MM Private Sector</label>
+</ListView>

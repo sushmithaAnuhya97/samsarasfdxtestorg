@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-26118 &amp; GTMS-26120: to map Registration Expiration Date to 150 days from CR created Date</description>
+        <name>Assign_Default_Values</name>
+        <label>Assign Default Values</label>
+        <locationX>204</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Registration_Expiration_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Expiration_Date_Formula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Partner_Account_Value_Check</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26107 &amp; GTMS-26124: Created as part of Partners H1 project to assign Payout percentage and Calculate Rebate From field values</description>
+        <name>Assign_Fixed_Percentage_For_Exluded_Accounts</name>
+        <label>Assign Fixed Percentage For Exluded Accounts</label>
+        <locationX>204</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Calculate_Rebate_From__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>List Amount</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Sourced_Payout_Percentage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>20.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Influence_Payout_Percentage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>20.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Sourced_Payout_Model__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Percentage</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Influence_Payout_Model__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Percentage</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>GTMS-26117: Created as part of Partner H1 project to map Partner Program Enrollment data to CR based on Partner Account and Partner Program</description>
+        <name>Assign_PPE_data_to_CR_record</name>
+        <label>Assign PPE data to CR record</label>
+        <locationX>50</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Partner_Enrollment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Minimum_Customer_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Minimum_Customer_Discount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Sourced_Payout_Model__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Sourced_Payout_Model__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Influence_Payout_Model__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Influence_Payout_Model__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Sourced_Payout_Fee__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Sourced_Payout_Fee__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Influence_Payout_Fee__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Influence_Payout_Fee__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Influence_Payout_Percentage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Influence_Payout_Percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Sourced_Payout_Percentage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.Sourced_Payout_Percentage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Program_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Records.SalesProgramType__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Partner_Account_Included_in_Specific_Account_List</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>GTMS-26120: Add Deal Registration condition</description>
+        <name>Is_Deal_Registration_CR</name>
+        <label>Is Deal Registration CR</label>
+        <locationX>336</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Partner_Account_Value_Check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Not a Deal Registration</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Deal_Registration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_Deal_Registration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Default_Values</targetReference>
+            </connector>
+            <label>Yes, Deal Registration</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26107 &amp; GTMS-26124: Created as part of Partner H1 project to check if the Partner Account included in Excluded Accounts Customer Label</description>
+        <name>Is_Partner_Account_Included_in_Specific_Account_List</name>
+        <label>Is Partner Account Included in Specific Account List</label>
+        <locationX>336</locationX>
+        <locationY>1187</locationY>
+        <defaultConnectorLabel>No, Partner Account Doesn&apos;t Exist in the list</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Partner_Account_Is_in_the_List</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Label.Partner_Referral_Exclude_Account</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.Channel_Partner__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Fixed_Percentage_For_Exluded_Accounts</targetReference>
+            </connector>
+            <label>Yes, Partner Account Is in the List</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26117: Created as part of Partner H1 project to check if the Partner Program Enrollment record exist or not</description>
+        <name>Is_Partner_Program_Enrollment_Exists</name>
+        <label>Is Partner Program Enrollment Exists</label>
+        <locationX>182</locationX>
+        <locationY>803</locationY>
+        <defaultConnector>
+            <targetReference>Is_Partner_Account_Included_in_Specific_Account_List</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Partner Program Enrollment record doesnt exists</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Partner_Program_Enrollment_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_Program_Enrollment_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_PPE_data_to_CR_record</targetReference>
+            </connector>
+            <label>Yes, Partner Program Enrollment Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26117: Created as part of Partner H1 project to check if the partner Account and Partner Program values are filled</description>
+        <name>Partner_Account_Value_Check</name>
+        <label>Partner Account Value Check</label>
+        <locationX>336</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>Is_Partner_Account_Included_in_Specific_Account_List</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Doesnt Have Partner Account or Partner Program</defaultConnectorLabel>
+        <rules>
+            <name>Has_Partner_Account_And_partner_program</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Channel_Partner__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Enrollment__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Partner_Program_Enrollment_Records</targetReference>
+            </connector>
+            <label>Has Partner Account and Partner Program</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26117: To map Partner Program Enrollment record data based on Partner Account and Partner Program
+GTMS-26120: Added 150 Days Expiration date
+GTMS-26117 &amp; GTMS-26124: Added Partner Excluded Account logic set based on which field we need to calculate Rebate amount</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to calculate Registraion Expiration Date</description>
+        <name>Expiration_Date_Formula</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}+180</expression>
+    </formulas>
+    <interviewLabel>Channel Relationship Before Insert Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Channel Relationship Before Insert Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>GTMS-26117: Created as part of Partner H1 project to fetch Program Enrollment records based on Partner Account and Partner Program</description>
+        <name>Get_Partner_Program_Enrollment_Records</name>
+        <label>Get Partner Program Enrollment Records</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Partner_Program_Enrollment_Exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Partner_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Channel_Partner__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Enrollment__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Partner_Program_Enrollment__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Deal_Registration_CR</targetReference>
+        </connector>
+        <object>Channel_Relationship__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>currentItem_Existing_CRs_with_Same_Partner_and_Program</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Sales_Only_Pipeline_Percentage__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF( LeanData__Total_Pipeline__c = 0, 0 , LeanData__Sales_Only_Pipeline__c / LeanData__Total_Pipeline__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Only Pipeline Percentage</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registered_Insurance_Partner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Insurance partner that has registered this end customer.</description>
+    <label>Current Insurance Provider</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Partner_Persona__c</field>
+            <operation>equals</operation>
+            <value>Insurance Broker, Insurance Carrier</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Accounts (Registered Insurance Partner)</relationshipLabel>
+    <relationshipName>Insurance_Partner_End_Customers</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Synchronous_Update_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This checkbox is for system use.  It is intended to be checked in conjunction with any insert/update of the Timecard Split executed within a future method, and will then ensure that no downstream future methods are called.  In Salesforce, a future method can&apos;t call another future method.  Triggers should then unset this checkbox so that it never remains checked persistently.
+
+Danger:  only check this flag for changes NOT on the &quot;critical&quot; path with respect to governor limits.  For example, it is ok to check this flag if the only change to the Expense is to modify the Billed/Invoiced flags and the Billing Event Item lookup value.</description>
+    <inlineHelpText>This checkbox is for system use.  It is intended to be checked in conjunction with any insert/update of the Timecard Split executed within a future method, and will then ensure that no downstream future methods are called.</inlineHelpText>
+    <label>Synchronous Update Required</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

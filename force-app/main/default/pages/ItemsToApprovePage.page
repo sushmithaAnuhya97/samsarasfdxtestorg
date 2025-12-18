@@ -1,0 +1,31 @@
+<apex:page controller="ItemsToApproveController" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock title="Items To Approve">
+            <apex:pageblockTable value="{!approvalLists}" var="approval" rendered="{!IF(ApprovalListSize != 0,TRUE,FALSE)}">
+                <apex:column headerValue="Action">
+                    <apex:outputLink value="/{!approval.ProcessId}/e?et=REASSIGN" rendered="{!IF(approval.isStandard,TRUE,FALSE)}" target="_blank">Reassign</apex:outputLink>
+                    <apex:outputLink value="/apex/sbaa__Approve?id={!approval.ProcessId}" rendered="{!IF(!approval.isStandard,TRUE,FALSE)}" target="_blank">Approve</apex:outputLink> |
+                    <apex:outputLink value="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!approval.ProcessId}" target="_blank" rendered="{!IF(approval.isStandard,TRUE,FALSE)}">
+                        Approve / Reject</apex:outputLink>
+                    <apex:outputLink value="/apex/sbaa__Reject?id={!approval.ProcessId}" target="_blank" rendered="{!IF(!approval.isStandard,TRUE,FALSE)}">
+                        Reject</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Type">
+                    <apex:outputText value="{!approval.objectType}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Related To">
+                    <apex:outputLink value="/{!approval.TargetObjectId}" target="_blank">{!approval.RelatedTo}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Most Recent Approver">
+                    <apex:outputText value="{!approval.MostRecentApprover}" />
+                </apex:column>
+                <apex:column headerValue="Date Submitted">
+                    <apex:outputText value="{!approval.DateSubmitted}" />
+                </apex:column>
+            </apex:pageblockTable>
+            <apex:pageblockSection rendered="{!IF(ApprovalListSize = 0, TRUE,FALSE)}">
+                <apex:outputLabel >No records to display</apex:outputLabel>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

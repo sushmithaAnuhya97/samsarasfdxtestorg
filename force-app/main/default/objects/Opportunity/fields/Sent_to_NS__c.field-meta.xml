@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sent_to_NS__c</fullName>
+    <formula>OR(NOT(ISBLANK(netsuite_conn__NetSuite_Sales_Order_Number__c)),  NOT(ISBLANK(Netsuite_Transfer_Order__c )))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sent to NS</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_Sales_Price__c</fullName>
+    <description>Selected sales price for the line (multiplies by term if license).</description>
+    <formula>IF(LEFT(Product_Code_Copy__c,3)=&quot;LIC&quot;,IF(Opportunity.Express_Flag__c=1,Selected_Sales_Price__c*12, Selected_Sales_Price__c*License_Term_Copy__c),Selected_Sales_Price__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Term Price per Unit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Delete_Prior_Calculation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When selected, the previous calculations and details are deleted when utilization is calculated. Whether the calculation is deleted also depends on the combination of RPG, resource, and time period, or the time period parent combination. This option is applicable when the current utilization calculation is the master and uses the same logic as clearing the Is Report Master checkbox.</description>
+    <inlineHelpText>When selected, previous calculations and details are deleted when utilization is calculated based on either the resource or the time period or parent combination using the same logic used by Is Report Master.</inlineHelpText>
+    <label>Delete Prior Calculation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

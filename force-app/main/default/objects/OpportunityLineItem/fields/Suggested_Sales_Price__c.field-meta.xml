@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Suggested_Sales_Price__c</fullName>
+    <description>This is the suggested sales price taking into consideration license term/ and or deal reg source. 
+
+Formula is MAX(License Term Discount, Deal Reg Discount) for licenses and MAX(Deal Reg Discount) for Hardware.</description>
+    <externalId>false</externalId>
+    <formula>IF( LEFT(Product_Code_Copy__c,3)=&quot;LIC&quot;,
+IF(AND(License_Term_Copy__c&lt;36,NOT(ISBLANK(License_Term_Copy__c))), IF(Deal_Reg_Discount__c, ListPrice*0.75/12, ListPrice/12),
+IF(AND(License_Term_Copy__c&lt;60,NOT(ISBLANK(License_Term_Copy__c))),IF( Deal_Reg_Discount__c, ListPrice*0.75/12, ListPrice*0.8/12),
+IF(AND(License_Term_Copy__c&lt;84,NOT(ISBLANK(License_Term_Copy__c))),ListPrice*0.7/12,
+ListPrice*0.7/12))),
+IF( Deal_Reg_Discount__c,ListPrice*0.75,ListPrice))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Suggested Sales Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

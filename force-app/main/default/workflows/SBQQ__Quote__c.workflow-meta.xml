@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alert_for_Shipping_method_and_Carrier</fullName>
+        <description>Email Alert for Shipping method and Carrier</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>orders-requests@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SBQQUOTE_Fedex_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Renewal_Auto_Renew_Escalation_Email</fullName>
+        <description>Renewal Auto-Renew Escalation Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>renewalops@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Renewal_Email_Templates/Renewal_Escalation_Criteria</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Stamp_Deal_Registration_Discount</fullName>
+        <field>Deal_Registration_Discount__c</field>
+        <formula>IF(ISBLANK( SBQQ__Opportunity2__r.Reseller_Partner__r.Deal_Registration_Discount__c), 0.25, IF(SBQQ__Opportunity2__r.Reseller_Partner__r.Deal_Registration_Discount__c &lt; 0.25, 0.25, SBQQ__Opportunity2__r.Reseller_Partner__r.Deal_Registration_Discount__c))</formula>
+        <name>Stamp Deal Registration Discount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_to_VCK</fullName>
+        <field>Ship_From_Location__c</field>
+        <literalValue>VCK</literalValue>
+        <name>Update Quote to VCK</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Renewal Quote Checkbox</fullName>
+        <active>false</active>
+        <formula>SBQQ__Opportunity2__r.Renewal__c = true</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>SBQQ__Quote__c.Contract_End_Date__c</offsetFromField>
+            <timeLength>-90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

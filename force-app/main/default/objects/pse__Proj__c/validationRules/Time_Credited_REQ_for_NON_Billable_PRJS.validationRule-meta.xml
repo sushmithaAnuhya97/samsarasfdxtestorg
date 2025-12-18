@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Credited_REQ_for_NON_Billable_PRJS</fullName>
+    <active>true</active>
+    <description>Projects that are non billable (billable checkbox unchecked) time credited is required.</description>
+    <errorConditionFormula>AND(
+    NOT(pse__Is_Billable__c), 
+    ISPICKVAL(pse__Stage__c, &quot;In Progress&quot;),
+    NOT(pse__Time_Credited__c),
+    CreatedDate &gt;= DATETIMEVALUE(TEXT(TODAY()) &amp; &quot; 00:00:00&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>pse__Time_Credited__c</errorDisplayField>
+    <errorMessage>Time Credit &quot;True&quot; required for non-billable projects.</errorMessage>
+</ValidationRule>

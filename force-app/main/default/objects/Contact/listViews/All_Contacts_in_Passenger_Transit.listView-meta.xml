@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Contacts_in_Passenger_Transit</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Last_Call__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Account.Closed_Lost_Opportunities__c</columns>
+    <columns>Account.Last_Marketing_Engagement_Date__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Owner_Name__c</field>
+        <operation>equals</operation>
+        <value>Collin Shaw</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Assignment_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_MONTH</value>
+    </filters>
+    <filters>
+        <field>Account.Customer__c</field>
+        <operation>equals</operation>
+        <value>0.0</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Account.Open_Opportunity__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Contacts (Added Recently)</label>
+</ListView>

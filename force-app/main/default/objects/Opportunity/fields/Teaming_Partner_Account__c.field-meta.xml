@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Teaming_Partner_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Ticket : GTMS-14415; Created to replace Teaming_Partner__c text field.</description>
+    <label>Teaming Partner</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Opportunities (Teaming Partner)</relationshipLabel>
+    <relationshipName>Opportunities2</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

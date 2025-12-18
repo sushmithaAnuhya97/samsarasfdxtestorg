@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Analysis1</fullName>
+    <columns>NAME</columns>
+    <columns>fferpcore__ReportingCode__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>fferpcore__AnalysisItem__c.fferpcore__Analysis_1</value>
+    </filters>
+    <label>Analysis 1</label>
+</ListView>

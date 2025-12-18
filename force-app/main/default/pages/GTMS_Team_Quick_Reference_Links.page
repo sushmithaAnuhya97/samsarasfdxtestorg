@@ -1,0 +1,49 @@
+<apex:page >
+<style>
+
+table {
+  width: 95%;
+}
+
+
+ th{
+    background-color: lightblue;
+    font-weight: bold;
+    font-size: 18px;
+    text-align:center
+    
+ }
+ 
+ 
+</style>
+<apex:outputPanel layout="block" style="overflow: auto; width: 400px; height: 400px;" >
+<apex:form >
+
+<apex:pageBlock >
+
+
+
+
+    <table border="1" cellpadding="6" cellspacing="0"   >
+       
+             <ol>
+       <li><apex:outputLink value="https://docs.google.com/spreadsheets/d/1ofm_NcLFjLMTsAdNwYqukKbQvEBQwbWsc8nmHUrrBAY/edit?usp=sharing"><p style="color:blue; font-size: 15px;"><b>GTMS_L2-Shift Analyses</b></p></apex:outputLink> </li>
+       <li> <apex:outputLink value="https://docs.google.com/spreadsheets/d/1CB8sL-8DR-X2-H0anpIfm8m_wQBu6Mph/edit?usp=sharing&ouid=113178885490575877108&rtpof=true&sd=true"><p style="color:blue; font-size: 15px;"><b>Prod - Hyperforce Assistant Document</b></p></apex:outputLink> </li>
+       <li><apex:outputLink value="https://samsaradev.atlassian.net/l/cp/8PPa1Zvk"><p style="color:blue; font-size: 15px;"><b>L2_Knowledge+Transfer+KT</b></p></apex:outputLink> </li>
+       <li><apex:outputLink value="https://samsaradev.atlassian.net/jira/software/c/projects/GTMS/boards/2386?sprints=7106"><p style="color:blue; font-size: 15px;"><b>L2 Support Ongoing Sprint</b></p></apex:outputLink> </li>
+       <li><apex:outputLink value="https://docs.google.com/spreadsheets/d/16kvUXKex_DxpicfHUe7_zzXdY5ZfIMbo/edit?usp=sharing&ouid=111351566470326677291&rtpof=true&sd=true"><p style="color:blue; font-size: 15px;"><b>GTMS-L2-Daily Stand Up- Updates</b></p></apex:outputLink> </li>
+       <li><apex:outputLink value="https://docs.google.com/presentation/d/1fNLa-aa5D1WAs28Y-cZWNSwkQaQaD9BD/edit#slide=id.p1"><p style="color:blue; font-size: 15px;"><b>GTMS Team Hierarchy</b></p></apex:outputLink> </li>
+
+       <li><apex:outputLink value="https://samsaradev.atlassian.net/wiki/spaces/~61485b0a41af83007118dc3d/pages/2836365359/GTMS+L2"><p style="color:blue; font-size: 15px;"><b>GTMS L2 - Confluence Page</b></p></apex:outputLink> </li>
+       <li><apex:outputLink value="https://samsaradev.atlassian.net/wiki/spaces/BUS/pages/3341844727/GTMS+New+Joiners+Onboarding+Setup"><p style="color:blue; font-size: 15px;"><b>GTMS New Joiners Onboarding Setup</b></p></apex:outputLink> </li>
+
+
+       </ol>
+           
+    </table>
+    
+    </apex:pageBlock>
+    
+    </apex:form>
+     </apex:OutputPanel>
+</apex:page>

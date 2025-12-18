@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Webstore_Eligibility_Limitation__c</fullName>
+    <label>Webstore Eligibility Limitation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quarterly Billing</fullName>
+                <default>false</default>
+                <label>Quarterly Billing</label>
+            </value>
+            <value>
+                <fullName>Custom Billing</fullName>
+                <default>false</default>
+                <label>Custom Billing</label>
+            </value>
+            <value>
+                <fullName>Merged Dashboards</fullName>
+                <default>false</default>
+                <label>Merged Dashboards</label>
+            </value>
+            <value>
+                <fullName>Upfitter Account</fullName>
+                <default>false</default>
+                <label>Upfitter Account</label>
+            </value>
+            <value>
+                <fullName>Purchases with Partner</fullName>
+                <default>false</default>
+                <label>Purchases with Partner</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Missing Product - VGPS</fullName>
+                <default>false</default>
+                <label>Missing Product - VGPS</label>
+            </value>
+            <value>
+                <fullName>Missing Product - Sites</fullName>
+                <default>false</default>
+                <label>Missing Product - Sites</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Page_Type__c</fullName>
+    <label>Page Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Home</fullName>
+                <default>false</default>
+                <label>Home</label>
+            </value>
+            <value>
+                <fullName>Record Home</fullName>
+                <default>false</default>
+                <label>Record Home</label>
+            </value>
+            <value>
+                <fullName>Record Detail</fullName>
+                <default>false</default>
+                <label>Record Detail</label>
+            </value>
+            <value>
+                <fullName>Record Update</fullName>
+                <default>false</default>
+                <label>Record Update</label>
+            </value>
+            <value>
+                <fullName>Record Create</fullName>
+                <default>false</default>
+                <label>Record Create</label>
+            </value>
+            <value>
+                <fullName>Reports Home</fullName>
+                <default>false</default>
+                <label>Reports Home</label>
+            </value>
+            <value>
+                <fullName>Dashboards Home</fullName>
+                <default>false</default>
+                <label>Dashboards Home</label>
+            </value>
+            <value>
+                <fullName>Task home</fullName>
+                <default>false</default>
+                <label>Task home</label>
+            </value>
+            <value>
+                <fullName>Task Detail From List</fullName>
+                <default>false</default>
+                <label>Task Detail From List</label>
+            </value>
+            <value>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+                <label>Chatter</label>
+            </value>
+            <value>
+                <fullName>Chatter Group Detail</fullName>
+                <default>false</default>
+                <label>Chatter Group Detail</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

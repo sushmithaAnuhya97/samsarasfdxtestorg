@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_License_with_Tax__c</fullName>
+    <formula>ROUND(IF(ISBLANK(Shipping_Address_NEW__c), Estimated_Monthly_Payment__c, Estimated_Monthly_Payment__c +  Monthly_License_Sales_Tax__c) , 2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Amount customer pays on monthly basis for licenses. Monthly sales tax is included. Does not include tax if shipping address is blank.</inlineHelpText>
+    <label>Monthly License with Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

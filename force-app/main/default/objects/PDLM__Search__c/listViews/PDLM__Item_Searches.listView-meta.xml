@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Item_Searches</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PDLM__Tags__c</field>
+        <operation>includes</operation>
+        <value>Item Searches</value>
+    </filters>
+    <label>Item Searches</label>
+</ListView>

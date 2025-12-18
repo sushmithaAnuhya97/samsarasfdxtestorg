@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Salesforce account representing the location the product is shipped to. The account must be a descendant of the related billing document account and contain complete address details. Descendants up to five relationships deep in the hierarchy are valid.</description>
+    <inlineHelpText>Salesforce account representing the location the product is shipped to. The account must be a descendant of the related billing document account and contain complete address details. Descendants up to five relationships deep in the hierarchy are valid.</inlineHelpText>
+    <label>Shipping Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Parent.Id</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Billing Document Line Items</relationshipLabel>
+    <relationshipName>RelatedBillingDocumentLineItems</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

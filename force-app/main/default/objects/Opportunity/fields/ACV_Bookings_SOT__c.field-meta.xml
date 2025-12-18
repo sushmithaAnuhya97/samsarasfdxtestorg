@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_Bookings_SOT__c</fullName>
+    <formula>IF(
+CloseDate&gt;=DATE(2024,11,03),
+(IF(ACV_Bookings__c!=0,
+ACV_Bookings__c,
+IF(
+OR(of_Accessories__c!=0,of_HW_Products__c!=0,of_LIC_Products__c!=0,of_Serialized_Products__c!=0, SKP__c != 0),
+0,
+IF(OR(ISNULL(License_Term__c),License_Term__c=0),Amount, Amount / License_Term__c *12 )
+))),
+ACV_Bookings_Copy__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV Bookings</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

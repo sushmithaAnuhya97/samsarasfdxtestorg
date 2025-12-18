@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JIRA_Project__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(  ISPICKVAL(Area_Impacted__c,&apos;API/Integrations&apos;), &apos;API/Integrations&apos;, 
+  if(ISPICKVAL(Area_Impacted__c,&apos;DVIR&apos;), &apos;Compliance&apos;, 
+    if(ISPICKVAL(Area_Impacted__c,&apos;HOS &amp; Compliance&apos;), &apos;Compliance&apos;, 
+     if(ISPICKVAL(Area_Impacted__c,&apos;Alerts&apos;), &apos;Core Fleet&apos;, 
+      if(ISPICKVAL(Area_Impacted__c,&apos;Cabling&apos;), &apos;Firmware&apos;, 
+        if(ISPICKVAL(Area_Impacted__c,&apos;Diagnostics&apos;), &apos;Firmware&apos;,
+         if(ISPICKVAL(Area_Impacted__c,&apos;WIFI&apos;), &apos;Firmware&apos;,  
+          if(ISPICKVAL(Area_Impacted__c,&apos;Driver App (Other)&apos;), &apos;Compliance&apos;, 
+            if(ISPICKVAL(Area_Impacted__c,&apos;GPS&apos;), &apos;Firmware&apos;, 
+              if(ISPICKVAL(Area_Impacted__c,&apos;Maintenance&apos;), &apos;Core Fleet&apos;,
+               if(ISPICKVAL(Area_Impacted__c,&apos;Reports&apos;), &apos;Core Fleet&apos;,
+               if(ISPICKVAL(Area_Impacted__c,&apos;Dashboard-UI/ Other&apos;), &apos;Core Fleet&apos;,
+                if(ISPICKVAL(Area_Impacted__c,&apos;Temperature&apos;), &apos;Asset Tracking&apos;,
+                if(ISPICKVAL(Area_Impacted__c,&apos;Asset Tracking&apos;), &apos;Asset Tracking&apos;,
+                 if(ISPICKVAL(Area_Impacted__c,&apos;K-12&apos;), &apos;Core Fleet&apos;,
+                  if(ISPICKVAL(Area_Impacted__c,&apos;Industrial&apos;), &apos;Industrial&apos;,
+                   if(ISPICKVAL(Area_Impacted__c,&apos;Routing &amp; Dispatch&apos;), &apos;Routing/Messaging&apos;,
+                     if(ISPICKVAL(Area_Impacted__c,&apos;Cameras&apos;), &apos;Safety&apos;,
+                      if(ISPICKVAL(Area_Impacted__c,&apos;Safety (non-camera)&apos;), &apos;Safety&apos;,
+                       if(ISPICKVAL(Area_Impacted__c,&apos;Asset-Tracking&apos;), &apos;Asset Tracking&apos;,&apos;&apos;))))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>JIRA Project</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

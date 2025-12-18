@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Samsara_Dashboard_Email__c</fullName>
+    <description>This field should be used only by samsara dashboard integration for when creating cases. (ContactEmail field will be added winter 2017, but rather than waiting, we made this field so the dashboard can make a case and populate this for email. The Trigger FindAndMatchCaseContact (name?) should use this to create a new contact or find an existing contact and link it to this case.</description>
+    <externalId>false</externalId>
+    <label>Samsara Dashboard Email</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

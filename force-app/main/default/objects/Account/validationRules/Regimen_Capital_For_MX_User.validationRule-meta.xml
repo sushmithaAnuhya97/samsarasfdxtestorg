@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regimen_Capital_For_MX_User</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT($Permission.Validation_Rule_Exemption)&amp;&amp; 
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c)&amp;&amp; ISPICKVAL(Regimen_Capital__c, &quot;S.C. de R.L. de C.V.&quot;) &amp;&amp;
+$Profile.Name != &quot;Salesforce Sales - CPQ Mexico&quot;</errorConditionFormula>
+    <errorMessage>The &apos;S.C. de R.L. de C.V.&apos; value in the Regimen Capital field can only be selected by MX customers.</errorMessage>
+</ValidationRule>

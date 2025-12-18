@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Tasks_Total_Percent_Complete_Points__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF (pse__Tasks_Total_Points__c=0, 0, pse__Tasks_Total_Points_Complete__c/pse__Tasks_Total_Points__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tasks Total Percent Complete (Points)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Amount__c</fullName>
+    <description>Initial Amount Billed Pre-Tax based on Selected Payment Term</description>
+    <formula>IF(
+    ISPICKVAL(Selected_Payment_Type__c, &quot;Upfront Payments&quot;),
+    Amount,
+    IF(
+        ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Annual&quot;),
+        MIN(Amount, Amount / License_Term__c * 12),
+        IF(
+            ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Semi-Annual&quot;),
+            MIN(Amount, Amount / License_Term__c * 6),
+            IF(
+                ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Quarterly&quot;),
+                MIN(Amount, Amount / License_Term__c * 3),
+                IF(
+                    ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Monthly&quot;),
+                    Amount / License_Term__c,
+                    Amount
+                )
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Initial Amount Billed Pre-Tax based on Selected Payment Term</inlineHelpText>
+    <label>Initial Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

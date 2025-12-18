@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Unresolved_Script_Errors_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__Process__c</columns>
+    <columns>FLODocs__Issue_Description__c</columns>
+    <columns>FLODocs__Type__c</columns>
+    <columns>FLODocs__Status__c</columns>
+    <columns>FLODocs__Parent_Change_Request__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>FLODocs__Assigned__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Type__c</field>
+        <operation>equals</operation>
+        <value>Script Error</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed As Process Issue,Converted to Change Request,Closed</value>
+    </filters>
+    <label>Unresolved Script Errors (v2)</label>
+</ListView>

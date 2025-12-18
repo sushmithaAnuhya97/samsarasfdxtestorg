@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PLSC__Partner_Access_Edit__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Partner Access Edit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Global Media supplier - USA</fullName>
+                <default>false</default>
+                <label>Global Media supplier - USA</label>
+            </value>
+            <value>
+                <fullName>Global Media supplier - Canada</fullName>
+                <default>false</default>
+                <label>Global Media supplier - Canada</label>
+            </value>
+            <value>
+                <fullName>Acme supplier - USA</fullName>
+                <default>false</default>
+                <label>Acme supplier - USA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

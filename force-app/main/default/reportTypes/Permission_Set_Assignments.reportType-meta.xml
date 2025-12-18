@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>PermissionSetAssignment</baseObject>
+    <category>admin</category>
+    <deployed>false</deployed>
+    <description>Users assigned or not assigned specific Permission Sets</description>
+    <label>Permission Set Assignments</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PermissionSet</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PermissionSetGroup</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.UserRole</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Profile</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.X18_Digit_User_ID__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Level__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Segment__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Manager_ID__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assignee.Manager_Name__c</field>
+            <table>PermissionSetAssignment</table>
+        </columns>
+        <masterLabel>Permission Set Assignments</masterLabel>
+    </sections>
+</ReportType>

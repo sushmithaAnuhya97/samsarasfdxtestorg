@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Tabs_Active_Pipeline__c</fullName>
+    <description>For CML/ADR tabs reports.</description>
+    <formula>(
+    TEXT(StageName) = &quot;Qualified&quot; ||
+    TEXT(StageName) = &quot;Trial&quot; ||
+    TEXT(StageName) = &quot;Proposal&quot; ||
+    TEXT(StageName) = &quot;Decision&quot; ||
+    TEXT(StageName) = &quot;Purchase&quot; ||
+    TEXT(StageName) = &quot;Closing&quot; ||
+    TEXT(StageName) = &quot;Orders Processing&quot; ||
+    TEXT(StageName) = &quot;Ready to Ship&quot;
+) &amp;&amp;
+MONTH(CloseDate) = MONTH(TODAY())</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CML/ADR Tabs: Active Pipeline</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

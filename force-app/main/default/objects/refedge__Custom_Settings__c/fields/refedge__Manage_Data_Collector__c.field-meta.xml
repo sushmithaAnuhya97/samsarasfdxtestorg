@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Manage_Data_Collector__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;DataCollectorManagePage?customSettingId=&apos;+ Id , &apos;Manage&apos;, &apos;_blank&apos;)</formula>
+    <inlineHelpText>Allows the creation and customization of Data Collector forms that will be sent to Opportunity Owners to gather information. Also provides management and configuration for all Data Collector notifications.</inlineHelpText>
+    <label>Manage Data Collector</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

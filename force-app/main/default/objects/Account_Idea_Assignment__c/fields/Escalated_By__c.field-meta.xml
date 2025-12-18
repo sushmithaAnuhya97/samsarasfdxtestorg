@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalated_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>added for GTMS-25822</description>
+    <label>Escalated By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Related_Accounts</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Recurring_Bill_Date__c</fullName>
+    <formula>IF(SBQQ__Opportunity2__r.Billing_360_Transaction__c, 
+					IF(NOT(ISBLANK(Billing_Ann_Date__c)), Billing_Ann_Date__c,  
+   IF( AND(NOT(ISBLANK(SBQQ__Account__r.Next_Recurring_Bill_Date__c)), NOT( ISBLANK(Derived_Next_Bill_Date__c) ) , SBQQ__Opportunity2__r.CloseDate &gt; SBQQ__Account__r.Next_Recurring_Bill_Date__c) , 
+      Derived_Next_Bill_Date__c, 
+      IF(NOT(ISBLANK(SBQQ__Account__r.Next_Recurring_Bill_Date__c)),
+         SBQQ__Account__r.Next_Recurring_Bill_Date__c,
+         NULL))), NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Next Recurring Bill Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

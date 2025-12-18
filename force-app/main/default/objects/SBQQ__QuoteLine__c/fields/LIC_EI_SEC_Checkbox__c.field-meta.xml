@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LIC_EI_SEC_Checkbox__c</fullName>
+    <formula>AND(SBQQ__ProductCode__c = &apos;LIC-EI-SEC&apos;, LineItem_type__c !=&apos;Amended Line&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>LIC-EI-SEC-Checkbox</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

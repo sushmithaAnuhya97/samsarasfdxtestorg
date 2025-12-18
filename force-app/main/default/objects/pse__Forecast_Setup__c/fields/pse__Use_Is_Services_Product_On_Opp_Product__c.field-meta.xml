@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Use_Is_Services_Product_On_Opp_Product__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If you select Opportunity Product, only opportunity products that have IsServicesProductLine checked are included. If you select Product, only opportunity products that have IsServicesProduct checked on the product itself are included.</description>
+    <inlineHelpText>If you select Opportunity Product, only opportunity products that have IsServicesProductLine checked are included. If you select Product, only opportunity products that have IsServicesProduct checked on the product itself are included.</inlineHelpText>
+    <label>Use Is Services Product On Opp Product</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opportunity Product</fullName>
+                <default>false</default>
+                <label>Opportunity Product</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>true</default>
+                <label>Product</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SelectPaymentType</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),NOT(Associated_Opportunity_Type__c == &apos;Promo Opportunity&apos;),NOT(Associated_Opportunity_Type__c == &apos;Free Trial Opportunity&apos;), TEXT(ApprovalStatus__c) == &apos;Approved&apos;,  TEXT(Selected_Payment_Type__c) == Null)
+&amp;&amp;
+TEXT(Configuration_Segment__c) != &quot;Express&quot;
+&amp;&amp;
+TEXT(SBQQ__Opportunity2__r.Type) == &quot;Revenue Opportunity&quot;
+&amp;&amp;
+NOT(  $Permission.NetSuite_Service_User_Permission )</errorConditionFormula>
+    <errorMessage>Please select a payment type prior to submitting for approval.</errorMessage>
+</ValidationRule>

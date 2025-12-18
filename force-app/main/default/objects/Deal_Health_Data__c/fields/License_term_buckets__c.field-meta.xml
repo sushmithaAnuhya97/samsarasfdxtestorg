@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_term_buckets__c</fullName>
+    <description>Created as part of Deal Health Project</description>
+    <label>License term buckets</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&lt;=3 years</fullName>
+                <default>false</default>
+                <label>&lt;=3 years</label>
+            </value>
+            <value>
+                <fullName>&gt;3 years</fullName>
+                <default>false</default>
+                <label>&gt;3 years</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

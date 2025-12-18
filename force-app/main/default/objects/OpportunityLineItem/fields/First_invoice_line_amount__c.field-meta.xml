@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_invoice_line_amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISPICKVAL(Opportunity.Selected_Payment_Type__c,&apos;Upfront Payments&apos;)),
+ROUND((TotalPrice/Opportunity.NS_Recurrence_Count__c ),2),
+TotalPrice)</formula>
+    <label>First invoice line amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

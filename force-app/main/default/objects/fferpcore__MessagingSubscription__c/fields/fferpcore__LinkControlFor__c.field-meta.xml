@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__LinkControlFor__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>For return data subscriptions only. Automatically populated lookup to the publication that this return data subscription relates to. Do not update this field manually.</description>
+    <inlineHelpText>This field is populated automatically when a Link Control subscription is created and should not be populated by the user.</inlineHelpText>
+    <label>Return Data For</label>
+    <referenceTo>fferpcore__MessagingPublication__c</referenceTo>
+    <relationshipLabel>Link Control Subscription</relationshipLabel>
+    <relationshipName>LinkControlSubscriptions</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

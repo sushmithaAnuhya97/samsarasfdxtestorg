@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delinquent_Accounts</fullName>
+    <active>false</active>
+    <description>error message if account is delinquent and attempt is made to create new revenue/trial opportunity.</description>
+    <errorConditionFormula>AND(
+
+NOT(OR(
+($Permission.Validation_Rule_Exemption),
+(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+($Profile.Name=&quot;Order Operations Admin&quot;),
+($Profile.Name=&quot;System Administrator&quot;),
+($Profile.Name=&quot;Samsara SE&quot;)
+)),
+
+
+ISPICKVAL(Type,&quot;Revenue Opportunity&quot;),
+
+
+Probability &gt;0.90,
+
+OR(
+ISPICKVAL(Account.Churn_Payment_Status__c,&quot;Delinquent&quot;),
+ISPICKVAL(Account.Churn_Payment_Status__c,&quot;Churned&quot;)
+),
+
+
+AND(
+NOT(ISCHANGED(CloseDate)),
+NOT(ISCHANGED(Next_Steps__c))
+) 
+
+
+)</errorConditionFormula>
+    <errorDisplayField>Express_Agreement_Accepted__c</errorDisplayField>
+    <errorMessage>Account is Delinquent - cannot update opportunity. Please contact Finance.</errorMessage>
+</ValidationRule>

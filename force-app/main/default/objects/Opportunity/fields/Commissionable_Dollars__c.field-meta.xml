@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commissionable_Dollars__c</fullName>
+    <description>Applies only to Industrial, effective Q1FY20.
+
+For historical commissionable dollar values, please refer to Historical Commissionable Dollars field</description>
+    <formula>IF( NOT(ISNULL(Historical_Commissionable_Dollars_TCV__c)), Historical_Commissionable_Dollars_TCV__c,
+
+IF(CONTAINS( Owner_Role_Copy__c , &quot;CNWKR&quot;), Amount,
+
+IF(AND(ISPICKVAL(Internal_Finance__c, &quot;Approved&quot;), Direct_Annual__c), Amount*0.80,
+
+IF(AND(ISPICKVAL(Internal_Finance__c, &quot;Approved&quot;), Direct_Monthly__c), Amount*0.70, Amount
+)
+)
+)
+)</formula>
+    <label>[zzzzDELETE] Commissionable Dollars TCV</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Duration__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Duration - can be entered or calculated.
+If Completed Date is not null, Duration is Completed Date minus Start Date. If Complete Date is null then Duration is Finish Date minus Start Date. If Start Date is not null and duration is entered, then Completed date is calculated. If start date, duration, and Completed Date are entered, the user is given an error &quot;Can&apos;t set both Duration and Completed date. Please remove duration or Completed Date.</description>
+    <externalId>false</externalId>
+    <label>OBSOLETE Duration</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

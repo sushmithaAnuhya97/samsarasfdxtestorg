@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Duration_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If Completed Date is not null, Duration is Completed Date minus Start Date. If Complete Date is null then Duration is Finish Date minus Start Date.</description>
+    <externalId>false</externalId>
+    <formula>if(ISBLANK(PDLM__Start_Date_Roll__c), null, if(!ISBLANK(PDLM__Completed_Date__c), PDLM__Completed_Date__c - PDLM__Start_Date_Roll__c, if(!ISBLANK(PDLM__Due_Date__c), PDLM__Due_Date__c - PDLM__Start_Date_Roll__c, null)))</formula>
+    <label>Duration</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Case_Result_Close_Case</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    RecordType.Name != &apos;Zendesk Ticket Sync&apos;,
+    ISBLANK(TEXT(Finance_Case_Result__c)), 
+    TEXT(Status) = &apos;Closed&apos;
+)</errorConditionFormula>
+    <errorMessage>Please enter a Finance Case Result in order to Close this case.</errorMessage>
+</ValidationRule>

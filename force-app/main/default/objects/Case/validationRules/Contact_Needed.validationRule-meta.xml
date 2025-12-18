@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Needed</fullName>
+    <active>true</active>
+    <description>Please add the name of the contact/ create one when case status is anything other than &quot;New&quot;</description>
+    <errorConditionFormula>AND( ContactId == null, ISPICKVAL( Status, &apos;Pending-Customer&apos;), Owner:Queue.QueueName != &apos;Express Returns&apos;,Owner:Queue.QueueName != &apos;Missed Call Queue&apos;,RecordType.DeveloperName!=&apos;zendesk_ticket_sync&apos;)</errorConditionFormula>
+    <errorMessage>Please add a Contact before proceeding to Pending-Customer status</errorMessage>
+</ValidationRule>

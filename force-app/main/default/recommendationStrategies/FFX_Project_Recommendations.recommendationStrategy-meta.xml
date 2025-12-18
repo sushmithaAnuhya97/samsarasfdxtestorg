@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>pse__Proj__c</contextRecordType>
+    <filter>
+        <childNode>Load_Recommendations</childNode>
+        <label>Isclose</label>
+        <name>Isclose</name>
+        <expression>$Record.pse__Bookings__c &gt; 0 &amp;&amp; $Record.pse__Billings__c &gt;= $Record.pse__Bookings__c*0.85</expression>
+    </filter>
+    <label>FFX Project Recommendations</label>
+    <map>
+        <childNode>Isclose</childNode>
+        <label>map</label>
+        <name>map</name>
+        <mapExpression>
+            <expression>&quot;Bookings are &quot; + TEXT($Record.pse__Bookings__c) + &quot; and billings are &quot; + TEXT($Record.pse__Billings__c)</expression>
+            <name>Description</name>
+            <type>Text</type>
+        </mapExpression>
+        <mapExpression>
+            <expression>$Record.Id</expression>
+            <name>flowProjectId</name>
+            <type>Text</type>
+        </mapExpression>
+        <mapExpression>
+            <expression>&quot;Bookings are &quot; + TEXT($Record.pse__Bookings__c) + &quot; and billings are &quot; + TEXT($Record.pse__Billings__c)</expression>
+            <name>flowDescription</name>
+            <type>Text</type>
+        </mapExpression>
+    </map>
+    <recommendationLimit>
+        <childNode>map</childNode>
+        <label>Limit Reoffers</label>
+        <name>Limit_Reoffers</name>
+        <filterMode>Accepted</filterMode>
+        <filterMode>Rejected</filterMode>
+        <lookbackDuration>14</lookbackDuration>
+        <maxRecommendationCount>1</maxRecommendationCount>
+    </recommendationLimit>
+    <recommendationLoad>
+        <label>Load Recommendations</label>
+        <name>Load_Recommendations</name>
+        <condition>
+            <field>Name</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>Create Change Request</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+        <object>Recommendation</object>
+    </recommendationLoad>
+    <union>
+        <childNode>Limit_Reoffers</childNode>
+        <label>Output</label>
+        <name>Output_c77ba470d31d4daaa5911778e8395a94</name>
+    </union>
+</RecommendationStrategy>

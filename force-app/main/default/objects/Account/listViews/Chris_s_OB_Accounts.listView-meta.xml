@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chris_s_OB_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Status__c</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>Days_Since_Last_Call_By_Current_Owner__c</columns>
+    <columns>Last_Contacted__c</columns>
+    <columns>Last_Call__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>Account_Book_Owner__c</field>
+        <operation>equals</operation>
+        <value>Ollie Coghlan</value>
+    </filters>
+    <label>Chris&apos;s OB Accounts</label>
+</ListView>

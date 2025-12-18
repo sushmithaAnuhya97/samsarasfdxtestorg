@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Lifecycle__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Steps and Behaviors that a category of items will observe</inlineHelpText>
+    <label>Lifecycle</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.PDLM__Type__c</field>
+            <operation>equals</operation>
+            <valueField>PDLM__Lifecycle__c.PDLM__Type__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>PDLM__Lifecycle__c</referenceTo>
+    <relationshipLabel>Categories</relationshipLabel>
+    <relationshipName>Categories</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

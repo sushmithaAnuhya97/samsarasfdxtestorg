@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sourced_Payout_Percentage_Needed</fullName>
+    <active>true</active>
+    <description>GTMS-26117: Created as part of Partners H1 project to throw error if Source Payout % field is empty when Source Payout Model is selected as Percentage</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Sourced_Payout_Model__c,&apos;Percentage&apos;),
+OR(
+Sourced_Payout_Percentage__c &lt; 0,
+Sourced_Payout_Percentage__c &gt; 1,
+ISNULL(Sourced_Payout_Percentage__c)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Sourced_Payout_Percentage__c</errorDisplayField>
+    <errorMessage>You’ve selected ‘Percentage’ for the Sourced Payout Model, but have not included the desired percentage amount. Please update the &apos;Sourced Payout Percentage” to a number greater than 0 and lower than 100 to save this program</errorMessage>
+</ValidationRule>

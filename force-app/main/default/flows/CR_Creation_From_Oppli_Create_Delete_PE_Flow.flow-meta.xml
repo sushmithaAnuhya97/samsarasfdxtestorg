@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-28353: Created to update the CR status of existing CR record</description>
+        <name>Assign_CR_Status_values_to_Existing_CR_record</name>
+        <label>Assign CR Status values to Existing CR record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Fetch_Existing_CR_With_Partner_Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Partner_Interaction_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Partner Influenced</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.CR_Creation_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SKU Auto Tagging</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.CR_Status__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Existing_CR_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-28353: Created to update the CR status of existing CR record</description>
+        <name>Assign_Void_Status_values_to_Existing_CR_record</name>
+        <label>Assign Void Status values to Existing CR record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Fetch_Existing_CR_With_Partner_Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.CR_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Voided</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Existing_CR_Status_To_Void</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>GTMS-28353: Created to check which oppli event triggered PE. Is it create or delete</description>
+        <name>Check_the_Oppli_Event_Type</name>
+        <label>Check the Oppli Event Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Oppty_Linte_Items_with_Product_Code</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>On Delete</defaultConnectorLabel>
+        <rules>
+            <name>On_Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsDelete__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_CR_Exist</targetReference>
+            </connector>
+            <label>On Create</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28353: Created to check if the CR exists or not</description>
+        <name>Copy_1_of_Is_CR_Exist</name>
+        <label>Is CR Exist ?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No CR Doesnt Exists</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Yes_CR_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Existing_CR_With_Partner_Account</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Oppty_Linte_Items_with_Product_Code</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Void_Status_values_to_Existing_CR_record</targetReference>
+            </connector>
+            <label>Yes, CR Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28353: Created to check if the CR exists or not</description>
+        <name>Is_CR_Exist</name>
+        <label>Is CR Exist ?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Partner_Program_Enrollment_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No CR Doesnt Exists</defaultConnectorLabel>
+        <rules>
+            <name>Yes_CR_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Existing_CR_With_Partner_Account</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_CR_Voided</targetReference>
+            </connector>
+            <label>Yes, CR Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28353: Created to check the CR got voided or not</description>
+        <name>Is_CR_Voided</name>
+        <label>Is CR Voided</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_CR_Status_values_to_Existing_CR_record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes, CR Got Voided</defaultConnectorLabel>
+        <rules>
+            <name>No_CR_Not_Voided</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Existing_CR_With_Partner_Account.CR_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Voided</stringValue>
+                </rightValue>
+            </conditions>
+            <label>No, CR Not Voided</label>
+        </rules>
+    </decisions>
+    <description>GTMS-28353: Created to create channel Relationship records using platform event when an &quot;FN&quot; or &quot;OEM&quot; codes related Oppli created/deleted</description>
+    <environments>Default</environments>
+    <interviewLabel>CR Creation From Oppli {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CR Creation From Oppli Create/Delete PE Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>GTMS-28353: created to created channel relationship record.</description>
+        <name>Create_Channel_Relationship_Record</name>
+        <label>Create Channel Relationship Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>CAM_Owner__c</field>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Record.Partner_Account__r.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CR_Creation_Type__c</field>
+            <value>
+                <stringValue>SKU Auto Tagging</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Channel_Partner_Representative__c</field>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Record.Partner_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Channel_Partner__c</field>
+            <value>
+                <elementReference>$Record.Partner_AccountId__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Eligible_For_Payout__c</field>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Opportunity_Id__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Partner_Enrollment__c</field>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Partner_Interaction_Type__c</field>
+            <value>
+                <stringValue>Partner Influenced</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Partner_Program__c</field>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Record.Partner_Program__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Program_Type__c</field>
+            <value>
+                <elementReference>Get_Partner_Program_Enrollment_Record.SalesProgramType__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Channel_Relationship__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>GTMS-28353: Created to fetch the existing CR with partner account.</description>
+        <name>Fetch_Existing_CR_With_Partner_Account</name>
+        <label>Fetch Existing CR With Partner Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_the_Oppli_Event_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Opportunity_Id__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Channel_Partner__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_AccountId__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CR_Creation_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SKU Auto Tagging</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CR_Status__c</queriedFields>
+        <queriedFields>Eligible_For_Payout__c</queriedFields>
+        <queriedFields>CR_Creation_Type__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-28353: Created to fetch the opportunityLineitems with the product code</description>
+        <name>Get_Oppty_Linte_Items_with_Product_Code</name>
+        <label>Get Oppty Linte Items with Product Code</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Is_CR_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Opportunity_Id__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ProductCode</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Product_Code__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-28353: Created to fetch the partner program enrollment record based on the partner account Id</description>
+        <name>Get_Partner_Program_Enrollment_Record</name>
+        <label>Get Partner Program Enrollment Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Channel_Relationship_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Partner_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_AccountId__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Member_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Partner_Program_Enrollment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-28353: Created to update the status of the existing CR record</description>
+        <name>Update_Existing_CR_Status</name>
+        <label>Update Existing CR Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>CR_Record_To_Update</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-28353: Created to update the status to void for the existing CR record</description>
+        <name>Update_Existing_CR_Status_To_Void</name>
+        <label>Update Existing CR Status To Void</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>CR_Record_To_Update</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Fetch_Existing_CR_With_Partner_Account</targetReference>
+        </connector>
+        <flowRunAsUser>TriggeringUser</flowRunAsUser>
+        <object>CR_From_OpportunityLineItem__e</object>
+        <triggerType>PlatformEvent</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-28353: Created to update the CR record status</description>
+        <name>CR_Record_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+</Flow>

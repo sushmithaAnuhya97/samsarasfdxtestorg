@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_written_language__c</fullName>
+    <description>Used to associate the correct written language with an account.</description>
+    <inlineHelpText>Used to associate the correct written language with an account. Very important b/c it allows us to ensure the correct IC is assigned &amp; can allow us to potentially send automated emails in their preferred language.</inlineHelpText>
+    <label>Which written language</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Language</valueSetName>
+    </valueSet>
+</CustomField>

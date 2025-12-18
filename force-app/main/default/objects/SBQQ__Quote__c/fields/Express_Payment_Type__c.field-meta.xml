@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Express_Payment_Type__c</fullName>
+    <label>Express Payment Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual Payments</fullName>
+                <default>false</default>
+                <label>Annual Payments</label>
+            </value>
+            <value>
+                <fullName>Monthly Payments</fullName>
+                <default>false</default>
+                <label>Monthly Payments</label>
+            </value>
+            <value>
+                <fullName>Upfront Payment</fullName>
+                <default>false</default>
+                <label>Upfront Payment</label>
+            </value>
+            <value>
+                <fullName>Direct Semi-Annual</fullName>
+                <default>false</default>
+                <label>Direct Semi-Annual</label>
+            </value>
+            <value>
+                <fullName>Direct Quarterly</fullName>
+                <default>false</default>
+                <label>Direct Quarterly</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

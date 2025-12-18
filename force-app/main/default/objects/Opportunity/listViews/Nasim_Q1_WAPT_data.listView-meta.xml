@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nasim_Q1_WAPT_data</fullName>
+    <columns>Selected_Payment_Type__c</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Sub_Type__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>License_Term__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Closing,Closed Won,Refunded - Closed</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Revenue Opportunity,Remorse Refund,Rebate</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/29/2023</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FULL_NAME</field>
+        <operation>equals</operation>
+        <value>Mac Caceres,Ally Fontana,Caroline Rothschild,Larissa Garza,Chase Lynch,Ryan Cooper,Nasim Bolandparvaz,Huy Tran,Keaton Eichman,Courtney Haas</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>lessOrEqual</operation>
+        <value>4/29/2023</value>
+    </filters>
+    <label>Nasim Q1 (WAPT) data</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

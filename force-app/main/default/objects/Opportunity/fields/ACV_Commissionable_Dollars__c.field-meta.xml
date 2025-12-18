@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_Commissionable_Dollars__c</fullName>
+    <description>Anything closed prior to 2/4/19 set to 0, Industrial set to 0
+Price Book Consolidation: Replaced ACV bookings formula reference with commissionable_ACV. Commisionable_ACV is a summary variable on the quote that captures all commissionable products (commissionable type is set at the product level). Data loaded historical ACV field for all deals closed prior to Q1FY22
+GTMS-28931: Adding 1.06 as a multiplier for Carahsoft reseller partner.</description>
+    <formula>IF(
+NOT(ISBLANK(Historical_Commissionable_Dollars_ACV__c)),
+Historical_Commissionable_Dollars_ACV__c,
+    IF(
+        NOT(ISPICKVAL(Type, &quot;Revenue Opportunity&quot;)),
+IF(Commission_ACV__c=0,ACV_Bookings_SOT__c,Commission_ACV__c),
+        IF(
+            TEXT(Selected_Payment_Type__c) = &quot;Direct Annual&quot;,
+            Commission_ACV__c * 1.20,
+            IF(
+                AND(
+                    TEXT(Selected_Payment_Type__c) = &quot;Upfront Payments&quot;,
+                    TEXT(Configuration_Segment__c) = &quot;Express&quot;
+                ),
+                Commission_ACV__c * 1.30,
+                IF(
+                    AND(
+                        TEXT(Selected_Payment_Type__c) = &quot;Upfront Payments&quot;,
+                        License_Term__c &lt; 60,
+                        TEXT(Configuration_Segment__c) = &quot;Non Express&quot;
+                    ),
+                    Commission_ACV__c * 1.25,
+                    IF(
+                        AND(
+                            TEXT(Selected_Payment_Type__c) = &quot;Upfront Payments&quot;,
+                            License_Term__c &gt;= 60,
+                            TEXT(Configuration_Segment__c) = &quot;Non Express&quot;
+                        ),
+                        Commission_ACV__c * 1.35,
+Commission_ACV__c
+                    )
+                )
+            )
+        )
+    )
+)* Reseller_Partner_Multiplier__c</formula>
+    <inlineHelpText>Effective Q1FY20:
+
+Samsara Express &amp; Annual Payments = 120% of ACV
+Direct Monthly = 100% of ACV
+Direct Annual = 110% of ACV
+Upfront, 3-Year = 125% of ACV
+Upfront, 5-Year = 135% of ACV</inlineHelpText>
+    <label>Commissionable Dollars ACV</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

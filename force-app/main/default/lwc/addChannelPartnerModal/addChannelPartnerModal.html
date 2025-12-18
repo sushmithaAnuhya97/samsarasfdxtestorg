@@ -1,0 +1,190 @@
+<template>
+    <lightning-card title="Add a Partner" icon-name="standard:account">
+        <template if:true={isClosed}>
+            <div class="slds-p-around_medium">
+                <div class="slds-text-color_error slds-text-heading_small slds-p-around_small">
+                    Opportunity Stage does not allow for Add Partner to be performed!
+                </div>
+            </div>
+            <p slot="footer">
+                    <lightning-button label="Close" onclick={closeQuickAction} class="slds-m-right_x-small">
+                    </lightning-button>
+            </p>
+        </template>
+        <template if:false={isClosed}>
+            <div class="slds-p-around_medium">
+                <div class="slds-section slds-is-open">
+                    <template if:true={isChannelRelationshipExist}>
+                        <p class="slds-text-heading_small slds-p-around_small">A channel relationship for this partner
+                            account and partner program already exists on
+                            this opportunity - please review those relationships and reach out to &nbsp;
+                            <a target="_blank"
+                                href="https://samsara.enterprise.slack.com/archives/C02BNKRE6R1">#help-sales</a> &nbsp;
+                            if you have any concerns or want to request changes you can’t make directly
+                        </p>
+                    </template>
+                    <template if:true={isPartnerNotExist}>
+                        <p class="slds-text-heading_small slds-p-around_small">Couldn't find the Sales Program Type or
+                            the opportunity recordtype in Salesforce - reach out to &nbsp;
+                            <a target="_blank" href="bit.ly/samsarasalesops">bit.ly/samsarasalesops</a>
+                        </p>
+                    </template>
+                    <template if:true={isSelectOneOption}>
+                        <p class="slds-text-heading_small slds-p-around_small">Please make sure that you have selected
+                            one of the options.</p>
+                    </template>
+
+
+                    <h3 class="slds-section__title slds-theme_shade">
+                        <span class="slds-truncate slds-p-horizontal_small" title="Partner Information">Partner
+                            Information</span>
+                    </h3>
+                    <div class="slds-section__content">
+                        <!-- Opportunity and Customer Account Info (Optional) -->
+                        <div class="slds-grid slds-gutters slds-m-bottom_small">
+                            <div class="slds-col">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">Opportunity</span>
+                                    <div class="slds-form-element__static">{opportunityName}</div>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div class="slds-form-element">
+                                    <span class="slds-form-element__label">Customer Account</span>
+                                    <div class="slds-form-element__static">{customerAccountName}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <template if:true={isIndustrialOpportunity}>
+                            <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_small">
+                                <div class="slds-col slds-size_1-of-1">
+                                    <lightning-radio-group
+                                        label="Is there a Reseller Partner transacting in this opportunity?"
+                                        name="isResellerTransacting" options={yesNoOptions}
+                                        value={isResellerTransacting} type="radio"
+                                        onchange={handleResellerTransactingChange} required>
+                                    </lightning-radio-group>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:true={isPartner}>
+                            <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_small">
+                                <!-- Partner Account Lookup -->
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-record-picker label="Partner Account" object-api-name="Account"
+                                        value={selectedPartnerId} filter={filter} onchange={handlePartnerChange}
+                                        required>
+                                    </lightning-record-picker>
+                                </div>
+                                <!-- Channel Program Lookup (filtered by Partner selection) -->
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-combobox label="Partner Program" name="partnerProgram"
+                                        value={selectedProgramId} options={programs} onchange={handleProgramChange}
+                                        required>
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+
+                            <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_small">
+                                <!-- Partner Contact Lookup (filtered by Partner selection) -->
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-combobox label="Partner Contact" name="partnerContact"
+                                        value={selectedContactId} options={contacts} onchange={handleContactChange}
+                                        required>
+                                    </lightning-combobox>
+                                </div>
+                                <!-- Partner Engagement Type 
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-combobox label="Partner Engagement Type" name="engagementType"
+                                    value={partnerEngagementType} options={engagementTypeOptions}
+                                    onchange={handleEngagementTypeChange} required>
+                                </lightning-combobox> 
+                            </div> -->
+                            </div>
+                            <template if:true={IsSubsidyProgram}>
+                                <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_small">
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <lightning-combobox label="Product Type" name="productType" value={productType}
+                                            options={productTypes} onchange={handleProductTypeChange} required>
+                                        </lightning-combobox>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <lightning-input label="Number of units" name="numberOfUnits" type="number"
+                                            value={numberOfUnits} onchange={handleNumberOfUnitsChange} required>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </template>
+                            <div class="slds-notify slds-notify_alert" role="alert">
+                                <span class="slds-icon_container slds-icon-utility-info slds-m-right_x-small" title="Info">
+                                    <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#info"></use>
+                                    </svg>
+                                </span>
+                                <span>
+                                     <b>Partners cannot be added to referral payout incentives through the 'Add Partner' button - please instruct the partner to use Deal Registration.</b>
+                                </span>
+                            </div>
+                        </template>
+                    </div>
+                    <template if:true={isIndustrialOpportunity}>
+                        <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_small">
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-radio-group
+                                    label="Are there any Systems Integrators involved in this opportunity?"
+                                    name="isSystemsIntegratorsValue" options={yesNoOptions}
+                                    value={isSystemsIntegratorsValue} type="radio"
+                                    onchange={handleSystemsIntegratorChange} required>
+                                </lightning-radio-group>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={isSystemsIntegrators}>
+                        <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_small">
+                            <!-- System Integrator Account Lookup -->
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-record-picker label="System Integrator" object-api-name="Account"
+                                    value={selectedSystemIntegratorId} filter={partnerFilter}
+                                    onchange={handleSystemIntegratorChange} required>
+                                </lightning-record-picker>
+                            </div>
+                            <!-- Service Amount -->
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input label="Service Amount" name="ServiceAmount" type="currency"
+                                    value={ServiceAmount} onchange={handleServiceAmountChange}>
+                                </lightning-input>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <template if:true={isFlow}>
+                <p slot="footer">
+                    <lightning-button label="Previous" onclick={handleBack} class="slds-m-right_x-small">
+                    </lightning-button>
+                    <lightning-button label="Next" variant="brand" onclick={saveChannelRelationship}
+                        disabled={isLoading}>
+                    </lightning-button>
+                </p>
+            </template>
+            <template if:false={isFlow}>
+                <p slot="footer">
+                    <lightning-button label="Close" onclick={closeQuickAction} class="slds-m-right_x-small">
+                    </lightning-button>
+                    <lightning-button label="Save" variant="brand" onclick={saveChannelRelationship}
+                        disabled={isLoading}>
+                    </lightning-button>
+                </p>
+            </template>
+            <template if:true={isLoading}>
+                <div class="slds-spinner_container">
+                    <div class="slds-spinner slds-spinner_medium" role="status">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

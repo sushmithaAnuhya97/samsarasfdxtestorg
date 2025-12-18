@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feature_Request__c</fullName>
+    <description>added for GTMS-14252</description>
+    <label>Feature Request</label>
+    <referenceTo>acideasULT__brIdea__c</referenceTo>
+    <relationshipLabel>Related Accounts</relationshipLabel>
+    <relationshipName>Account_Idea_Assignments</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Accounts_RJ_including_ACV</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PARENT_NAME</columns>
+    <columns>Annual_Revenue_Commit__c</columns>
+    <columns>Cloud_Dashboard_Link__c</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Latest_Active_Contract__c</columns>
+    <columns>Total_Purchased_VG_Count__c</columns>
+    <columns>Total_Purchased_AG_Count__c</columns>
+    <columns>Total_Purchased_CM_Count__c</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>X18_Digit_Account_ID__c</columns>
+    <columns>Current_Monthly_Payments__c</columns>
+    <columns>LinkedIn_URL__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>existing customer,existing customer - open opportunity</value>
+    </filters>
+    <label>My Accounts - RJ - including ACV</label>
+</ListView>

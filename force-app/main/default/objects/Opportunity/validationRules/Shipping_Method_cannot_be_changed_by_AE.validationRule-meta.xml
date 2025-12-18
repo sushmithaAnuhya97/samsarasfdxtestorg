@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Method_cannot_be_changed_by_AE</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+$Profile.Name = &quot;Samsara Sales - NA US AE2&quot;,
+$Profile.Name = &quot;Samsara Sales - NA US AE3&quot;,
+$Profile.Name = &quot;Samsara Sales - NA  AE1&quot;,
+$Profile.Name = &quot;zzzSamsara Sales - NA AE2&quot;,
+$Profile.Name = &quot;zzzSamsara Sales - NA AE3&quot;,
+$Profile.Name = &quot;Samsara Sales - EMEA IS&quot;,
+$Profile.Name = &quot;Samsara Sales - EMEA ENT&quot;,
+$Profile.Name = &quot;Samsara Sales - NA ENT&quot;
+    ),
+    TEXT(Shipping_Method__c) &lt;&gt; TEXT(SBQQ__PrimaryQuote__r.Shipping_Method__c),
+  ISPICKVAL(Type,&quot;Free Trial Opportunity&quot;),
+ISCHANGED( Shipping_Method__c),
+NOT(
+OR(
+$Permission.Validation_Rule_Exemption,
+$Permission.Validation_Exemption_Opportunity,
+$Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c,
+            $Permission.NetSuite_Service_User_Permission
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Sales users are not allowed to update the Shipping Method directly on the Opportunity. Please update the Shipping Method through the CPQ Quote.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Forecast_Setup_Category__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the billing forecast categories used on the Billing Forecast Setup page.</description>
+    <inlineHelpText>Lookup to the billing forecast categories used on the Billing Forecast Setup page.</inlineHelpText>
+    <label>Billing Forecast Setup Category</label>
+    <referenceTo>pse__Forecast_Setup_Category__c</referenceTo>
+    <relationshipLabel>Billing Forecast Summary Categories Setup</relationshipLabel>
+    <relationshipName>Forecast_Enhanced_Summary_Categories</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

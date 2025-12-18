@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Team_Cannot_move_stage_backwards</fullName>
+    <active>true</active>
+    <description>Sales team cannot move the stage backwards from &quot;Ready to Ship&quot; or &quot;Closed Won&quot;. Order can move only via admin, finance or operations team.</description>
+    <errorConditionFormula>AND(
+    RecordTypeId &lt;&gt; &quot;0121a000000ARoK&quot;,
+    ISCHANGED(StageName),
+    PRIORVALUE(Probability)&gt; 0.95,
+    Probability &lt; PRIORVALUE(Probability),
+    NOT(
+        OR(
+            $Permission.Validation_Rule_Exemption,
+            CONTAINS($Profile.Name,&quot;Finance&quot;),
+            $Profile.Name=&quot;Order Operations Admin&quot;
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>You cannot move the opportunity backwards from Ready to Ship or Closed Won. Only Finance, Operations and Admins can move orders past the stage of Closing.</errorMessage>
+</ValidationRule>

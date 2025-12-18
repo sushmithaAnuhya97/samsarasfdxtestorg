@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="recordId" type="String" label="Account ID" description="The Account ID to get contacts from" required="true"/>
+			<property name="opportunityId" type="String" label="Opportunity ID" description="The Opportunity ID from the flow" required="false"/>
+			<property name="selectedContactId" type="String" label="Selected Contact ID" description="The selected contact ID" required="false"/>
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

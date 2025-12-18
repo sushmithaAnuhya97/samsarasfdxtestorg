@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Populat_End_Date_AND_License_Term</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c) &amp;&amp; (
+NOT(ISBLANK( TEXT(License_Term__c) )) &amp;&amp; NOT(ISBLANK( SBQQ__EndDate__c ))
+)
+
+||
+
+(
+NOT(ISBLANK(Custom_License_Term__c)) &amp;&amp; NOT(ISBLANK( SBQQ__EndDate__c ))
+)</errorConditionFormula>
+    <errorMessage>Since this is a co-termed opportunity, it cannot have a license term. Please remove the license term to continue.</errorMessage>
+</ValidationRule>

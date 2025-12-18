@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_Uplift_Ineligible__c</fullName>
+    <description>Checked if opportunity should not receive Commissionable Dollars ACV accelerator uplift (xactly attainment and commissions)</description>
+    <formula>IF(OR(
+AND(CloseDate &gt;= DATE(2020,08,02),CloseDate&lt;=DATE(2022,01,29),CONTAINS( Owner_Role_Copy__c , &quot;Renewal&quot;)),
+AND(CloseDate &lt; DATE(2020,11,01), OR (CONTAINS( Owner_Role_Copy__c, &quot;Industrial&quot;),CONTAINS( Owner_Role_Copy__c, &quot;IND&quot;))),
+ACV_Bookings_SOT__c &lt;=0),
+TRUE,
+FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV Uplift Ineligible</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The current status of the utilization run in this batch.</description>
+    <inlineHelpText>The current status of the batch job.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Processing Timecards (1 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Timecards (1 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Timecards (2 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Timecards (2 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Timecards (3 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Timecards (3 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Timecards (1 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Timecards (1 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Timecards (2 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Timecards (2 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Assignments (1 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Assignments (1 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Assignments (2 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Assignments (2 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Assignments (3 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Assignments (3 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Assignments (1 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Assignments (1 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Assignments (2 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Assignments (2 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Held Resource Requests (1 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Held Resource Requests (1 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Held Resource Requests (2 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Held Resource Requests (2 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Held Resource Requests (3 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Held Resource Requests (3 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Held Resource Requests (1 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Held Resource Requests (1 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Held Resource Requests (2 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Held Resource Requests (2 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Work Calendars (1 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Work Calendars (1 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Work Calendars (2 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Work Calendars (2 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Work Calendars (3 of 3)</fullName>
+                <default>false</default>
+                <label>Processing Work Calendars (3 of 3)</label>
+            </value>
+            <value>
+                <fullName>Processing Work Calendars (1 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Work Calendars (1 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Work Calendars (2 of 2)</fullName>
+                <default>false</default>
+                <label>Processing Work Calendars (2 of 2)</label>
+            </value>
+            <value>
+                <fullName>Processing Unheld Resource Requests</fullName>
+                <default>false</default>
+                <label>Processing Unheld Resource Requests</label>
+            </value>
+            <value>
+                <fullName>Generating Utilization Results (1 of 3)</fullName>
+                <default>false</default>
+                <label>Generating Utilization Results (1 of 3)</label>
+            </value>
+            <value>
+                <fullName>Generating Utilization Results (2 of 3)</fullName>
+                <default>false</default>
+                <label>Generating Utilization Results (2 of 3)</label>
+            </value>
+            <value>
+                <fullName>Generating Utilization Results (3 of 3)</fullName>
+                <default>false</default>
+                <label>Generating Utilization Results (3 of 3)</label>
+            </value>
+            <value>
+                <fullName>Generating Utilization Results (1 of 2)</fullName>
+                <default>false</default>
+                <label>Generating Utilization Results (1 of 2)</label>
+            </value>
+            <value>
+                <fullName>Generating Utilization Results (2 of 2)</fullName>
+                <default>false</default>
+                <label>Generating Utilization Results (2 of 2)</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Error</fullName>
+                <default>false</default>
+                <label>Error</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

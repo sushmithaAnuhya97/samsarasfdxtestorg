@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Partner__c</fullName>
+    <description>A drop down for reps to select the finance partner they are using</description>
+    <label>Finance Partner</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dell Financial Services</fullName>
+                <default>false</default>
+                <label>Dell Financial Services</label>
+            </value>
+            <value>
+                <fullName>Crestmark Vendor Finance a Meta Bank company</fullName>
+                <default>false</default>
+                <label>Crestmark Vendor Finance a Meta Bank company</label>
+            </value>
+            <value>
+                <fullName>Samsara Capital Finance</fullName>
+                <default>false</default>
+                <label>Samsara Capital Finance</label>
+            </value>
+            <value>
+                <fullName>VAR Technology</fullName>
+                <default>false</default>
+                <label>VAR Technology</label>
+            </value>
+            <value>
+                <fullName>Hitachi</fullName>
+                <default>false</default>
+                <label>Hitachi</label>
+            </value>
+            <value>
+                <fullName>Consultative Funding</fullName>
+                <default>false</default>
+                <label>TFC</label>
+            </value>
+            <value>
+                <fullName>Ascentium</fullName>
+                <default>false</default>
+                <label>Ascentium</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

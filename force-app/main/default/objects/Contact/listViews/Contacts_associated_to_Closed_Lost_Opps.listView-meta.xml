@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contacts_associated_to_Closed_Lost_Opps</fullName>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>Account.Closed_Lost_Opportunities__c</columns>
+    <columns>Account.Last_Marketing_Engagement_Date__c</columns>
+    <columns>Account.Last_Contacted__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>contains</operation>
+        <value>@</value>
+    </filters>
+    <filters>
+        <field>CONTACT.FIRST_NAME</field>
+        <operation>notContain</operation>
+        <value>unknown</value>
+    </filters>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>contains</operation>
+        <value>safety</value>
+    </filters>
+    <label>Contacts associated to Closed/Lost Opps</label>
+</ListView>

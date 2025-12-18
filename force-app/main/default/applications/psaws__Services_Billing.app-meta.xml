@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logoVersion>2</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Manage billing event generation, release and invoicing for eligible business records.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Services Billing</label>
+    <navType>Standard</navType>
+    <tabs>psaws__services_billing_workspace</tabs>
+    <tabs>pse__Projects_Awaiting_Billing</tabs>
+    <tabs>pse__Billing_Events_Awaiting_Release</tabs>
+    <tabs>pse__Billing_Events_Awaiting_Invoicing</tabs>
+    <tabs>pse__Invoiced_Billing_Events</tabs>
+    <tabs>standard-Feed</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

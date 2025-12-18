@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reservoir_Status__c</fullName>
+    <description>This field is used to indicate an Accounts status relative to the SFDC Reservoir, it is for internal purposes only. For any questions, please reach out to the Growth Operations team
+
+GTMS: &quot;Reservoir Status&quot; field has been renamed as &quot;Account Ops Status&quot;.</description>
+    <label>Account Ops Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>To be Enriched</fullName>
+                <default>false</default>
+                <label>To be Enriched</label>
+            </value>
+            <value>
+                <fullName>Hold in Reservoir</fullName>
+                <default>false</default>
+                <label>Hold in Reservoir</label>
+            </value>
+            <value>
+                <fullName>To be validated</fullName>
+                <default>false</default>
+                <label>To be validated</label>
+            </value>
+            <value>
+                <fullName>Being enriched</fullName>
+                <default>false</default>
+                <label>Being enriched</label>
+            </value>
+            <value>
+                <fullName>Being validated</fullName>
+                <default>false</default>
+                <label>Being validated</label>
+            </value>
+            <value>
+                <fullName>Hold in Aqueduct</fullName>
+                <default>false</default>
+                <label>Hold in Aqueduct</label>
+            </value>
+            <value>
+                <fullName>Ready for Aqueduct</fullName>
+                <default>false</default>
+                <label>Ready for Aqueduct</label>
+            </value>
+            <value>
+                <fullName>Ready for Assignment</fullName>
+                <default>false</default>
+                <label>Ready for Assignment</label>
+            </value>
+            <value>
+                <fullName>To be deleted</fullName>
+                <default>false</default>
+                <label>To be deleted</label>
+            </value>
+            <value>
+                <fullName>To be merged</fullName>
+                <default>false</default>
+                <label>To be merged</label>
+            </value>
+            <value>
+                <fullName>Released from Reservoir</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Released from Reservoir</label>
+            </value>
+            <value>
+                <fullName>Send to SFDC Pool</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Send to SFDC Pool</label>
+            </value>
+            <value>
+                <fullName>Sequestered</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sequestered</label>
+            </value>
+            <value>
+                <fullName>To be Reviewed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>To be Reviewed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

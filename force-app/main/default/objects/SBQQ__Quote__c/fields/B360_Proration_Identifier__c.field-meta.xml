@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B360_Proration_Identifier__c</fullName>
+    <description>This field will return Payment Type if it matches the criteria for B360, Prorated amount and BAD is not blank.</description>
+    <formula>SBQQ__Opportunity2__r.Billing_360_Transaction__c &amp;&amp;
+NOT(ISBLANK(Next_Recurring_Bill_Date__c)) &amp;&amp;
+Of_LIC_Products__c &gt; 0 &amp;&amp;
+Quote_ACV__c&gt;0 &amp;&amp;
+( ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Annual&quot;) || ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Semi-Annual&quot;) || ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Quarterly&quot;) || ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Monthly&quot;) )</formula>
+    <label>B360 Proration Identifier</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

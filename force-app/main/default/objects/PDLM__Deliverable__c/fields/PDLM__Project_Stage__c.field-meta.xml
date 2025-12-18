@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Project_Stage__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Project Stage Lookup to bucket the related Activities</description>
+    <label>Project Stage</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>$Source.PDLM__Project__c</field>
+            <operation>equals</operation>
+            <valueField>PDLM__Project_Stage__c.PDLM__Project__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>PDLM__Project_Stage__c</referenceTo>
+    <relationshipLabel>Activities</relationshipLabel>
+    <relationshipName>Deliverables</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Stakeholder_for_CSM__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This field is for AEs to connect the key contact that CSMs should contact to initiate onboarding</description>
+    <inlineHelpText>Link the key contact for CSMs to contact to initiate onboarding</inlineHelpText>
+    <label>Key Stakeholder for CS</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Accounts (Key Stakeholder for CSM)</relationshipLabel>
+    <relationshipName>Accounts_for_CSM</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

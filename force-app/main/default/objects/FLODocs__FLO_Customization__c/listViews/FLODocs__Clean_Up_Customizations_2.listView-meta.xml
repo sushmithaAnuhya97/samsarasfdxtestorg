@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Clean_Up_Customizations_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>FLODocs__Salesforce_Types__c</columns>
+    <columns>FLODocs__Clean_up_Classification__c</columns>
+    <columns>FLODocs__Improvement_Comments__c</columns>
+    <columns>FLODocs__Clean_up_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>FLODocs__FLO_Customization__c.FLODocs__Other</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Clean_up_Status__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>FLODocs__Namespace_Prefix__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Clean Up Custs by Record Type (v2)</label>
+</ListView>

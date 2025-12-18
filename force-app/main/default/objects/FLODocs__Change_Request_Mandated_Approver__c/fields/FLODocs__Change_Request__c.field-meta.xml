@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Change_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Change Request</label>
+    <referenceTo>FLODocs__FLO_Change_Request__c</referenceTo>
+    <relationshipLabel>Change Request Mandated Approvers</relationshipLabel>
+    <relationshipName>Change_Request_Mandated_Approvers</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

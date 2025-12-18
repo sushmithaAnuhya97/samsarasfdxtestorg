@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Scheduled_Days__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Total number of days scheduled based on assignment schedules and schedule exceptions. For example, if an assignment has a schedule of 4 hours Monday through Wednesday and the calculation period is 2 weeks inclusive, the value is 6 days (3 days per week * 2).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Total number of days scheduled based on assignment schedules and schedule exceptions.For example,if an assignment has a schedule of 4 hours Monday through Wednesday and the calculation period is 2 weeks inclusive,the value is 6 days (3 days per week * 2).</inlineHelpText>
+    <label>Scheduled Days</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>6</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

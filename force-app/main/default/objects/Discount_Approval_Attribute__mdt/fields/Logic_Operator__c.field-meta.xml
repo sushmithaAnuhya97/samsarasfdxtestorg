@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Logic_Operator__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Logic Operator</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&lt;</fullName>
+                <default>true</default>
+                <label>&lt;</label>
+            </value>
+            <value>
+                <fullName>&gt;</fullName>
+                <default>false</default>
+                <label>&gt;</label>
+            </value>
+            <value>
+                <fullName>=</fullName>
+                <default>false</default>
+                <label>=</label>
+            </value>
+            <value>
+                <fullName>%</fullName>
+                <default>false</default>
+                <label>%</label>
+            </value>
+            <value>
+                <fullName>&lt;&gt;</fullName>
+                <default>false</default>
+                <label>&lt;&gt;</label>
+            </value>
+            <value>
+                <fullName>Matrix</fullName>
+                <default>false</default>
+                <label>Matrix</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

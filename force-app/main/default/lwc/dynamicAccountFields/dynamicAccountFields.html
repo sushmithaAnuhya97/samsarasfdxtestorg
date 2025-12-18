@@ -1,0 +1,48 @@
+<template>
+    <div class="slds-is-relative">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+        </template>
+
+        <template if:true={hasFields}>
+        <template if:true={introText}>
+            <div class="slds-m-bottom_small">{introText}</div>
+        </template>
+        <lightning-record-edit-form record-id={recordId} object-api-name="Account" onsubmit={handleSubmit} onsuccess={handleSuccess} onerror={handleError}>
+            <div class="slds-grid slds-wrap slds-gutters_small">
+                <template for:each={editableFieldApiNames} for:item="field">
+                    <div key={field} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field field-name={field} data-field={field}></lightning-input-field>
+                    </div>
+                </template>
+                <template for:each={readOnlyFieldApiNames} for:item="roField">
+                    <div key={roField} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-output-field field-name={roField}></lightning-output-field>
+                    </div>
+                </template>
+                <template if:true={error}>
+                    <div class="slds-text-color_error slds-m-top_small">{error}</div>
+                </template>
+            </div>
+        </lightning-record-edit-form>
+        </template>
+
+        <template if:true={showNoFields}>
+            <div class="slds-text-color_weak">No fields configured for this submission reason.</div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-text-color_error">{error}</div>
+        </template>
+
+        <template if:true={showDebug}>
+            <div class="slds-m-top_medium slds-p-around_small slds-box slds-theme_default">
+                <div class="slds-text-title_caps slds-m-bottom_x-small">Debug</div>
+                <div><strong>recordId:</strong> {recordId}</div>
+                <div><strong>submissionReason:</strong> {submissionReason}</div>
+                <div><strong>rendered fields:</strong> {fieldApiNames}</div>
+                <div if:true={invalidFields.length}><strong>invalid fields (ignored):</strong> {invalidFields}</div>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Workflow__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Allow approval process to select separate workflows depending on a value present on the change order.</description>
+    <label>Workflow</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ECO</fullName>
+                <default>true</default>
+                <label>ECO</label>
+            </value>
+            <value>
+                <fullName>PCN</fullName>
+                <default>false</default>
+                <label>PCN</label>
+            </value>
+            <value>
+                <fullName>DVN</fullName>
+                <default>false</default>
+                <label>DVN</label>
+            </value>
+            <value>
+                <fullName>STOP</fullName>
+                <default>false</default>
+                <label>STOP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

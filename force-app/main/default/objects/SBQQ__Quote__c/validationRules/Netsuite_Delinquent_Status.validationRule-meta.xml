@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Delinquent_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(SBQQ__Account__r.Netsuite_Delinquent_Status__c,&apos;Written-off&apos;),NOT(ISPICKVAL(  SBQQ__Opportunity2__r.Type  ,&apos;Remorse Refund&apos;)),
+NOT(OR($Profile.Name=&apos;Sales Ops Profile&apos;,$Profile.Name=&apos;Samsara - Finance Admin&apos;,$Profile.Name=&apos;Samsara - Finance&apos;,$Profile.Name=&apos;System Administrator&apos;,$Profile.Name=&apos;System Administrator API&apos;)),OR(ISPICKVAL(ApprovalStatus__c, &apos;Pending&apos;), ISPICKVAL(ApprovalStatus__c, &apos;Approved&apos;)),
+SBQQ__Account__r.Delinquent_Override__c==FALSE,
+NOT($Permission.NetSuite_Service_User_Permission))</errorConditionFormula>
+    <errorMessage>This Account is blocked for all orders to continue further with Samsara due to delinquency. Please reach out to Finance for additional information!</errorMessage>
+</ValidationRule>

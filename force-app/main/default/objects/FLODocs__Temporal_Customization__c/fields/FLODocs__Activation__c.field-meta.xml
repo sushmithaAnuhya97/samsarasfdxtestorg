@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Activation__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>AND(OR(
+				    ISPICKVAL(FLODocs__New_Tracking_Status__c,&quot;Tracked, Blocking&quot;),
+				    ISPICKVAL(FLODocs__New_Tracking_Status__c,&quot;Tracked, Non-Blocking&quot;)
+			    ),
+				ISPICKVAL(FLODocs__Customization__r.FLODocs__Data_Change_Tracking__c,&quot;Not Tracked&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Activation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

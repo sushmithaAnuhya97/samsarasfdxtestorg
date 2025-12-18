@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Company__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The company to which these credit terms belong.</description>
+    <inlineHelpText>The company to which these credit terms belong.</inlineHelpText>
+    <label>Company</label>
+    <referenceTo>fferpcore__Company__c</referenceTo>
+    <relationshipLabel>Company Credit Terms</relationshipLabel>
+    <relationshipName>CompanyCreditTerms</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

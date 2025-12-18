@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Term_Formula__c</fullName>
+    <description>This field displays the license term on the layout without being editable by anyone. Last update GTMS-978</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+NOT(ISBLANK(SBQQ__PrimaryQuote__c)),
+NOT(ISBLANK(License_Term_CPQ__c)),
+License_Term_CPQ__c &gt; 0
+),
+License_Term_CPQ__c,
+License_Term__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>License Term</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

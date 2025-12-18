@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Email</fullName>
+    <columns>Event_Name__c</columns>
+    <columns>Event_Published_Time__c</columns>
+    <columns>Field_Api_Name__c</columns>
+    <columns>New_Value__c</columns>
+    <columns>Old_Value__c</columns>
+    <columns>Object_Name__c</columns>
+    <columns>RecordId__c</columns>
+    <columns>User_Id__c</columns>
+    <columns>User_Name__c</columns>
+    <columns>Quiddity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Event_Name__c</field>
+        <operation>equals</operation>
+        <value>BILLING_EMAIL</value>
+    </filters>
+    <label>Billing Email</label>
+</ListView>

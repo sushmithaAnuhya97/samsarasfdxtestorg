@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Actual_Average_Bill_Rate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Actual Billable Amount divided by Actual Hours or Actual Days as appropriate</description>
+    <formula>IF(OR(pse__Actual_Days__c = 0, pse__Actual_Hours__c = 0), 0, IF ( pse__Assignment__r.pse__Daily_Bill_Rate__c, (pse__Actual_Billable_Amount__c / pse__Actual_Days__c), (pse__Actual_Billable_Amount__c / pse__Actual_Hours__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Actual Billable Amount divided by Actual Hours or Actual Days as appropriate</inlineHelpText>
+    <label>Actual Average Bill Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

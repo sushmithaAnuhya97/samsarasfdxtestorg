@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_Key_Account__c</fullName>
+    <description>Checks if Key Account thresholds are met for ACV and deal stage</description>
+    <formula>AND(
+  OR(
+        AND(Probability &gt;= 0.35,
+            Probability &lt;= 1.0),
+        ISPICKVAL(StageName, &quot;Closed Lost&quot;)
+        ),
+    OR(
+(SE_Key_Account_Override__c = true),
+        AND
+(
+
+OR(
+  AND(
+    CONTAINS(Owner_Role_Copy__c,&quot;SLED&quot;),
+    ACV_Bookings_SOT__c&gt;=75000))),
+  AND(
+    CONTAINS(Owner_Role_Copy__c,&quot;AE2&quot;), 
+    CONTAINS(Owner_Role_Copy__c,&quot;US&quot;),
+    ACV_Bookings_SOT__c&gt;=50000),
+  AND(
+    CONTAINS(Owner_Role_Copy__c,&quot;AE3&quot;),
+    CONTAINS(Owner_Role_Copy__c,&quot;US&quot;),
+    ACV_Bookings_SOT__c&gt;=125000),
+
+        AND(Account.BillingCountry=&quot;Canada&quot;, ACV_Bookings_SOT__c&gt;=50000*1.4),
+        AND(Account.Global_Geography__c = &quot;Mexico&quot;, ACV_Bookings_SOT__c&gt;= (58411.21495*17.12)),
+        AND(Account.Global_Geography__c=&quot;UK &amp; I&quot;,ACV_Bookings_SOT__c&gt;=(50000*0.86)),
+        AND(Account.Global_Geography__c=&quot;France&quot;,ACV_Bookings_SOT__c&gt;=(30000* 0.98)),
+        AND(Account.Global_Geography__c=&quot;DACH&quot;,ACV_Bookings_SOT__c&gt;=(30000 * 0.98)),
+        AND(Account.Global_Geography__c=&quot;BENELUX&quot;,ACV_Bookings_SOT__c&gt;=(20000* 0.98))
+))</formula>
+    <inlineHelpText>Checks if Key Account thresholds are met for ACV and deal stage</inlineHelpText>
+    <label>SE Key Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

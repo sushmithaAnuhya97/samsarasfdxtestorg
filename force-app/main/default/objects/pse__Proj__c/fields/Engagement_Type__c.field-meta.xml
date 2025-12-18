@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Type__c</fullName>
+    <label>Engagement Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trial Support</fullName>
+                <default>false</default>
+                <label>Trial Support</label>
+            </value>
+            <value>
+                <fullName>Services Opportunity</fullName>
+                <default>false</default>
+                <label>SIS Integration</label>
+            </value>
+            <value>
+                <fullName>Initial Implementation</fullName>
+                <default>false</default>
+                <label>Initial Implementation</label>
+            </value>
+            <value>
+                <fullName>Upsell/Cross-sell</fullName>
+                <default>false</default>
+                <label>Upsell/Cross-sell</label>
+            </value>
+            <value>
+                <fullName>Hypercare</fullName>
+                <default>false</default>
+                <label>Adoption</label>
+            </value>
+            <value>
+                <fullName>TSE Office Hours</fullName>
+                <default>false</default>
+                <label>TSE Office Hours</label>
+            </value>
+            <value>
+                <fullName>Ad Hoc</fullName>
+                <default>false</default>
+                <label>Ad Hoc</label>
+            </value>
+            <value>
+                <fullName>Paid Services</fullName>
+                <default>false</default>
+                <label>Paid Services</label>
+            </value>
+            <value>
+                <fullName>Partner Services</fullName>
+                <default>false</default>
+                <label>Partner Services</label>
+            </value>
+            <value>
+                <fullName>BVS Engagement</fullName>
+                <default>false</default>
+                <label>BVS Engagement</label>
+            </value>
+            <value>
+                <fullName>Trial Success Manager</fullName>
+                <default>false</default>
+                <label>Trial Success Manager</label>
+            </value>
+            <value>
+                <fullName>License Upsell</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>License Upsell</label>
+            </value>
+            <value>
+                <fullName>New License Opportunity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New License Opportunity</label>
+            </value>
+            <value>
+                <fullName>SIS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SIS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

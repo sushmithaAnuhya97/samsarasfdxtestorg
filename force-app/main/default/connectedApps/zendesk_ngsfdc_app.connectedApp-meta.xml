@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://samsara.zendesk.com/integrations/salesforce/canvas/tickets</canvasUrl>
+        <locations>Visualforce</locations>
+        <locations>Aura</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>anil.madithati@samsara.com</contactEmail>
+    <label>zendesk ngsfdc app</label>
+    <oauthConfig>
+        <callbackUrl>https://samsara.zendesk.com/api/services/zis/connections/oauth/callback</callbackUrl>
+        <consumerKey>3MVG9IIStAp1zxryLrg98Fo.nWNBQfh05VG8F8hPbYR1DdM_IbC3sgs2FExOQbsib9yZJCxFpojRft7aihmGR</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>false</isPkceRequired>
+        <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <isSecretRequiredForTokenExchange>false</isSecretRequiredForTokenExchange>
+        <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <isTokenExchangeFlowEnabled>false</isTokenExchangeFlowEnabled>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Samsara - Sales Enablement</profileName>
+    <profileName>Samsara SE Connected Worker</profileName>
+    <profileName>Samsara Partner Sales - CPQ</profileName>
+    <profileName>Samsara Sales - CPQ</profileName>
+    <profileName>System Administrator</profileName>
+    <profileName>Standard User</profileName>
+    <profileName>Samsara Sales - New System</profileName>
+    <profileName>Samsara Support - Cases Only</profileName>
+    <profileName>Samsara SE</profileName>
+    <profileName>Samsara Support</profileName>
+    <profileName>Samsara Sales Management</profileName>
+    <profileName>IT Read Only</profileName>
+    <profileName>System Administrator Copy</profileName>
+    <profileName>Finance - Read Only</profileName>
+    <profileName>Salesforce Sales - CPQ Mexico</profileName>
+    <profileName>Samsara Sales - NA  AE1</profileName>
+    <profileName>Samsara Sales - NA US AE2</profileName>
+    <profileName>Samsara Sales - NA US AE3</profileName>
+    <profileName>zzzSamsara Sales - NA AE2</profileName>
+    <profileName>zzzSamsara Sales - NA AE3</profileName>
+    <profileName>Samsara Sales - EMEA IS</profileName>
+    <profileName>Samsara Sales - EMEA ENT</profileName>
+    <profileName>Samsara Sales - EMEA ADR</profileName>
+    <profileName>Samsara Sales - NA ENT</profileName>
+</ConnectedApp>

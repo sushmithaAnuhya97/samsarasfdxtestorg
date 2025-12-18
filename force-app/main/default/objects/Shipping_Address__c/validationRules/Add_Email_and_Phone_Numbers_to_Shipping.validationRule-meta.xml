@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Email_and_Phone_Numbers_to_Shipping</fullName>
+    <active>true</active>
+    <description>This validation rule ensures that email and phone numbers are filled out.</description>
+    <errorConditionFormula>And(
+ CONTAINS($Profile.Name,&apos;Sales&apos;), 
+     OR(
+         ISBLANK(Shipping_Email__c),
+         ISBLANK(Shipping_Phone__c)
+     ),
+     OR(
+         ISBLANK(Shipping_Email__c),
+         ISBLANK(Shipping_Mobile_Phone__c)
+     )
+ )</errorConditionFormula>
+    <errorMessage>In order to save the record Shipping Email and Shipping Phone need to be filled in.</errorMessage>
+</ValidationRule>

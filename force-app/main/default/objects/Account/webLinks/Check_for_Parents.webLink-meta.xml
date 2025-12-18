@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_for_Parents</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Check for Parents</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/flow/PPO2_Parent_Flow_Check?Account_Id={!Account.Id}&amp;retURL={!Account.Id}</url>
+</WebLink>

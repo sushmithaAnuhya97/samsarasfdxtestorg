@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flex_Prevent_Satus_Change_Quote</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+    NOT($Permission.Validation_Exemption_Opportunity),
+    NOT($Permission.Validation_Rule_Exemption),
+    Flex_Count_of_LIC_Products__c &lt;&gt; 0,
+    SBQQ__Account__r.Account_C_R_In_Progress__c = TRUE,
+    SBQQ__MasterContract__r.Contract_C_R_In_Progress__c = TRUE,
+    NOT(ISPICKVAL(SBQQ__Opportunity2__r.Sub_Type__c, &quot;Contract Replacement&quot;)),
+    NOT(ISPICKVAL(SBQQ__Opportunity2__r.Sub_Type__c, &quot;Contract Cancellation&quot;)),
+    OR(
+        ISPICKVAL(SBQQ__Status__c, &quot;In Review&quot;),
+        ISPICKVAL(SBQQ__Status__c, &quot;Approved&quot;)
+    )
+)</errorConditionFormula>
+    <errorMessage>You cannot change the Quote status to “In Review” or “Approved” because the amended contract is undergoing a C&amp;R process, and this Quote contains LIC which may alter this contract</errorMessage>
+</ValidationRule>

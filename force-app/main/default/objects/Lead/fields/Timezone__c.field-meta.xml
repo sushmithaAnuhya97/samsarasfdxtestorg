@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timezone__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(State,&apos;Alabama&apos;,&apos;CST&apos;,
+&apos;Alaska&apos;,&apos;AKST&apos;,
+&apos;Arizona&apos;,&apos;MST&apos;,
+&apos;Arkansas&apos;,&apos;CST&apos;,
+&apos;California&apos;,&apos;PST&apos;,
+&apos;Colorado&apos;,&apos;MST&apos;,
+&apos;Connecticut&apos;,&apos;EST&apos;,
+&apos;Delaware&apos;,&apos;EST&apos;,
+&apos;Florida&apos;,&apos;EST&apos;,
+&apos;Georgia&apos;,&apos;EST&apos;,
+&apos;Hawaii&apos;,&apos;HST&apos;,
+&apos;Idaho&apos;,&apos;MST&apos;,
+&apos;Illinois&apos;,&apos;CST&apos;,
+&apos;Indiana&apos;,&apos;EST&apos;,
+&apos;Iowa&apos;,&apos;CST&apos;,
+&apos;Kansas&apos;,&apos;CST&apos;,
+&apos;Kentucky&apos;,&apos;CST&apos;,
+&apos;Louisiana&apos;,&apos;CST&apos;,
+&apos;Maine&apos;,&apos;EST&apos;,
+&apos;Maryland&apos;,&apos;EST&apos;,
+&apos;Massachusetts&apos;,&apos;EST&apos;,
+&apos;Michigan&apos;,&apos;EST&apos;,
+&apos;Minnesota&apos;,&apos;CST&apos;,
+&apos;Mississippi&apos;,&apos;CST&apos;,
+&apos;Missouri&apos;,&apos;CST&apos;,
+&apos;Montana&apos;,&apos;MST&apos;,
+&apos;Nebraska&apos;,&apos;CST&apos;,
+&apos;Nevada&apos;,&apos;PST&apos;,
+&apos;New Hampshire&apos;,&apos;EST&apos;,
+&apos;New Jersey&apos;,&apos;EST&apos;,
+&apos;New Mexico&apos;,&apos;MST&apos;,
+&apos;New York&apos;,&apos;EST&apos;,
+&apos;North Carolina&apos;,&apos;EST&apos;,
+&apos;North Dakota&apos;,&apos;CST&apos;,
+&apos;Ohio&apos;,&apos;EST&apos;,
+&apos;Oklahoma&apos;,&apos;CST&apos;,
+&apos;Oregon&apos;,&apos;PST&apos;,
+&apos;Pennsylvania&apos;,&apos;EST&apos;,
+&apos;Rhode Island&apos;,&apos;EST&apos;,
+&apos;South Carolina&apos;,&apos;EST&apos;,
+&apos;South Dakota&apos;,&apos;CST&apos;,
+&apos;Tennessee&apos;,&apos;CST&apos;,
+&apos;Texas&apos;,&apos;CST&apos;,
+&apos;Utah&apos;,&apos;MST&apos;,
+&apos;Vermont&apos;,&apos;EST&apos;,
+&apos;Virginia&apos;,&apos;EST&apos;,
+&apos;Washington&apos;,&apos;PST&apos;,
+&apos;West Virginia&apos;,&apos;EST&apos;,
+&apos;Wisconsin&apos;,&apos;CST&apos;,
+&apos;Wyoming&apos;,&apos;MST&apos;,
+&apos;Other&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Timezone</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACC_Custom</fullName>
+    <active>true</active>
+    <description>Not allow reps to move opportunity past stage &quot;Decision&quot; if the opty has sku ACC-Custom</description>
+    <errorConditionFormula>AND(Custom_Accessory_Exists__c, Probability &gt; 0.75)</errorConditionFormula>
+    <errorMessage>ACC-Custom needs to be replaced with product code. If ACC-Custom has already been replaced please reach out to finance@samsara.com for verification.</errorMessage>
+</ValidationRule>

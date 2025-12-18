@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__Requires_the_ITN_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(zkmulti__EEIShipper__c)=&apos;Requires the ITN&apos;,zkmulti__PreDepartureITNNumber__c=null)</errorConditionFormula>
+    <errorDisplayField>zkmulti__PreDepartureITNNumber__c</errorDisplayField>
+    <errorMessage>Please fill field</errorMessage>
+</ValidationRule>

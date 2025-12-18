@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_License_Term_Must_Equal_Oppty_Term</fullName>
+    <active>true</active>
+    <description>Makes sure that the license term for the line must equal the license term for the opportunity when moved to closing or closed won.</description>
+    <errorConditionFormula>AND( 
+AND(ISPICKVAL(Opportunity.Type,&apos;Revenue Opportunity&apos;),Opportunity.IsClosed = FALSE),Stamp_ACV__c = FALSE,
+ License_Term_Copy__c &lt;&gt; Opportunity.License_Term__c 
+)
+/*just for copado to pickup*/</errorConditionFormula>
+    <errorMessage>The license term for the line must equal the license term for the opportunity.</errorMessage>
+</ValidationRule>

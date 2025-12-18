@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Owner_Pool_User__c</fullName>
+    <description>change LFBN__Is_Pool_User__c from to RR_Is_Pool_User__c for GTMS-13168</description>
+    <formula>Owner.RR_Is_Pool_User__c</formula>
+    <label>Is Owner Pool User</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

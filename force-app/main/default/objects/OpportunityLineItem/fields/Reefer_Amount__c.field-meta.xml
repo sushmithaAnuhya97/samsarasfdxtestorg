@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reefer_Amount__c</fullName>
+    <description>This formula displays the amount only for reefer products.</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(Product_Code_Copy__c=&apos;LIC-AG2-ENT&apos;,Product_Code_Copy__c=&apos;HW-AG24&apos;,Product_Code_Copy__c=&apos;CBL-AG-ARFR&apos;,Product_Code_Copy__c=&apos;LIC-AG2R-EXPRESS&apos; ,Product_Code_Copy__c=&apos;LIC-AG2R-EXPRESS-12MO&apos;),UnitPrice*Opportunity.AG24_reefer_cable_unit__c,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reefer Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

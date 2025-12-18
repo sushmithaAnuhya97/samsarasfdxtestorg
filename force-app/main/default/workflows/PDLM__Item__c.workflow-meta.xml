@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>PDLM__Name</fullName>
+        <description>This workflow field update is not in use</description>
+        <field>Name</field>
+        <formula>&quot;notused&quot;</formula>
+        <name>Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>PDLM__Autonumber Item</fullName>
+        <actions>
+            <name>PDLM__Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>PDLM__Item__c.Name</field>
+            <operation>contains</operation>
+            <value>autonumber</value>
+        </criteriaItems>
+        <description>this workflow rule is not used</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

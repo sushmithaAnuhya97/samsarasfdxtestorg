@@ -1,0 +1,1392 @@
+.slds-text-color_success {
+    color: #2e844a;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+.textColor {
+    color: #032d60;
+}
+.slds-text-heading_small {
+    color: #032d60;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #e3fcef;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px 0 rgba(46,132,74,0.08);
+}
+
+.slds-text-color_error {
+    color: #ba0517;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+lightning-spinner {
+    display: block;
+    margin: 2rem auto;
+}
+
+lightning-button {
+    display: block;
+    margin: 2rem auto 0 auto;
+    min-width: 220px;
+    font-size: 1.1rem;
+}
+
+/* Simple message styling without animations */
+.big-deal-message {
+    background: linear-gradient(90deg, #f9d423 0%, #ff4e50 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px 0 rgba(255,78,80,0.15);
+}
+
+.big-deal-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.big-deal-image {
+    max-width: 500px;
+    height: auto;
+}
+
+.standard-deal-success {
+    position: relative;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.standard-deal-success .slds-text-heading_medium {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.slds-modal__footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #dddbda;
+}
+
+.slds-button-group {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.email-preview-wrapper {
+    background: #fff;
+    border-radius: 8px;
+    max-width: 650px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+}
+
+.email-preview-header-bar {
+    background: #f4f6fb;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.email-preview-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #032d60;
+    letter-spacing: 1px;
+}
+
+.email-preview-meta {
+    padding: 1rem 1.5rem;
+    font-size: 0.98rem;
+    color: #444;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.email-label {
+    font-weight: 600;
+    color: #032d60;
+    margin-right: 0.5rem;
+}
+
+.email-value {
+    color: #222;
+}
+
+.email-preview-body {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #222;
+}
+
+.email-preview-section {
+    margin: 1.2rem 0;
+}
+
+.email-preview-label {
+    font-weight: bold;
+    color: #2e844a;
+    margin-bottom: 0.5rem;
+}
+
+.email-preview-footer {
+    margin-top: 1.5rem;
+    color: #888;
+    font-style: italic;
+}
+
+.email-preview-body a {
+    color: #0070d2;
+    text-decoration: underline;
+}
+
+/* Layout and container styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0 1rem 0;
+    margin-top: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    border-top: none;
+}
+
+.button-container > div {
+    flex: 0 0 auto;
+}
+
+/* Make sure buttons are not full width on desktop */
+lightning-button {
+    min-width: 120px;
+    margin: 0;
+    display: inline-block;
+}
+
+/* Remove extra margin from the card bottom */
+.main-container {
+    margin-bottom: 0;
+}
+
+.custom-notification-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+}
+
+.custom-notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    width: 300px;
+}
+
+.notification-success {
+    background-color: #f3fad7;
+    border-left: 4px solid #2e844a;
+}
+
+.notification-error {
+    background-color: #fde2dd;
+    border-left: 4px solid #ba0517;
+}
+
+.notification-warning {
+    background-color: #fff5e8;
+    border-left: 4px solid #fe9339;
+}
+
+.notification-info {
+    background-color: #e5f6fe;
+    border-left: 4px solid #0176d3;
+}
+
+.notification-icon {
+    margin-right: 0.75rem;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-message {
+    font-size: 0.875rem;
+    color: #032d60;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: #747474;
+}
+
+.notification-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: rgba(0,112,210,0.5);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .slds-col {
+        padding: 0 0.5rem;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 100%;
+        padding: 1rem 0 0.5rem 0;
+    }
+    lightning-button {
+        width: 100%;
+    }
+}
+
+.celebration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.celebration-logo {
+    margin-bottom: 2rem;
+}
+
+.celebration-content {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.congrats-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #2e844a;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.main-message {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    color: #032d60;
+}
+
+.big-deal-text {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dd3311;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px rgba(221, 51, 17, 0.2);
+}
+
+.celebration-subtext {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+.trophy-icon {
+    position: relative;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.trophy-icon lightning-icon {
+    --sds-c-icon-color-foreground-default: #f9d423;
+}
+
+.main-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+}
+
+.info-banner {
+    background: rgba(0,112,210,0.1);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+}
+
+.info-icon {
+    margin-right: 0.75rem;
+}
+
+.info-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #032d60;
+}
+
+.header-section {
+    padding: 1.75rem 2rem;
+    background: linear-gradient(to right, #0070d2, #1589ee);
+    border-bottom: none;
+}
+
+.header-icon {
+    --sds-c-icon-color-foreground-default: #ffffff;
+}
+
+.header-section .slds-text-heading_medium {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.content-section {
+    padding: 1.5rem;
+}
+
+.section-container {
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-icon {
+    margin-right: 0.75rem;
+}
+
+.section-card {
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.edit-button, .save-button, .cancel-button, .back-button, .next-button {
+    min-width: 120px;
+}
+
+.confirm-save-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.confirm-save-button:hover, .confirm-save-button:focus {
+    background-color: #005fb2;
+}
+
+.confirm-save-button:active {
+    background-color: #005291;
+}
+
+.confirm-save-button:disabled {
+    background-color: #c9c9c9;
+    cursor: not-allowed;
+    color: #fff;
+}
+
+/* Bottom-rising confetti animation */
+.confetti-container-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.celebration-content .confetti-container-bottom {
+    /* Make confetti more prominent for big deals */
+    height: 120%;
+    bottom: -20px;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background: #ffd300;
+    bottom: -100px;
+    border-radius: 0 0 5px 5px;
+    animation: confetti-rise 5s ease-in-out infinite;
+    opacity: 1;
+    transform-origin: bottom;
+}
+
+/* Make confetti pieces in big deal section larger */
+.celebration-content .confetti-piece {
+    width: 12px;
+    height: 35px;
+}
+
+.piece1 {
+    left: 7%;
+    animation-delay: 0.2s;
+    background: #ff4e50;
+}
+.piece2 {
+    left: 14%;
+    animation-delay: 0.4s;
+    background: #2196F3;
+}
+.piece3 {
+    left: 21%;
+    animation-delay: 0.6s;
+    background: #4CAF50;
+}
+.piece4 {
+    left: 28%;
+    animation-delay: 0.8s;
+    background: #FF9800;
+}
+.piece5 {
+    left: 35%;
+    animation-delay: 1s;
+    background: #9C27B0;
+}
+.piece6 {
+    left: 42%;
+    animation-delay: 1.2s;
+    background: #00BCD4;
+}
+.piece7 {
+    left: 49%;
+    animation-delay: 1.4s;
+    background: #ff4e50;
+}
+.piece8 {
+    left: 56%;
+    animation-delay: 1.6s;
+    background: #FFEB3B;
+}
+.piece9 {
+    left: 63%;
+    animation-delay: 1.8s;
+    background: #3F51B5;
+}
+.piece10 {
+    left: 70%;
+    animation-delay: 2s;
+    background: #E91E63;
+}
+.piece11 {
+    left: 77%;
+    animation-delay: 2.2s;
+    background: #009688;
+}
+.piece12 {
+    left: 84%;
+    animation-delay: 2.4s;
+    background: #FF5722;
+}
+.piece13 {
+    left: 91%;
+    animation-delay: 2.6s;
+    background: #CDDC39;
+}
+.piece14 {
+    left: 25%;
+    animation-delay: 2.8s;
+    background: #F44336;
+}
+.piece15 {
+    left: 75%;
+    animation-delay: 3s;
+    background: #03A9F4;
+}
+
+/* Add some rounded confetti pieces for variety */
+.celebration-content .confetti-piece:nth-child(3n) {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+/* Add some rectangular confetti pieces */
+.celebration-content .confetti-piece:nth-child(3n+1) {
+    width: 8px;
+    height: 25px;
+    border-radius: 0;
+}
+
+@keyframes confetti-rise {
+    0% {
+        transform: translateY(0) rotate(0) scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(-100px) rotate(45deg) scale(1.2);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-200px) rotate(90deg) scale(1);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateY(-300px) rotate(135deg) scale(0.8);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-400px) rotate(180deg) scale(0.6);
+        opacity: 0;
+    }
+}
+
+/* Faster animation for Big Deal section */
+.celebration-content .confetti-piece {
+    animation-duration: 4s;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fireworks animation */
+.fireworks-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.firework {
+    position: absolute;
+    bottom: 0;
+}
+
+.rocket {
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background: linear-gradient(to top, #ff6b6b, white);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: shoot-up 1.5s ease-out forwards;
+}
+
+.explosion {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    animation: explode 1.5s ease-out forwards;
+}
+
+/* Firework positions and colors */
+.firework-1 {
+    left: 20%;
+    --color-primary: rgb(255, 50, 50);
+    --color-secondary: rgba(255, 50, 50, 0.5);
+}
+.firework-1 .explosion {
+    animation-delay: 0.5s;
+}
+
+.firework-2 {
+    left: 40%;
+    --color-primary: rgb(0, 176, 255);
+    --color-secondary: rgba(0, 176, 255, 0.5);
+    animation-delay: 0.2s;
+}
+.firework-2 .explosion {
+    animation-delay: 0.7s;
+}
+
+.firework-3 {
+    left: 60%;
+    --color-primary: rgb(255, 230, 0);
+    --color-secondary: rgba(255, 230, 0, 0.5);
+    animation-delay: 0.4s;
+}
+.firework-3 .explosion {
+    animation-delay: 0.9s;
+}
+
+.firework-4 {
+    left: 80%;
+    --color-primary: rgb(138, 43, 226);
+    --color-secondary: rgba(138, 43, 226, 0.5);
+    animation-delay: 0.6s;
+}
+.firework-4 .explosion {
+    animation-delay: 1.1s;
+}
+
+.firework-5 {
+    left: 30%;
+    --color-primary: rgb(50, 205, 50);
+    --color-secondary: rgba(50, 205, 50, 0.5);
+    animation-delay: 0.8s;
+}
+.firework-5 .explosion {
+    animation-delay: 1.3s;
+}
+
+.firework-6 {
+    left: 70%;
+    --color-primary: rgb(255, 165, 0);
+    --color-secondary: rgba(255, 165, 0, 0.5);
+    animation-delay: 1s;
+}
+.firework-6 .explosion {
+    animation-delay: 1.5s;
+}
+
+@keyframes shoot-up {
+    0% {
+        height: 15px;
+        bottom: 0;
+        opacity: 1;
+    }
+    70% {
+        height: 5px;
+        bottom: 80%;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        bottom: 90%;
+        opacity: 0;
+    }
+}
+
+@keyframes explode {
+    0%, 30% {
+        width: 4px;
+        height: 4px;
+        opacity: 0;
+        box-shadow: none;
+    }
+    31% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 white;
+    }
+    40% {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        box-shadow: 
+            0 0 5px 5px var(--color-primary), 
+            0 0 30px 10px var(--color-secondary);
+    }
+    60% {
+        width: 300px;
+        height: 300px;
+        opacity: 0.8;
+        box-shadow: 
+            0 0 5px 5px var(--color-primary), 
+            0 0 30px 15px var(--color-secondary),
+            0 0 50px 25px var(--color-secondary);
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        opacity: 0;
+        box-shadow: 
+            0 0 5px 5px rgba(255, 255, 255, 0),
+            0 0 30px 15px rgba(255, 255, 255, 0),
+            0 0 50px 25px rgba(255, 255, 255, 0);
+    }
+}
+
+/* Create particle burst effect with pseudo-elements */
+.explosion::before, .explosion::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: particle-burst 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.explosion::before {
+    transform: translate(-50%, -50%) rotate(30deg);
+    animation-delay: 0.1s;
+}
+
+.explosion::after {
+    transform: translate(-50%, -50%) rotate(60deg);
+    animation-delay: 0.2s;
+}
+
+@keyframes particle-burst {
+    0%, 30% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    40% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Staggered animation repeats */
+.firework:nth-child(1) .rocket, .firework:nth-child(1) .explosion {
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+
+.firework:nth-child(2) .rocket, .firework:nth-child(2) .explosion {
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+.firework:nth-child(3) .rocket, .firework:nth-child(3) .explosion {
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+.firework:nth-child(4) .rocket, .firework:nth-child(4) .explosion {
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+
+.firework:nth-child(5) .rocket, .firework:nth-child(5) .explosion {
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+}
+
+.firework:nth-child(6) .rocket, .firework:nth-child(6) .explosion {
+    animation-iteration-count: infinite;
+    animation-delay: 2.5s;
+}
+
+/* Enhanced fireworks for big deal section */
+.celebration-content .fireworks-container {
+    height: 300px;
+}
+
+.celebration-content .explosion {
+    animation-duration: 2s;
+}
+
+.celebration-content .rocket {
+    animation-duration: 2s;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Light Show Animation */
+.light-show-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.light-show-small {
+    height: 200px;
+}
+
+/* Glowing circles */
+.light-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(15px);
+    mix-blend-mode: screen;
+}
+
+.light-circle-red {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,100,100,1) 0%, rgba(255,0,0,0) 70%);
+    top: 25%;
+    left: 30%;
+    animation: pulse-move 10s ease-in-out infinite alternate;
+}
+
+.light-circle-blue {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(100,150,255,1) 0%, rgba(0,0,255,0) 70%);
+    top: 30%;
+    left: 60%;
+    animation: pulse-move 8s ease-in-out infinite alternate-reverse;
+}
+
+.light-circle-yellow {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(255,255,100,1) 0%, rgba(255,255,0,0) 70%);
+    top: 40%;
+    left: 40%;
+    animation: pulse-move 12s ease-in-out infinite alternate;
+}
+
+.light-circle-green {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(100,255,100,1) 0%, rgba(0,255,0,0) 70%);
+    top: 30%;
+    left: 10%;
+    animation: pulse-move 9s ease-in-out infinite alternate-reverse;
+}
+
+.light-circle-purple {
+    width: 270px;
+    height: 270px;
+    background: radial-gradient(circle, rgba(180,100,255,1) 0%, rgba(128,0,255,0) 70%);
+    top: 35%;
+    left: 70%;
+    animation: pulse-move 11s ease-in-out infinite alternate;
+}
+
+/* Ambient glow */
+.light-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    mix-blend-mode: screen;
+    opacity: 0.3;
+    animation: glow-pulse 4s ease-in-out infinite alternate;
+}
+
+.light-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,200,100,0.6) 0%, rgba(255,100,50,0) 70%);
+    top: 20%;
+    left: 25%;
+}
+
+.light-glow-2 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(100,200,255,0.6) 0%, rgba(50,100,255,0) 70%);
+    top: 35%;
+    left: 45%;
+    animation-delay: 1s;
+}
+
+.light-glow-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(255,100,200,0.6) 0%, rgba(255,50,150,0) 70%);
+    top: 25%;
+    left: 60%;
+    animation-delay: 2s;
+}
+
+/* Light beams */
+.light-beam {
+    position: absolute;
+    background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0));
+    transform-origin: bottom center;
+    width: 5px;
+    height: 150px;
+    bottom: 0;
+    filter: blur(5px);
+    animation: beam-rotate 8s linear infinite;
+}
+
+.light-beam-1 {
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.light-beam-2 {
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.light-beam-3 {
+    left: 60%;
+    animation-delay: 4s;
+}
+
+.light-beam-4 {
+    left: 75%;
+    animation-delay: 6s;
+}
+
+/* Smaller circles for standard success */
+.light-show-small .light-circle {
+    transform: scale(0.6);
+}
+
+.light-show-small .light-glow {
+    transform: scale(0.6);
+}
+
+.light-show-small .light-beam {
+    height: 100px;
+}
+
+/* Animations */
+@keyframes pulse-move {
+    0% {
+        transform: scale(0.8) translate(0, 0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1) translate(20px, -10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.9) translate(-20px, 10px);
+        opacity: 0.6;
+    }
+}
+
+@keyframes glow-pulse {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+}
+
+@keyframes beam-rotate {
+    0% {
+        transform: rotate(-20deg);
+        opacity: 0.3;
+    }
+    25% {
+        transform: rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: rotate(20deg);
+        opacity: 0.3;
+    }
+    75% {
+        transform: rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: rotate(-20deg);
+        opacity: 0.3;
+    }
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Subtle celebration effects */
+.celebration-subtle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.celebration-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(90deg, 
+        rgba(79, 195, 247, 0) 0%, 
+        rgba(79, 195, 247, 0.4) 25%, 
+        rgba(170, 102, 204, 0.4) 50%, 
+        rgba(255, 213, 79, 0.4) 75%, 
+        rgba(79, 195, 247, 0) 100%);
+    background-size: 300% 100%;
+    animation: subtle-border-shine 4s ease infinite;
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(79, 195, 247, 0.2);
+}
+
+.celebration-subtle-small .celebration-border {
+    opacity: 0.5;
+}
+
+@keyframes subtle-border-shine {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.trophy-icon {
+    position: relative;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    animation: gentle-bounce 2s ease-in-out;
+}
+
+.trophy-icon lightning-icon {
+    --sds-c-icon-color-foreground-default: #f9d423;
+    filter: drop-shadow(0 0 8px rgba(249, 212, 35, 0.5));
+}
+
+@keyframes gentle-bounce {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+    80% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.congrats-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #2e844a;
+    display: block;
+    margin-bottom: 1rem;
+    animation: slide-in-top 0.8s ease-out;
+}
+
+.main-message {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    color: #032d60;
+    animation: slide-in-top 0.8s ease-out 0.2s backwards;
+}
+
+.big-deal-text {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dd3311;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px rgba(221, 51, 17, 0.2);
+    animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+.celebration-subtext {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #444;
+    animation: slide-in-top 0.8s ease-out 0.4s backwards;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes subtle-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+/* Standard deal success */
+.standard-deal-success {
+    position: relative;
+    text-align: center;
+    padding: 1.5rem;
+    animation: fade-in-up 0.8s ease-out;
+}
+
+.big-deal-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.big-deal-image {
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+.standard-deal-success .slds-text-heading_medium {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    animation: fade-in-up 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes fade-in-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Loading Spinner */
+.slds-spinner_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Error Message */
+.slds-notify_alert {
+    margin: 0;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 100%;
+        padding: 1rem 0 0.5rem 0;
+    }
+    lightning-button {
+        width: 100%;
+    }
+}
+
+.custom-error-container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideIn 0.3s ease-out;
+}
+
+.error-alert {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    background: linear-gradient(to right, #f8f8f8, #ffffff);
+    transition: all 0.3s ease;
+}
+
+.error-alert:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.error-content-wrapper {
+    padding: 1rem;
+}
+
+.error-icon-container {
+    flex-shrink: 0;
+}
+
+.error-icon {
+    --sds-c-icon-color-foreground-default: #ea001e;
+    animation: pulse 2s infinite;
+}
+
+.error-message-container {
+    flex-grow: 1;
+}
+
+.error-message-container h2 {
+    color: #ea001e;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.error-message-container p {
+    color: #706e6b;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.next-btn-container {
+    margin-top: 1.5rem;
+}
+
+.next-btn {
+    transition: all 0.2s ease;
+    min-width: 200px;
+}
+
+.next-btn:hover {
+    transform: translateX(4px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .error-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .error-icon-container {
+        margin-bottom: 1rem;
+    }
+    
+    .next-btn {
+        width: 100%;
+    }
+}

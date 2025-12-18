@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Parent_Change_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is the change request that represents the change to which a deployment or subsequent change request belongs.</description>
+    <inlineHelpText>Set this field to record the change request that this change request or deployment record relates.</inlineHelpText>
+    <label>Parent Change Request</label>
+    <referenceTo>FLODocs__FLO_Change_Request__c</referenceTo>
+    <relationshipLabel>Change Requests</relationshipLabel>
+    <relationshipName>FLO_Change_Requests</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

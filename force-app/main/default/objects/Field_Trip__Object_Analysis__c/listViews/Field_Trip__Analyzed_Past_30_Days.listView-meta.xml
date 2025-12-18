@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Trip__Analyzed_Past_30_Days</fullName>
+    <columns>NAME</columns>
+    <columns>Field_Trip__Object_Label__c</columns>
+    <columns>Field_Trip__Filter__c</columns>
+    <columns>Field_Trip__Fields__c</columns>
+    <columns>Field_Trip__Last_Analyzed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Field_Trip__Last_Analyzed__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:30</value>
+    </filters>
+    <label>Analyzed Past 30 Days</label>
+</ListView>

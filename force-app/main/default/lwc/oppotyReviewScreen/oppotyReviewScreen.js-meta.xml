@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Opportunity Review Screen</masterLabel>
+    <description>Component for reviewing and editing opportunity and account information</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="account" type="@salesforce/schema/Account" label="Account" description="Account record to display and edit" required="true"/>
+            <property name="opportunity" type="@salesforce/schema/Opportunity" label="Opportunity" description="Opportunity record to display and edit" required="true"/>
+            <property name="loggedInUser" type="@salesforce/schema/User" label="Logged In User" description="Currently logged in user" required="true"/>
+            <property name="userRole" type="@salesforce/schema/UserRole" label="User Role" description="User role of the logged in user" required="true"/>
+            <property name="userProfile" type="@salesforce/schema/Profile" label="User Profile" description="Profile of the logged in user" required="true"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

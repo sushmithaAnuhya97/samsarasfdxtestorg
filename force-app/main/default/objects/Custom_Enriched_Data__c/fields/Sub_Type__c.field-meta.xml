@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <label>Sub Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Master_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>Billing Address</fullName>
+                <default>false</default>
+                <label>Billing Address</label>
+            </value>
+            <value>
+                <fullName>NAICS Code</fullName>
+                <default>false</default>
+                <label>NAICS Code</label>
+            </value>
+            <value>
+                <fullName>SIC Code</fullName>
+                <default>false</default>
+                <label>SIC Code</label>
+            </value>
+            <value>
+                <fullName>Organization Size</fullName>
+                <default>false</default>
+                <label>Organization Size</label>
+            </value>
+            <value>
+                <fullName>Employee Count</fullName>
+                <default>false</default>
+                <label>Employee Count</label>
+            </value>
+            <value>
+                <fullName>Annual Revenue</fullName>
+                <default>false</default>
+                <label>Annual Revenue</label>
+            </value>
+            <value>
+                <fullName>Vehicle Validation</fullName>
+                <default>false</default>
+                <label>Vehicle Validation</label>
+            </value>
+            <value>
+                <fullName>Smart Trailer Validation</fullName>
+                <default>false</default>
+                <label>Smart Trailer Validation</label>
+            </value>
+            <value>
+                <fullName>Powered Connected Equipment Validation</fullName>
+                <default>false</default>
+                <label>Powered Connected Equipment Validation</label>
+            </value>
+            <value>
+                <fullName>Unpowered Connected Equipment Validation</fullName>
+                <default>false</default>
+                <label>Unpowered Connected Equipment Validation</label>
+            </value>
+            <value>
+                <fullName>Citizens Validation</fullName>
+                <default>false</default>
+                <label>Citizens Validation</label>
+            </value>
+            <value>
+                <fullName>Students Validation</fullName>
+                <default>false</default>
+                <label>Students Validation</label>
+            </value>
+            <value>
+                <fullName>Current Telematics Provider</fullName>
+                <default>false</default>
+                <label>Current Telematics Provider</label>
+            </value>
+            <value>
+                <fullName>DUNS Number</fullName>
+                <default>false</default>
+                <label>DUNS Number</label>
+            </value>
+            <value>
+                <fullName>US DOT</fullName>
+                <default>false</default>
+                <label>US DOT</label>
+            </value>
+            <value>
+                <fullName>Phone Number</fullName>
+                <default>false</default>
+                <label>Phone Number</label>
+            </value>
+            <value>
+                <fullName>Estimated Workers</fullName>
+                <default>false</default>
+                <label>Estimated Workers</label>
+            </value>
+            <value>
+                <fullName>Estimated Drivers</fullName>
+                <default>false</default>
+                <label>Estimated Drivers</label>
+            </value>
+            <value>
+                <fullName>Account Origination</fullName>
+                <default>false</default>
+                <label>Account Origination</label>
+            </value>
+            <value>
+                <fullName>Fortune Ranking</fullName>
+                <default>false</default>
+                <label>Fortune Ranking</label>
+            </value>
+            <value>
+                <fullName>Forbes Global Ranking</fullName>
+                <default>false</default>
+                <label>Forbes Global Ranking</label>
+            </value>
+            <value>
+                <fullName>General Account Enrichment</fullName>
+                <default>false</default>
+                <label>General Account Enrichment</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>Billing Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>NAICS Code</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>SIC Code</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>Annual Revenue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>DUNS Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>US DOT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>Phone Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>Account Origination</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>Fortune Ranking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>Forbes Global Ranking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Firmographics</controllingFieldValue>
+            <valueName>General Account Enrichment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Organization Size</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Employee Count</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Vehicle Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Smart Trailer Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Powered Connected Equipment Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Unpowered Connected Equipment Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Citizens Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Students Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Estimated Workers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Size</controllingFieldValue>
+            <valueName>Estimated Drivers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Digital Footprint</controllingFieldValue>
+            <valueName>Website</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Company Digital Footprint</controllingFieldValue>
+            <valueName>LinkedIn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Competitor Intel</controllingFieldValue>
+            <valueName>Current Telematics Provider</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

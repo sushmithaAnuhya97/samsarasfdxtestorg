@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Assignment_Required_When_Always_Use</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (Always_Use_Next_Assignment__c = true,   ISBLANK(Next_Assignment__c))</errorConditionFormula>
+    <errorMessage>Next Assignment field value is required when Always Use Next Assignment is checked</errorMessage>
+</ValidationRule>

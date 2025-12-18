@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_AEs_from_updating_subType</fullName>
+    <active>true</active>
+    <description>GTMS_10568 : Create a VR to prohibit Renewal AEs from updating an opportunity sub-type to “Auto-Renewal” if it does not satisfy the auto-renewal requirement</description>
+    <errorConditionFormula>IF(AND(CONTAINS($Profile.Name,&apos;Samsara Sales - Renewals - New System&apos;), NOT( $Permission.Validation_Rule_Exemption ),
+ ISCHANGED(Sub_Type__c),Text(Sub_Type__c)==&apos;Auto-Renewal&apos;,OR( SBQQ__RenewedContract__r.Contract_Renewable_ACV_USD__c&gt;15000,  Account.Account_Size_Segment__c =&apos;ENT&apos;,NOT(ISBLANK(Finance_Partner__c)), Account.Quarantine_Enabled__c = TRUE, 
+Account.Delinquent__c = TRUE,
+Account.Auto_renewal_Opt_Out__c = TRUE,
+NOT(ISBLANK(Reseller__c)),ISBLANK( Account.Billing_Stripe_Customer_Id__c ))), true, false)</errorConditionFormula>
+    <errorDisplayField>Express_Agreement_Accepted__c</errorDisplayField>
+    <errorMessage>One or more fields on this opportunity is not eligible for auto-renewal.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Program_Enrolment_Fields_Edit</fullName>
+    <active>true</active>
+    <description>Created as part of Partners project GTMS-28128, Only Users with permission Manage_Partner_Objects_Field_Access able to edit the fields.</description>
+    <errorConditionFormula>(
+    ISCHANGED(Member_Status__c) ||
+    ISCHANGED(Partner_Account__c) ||
+    ISCHANGED(CurrencyIsoCode) 
+)
+&amp;&amp;
+NOT(
+    $Profile.Name = &quot;System Administrator&quot; ||
+    $Profile.Name = &quot;Sales Ops Profile&quot; ||
+    $Permission.Partner_Object_Fields_Edit_Access 
+)</errorConditionFormula>
+    <errorMessage>You don&apos;t have necessary permission to edit the fields.</errorMessage>
+</ValidationRule>

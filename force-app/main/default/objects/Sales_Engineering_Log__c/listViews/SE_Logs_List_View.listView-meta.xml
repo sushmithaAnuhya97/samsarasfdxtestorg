@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_Logs_List_View</fullName>
+    <columns>NAME</columns>
+    <columns>Sites_Visibility_Specialist__c</columns>
+    <columns>Tech_Stage__c</columns>
+    <columns>ACV_Bookings__c</columns>
+    <columns>Opportunity_Stage__c</columns>
+    <columns>Opportunity_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sites_Visibility_Specialist__c</field>
+        <operation>equals</operation>
+        <value>Chase Ayers</value>
+    </filters>
+    <filters>
+        <field>Opportunity_Stage__c</field>
+        <operation>equals</operation>
+        <value>Incubate,Qualified,Trial,Proposal,Decision,Purchase</value>
+    </filters>
+    <label>SE Logs List View</label>
+</ListView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ProductService__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the Salesforce product or service to which this billing document line item relates.</description>
+    <inlineHelpText>Lookup to the Salesforce product or service.</inlineHelpText>
+    <label>Product or Service</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Product Service Relationship</relationshipLabel>
+    <relationshipName>RelatedBillingDocumentLineItems</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

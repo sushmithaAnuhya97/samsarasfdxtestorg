@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Terms_Changed__c</fullName>
+    <description>Set to true if Payment Terms changed</description>
+    <formula>IF( TEXT(Payment_Terms__c) &lt;&gt;  TEXT(Initial_Payment_Terms__c), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>When checked, indicates that Payment Terms has changed from the Initial Payment Terms.</inlineHelpText>
+    <label>Payment Terms Changed</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

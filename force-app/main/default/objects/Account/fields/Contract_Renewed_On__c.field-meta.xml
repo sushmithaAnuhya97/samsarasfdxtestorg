@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Renewed_On__c</fullName>
+    <inlineHelpText>Displays the next renewal date (+1 day after contract end date) based on the earliest active contract. It will be blank if no upcoming renewals. If a renewal is already closed, the next expiring contract date is shown.</inlineHelpText>
+    <label>Contract Renews On</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

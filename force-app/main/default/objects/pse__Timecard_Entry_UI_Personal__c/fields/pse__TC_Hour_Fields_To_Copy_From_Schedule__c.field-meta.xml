@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__TC_Hour_Fields_To_Copy_From_Schedule__c</fullName>
+    <defaultValue>&quot;Monday_Hours__c,Tuesday_Hours__c,Wednesday_Hours__c,Thursday_Hours__c,Friday_Hours__c ,Saturday_Hours__c,Sunday_Hours__c&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Specify Timecard Hour fields to copy from schedule. Only these hour fields are valid for this config
+ &quot;Monday_Hours__c,Tuesday_Hours__c ,Wednesday_Hours__c ,Thursday_Hours__c,Friday_Hours__c ,Saturday_Hours__c,Sunday_Hours__c&quot;</description>
+    <inlineHelpText>CSV to specify Timecard Header fields to copy from schedule. Only these hour fields are valid for this config
+ &quot;Monday_Hours__c,Tuesday_Hours__c ,Wednesday_Hours__c ,Thursday_Hours__c,Friday_Hours__c ,Saturday_Hours__c,Sunday_Hours__c&quot;</inlineHelpText>
+    <label>TC Hour Fields To Copy From Schedule</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

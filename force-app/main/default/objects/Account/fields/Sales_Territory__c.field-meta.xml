@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Territory__c</fullName>
+    <description>Sales Territory based on Record Type, Segment, Owner Role, and Geography.</description>
+    <externalId>false</externalId>
+    <formula>Lane_Four_Segment__c + &quot; &quot; +  Lane_Four_Sub_Segment__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Territory</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

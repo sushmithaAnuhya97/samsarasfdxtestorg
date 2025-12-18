@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Unit_Price__c</fullName>
+    <formula>IF( ListPrice  = 0, 0, 
+ IF(Is_Hardware__c  = TRUE, (Annual_Unit_Price__c /License_Term_Copy__c), 
+  IF (Is_Hardware__c = FALSE, (Annual_Unit_Price__c / 12), 0) 
+ ) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Monthly Unit Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

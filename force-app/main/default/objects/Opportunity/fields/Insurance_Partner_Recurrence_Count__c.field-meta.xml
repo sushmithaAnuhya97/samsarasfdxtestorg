@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Partner_Recurrence_Count__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Insurance_Partner_Payment_Frequency__c = &quot;Annual&quot;, MCEILING(License_Term_Formula__c / 12),
+IF(Insurance_Partner_Payment_Frequency__c = &quot;Quarterly&quot;, MCEILING(License_Term_Formula__c / 3), License_Term_Formula__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Insurance Partner Recurrence Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

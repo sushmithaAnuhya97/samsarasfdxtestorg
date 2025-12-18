@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__User_Target__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>User to be populated as Mandated, Additional, Approved By, Reject By. Also, user can be a Developer assigned to a Change Request for example.</description>
+    <inlineHelpText>User to be populated as Mandated, Additional, Approved By, Reject By. Also, user can be a Developer assigned to a Change Request for example.</inlineHelpText>
+    <label>User Target</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>FLO_Junctions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

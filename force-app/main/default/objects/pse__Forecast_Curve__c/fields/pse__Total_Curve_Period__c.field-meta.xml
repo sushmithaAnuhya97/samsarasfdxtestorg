@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Total_Curve_Period__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Total Curve Period</label>
+    <summarizedField>pse__Forecast_Curve_Detail__c.pse__Period__c</summarizedField>
+    <summaryForeignKey>pse__Forecast_Curve_Detail__c.pse__Forecast_Curve__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

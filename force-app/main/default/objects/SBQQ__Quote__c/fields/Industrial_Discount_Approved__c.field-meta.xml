@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Discount_Approved__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  Industrial_Discount_Approval_Needed__c = TRUE, IMAGE(&quot;/img/msg_icons/error16.png&quot;,&quot;Yes:&quot;,20,20)+ &quot; Preview Approvals After Saving&quot;, IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;No:&quot;, 20, 20) + &quot; No Approval Needed&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Industrial Discount Approved?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

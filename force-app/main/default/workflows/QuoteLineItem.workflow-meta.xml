@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Total_Trial_Price</fullName>
+        <field>Total_Trial_Price__c</field>
+        <formula>Trial_Price_quote__c*Quantity</formula>
+        <name>Update Total Trial Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Total Trial Price</fullName>
+        <actions>
+            <name>Update_Total_Trial_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>QuoteLineItem.Trial_Price_quote__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>QuoteLineItem.Trial_Price_quote__c</field>
+            <operation>notEqual</operation>
+            <value>USD 0</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

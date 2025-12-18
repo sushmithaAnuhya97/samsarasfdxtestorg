@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiring_Next_Quarter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>GTMS-28592: Automatically identifies accounts eligible for FY26 tiered renewals by flagging contracts expiring in the next quarter. For accounts with a single non-trial contract, set to TRUE if the contract ends next quarter. For accounts with multiple co-termed contracts, set to TRUE if all contracts end in the same quarter AND that quarter is next quarter. For accounts with non co-termed contracts (ending in different quarters), always set to FALSE. Only applies to active/activated contracts with End Date within the next 365 days, excluding trial contracts. Used by Renewals Operations team to prioritize renewal activities.</description>
+    <label>Tiered License Eligible</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

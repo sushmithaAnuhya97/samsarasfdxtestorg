@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Provide_Shipping_Address</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISNEW(),
+ISBLANK(Quote__r.Shipping_Address_NEW__c ),
+Quote__r.Discount_Approval_Needed__c,
+TEXT(Quote__r.Configuration_Segment__c) != &quot;Express&quot;
+)</errorConditionFormula>
+    <errorMessage>Please provide a quote shipping address prior to submitting for approval.</errorMessage>
+</ValidationRule>

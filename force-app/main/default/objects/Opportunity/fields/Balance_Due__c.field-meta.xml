@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Balance_Due__c</fullName>
+    <description>Amount, sales tax, shipping &amp; handling less amount received</description>
+    <formula>Amount
++ SBQQ__PrimaryQuote__r.Total_Quote_Line_Item_Subsidy_amount__c
++IF(ISPICKVAL(SBQQ__PrimaryQuote__r.Is_Installation_Reimbursable__c, &apos;No&apos;),SBQQ__PrimaryQuote__r.Total_Estimated_Installation_Costs__c,0)
++ IF(CPQ_Opportunity__c, Sales_Tax_Amount__c, Sales_Tax__c)
++ Shipping_and_Handling__c
++ X3rd_Party_Products_Services__c
+- Amount_Received__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Amount, sales tax, shipping &amp; handling less amount received</inlineHelpText>
+    <label>Balance Due</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Subreason__c</fullName>
+    <description>Choose a subreason for the customer&apos;s return.</description>
+    <inlineHelpText>You must fill Return Reason field first.</inlineHelpText>
+    <label>Return Subreason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Return_Reason__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy or business closure</fullName>
+                <default>false</default>
+                <label>Bankruptcy or business closure</label>
+            </value>
+            <value>
+                <fullName>Business Closure</fullName>
+                <default>false</default>
+                <label>Business Closure</label>
+            </value>
+            <value>
+                <fullName>Change in decision maker</fullName>
+                <default>false</default>
+                <label>Change in decision maker</label>
+            </value>
+            <value>
+                <fullName>Chose another vendor (specify in notes)</fullName>
+                <default>false</default>
+                <label>Chose another vendor (specify in notes)</label>
+            </value>
+            <value>
+                <fullName>Contract length or pricing</fullName>
+                <default>false</default>
+                <label>Contract length or pricing</label>
+            </value>
+            <value>
+                <fullName>Co-termed to wrong contract</fullName>
+                <default>false</default>
+                <label>Co-termed to wrong contract</label>
+            </value>
+            <value>
+                <fullName>Customer acquisition (HW+LIC)</fullName>
+                <default>false</default>
+                <label>Customer acquisition (HW+LIC)</label>
+            </value>
+            <value>
+                <fullName>Desired features do not exist</fullName>
+                <default>false</default>
+                <label>Desired features do not exist</label>
+            </value>
+            <value>
+                <fullName>Disputing auto-renewal</fullName>
+                <default>false</default>
+                <label>Disputing auto-renewal</label>
+            </value>
+            <value>
+                <fullName>Downsizing business</fullName>
+                <default>false</default>
+                <label>Downsizing business</label>
+            </value>
+            <value>
+                <fullName>Exchange hardware</fullName>
+                <default>false</default>
+                <label>Exchange hardware</label>
+            </value>
+            <value>
+                <fullName>Global crisis or natural disaster</fullName>
+                <default>false</default>
+                <label>Global crisis or natural disaster</label>
+            </value>
+            <value>
+                <fullName>Hardware failure</fullName>
+                <default>false</default>
+                <label>Hardware failure</label>
+            </value>
+            <value>
+                <fullName>Impacted by government law/regulation</fullName>
+                <default>false</default>
+                <label>Impacted by government law/regulation</label>
+            </value>
+            <value>
+                <fullName>Incorrect discounts applied</fullName>
+                <default>false</default>
+                <label>Incorrect discounts applied</label>
+            </value>
+            <value>
+                <fullName>Installation complexity</fullName>
+                <default>false</default>
+                <label>Installation complexity</label>
+            </value>
+            <value>
+                <fullName>Lack of financing</fullName>
+                <default>false</default>
+                <label>Lack of financing</label>
+            </value>
+            <value>
+                <fullName>Mid-term subsidies</fullName>
+                <default>false</default>
+                <label>Mid-term subsidies</label>
+            </value>
+            <value>
+                <fullName>Onboarding process</fullName>
+                <default>false</default>
+                <label>Onboarding process</label>
+            </value>
+            <value>
+                <fullName>Ordered incorrect product/quantity (Samsara error)</fullName>
+                <default>false</default>
+                <label>Ordered incorrect product/quantity (Samsara error)</label>
+            </value>
+            <value>
+                <fullName>Ordered incorrect product/quantity on webstore</fullName>
+                <default>false</default>
+                <label>Ordered incorrect product/quantity on webstore</label>
+            </value>
+            <value>
+                <fullName>Other (explain in notes)</fullName>
+                <default>false</default>
+                <label>Other (explain in notes)</label>
+            </value>
+            <value>
+                <fullName>Payment terms change</fullName>
+                <default>false</default>
+                <label>Payment terms change</label>
+            </value>
+            <value>
+                <fullName>Product incompatible with fleet</fullName>
+                <default>false</default>
+                <label>Product incompatible with fleet</label>
+            </value>
+            <value>
+                <fullName>Product no longer needed or not in use</fullName>
+                <default>false</default>
+                <label>Product no longer needed or not in use</label>
+            </value>
+            <value>
+                <fullName>Product no longer supported by Samsara</fullName>
+                <default>false</default>
+                <label>Product no longer supported by Samsara</label>
+            </value>
+            <value>
+                <fullName>Sales rep misrepresented product</fullName>
+                <default>false</default>
+                <label>Sales rep misrepresented product</label>
+            </value>
+            <value>
+                <fullName>Sales rep responsiveness</fullName>
+                <default>false</default>
+                <label>Sales rep responsiveness</label>
+            </value>
+            <value>
+                <fullName>Shipping issue or product not received/lost</fullName>
+                <default>false</default>
+                <label>Shipping issue or product not received/lost</label>
+            </value>
+            <value>
+                <fullName>Solution not working as expected</fullName>
+                <default>false</default>
+                <label>Solution not working as expected</label>
+            </value>
+            <value>
+                <fullName>Stolen or totaled vehicles</fullName>
+                <default>false</default>
+                <label>Stolen or totaled vehicles</label>
+            </value>
+            <value>
+                <fullName>Support responsiveness</fullName>
+                <default>false</default>
+                <label>Support responsiveness</label>
+            </value>
+            <value>
+                <fullName>Swap units between subsidiaries</fullName>
+                <default>false</default>
+                <label>Swap units between subsidiaries</label>
+            </value>
+            <value>
+                <fullName>Tax error</fullName>
+                <default>false</default>
+                <label>Tax error</label>
+            </value>
+            <value>
+                <fullName>Treated risk-free period as trial</fullName>
+                <default>false</default>
+                <label>Treated risk-free period as trial</label>
+            </value>
+            <value>
+                <fullName>Unable to cancel contract with another vendor</fullName>
+                <default>false</default>
+                <label>Unable to cancel contract with another vendor</label>
+            </value>
+            <value>
+                <fullName>Units sold on wrong account (HW + LIC)</fullName>
+                <default>false</default>
+                <label>Units sold on wrong account (HW + LIC)</label>
+            </value>
+            <value>
+                <fullName>Upgrade hardware</fullName>
+                <default>false</default>
+                <label>Upgrade hardware</label>
+            </value>
+            <value>
+                <fullName>Warranty terms</fullName>
+                <default>false</default>
+                <label>Warranty terms</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Co-termed to wrong contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Customer acquisition (HW+LIC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Incorrect discounts applied</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Mid-term subsidies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Payment terms change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Swap units between subsidiaries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Tax error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Reprocessing</controllingFieldValue>
+            <valueName>Units sold on wrong account (HW + LIC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>[INTERNAL] Upgrade</controllingFieldValue>
+            <valueName>Upgrade hardware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Bankruptcy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Business Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Change in decision maker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Downsizing business</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Global crisis or natural disaster</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Impacted by government law/regulation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Lack of financing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business/Financial</controllingFieldValue>
+            <valueName>Stolen or totaled vehicles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Competitor</controllingFieldValue>
+            <valueName>Chose another vendor (specify in notes)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Competitor</controllingFieldValue>
+            <valueName>Unable to cancel contract with another vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Contract length or pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Disputing auto-renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Other (explain in notes)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Sales rep misrepresented product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Sales rep responsiveness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Treated risk-free period as trial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Desired features do not exist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Hardware failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Installation complexity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product incompatible with fleet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product no longer needed or not in use</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product no longer supported by Samsara</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Solution not working as expected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Onboarding process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Support responsiveness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Warranty terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fulfillment</controllingFieldValue>
+            <valueName>Ordered incorrect product/quantity (Samsara error)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fulfillment</controllingFieldValue>
+            <valueName>Ordered incorrect product/quantity on webstore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fulfillment</controllingFieldValue>
+            <valueName>Shipping issue or product not received/lost</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

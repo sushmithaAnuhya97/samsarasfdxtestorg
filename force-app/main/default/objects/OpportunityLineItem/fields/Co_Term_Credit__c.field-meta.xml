@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Co_Term_Credit__c</fullName>
+    <formula>IF(CONTAINS(Product_Code_Copy__c, &quot;LIC&quot;),
+TotalPrice-TotalPrice*((Opportunity.CloseDate-(Opportunity.License_End_Date__c -Opportunity.License_Term__c))/(Opportunity.License_End_Date__c-(Opportunity.License_End_Date__c-Opportunity.License_Term__c))),TotalPrice)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Co-Term Credit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Second_Pass</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Request Second Pass</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/63.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/63.0/apex.js&quot;)}
+
+
+
+if(!{!User.Second_Pass_on_ADR_Transfer__c}){
+alert(&quot;You are not currently enabled to request a second pass. Please reach out to SalesOps to have your settings updated if you believe this is an error.&quot;);
+}
+else{
+window.open(&apos;/flow/Request_Second_Pass?recordID={!ADR_Transfer_Log__c.Id}&amp;retURL=/{!ADR_Transfer_Log__c.Id}&apos;);
+}</url>
+</WebLink>

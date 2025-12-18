@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flex_SwapFieldNotEditable</fullName>
+    <active>true</active>
+    <description>GTMS-26896: Lock &quot;Swap&quot; Checkbox on Return Opportunities in C&amp;R Transactions</description>
+    <errorConditionFormula>IF(
+AND(
+ISPICKVAL(Type, &quot;Remorse Refund&quot;),
+ISPICKVAL(Sub_Type__c, &quot;Contract Cancellation&quot;),
+NOT($Setup.FlexCnRTriggerBypass__c.Bypass_Sync_and_Flag_Reset_Logic__c),
+NOT($Permission.Validation_Exemption_Opportunity),
+ISCHANGED(Swap__c),
+PRIORVALUE(Swap__c) 
+),
+true,
+false)</errorConditionFormula>
+    <errorDisplayField>Swap__c</errorDisplayField>
+    <errorMessage>Swap field is not editable for return opportunities in a C&amp;R transaction</errorMessage>
+</ValidationRule>

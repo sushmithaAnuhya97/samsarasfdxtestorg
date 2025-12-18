@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Job__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Job within the chain where the error was encountered</description>
+    <label>Job</label>
+    <referenceTo>PDLM__Job__c</referenceTo>
+    <relationshipLabel>Job Errors</relationshipLabel>
+    <relationshipName>Job_Errors</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

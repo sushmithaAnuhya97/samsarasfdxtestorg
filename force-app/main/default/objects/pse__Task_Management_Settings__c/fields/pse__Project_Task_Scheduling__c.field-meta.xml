@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project_Task_Scheduling__c</fullName>
+    <defaultValue>&quot;&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Contains the scheduling strategy value to be used when moving project task dates. When blank, schedules respect the auto-recalculate-schedule-for-assignments configuration option, if it is set to true. The valid values are Retain Past Schedules, Retain Schedule Adjustments. The default value is blank.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter a scheduling strategy to use when moving project task dates. When blank, schedules respect the auto-recalculate-schedule-for-assignments configuration option, if it is set to true. The valid values are Retain Past Schedules, Retain Schedule Adjustments.</inlineHelpText>
+    <label>Project Task Scheduling</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

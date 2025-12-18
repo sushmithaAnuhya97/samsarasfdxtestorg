@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>GTMS-25300: To check if Account is converted as partner</description>
+        <name>Account_Partner_Conversion_Check</name>
+        <label>Account Partner Conversion Check</label>
+        <locationX>1370</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Partner_Account_Message_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Converted To Partner</defaultConnectorLabel>
+        <rules>
+            <name>Partner_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contact.Account.IsPartner</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Transacting_Partner_Account_Check</targetReference>
+            </connector>
+            <label>Partner Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-25300: Created as part of partner registration phase 2 project CR changes</description>
+        <name>PR_record_check</name>
+        <label>PR record check</label>
+        <locationX>776</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Account_Partner_Conversion_Check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Existing_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_User.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>User_Activation_Check</targetReference>
+            </connector>
+            <label>Existing User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-25300: Created as part of partner application phase 2 to check if the Account is a transacting partner</description>
+        <name>Transacting_Partner_Account_Check</name>
+        <label>Transacting Partner Account Check</label>
+        <locationX>1106</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Non_Transacting_Partner_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not a Transacting Partner</defaultConnectorLabel>
+        <rules>
+            <name>Transacting_Partner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Contact.Account.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transacting Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_User_Creation_Event</targetReference>
+            </connector>
+            <label>Transacting Partner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-25300: Created as part of partner application phase 2 to check if existing user is active or not</description>
+        <name>User_Activation_Check</name>
+        <label>User Activation Check</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Activate_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Active_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_User.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_User_Message_Screen</targetReference>
+            </connector>
+            <label>Active User</label>
+        </rules>
+    </decisions>
+    <description>GTMS-25300: Created as part of partner application phase 2 project to create partner user
+GTMS-26135: Portal Experience: Streamline Partner Portal user creation to admin user or PAM intervention via contact only
+GTMS-28522: Removed Partner Registration record validation conditions and Error screen.</description>
+    <environments>Default</environments>
+    <interviewLabel>Enable Partner User From Contact {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Enable Partner User From Contact</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>GTMS-25300: Created as part of Partner application phase 2 project CR changes to create platform event for user creation.</description>
+        <name>Create_User_Creation_Event</name>
+        <label>Create User Creation Event</label>
+        <locationX>842</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>User_Creation_Finish_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Contact_Id__c</field>
+            <value>
+                <elementReference>Get_Contact.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Process_Type__c</field>
+            <value>
+                <elementReference>$Label.Process_Type_For_User_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SubmitPartnerApplicationEvent__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>GTMS-25300: Created as part of Partner Application phase 2 project to get the partner contact details</description>
+        <name>Get_Contact</name>
+        <label>Get Contact</label>
+        <locationX>776</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Partner_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-25300: Created as part of Partner Application phase 2 project to fetch the user record associated with that contact</description>
+        <name>Get_Partner_User</name>
+        <label>Get Partner User</label>
+        <locationX>776</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>PR_record_check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Contact.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Contact.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>IsActive</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-25300: Created as part of partner application phase 2 project to activate the partner user.</description>
+        <name>Activate_User</name>
+        <label>Activate User</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>User_Activation_Success_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Partner_User.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>IsActive</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <description>GTMS-25300: Created as partner application phase 2 project to show the message</description>
+        <name>Active_User_Message_Screen</name>
+        <label>Active User Message Screen</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Active_User_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;{!Get_Contact.FirstName} &lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-size: 14px;&quot;&gt;{!Get_Contact.LastName} &lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-size: 14px;&quot;&gt;is already an active Portal User.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-28522: Added to show the error message</description>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(205, 35, 8);&quot;&gt;Partner User Enablement Got Failed Due to Below Error&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(205, 35, 8);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-25300: Created as part of Partner Application phase project to show message to user that Account is not a transacting partner</description>
+        <name>Non_Transacting_Partner_Screen</name>
+        <label>Non Transacting Partner Screen</label>
+        <locationX>1370</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Non_Transcting_Partner_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;{!Get_Contact.Account.Name} &lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;is not a Transacting Partner. Please try again after making &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-size: 14px;&quot;&gt;{!Get_Contact.Account.Name} &lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-size: 14px;&quot;&gt;as Transacting Partner.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-25300: to show partner account msg  in the screen</description>
+        <name>Partner_Account_Message_Screen</name>
+        <label>Partner Account Message Screen</label>
+        <locationX>1634</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Partner_Account_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;{!Get_Contact.Account.Name}&lt;/strong&gt; was not yet converted to partner. Please convert the account to partner before creating user.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-28522: Added to show the success message when user got activated</description>
+        <name>User_Activation_Success_Screen</name>
+        <label>User Activation Success Screen</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>User_Activation_Success_Msg</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(145, 180, 20);&quot;&gt;Partner User Activation is successful&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-23500: To Message for User Creation.</description>
+        <name>User_Creation_Finish_Screen</name>
+        <label>User Creation Finish Screen</label>
+        <locationX>842</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>User_Creation_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(61, 134, 15); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;The user has been created and sent an activation email. Please advise they follow the instructions in that email to complete setup and access the Partner Portal&lt;/strong&gt;&lt;span style=&quot;color: rgb(54, 79, 24); font-size: 14px; background-color: rgb(255, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>650</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Contact</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-25300: Created as part of partner application phase 2 project to add contact ids to the list.</description>
+        <name>Contact_Id_List</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-25300: Created as part of Partner Application phase 2 project. To create user for a transacting partner account.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

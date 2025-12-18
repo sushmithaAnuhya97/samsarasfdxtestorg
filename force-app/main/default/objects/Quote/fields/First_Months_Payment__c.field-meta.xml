@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Months_Payment__c</fullName>
+    <formula>((Opportunity.Total_License_Due__c/Opportunity.License_Term__c) + Opportunity.Total_Hardware_Due__c + Opportunity.Shipping_and_Handling__c  + Opportunity.Hardware_Sales_Tax__c) +  Monthly_License_Sales_Tax__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>First Month Payment consists of the following:
+- Full hardware cost
+- hardware sales tax
+- shipping and handling
+- First Month of license cost
+- One month License sales tax</inlineHelpText>
+    <label>First Months Payment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

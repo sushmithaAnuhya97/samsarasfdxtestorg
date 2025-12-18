@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cloud_or_App__c</fullName>
+    <label>Cloud or App</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HOS/ DVIR/ Compliance</fullName>
+                <default>false</default>
+                <label>HOS/ DVIR/ Compliance</label>
+            </value>
+            <value>
+                <fullName>API/ Integrations</fullName>
+                <default>false</default>
+                <label>API/ Integrations</label>
+            </value>
+            <value>
+                <fullName>Alerts</fullName>
+                <default>false</default>
+                <label>Alerts</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>Routing &amp; Dispatch</fullName>
+                <default>false</default>
+                <label>Routing &amp; Dispatch</label>
+            </value>
+            <value>
+                <fullName>Safety</fullName>
+                <default>false</default>
+                <label>Safety</label>
+            </value>
+            <value>
+                <fullName>K-12</fullName>
+                <default>false</default>
+                <label>K-12</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

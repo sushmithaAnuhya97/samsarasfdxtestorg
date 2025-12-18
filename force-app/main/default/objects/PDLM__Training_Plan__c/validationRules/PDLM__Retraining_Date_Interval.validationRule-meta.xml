@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Retraining_Date_Interval</fullName>
+    <active>true</active>
+    <description>When Retraining is on, and Retraining Type is not Rolling, Retraining Date and Retraining Interval are required, and the interval must be a positive integer.</description>
+    <errorConditionFormula>AND(
+        PDLM__Retraining__c = true,
+        TEXT(PDLM__Retraining_Type__c) != &apos;Rolling&apos;,
+        OR (
+            ISNULL( PDLM__Retraining_Date__c ),
+            OR (
+                ISNULL( PDLM__Retraining_Interval__c ),
+                PDLM__Retraining_Interval__c &lt; 1
+            )
+        )
+    )</errorConditionFormula>
+    <errorMessage>When Retraining is on, and Retraining Type is not Rolling, Retraining Date and Retraining Interval are required, and the interval must be a positive integer.</errorMessage>
+</ValidationRule>

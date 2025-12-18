@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFDC_Robot_Cannot_Change_the_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(AccountId) &amp;&amp; $User.FirstName = &quot;SFDC&quot; &amp;&amp; $User.LastName= &quot;Robot&quot;</errorConditionFormula>
+    <errorMessage>SFDC Robot cannot change the account name!</errorMessage>
+</ValidationRule>

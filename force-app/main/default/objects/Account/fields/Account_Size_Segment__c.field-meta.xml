@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Size_Segment__c</fullName>
+    <description>Used to help determine the round robin sub-segment.</description>
+    <externalId>false</externalId>
+    <formula>IF(OR((Number_of_Students__c &gt;= 10000),(Number_of_Citizens__c &gt;= 100000),(NOT(ISBLANK(TEXT(Enterprise_Assignment__c))))),&quot;ENT&quot;,
+
+IF(AND(OR( BillingCountry = &quot;CA&quot;, BillingCountry = &quot;Canada&quot;),OR (Number_of_Vehicles__c &gt;= 31, Number_of_Unpowered_Assets__c &gt;= 151, Number_of_Powered_Assets__c &gt;= 51)), &quot;AE2/AE3&quot;,
+
+IF(OR(BillingCountry = &quot;Mexico&quot;, BillingCountry = &quot;MX&quot;), &quot;AE2/AE3&quot;,
+
+IF(AND(OR(Global_Geography__c = &quot;UK &amp; I&quot;,Global_Geography__c = &quot;France&quot;,Global_Geography__c = &quot;DACH&quot;,Global_Geography__c = &quot;Iberia&quot;,Global_Geography__c = &quot;Italy&quot;,Global_Geography__c = &quot;BENELUX&quot;), OR(Customer_ARR__c &gt; 0 , Number_of_Vehicles__c &gt;= 21)),&quot;AE2/AE3&quot;,
+
+IF(Number_of_Vehicles__c &gt;= 31 || Number_of_Unpowered_Assets__c &gt;= 151 || Number_of_Powered_Assets__c &gt;= 51, &quot;AE2/AE3&quot;,
+
+IF((Number_of_Vehicles__c = 0 || ISBLANK(Number_of_Vehicles__c))&amp;&amp; ISPICKVAL(Industry,&quot;Government&quot;), &quot;AE2/AE3&quot;, &quot;AE1&quot;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Size Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

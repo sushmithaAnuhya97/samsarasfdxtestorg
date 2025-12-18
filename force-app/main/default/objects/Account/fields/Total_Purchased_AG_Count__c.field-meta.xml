@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Purchased_AG_Count__c</fullName>
+    <inlineHelpText>Sums AG hardware across Closed Won/Refunded-Closed Revenue &amp; Remorse Refund opportunities.</inlineHelpText>
+    <label>Total Purchased AG Count</label>
+    <summarizedField>Opportunity.AG_unit_count__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Closed Won, Refunded - Closed</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Type</field>
+        <operation>equals</operation>
+        <value>Revenue Opportunity, Revenue Opportunity - Bill Only, Remorse Refund</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

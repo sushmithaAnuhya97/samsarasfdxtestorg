@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Weekday, Blocking</fullName>
+                <default>false</default>
+                <label>Weekday, Blocking</label>
+            </value>
+            <value>
+                <fullName>Weekday, Non-blocking</fullName>
+                <default>false</default>
+                <label>Weekday, Non-blocking</label>
+            </value>
+            <value>
+                <fullName>Weekend, Blocking</fullName>
+                <default>false</default>
+                <label>Weekend, Blocking</label>
+            </value>
+            <value>
+                <fullName>Weekend, Non-blocking</fullName>
+                <default>false</default>
+                <label>Weekend, Non-blocking</label>
+            </value>
+            <value>
+                <fullName>Holiday, Blocking</fullName>
+                <default>false</default>
+                <label>Holiday, Blocking</label>
+            </value>
+            <value>
+                <fullName>Holiday, Non-Blocking</fullName>
+                <default>false</default>
+                <label>Holiday, Non-Blocking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

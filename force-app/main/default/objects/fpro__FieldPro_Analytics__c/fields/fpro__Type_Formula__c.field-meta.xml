@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Type_Formula__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( contains(fpro__Message__c, &apos;Showing results for: Object&apos;), &apos;Search: Object&apos;, 
+IF( contains(fpro__Message__c, &apos;Showing results for object&apos;), &apos;Search: Object&apos;, 
+IF( contains(fpro__Message__c, &apos;Showing results for: Job&apos;), &apos;Search: Job&apos;, 
+IF( contains(fpro__Message__c, &apos;Showing results for: Field Type&apos;), &apos;Search: Type&apos;, 
+IF( contains(fpro__Message__c, &apos;Showing results for: Quick Report&apos;), &apos;Search: Report&apos;, 
+IF( contains(fpro__Message__c, &apos;Showing results for: Text&apos;), &apos;Search: Text&apos;, 
+IF( contains(text(fpro__Action__c), &apos;Exception&apos;), &apos;Exception&apos;, 
+IF( contains(text(fpro__Action__c), &apos;Access App&apos;), &apos;App&apos;,
+IF( contains(text(fpro__Action__c), &apos;Run Service&apos;), text(fpro__Action__c), 
+text(fpro__Action__c) + &apos;: &apos; + fpro__Message__c
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Type (Formula)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

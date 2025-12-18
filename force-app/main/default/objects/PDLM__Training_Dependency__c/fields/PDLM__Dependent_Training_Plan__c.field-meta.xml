@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Dependent_Training_Plan__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>User can Complete the Dependent Training Plan&apos;s Training Assignments once the Control Training Plan&apos;s Training Assignments are Completed</description>
+    <label>Dependent Training Plan</label>
+    <referenceTo>PDLM__Training_Plan__c</referenceTo>
+    <relationshipLabel>Dependent Training Plans</relationshipLabel>
+    <relationshipName>Dependent_Training_Plans</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

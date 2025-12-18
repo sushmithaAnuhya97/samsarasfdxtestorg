@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Delinquent_Status__c</fullName>
+    <label>Netsuite Delinquent Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Current</fullName>
+                <default>false</default>
+                <label>Current</label>
+            </value>
+            <value>
+                <fullName>Delinquent w/o Dashboard Banner</fullName>
+                <default>false</default>
+                <label>Delinquent w/o Dashboard Banner</label>
+            </value>
+            <value>
+                <fullName>Delinquent w/ Dashboard Banner</fullName>
+                <default>false</default>
+                <label>Delinquent w/ Dashboard Banner</label>
+            </value>
+            <value>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+                <label>Deactivated</label>
+            </value>
+            <value>
+                <fullName>Written-off</fullName>
+                <default>false</default>
+                <label>Written-off</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

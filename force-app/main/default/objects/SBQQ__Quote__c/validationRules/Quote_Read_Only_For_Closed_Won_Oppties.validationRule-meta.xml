@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Read_Only_For_Closed_Won_Oppties</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+    NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+    NOT( $Permission.Validation_Rule_Exemption ),
+    NOT( $Permission.Finance_Contractor ),
+    NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+    NOT(CONTAINS($Profile.Name,&quot;Samsara SE&quot;)),
+    $Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    SBQQ__Opportunity2__r.IsWon =TRUE,
+    (DATEVALUE(SBQQ__Opportunity2__r.Went_to_Closed_Won_Date__c) 
+    + 1) &lt; TODAY()
+)</errorConditionFormula>
+    <errorMessage>Cannot edit quote with a Closed Won Opportunity.</errorMessage>
+</ValidationRule>

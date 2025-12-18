@@ -1,0 +1,153 @@
+<template>
+    <div class="custom-component">
+        <!-- Header matching Related List Quick Links -->
+        <div class="component-header">
+            <div class="header-left">
+                <div class="title-row">
+                    <div class="ai-magic-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Sparkles only -->
+                            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z" fill="#8B5CF6"/>
+                        </svg>
+                    </div>
+                    <h2 class="component-title">Generate Smart Flow</h2>
+                </div>
+                <div class="powered-by">Powered by SamsaraGPT</div>
+            </div>
+            <div class="header-right">
+                <div class="status-dot" data-status={currentStatus}></div>
+                <span class="status-text">{statusText}</span>
+            </div>
+        </div>
+
+        <!-- Content matching Related List Quick Links -->
+        <div class="component-content">
+            <!-- Main Message (shown when no validation errors) -->
+            <template if:false={hasValidationDetails}>
+                <p class="main-message">
+                    {mainMessage}
+                </p>
+            </template>
+
+            <!-- Validation Message (shown when button is disabled) -->
+            <template if:true={hasValidationDetails}>
+                    <lightning-card>
+                        <div class="slds-align_absolute-center">
+                            <div class="validation-header">
+                                <lightning-icon icon-name="utility:warning" alternative-text="Warning!" title="Warning" variant="error" size="xx-small"></lightning-icon>
+                                <span class="validation-title">Smart Flow Unavailable</span>
+                            </div>
+                        </div>
+                        <template if:true={hasValidationDetails}>
+                            <div class="slds-align_absolute-center">
+                                <ul class="slds-list_dotted">
+                                    <template for:each={validationDetails} for:item="detail">
+                                        <li key={detail}>{detail}</li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
+                    </lightning-card>
+            </template>
+
+            <!-- Action Buttons -->
+            <div class="button-container">
+                <lightning-button
+                    variant="brand"
+                    label="Generate Smart Flow"
+                    icon-name="utility:email"
+                    onclick={handleGenerateEmail}
+                    disabled={buttonDisabled}
+                    class="generate-button">
+                </lightning-button>
+                        <button
+                            type="button"
+                            onclick={handleLaunchGong}
+                            class="launch-button gong-button">
+                            <div class="gong-icon">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+                                     x="0px" y="0px" viewBox="0 0 55.4 60" 
+                                     xml:space="preserve" width="16" height="16">
+                                    <g>
+                                        <path class="gong-path" d="M54.1,25.7H37.8c-0.9,0-1.6,1-1.3,1.8l3.9,10.1c0.2,0.4-0.2,0.9-0.7,0.9l-5-0.3
+                                            c-0.2,0-0.4,0.1-0.6,0.3L30.3,44c-0.2,0.3-0.6,0.4-1,0.2l-5.8-3.9c-0.2-0.2-0.5-0.2-0.8,0l-8,5.4c-0.5,0.4-1.2-0.1-1-0.7L16,37
+                                            c0.1-0.3-0.1-0.7-0.4-0.8l-4.2-1.7c-0.4-0.2-0.6-0.7-0.3-1l3.7-4.6c0.2-0.2,0.2-0.6,0-0.8l-3.1-4.5c-0.3-0.4,0-1,0.5-1l4.9-0.4
+                                            c0.4,0,0.6-0.3,0.6-0.7l-0.4-6.8c0-0.5,0.5-0.8,0.9-0.7l6,2.5c0.3,0.1,0.6,0,0.8-0.2l4.2-4.6c0.3-0.4,0.9-0.3,1.1,0.2l2.5,6.4
+                                            c0.3,0.8,1.3,1.1,2,0.6l9.8-7.3c1.1-0.8,0.4-2.6-1-2.4L37.3,10c-0.3,0-0.6-0.1-0.7-0.4l-3.4-8.7c-0.4-0.9-1.5-1.1-2.2-0.4l-7.4,8
+                                            c-0.2,0.2-0.5,0.3-0.8,0.2l-9.7-4.1c-0.9-0.4-1.8,0.2-1.9,1.2l-0.4,10c0,0.4-0.3,0.6-0.6,0.6l-8.9,0.6c-1,0.1-1.6,1.2-1,2.1
+                                            l5.9,8.7c0.2,0.2,0.2,0.6,0,0.8l-6,6.9C-0.3,36,0,37.1,0.8,37.4l6.9,3c0.3,0.1,0.5,0.5,0.4,0.8L3.7,58.3c-0.3,1.2,1.1,2.1,2.1,1.4
+                                            l16.5-11.8c0.2-0.2,0.5-0.2,0.8,0l7.5,5.3c0.6,0.4,1.5,0.3,1.9-0.4l4.7-7.2c0.1-0.2,0.4-0.3,0.6-0.3l11.2,1.4
+                                            c0.9,0.1,1.8-0.6,1.5-1.5l-4.7-12.1c-0.1-0.3,0-0.7,0.4-0.9l8.5-4C55.9,27.6,55.5,25.7,54.1,25.7z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span class="button-label">Launch Gong</span>
+                        </button>
+                        
+            </div>
+
+            <!-- AI Processing Pipeline -->
+            <template if:true={showProgress}>
+                <div class="progress-section">
+                    
+                    <!-- Progress Steps -->
+                    <div class="progress-steps">
+                        <template for:each={progressStepsWithStatus} for:item="step" for:index="index">
+                            <div key={step.key} class="progress-step">
+                                <div class="progress-circle" data-status={step.status}>
+                                    <template if:true={step.isCompleted}>
+                                        <lightning-icon icon-name="utility:success" size="small" class="step-icon" variant="inverse"></lightning-icon>
+                                    </template>
+                                    <template if:true={step.isCurrent}>
+                                        <lightning-icon icon-name="utility:spinner" size="small" class="step-icon spinning" variant="inverse"></lightning-icon>
+                                    </template>
+                                    <template if:true={step.isPending}>
+                                        <lightning-icon icon-name={step.icon} size="small" class="step-icon" variant="inverse"></lightning-icon>
+                                    </template>
+                                </div>
+                                <div class="step-label">{step.label}</div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+
+                                <!-- Last Sync Info -->
+                    <template if:true={showLastSyncInfo}>
+                        <div class="last-sync-container">
+                            <div class="last-sync-message-with-icon">
+                                <!-- Success Icon -->
+                                <template if:true={lastSyncMessage.isSuccess}>
+                                    <lightning-icon icon-name={lastSyncMessage.icon} variant={lastSyncMessage.variant} size="x-small" class="sync-icon success-icon"></lightning-icon>
+                                </template>
+                                <!-- Error Icon -->
+                                <template if:true={lastSyncMessage.isError}>
+                                    <lightning-icon icon-name={lastSyncMessage.icon} variant={lastSyncMessage.variant} size="x-small" class="sync-icon error-icon"></lightning-icon>
+                                </template>
+                                <!-- In Progress Icon -->
+                                <template if:true={lastSyncMessage.isInProgress}>
+                                    <lightning-icon icon-name={lastSyncMessage.icon} variant={lastSyncMessage.variant} size="x-small" class="sync-icon progress-icon spinning"></lightning-icon>
+                                </template> 
+                                <span class="sync-text">{lastSyncMessage.text}</span>
+                            </div>
+                        </div>
+                    </template>
+
+
+                    <!-- Error Display -->
+                    <template if:true={hasError}>
+                        <div class="error-container">
+                            <lightning-icon icon-name="utility:error" size="small" class="error-icon"></lightning-icon>
+                            <span class="error-message">{errorMessage}</span>
+                            <lightning-button-icon
+                                icon-name="utility:close"
+                                size="small"
+                                onclick={clearError}
+                                class="error-close">
+                            </lightning-button-icon>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+        </template>

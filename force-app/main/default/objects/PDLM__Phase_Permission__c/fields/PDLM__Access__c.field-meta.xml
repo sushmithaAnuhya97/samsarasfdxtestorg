@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Access__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>The level of access that this user or group will have on the fields listed while at the specified Phase</inlineHelpText>
+    <label>Access</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Read</fullName>
+                <default>true</default>
+                <label>Read</label>
+            </value>
+            <value>
+                <fullName>Edit</fullName>
+                <default>false</default>
+                <label>Edit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

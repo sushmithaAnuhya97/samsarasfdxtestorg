@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submission_Reason__c</fullName>
+    <label>Submission Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Deactivated/Written Off</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deactivated/Written Off</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Fake Account</fullName>
+                <default>false</default>
+                <label>Fake Account</label>
+            </value>
+            <value>
+                <fullName>GTM Blocked</fullName>
+                <default>false</default>
+                <label>GTM Blocked</label>
+            </value>
+            <value>
+                <fullName>Out of Business</fullName>
+                <default>false</default>
+                <label>Out of Business</label>
+            </value>
+            <value>
+                <fullName>Out of Segment: Geography</fullName>
+                <default>false</default>
+                <label>Out of Segment: Geography</label>
+            </value>
+            <value>
+                <fullName>Out of Segment: Industry</fullName>
+                <default>false</default>
+                <label>Out of Segment: Industry</label>
+            </value>
+            <value>
+                <fullName>Out of Segment: Vehicles/Assets</fullName>
+                <default>false</default>
+                <label>Out of Segment: Vehicles/Assets</label>
+            </value>
+            <value>
+                <fullName>Review Hierarchy</fullName>
+                <default>false</default>
+                <label>Review Hierarchy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

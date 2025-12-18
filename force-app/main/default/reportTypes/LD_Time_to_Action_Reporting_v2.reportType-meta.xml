@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>LeanData__Time_To_Action_Tracker__c</baseObject>
+    <category>campaigns</category>
+    <deployed>true</deployed>
+    <description>Custom report type for LeanData standard time-to-action reports and dashboards V1</description>
+    <label>LD Time-to-Action Reporting (MOPs Approved)</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Abort Reason</displayNameOverride>
+            <field>LeanData__Abort_Reason__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account</displayNameOverride>
+            <field>LeanData__Account__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calculated Time-to-Action (in hours)</displayNameOverride>
+            <field>LeanData__Time_To_Action_Hours__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calculated Time-to-Action (in minutes)</displayNameOverride>
+            <field>LeanData__Time_To_Action_Minutes__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calculated Time-to-Action (in seconds)</displayNameOverride>
+            <field>LeanData__Time_To_Action_Calculated__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case</displayNameOverride>
+            <field>LeanData__Case__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact</displayNameOverride>
+            <field>LeanData__Contact__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Routed Date</displayNameOverride>
+            <field>LeanData__Start_Time__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Log</displayNameOverride>
+            <field>LeanData__Entry_Log__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Evaluate while Owner is working</displayNameOverride>
+            <field>LeanData__Evaluate_While_Working__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Exit Edge</displayNameOverride>
+            <field>LeanData__Exit_Edge__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Exit Log</displayNameOverride>
+            <field>LeanData__Exit_Log__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Exit Time</displayNameOverride>
+            <field>LeanData__Exit_Time__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LD Business Unit</displayNameOverride>
+            <field>LeanData__LD_Business_Unit__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead</displayNameOverride>
+            <field>LeanData__Lead__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>LeanData Time-to-Action Tracker</displayNameOverride>
+            <field>Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Node Name</displayNameOverride>
+            <field>LeanData__Node_Name__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity</displayNameOverride>
+            <field>LeanData__Opportunity__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner ID</displayNameOverride>
+            <field>LeanData__Owner_Id__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner Schedule at Entry Time</displayNameOverride>
+            <field>LeanData__Schedule_At_Entry_Time__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary ID</displayNameOverride>
+            <field>LeanData__Primary_Id__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Raw Time-to-Action (in seconds)</displayNameOverride>
+            <field>LeanData__Time_To_Action_Raw__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>LeanData__Status__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Timer (minutes)</displayNameOverride>
+            <field>LeanData__Timer__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker ID</displayNameOverride>
+            <field>Id</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>User</displayNameOverride>
+            <field>LeanData__User__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Lead : Lead ID</displayNameOverride>
+            <field>LeanData__Lead__c.Id</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Lead : Lead Owner</displayNameOverride>
+            <field>LeanData__Lead__c.Owner</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Lead : Lead Owner : Full Name</displayNameOverride>
+            <field>LeanData__Lead__c.Owner.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Lead : Lead Source</displayNameOverride>
+            <field>LeanData__Lead__c.LeadSource</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Pre Owner</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Pre_Owner__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Pre Owner : Full Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Pre_Owner__c.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Owner : Profile</displayNameOverride>
+            <field>LeanData__Exit_Log__c.Owner.Profile</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Owner : Role</displayNameOverride>
+            <field>LeanData__Exit_Log__c.Owner.UserRole</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Contact : Contact Owner</displayNameOverride>
+            <field>LeanData__Contact__c.Owner</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Contact : Contact Owner : Full Name</displayNameOverride>
+            <field>LeanData__Contact__c.Owner.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Contact : Contact ID</displayNameOverride>
+            <field>LeanData__Contact__c.Id</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Contact : Lead Source</displayNameOverride>
+            <field>LeanData__Contact__c.LeadSource</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Contact : Created Date</displayNameOverride>
+            <field>LeanData__Contact__c.CreatedDate</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Entry Log : Converted Contact</displayNameOverride>
+            <field>LeanData__Entry_Log__c.LeanData__Converted_Contact__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Entry Log : Converted Contact : Created By</displayNameOverride>
+            <field>LeanData__Entry_Log__c.LeanData__Converted_Contact__c.CreatedBy</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Entry Log : Converting Action</displayNameOverride>
+            <field>LeanData__Entry_Log__c.LeanData__Converting_Action__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Entry Log : Round Robin Pool</displayNameOverride>
+            <field>LeanData__Entry_Log__c.LeanData__Round_Robin_Pool__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Converted Contact</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Converted_Contact__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Converted Contact : Account Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Converted_Contact__c.Account</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Converted Contact : Account Name : Account Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Converted_Contact__c.Account.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Converted Contact : Account Name : Type</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Converted_Contact__c.Account.Type</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Converted Contact : Contact ID</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Converted_Contact__c.Id</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Converted Contact : Full Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Converted_Contact__c.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Round Robin Pool</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Round_Robin_Pool__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Round Robin Pool : Pool Type</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Round_Robin_Pool__c.LeanData__Pool_Type__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Round Robin Pool : Round Robin Pool Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Round_Robin_Pool__c.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Round Robin Pool : Owner : Full Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Round_Robin_Pool__c.Owner.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Entry Log : Round Robin Pool : Grouping Name</displayNameOverride>
+            <field>LeanData__Entry_Log__c.LeanData__Round_Robin_Pool__c.LeanData__Grouping_Name__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Object Type</displayNameOverride>
+            <field>LeanData__Object_Type__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Slack Recipient ID</displayNameOverride>
+            <field>LeanData__Slack_Recipient_Id__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Slack Recipient Name</displayNameOverride>
+            <field>LeanData__Slack_Recipient_Name__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Slack Submitter ID</displayNameOverride>
+            <field>LeanData__Slack_Submitter_Id__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Slack Submitter Name</displayNameOverride>
+            <field>LeanData__Slack_Submitter_Name__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>User Field</displayNameOverride>
+            <field>LeanData__User_Field__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Contact : Lead Score</displayNameOverride>
+            <field>LeanData__Contact__c.Lead_Score_Seller_View__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Member ID</displayNameOverride>
+            <field>LeanData__Exit_Log__c.CampaignMember_ID__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Routed Owner</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Post_Owner__c.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Manager Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Post_Owner__c.Manager_Name__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Post Owner : Role</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Post_Owner__c.UserRole</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Name</displayNameOverride>
+            <field>LeanData__Contact__c.FirstName</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Name</displayNameOverride>
+            <field>LeanData__Contact__c.LastName</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Owner Role</displayNameOverride>
+            <field>LeanData__Contact__c.Account.Owner.UserRole.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeanData__Contact__c.Account.Global_Geography__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeanData__Contact__c.Status__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeanData__Contact__c.Last_Call__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeanData__Contact__c.Account.Status__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeanData__Contact__c.Account.Propel_Account_status__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeanData__Contact__c.Contact_Status_Changed__c</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LeanData__Contact__c.Account.BillingAddress</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <masterLabel>LeanData Time-to-Action Tracker v1</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Routed Owner Manager</displayNameOverride>
+            <field>LeanData__Contact__c.Owner.Manager.Name</field>
+            <table>LeanData__Time_To_Action_Tracker__c</table>
+        </columns>
+        <masterLabel>Testing</masterLabel>
+    </sections>
+</ReportType>

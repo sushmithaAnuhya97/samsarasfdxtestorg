@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Corp_Actuals_Total__c</fullName>
+    <deprecated>false</deprecated>
+    <description>In the corporate currency, the total amount of actual revenue within the relevant time period.</description>
+    <formula>pse__Corp_Equal_Split_Milestone_P__c +
+		pse__Corp_Equal_Split_Milestone_R__c +
+		pse__Corp_Equal_Split_Project_P__c +
+		pse__Corp_Equal_Split_Project_R__c +
+		pse__Corp_Expense_P__c +
+		pse__Corp_Expense_R__c +
+		pse__Corp_Milestone_P__c +
+		pse__Corp_Milestone_R__c +
+		pse__Corp_Misc_Adjustment_P__c +
+		pse__Corp_Misc_Adjustment_R__c +
+		pse__Corp_Percent_Complete_Milestone_P__c +
+		pse__Corp_Percent_Complete_Milestone_R__c +
+		pse__Corp_Percent_Complete_Project_P__c +
+		pse__Corp_Percent_Complete_Project_R__c +
+		pse__Corp_Timecard_P__c +
+		pse__Corp_Timecard_R__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>In the corporate currency, the total amount of actual revenue within the relevant time period.</inlineHelpText>
+    <label>Corp: Actuals Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_Price_Equals_Sale_Price</fullName>
+    <active>false</active>
+    <errorConditionFormula>ListPrice   &lt;&gt;   UnitPrice</errorConditionFormula>
+    <errorDisplayField>ServiceDate</errorDisplayField>
+    <errorMessage>Sales Price must equal List Price. To adjust total price, enter Discount as a percentage.</errorMessage>
+</ValidationRule>

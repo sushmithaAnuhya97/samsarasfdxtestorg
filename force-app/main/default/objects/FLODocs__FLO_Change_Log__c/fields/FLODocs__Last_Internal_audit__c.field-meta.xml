@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Last_Internal_audit__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>User that did the last internal audit</description>
+    <inlineHelpText>User that did the last internal audit</inlineHelpText>
+    <label>Last Internal audit</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Change_Logs2</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

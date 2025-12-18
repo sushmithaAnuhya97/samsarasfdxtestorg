@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Expense_Amount__c</fullName>
+    <defaultValue>0.00</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The monetary amount (if any) explicitly set aside for Expenses in the Budget. This is separate from and in addition to the Budget Amount field. Defaults to and must always be same currency as Project.</description>
+    <inlineHelpText>The monetary amount (if any) explicitly set aside for Expenses in the Budget. This is separate from and in addition to the Budget Amount field. Defaults to and must always be same currency as Project.</inlineHelpText>
+    <label>Expense Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

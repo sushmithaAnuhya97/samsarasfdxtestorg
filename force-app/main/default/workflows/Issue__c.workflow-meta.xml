@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Issue_Approver_has_new_comments_for_Issue_Owner</fullName>
+        <description>Issue Approver has new comments for Issue Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_Comments_added_by_IssueApprover_forIssueOwner</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_Approver_has_new_comments_for_PM</fullName>
+        <description>Issue Approver has new comments for PM</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_Comments_added_by_IssueApprover</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_Status_updated</fullName>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>Issue Status updated</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Issue_Approvers__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_status_updated</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_approved_by_Issue_Approver_Alert</fullName>
+        <description>Issue approved by Issue Approver Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_approved_by_Issue_Approver</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_description_changed</fullName>
+        <description>Issue description changed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Description_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_has_been_assigned</fullName>
+        <ccEmails>ryan.reading@samsara.com</ccEmails>
+        <description>Issue has been assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>ches@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SUPPORT_issue_dev_assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_has_been_created</fullName>
+        <description>Issue has been created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Issue_Approvers__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_assigned_to_a_dev</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_has_been_fixed</fullName>
+        <ccEmails>ryan.reading@samsara.com</ccEmails>
+        <description>Issue has been fixed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>bwaldman@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ches@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>estrella@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SUPPORT_fixed_issue</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_has_been_rejected</fullName>
+        <ccEmails>ryan.reading@samsara.com</ccEmails>
+        <description>Issue has been rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>ches@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>estrella@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SUPPORT_rejected_issue</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_moved_to_PM</fullName>
+        <ccEmails>ryan.reading@samsara.com</ccEmails>
+        <description>Issue has been moved to PM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>bwaldman@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ches@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>estrella@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SUPPORT_issue_to_PM</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_needs_approval_from_Issue_Approvers</fullName>
+        <ccEmails>eric.shreve@samsara.com, alexander.govan@samsara.com , joe.lawrence@samsara.com</ccEmails>
+        <description>Issue needs approval from Issue Approvers</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Issue_Approvers__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_submitted</template>
+    </alerts>
+    <alerts>
+        <fullName>JIRA_Public_Comments_updated</fullName>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>JIRA Public Comments updated</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Issue_Approvers__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/JIRA_Public_Comments_updated</template>
+    </alerts>
+    <alerts>
+        <fullName>PM_has_new_comments_for_Issue_Approver</fullName>
+        <description>PM has new comments for Issue Approver</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Issue_Approvers__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_Comments_added_by_PM</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_dev_when_issue_assigned</fullName>
+        <description>Send email to dev when issue assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Dev_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_assigned_to_a_dev</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Append_Comments</fullName>
+        <description>Append the Add_Comments field to the Comments</description>
+        <field>Comments__c</field>
+        <formula>PRIORVALUE(Comments__c) + BR() + BR() +
+&quot;dev/PM updates&quot; + &quot; @ &quot; + SUBSTITUTE(TEXT(LastModifiedDate - 0.3333),&quot;Z&quot;,&quot;&quot;) + BR() +
+Add_Comment__c</formula>
+        <name>Append Comments</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_new_comments</fullName>
+        <description>clear the Add Comments field after appending its content to Comments</description>
+        <field>Add_Comment__c</field>
+        <name>Clear new comments</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Dev_comments_updated</fullName>
+        <field>Dev_comments_update_count__c</field>
+        <formula>Dev_comments_update_count__c + 1</formula>
+        <name>Dev comments updated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Issue_Approver_Name</fullName>
+        <field>Issue_Approver_Name__c</field>
+        <formula>Issue_Approvers__r.FirstName + &apos; &apos;+ Issue_Approvers__r.LastName</formula>
+        <name>Issue Approver Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Issue_Status</fullName>
+        <field>Issue_Status__c</field>
+        <literalValue>dev-assigned</literalValue>
+        <name>Issue Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Owner_update</fullName>
+        <field>Product_Owner__c</field>
+        <lookupValue>alexander.stevenson@samsara.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Product Owner update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_assigned_date</fullName>
+        <description>Update the timestamp for assigned developer</description>
+        <field>Assigned_At__c</field>
+        <formula>NOW()</formula>
+        <name>Update assigned date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_dev_email_field</fullName>
+        <field>Dev_Email__c</field>
+        <formula>If( ISPICKVAL( Dev_Assigned__c , &apos;bwaldman&apos;), &apos;bwaldman@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;ches&apos;), &apos;ches@samsara.com&apos;,if(ISPICKVAL( Dev_Assigned__c , &apos;darren&apos;), &apos;darren@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;frost&apos;),&apos;frost@samsara.com&apos;,if(ISPICKVAL( Dev_Assigned__c , &apos;greg&apos;), &apos;greg@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;jbicket&apos;), &apos;jbicket@samsara.com&apos;,if(ISPICKVAL( Dev_Assigned__c , &apos;jdel&apos;), &apos;justin@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;jelle&apos;), &apos;jelle@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;jimroewe&apos;), &apos;jimroewe@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;kavya&apos;), &apos;kavya@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;maxwell&apos;), &apos;max.dergosits@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;rushil&apos;), &apos;rushil@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;stephen&apos;),&apos;stephen@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;yosub&apos;), &apos;yosub@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;ryan&apos;), &apos;ryan.reading@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;Prasad&apos;), &apos;prasad.shinde@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;Brian&apos;), &apos;brian.tuan@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;Kenny&apos;), &apos;kenneth.lee@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;monks&apos;), &apos;andrew.monks@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;zach&apos;), &apos;zach.kohl@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;jontec&apos;), &apos;jonte.craighead@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;jamie&apos;), &apos;jamie.saunders@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;jeffrey&apos;), &apos;jeffrey.chen@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;mike&apos;), &apos;mike.ross@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;bo&apos;), &apos;bo.dellamaria@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;oliver&apos;), &apos;oliver.song@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;kiren&apos;), &apos;kiren@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;Austin&apos;), &apos;austin.duffield@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;helen&apos;), &apos;helen.chung@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;arthur&apos;), &apos;arthur.huang@samsara.com&apos;, if(ISPICKVAL( Dev_Assigned__c , &apos;saleh&apos;), &apos;saleh.elhattab@samsara.com&apos;,if(ISPICKVAL( Dev_Assigned__c , &apos;Chase&apos;), &apos;Chase@samsara.com&apos;, &apos;&apos;))))))))))))))))))))))))))))))))</formula>
+        <name>Update dev email field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_fix_date</fullName>
+        <description>Update fix date when the issue status is dev-fixed</description>
+        <field>Issue_Fixed_at__c</field>
+        <formula>NOW()</formula>
+        <name>Update fix date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_status</fullName>
+        <field>Issue_Status__c</field>
+        <literalValue>dev-assigned</literalValue>
+        <name>update status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Issue Comments added by Issue Approver for Issue Owner</fullName>
+        <actions>
+            <name>Issue_Approver_has_new_comments_for_Issue_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED(Issue_Approver_Comments_for_Issue_Owner__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Issue Status  updates</fullName>
+        <actions>
+            <name>Issue_Status_updated</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Issue_Status__c  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Issue closed%2C update Fixed At</fullName>
+        <actions>
+            <name>Update_fix_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Triggered when an issue&apos;s status is changed to CLOSED</description>
+        <formula>AND (ISCHANGED(Issue_Status__c), TEXT(Issue_Status__c) == &quot;CLOSED&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Issue created for approval from Approvers</fullName>
+        <actions>
+            <name>Issue_needs_approval_from_Issue_Approvers</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Issue__c.Area_Impacted__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>JIRA Public Comments%09updates</fullName>
+        <actions>
+            <name>JIRA_Public_Comments_updated</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( JIRA_Public_Comments__c), JIRA_Public_Comments__c != null)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

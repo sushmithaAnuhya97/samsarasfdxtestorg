@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Improper_Routing__c</fullName>
+    <description>Indicates if the transfer was rejected due to an improper routing issue (Out of Segment, Out of Geo, Duplicate Account)</description>
+    <formula>IF(OR(TEXT(Rejection_Reason__c)=&quot;Out of Segment&quot;,TEXT(Rejection_Reason__c)=&quot;Microfleet&quot;,TEXT(Rejection_Reason__c)=&quot;Out of Geo&quot;,TEXT(Rejection_Reason__c)=&quot;Duplicate Account&quot;, TEXT(Rejection_Reason__c)=&quot;Missing Authority or Need&quot;),TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Improper Routing</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

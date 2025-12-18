@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Cost_Practice__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If set, it overrides the Practice to which the TC Split &apos;s Cost Transactions will roll up for Practice Actuals, even if its Project or Resource are in a different Practice. Note that either way, the Cost Transactions will continue to roll up to the same Project&apos;s Project Actuals and same Resource&apos;s Resource Actuals.</description>
+    <inlineHelpText>If set, it overrides the Practice to which the TC Split &apos;s Cost Transactions will roll up for Practice Actuals, even if its Project or Resource are in a different Practice.</inlineHelpText>
+    <label>Override Cost Practice</label>
+    <referenceTo>pse__Practice__c</referenceTo>
+    <relationshipLabel>Override Cost Practice For Timecard Splits</relationshipLabel>
+    <relationshipName>Override_Cost_Practice_For_TC_Splits</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

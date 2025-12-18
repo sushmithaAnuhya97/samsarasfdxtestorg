@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring__c</fullName>
+    <formula>OR( Segment__c = &quot;SMB&quot;, OR( Direct_Monthly__c ,  Direct_Annual__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Recurring</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

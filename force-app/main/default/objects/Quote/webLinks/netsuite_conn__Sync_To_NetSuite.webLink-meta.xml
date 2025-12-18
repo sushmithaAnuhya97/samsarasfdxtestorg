@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>netsuite_conn__Sync_To_NetSuite</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Sync To NetSuite Quote</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var Celigo = {};
+	Celigo.SFDC = (function() {
+		var QuoteSyncManager = function() {
+			this.triggerSync = function() {
+				this.openPopup();
+			};
+
+			this.openPopup = function(){
+
+				var top = screen.height - (screen.height * 0.7) - 80,
+				left = screen.width - (screen.width * 0.65) - 87,
+				params = &apos;dependent = yes,resizable=yes,scrollbars=false,toolbar=false,menubar=false,location=false,status=true,directories=false,width=575,height=200,top=&apos;;
+
+				params += top.toString();
+				params += &apos;,left=&apos; + left.toString() + &apos;\&apos;&apos;;
+
+				{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)}
+				
+				//Flow enable/disable check starts
+				
+				var resultQuoteSetting = sforce.connection.query(&quot;select netsuite_conn__Account_Id__c from netsuite_conn__Quote_Sync_Settings__c where Name = \&apos;Quote Sync Settings\&apos;&quot;); 
+				var recQuoteSetting = resultQuoteSetting.getArray(&quot;records&quot;)[0];
+				var selectedId = recQuoteSetting.netsuite_conn__Account_Id__c.split(&apos;$$$&apos;)[0];
+				var selectedValue = recQuoteSetting.netsuite_conn__Account_Id__c.split(&apos;$$$&apos;)[1];
+				
+				var queryRTS = &quot;select Id, integrator_da__SObject_Type__c, integrator_da__Disabled__c from integrator_da__Real_Time_Sync__c where integrator_da__SObject_Type__c = \&apos;quote\&apos; AND integrator_da__Connector_Id__c = \&apos;snc\&apos;&quot;;
+				var resultRTSync = sforce.connection.query(queryRTS);
+				var recordsRTSync = resultRTSync.getArray(&quot;records&quot;);
+				
+				if(recordsRTSync &amp;&amp; recordsRTSync.length != 1 || recordsRTSync[0].integrator_da__Disabled__c == &quot;true&quot;){
+					alert(&apos;Salesfoce Quote to Quote flow is disabled or connector is paused.&apos;);
+					return;
+				}
+				
+				//Flow enable/disable check ends
+				
+				var queryQuote = &quot;select &quot;+selectedId+&quot; from Quote where Id = &apos;&quot;+ &quot;{!Quote.Id}&quot; +&quot;&apos;&quot;;
+				var resQuote = sforce.connection.query(queryQuote);
+				var recQuote = resQuote.getArray(&quot;records&quot;)[0];
+				
+				var isTestingModeAndEndTheFlow = false;
+				var syncSpecificCustomSettingResult = sforce.connection.query(&quot;select Id, netsuite_conn__Enable_Testing_Mode__c, netsuite_conn__Criteria_Text__c from netsuite_conn__Specific_Records_Sync_Settings__c where Name = \&apos;Specific Records Sync Settings\&apos;&quot;, {
+					onSuccess : function(syncSpecificCustomSettingResult) {
+						var syncSpecificCustomSetting = syncSpecificCustomSettingResult.getArray(&quot;records&quot;);
+						if (syncSpecificCustomSetting &amp;&amp;
+						syncSpecificCustomSetting.length &gt; 0 &amp;&amp;
+						syncSpecificCustomSetting[0].netsuite_conn__Enable_Testing_Mode__c == &quot;true&quot;) {
+							var description = &quot;{!JSENCODE(Quote.Description)}&quot;;
+							var criteriaText = syncSpecificCustomSetting[0].netsuite_conn__Criteria_Text__c;
+							if (criteriaText) {
+								criteriaText = criteriaText.toLowerCase();
+							}
+							if (!description || 
+							(description &amp;&amp;
+							description.toLowerCase().indexOf(criteriaText) == -1)) {	
+								isTestingModeAndEndTheFlow = true;
+								alert(&quot;Connector is running in Testing mode. Please make sure, Description field on Account, Opportunity &amp; Quote contains &quot; + syncSpecificCustomSetting[0].netsuite_conn__Criteria_Text__c + &quot;.&quot;);
+							}
+						}
+						if (isTestingModeAndEndTheFlow === true) {
+							return;
+						}
+						var result = sforce.connection.query(&quot;select Id from quote where Id = &apos;&quot;+ &quot;{!Quote.Id}&quot; +&quot;&apos;&quot;, {
+							onSuccess: function(result) {
+								if (selectedId == &quot;netsuite_conn__Celigo_Account__c&quot; &amp;&amp; !&quot;{!Quote.netsuite_conn__Celigo_Account__c}&quot;) {
+									alert(&quot;Please select an Account on the Opportunity, then edit and save the quote and try to sync.&quot;);
+									return;
+								}else if(selectedId != &quot;netsuite_conn__Celigo_Account__c&quot; &amp;&amp; !recQuote[selectedId]){
+									alert(&quot;Please select &quot;+selectedValue+&quot;, then edit and save the quote and try to sync.&quot;);
+									return;
+								}
+								var records = result.getArray(&quot;records&quot;);
+								var quoteId = &quot;{!Quote.Id}&quot;;
+								var popup_window = window.open(&apos;/apex/netsuite_conn__Quote_Sync?whence=&apos;+&quot;{!Quote.Id}&quot;, &apos;NetSuite_Synchronization&apos;+ quoteId, params);
+								
+								var intervalId = window.setInterval(function(){	
+									if(popup_window.closed){ 
+										window.clearInterval(intervalId); 
+										window.location.reload(); 
+									} 
+								},1000); 
+							},
+							onFailure: function(error) {
+								alert(&apos;Error occurred: &apos; + JSON.stringify(error));
+							}
+						});	
+					},
+					onFailure : function(error) {
+						alert(&apos;Error occurred: &apos; + JSON.stringify(error));
+						isTestingModeAndEndTheFlow = true;
+					}
+				}); 
+			};
+		};
+
+		return {
+			main : function() {
+				Celigo.quoteSyncMgr = new QuoteSyncManager();
+				Celigo.quoteSyncMgr.triggerSync();
+			}
+		};
+	})();
+	Celigo.SFDC.main();</url>
+</WebLink>

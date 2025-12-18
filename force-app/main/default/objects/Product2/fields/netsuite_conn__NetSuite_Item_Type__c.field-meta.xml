@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>netsuite_conn__NetSuite_Item_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>NetSuite Item Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Inventory Item</fullName>
+                <default>false</default>
+                <label>Inventory Item</label>
+            </value>
+            <value>
+                <fullName>Inventory Lot Numbered</fullName>
+                <default>false</default>
+                <label>Inventory Lot Numbered</label>
+            </value>
+            <value>
+                <fullName>Inventory Serialized</fullName>
+                <default>false</default>
+                <label>Inventory Serialized</label>
+            </value>
+            <value>
+                <fullName>Non Inventory Purchase</fullName>
+                <default>false</default>
+                <label>Non Inventory Purchase</label>
+            </value>
+            <value>
+                <fullName>Non Inventory ReSale</fullName>
+                <default>false</default>
+                <label>Non Inventory ReSale</label>
+            </value>
+            <value>
+                <fullName>Non Inventory Sale</fullName>
+                <default>false</default>
+                <label>Non Inventory Sale</label>
+            </value>
+            <value>
+                <fullName>Service Purchase</fullName>
+                <default>false</default>
+                <label>Service Purchase</label>
+            </value>
+            <value>
+                <fullName>Service ReSale</fullName>
+                <default>false</default>
+                <label>Service ReSale</label>
+            </value>
+            <value>
+                <fullName>Service Sale</fullName>
+                <default>false</default>
+                <label>Service Sale</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Default_Project_Template__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Project to use as a template. Cloned and associated to new records of this category.</description>
+    <inlineHelpText>Project to use as a template. Cloned and associated to new records of this category.</inlineHelpText>
+    <label>Default Project Template</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Project must be a template.</errorMessage>
+        <filterItems>
+            <field>PDLM__Project__c.PDLM__Is_Template__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>PDLM__Project__c</referenceTo>
+    <relationshipLabel>Categories</relationshipLabel>
+    <relationshipName>Categories</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

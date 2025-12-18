@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Converted_ACV_Bookings__c</fullName>
+    <description>Rolls up the Converted ACV Bookings from the associated Quota Opportunity records.</description>
+    <label>Total Converted ACV Bookings</label>
+    <summarizedField>Quota_Opportunity__c.Converted_Opportunity_ACV_Bookings__c</summarizedField>
+    <summaryForeignKey>Quota_Opportunity__c.Related_Quota__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the group this revenue forecast version detail relates to.</description>
+    <inlineHelpText>Lookup to the group this revenue forecast version detail relates to.</inlineHelpText>
+    <label>Group</label>
+    <referenceTo>pse__Grp__c</referenceTo>
+    <relationshipLabel>Revenue Forecast Version Details</relationshipLabel>
+    <relationshipName>Revenue_Forecast_Version_Details</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

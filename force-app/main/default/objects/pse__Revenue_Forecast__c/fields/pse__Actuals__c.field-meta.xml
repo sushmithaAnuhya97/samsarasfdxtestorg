@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Actuals__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Contains the combined value of the Revenue Recognized to Date and the Revenue Pending Recognition fields.</description>
+    <formula>pse__Revenue_Recognized_To_Date__c  +  pse__Revenue_Pending_Recognition__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Contains the combined value of the Revenue Recognized to Date and the Revenue Pending Recognition fields.</inlineHelpText>
+    <label>Actuals</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Submitting to closing</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;&lt;strong&gt;ACTION:&lt;/strong&gt; Click on submit to closeing. &lt;/p&gt;&lt;p&gt;Please follow the prompts on the following pages to clear any errors.&lt;/p&gt;</body>
+        <customApplication>standard__LightningSalesConsole</customApplication>
+        <delayDays>1</delayDays>
+        <description>Submit to closing</description>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Submitting to closing Step 1</masterLabel>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;sfdc:CustomButton.Opportunity.Submit_to_Closing_VB&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;force_highlightsPanel&quot;}},&quot;version&quot;:2}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2023-08-24</startDate>
+        <stepNumber>1</stepNumber>
+        <targetPageKey1>Opportunity</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <targetRecordType>Opportunity.Standard_Opportunity</targetRecordType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Submit to closing</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

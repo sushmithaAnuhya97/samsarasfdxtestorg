@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__VR_Checkfor_IsReferenceable</fullName>
+    <active>true</active>
+    <description>You must select a &apos;Reference Status&apos; if &apos;Reference Program Member&apos; checkbox is selected.</description>
+    <errorConditionFormula>AND(refedge__Is_Referenceable__c = true, ISPICKVAL(refedge__Referenceability_Status__c, &apos;&apos;))</errorConditionFormula>
+    <errorMessage>You must select a &apos;Reference Status&apos; if &apos;Reference Program Member&apos; checkbox is selected.</errorMessage>
+</ValidationRule>

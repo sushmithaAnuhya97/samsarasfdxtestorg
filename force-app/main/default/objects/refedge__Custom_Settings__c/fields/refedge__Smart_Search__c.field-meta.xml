@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Smart_Search__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;SmartSearchSettingPage?customSettingId=&apos;+Id, &apos;Manage&apos;, &apos;_self&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Determine which mapped Attributes will be used to pre-populate Filters on Ref Search.</inlineHelpText>
+    <label>Smart Search</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_IC_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CSM_Status__c</columns>
+    <columns>First_Purchase_Date__c</columns>
+    <columns>CS_POC_First_Name__c</columns>
+    <columns>CS_POC_Email_Address__c</columns>
+    <columns>CS_POC_Phone__c</columns>
+    <columns>Timezone__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>Cloud_Dashboard_Link__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>Customer_ARR__c</columns>
+    <columns>Account_Lifetime_ACV__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CSM__c</field>
+        <operation>equals</operation>
+        <value>Mirabella Garrett</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <label>Mira&apos;s IC Accounts</label>
+</ListView>

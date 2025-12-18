@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Discount_CM_Review_SKU</fullName>
+    <active>true</active>
+    <description>Prevents AE&apos;s from putting in a discount o</description>
+    <errorConditionFormula>AND(
+ Product2.ProductCode = &quot;SVC-CM-REVIEW&quot;,
+ Discount &lt;&gt; 0
+)</errorConditionFormula>
+    <errorMessage>Discount on CM Review must be 0%</errorMessage>
+</ValidationRule>

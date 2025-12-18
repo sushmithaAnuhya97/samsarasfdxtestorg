@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The status of the information to be applied to the Salesforce user.</description>
+    <inlineHelpText>The status of the information to be applied to the Salesforce User.</inlineHelpText>
+    <label>Status</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending Assignment</fullName>
+                <default>true</default>
+                <label>Pending Assignment</label>
+            </value>
+            <value>
+                <fullName>Pending Removal</fullName>
+                <default>false</default>
+                <label>Pending Removal</label>
+            </value>
+            <value>
+                <fullName>Assigning</fullName>
+                <default>false</default>
+                <label>Assigning</label>
+            </value>
+            <value>
+                <fullName>Removing</fullName>
+                <default>false</default>
+                <label>Removing</label>
+            </value>
+            <value>
+                <fullName>Failed to Assign</fullName>
+                <default>false</default>
+                <label>Failed to Assign</label>
+            </value>
+            <value>
+                <fullName>Failed to Remove</fullName>
+                <default>false</default>
+                <label>Failed to Remove</label>
+            </value>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>Removed</fullName>
+                <default>false</default>
+                <label>Removed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

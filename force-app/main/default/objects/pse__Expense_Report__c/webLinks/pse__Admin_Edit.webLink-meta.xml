@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Admin_Edit</fullName>
+    <availability>online</availability>
+    <description>A button that takes the user to the native edit screen - intended for admin users only.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Admin Edit</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR($Action.pse__Expense_Report__c.Edit, pse__Expense_Report__c.Id, [retURL=URLFOR($Action.pse__Expense_Report__c.View, pse__Expense_Report__c.Id ), saveURL=URLFOR($Action.pse__Expense_Report__c.View, pse__Expense_Report__c.Id )], true)}</url>
+</WebLink>

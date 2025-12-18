@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_organization_size</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(( RecordType.DeveloperName !=&apos;Propel_Manufacturer&apos;), (ISPICKVAL( Organization_Size__c , &quot;&quot;)),OR(ISPICKVAL( Type  , &quot;End Customer&quot;), ISPICKVAL( Type  , &quot;Reseller&quot;)), Bypass_Validation_Rules__c = FALSE, ISNEW())</errorConditionFormula>
+    <errorDisplayField>Organization_Size__c</errorDisplayField>
+    <errorMessage>Please specify organization size</errorMessage>
+</ValidationRule>

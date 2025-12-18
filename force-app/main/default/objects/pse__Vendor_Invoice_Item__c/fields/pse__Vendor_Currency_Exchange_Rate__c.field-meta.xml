@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Vendor_Currency_Exchange_Rate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Vendor Currency Exchange Rate that is used to convert amount to Vendor currency.  This is always populated based on whichever rate is actually used - Project Currency Rate, Vendor Invoice Item override rate, or parent Vendor Invoice override rate.  This field is auto-populated by the system, and should be read only on the page layout.</description>
+    <externalId>false</externalId>
+    <label>Vendor Currency Exchange Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>6</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

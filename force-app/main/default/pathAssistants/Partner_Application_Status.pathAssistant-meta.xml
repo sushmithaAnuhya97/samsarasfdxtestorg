@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Partner_Registration__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Partner Application Status</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Partner_Program__c</fieldNames>
+        <fieldNames>Partner_Program_Enrollment__c</fieldNames>
+        <fieldNames>Partner_Team_Alignment__c</fieldNames>
+        <fieldNames>PAM_Notes__c</fieldNames>
+        <fieldNames>Leadership_Review_Notes__c</fieldNames>
+        <info>&lt;p&gt;In this stage, the application is considered complete and the Partner Account Status has been updated to ‘Onboarding.&amp;#39; Congratulations on landing another partner - please continue the onboarding process from the Partner Account record!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;As a reminder, Partner Portal user activation is an extension of onboarding that occurs on the contact record after the partner has signed a valid agreement. PAMs are fully equipped to support this enablement as well as activate users as they register for access in the future.&lt;/em&gt;&lt;/p&gt;</info>
+        <picklistValueName>Approved by Leaders</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Partner_Program__c</fieldNames>
+        <fieldNames>Partner_Program_Enrollment__c</fieldNames>
+        <fieldNames>Partner_Team_Alignment__c</fieldNames>
+        <fieldNames>PAM_Notes__c</fieldNames>
+        <fieldNames>Leadership_Review_Notes__c</fieldNames>
+        <info>&lt;p&gt;In this stage, the Partner Account status has been updated to ‘Authorization’ and the PAM is responsible driving the approval with your immediate supervisor, who will secure any additional approvals according to current policy. You or your supervisor have access to mark the application as ‘Approved by Leaders’ or ‘Denied&amp;#39; and provide supporting information in the ‘Leader Review Notes’ field.&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If approved by leaders, the Partner Account status will be set to ‘Onboarding.&amp;#39;&lt;/p&gt;</info>
+        <picklistValueName>Approved by PAM</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;span style=&quot;font-family: Roboto, sans-serif; font-size: 10pt;&quot;&gt;Denied applications have been determined to fall outside the scope of our current program offerings.&lt;/span&gt;&lt;/p&gt;</info>
+        <picklistValueName>Denied</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Partner_Program__c</fieldNames>
+        <fieldNames>Partner_Program_Enrollment__c</fieldNames>
+        <fieldNames>Partner_Team_Alignment__c</fieldNames>
+        <fieldNames>PAM_Notes__c</fieldNames>
+        <info>&lt;p&gt;Please review the information from the Partner and begin the review process to vet this new Partner Application. Once you reach out, please update the status to ‘Under Review’.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;If you do not feel the Partner is a good fit at this time, you can also mark the status ‘Denied’ at any time and partner will be notified.&lt;/p&gt;</info>
+        <picklistValueName>New Application</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Partner_Program__c</fieldNames>
+        <fieldNames>Partner_Program_Enrollment__c</fieldNames>
+        <fieldNames>Partner_Team_Alignment__c</fieldNames>
+        <fieldNames>PAM_Notes__c</fieldNames>
+        <info>&lt;p&gt;Please complete the appropriate level of vetting per the standards of the program they are interested and complete the fields available in the path. In particular, PAM Review Notes should be added to support Leadership review and future visibility.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Next Step: Move status to ‘Denied’ or ‘Approved by PAM’ for leadership review. This change will automatically update the related Partner Account status to ‘Authorization.&amp;#39;&lt;/p&gt;</info>
+        <picklistValueName>Under Review</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Partner_Application</recordTypeName>
+</PathAssistant>

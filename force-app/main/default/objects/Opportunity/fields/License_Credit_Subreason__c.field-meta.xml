@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Credit_Subreason__c</fullName>
+    <label>Concession Subreason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>License_Term_Credit_Reason__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CM - Cannot retrieve video</fullName>
+                <default>false</default>
+                <label>CM - Cannot retrieve video</label>
+            </value>
+            <value>
+                <fullName>CM - Accident not recorded</fullName>
+                <default>false</default>
+                <label>CM - Accident not recorded</label>
+            </value>
+            <value>
+                <fullName>CM - Audio not recorded</fullName>
+                <default>false</default>
+                <label>CM - Audio not recorded</label>
+            </value>
+            <value>
+                <fullName>CM - Not upgrading to correct firmware</fullName>
+                <default>false</default>
+                <label>CM - Not upgrading to correct firmware</label>
+            </value>
+            <value>
+                <fullName>VG - Compliance fine from DOT due to product failure</fullName>
+                <default>false</default>
+                <label>VG - Compliance fine from DOT due to product failure</label>
+            </value>
+            <value>
+                <fullName>VG - Time on site page does not update after manual edit</fullName>
+                <default>false</default>
+                <label>VG - Time on site page does not update after manual edit</label>
+            </value>
+            <value>
+                <fullName>AG - Not responsive to pings</fullName>
+                <default>false</default>
+                <label>AG - Not responsive to pings</label>
+            </value>
+            <value>
+                <fullName>AG - Device or cable failure required replacement</fullName>
+                <default>false</default>
+                <label>AG - Device or cable failure required replacement</label>
+            </value>
+            <value>
+                <fullName>All - Significant technical issue for &gt;1 month</fullName>
+                <default>false</default>
+                <label>All - Significant technical issue for &gt;1 month</label>
+            </value>
+            <value>
+                <fullName>Poor customer support experience</fullName>
+                <default>false</default>
+                <label>Poor customer support experience</label>
+            </value>
+            <value>
+                <fullName>Delayed support ticket resolution - 4+ material technical tickets in 60 days</fullName>
+                <default>false</default>
+                <label>Delayed support ticket resolution - 4+ material technical tickets in 60 days</label>
+            </value>
+            <value>
+                <fullName>Sales - Does not support primary use case</fullName>
+                <default>false</default>
+                <label>Sales - Does not support primary use case</label>
+            </value>
+            <value>
+                <fullName>Sales - Non-referenceable</fullName>
+                <default>false</default>
+                <label>Sales - Non-referenceable</label>
+            </value>
+            <value>
+                <fullName>Sales - Unable to use products</fullName>
+                <default>false</default>
+                <label>Sales - Unable to use products</label>
+            </value>
+            <value>
+                <fullName>Ops - Shipping Delays</fullName>
+                <default>false</default>
+                <label>Ops - Shipping Delays</label>
+            </value>
+            <value>
+                <fullName>VG - Compliance fine from DOT due to prduct failure</fullName>
+                <default>false</default>
+                <label>VG - Compliance fine from DOT due to prduct failure</label>
+            </value>
+            <value>
+                <fullName>VG (new) - Samsara paying for VG installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>VG (new) - Samsara paying for VG installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>VG (replacements) - Samsara paying for VG installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>VG (replacements) - Samsara paying for VG installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>CM (new) - Samsara paying for CM installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>CM (new) - Samsara paying for CM installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>CM (replacement) - Samsara paying for CM installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>CM (replacement) - Samsara paying for CM installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>AG (new) - Samsara paying for AG installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>AG (new) - Samsara paying for AG installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>AG (replacment) - Samsara paying for AG installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>AG (replacment) - Samsara paying for AG installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>Multiple product types (new) - Samsara paying for installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>Multiple product types (new) - Samsara paying for installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>Multiple product types (replacement) - Samsara paying for installations performed by 3rd party installer</fullName>
+                <default>false</default>
+                <label>Multiple product types (replacement) - Samsara paying for installations performed by 3rd party installer</label>
+            </value>
+            <value>
+                <fullName>Damaged personal property</fullName>
+                <default>false</default>
+                <label>Damaged personal property</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous / other</fullName>
+                <default>false</default>
+                <label>Miscellaneous / other</label>
+            </value>
+            <value>
+                <fullName>CM - Harsh event not recorded</fullName>
+                <default>false</default>
+                <label>CM - Harsh event not recorded</label>
+            </value>
+            <value>
+                <fullName>CM - connectivity issues (i.e., low CM health)</fullName>
+                <default>false</default>
+                <label>CM - connectivity issues (i.e., low CM health)</label>
+            </value>
+            <value>
+                <fullName>AG - reefer control failure</fullName>
+                <default>false</default>
+                <label>AG - reefer control failure</label>
+            </value>
+            <value>
+                <fullName>AG - low battery replacement</fullName>
+                <default>false</default>
+                <label>AG - low battery replacement</label>
+            </value>
+            <value>
+                <fullName>VG - connectivity issues</fullName>
+                <default>false</default>
+                <label>VG - connectivity issues</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CM - Cannot retrieve video</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CM - Accident not recorded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CM - Audio not recorded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CM - Not upgrading to correct firmware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>VG - Compliance fine from DOT due to product failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>VG - Time on site page does not update after manual edit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>AG - Not responsive to pings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>AG - Device or cable failure required replacement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>All - Significant technical issue for &gt;1 month</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>VG - Compliance fine from DOT due to prduct failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CM - Harsh event not recorded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>CM - connectivity issues (i.e., low CM health)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>AG - reefer control failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>AG - low battery replacement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>VG - connectivity issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Sales - Does not support primary use case</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Sales - Non-referenceable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Sales - Unable to use products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <valueName>Poor customer support experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <valueName>Delayed support ticket resolution - 4+ material technical tickets in 60 days</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Operations</controllingFieldValue>
+            <valueName>Ops - Shipping Delays</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>VG (new) - Samsara paying for VG installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>VG (replacements) - Samsara paying for VG installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>CM (new) - Samsara paying for CM installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>CM (replacement) - Samsara paying for CM installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>AG (new) - Samsara paying for AG installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>AG (replacment) - Samsara paying for AG installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>Multiple product types (new) - Samsara paying for installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Installation services</controllingFieldValue>
+            <valueName>Multiple product types (replacement) - Samsara paying for installations performed by 3rd party installer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opex</controllingFieldValue>
+            <valueName>Damaged personal property</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opex</controllingFieldValue>
+            <valueName>Miscellaneous / other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

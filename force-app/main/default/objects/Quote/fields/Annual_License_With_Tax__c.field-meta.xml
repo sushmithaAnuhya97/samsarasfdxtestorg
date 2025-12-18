@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_License_With_Tax__c</fullName>
+    <formula>IF(
+AND(
+License_Term__c  &gt; 12,License_Term__c  &lt; 24),
+Total_Monthly_License_Due__c * (License_Term__c - 12), Annual_License_Subtotal__c +  Annual_License_Sales_Tax__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Annual license with license tax</inlineHelpText>
+    <label>Annual License With Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

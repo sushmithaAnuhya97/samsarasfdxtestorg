@@ -1,0 +1,3600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Channel_Relationship__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Channel Relationships (Custom)</description>
+    <label>Channel Relationships (Custom)</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ACV Bookings</displayNameOverride>
+            <field>ACV_Bookings__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AE Email</displayNameOverride>
+            <field>AE_Email__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PM Owner</displayNameOverride>
+            <field>CAM_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Deal_Reg_Form_Ungated__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Account</displayNameOverride>
+            <field>Channel_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer_Contact__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Program</displayNameOverride>
+            <field>Partner_Program__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship ID</displayNameOverride>
+            <field>Id</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Channel Relationship Name</displayNameOverride>
+            <field>Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Account Name</displayNameOverride>
+            <field>Customer_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Close Date</displayNameOverride>
+            <field>Close_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Eligible_For_Payout__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deal Registration Discount</displayNameOverride>
+            <field>Deal_Registration_Discount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End Customer Discount (CML)</displayNameOverride>
+            <field>End_Customer_Discount_CML__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End Customer Discount (MM / ENT)</displayNameOverride>
+            <field>End_Customer_Discount_MM_ENT__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity</displayNameOverride>
+            <field>Opportunity__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Amount</displayNameOverride>
+            <field>Opportunity_Amount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Hyperlink</displayNameOverride>
+            <field>Opportunity_Hyperlink__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Stage</displayNameOverride>
+            <field>Opportunity_Stage__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Engagement Type</displayNameOverride>
+            <field>Partner_Interaction_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Program Segment</displayNameOverride>
+            <field>Partner_Program_Segment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payment Method</displayNameOverride>
+            <field>Payment_Method__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referral Rebate (%)</displayNameOverride>
+            <field>Referral_Rebate_MSRP__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Registration Approval Date</displayNameOverride>
+            <field>Registration_Approval_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Registration Expiration Date</displayNameOverride>
+            <field>Registration_Expiration_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : PM Owner : Quota</displayNameOverride>
+            <field>CAM_Owner__c.Quota__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : PM Owner : Role Start Date</displayNameOverride>
+            <field>CAM_Owner__c.Role_Start_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Partner User</displayNameOverride>
+            <field>Channel_Partner_User_lr__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : PM Owner : Role</displayNameOverride>
+            <field>CAM_Owner__c.UserRole</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : PM Owner : Office Location</displayNameOverride>
+            <field>CAM_Owner__c.Office_Location__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : ACV Bookings</displayNameOverride>
+            <field>Opportunity__c.ACV_Bookings_SOT__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : ACV Bookings Copy</displayNameOverride>
+            <field>Opportunity__c.ACV_Bookings_Copy__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Stage</displayNameOverride>
+            <field>Opportunity__c.StageName</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Owner Manager Name Copy</displayNameOverride>
+            <field>Opportunity__c.Owner_Manager_Name_Copy__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Team Alignment</displayNameOverride>
+            <field>Partner_type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Owner Manager Role Copy</displayNameOverride>
+            <field>Opportunity__c.Owner_Manager_Role_Copy__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Opportunity Owner</displayNameOverride>
+            <field>Opportunity__c.Owner</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Opportunity Record Type</displayNameOverride>
+            <field>Opportunity__c.RecordType</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Exclude from Comp?</displayNameOverride>
+            <field>Exclude_from_Comp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Program Type</displayNameOverride>
+            <field>Program_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Opportunity Name</displayNameOverride>
+            <field>Opportunity__c.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : $AtRisk</displayNameOverride>
+            <field>Channel_Partner__c.AtRisk__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : # of Accounts</displayNameOverride>
+            <field>Channel_Partner__c.of_Accounts_1__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : # of Unique Contact Owners</displayNameOverride>
+            <field>Channel_Partner__c.of_Contact_Owners__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : % AG Active</displayNameOverride>
+            <field>Channel_Partner__c.AG_installs__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : % VGs Active</displayNameOverride>
+            <field>Channel_Partner__c.VG_installs__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : 18 Digit Account ID</displayNameOverride>
+            <field>Channel_Partner__c.X18_Digit_Account_ID__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Assignment Date</displayNameOverride>
+            <field>Channel_Partner__c.Account_Assignment_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Currency</displayNameOverride>
+            <field>Channel_Partner__c.CurrencyIsoCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Hashtag</displayNameOverride>
+            <field>Channel_Partner__c.Hashtag__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account ID</displayNameOverride>
+            <field>Channel_Partner__c.Id</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Name</displayNameOverride>
+            <field>Channel_Partner__c.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Name Hyperlink</displayNameOverride>
+            <field>Channel_Partner__c.Account_Name_Hyperlink__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Number</displayNameOverride>
+            <field>Channel_Partner__c.AccountNumber</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Owner</displayNameOverride>
+            <field>Channel_Partner__c.Owner</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Owner [Impartner]</displayNameOverride>
+            <field>Channel_Partner__c.Account_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Status</displayNameOverride>
+            <field>Channel_Partner__c.Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Record Type</displayNameOverride>
+            <field>Channel_Partner__c.RecordType</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Site</displayNameOverride>
+            <field>Channel_Partner__c.Site</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Size Segment</displayNameOverride>
+            <field>Channel_Partner__c.Account_Size_Segment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Source</displayNameOverride>
+            <field>Channel_Partner__c.AccountSource</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account Status Changed</displayNameOverride>
+            <field>Channel_Partner__c.Account_Status_Changed__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account transferred from Pool</displayNameOverride>
+            <field>Channel_Partner__c.Account_transferred_from_Pool__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Account with Owner</displayNameOverride>
+            <field>Channel_Partner__c.Account_with_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Active Growth Campaigns on Account</displayNameOverride>
+            <field>Channel_Partner__c.Active_Growth_Campaigns_on_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Active Trials</displayNameOverride>
+            <field>Channel_Partner__c.Active_Trials__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Actual Deactivate Date</displayNameOverride>
+            <field>Channel_Partner__c.Actual_Deactivate_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : ADR Transfer</displayNameOverride>
+            <field>Channel_Partner__c.ADR_Transfer__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : ADR Transfer Date</displayNameOverride>
+            <field>Channel_Partner__c.ADR_Transfer_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : ADR Transfer Status</displayNameOverride>
+            <field>Channel_Partner__c.ADR_Transfer_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : AE to CSM Notes</displayNameOverride>
+            <field>Channel_Partner__c.AE_to_CSM_Notes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : AGs Installed</displayNameOverride>
+            <field>Channel_Partner__c.AGs_Installed__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : AG Upsell Updates?</displayNameOverride>
+            <field>Channel_Partner__c.AG_Upsell_Updates__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Amount Due on Next Payment</displayNameOverride>
+            <field>Channel_Partner__c.Amount_Due_on_Next_Payment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Annual Revenue</displayNameOverride>
+            <field>Channel_Partner__c.AnnualRevenue</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Application Approved</displayNameOverride>
+            <field>Channel_Partner__c.Application_Approved__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Application Submitted</displayNameOverride>
+            <field>Channel_Partner__c.Application_Submitted__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Approval Email Sent</displayNameOverride>
+            <field>Channel_Partner__c.Welcome_Email_Sent__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Average Delighted Score</displayNameOverride>
+            <field>Channel_Partner__c.Average_NPS__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Balance</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Account_Balance__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing_Email</displayNameOverride>
+            <field>Channel_Partner__c.Billing_Email__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing_Phone</displayNameOverride>
+            <field>Channel_Partner__c.Billing_Phone__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Address</displayNameOverride>
+            <field>Channel_Partner__c.BillingAddress</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Address Record Type</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__BAR__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Address Status</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__BAS__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Address Vacancy</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__BAV__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing City</displayNameOverride>
+            <field>Channel_Partner__c.BillingCity</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Contact</displayNameOverride>
+            <field>Channel_Partner__c.Billing_Contact__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Country</displayNameOverride>
+            <field>Channel_Partner__c.BillingCountryCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Country (text only)</displayNameOverride>
+            <field>Channel_Partner__c.BillingCountry</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing First Name</displayNameOverride>
+            <field>Channel_Partner__c.Billing_First_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Geocode Accuracy</displayNameOverride>
+            <field>Channel_Partner__c.BillingGeocodeAccuracy</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Last Name</displayNameOverride>
+            <field>Channel_Partner__c.Billing_Last_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Latitude</displayNameOverride>
+            <field>Channel_Partner__c.BillingLatitude</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Longitude</displayNameOverride>
+            <field>Channel_Partner__c.BillingLongitude</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Residential Delivery Indicator</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__BRDI__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing State/Province</displayNameOverride>
+            <field>Channel_Partner__c.BillingStateCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing State/Province (text only)</displayNameOverride>
+            <field>Channel_Partner__c.BillingState</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Street</displayNameOverride>
+            <field>Channel_Partner__c.BillingStreet</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Stripe Customer Id</displayNameOverride>
+            <field>Channel_Partner__c.Billing_Stripe_Customer_Id__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Timezone</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__BTZ__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Zip/Postal Code</displayNameOverride>
+            <field>Channel_Partner__c.BillingPostalCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Bought CM22 and CM 12 in last 30 days</displayNameOverride>
+            <field>Channel_Partner__c.Bought_CM22_and_CM_12_in_last_30_days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Bought CM 22 and CM 12 more than 30 days</displayNameOverride>
+            <field>Channel_Partner__c.Bought_CM_22_and_CM_12_more_than_30_days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Business Unit</displayNameOverride>
+            <field>Channel_Partner__c.Business_Unit__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Bypass Validation Rules</displayNameOverride>
+            <field>Channel_Partner__c.Bypass_Validation_Rules__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Camera Contract End Date</displayNameOverride>
+            <field>Channel_Partner__c.Camera_Contract_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Canada Geography</displayNameOverride>
+            <field>Channel_Partner__c.Canada_Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Canada Geography Overwrite</displayNameOverride>
+            <field>Channel_Partner__c.Canada_Geography_Overwrite__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Case Count 14 days</displayNameOverride>
+            <field>Channel_Partner__c.Case_Count_30_days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Case Count 7 days</displayNameOverride>
+            <field>Channel_Partner__c.Case_Count_7_days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Celigo Update</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Celigo_Update__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Channel Payout Type</displayNameOverride>
+            <field>Channel_Partner__c.Channel_Payout_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Channel Tier</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Channel_Tier__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Representative</displayNameOverride>
+            <field>Channel_Partner_Representative__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Churn First Failed Payment Date</displayNameOverride>
+            <field>Channel_Partner__c.Churn_First_Failed_Payment_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Churn Payment Status</displayNameOverride>
+            <field>Channel_Partner__c.Churn_Payment_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Churn Update CC Link</displayNameOverride>
+            <field>Channel_Partner__c.Churn_Update_CC_Link__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Closed Lost Account</displayNameOverride>
+            <field>Channel_Partner__c.Closed_Lost_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Closed Lost Opportunities Count</displayNameOverride>
+            <field>Channel_Partner__c.Closed_Lost_Opportunities__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Contract End Date</displayNameOverride>
+            <field>Channel_Partner__c.Contract_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Contract Start Date</displayNameOverride>
+            <field>Channel_Partner__c.Contract_Start_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Contract Term</displayNameOverride>
+            <field>Channel_Partner__c.Contract_Term__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Converted Lead Id</displayNameOverride>
+            <field>Channel_Partner__c.Converted_Lead_Id__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Co-Term Account</displayNameOverride>
+            <field>Channel_Partner__c.Co_Term_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Created By</displayNameOverride>
+            <field>Channel_Partner__c.CreatedBy</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Created Date</displayNameOverride>
+            <field>Channel_Partner__c.CreatedDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Credit Authorization (Date)</displayNameOverride>
+            <field>Channel_Partner__c.Credit_Authorization_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Credit Hold</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Credit_Hold__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Max Credit Limit</displayNameOverride>
+            <field>Channel_Partner__c.Credit_Limit__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Credit Pre-Approval Status</displayNameOverride>
+            <field>Channel_Partner__c.Credit_Pre_Approval_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Credit Scorecard Score</displayNameOverride>
+            <field>Channel_Partner__c.Credit_Scorecard_Score__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Implementation Consultant</displayNameOverride>
+            <field>Channel_Partner__c.CSM__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Additional followup needed TimeStamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Additional_followup_needed_TimeStamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Attempting 1st session TimeStamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Attempting_1st_session_TimeStamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Attempting 2nd session TimeStamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Attempting_2nd_session_TimeStamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Attempting 3rd Session Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Attempting_3rd_Session_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Attempting Training Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Attempting_Training_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Cannot connect TimeStamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Cannot_connect_TimeStamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Completed 1st session TimeStamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Completed_1st_session_TimeStamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM First 30d Stage</displayNameOverride>
+            <field>Channel_Partner__c.CSM_First_30d_Stage__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Health Check Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Health_Check_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CS Sentiment</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Health_Rating__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CS Sentiment Status</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Health_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Initial onboarding completed check</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Initial_onboarding_completed_check__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Initial onboarding completed Time</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Initial_onboarding_completed_Time__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Notes</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Notes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Owner</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Owner Name</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Owner_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Pending Delivery Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Pending_Delivery_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Pending Intro Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Pending_Intro_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Scheduled 1st session TimeStamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Scheduled_1st_session_TimeStamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Scheduled 2nd session TimeStamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Scheduled_2nd_session_TimeStamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Scheduled 3rd Session Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Scheduled_3rd_Session_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Scheduled Add Training Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Scheduled_Add_Training_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : CSM Scheduled Training Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.CSM_Scheduled_Training_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Current Camera Provider</displayNameOverride>
+            <field>Channel_Partner__c.Current_Camera_Provider__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Current Equipment Telematics Provider</displayNameOverride>
+            <field>Channel_Partner__c.Current_Construction_Equip_Telematics__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Current Owner Email</displayNameOverride>
+            <field>Channel_Partner__c.Current_Owner_Email__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Current Telematics Provider</displayNameOverride>
+            <field>Channel_Partner__c.Current_Telematics_Provider__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Current Trailer Telematics Provider</displayNameOverride>
+            <field>Channel_Partner__c.Current_Trailer_Telematics_Provider__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Customer?</displayNameOverride>
+            <field>Channel_Partner__c.Customer__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Customer Days Inactive</displayNameOverride>
+            <field>Channel_Partner__c.Customer_Days_Inactive__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Customer Engagement Tier</displayNameOverride>
+            <field>Channel_Partner__c.Customer_Engagement_Tier__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Customer Referral Total GW Count</displayNameOverride>
+            <field>Channel_Partner__c.Customer_Referral_Total_GW_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Customer Type</displayNameOverride>
+            <field>Channel_Partner__c.Customer_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Cycle Time - 1st Oppty to 1st Purchase</displayNameOverride>
+            <field>Channel_Partner__c.Cycle_Time__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Average High Credit Amount</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_Avg_High_Credit_Amount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Commercial Credit Percentile</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_Commercial_Credit_Percentage__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Data Available</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_Data_Available__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B DUNS Number 1</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_DUNS_NO__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Financial Stress Score Percentile</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_Financial_Stress_Score__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Match Name</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_Match_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B PAYDEX</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_PAYDEX__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Recommended Credit Limit</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_Recommended_Credit_Limit__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Slow/Negative Experience Percentage</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_SlowNegExpCount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : D&amp;B Trade Experiences Count</displayNameOverride>
+            <field>Channel_Partner__c.DNBI_Trade_Experiences_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Dashboard Events This Week</displayNameOverride>
+            <field>Channel_Partner__c.Dashboard_Events_This_Week__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Dashboard Last Activity Datetime</displayNameOverride>
+            <field>Channel_Partner__c.Dashboard_Last_Activity_Datetime__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Dashboard Weekly Active Users</displayNameOverride>
+            <field>Channel_Partner__c.Dashboard_Weekly_Active_Users__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Data.com Key</displayNameOverride>
+            <field>Channel_Partner__c.Jigsaw</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days From Trial Ship To Activation</displayNameOverride>
+            <field>Channel_Partner__c.Days_From_Trial_Ship_To_Activation__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days Overdue</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Days_Overdue__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days post first purchase</displayNameOverride>
+            <field>Channel_Partner__c.Days_post_first_purchase__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days post last dashboard login</displayNameOverride>
+            <field>Channel_Partner__c.Days_post_last_dashboard_login__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days post last purchase</displayNameOverride>
+            <field>Channel_Partner__c.Days_post_last_purchase__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days required for Initial Onboarding</displayNameOverride>
+            <field>Channel_Partner__c.Days_required_for_Initial_Onboarding__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days Since Last Call By Current Owner</displayNameOverride>
+            <field>Channel_Partner__c.Days_Since_Last_Call_By_Current_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days Since Marked As Retouch</displayNameOverride>
+            <field>Channel_Partner__c.Days_Since_Marked_As_Retouch__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Days Till Deactivation</displayNameOverride>
+            <field>Channel_Partner__c.days_till_deactivation__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Deactivated</displayNameOverride>
+            <field>Channel_Partner__c.Quarantine_Enabled__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Deactivation Date</displayNameOverride>
+            <field>Channel_Partner__c.Quarantine_Enabled_At__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Deal Registration Discount</displayNameOverride>
+            <field>Channel_Partner__c.Deal_Registration_Discount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Delighted Detractors</displayNameOverride>
+            <field>Channel_Partner__c.DelightedInc__Detractors__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Delighted NPS</displayNameOverride>
+            <field>Channel_Partner__c.DelightedInc__NPS__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Delighted Passives</displayNameOverride>
+            <field>Channel_Partner__c.DelightedInc__Passives__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Delighted Promoters</displayNameOverride>
+            <field>Channel_Partner__c.DelightedInc__Promoters__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Delinquent</displayNameOverride>
+            <field>Channel_Partner__c.Delinquent__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Delinquent Case Created</displayNameOverride>
+            <field>Channel_Partner__c.Delinquent_Case_Created__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Description</displayNameOverride>
+            <field>Channel_Partner__c.Description</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Disqualified from Onboarding</displayNameOverride>
+            <field>Channel_Partner__c.Disqualified_from_Onboarding__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : DMV Number</displayNameOverride>
+            <field>Channel_Partner__c.DMV_Number__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Domain Name</displayNameOverride>
+            <field>Channel_Partner__c.Domain_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : DOT Number</displayNameOverride>
+            <field>Channel_Partner__c.DOT_Number__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : DUNS Number</displayNameOverride>
+            <field>Channel_Partner__c.DUNS_Number__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : DVS Assignment</displayNameOverride>
+            <field>Channel_Partner__c.DVS_Assignment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : ELD Violations</displayNameOverride>
+            <field>Channel_Partner__c.ELD_Violations__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Employees</displayNameOverride>
+            <field>Channel_Partner__c.NumberOfEmployees</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Employees on Site</displayNameOverride>
+            <field>Channel_Partner__c.Employees_on_Site__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Enable Deactivation Process</displayNameOverride>
+            <field>Channel_Partner__c.Enable_Delinquency_Process__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : End Customer Discount (CML)</displayNameOverride>
+            <field>Channel_Partner__c.End_Customer_Discount_CML__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : End Customer Discount (MM / ENT)</displayNameOverride>
+            <field>Channel_Partner__c.End_Customer_Discount_MM_ENT__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Engage List Uk Id</displayNameOverride>
+            <field>Channel_Partner__c.Engage_List_Uk_Id__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Enrichment Complete</displayNameOverride>
+            <field>Channel_Partner__c.Enrichment_Complete__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Enrichment Complete Date</displayNameOverride>
+            <field>Channel_Partner__c.Enrichment_Complete_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Enterprise Assignment</displayNameOverride>
+            <field>Channel_Partner__c.Enterprise_Assignment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Enterprise Canada Geography</displayNameOverride>
+            <field>Channel_Partner__c.Enterprise_Canada_Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Enterprise Experiments</displayNameOverride>
+            <field>Channel_Partner__c.Enterprise_Experiments__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Enterprise Geography</displayNameOverride>
+            <field>Channel_Partner__c.Enterprise_Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Entity Copy</displayNameOverride>
+            <field>Channel_Partner__c.Entity_Copy__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Event Lead</displayNameOverride>
+            <field>Channel_Partner__c.Event_Lead__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Express Deals Counter</displayNameOverride>
+            <field>Channel_Partner__c.Express_Deals_Counter__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Facility Count</displayNameOverride>
+            <field>Channel_Partner__c.Facility_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Fax</displayNameOverride>
+            <field>Channel_Partner__c.Fax</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Demo Date</displayNameOverride>
+            <field>Channel_Partner__c.First_Demo_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : FirstDemoDate WeekStart</displayNameOverride>
+            <field>Channel_Partner__c.FirstDemoDate_WeekStart__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Opportunity Closed With Partner</displayNameOverride>
+            <field>Channel_Partner__c.First_Opportunity_Closed_With_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Opportunity Lead Source Encoded</displayNameOverride>
+            <field>Channel_Partner__c.First_Opportunity_Lead_Source_Encoded__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Purchase Date</displayNameOverride>
+            <field>Channel_Partner__c.First_Purchase_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Purchase Value</displayNameOverride>
+            <field>Channel_Partner__c.First_Purchase_Value__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Revenue Oppty Creation Date</displayNameOverride>
+            <field>Channel_Partner__c.First_Revenue_Oppty_Creation_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Sites ACV Bookings</displayNameOverride>
+            <field>Channel_Partner__c.Sites_ACV_Bookings__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Touch Campaign</displayNameOverride>
+            <field>Channel_Partner__c.First_Touch_Campaign__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Touch Campaign Date/Time</displayNameOverride>
+            <field>Channel_Partner__c.First_Touch_Campaign_Date_Time__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Touch Campaign Status</displayNameOverride>
+            <field>Channel_Partner__c.First_Touch_Campaign_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Touch Master Campaign</displayNameOverride>
+            <field>Channel_Partner__c.Master_Campaign_FT__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Touch Parent Campaign</displayNameOverride>
+            <field>Channel_Partner__c.Parent_Campaign_FT__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Trial Planned Installation Date</displayNameOverride>
+            <field>Channel_Partner__c.First_Trial_Planned_Installation_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Trial Ship Date</displayNameOverride>
+            <field>Channel_Partner__c.First_Trial_Ship_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Origination Source(Custom Enriched Data)</displayNameOverride>
+            <field>Channel_Partner__c.Fleet_Seek_Number__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Follow Up Date</displayNameOverride>
+            <field>Channel_Partner__c.Follow_Up_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Contract Notes</displayNameOverride>
+            <field>Channel_Partner__c.Follow_Up_Notes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial, Closed Account</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_Closed_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial Acct Last Activity Datetime</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_Last_Activity_Datetime__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial Activity Status</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_Activity_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial Converted</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_Converted__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial First Account Creation Date</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_First_Account_Creation_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial First Device Claim Datetime</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_First_Device_Claim_Datetime__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial Kit Sent Date</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_Kit_Sent_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Free Trial Number of Users</displayNameOverride>
+            <field>Channel_Partner__c.Free_Trial_Number_of_Users__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Freight Connect Insert Date</displayNameOverride>
+            <field>Channel_Partner__c.Freight_Connect_Insert_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Geography</displayNameOverride>
+            <field>Channel_Partner__c.Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Global Geography</displayNameOverride>
+            <field>Channel_Partner__c.Global_Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Grace Period</displayNameOverride>
+            <field>Channel_Partner__c.Suspension_Grace_Days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Has Active Contract</displayNameOverride>
+            <field>Channel_Partner__c.Has_Active_Contract__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Has Trial</displayNameOverride>
+            <field>Channel_Partner__c.Has_Trial__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : High Churn Risk</displayNameOverride>
+            <field>Channel_Partner__c.High_Churn_Risk__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Highest Probability Open Opportunity</displayNameOverride>
+            <field>Channel_Partner__c.Highest_Probability_Open_Opportunity__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Industrial Account Owner</displayNameOverride>
+            <field>Channel_Partner__c.Industrial_Account_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Manufacturing AE</displayNameOverride>
+            <field>Channel_Partner__c.Manufacturing_AE__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Industrial Application</displayNameOverride>
+            <field>Channel_Partner__c.Industrial_Application__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Industrial Prospect</displayNameOverride>
+            <field>Channel_Partner__c.Industrial_Customer__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Industrial Square Footage</displayNameOverride>
+            <field>Channel_Partner__c.Industrial_Square_Footage__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Industry</displayNameOverride>
+            <field>Channel_Partner__c.Industry</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Industry (FR)</displayNameOverride>
+            <field>Channel_Partner__c.Industry_FR__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Ingenico MAC Id</displayNameOverride>
+            <field>Channel_Partner__c.Ingenico_MAC_Id__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Internally Financed?</displayNameOverride>
+            <field>Channel_Partner__c.Internally_Financed__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : IP Address</displayNameOverride>
+            <field>Channel_Partner__c.IP_Address__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Is Website Visitor Lead</displayNameOverride>
+            <field>Channel_Partner__c.Is_Website_Visitor_Lead__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Lane Four Account Assignment Filter</displayNameOverride>
+            <field>Channel_Partner__c.Lane_Four_Account_Assignment_Filter__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Lane Four Segment</displayNameOverride>
+            <field>Channel_Partner__c.Lane_Four_Segment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Lane Four Sub-Segment</displayNameOverride>
+            <field>Channel_Partner__c.Lane_Four_Sub_Segment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Activity</displayNameOverride>
+            <field>Channel_Partner__c.LastActivityDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Call</displayNameOverride>
+            <field>Channel_Partner__c.Last_Call__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Inbound Interest Date</displayNameOverride>
+            <field>Channel_Partner__c.Last_Marketing_Engagement_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last License End Date</displayNameOverride>
+            <field>Channel_Partner__c.Last_License_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Modified By</displayNameOverride>
+            <field>Channel_Partner__c.LastModifiedBy</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Modified Date</displayNameOverride>
+            <field>Channel_Partner__c.LastModifiedDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Purchase Date</displayNameOverride>
+            <field>Channel_Partner__c.Last_Purchase_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Revenue Oppty Creation Date</displayNameOverride>
+            <field>Channel_Partner__c.Last_Revenue_Oppty_Creation_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Revenue Oppty Qualification Date</displayNameOverride>
+            <field>Channel_Partner__c.Last_Revenue_Oppty_Qualification_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Last Upsell Conversation</displayNameOverride>
+            <field>Channel_Partner__c.Last_Upsell_Referall_Conversation__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Latest Active Contract</displayNameOverride>
+            <field>Channel_Partner__c.Latest_Active_Contract__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Latest Active Contract End Date</displayNameOverride>
+            <field>Channel_Partner__c.Latest_Active_Contract_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Latitude</displayNameOverride>
+            <field>Channel_Partner__c.Latitude__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : License End Date</displayNameOverride>
+            <field>Channel_Partner__c.Co_Term_License_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Lifetime Purchases Currency</displayNameOverride>
+            <field>Channel_Partner__c.Lifetime_Purchases_Currency__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Lifetime Purchases Number</displayNameOverride>
+            <field>Channel_Partner__c.Lifetime_Purchases__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : LinkedIn Company Id</displayNameOverride>
+            <field>Channel_Partner__c.LID__LinkedIn_Company_Id__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Long ID</displayNameOverride>
+            <field>Channel_Partner__c.Long_ID__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Longitude</displayNameOverride>
+            <field>Channel_Partner__c.Longitude__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Major Account</displayNameOverride>
+            <field>Channel_Partner__c.Major_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Major Account List</displayNameOverride>
+            <field>Channel_Partner__c.Major_Account_List__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Max Amt by Highest Probability</displayNameOverride>
+            <field>Channel_Partner__c.Max_Amt_by_Highest_Probability__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Max Trial Days Open</displayNameOverride>
+            <field>Channel_Partner__c.Max_Trial_Days_Open__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Micro-Fleet Formula</displayNameOverride>
+            <field>Channel_Partner__c.Micro_Fleet_Formula__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Micro-Fleet Support Tier</displayNameOverride>
+            <field>Channel_Partner__c.Micro_Fleet_Support_Tier__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Inside Sales Account Ownership Bucket</displayNameOverride>
+            <field>Channel_Partner__c.IS_Account_Category__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : MNI Number</displayNameOverride>
+            <field>Channel_Partner__c.MNI_Number__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Most Recent Source</displayNameOverride>
+            <field>Channel_Partner__c.Most_Recent_Source__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Naf code</displayNameOverride>
+            <field>Channel_Partner__c.Naf_code__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : NAICS Code</displayNameOverride>
+            <field>Channel_Partner__c.NAICS_Code__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : NetSuite Id</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__NetSuite_Id__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Netsuite Retry Counter</displayNameOverride>
+            <field>Channel_Partner__c.Netsuite_Retry_Counter__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Netsuite Sync Error</displayNameOverride>
+            <field>Channel_Partner__c.Netsuite_Sync_Error__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Netsuite Sync Error Old</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__NetSuite_Sync_Err__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Netsuite Vendor ID</displayNameOverride>
+            <field>Channel_Partner__c.Netsuite_Vendor_ID__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : New Billing Process Approved</displayNameOverride>
+            <field>Channel_Partner__c.New_Billing_Process_Approved__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : New VG rollup</displayNameOverride>
+            <field>Channel_Partner__c.New_VG_rollup__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Next Renewal Date</displayNameOverride>
+            <field>Channel_Partner__c.Next_Renewal_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Non Profit</displayNameOverride>
+            <field>Channel_Partner__c.Non_Profit__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Normalized Phone</displayNameOverride>
+            <field>Channel_Partner__c.Normalized_Phone__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Normalized Phone Text</displayNameOverride>
+            <field>Channel_Partner__c.Normalized_Phone_Text__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : NPS score</displayNameOverride>
+            <field>Channel_Partner__c.NPS_score__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : NS-Credit Limit</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Credit_Limit__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Active Wells</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Active_Wells__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Barrels per Month</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Barrels_per_Month__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Calls</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Calls__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Calls by Current Owner</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Calls_by_Current_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Citizens</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Citizens__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Critical Machines</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Critical_Machines__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of DOT Accidents</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_DOT_Accidents__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Harsh Events Last Month</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Harsh_Events_Last_Month__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Industrial Assets</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Industrial_Assets__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Powered Assets</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Powered_Assets__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Production Lines</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Production_Facilities__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Sites</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Sites__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Reefers</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Reefers__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Students</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Students__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Unpowered Assets</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Unpowered_Assets__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Number of Vehicles</displayNameOverride>
+            <field>Channel_Partner__c.Number_of_Vehicles__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : NumRevOpptys</displayNameOverride>
+            <field>Channel_Partner__c.NumRevOpptys__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Oldest Open Trial Ship Date</displayNameOverride>
+            <field>Channel_Partner__c.Oldest_Open_Trial_Ship_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Onboarding Status</displayNameOverride>
+            <field>Channel_Partner__c.Onboarding_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : One</displayNameOverride>
+            <field>Channel_Partner__c.One__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Open Opportunity</displayNameOverride>
+            <field>Channel_Partner__c.Open_Opportunity__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Open Remorse Refund</displayNameOverride>
+            <field>Channel_Partner__c.Open_Remorse_Refund__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Oppty?</displayNameOverride>
+            <field>Channel_Partner__c.Oppty__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Organization Size</displayNameOverride>
+            <field>Channel_Partner__c.Organization_Size__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Original Owner for Recycling Campaign</displayNameOverride>
+            <field>Channel_Partner__c.Original_Owner_for_Recycling_Campaign__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Other Camera Provider</displayNameOverride>
+            <field>Channel_Partner__c.Other_Camera_Provider__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Other Current Solution</displayNameOverride>
+            <field>Channel_Partner__c.Other_Current_Solution__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Other Current Solution Expiration Date</displayNameOverride>
+            <field>Channel_Partner__c.Other_Current_Solution_Expiration_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Other Telematics Provider</displayNameOverride>
+            <field>Channel_Partner__c.Other_Telematics_Provider__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Overdue Balance</displayNameOverride>
+            <field>Channel_Partner__c.Overdue_Balance__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Overdue 61-90 Days</displayNameOverride>
+            <field>Channel_Partner__c.Overdue_61_90_Days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Overdue Balance</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Account_Overdue_Balance__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Overdue Over 90 Days</displayNameOverride>
+            <field>Channel_Partner__c.Overdue_Over_90_Days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Overwrite Validation Rule</displayNameOverride>
+            <field>Channel_Partner__c.Overwrite_Validation_Rule__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Owner Manager</displayNameOverride>
+            <field>Channel_Partner__c.Owner_Manager__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Owner Manager Email</displayNameOverride>
+            <field>Channel_Partner__c.Owner_Manager_Email__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Owner Manager Email Copy</displayNameOverride>
+            <field>Channel_Partner__c.Owner_Manager_Email_Copy__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Owner Role</displayNameOverride>
+            <field>Channel_Partner__c.Owner_Role__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Ownership</displayNameOverride>
+            <field>Channel_Partner__c.Ownership</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Parent Account</displayNameOverride>
+            <field>Channel_Partner__c.Parent</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Partner Account Status</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Partner Authorized</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Authorization_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Partner Demo Completed</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Demo_Completed__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Partner Persona</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Persona__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Partner Program Segment</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Program_Tier__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Partner Transacting</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Transacting__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Payment Token</displayNameOverride>
+            <field>Channel_Partner__c.Payment_Token__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Phone</displayNameOverride>
+            <field>Channel_Partner__c.Phone</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Potential Upsell Opportunity?</displayNameOverride>
+            <field>Channel_Partner__c.Potential_Upsell_Opportunity__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Pre-Approval Timestamp</displayNameOverride>
+            <field>Channel_Partner__c.Pre_Approval_Timestamp__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Previous Owner Email</displayNameOverride>
+            <field>Channel_Partner__c.Previous_Owner_Email__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Previous Owner Name</displayNameOverride>
+            <field>Channel_Partner__c.Previous_Owner_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Prospecting Priority</displayNameOverride>
+            <field>Channel_Partner__c.Prospecting_Priority__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Pushed From Opportunity</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Pushed_From_Opportunity__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Push To NetSuite</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Push_To_NetSuite__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Rating</displayNameOverride>
+            <field>Channel_Partner__c.Rating</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Record Type</displayNameOverride>
+            <field>Channel_Partner__c.Record_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Record Type Stamp for Dupes</displayNameOverride>
+            <field>Channel_Partner__c.Record_Type_Stamp_for_Dupes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Referral Rebate (%)</displayNameOverride>
+            <field>Channel_Partner__c.Referral_Rebate_MSRP__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Current Insurance Provider</displayNameOverride>
+            <field>Channel_Partner__c.Registered_Insurance_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Related Fleet Account</displayNameOverride>
+            <field>Channel_Partner__c.Related_Fleet_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Related Industrial Account</displayNameOverride>
+            <field>Channel_Partner__c.Related_Industrial_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Related Industrial Account Id</displayNameOverride>
+            <field>Channel_Partner__c.Related_Industrial_Account_Id__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Requested Credit Amount</displayNameOverride>
+            <field>Channel_Partner__c.Requested_Credit_Amount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Resale Certificate (Date)</displayNameOverride>
+            <field>Channel_Partner__c.Resale_Certificate_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Retouch Recently Assigned</displayNameOverride>
+            <field>Channel_Partner__c.Retouch_Recently_Assigned__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Return Risk Notes</displayNameOverride>
+            <field>Channel_Partner__c.Churn_Risk_Reason__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Return Risk Reason</displayNameOverride>
+            <field>Channel_Partner__c.Return_Risk_Reason__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Revenue Opportunities Count</displayNameOverride>
+            <field>Channel_Partner__c.Revenue_Opportunities_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Round Robin Type</displayNameOverride>
+            <field>Channel_Partner__c.Round_Robin_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Ops Notes</displayNameOverride>
+            <field>Sales_Ops_Notes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Sales Ops Notes</displayNameOverride>
+            <field>Channel_Partner__c.Sales_Ops_Notes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Sales Territory</displayNameOverride>
+            <field>Channel_Partner__c.Sales_Territory__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SAM Number</displayNameOverride>
+            <field>Channel_Partner__c.SAM_Number_Decorated__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SAM Number Undecorated</displayNameOverride>
+            <field>Channel_Partner__c.SAM_Number_Undecorated__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Samsara Industry Tree</displayNameOverride>
+            <field>Channel_Partner__c.Samsara_Industry_Tree__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Samsara Pre-Approval Status</displayNameOverride>
+            <field>Channel_Partner__c.Samsara_PreApproval_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Scheduled 1st session Checkbox</displayNameOverride>
+            <field>Channel_Partner__c.Scheduled_1st_session_Checkbox__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SE Assignment</displayNameOverride>
+            <field>Channel_Partner__c.SE_Assignment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SE Formula</displayNameOverride>
+            <field>Channel_Partner__c.SE_Formula__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Segment (by Current Owner)</displayNameOverride>
+            <field>Channel_Partner__c.Segment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Segment Text stamped</displayNameOverride>
+            <field>Channel_Partner__c.Segment_Text_stamped__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Service Amount</displayNameOverride>
+            <field>Service_Amount_currency__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shadow RSD List</displayNameOverride>
+            <field>Channel_Partner__c.Shadow_RSD_List__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Address</displayNameOverride>
+            <field>Channel_Partner__c.ShippingAddress</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Address Record Type</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__SAR__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Address Status</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__SAS__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Address Vacancy</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__SAV__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping City</displayNameOverride>
+            <field>Channel_Partner__c.ShippingCity</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Country</displayNameOverride>
+            <field>Channel_Partner__c.ShippingCountryCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Country (text only)</displayNameOverride>
+            <field>Channel_Partner__c.ShippingCountry</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Geocode Accuracy</displayNameOverride>
+            <field>Channel_Partner__c.ShippingGeocodeAccuracy</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Latitude</displayNameOverride>
+            <field>Channel_Partner__c.ShippingLatitude</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Longitude</displayNameOverride>
+            <field>Channel_Partner__c.ShippingLongitude</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Residential Delivery Indicator</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__SRDI__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping State/Province</displayNameOverride>
+            <field>Channel_Partner__c.ShippingStateCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping State/Province (text only)</displayNameOverride>
+            <field>Channel_Partner__c.ShippingState</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Street</displayNameOverride>
+            <field>Channel_Partner__c.ShippingStreet</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Timezone</displayNameOverride>
+            <field>Channel_Partner__c.CloudingoAgent__STZ__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Shipping Zip/Postal Code</displayNameOverride>
+            <field>Channel_Partner__c.ShippingPostalCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SIC Code</displayNameOverride>
+            <field>Channel_Partner__c.Sic</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SIC Code 1</displayNameOverride>
+            <field>Channel_Partner__c.Sic_1__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SIC Code 2</displayNameOverride>
+            <field>Channel_Partner__c.Sic_2__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SIC Code 3</displayNameOverride>
+            <field>Channel_Partner__c.Sic_3__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SIC Code 4</displayNameOverride>
+            <field>Channel_Partner__c.Sic_4__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SIC Description</displayNameOverride>
+            <field>Channel_Partner__c.SicDesc</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SIC Description</displayNameOverride>
+            <field>Channel_Partner__c.SIC_Description__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Siret</displayNameOverride>
+            <field>Channel_Partner__c.Siret__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : SLED Account?</displayNameOverride>
+            <field>Channel_Partner__c.SLED_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Small Fleets Engagement Date</displayNameOverride>
+            <field>Channel_Partner__c.Small_Fleets_Engagement_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : static1</displayNameOverride>
+            <field>Channel_Partner__c.static1__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : static1IfRevOppty</displayNameOverride>
+            <field>Channel_Partner__c.static1IfRevOppty__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Support Escalation</displayNameOverride>
+            <field>Channel_Partner__c.Support_Escalation__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Support Escalation Owner</displayNameOverride>
+            <field>Channel_Partner__c.Support_Escalation_Owner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Support Escalation Owner Name</displayNameOverride>
+            <field>Channel_Partner__c.Support_Escalation_Owner_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Support Phone Number</displayNameOverride>
+            <field>Channel_Partner__c.Support_Phone_Number__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Support Priority</displayNameOverride>
+            <field>Channel_Partner__c.Support_Priority__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Support Priority Override</displayNameOverride>
+            <field>Channel_Partner__c.Support_Priority_Override__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>System Integrator</displayNameOverride>
+            <field>System_Integrator_new__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Sync In Progress</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Sync_In_Progress__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Taxable</displayNameOverride>
+            <field>Channel_Partner__c.Taxable__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Tax Exempt</displayNameOverride>
+            <field>Channel_Partner__c.Tax_Exempt__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Tax Exempt for NS</displayNameOverride>
+            <field>Channel_Partner__c.Tax_Exempt_for_NS__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Telematics Contract End Date</displayNameOverride>
+            <field>Channel_Partner__c.Telematics_Contract_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Terms &amp; Conditions Accepted</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Agreement_Accepted__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Ticker Symbol</displayNameOverride>
+            <field>Channel_Partner__c.TickerSymbol</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Timedelta CSM 1st Attempt-1st Scheduled</displayNameOverride>
+            <field>Channel_Partner__c.Timedelta_CSM_1st_Attempt_Scheduled__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Timedelta CSM 1st Attempt-Onboarding com</displayNameOverride>
+            <field>Channel_Partner__c.Timedelta_CSM_1st_Attempt_Onboarding_com__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Timedelta CSM 3rd Sch-Onboarding complet</displayNameOverride>
+            <field>Channel_Partner__c.Timedelta_CSM_3rd_Sch_Onboarding_complet__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Timedelta CSM Onboard complete-addl need</displayNameOverride>
+            <field>Channel_Partner__c.Timedelta_CSM_Onboard_complete_addl_need__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Top 250 Fleet Account</displayNameOverride>
+            <field>Channel_Partner__c.Top_250_Fleet_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Top 250 Fleets Status</displayNameOverride>
+            <field>Channel_Partner__c.Top_250_Fleets_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total ACV Pipeline</displayNameOverride>
+            <field>Channel_Partner__c.Total_ACV_Pipeline__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Expected Revenue Currency</displayNameOverride>
+            <field>Channel_Partner__c.Total_Expected_Revenue_Currency__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Expected Revenue Number</displayNameOverride>
+            <field>Channel_Partner__c.Total_Expected_Revenue__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Open Opp Expected Revenue</displayNameOverride>
+            <field>Channel_Partner__c.Total_Open_Opp_Expected_Revenue__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Pipeline-AG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Pipeline_AG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Pipeline-CM Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Pipeline_CM_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Pipeline Currency</displayNameOverride>
+            <field>Channel_Partner__c.Total_Pipeline_Currency__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Pipeline-EG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Pipeline_EG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Pipeline Number</displayNameOverride>
+            <field>Channel_Partner__c.Total_Pipeline__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Pipeline-VG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Pipeline_VG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Possible AG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Possible_AG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Possible EM Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Possible_EM_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Possible VG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Possible_VG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Purchased AG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Purchased_AG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Purchased CM Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Purchased_CM_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Purchased EM Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Purchased_EM_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Purchased Trial AG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Purchased_Trial_AG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Purchased Trial EM Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Purchased_Trial_EM_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Purchased Trial VG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Purchased_Trial_VG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Total Purchased VG Count</displayNameOverride>
+            <field>Channel_Partner__c.Total_Purchased_VG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Sites Prospecting Notes</displayNameOverride>
+            <field>Channel_Partner__c.Transferred_by_ADR__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Type</displayNameOverride>
+            <field>Channel_Partner__c.Type</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : EMEA Current Telematics Provider</displayNameOverride>
+            <field>Channel_Partner__c.EMEA_Current_Telematics_Provider__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Unbilled Orders</displayNameOverride>
+            <field>Channel_Partner__c.netsuite_conn__Unbilled_Orders__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Unequal AGs Purchased</displayNameOverride>
+            <field>Channel_Partner__c.Unequal_AGs_Purchased__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Unequal VGs Purchased</displayNameOverride>
+            <field>Channel_Partner__c.Unequal_VGs_Purchased__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Unload Account</displayNameOverride>
+            <field>Channel_Partner__c.Unload_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Update Contact Field Date</displayNameOverride>
+            <field>Channel_Partner__c.Update_Contact_Field_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Upsell Opportunity Reason</displayNameOverride>
+            <field>Channel_Partner__c.Upsell_Opportunity_Reason__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Upsold Account</displayNameOverride>
+            <field>Channel_Partner__c.Upsold_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Validation Complete</displayNameOverride>
+            <field>Channel_Partner__c.Validation_Complete__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Validation Complete Date</displayNameOverride>
+            <field>Channel_Partner__c.Validation_Complete_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Valid Geography</displayNameOverride>
+            <field>Channel_Partner__c.Valid_Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Tax ID</displayNameOverride>
+            <field>Channel_Partner__c.VATId__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : VG+CM+AG Count</displayNameOverride>
+            <field>Channel_Partner__c.VG_CM_AG_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : VGs Installed</displayNameOverride>
+            <field>Channel_Partner__c.VGs_Installed__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : W-9 (Date)</displayNameOverride>
+            <field>Channel_Partner__c.W_9_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Website</displayNameOverride>
+            <field>Channel_Partner__c.Website</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Welcome Kit Sent Date</displayNameOverride>
+            <field>Channel_Partner__c.Welcome_Kit_Sent_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Which written language</displayNameOverride>
+            <field>Channel_Partner__c.Which_written_language__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Zendesk Account Name</displayNameOverride>
+            <field>Channel_Partner__c.Zendesk_Account_Name__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Zendesk Account Name Text</displayNameOverride>
+            <field>Channel_Partner__c.Zendesk_Account_Name_Text__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Zendesk Tags</displayNameOverride>
+            <field>Channel_Partner__c.Zendesk_Tags__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name</displayNameOverride>
+            <field>Opportunity__c.Account</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Global Geography</displayNameOverride>
+            <field>Opportunity__c.Account.Global_Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Geography</displayNameOverride>
+            <field>Opportunity__c.Account.Geography__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : First Purchase</displayNameOverride>
+            <field>Opportunity__c.First_Purchase__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Billing Country</displayNameOverride>
+            <field>Opportunity__c.Account.BillingCountryCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Type</displayNameOverride>
+            <field>Opportunity__c.Type</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Opportunity ID</displayNameOverride>
+            <field>Opportunity__c.Id</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Sum of Rebates</displayNameOverride>
+            <field>Opportunity__c.Sum_of_Rebates__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Owner Role Copy</displayNameOverride>
+            <field>Opportunity__c.Owner_Role_Copy__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Lifetime Purchases Number</displayNameOverride>
+            <field>Opportunity__c.Account.Lifetime_Purchases__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Insurance Partner</displayNameOverride>
+            <field>Opportunity__c.Insurance_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Related Contact</displayNameOverride>
+            <field>Opportunity__c.Related_Contact__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Billing City</displayNameOverride>
+            <field>Opportunity__c.Account.BillingCity</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Billing State/Province</displayNameOverride>
+            <field>Opportunity__c.Account.BillingStateCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : PM Owner : Full Name</displayNameOverride>
+            <field>CAM_Owner__c.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Probability (%)</displayNameOverride>
+            <field>Opportunity__c.Probability</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Record Type</displayNameOverride>
+            <field>Opportunity__c.Account_Record_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : 18 Digit Opportunity ID</displayNameOverride>
+            <field>Opportunity__c.X18_Digit_Opportunity_ID__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Closed Lost Reason</displayNameOverride>
+            <field>Opportunity__c.Closed_Lost_Reason__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Segment (Sales Role)</displayNameOverride>
+            <field>Opportunity__c.Segment_Sales_Role__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : # of Opportunities</displayNameOverride>
+            <field>Opportunity__c.of_Opportunities__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : One</displayNameOverride>
+            <field>Opportunity__c.One__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Industry</displayNameOverride>
+            <field>Opportunity__c.Account.Industry</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Industry (FR)</displayNameOverride>
+            <field>Opportunity__c.Account.Industry_FR__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Secondary Industry</displayNameOverride>
+            <field>Opportunity__c.Account.Secondary_Industry__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Owner 18 Digit User ID</displayNameOverride>
+            <field>Opportunity__c.Account_Owner_18_Digit_User_ID__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Territory</displayNameOverride>
+            <field>Opportunity__c.Account.Territory__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Organization Size</displayNameOverride>
+            <field>Opportunity__c.Account.Organization_Size__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Billing Zip/Postal Code</displayNameOverride>
+            <field>Opportunity__c.Account.BillingPostalCode</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Notes</displayNameOverride>
+            <field>Opportunity__c.Notes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Flywheel Certified (Date)</displayNameOverride>
+            <field>Channel_Partner__c.Flywheel_Certified_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Account Owner : Role</displayNameOverride>
+            <field>Opportunity__c.Account.Owner.UserRole</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Referral Partner</displayNameOverride>
+            <field>Opportunity__c.Referral_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Reseller Partner</displayNameOverride>
+            <field>Opportunity__c.Reseller_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Contact</displayNameOverride>
+            <field>Opportunity__c.Contact</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Shipping Contact</displayNameOverride>
+            <field>Opportunity__c.Shipping_Contact__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Contact : Email</displayNameOverride>
+            <field>Opportunity__c.Contact.Email</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Contact : First Name</displayNameOverride>
+            <field>Opportunity__c.Contact.FirstName</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Contact : Last Name</displayNameOverride>
+            <field>Opportunity__c.Contact.LastName</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Contact : Full Name</displayNameOverride>
+            <field>Opportunity__c.Contact.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Related Contact : Email</displayNameOverride>
+            <field>Opportunity__c.Related_Contact__c.Email</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Billing Contact : Full Name</displayNameOverride>
+            <field>Channel_Partner__c.Billing_Contact__c.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : First Trial End Date</displayNameOverride>
+            <field>Channel_Partner__c.First_Trial_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : First Trial End Date</displayNameOverride>
+            <field>Opportunity__c.Account.First_Trial_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : First Trial Ship Date</displayNameOverride>
+            <field>Opportunity__c.Account.First_Trial_Ship_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Has Trial</displayNameOverride>
+            <field>Opportunity__c.Account.Has_Trial__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : ADR Transfer</displayNameOverride>
+            <field>Opportunity__c.Account.ADR_Transfer__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Account ID</displayNameOverride>
+            <field>Opportunity__c.Account.Id</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : 18 Digit Account ID</displayNameOverride>
+            <field>Opportunity__c.Account.X18_Digit_Account_ID__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Sites ACV Bookings</displayNameOverride>
+            <field>Opportunity__c.Sites_ACV_Bookings__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Current Insurance Provider</displayNameOverride>
+            <field>Opportunity__c.Account.Registered_Insurance_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : VG unit count</displayNameOverride>
+            <field>Opportunity__c.VG_unit_count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : CM Unit Count</displayNameOverride>
+            <field>Opportunity__c.CM_Unit_Count__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Last License End Date</displayNameOverride>
+            <field>Opportunity__c.Account.Last_License_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Latest Active Contract : Contract End Date</displayNameOverride>
+            <field>Opportunity__c.Account.Latest_Active_Contract__c.EndDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Reseller Partner : Account ID</displayNameOverride>
+            <field>Opportunity__c.Reseller_Partner__c.Id</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Partner Team Alignment</displayNameOverride>
+            <field>Channel_Partner__c.Partner_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Partner Account : Sales Program Type</displayNameOverride>
+            <field>Channel_Partner__c.Program_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Amended Contract</displayNameOverride>
+            <field>Opportunity__c.SBQQ__AmendedContract__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Created By : Role</displayNameOverride>
+            <field>CreatedBy.UserRole</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Fiscal Quarter</displayNameOverride>
+            <field>Opportunity__c.Fiscal_Quarter__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Fiscal Year</displayNameOverride>
+            <field>Opportunity__c.Fiscal_Year__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Renewal</displayNameOverride>
+            <field>Opportunity__c.Renewal__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Blended Discount</displayNameOverride>
+            <field>Opportunity__c.Blended_Discount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Partner Referral Amount</displayNameOverride>
+            <field>Opportunity__c.Partner_Referral_Amount__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : License Term</displayNameOverride>
+            <field>Opportunity__c.License_Term_Formula__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Account Owner : Full Name</displayNameOverride>
+            <field>Opportunity__c.Account.Owner.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Return not booked to AE</displayNameOverride>
+            <field>Opportunity__c.Delinquent_Return_Past_180_Days__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Rebate Type</displayNameOverride>
+            <field>Opportunity__c.Rebate_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Returning Opportunity Close Date</displayNameOverride>
+            <field>Opportunity__c.Return_Close_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Opportunity Owner : Role</displayNameOverride>
+            <field>Opportunity__c.Owner.UserRole</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Opportunity Owner : Role : Name</displayNameOverride>
+            <field>Opportunity__c.Owner.UserRole.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Commissionable Dollars ACV</displayNameOverride>
+            <field>Opportunity__c.ACV_Commissionable_Dollars__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Amended Contract : Contract End Date</displayNameOverride>
+            <field>Opportunity__c.SBQQ__AmendedContract__c.EndDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : License End Date</displayNameOverride>
+            <field>Opportunity__c.License_End_Date__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Teaming Partner</displayNameOverride>
+            <field>Opportunity__c.Teaming_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Partner Referral Opportunity</displayNameOverride>
+            <field>Opportunity__c.Partner_Referral_Opportunity__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Partner Referral Opportunity : Partner Referral Opportunity</displayNameOverride>
+            <field>Opportunity__c.Partner_Referral_Opportunity__c.Partner_Referral_Opportunity__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Partner Referral Opportunity : Amount</displayNameOverride>
+            <field>Opportunity__c.Partner_Referral_Opportunity__c.Amount</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Created Date</displayNameOverride>
+            <field>Opportunity__c.CreatedDate</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : PM Owner : Manager : Full Name</displayNameOverride>
+            <field>CAM_Owner__c.Manager.Name</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Next Step</displayNameOverride>
+            <field>Opportunity__c.NextStep</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Segment (by Current Owner)</displayNameOverride>
+            <field>Opportunity__c.Account.Segment__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : SLED Account?</displayNameOverride>
+            <field>Opportunity__c.Account.SLED_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : SCL Status</displayNameOverride>
+            <field>Opportunity__c.LOI_Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Order Number</displayNameOverride>
+            <field>Opportunity__c.Order_Number__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Account Name : Account Lifetime ACV</displayNameOverride>
+            <field>Opportunity__c.Account.Account_Lifetime_ACV__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Teaming Partner</displayNameOverride>
+            <field>Opportunity__c.Teaming_Partner_Account__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Opportunity Hashtag</displayNameOverride>
+            <field>Opportunity__c.Hashtag__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Partner Referral Opportunity : Opportunity Hashtag</displayNameOverride>
+            <field>Opportunity__c.Partner_Referral_Opportunity__c.Hashtag__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Partner Referral Opportunity : Stage</displayNameOverride>
+            <field>Opportunity__c.Partner_Referral_Opportunity__c.StageName</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Contract Vehicle</displayNameOverride>
+            <field>Opportunity__c.Contract_Vehicle__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Finance Notes</displayNameOverride>
+            <field>Opportunity__c.Finance_Notes__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Virtual Return Flag</displayNameOverride>
+            <field>Opportunity__c.Virtual_Return_Flag__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Partner Referral Opportunity : Referral Partner</displayNameOverride>
+            <field>Opportunity__c.Partner_Referral_Opportunity__c.Referral_Partner__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Amount</displayNameOverride>
+            <field>Opportunity__c.Amount</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Relationship : Opportunity : Is Deal Registration</displayNameOverride>
+            <field>Opportunity__c.Is_Deal_Registration__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer_Account__c.Status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Customer_Account__c.Propel_Account_status__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity__c.Reseller__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity__c.Partner_Referral_Payout_Amount_V2__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Is_Deal_Registration__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity__c.LeadSource</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity__c.Purchase_Type__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity__c.ACV_Less_Subsidy_Buyout__c</field>
+            <table>Channel_Relationship__c</table>
+        </columns>
+        <masterLabel>Channel Relationships</masterLabel>
+    </sections>
+</ReportType>

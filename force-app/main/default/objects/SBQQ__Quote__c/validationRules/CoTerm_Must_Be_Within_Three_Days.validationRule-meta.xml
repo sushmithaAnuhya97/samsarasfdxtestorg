@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CoTerm_Must_Be_Within_Three_Days</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+ ABS((SBQQ__Opportunity2__r.CloseDate + 15) -  SBQQ__StartDate__c ) &gt; 3,SBQQ__Primary__c = TRUE,
+ SBQQ__MasterContract__c != NULL,
+ SBQQ__Opportunity2__r.CPQ_Opportunity__c = TRUE,
+ TEXT( SBQQ__Opportunity2__r.StageName ) = &quot;Closing&quot;,
+ TEXT( SBQQ__Opportunity2__r.Type ) = &quot;Revenue Opportunity&quot;
+)
+&amp;&amp;
+TEXT(Configuration_Segment__c) != &quot;Express&quot;</errorConditionFormula>
+    <errorMessage>Since this is a co-termed opportunity, the close date must be within 3 days.</errorMessage>
+</ValidationRule>

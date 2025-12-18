@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Parent_Item_Revision__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Parent item revision in the changing assembly (if known).</description>
+    <label>Parent Item Revision</label>
+    <referenceTo>PDLM__Item_Revision__c</referenceTo>
+    <relationshipLabel>Assembly Change Events</relationshipLabel>
+    <relationshipName>Assembly_Change_Events</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

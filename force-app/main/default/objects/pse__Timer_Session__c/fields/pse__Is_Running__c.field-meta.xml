@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Is_Running__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates whether the timer session has a running timer session event.</description>
+    <formula>pse__Running_Event_Count__c &gt; 0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates whether the timer session has a running timer session event.</inlineHelpText>
+    <label>Is Running</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

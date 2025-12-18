@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Batch_Size__c</fullName>
+    <defaultValue>200</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Enter the batch size to split the &quot;records to update&quot; into smaller groups for processing (e.g., a batch size of 100 splits 2000 records into 20 batches/Apex transactions). This helps reduce the risk of hitting Salesforce governor limits by spreading the workload across multiple transactions. If left blank, all records will be processed in a single Apex transaction, which may increase the chance of exceeding limits. Choose a value based on the job&apos;s complexity and system constraints.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the batch size to split the &quot;records to update&quot; into smaller groups for processing (e.g., a batch size of 100 splits 2000 records into 20 batches/Apex transactions). This helps reduce the risk of hitting Salesforce governor limits by spreading the workload across multiple transactions. If left blank, all records will be processed in a single Apex transaction, which may increase the chance of exceeding limits. Choose a value based on the job&apos;s complexity and system constraints.</inlineHelpText>
+    <label>Batch Size</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

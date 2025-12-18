@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Multiples_ten__c</fullName>
+    <formula>If(OR(SBQQ__ProductCode__c =&apos;HW-AT11&apos;,SBQQ__ProductCode__c =&apos;HW-AT11X&apos;),If(MOD(SBQQ__Quantity__c,10)&lt;&gt;0,true, false),false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quantity Multiples ten</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

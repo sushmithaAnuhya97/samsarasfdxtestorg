@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Book_Status__c</fullName>
+    <label>Account Book Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin hold</fullName>
+                <default>true</default>
+                <label>Admin hold</label>
+            </value>
+            <value>
+                <fullName>Primary: In seat</fullName>
+                <default>false</default>
+                <label>Primary: In seat</label>
+            </value>
+            <value>
+                <fullName>Secondary: LOA</fullName>
+                <default>false</default>
+                <label>Secondary: LOA</label>
+            </value>
+            <value>
+                <fullName>Secondary: Churn</fullName>
+                <default>false</default>
+                <label>Secondary: Churn</label>
+            </value>
+            <value>
+                <fullName>Secondary: Overcarve</fullName>
+                <default>false</default>
+                <label>Secondary: Overcarve</label>
+            </value>
+            <value>
+                <fullName>Secondary: AOP Hires</fullName>
+                <default>false</default>
+                <label>Secondary: AOP Hires</label>
+            </value>
+            <value>
+                <fullName>Secondary: Hire Ahead</fullName>
+                <default>false</default>
+                <label>Secondary: Hire Ahead</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>utm_source_last__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+CONTAINS(utm_source__c, &quot;,&quot;),
+RIGHT(utm_source__c, LEN(utm_source__c) - FIND(&quot;,&quot;, utm_source__c) - 1),
+utm_source__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>utm source last</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__MappingType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Mapping Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Source Field</fullName>
+                <default>true</default>
+                <label>Source Field</label>
+            </value>
+            <value>
+                <fullName>Custom Setting</fullName>
+                <default>false</default>
+                <label>Custom Setting</label>
+            </value>
+            <value>
+                <fullName>Literal</fullName>
+                <default>false</default>
+                <label>Literal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

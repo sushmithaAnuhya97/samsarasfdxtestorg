@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Pre_Approval_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(DNBI_Data_Available__c = False, &apos;&apos;,IF(Credit_Scorecard_Score__c &gt;= 7.0 &amp;&amp; Requested_Credit_Amount__c &lt;= DNBI_Recommended_Credit_Limit__c &amp;&amp; DNBI_Trade_Experiences_Count__c &gt;= 5, &apos;Approved&apos;,IF(Credit_Scorecard_Score__c &gt;= 4.01, &apos;Pending&apos;,&apos;Declined&apos;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Credit Pre-Approval Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

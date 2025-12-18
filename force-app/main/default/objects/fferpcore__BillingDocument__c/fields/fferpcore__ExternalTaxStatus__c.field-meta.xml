@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ExternalTaxStatus__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Status of the external tax calculation if using an external system to calculate tax on the billing document.</description>
+    <inlineHelpText>Status of the external tax calculation if using an external system to calculate tax on the billing document. The value can be Not Calculated, Calculated, Finalized or Voided.</inlineHelpText>
+    <label>External Tax Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Calculated</fullName>
+                <default>true</default>
+                <label>Not Calculated</label>
+            </value>
+            <value>
+                <fullName>Calculated</fullName>
+                <default>false</default>
+                <label>Calculated</label>
+            </value>
+            <value>
+                <fullName>Finalized</fullName>
+                <default>false</default>
+                <label>Finalized</label>
+            </value>
+            <value>
+                <fullName>Voided</fullName>
+                <default>false</default>
+                <label>Voided</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Billable_Fee_Flat__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Text formula showing flat fee in Project currency by which to increase the billable amount of the Expense, defaulted from Project along with Project currency. The calculation will apply any percentage expense fee*before* this flat expense fee amount.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(pse__Project__r.CurrencyIsoCode) &amp; &quot; &quot; &amp; IF(ISNULL(pse__Billable_Fee_Flat_Amount__c),&quot;0.00&quot;,TEXT(pse__Billable_Fee_Flat_Amount__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Text formula showing flat fee in Project currency by which to increase the billable amount of the Expense, defaulted from Project along with Project currency. The calculation will apply any percentage expense fee*before* this flat expense fee amount.</inlineHelpText>
+    <label>Billable Fee Flat</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

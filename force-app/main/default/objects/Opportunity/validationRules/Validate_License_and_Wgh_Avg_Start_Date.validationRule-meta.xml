@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_License_and_Wgh_Avg_Start_Date</fullName>
+    <active>true</active>
+    <description>This rule ensures that the License Start Date matches the Weighted Average Start Date from the Renewed Contract for renewal opportunities before allowing the Opportunity to be closed</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &apos;Closing&apos;),
+    NOT($Permission.Validation_Rule_Exemption),
+    $Profile.Name &lt;&gt; &quot;System Administrator API&quot;,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    NOT(ISBLANK(SBQQ__RenewedContract__c)),
+    NOT(ISBLANK(SBQQ__RenewedContract__r.Weighted_Average_Start_Date__c)),
+    License_Start_Date__c &lt;&gt; SBQQ__RenewedContract__r.Weighted_Average_Start_Date__c
+)</errorConditionFormula>
+    <errorMessage>Ensure License Start Date matches the Weighted Average Start Date before closing</errorMessage>
+</ValidationRule>

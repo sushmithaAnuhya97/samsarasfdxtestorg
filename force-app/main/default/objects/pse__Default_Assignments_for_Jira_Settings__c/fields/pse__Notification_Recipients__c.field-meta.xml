@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Notification_Recipients__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies the notification recipients for Default Assignments for Jira batch notifications sent via Chatter, email or tasks. The value is a list of email addresses separated by semicolons (;). If left blank, the user who started the process is notified.</description>
+    <inlineHelpText>Specifies the notification recipients for Default Assignments for Jira batch notifications sent via Chatter, email or tasks. The value is a list of email addresses separated by semicolons (;). If left blank, the user who started the process is notified.</inlineHelpText>
+    <label>Notification Recipients</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

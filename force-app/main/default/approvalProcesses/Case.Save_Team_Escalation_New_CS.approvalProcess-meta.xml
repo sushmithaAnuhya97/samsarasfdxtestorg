@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation US Strategic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation US Strategic</label>
+        <name>Save_Team_Escalation_US_Strategic</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation US Select</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation US Select</label>
+        <name>Save_Team_Escalation_US_Select</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation US Core</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation US Core</label>
+        <name>Save_Team_Escalation_US_Core</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation Standard US Strategic</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2 ) AND 3 AND 4 AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation Standard US Strategic</label>
+        <name>Save_Team_Escalation_Standard_US_Strategic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation Standard US Select</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation Standard US Select</label>
+        <name>Save_Team_Escalation_Standard_US_Select</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation Standard US Core</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2)AND 3 AND 4 AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation Standard US Core</label>
+        <name>Save_Team_Escalation_Standard_US_Core</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation High US Strategic</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation High US Strategic</label>
+        <name>Save_Team_Escalation_High_US_Strategic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation High US Select</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation High US Select</label>
+        <name>Save_Team_Escalation_High_US_Select</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation High US Core</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation High US Core</label>
+        <name>Save_Team_Escalation_High_US_Core</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation (Starter,Plus,Premier,Elite), NA CA</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5 AND 6 AND 7</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA CA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation (Starter,Plus,Premier,Elite), NA CA</label>
+        <name>Save_Team_Escalation_Starter_Plus_Premier_Elite_NA_CA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation (Starter,Plus,Premier,Elite), SLED</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2 OR 3 OR 4) AND 5 AND 6 AND 7</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>SLED</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation (Starter,Plus,Premier,Elite), SLED</label>
+        <name>Save_Team_Escalation_Starter_Plus_Premier_Elite_SLED</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation, Plus, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation, Plus, NA US</label>
+        <name>Save_Team_Escalation_Plus_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation, Starter, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation, Starter, NA US</label>
+        <name>Save_Team_Escalation_Starter_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation EMEA &amp; Not in Onboarding</description>
+        <entryCriteria>
+            <booleanFilter>(1  OR  2 OR  3 OR 4) AND 5 AND  6 AND 7</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation EMEA &amp; Not in Onboarding</label>
+        <name>Save_Team_Escalation_EMEA_Not_in_Onboarding</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Save Team Escalation Mexico</description>
+        <entryCriteria>
+            <booleanFilter>(1 OR 2 OR 3  OR 4 ) AND 5 AND 6 AND 7</booleanFilter>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA MX</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Save Team Escalation Mexico</label>
+        <name>Save_Team_Escalation_Mexico</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>vanessa.guzman@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Save Team Escalation</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Is_Approved__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Save Team Escalation Default</label>
+        <name>Save_Team_Escalation_Default</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Save Team Escalation</description>
+    <emailTemplate>unfiled$public/CS_Request_Log_Approval_Submission</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Save Team Escalation New CS</label>
+    <processOrder>12</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

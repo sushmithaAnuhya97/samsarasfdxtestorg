@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Percentage_Used__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The percentage of bookings that are already ready-to-bill, including any pre-billed amount.</description>
+    <formula>IF( OR( pse__Bookings__c = 0.00, ISBLANK( pse__Bookings__c ) , pse__Apply_Billing_Cap__c = false) , null, (pse__Billings__c + BLANKVALUE(pse__Pre_Billed__c, 0)) / pse__Bookings__c)</formula>
+    <inlineHelpText>The percentage of bookings that are already ready-to-bill, including any pre-billed amount.</inlineHelpText>
+    <label>Percentage Used</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

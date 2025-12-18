@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Use_Current_Active_Pricebook</fullName>
+    <active>true</active>
+    <description>All in-flight opportunities must use the new pricebook (can&apos;t use Samsara Standard or Samsara Express) 
+*GTMS-3031 Exemption for System Administrator + Order Operations Admin
+*GTMS-3060 Validation to prevent any deal from closing on old price book start</description>
+    <errorConditionFormula>AND(
+ISCHANGED(StageName),
+PRIORVALUE(Probability) &lt; 0.95,
+Pricebook2.Name != &apos;Samsara FY22&apos;,
+$User.Email != &apos;corpweb-sfdc-robot@samsara.com&apos;,
+NOT($User.ProfileId = &apos;00e1P000000FBBD&apos;),
+NOT($User.ProfileId = &apos;00e1a000000i1TK&apos;),
+NOT($User.ProfileId = &apos;00e1a000000i8JH&apos;),
+NOT(ISPICKVAL(StageName, &apos;Closed Lost&apos;)),
+NOT(Renewal__c = True),
+IF( !ISBLANK(Sales_Ops_Notes__c),
+!CONTAINS(Sales_Ops_Notes__c,&quot;#PBexception&quot;), true),
+NOT($User.ProfileId = &apos;00e1a000000UoNc&apos;),
+ISPICKVAL(Type, &apos;Revenue Opportunity&apos;)
+)</errorConditionFormula>
+    <errorMessage>This opportunity cannot be moved to a new stage without converting to the new price book. Please change the price book before proceeding.</errorMessage>
+</ValidationRule>

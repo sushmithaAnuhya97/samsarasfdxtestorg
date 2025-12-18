@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="selectedView" type="String" default="Prospecting_Accounts"/>
+	 <div style="border: 1px solid #dcdcdc; padding: 10px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">
+    
+     	<lightning:tabset variant="Brand" >
+            <lightning:tab label="Existing Customers">
+                <lightning:listView aura:id="listViewExistingAccounts"
+                                    objectApiName="Account"
+                                    listName="Existing_Customers_New"  
+                                    rows="25"
+                                    showSearchBar="false"
+                                    showActionBar="false"
+                                    enableInlineEdit="true"
+                                    showRowLevelActions="false"/>
+            </lightning:tab>
+            <lightning:tab label="Prospecting Accounts">
+                <lightning:listView aura:id="listViewProspectingAccounts"
+                                    objectApiName="Account"
+                                    listName="Prospecting_Accounts"  
+                                    rows="25"
+                                    showSearchBar="false"
+                                    showActionBar="false"
+                                    enableInlineEdit="true"
+                                    showRowLevelActions="false"/>
+            </lightning:tab>
+         </lightning:tabset>
+    </div>
+</aura:component>

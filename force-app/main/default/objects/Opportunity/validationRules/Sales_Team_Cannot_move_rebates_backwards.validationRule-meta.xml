@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Team_Cannot_move_rebates_backwards</fullName>
+    <active>true</active>
+    <description>Sales team cannot move the stage backwards from &quot;Ready to Ship&quot; or &quot;Closed Won&quot;. Order can move only via admin, finance or operations team.</description>
+    <errorConditionFormula>AND(
+(ISPICKVAL(Type, &quot;Rebate&quot;)),
+ISCHANGED( StageName ),
+(PRIORVALUE(Probability)&gt; 0.90),
+NOT(
+OR(
+($Permission.Validation_Rule_Exemption),
+(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+($Profile.Name=&quot;Order Operations Admin&quot;),
+($Permission.Finance_Contractor )
+
+)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot move the opportunity backwards from Finance Processing. Only Finance, Operations and Admins can move Opportunity stages backwards.</errorMessage>
+</ValidationRule>

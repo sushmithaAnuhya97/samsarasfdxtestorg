@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__RelativeCurrency__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The default currency for the related group.</description>
+    <externalId>false</externalId>
+    <formula>LEFT(TEXT(fferpcore__Group__r.fferpcore__DefaultCurrency__c), 3)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Relative Currency</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

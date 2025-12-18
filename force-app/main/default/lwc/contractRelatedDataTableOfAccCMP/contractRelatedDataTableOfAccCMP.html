@@ -1,0 +1,132 @@
+<template>
+	<template if:true={spinner}>
+		<div class="demo-only" style="height:6rem;position:relative">
+			<div class="slds-spinner_container">
+				<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+					<span class="slds-assistive-text">Loading</span>
+					<div class="slds-spinner__dot-a"></div>
+					<div class="slds-spinner__dot-b"></div>
+				</div>
+			</div>
+		</div>
+		<!-- <lightning-spinner alternative-text="Loading" size="xx-small"></lightning-spinner> -->
+	</template>
+	<template if:false={spinner}>
+		<div class="modal-container">
+			<lightning-modal-header>
+				<h3 class="slds-modal__title slds-hyphenate slds-text-heading--medium">
+					<template if:false={showContactSelection}>New Opportunity - Select Contract</template>
+					<template if:true={showContactSelection}>New Opportunity - Select Contact</template>
+				</h3>
+			</lightning-modal-header>
+			<lightning-modal-body>
+			<!-- Contract Selection -->
+			<template if:true={showContractData}>
+					<!-- <div class="slds-m-vertical_x-small">{label.Display_Message_1} <a href={label.Display_Message_URL_2}><b>link</b>&nbsp;</a>{label.Display_Message_3}</div> -->
+					<c-create-oppty-generic-data-table  object-name="Contract" 
+														allowed-records={filteredContracts} 
+														selected-record={selectedRowId}
+														columns={columnsContracts}
+														table-data={label.Display_Message_1}
+														hyper-link={label.Display_Message_URL_2}
+														followup-text={label.Display_Message_3}>
+					</c-create-oppty-generic-data-table>
+			</template>
+			
+			<!-- Contact Selection -->
+			<template if:true={showContactData}>
+				<div class="slds-m-vertical_x-small">
+					<p class="selected-contract-highlight"><strong>Selected Contract:</strong> {selectedContractNumber}</p>
+					<p>Please select a contact for the amended opportunity</p>
+				</div>
+				<c-create-oppty-generic-data-table  object-name="Contact" 
+													allowed-records={filteredContacts} 
+													selected-record=""
+													columns={columnsContacts}
+													utility-button-label="Create Contact">
+				</c-create-oppty-generic-data-table>
+			</template>
+			
+			<!-- Contact Selection but no contacts available -->
+			<template if:true={showContactSelectionNoData}>
+				<div class="slds-m-vertical_x-small">
+					<p><strong>Selected Contract:</strong> {selectedContractNumber}</p>
+					<p>No contacts found for this account. Please create a contact first.</p>
+				</div>
+			</template>
+			
+			<!-- No Data Messages - Improved logic -->
+			<template if:false={showContractData}>
+				<template if:false={showContactData}>
+					<template if:false={showContactSelectionNoData}>
+						<template if:false={showContactSelection}>
+							<div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_info"
+								role="status">
+								<span>
+										<lightning-icon variant="inverse" class="slds-m-right_x-smal" size="medium"
+											aria-hidden="true" icon-name="utility:info"
+											alternative-text="info"></lightning-icon>
+								</span>
+								<span class="Margn"> {label.Display_Empty_Error}</span>
+							</div>
+						</template>
+					</template>
+				</template>
+			</template>
+			
+			<!-- No Contacts Message -->
+			<template if:false={showContactData}>
+				<template if:false={showContractData}>
+					<template if:false={showContactSelectionNoData}>
+						<template if:true={showContactSelection}>
+							<div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_info"
+								role="status">
+								<span>
+										<lightning-icon variant="inverse" class="slds-m-right_x-smal" size="medium"
+											aria-hidden="true" icon-name="utility:info"
+											alternative-text="info"></lightning-icon>
+								</span>
+								<span class="Margn"> No contacts found for this account.</span>
+							</div>
+						</template>
+					</template>
+				</template>
+			</template>
+			</lightning-modal-body> 
+			<lightning-modal-footer>
+				<template if:false={showContractData}>
+					<template if:false={showContactData}>
+						<template if:false={showContactSelection}>
+							<lightning-button variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+						</template>
+					</template>
+				</template>
+				<template if:true={showContractData}>
+					<lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+					<lightning-button variant="brand" label="Next" onclick={handleContractNext}></lightning-button>
+				</template>
+				<template if:true={showContactData}>
+					<lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+					<lightning-button variant="brand" label="Next" onclick={handleContactNext}></lightning-button>
+				</template>
+				<template if:true={showContactSelectionNoData}>
+					<lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+				</template>
+			</lightning-modal-footer>
+			
+			<!-- Contact Update Spinner Overlay -->
+			<template if:true={isContactUpdateSpinnerActive}>
+				<div class="spinner-overlay">
+					<div class="slds-spinner_container">
+						<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+							<span class="slds-assistive-text">In progress</span>
+							<div class="slds-spinner__dot-a"></div>
+							<div class="slds-spinner__dot-b"></div>
+						</div>
+					</div>
+					<div class="spinner-text">Navigating to Amend page...</div>
+				</div>
+			</template>
+		</div>
+	</template>
+</template>

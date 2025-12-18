@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SKU_ECO_MCO_in_review</fullName>
+    <columns>NAME</columns>
+    <columns>PDLM__Status_lk__c</columns>
+    <columns>PDLM__Description_5000__c</columns>
+    <columns>PDLM__Title__c</columns>
+    <columns>Propel_Change_Owner__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PDLM__Category__c</field>
+        <operation>startsWith</operation>
+        <value>SKU</value>
+    </filters>
+    <filters>
+        <field>PDLM__Approved__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>SKU ECO&amp;MCO in review</label>
+</ListView>

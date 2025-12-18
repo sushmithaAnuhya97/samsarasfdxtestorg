@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_Pipeline_Check</fullName>
+    <active>true</active>
+    <description>Only allow trial opportunities in Ready to Ship / Closed Won if there&apos;s pipeline attached to the account</description>
+    <errorConditionFormula>AND (NOT($Permission.Validation_Rule_Exemption), 
+$User.Id != &apos;0051a000002JKtR&apos;,
+$Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;,
+  ISPICKVAL(Type,&quot;Free Trial Opportunity&quot;),  
+  ISCHANGED(StageName),
+  OR( 
+    ISPICKVAL(StageName, &quot;Closing&quot;),
+    ISPICKVAL(StageName, &quot;Ready to Ship&quot;), 
+    ISPICKVAL(StageName, &quot;Closed Won&quot;)
+  ),
+  Account.Total_Pipeline__c  = 0
+)</errorConditionFormula>
+    <errorMessage>Cannot move Trial Opportunity into Closing, Ready to Ship or Closed Won without first creating a revenue opportunity with amount &gt; 0.</errorMessage>
+</ValidationRule>

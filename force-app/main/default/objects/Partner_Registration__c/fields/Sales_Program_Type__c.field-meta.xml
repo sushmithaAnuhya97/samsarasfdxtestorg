@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Program_Type__c</fullName>
+    <label>Sales Program Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Subsidy</fullName>
+                <default>false</default>
+                <label>Subsidy</label>
+            </value>
+            <value>
+                <fullName>Premium Discount</fullName>
+                <default>false</default>
+                <label>Premium Discount</label>
+            </value>
+            <value>
+                <fullName>Unpaid Referral</fullName>
+                <default>false</default>
+                <label>Unpaid Referral</label>
+            </value>
+            <value>
+                <fullName>Paid Referral</fullName>
+                <default>false</default>
+                <label>Paid Referral</label>
+            </value>
+            <value>
+                <fullName>Resale</fullName>
+                <default>false</default>
+                <label>Resale</label>
+            </value>
+            <value>
+                <fullName>Whitelabel</fullName>
+                <default>false</default>
+                <label>Whitelabel</label>
+            </value>
+            <value>
+                <fullName>Teaming</fullName>
+                <default>false</default>
+                <label>Teaming</label>
+            </value>
+            <value>
+                <fullName>Technology Partner</fullName>
+                <default>false</default>
+                <label>Technology Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

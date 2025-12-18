@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__InBondCode__c</fullName>
+    <deprecated>false</deprecated>
+    <description>70: Not in bond
+36: Warehouse withdrawal for IE
+37: Warehouse withdrawal for T and E
+62: T and E
+63: IE
+67: IE from a FTZ
+68: T and E from a FTZ</description>
+    <inlineHelpText>70: Not in bond
+36: Warehouse withdrawal for IE
+37: Warehouse withdrawal for T and E
+62: T and E
+63: IE
+67: IE from a FTZ
+68: T and E from a FTZ</inlineHelpText>
+    <label>In Bond Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>70</fullName>
+                <default>false</default>
+                <label>70</label>
+            </value>
+            <value>
+                <fullName>36</fullName>
+                <default>false</default>
+                <label>36</label>
+            </value>
+            <value>
+                <fullName>37</fullName>
+                <default>false</default>
+                <label>37</label>
+            </value>
+            <value>
+                <fullName>62</fullName>
+                <default>false</default>
+                <label>62</label>
+            </value>
+            <value>
+                <fullName>63</fullName>
+                <default>false</default>
+                <label>63</label>
+            </value>
+            <value>
+                <fullName>67</fullName>
+                <default>false</default>
+                <label>67</label>
+            </value>
+            <value>
+                <fullName>68</fullName>
+                <default>false</default>
+                <label>68</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

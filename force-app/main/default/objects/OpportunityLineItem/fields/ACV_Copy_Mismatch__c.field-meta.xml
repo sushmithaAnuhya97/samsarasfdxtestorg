@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_Copy_Mismatch__c</fullName>
+    <formula>ROUND(ACV_Total_Price_Bookings__c ,2) !=   ROUND(ACV_Total_Price_Stamp__c,2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV Copy Mismatch</label>
+    <type>Checkbox</type>
+</CustomField>

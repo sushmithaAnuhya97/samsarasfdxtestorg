@@ -1,0 +1,377 @@
+<apex:page standardController="Opportunity" extensions="AddProductsAndLicensesExtension" docType="html-5.0" >
+ 
+<apex:form id="myForm">
+<apex:variable var="pricebook_entries" value="{!pricebook_entries}">
+<apex:variable var="cotermed_account" value="{!cotermed_account}">
+<apex:variable var="sorted_oppty_line_items" value="{!sorted_oppty_line_items}">
+<apex:variable var="inputQuantities" value="{!inputQuantities}">
+<apex:variable var="inputPrices" value="{!inputPrices}">
+<apex:variable var="inputRemovals" value="{!inputRemovals}">
+<apex:variable var="alternative_license_term" value="{!alternative_license_term}">
+<apex:variable var="free_trial_opportunity" value="{!free_trial_opportunity}">
+<apex:variable var="country" value="{!country}">
+
+    <apex:actionStatus id="actionStatus" startStyleClass="demoAction">
+        <apex:facet name="start">
+            <div class="showLoadingIcon" >
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 10000; background-color: black;" >
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 10001; margin: 15% 50%" >
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px; margin-left: -60px;">
+                        <img src="/img/loading.gif" />
+                        <span>Please Wait...</span>
+                    </div>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+
+  <!--<apex:outputText value="This is now under maintenance" style="font-size:28px; font-weight: bold; color:red;"/> 
+  <br></br>-->
+  <apex:outputText value="Opportunity Products System" style="font-size:20px; font-weight: bold;"/> 
+  <br></br>
+  <br></br>
+  <a style="font-size:16px;" target="_blank" href="https://docs.google.com/a/samsara.net/document/d/1LukPag1HQiAghnHv3cfxvbE_5ViXFF_BqefEnT8p1VU/edit?usp=sharing">Help</a>
+  <br></br>
+  <br></br>
+  <apex:pageBlock title="1) License term for this free trial" rendered="{!free_trial_opportunity}">
+      <p>This is a free trial opportunity. The term is set to 1 month by default.</p>
+  </apex:pageBlock>
+  
+  <apex:pageBlock title="1) Choose the license period (only managers)" rendered="{!IF(AND(NOT(Opportunity.Configuration_Segment__c == 'Express'), manager_permission,NOT(cotermed_account),NOT(free_trial_opportunity),NOT(ISBLANK(Opportunity.Pricebook2.Name))),True,False)}">
+      <p>Select the number of months for the license.</p>
+      <br></br>
+      <apex:inputText value="{!alternative_license_term}" rendered="{!NOT(cotermed_account)}"/>
+      <br></br>
+      <br></br>
+      <apex:commandButton value="Choose License Term" action="{!setLicenseTermInputField}" ReRender="myForm" status="actionStatus"/>
+      <br></br>
+  </apex:pageBlock>
+  
+  <apex:pageBlock title="1) Choose the license period" rendered="{!IF(AND(NOT(manager_permission),NOT(cotermed_account),NOT(Opportunity.Configuration_Segment__c == 'Express'),NOT(free_trial_opportunity), NOT(ISBLANK(Opportunity.Pricebook2.Name))),True,False)}">
+      <apex:outputText value="Select the number of months for the license:" rendered="{!IF(Opportunity.License_Term__c=36,True,False)}"/>
+      <apex:outputText value="Select the number of months for the license. Current license term: {!Opportunity.License_Term__c} months." rendered="{!IF(Opportunity.License_Term__c<>36,True,False)}"/>
+      
+      <br></br>
+      <br></br>
+      <apex:selectList style="width:200px;" size="4" value="{!selected_license_term}" multiselect="False">
+            <apex:selectOptions value="{!terms}"/>
+      </apex:selectList>
+      <br></br>
+      <br></br>
+      <apex:commandButton value="Choose License Term" action="{!setLicenseTermSelectList}" ReRender="myForm" status="actionStatus"/>
+      <br></br>
+  </apex:pageBlock>
+  
+  <apex:outputText style="font-size:14px; color:red;" value="Warning: Please go back to the account and add a Co-Term License Date, or simply unmark the coterm option for the Account." rendered="{!IF(AND(cotermed_account, ISBLANK(Opportunity.Account.Co_Term_License_Date__c),NOT(free_trial_opportunity)),True,False)}"/>
+  <apex:pageBlock title="1) License period for this opportunity (cotermed account)" rendered="{!IF(AND(cotermed_account, NOT(ISBLANK(Opportunity.Account.Co_Term_License_Date__c)),NOT(free_trial_opportunity),NOT(ISBLANK(Opportunity.Pricebook2.Name))),True,False)}">
+      <br></br>
+      <!--<apex:outputText value="Contract co-termination date: {!coterm_period} months"/>-->
+      <apex:outputText value="Contract co-termination date: {!contract_cotermination_date}"/>
+      <br></br>
+      <br></br>
+      <apex:outputText value="Remaining term: {!months_to_coterm} months"/>
+      <br></br>
+      
+      <apex:variable value="" var="manager_section" rendered="{!IF(manager_permission, True, False)}" >
+          <br></br>
+          <apex:outputText value="Term Selected (months): "/>
+          <apex:inputText value="{!alternative_license_term_from_cotermed}"/>
+          <br></br>
+          <br></br>
+          <apex:commandButton value="Choose License Term" action="{!setLicenseTermFromCotermed}" status="actionStatus"/>
+      </apex:variable>
+      
+      <apex:variable value="" var="rep_section" rendered="{!IF(NOT(manager_permission), True, False)}" >
+          <br></br>
+          <apex:outputText value="Term selected: {!Opportunity.License_Term__c} months"/>
+          <br></br>
+          <br></br>
+          <apex:commandButton value="Set to cotermed license ({!months_to_coterm} months)" action="{!defaultLicenseTermFromCotermed}" rendered="{!IF(AND(NOT(manager_permission),Opportunity.License_Term__c<>months_to_coterm), True, False)}" status="actionStatus"/>
+      </apex:variable>
+      
+      <br></br>
+  </apex:pageBlock>
+  <apex:pageBlock title="1) License period for this opportunity (express deal)" rendered="{!IF(AND(NOT(cotermed_account),Opportunity.Configuration_Segment__c == 'Express',NOT(free_trial_opportunity),NOT(ISBLANK(Opportunity.Pricebook2.Name))),True,False)}">
+      <apex:outputText value="36 months term. The prices shown below are based on an Total Contract Value (TCV) unless otherwise noted."/>
+      <!-- <apex:outputText value="36 months term. The prices shown below are based on an Total Contract Value (TCV) unless otherwise noted." rendered="{!IF(Opportunity.License_Term__c=36,True,False)}"/> -->
+      <!-- <apex:outputText value="12 months term. The prices shown below are based on an Total Contract Value (TCV) unless otherwise noted." rendered="{!IF(Opportunity.License_Term__c=12,True,False)}"/> -->
+      <!-- <br></br> -->
+      <!-- <br></br> -->
+      
+      <!-- Commented the code as the express deals does not have any 12 month terms any more -->
+      
+      <!-- <apex:commandButton value="Switch to 12 months term" action="{!defaultLicenseTermFromExpress}" rendered="{!IF(Opportunity.License_Term__c=36,True,False)}"/> -->
+      <!-- <apex:commandButton value="Switch to 36 months term" action="{!defaultLicenseTermFromExpress}" rendered="{!IF(Opportunity.License_Term__c=12,True,False)}"/> -->
+  </apex:pageBlock>
+  
+  <br></br>
+  <br></br>
+  
+  <apex:pageBlock title="2) Add the products">   
+      
+      <apex:outputText value="Select the products that you want to add to this opportunity" rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name), False, True)}"/>
+      <apex:outputText style="text-decoration: underline;" value=". Use the 'command' button on your keyboard to either select multiple values from a list or to unselect values. Use 'command' + 'F' to search ('shift' button for Windows computers)." rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name),False, True)}"/>
+      
+      <apex:outputText style="color:red;" value="You have not selected a pricebook for this opportunity yet. Please select one before being able to choose the products." rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name), True, False)}"/>
+      
+      
+      
+      <br></br>
+      <br></br>
+      <apex:pageBlockSection columns="3" rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name),False, True)}">
+          <apex:outputText style="font-weight: bold;" value="Select hardwares:" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', False, True)}"/>
+          <apex:outputText style="font-weight: bold;" value="Select licenses:" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', False, True)}"/>
+          <apex:outputText style="font-weight: bold;" value="Select accessories:" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', False, True)}"/>
+          <apex:outputText style="font-weight: bold;" value="Select hardwares (express):" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', True, False)}"/>
+          <apex:outputText style="font-weight: bold;" value="Select licenses (express):" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', True, False)}"/>
+          <apex:outputText style="font-weight: bold;" value="Select accessories (express):" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', True, False)}"/>
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection columns="3" rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name),False, True)}">
+          <apex:selectList style="width:350px;" size="12" value="{!selectedHardwares}" multiselect="true">
+                <apex:selectOptions value="{!hardwares}"/>
+          </apex:selectList>            
+          <apex:selectList style="width:350px;" size="12" value="{!selectedLicenses}" multiselect="true" disabled="{!free_trial_opportunity}">
+                <apex:selectOptions value="{!licenses}"/>
+          </apex:selectList>
+          <apex:selectList style="width:350px;" size="12" value="{!selectedAccesories}" multiselect="true">
+                <apex:selectOptions value="{!accesories}"/>
+          </apex:selectList>
+      </apex:pageBlockSection>
+      
+      <!--<apex:pageBlockSection columns="3">
+          <apex:commandButton value="Add selected hardwares" action="{!addHardwares}" status="status"/>
+          <apex:commandButton value="Add selected licenses" action="{!addLicenses}" status="status"/>
+          <apex:commandButton value="Add selected accessories" action="{!addAccesories}" status="status"/>
+      </apex:pageBlockSection>-->
+      
+      <apex:commandButton value="Add selected products" action="{!addProducts}" status="status" rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name),False, True)}"/>
+      
+      <apex:commandButton value="Add Pricebook" action="{!selectPricebook}" status="status" rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name),True, False)}"/>
+
+      <!--
+        <apex:commandButton value="Select Standard Pricebook" action="{!selectStandardPricebook}" status="status" rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name),True, False)}"/>
+        <br></br>
+        <br></br>
+        <apex:commandButton value="Select Express Pricebook" action="{!selectExpressPricebook}" status="status" rendered="{!IF(ISBLANK(Opportunity.Pricebook2.Name),True, False)}"/>
+      -->  
+  </apex:pageBlock>
+
+
+    <br></br>
+    <br></br>
+
+<apex:pageBlock title="3) Choose the quantity and price for the products" id="products_data_block">
+        <apex:variable value="" var="express_section_discount" rendered="{!IF(AND(Opportunity.Configuration_Segment__c == 'Express',NOT(free_trial_opportunity)), True, False)}">    
+            <apex:outputText value="Please choose the discount that you want to apply (you must use the same discount for all products) - if it is over the approved discretionary discount you will not be able to move it to Closing without your manager's approval:"/>
+            <br></br>
+            <br></br>
+            <apex:inputText value="{!express_discount}"/>
+            <br></br>
+            <br></br>
+        </apex:variable>  
+         
+        <apex:pageBlockTable value="{!sorted_oppty_line_items}" var="opptyLineItem">
+            <apex:column headerValue="Remove">
+                <apex:inputCheckbox value="{!inputRemovals[opptyLineItem.Id]}"/>
+            </apex:column>
+            
+            <apex:column value="{!opptyLineItem.PricebookEntry.Name}" headerValue="Product"/>
+            
+            <apex:column value="{!opptyLineItem.Product_Code_Copy__c}" headerValue="Code"/>
+            
+            <apex:column headerValue="Quantity">
+                <apex:input value="{!inputQuantities[opptyLineItem.Id]}" />
+            </apex:column>
+            
+            <apex:column headerValue="Shipping Address">
+                <apex:inputField value="{!opptyLineItem.Ship_To__c}"/>
+            </apex:column>
+            
+            <apex:column headerValue="List Price">
+                <apex:variable var="p_code" value="{!opptyLineItem.Product_Code_Copy__c}" />
+                <apex:variable var="term" value="{!selected_license_term}" />
+                <apex:outputText value="{!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                    <apex:param value="{!IF(CONTAINS(p_code, 'LIC'),opptyLineItem.ListPrice*term/12,opptyLineItem.ListPrice)}"/>
+                </apex:outputText>
+            </apex:column>
+
+            <apex:column headerValue="Unit Price" rendered="{!AND(editable_prices,NOT(free_trial_opportunity),NOT(Opportunity.Configuration_Segment__c == 'Express'))}">
+                <apex:input value="{!inputPrices[opptyLineItem.Id]}" id="SalesPrice"/>
+            </apex:column>
+
+            <apex:column headerValue="Total Discount" rendered="{!AND(editable_prices, NOT(Opportunity.Configuration_Segment__c == 'Express'))}">
+                <apex:variable var="total_discount" value="{!opptyLineItem.Discount}" />
+                <apex:outputText value="{!BLANKVALUE(ROUND(total_discount,2),0.00)}%"/>
+            </apex:column>
+            
+            <apex:column headerValue="Total Discount" rendered="{!AND(NOT(editable_prices), NOT(Opportunity.Configuration_Segment__c == 'Express'), NOT(free_trial_opportunity))}">
+                <apex:input value="{!inputDiscounts[opptyLineItem.Id]}"/>
+            </apex:column>
+
+            <apex:column headerValue="Unit Price" rendered="{!OR(NOT(editable_prices),Opportunity.Configuration_Segment__c == 'Express')}">
+                <apex:outputText value="{!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                    <apex:param value="{!inputPrices[opptyLineItem.Id]}"/>
+                </apex:outputText>      
+            </apex:column> 
+            
+            <apex:column headerValue="Discounted Price" rendered="{!AND(NOT(editable_prices),Opportunity.Configuration_Segment__c == 'Express')}">
+                <apex:outputText value="{!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                    <apex:param value="{!inputPrices[opptyLineItem.Id]}"/>
+                </apex:outputText>      
+            </apex:column>
+            
+            <apex:column headerValue="Discounted Price (Monthly)" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', True, False)}">
+                <apex:outputText value="{!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                    <apex:param value="{!opptyLineItem.Selected_Sales_Price__c}"/>
+                </apex:outputText>      
+            </apex:column> 
+
+            <apex:column headerValue="ACV Price">
+                <apex:outputText value="{!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                    <apex:param value="{!opptyLineItem.ACV_Total_Price_Bookings__c}" />
+                </apex:outputText>
+            </apex:column>
+
+            <apex:column headerValue="Total Price">
+                <apex:outputText value="{!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                    <apex:param value="{!opptyLineItem.TotalPrice}" />
+                </apex:outputText>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+       
+        <apex:variable value="" var="express_section_info" rendered="{!IF(Opportunity.Configuration_Segment__c == 'Express', True, False)}">
+            <br></br>
+            <br></br>
+            <apex:outputText style="font-weight:bold; font-size:14px;" value="ACV Bookings: {!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                <apex:param value="{!totalAcvBooking}" />
+            </apex:outputText> 
+            <br></br>        
+            <br></br>
+            <apex:outputText style="font-size:14px;" value="Total Monthly Price: {!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                <apex:param value="{!total_amount/12}" />
+            </apex:outputText> 
+            <br></br>        
+            <br></br>
+            <apex:outputText style="font-size:14px;" value="Total Contract Value: {!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+                <apex:param value="{!total_amount}" />
+            </apex:outputText>
+            <br></br>     
+        </apex:variable>
+        
+        <apex:variable value="" var="standard_section_info" rendered="{!IF(NOT(Opportunity.Configuration_Segment__c == 'Express'), True, False)}">
+            <br></br>
+            <br></br>
+            <apex:outputText style="font-weight:bold; font-size:14px;" value="ACV Bookings: {!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+            <apex:param value="{!totalAcvBooking}" />
+            </apex:outputText>
+            <br></br>
+            <br></br>
+            <apex:outputText style="font-weight:bold; font-size:14px;" value="License Term: {!Opportunity.License_Term__c} months"/>
+            
+            <br></br>
+            <br></br>
+            <apex:outputText style="font-size:14px;" value="Total Amount: {!Opportunity.CurrencyIsoCode}{0, number, ###,##0.00}">
+            <apex:param value="{!total_amount}" />
+            </apex:outputText>
+            <br></br>
+            
+            <br></br>
+            <apex:outputText style="font-size:12px;" value="Actual License Discount (Licenses Only): {!extended_license_discount}%" /> 
+            <br></br>
+            <apex:outputText style="font-size:12px;" value="Total Blended Discount (Licenses + Hardware): {!ROUND(total_final_discount*100,2)}%"/>
+            <br></br>  
+        </apex:variable>
+        
+        <br></br>
+        <apex:variable value="" var="rep_section" rendered="{!over_discount}" >
+            <br></br>
+            <apex:outputText style="color:red; font-size:12px;" value="The total blended discount exceeds the maximum authorized and will require manager approval prior to creating a quote or to moving into closing."/>
+            <br></br>
+            <apex:outputText style="color:red; font-size:12px;" value=" - Approved Blended Discount: {!IF(NOT(Opportunity.Configuration_Segment__c == 'Express'), IF(Opportunity.License_Term__c>=36,IF(Opportunity.License_Term__c>=60,35,25),0), 10)}%"/>
+            <br></br>
+        </apex:variable>
+        <br></br>
+<!--        <div align="right" draggable="false">-->
+<!--            <apex:outputText value="Showing editable discounts:   " rendered="{!AND(NOT(editable_prices),NOT(CONTAINS(Opportunity.Pricebook2.Name,'Samsara Express')))}"/>-->
+<!--            <apex:outputText value="Showing editable prices:   " rendered="{!AND(editable_prices,NOT(CONTAINS(Opportunity.Pricebook2.Name,'Samsara Express')))}"/>-->
+<!--            <apex:commandButton value="Switch to editable discounts" action="{!switchEditableMode}" rendered="{!AND(editable_prices,NOT(CONTAINS(Opportunity.Pricebook2.Name,'Samsara Express')))}"/>-->
+<!--            <apex:commandButton value="Switch to editable prices" action="{!switchEditableMode}" rendered="{!AND(NOT(editable_prices),NOT(CONTAINS(Opportunity.Pricebook2.Name,'Samsara Express')))}"/>-->
+<!--        </div>-->
+</apex:pageBlock>
+
+
+<!--
+<apex:commandButton value="Refresh" action="{!refresh}" />
+-->
+
+
+<!--
+<apex:commandLink value="click here to refresh" onclick="window.location.href='/apex/AddProductsAndLicenses/'" />
+-->
+
+<!--
+<apex:commandButton value="Reload" onclick="window.location.top.reload();" />  
+-->
+
+<apex:pageBlock >
+    <div align="left" draggable="false">
+        <apex:commandButton style="font-size:14px;" value="Return to Opportunity" action="{!back}"/>
+        <apex:commandButton style="font-size:14px;" value="Save" action="{!save}"/>
+        <!--<apex:commandButton style="font-size:14px;" value="Save & Back" action="{!saveAndBack}" onclick="return confirm('The total discretionary discount exceeds the maximum authorized discount and will require manager approval prior to creating a quote or to moving into closing. Do you want to proceed?');" rendered="{!over_discount}"/>-->
+        <!--<apex:commandButton style="font-size:14px;" value="Save & Back" action="{!saveAndBack}" rendered="{!NOT(over_discount)}"/>-->
+        <!--<apex:commandButton style="font-size:14px;" value="Save & Back" action="{!saveAndBack}"/>-->
+        
+        <!--<apex:outputText rendered="{!over_discount}" id="alert">
+            <script>
+            confirm('The total discretionary discount exceeds the maximum authorized discount and will require manager approval prior to creating a quote or to moving into closing. Do you want to proceed?');
+            </script>
+        </apex:outputText>-->
+        <!--<apex:outputText rendered="{!not showAlert}" id="noAlert">
+            No alert this time, sorry. Random value was: {!numberValue}.
+        </apex:outputText>-->
+
+        <!--<apex:commandButton style="font-size:14px;" value="Save and Back" action="{!submit}" ReRender="myForm"/>-->
+    </div>
+</apex:pageBlock>
+
+</apex:variable>
+</apex:variable>
+</apex:variable>
+</apex:variable>
+</apex:variable>
+</apex:variable>
+</apex:variable>
+</apex:variable>
+</apex:variable>
+
+</apex:form>
+
+
+<!--
+<apex:outputPanel id="out">
+    <apex:actionstatus id="status" startText="testing...">
+        <apex:facet name="stop">
+            <apex:outputPanel >
+                <p>You have selected:</p>
+                <apex:dataList value="{!licensechosens}" var="c">{!c}</apex:dataList>
+            </apex:outputPanel>
+        </apex:facet>
+    </apex:actionstatus>
+</apex:outputPanel>
+-->
+
+<!--
+<script>
+  function func()
+  {
+  alert('function calling');
+  }
+</script>
+-->
+
+
+</apex:page>

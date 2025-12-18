@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hour_of_transfer__c</fullName>
+    <description>Stamps hour account was transferred</description>
+    <externalId>false</externalId>
+    <formula>MOD(FLOOR(HOUR( TIMEVALUE( ADR_Transfer_Date__c ) ))-6+23,24)</formula>
+    <inlineHelpText>Stamps hour account was transferred</inlineHelpText>
+    <label>Hour of transfer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

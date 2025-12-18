@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Account_Type__c</fullName>
+    <label>Shipping Account Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Samsara Account</fullName>
+                <default>true</default>
+                <label>Samsara Account</label>
+            </value>
+            <value>
+                <fullName>Cust/Partner Account - FedEx</fullName>
+                <default>false</default>
+                <label>Cust/Partner Account - FedEx</label>
+            </value>
+            <value>
+                <fullName>Cust/Partner Account - UPS</fullName>
+                <default>false</default>
+                <label>Cust/Partner Account - UPS</label>
+            </value>
+            <value>
+                <fullName>Cust/Partner Account - DHL</fullName>
+                <default>false</default>
+                <label>Cust/Partner Account - DHL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

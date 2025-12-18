@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates whether this revenue forecast version record relates to the current version of the forecast, or to the previously generated version.</description>
+    <inlineHelpText>Indicates whether this revenue forecast version record relates to the current version of the forecast, or to the previously generated version.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Previous</fullName>
+                <default>false</default>
+                <label>Previous</label>
+            </value>
+            <value>
+                <fullName>Current</fullName>
+                <default>false</default>
+                <label>Current</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Error</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Error</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Processing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Processing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

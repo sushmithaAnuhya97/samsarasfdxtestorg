@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete_Trial_Details</fullName>
+    <active>true</active>
+    <description>This prevents moving the trial forward if there is any critical detail missing.</description>
+    <errorConditionFormula>AND ( 
+ISPICKVAL(Type,&quot;Free Trial Opportunity&quot;), 
+
+ISCHANGED(StageName),
+NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+
+OR (
+ISBLANK( Trial_Period__c ),
+ISBLANK( Trial_Start_Date_new__c ),
+ISBLANK( Trial_Primary_Contact__c ), 
+AND(ISBLANK ( Trial_Goal_1__c ), ISBLANK ( Trial_Goal_2__c ), ISBLANK ( Trial_Goal_3__c )),
+ISBLANK( Planned_Trial_Installation_Date__c ),
+ISBLANK( Trial_Primary_Contact__r.Email )
+), 
+Cable_Send_Only__c =FALSE,
+NOT($Permission.Validation_Rule_Exemption)
+)</errorConditionFormula>
+    <errorMessage>Please remember to generate a Trial Agreement Link so the customer can validate the details. To get the link, remember to fill the required fields: period, start date, primary contact (with email), at least one goal and planned installation date.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__FLO_Process_Issue_Source__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>FLO process issue lookup as the source of this relationship in this FLO Junction (e.g: Process Issue with Customization)</description>
+    <inlineHelpText>FLO process issue lookup as the source of this relationship in this FLO Junction (e.g: Process Issue with Customization)</inlineHelpText>
+    <label>Process Issue Source</label>
+    <referenceTo>FLODocs__FLO_Process_Issue__c</referenceTo>
+    <relationshipLabel>Junctions</relationshipLabel>
+    <relationshipName>FLO_Junctions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Google_Maps_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;https://www.google.com/maps/search/?api=1&amp;query=&quot;&amp;TEXT(Latitude__c)&amp;&quot;,&quot;&amp;TEXT(Longitude__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Google Maps Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limit_1_Camera_Recorder_Per_Trial</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ISPICKVAL( Opportunity.Type, &quot;Free Trial Opportunity&quot;), 
+Opportunity.Segment_Sales_Role__c = &quot;Mid Market&quot;, 
+NOT( $Permission.Validation_Rule_Exemption), 
+CONTAINS( Product2.ProductCode , &quot;HW-CMVR&quot;), 
+Quantity &gt; 1 
+)</errorConditionFormula>
+    <errorMessage>Limit 1 Camera Recorder Per Trial</errorMessage>
+</ValidationRule>

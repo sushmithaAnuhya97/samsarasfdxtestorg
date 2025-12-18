@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Referenceability__c</fullName>
+    <inlineHelpText>- Referenceable: Customer healthy and a strong advocate for Samsara
+- Somewhat referenceable: Customer sentiment unstable or frequently changing. Reach out to IC/CSM before conducting outreach.
+- Not referenceable: Do not contact.
+- None: Unknown</inlineHelpText>
+    <label>Contact Referenceability</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Referenceable</fullName>
+                <default>false</default>
+                <label>Referenceable</label>
+            </value>
+            <value>
+                <fullName>Somewhat Referenceable</fullName>
+                <default>false</default>
+                <label>Somewhat Referenceable</label>
+            </value>
+            <value>
+                <fullName>Not Referenceable</fullName>
+                <default>false</default>
+                <label>Not Referenceable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

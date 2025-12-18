@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>PAM Reviewed</fullName>
+                <default>false</default>
+                <label>PAM Reviewed</label>
+            </value>
+            <value>
+                <fullName>PAM Approved</fullName>
+                <default>false</default>
+                <label>PAM Approved</label>
+            </value>
+            <value>
+                <fullName>PAM Denied</fullName>
+                <default>false</default>
+                <label>PAM Denied</label>
+            </value>
+            <value>
+                <fullName>AE Accepted</fullName>
+                <default>false</default>
+                <label>AE Accepted</label>
+            </value>
+            <value>
+                <fullName>AE Approved</fullName>
+                <default>false</default>
+                <label>AE Approved</label>
+            </value>
+            <value>
+                <fullName>AE Denied</fullName>
+                <default>false</default>
+                <label>AE Denied</label>
+            </value>
+            <value>
+                <fullName>AE Ignored</fullName>
+                <default>false</default>
+                <label>AE Ignored</label>
+            </value>
+            <value>
+                <fullName>New Application</fullName>
+                <default>false</default>
+                <label>New Application</label>
+            </value>
+            <value>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+                <label>Under Review</label>
+            </value>
+            <value>
+                <fullName>Approved by PAM</fullName>
+                <default>false</default>
+                <label>Approved by PAM</label>
+            </value>
+            <value>
+                <fullName>Approved by Leaders</fullName>
+                <default>false</default>
+                <label>Approved by Leaders</label>
+            </value>
+            <value>
+                <fullName>New User Registration</fullName>
+                <default>false</default>
+                <label>New User Registration</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Denied</fullName>
+                <default>false</default>
+                <label>Denied</label>
+            </value>
+            <value>
+                <fullName>Denied at Closing</fullName>
+                <default>false</default>
+                <label>Denied at Closing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

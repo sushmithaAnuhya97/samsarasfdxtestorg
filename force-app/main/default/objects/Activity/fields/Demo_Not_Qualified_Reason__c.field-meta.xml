@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Not_Qualified_Reason__c</fullName>
+    <inlineHelpText>Field must be completed if Demo is not qualified</inlineHelpText>
+    <label>Demo Not Qualified Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Budget</fullName>
+                <default>false</default>
+                <label>No Budget</label>
+            </value>
+            <value>
+                <fullName>No Authority</fullName>
+                <default>false</default>
+                <label>No Authority</label>
+            </value>
+            <value>
+                <fullName>No Need</fullName>
+                <default>false</default>
+                <label>No Need</label>
+            </value>
+            <value>
+                <fullName>No Timeline</fullName>
+                <default>false</default>
+                <label>No Timeline</label>
+            </value>
+            <value>
+                <fullName>Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Testing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

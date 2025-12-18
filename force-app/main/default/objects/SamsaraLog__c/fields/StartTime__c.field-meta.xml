@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StartTime__c</fullName>
+    <label>Start Time</label>
+    <summarizedField>SamsaraLogEntries__c.CreatedDate</summarizedField>
+    <summaryForeignKey>SamsaraLogEntries__c.SamsaraLog__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

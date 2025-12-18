@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Just_Tracker</fullName>
+    <booleanFilter>3 and (1 or 2)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Status__c</columns>
+    <columns>Highest_Probability_Open_Opportunity__c</columns>
+    <columns>ADR_Transfer_Date__c</columns>
+    <columns>First_Demo_Date__c</columns>
+    <columns>Open_Opportunity__c</columns>
+    <columns>Has_Trial__c</columns>
+    <columns>Account_Owner__c</columns>
+    <columns>Enterprise_Assignment__c</columns>
+    <columns>Organization_Size__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Just Hoppenot</value>
+    </filters>
+    <filters>
+        <field>Account_Owner__c</field>
+        <operation>equals</operation>
+        <value>Just Hoppenot</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <label>Just Tracker</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>SEL_Fleet_ENT_AE_EMEA_FR</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attainment__c</fullName>
+    <formula>IF( AND( CONTAINS( Role_at_Start_of_Fiscal_Period__c,&quot;ADR&quot;), ADR_Quota__c  &lt;&gt; 0), Total_ADR_Transfers__c / ADR_Quota__c ,
+
+IF( AND( CONTAINS( Role_at_Start_of_Fiscal_Period__c,&quot;Industrial&quot;),NOT(CONTAINS( Role_at_Start_of_Fiscal_Period__c,&quot;ADR&quot;)), Quota__c  &lt;&gt; 0), Total_Amount__c  /  Quota__c, 
+
+IF( AND( Fiscal_Period_Start_Date__c &lt; DATE(2019,02,03), Quota__c  &lt;&gt; 0), Total_Amount__c  /  Quota__c, 
+
+IF( AND( Fiscal_Period_Start_Date__c &gt;= DATE(2019,02,03), Quota__c  &lt;&gt; 0), Total_ACV_Bookings__c /  Quota__c, null 
+
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Attainment %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

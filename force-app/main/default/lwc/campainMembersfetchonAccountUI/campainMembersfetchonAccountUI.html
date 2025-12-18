@@ -1,0 +1,44 @@
+<template>
+  <div class="slds-card slds-card_boundary">
+    <header class="slds-card__header slds-grid slds-grid_vertical-align-center slds-p-horizontal_small rl-header">
+      <div class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+          <lightning-icon icon-name="standard:campaign_members" size="small" alternative-text="Campaign Members"></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title slds-truncate" title={headerTitle}>
+            <span>{headerTitle}</span>
+          </h2>
+        </div>
+      </div>
+      <div class="slds-no-flex">
+        <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" title="Refresh"
+          variant="border-filled" onclick={handleRefresh}></lightning-button-icon>
+      </div>
+    </header>
+
+    <div class="rl-table slds-scrollable_x slds-is-relative">
+      <template if:true={isLoading}>
+        <div class="spinner-wrap">
+          <lightning-spinner alternative-text="Loading" size="small" variant="brand"></lightning-spinner>
+        </div>
+      </template>
+      <div class="rl-inner">
+        <lightning-datatable
+          key-field="id"
+          data={rows}
+          columns={columns}
+          show-row-number-column
+          onrowaction={handleRowAction}
+          onrowselection={handleRowSelection}>
+        </lightning-datatable>
+      </div>
+    </div>
+
+    <footer class="rl-footer slds-p-vertical_x-small">
+      <div class="slds-grid slds-grid_align-center">
+        <a class="slds-text-link" onclick={handleViewAll}>View All</a>
+      </div>
+    </footer>
+  </div>
+</template>

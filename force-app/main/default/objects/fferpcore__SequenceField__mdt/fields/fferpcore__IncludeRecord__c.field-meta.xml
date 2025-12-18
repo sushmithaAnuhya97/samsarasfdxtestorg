@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__IncludeRecord__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A checkbox or formula field on the record that determines whether it is to be sequenced. The checkbox or formula field must be equal to true for the record to be sequenced.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>A checkbox or formula field on the record that determines whether it is to be sequenced. The checkbox or formula field must be equal to true for the record to be sequenced.</inlineHelpText>
+    <label>Include Record</label>
+    <metadataRelationshipControllingField>fferpcore__SequenceField__mdt.fferpcore__Object__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>Sequence Filters</relationshipLabel>
+    <relationshipName>SequenceFilters</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

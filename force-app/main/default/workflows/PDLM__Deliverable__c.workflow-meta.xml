@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>PDLM__Activity Reminder</fullName>
+        <active>false</active>
+        <description>Propel Activity Reminder Workflow Rule</description>
+        <formula>PDLM__Send_Reminder__c &amp;&amp; !ISNULL( PDLM__Assigned_To__c )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

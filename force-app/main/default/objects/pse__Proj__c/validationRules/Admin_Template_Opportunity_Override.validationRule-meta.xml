@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Template_Opportunity_Override</fullName>
+    <active>false</active>
+    <description>Use this to overrite admin requirements for updating templates</description>
+    <errorConditionFormula>AND(
+   ISBLANK(pse__Opportunity__c),
+   $User.Id &lt;&gt; &quot;0054p000003E2DGAA0&quot;
+)</errorConditionFormula>
+    <errorMessage>Please see system admin</errorMessage>
+</ValidationRule>

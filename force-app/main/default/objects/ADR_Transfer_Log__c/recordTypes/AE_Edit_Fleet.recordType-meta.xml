@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_Edit_Fleet</fullName>
+    <active>true</active>
+    <label>AE Edit - Fleet</label>
+    <picklistValues>
+        <picklist>ADR_Authority__c</picklist>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Buyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gatekeeper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other %28Not Qualified%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ADR_Budget__c</picklist>
+        <values>
+            <fullName>Budget Allocated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Budgeted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Path to Funds</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ADR_Need__c</picklist>
+        <values>
+            <fullName>Competitor Contract Ending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consolidated Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluating New Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Operational Improvement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ADR_Timeline__c</picklist>
+        <values>
+            <fullName>%3C 1 Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - 3 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 - 18 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%2B Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - 6 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 - 12 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immediate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ADR_Transfer_Status__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accepted - No Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accepted and Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Reject - SLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second Pass Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second Pass Requested</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AE_Authority__c</picklist>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Economic Buyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gatekeeper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other %28Not Qualified%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AE_Budget__c</picklist>
+        <values>
+            <fullName>Budget Allocated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Budgeted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Path to Funds</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AE_Need__c</picklist>
+        <values>
+            <fullName>Competitor Contract Ending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consolidated Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluating New Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Operational Improvement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AE_Timeline__c</picklist>
+        <values>
+            <fullName>%3C 1 Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - 3 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 - 18 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%2B Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - 6 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 - 12 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immediate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Identified</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Booking_Method__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Demo_Completion__c</picklist>
+        <values>
+            <fullName>Demo No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-Site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zoom Meeting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meeting_Origination__c</picklist>
+        <values>
+            <fullName>Inbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rejection_Reason__c</picklist>
+        <values>
+            <fullName>ADR Manager Audit - Does not meet criteria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Reject%3A SLA Non-Adherence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo Did Not Take Place - ADR Reschedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microfleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Authority or Need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Budget and Timeline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of Geo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of Segment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Samsara_Product_Interest__c</picklist>
+        <values>
+            <fullName>Fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet and Sites</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sites Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Second_Pass_R__c</picklist>
+        <values>
+            <fullName>Demo No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Authority or Need</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

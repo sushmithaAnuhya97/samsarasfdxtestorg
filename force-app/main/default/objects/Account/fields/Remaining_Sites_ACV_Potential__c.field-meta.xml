@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remaining_Sites_ACV_Potential__c</fullName>
+    <description>GTMS-9861: This is important for AEs to see as well as Growth/SalesOps, as it informs where efforts need to be pushed to promote expansion beyond the first purchase. A 20% increase in expansion $ACV for Sites is equivalent to $200K/year</description>
+    <formula>IF(
+ (Number_of_Sites__c *3000 -  Sites_ACV_Bookings__c ) &gt;0,
+Number_of_Sites__c *3000 -  Sites_ACV_Bookings__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Remaining Sites $ACV Potential</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

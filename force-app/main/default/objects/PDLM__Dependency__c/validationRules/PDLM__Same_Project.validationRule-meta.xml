@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Same_Project</fullName>
+    <active>true</active>
+    <description>Dependencies may exist within the same project only</description>
+    <errorConditionFormula>PDLM__Successor__r.PDLM__Project__c != PDLM__Predecessor__r.PDLM__Project__c</errorConditionFormula>
+    <errorMessage>Dependencies may only be created within a single project</errorMessage>
+</ValidationRule>

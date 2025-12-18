@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Reports_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__Custom_Record_ID__c</columns>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>FLODocs__Control__c</columns>
+    <columns>FLODocs__Search_Fields__c</columns>
+    <columns>FLODocs__Date_Last_Used__c</columns>
+    <columns>FLODocs__Search_Formulas__c</columns>
+    <columns>FLODocs__Search_Filters__c</columns>
+    <columns>FLODocs__Search_Fields_Raw__c</columns>
+    <columns>FLODocs__Clean_up_Classification__c</columns>
+    <columns>FLODocs__Improvement_Comments__c</columns>
+    <columns>FLODocs__Clean_up_Status__c</columns>
+    <columns>FLODocs__FLO_Change_Approval_Policy__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>equals</operation>
+        <value>Report</value>
+    </filters>
+    <label>Reports (v2)</label>
+</ListView>

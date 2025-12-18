@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jira_Direct_Clean_Up_View</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Jira_Correlation_ID__c</columns>
+    <columns>pse__Jira_Project_Key__c</columns>
+    <columns>psaj__Jira_Project_Template__c</columns>
+    <columns>pse__Jira_Project_Type__c</columns>
+    <columns>pse__Jira_Project_URL__c</columns>
+    <columns>psaj__Jira_Project_URL__c</columns>
+    <columns>pse__Jira_Project__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Jira_Correlation_ID__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Jira Direct Clean Up View</label>
+</ListView>

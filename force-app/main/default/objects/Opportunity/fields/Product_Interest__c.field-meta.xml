@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Interest__c</fullName>
+    <label>Product Interest</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>API Cloud Ingest-Monitoring</fullName>
+                <default>false</default>
+                <label>API Cloud Ingest-Monitoring</label>
+            </value>
+            <value>
+                <fullName>Machine Vision</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Machine Vision</label>
+            </value>
+            <value>
+                <fullName>Mobile Forms</fullName>
+                <default>false</default>
+                <label>Mobile Forms</label>
+            </value>
+            <value>
+                <fullName>OEE Analytics</fullName>
+                <default>false</default>
+                <label>OEE Analytics</label>
+            </value>
+            <value>
+                <fullName>Power Monitoring</fullName>
+                <default>false</default>
+                <label>Power Monitoring</label>
+            </value>
+            <value>
+                <fullName>RTU-Data Monitoring / Control</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RTU-Monitoring</label>
+            </value>
+            <value>
+                <fullName>RTU-Monitoring + Control</fullName>
+                <default>false</default>
+                <label>RTU-Monitoring + Control</label>
+            </value>
+            <value>
+                <fullName>RTU-Monitoring Only</fullName>
+                <default>false</default>
+                <label>RTU-Monitoring Only</label>
+            </value>
+            <value>
+                <fullName>RTU-OEM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RTU-OEM</label>
+            </value>
+            <value>
+                <fullName>Temp/Humidity</fullName>
+                <default>false</default>
+                <label>Temp/Humidity</label>
+            </value>
+            <value>
+                <fullName>Vibration Monitoring</fullName>
+                <default>false</default>
+                <label>Vibration Monitoring</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

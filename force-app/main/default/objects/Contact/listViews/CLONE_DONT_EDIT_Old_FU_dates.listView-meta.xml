@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLONE_DONT_EDIT_Old_FU_dates</fullName>
+    <columns>Account.Validation_Complete__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Scheduled_Demo_Date__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Follow_Up_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Last_Call__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Account.Last_Contacted__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>Inbound_Form_Message__c</columns>
+    <columns>First_Touch_Campaign__c</columns>
+    <columns>ACCOUNT.OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Status__c</field>
+        <operation>notEqual</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>Account.Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Brian Hanlon,Charles Chung,Jean-Luc Racine</value>
+    </filters>
+    <filters>
+        <field>First_Touch_Campaign__c</field>
+        <operation>equals</operation>
+        <value>(Child) INT CA - FY24 Q1 Door Opener Direct Mailer</value>
+    </filters>
+    <label>CLONE DONT EDIT- Old FU dates</label>
+</ListView>

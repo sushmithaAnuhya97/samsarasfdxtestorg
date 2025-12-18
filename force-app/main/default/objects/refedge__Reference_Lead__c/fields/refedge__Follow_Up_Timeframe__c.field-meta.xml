@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Follow_Up_Timeframe__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Follow Up Timeframe</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>30 days</fullName>
+                <default>false</default>
+                <label>30 days</label>
+            </value>
+            <value>
+                <fullName>60 days</fullName>
+                <default>false</default>
+                <label>60 days</label>
+            </value>
+            <value>
+                <fullName>90 days</fullName>
+                <default>false</default>
+                <label>90 days</label>
+            </value>
+            <value>
+                <fullName>180 days</fullName>
+                <default>false</default>
+                <label>180 days</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

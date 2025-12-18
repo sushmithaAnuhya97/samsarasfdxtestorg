@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>CreatedDate</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>ryan.hammer@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Strategic Basic, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Strategic Basic, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Strategic_Basic_NA_US</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>ryan.hammer@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Select Basic, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Select Basic, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Select_Basic_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>ryan.hammer@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services,Core Basic, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services,Core Basic, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Core_Basic_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>brian.wong@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services , Strategic Standard, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services , Strategic Standard, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Strategic_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>meha.shah@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Select Standard, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Select Standard, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Select_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>jesse.anderson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Core Standard, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Core Standard, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Core_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>brian.wong@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Strategic High, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Strategic High, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Strategic_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>meha.shah@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Select High, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Select High, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Select_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>jesse.anderson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Core High, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Pre-sale support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Core High, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Core_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>etienne.regnier@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, (Starter,Plus,Premier,Elite), NA CA</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND (3 AND (4 OR 5 OR 6 OR 7 )  OR 9) AND 8</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA CA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, (Starter,Plus,Premier,Elite), NA CA</label>
+        <name>Ent_AE_only_Onboarding_Services_Starter_Plus_Premier_Elite_NA_CA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>kristine.dillon@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>pierre.gross@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, (Starter,Plus,Premier,Elite), SLED</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND (3 AND (4 OR 5 OR 6 OR 7 )  OR 9) AND 8</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>SLED</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, (Starter,Plus,Premier,Elite), SLED</label>
+        <name>Ent_AE_only_Onboarding_Services_Starter_Plus_Premier_Elite_SLED</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sarah.giammatteo@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Plus, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Plus, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Plus_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>gillian.kershaw@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services, Starter, NA US</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND ((3 AND 4 ) OR 6) AND 5</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services, Starter, NA US</label>
+        <name>Ent_AE_only_Onboarding_Services_Starter_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Is_Approved_Flag</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>brian.wong@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>gillian.kershaw@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>jesse.anderson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>meha.shah@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ryan.hammer@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding services, Default</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Is_Approved__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>[Ent AE only] - Onboarding services, Default</label>
+        <name>Ent_AE_only_Onboarding_services_Default</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>[Ent AE only] - Onboarding Services</description>
+    <emailTemplate>unfiled$public/CS_Request_Log_Approval_Submission</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>[Ent AE only]-OnboardingServices New CS</label>
+    <processOrder>8</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message channel for indicating that a component has loaded.</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>The name of the component that has loaded.</description>
+        <fieldName>name</fieldName>
+    </lightningMessageFields>
+    <masterLabel>ComponentLoadedMessageChannel</masterLabel>
+</LightningMessageChannel>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CE_Tech_Sale_Stage__c</fullName>
+    <label>CE Tech Sale Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New key account identified</fullName>
+                <default>false</default>
+                <label>New key account identified</label>
+            </value>
+            <value>
+                <fullName>Pre-trial phase</fullName>
+                <default>false</default>
+                <label>Pre-trial phase</label>
+            </value>
+            <value>
+                <fullName>Tech discovery</fullName>
+                <default>false</default>
+                <label>Tech discovery</label>
+            </value>
+            <value>
+                <fullName>Trial management</fullName>
+                <default>false</default>
+                <label>Trial management</label>
+            </value>
+            <value>
+                <fullName>Tech proposal</fullName>
+                <default>false</default>
+                <label>Tech proposal</label>
+            </value>
+            <value>
+                <fullName>Tech win</fullName>
+                <default>false</default>
+                <label>Tech win</label>
+            </value>
+            <value>
+                <fullName>Tech loss</fullName>
+                <default>false</default>
+                <label>Tech loss</label>
+            </value>
+            <value>
+                <fullName>Commercial loss</fullName>
+                <default>false</default>
+                <label>Commercial loss</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

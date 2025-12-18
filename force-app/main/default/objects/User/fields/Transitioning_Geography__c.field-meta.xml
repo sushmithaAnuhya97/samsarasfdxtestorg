@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transitioning_Geography__c</fullName>
+    <description>Description:
+Planning to delete field 3/1/2020. Reach out to bit.ly/samsarasalesops &amp; Adam Barten if you have questions</description>
+    <label>Transitioning Geography[Deprecated]</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Central</fullName>
+                <default>false</default>
+                <label>Central</label>
+            </value>
+            <value>
+                <fullName>Northeast</fullName>
+                <default>false</default>
+                <label>Northeast</label>
+            </value>
+            <value>
+                <fullName>West</fullName>
+                <default>false</default>
+                <label>West</label>
+            </value>
+            <value>
+                <fullName>South &amp; Midwest</fullName>
+                <default>false</default>
+                <label>South &amp; Midwest</label>
+            </value>
+            <value>
+                <fullName>Mexico</fullName>
+                <default>false</default>
+                <label>Mexico</label>
+            </value>
+            <value>
+                <fullName>Canada West</fullName>
+                <default>false</default>
+                <label>Canada West</label>
+            </value>
+            <value>
+                <fullName>Canada East</fullName>
+                <default>false</default>
+                <label>Canada East</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

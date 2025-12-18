@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the type of process issue.</description>
+    <inlineHelpText>This field tracks the type and severity of the issue.  These types can be used to trigger alerts to relevant managers and object owners.</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>FLODocs__FLO_Process_Issue_Severity</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Logo__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Formula field that displays the company logo specified in the Logo URL.</description>
+    <externalId>false</externalId>
+    <formula>IF(LEN(fferpcore__LogoURL__c)=0,&quot;&quot;, IMAGE(fferpcore__LogoURL__c,&quot;Company Logo&quot;))</formula>
+    <label>Logo</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

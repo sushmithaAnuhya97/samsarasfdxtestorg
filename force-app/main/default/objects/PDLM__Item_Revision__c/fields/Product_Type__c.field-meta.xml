@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hardware</fullName>
+                <default>false</default>
+                <label>Hardware</label>
+            </value>
+            <value>
+                <fullName>Cable</fullName>
+                <default>false</default>
+                <label>Cable</label>
+            </value>
+            <value>
+                <fullName>Accessory</fullName>
+                <default>false</default>
+                <label>Accessory</label>
+            </value>
+            <value>
+                <fullName>License</fullName>
+                <default>false</default>
+                <label>License</label>
+            </value>
+            <value>
+                <fullName>Samsara Beyond</fullName>
+                <default>false</default>
+                <label>Samsara Beyond</label>
+            </value>
+            <value>
+                <fullName>Deal Component</fullName>
+                <default>false</default>
+                <label>Deal Component</label>
+            </value>
+            <value>
+                <fullName>Bundle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bundle</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Promotional Product</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Promotional Product</label>
+            </value>
+            <value>
+                <fullName>Serialized Hardware</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Serialized Hardware</label>
+            </value>
+            <value>
+                <fullName>Service Fee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Service Fee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Stale_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>Last_Call__c</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>Transferred_by_ADR__c</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Number_of_Calls__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>ADR_Lead_Transfer__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>New,Attempting,Contact Established,Demo Scheduled</value>
+    </filters>
+    <filters>
+        <field>Lead_Transfer_Date__c</field>
+        <operation>lessThan</operation>
+        <value>LAST_N_DAYS:21</value>
+    </filters>
+    <label>ADR Stale Leads</label>
+    <sharedTo></sharedTo>
+</ListView>

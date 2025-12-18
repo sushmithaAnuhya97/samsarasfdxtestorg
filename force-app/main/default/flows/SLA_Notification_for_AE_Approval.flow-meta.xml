@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-28939</description>
+        <name>Deal_Registration_AE_SLA_Notification_Alert_GTMS_28939</name>
+        <label>Deal Registration AE SLA Notification Alert : GTMS-28939</label>
+        <locationX>1204</locationX>
+        <locationY>412</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_AE_SLA_Notification_Alert_GTMS_28939</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_Triggering_Record</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_AE_SLA_Notification_Alert_GTMS_28939</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>created for GTMS-28939</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NextSLAValue</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!$Record.SLA_Business_Days__c})==&apos;1&apos;,&apos;3&apos;,
+IF(TEXT({!$Record.SLA_Business_Days__c})==&apos;3&apos;,&apos;5&apos;,
+IF(TEXT({!$Record.SLA_Business_Days__c})==&apos;5&apos;,&apos;12&apos;,
+&apos;&apos;)))</expression>
+    </formulas>
+    <interviewLabel>SLA Notification for AE Approval {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SLA Notification for AE Approval</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Triggering_Record</name>
+        <label>Update Triggering Record</label>
+        <locationX>745</locationX>
+        <locationY>557</locationY>
+        <inputAssignments>
+            <field>SLA_Business_Days__c</field>
+            <value>
+                <elementReference>NextSLAValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>1 AND (2 OR 3 OR 4 OR 5)</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PAM Reviewed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SLA_Business_Days__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>3</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SLA_Business_Days__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>5</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SLA_Business_Days__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>12</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SLA_Business_Days__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>1</stringValue>
+            </value>
+        </filters>
+        <object>Partner_Registration__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>AE_SLA</name>
+            <connector>
+                <targetReference>Deal_Registration_AE_SLA_Notification_Alert_GTMS_28939</targetReference>
+            </connector>
+            <label>AE SLA</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>SLA_Due_DateTime__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

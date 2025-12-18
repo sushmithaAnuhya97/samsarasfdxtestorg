@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Back_Office_Processing_Notification</name>
+        <label>Back Office Processing Notification</label>
+        <locationX>544</locationX>
+        <locationY>145</locationY>
+        <actionName>New_Product_Addition__c.New_Product_Addition_Created</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>New_Product_Addition__c.New_Product_Addition_Created</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Launched_GA_Notification</name>
+        <label>Launched GA Notification</label>
+        <locationX>690</locationX>
+        <locationY>77</locationY>
+        <actionName>New_Product_Addition__c.New_Product_Addition_Launched_GA</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>New_Product_Addition__c.New_Product_Addition_Launched_GA</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>New Product Addition Early Access</description>
+        <name>New_Product_Addition_Early_Access_Notification</name>
+        <label>New Product Addition Early Access Notification</label>
+        <locationX>872</locationX>
+        <locationY>253</locationY>
+        <actionName>New_Product_Addition__c.New_Product_Addition_Early_Access</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>New_Product_Addition__c.New_Product_Addition_Early_Access</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>New Product Addition Ready to Launch</description>
+        <name>New_Product_Addition_Ready_to_Launch_Notification</name>
+        <label>New Product Addition Ready to Launch Notification</label>
+        <locationX>721</locationX>
+        <locationY>340</locationY>
+        <actionName>New_Product_Addition__c.New_Product_Addition_Ready_to_Launch</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>New_Product_Addition__c.New_Product_Addition_Ready_to_Launch</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>New_Product_Creation</name>
+        <label>New_Product_Creation</label>
+        <locationX>331</locationX>
+        <locationY>501</locationY>
+        <actionName>New_Product_Addition__c.New_Product_Creation</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>New_Product_Addition__c.New_Product_Creation</nameSegment>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Email changes on the Status change</description>
+        <name>Status_Change</name>
+        <label>Status Change</label>
+        <locationX>186</locationX>
+        <locationY>380</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Back_Office_Processing</name>
+            <conditionLogic>1</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Back Office Processing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Back_Office_Processing_Notification</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Back Office Processing</label>
+        </rules>
+        <rules>
+            <name>Launched_GA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Launched EA</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Launched_GA_Notification</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Launched GA</label>
+        </rules>
+        <rules>
+            <name>Launched_EA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Launched EA</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Product_Addition_Early_Access_Notification</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Launched EA</label>
+        </rules>
+        <rules>
+            <name>New_Product_Addition_Ready_to_Launch</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Launch</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Product_Addition_Ready_to_Launch_Notification</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Ready to Launch</label>
+        </rules>
+        <rules>
+            <name>Product_Creation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Product Creation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Product_Creation</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Product Creation</label>
+        </rules>
+    </decisions>
+    <interviewLabel>NPA Notifications {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>NPA Notifications</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>26</locationX>
+        <locationY>5</locationY>
+        <connector>
+            <targetReference>Status_Change</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>New_Product_Addition__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

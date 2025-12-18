@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OB_Archiver__FailedRecordsLogs__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(
+or(
+(
+(OB_Archiver__Failed__c &gt; 0)
+&amp;&amp; NOT(ISBLANK(OB_Archiver__EndedAt__c)) &amp;&amp; OB_Archiver__EndedAt__c &gt; DATETIMEVALUE(&quot;2021-04-01 12:00:00&quot;)
+&amp;&amp; or(ISPICKVAL( OB_Archiver__Type__c , &quot;Archive&quot;), ISPICKVAL( OB_Archiver__Type__c , &quot;Purge&quot;)) ),
+((OB_Archiver__Failed__c = 0) &amp;&amp; OB_Archiver__Succeeded__c =0 &amp;&amp; OR(OB_Archiver__Total_Skipped_Root_Records__c =0,ISBLANK(OB_Archiver__Total_Skipped_Root_Records__c)) &amp;&amp; NOT(ISBLANK(OB_Archiver__EndedAt__c)) &amp;&amp; or(ISPICKVAL( OB_Archiver__Type__c , &quot;Archive&quot;))),
+OB_Archiver__Status__c=&apos;Ended With Errors&apos;
+), IF(ISBLANK($CustomMetadata.01IWR0000022RFz.m2YWR000008f1V2.NamespacePrefix),
+HYPERLINK(&quot;/apex/OwnBackup_LogsASCSVFileVF?requestId=&quot;
+&amp;OB_Archiver__RequestId__c
+&amp;&quot;&amp;reportType=&quot;
+&amp;TEXT(OB_Archiver__Type__c)
+&amp;&quot;&amp;policyId=&quot;
+&amp;OB_Archiver__PolicyId__r.Id
+&amp;&quot;&amp;logsType=&quot;
+&amp;&quot;error&quot;
+&amp;&quot;&amp;sobjectName=&quot;
+&amp; OB_Archiver__SObjectName__c
+,&quot;Download File&quot;),
+HYPERLINK(&quot;/apex/OB_Archiver__OwnBackup_LogsASCSVFileVF?requestId=&quot;
+&amp;OB_Archiver__RequestId__c
+&amp;&quot;&amp;reportType=&quot;
+&amp;TEXT(OB_Archiver__Type__c)
+&amp;&quot;&amp;logsType=&quot;
+&amp;&quot;error&quot;
+&amp;&quot;&amp;policyId=&quot;
+&amp;OB_Archiver__PolicyId__r.Id
+&amp;&quot;&amp;sobjectName=&quot;
+&amp; OB_Archiver__SObjectName__c,&quot;Download File&quot;)), &apos;&apos;)</formula>
+    <label>Failed Records</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

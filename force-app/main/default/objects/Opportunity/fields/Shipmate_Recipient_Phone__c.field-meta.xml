@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipmate_Recipient_Phone__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Shipping_Address_NEW__r.Shipping_Contact__r.Phone)),Shipping_Address_NEW__r.Shipping_Contact__r.Phone,&apos;(415) 985-2400&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Shipmate - Recipient Phone</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

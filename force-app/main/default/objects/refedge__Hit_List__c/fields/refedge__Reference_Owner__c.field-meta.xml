@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Reference_Owner__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(AND(ISBLANK(refedge__Reference_Profile__r.refedge__Reference_Owner__r.FirstName), ISBLANK(refedge__Reference_Profile__r.refedge__Reference_Owner__r.LastName)) , 
+refedge__Reference_Profile__r.refedge__Account__r.Owner.FirstName &amp;&quot; &quot;&amp; refedge__Reference_Profile__r.refedge__Account__r.Owner.LastName, 
+refedge__Reference_Profile__r.refedge__Reference_Owner__r.FirstName &amp; &quot; &quot; &amp; refedge__Reference_Profile__r.refedge__Reference_Owner__r.LastName)</formula>
+    <label>Reference Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sites_Unload_Account_AE</fullName>
+    <active>true</active>
+    <description>For a Sites AE (role contains Sites IS AE2), they should hit a blocker when trying to save the “Sites - Unload Account” checkbox as True IF there is an open revenue opportunity on the account where Sites ACV bookings &gt; 0</description>
+    <errorConditionFormula>AND(CONTAINS($UserRole.Name ,&apos;Sites IS AE2&apos;),
+Total_Sites_Pipeline_Number__c &gt; 0,
+ISCHANGED( Sites_Unload_Account__c ),
+Sites_Unload_Account__c)</errorConditionFormula>
+    <errorMessage>This account can not be dropped. AEs, please Close Lost any open revenue opportunities with Sites pipeline.</errorMessage>
+</ValidationRule>

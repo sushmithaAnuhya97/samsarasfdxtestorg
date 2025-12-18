@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Deployment_Log__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Deployment Log of the deployment that resulted in the Unit Test failure.</description>
+    <inlineHelpText>The Deployment Log of the deployment that resulted in the Unit Test failure.</inlineHelpText>
+    <label>Deployment Log</label>
+    <referenceTo>FLODocs__Deplyoment_Log__c</referenceTo>
+    <relationshipLabel>Deployment Test Failures</relationshipLabel>
+    <relationshipName>Deployment_Test_Failures</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

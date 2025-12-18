@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Batch_Deletion_Cutoff__c</fullName>
+    <defaultValue>99000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When deleting previous utilization calculations, sets the maximum number of child records above which a batch deletion is used instead of cascading deletion.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sets the maximum number of child records above which a batch deletion is used instead of cascading deletion.</inlineHelpText>
+    <label>Batch Deletion Cut-Off Point</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,39 @@
+<template>
+    <template lwc:if={ovaDocusignexists}>
+    <lightning-card icon-name="standard:process">
+        <lightning-button label="Help" title="Help" icon-name="utility:help_doc_ext" class="slds-m-left_x-small slds-float_left" slot="actions" onclick={handleClickHelp}></lightning-button>
+        
+        <p slot="title">
+            Validation Assistant (Beta)
+            <!-- <lightning-helptext content="Lorem ipsum dolor sit amet..."></lightning-helptext> -->
+        </p>
+
+        <div class="slds-p-horizontal_small">
+            <!-- IF THERE ARE VALIDATION ERRORS TO SHOW, THEN DISPLAY THE BANNER -->
+            <template lwc:if={validationsFired}>
+                <c-message-banner variation="warning"  message ="The following validations require your attention:"></c-message-banner>
+                <div class="slds-p-left_small slds-p-right_small" style="height: 200px; margin-top: 15px">
+                <lightning-datatable
+                    key-field="Id"
+                    data={data}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    >
+            </lightning-datatable>
+        </div>
+            </template>
+            <!-- ELSE DISPLAY THE BANNER WITH "green" variation and a success message -->
+            <template lwc:else> 
+                <c-message-banner variation="baseLite" message ="Order Kickback Validation successfully passed."></c-message-banner>
+            </template>
+            
+        </div>
+        <p slot="footer">
+            <lightning-button label="Re-Run Validations" slot="actions" onclick={ReRunValidations}></lightning-button>
+        </p>
+    </lightning-card>
+    <template lwc:if={showProcessing}>
+        <lightning-spinner alternative-text="Processing" size="small"></lightning-spinner>
+      </template>
+    </template>
+</template>

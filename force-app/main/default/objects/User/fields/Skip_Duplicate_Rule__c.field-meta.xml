@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skip_Duplicate_Rule__c</fullName>
+    <description>Field to configure duplicate rules by a custom setting. Duplicate rules themselves can only access fields on a record or the user, but duplicate rules cannot directly access custom setting configurations. Therefore this formula field is used to refer to the custom setting value.
+            Refer to Global_Automation_Settings__c (custom setting)</description>
+    <formula>$Setup.Global_Automation_Settings__c.Skip_Duplicate_Rule__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Skip Duplicate Rule</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

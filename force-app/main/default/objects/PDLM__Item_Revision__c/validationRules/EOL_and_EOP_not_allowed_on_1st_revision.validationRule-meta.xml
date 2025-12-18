@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EOL_and_EOP_not_allowed_on_1st_revision</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND( IR_Revision_Count__c = 1,
+OR(
+ISPICKVAL(PDLM__Lifecycle_Phase__c, &quot;EOP&quot;),
+ISPICKVAL(PDLM__Lifecycle_Phase__c, &quot;EOL&quot;)
+),
+ CreatedById  &lt;&gt; &quot;0051a0000015kHJAAY&quot;
+)</errorConditionFormula>
+    <errorMessage>Lifecycle phase cannot be EOP or EOL for the first Item revision.</errorMessage>
+</ValidationRule>

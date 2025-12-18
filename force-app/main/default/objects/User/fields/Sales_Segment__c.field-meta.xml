@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Segment__c</fullName>
+    <label>Sales Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sales_Segment_Parent__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CML</fullName>
+                <default>false</default>
+                <label>CML</label>
+            </value>
+            <value>
+                <fullName>MM</fullName>
+                <default>false</default>
+                <label>MM</label>
+            </value>
+            <value>
+                <fullName>ENT - COR</fullName>
+                <default>false</default>
+                <label>ENT - COR</label>
+            </value>
+            <value>
+                <fullName>ENT - SEL</fullName>
+                <default>false</default>
+                <label>ENT - SEL</label>
+            </value>
+            <value>
+                <fullName>ENT - STR</fullName>
+                <default>false</default>
+                <label>ENT - STR</label>
+            </value>
+            <value>
+                <fullName>Renewals</fullName>
+                <default>false</default>
+                <label>Renewals</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Sales Engineering</fullName>
+                <default>false</default>
+                <label>Sales Engineering</label>
+            </value>
+            <value>
+                <fullName>Data Validation</fullName>
+                <default>false</default>
+                <label>Data Validation</label>
+            </value>
+            <value>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+                <label>Inbound</label>
+            </value>
+            <value>
+                <fullName>COR</fullName>
+                <default>false</default>
+                <label>COR</label>
+            </value>
+            <value>
+                <fullName>SEL</fullName>
+                <default>false</default>
+                <label>SEL</label>
+            </value>
+            <value>
+                <fullName>STR</fullName>
+                <default>false</default>
+                <label>STR</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>COMM</controllingFieldValue>
+            <valueName>CML</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>COMM</controllingFieldValue>
+            <valueName>MM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENT+</controllingFieldValue>
+            <valueName>ENT - COR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENT+</controllingFieldValue>
+            <valueName>ENT - SEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENT+</controllingFieldValue>
+            <valueName>ENT - STR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENT+</controllingFieldValue>
+            <valueName>COR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENT+</controllingFieldValue>
+            <valueName>SEL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ENT+</controllingFieldValue>
+            <valueName>STR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewals</controllingFieldValue>
+            <valueName>Renewals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Partner</controllingFieldValue>
+            <valueName>Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales Engineering</controllingFieldValue>
+            <valueName>Sales Engineering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <valueName>Data Validation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <valueName>Inbound</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

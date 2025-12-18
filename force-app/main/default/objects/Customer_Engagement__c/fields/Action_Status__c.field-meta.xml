@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Status__c</fullName>
+    <label>Action Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Engagement_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>Attempting</fullName>
+                <default>false</default>
+                <label>Attempting</label>
+            </value>
+            <value>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+                <label>Scheduled</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <label>Unresponsive</label>
+            </value>
+            <value>
+                <fullName>Disqualified</fullName>
+                <default>false</default>
+                <label>Disqualified</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Optimization Session</controllingFieldValue>
+            <controllingFieldValue>Internal Planning Meeting</controllingFieldValue>
+            <controllingFieldValue>Escalation</controllingFieldValue>
+            <controllingFieldValue>Onboarding Wrap Up</controllingFieldValue>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <controllingFieldValue>Pre-Sale</controllingFieldValue>
+            <controllingFieldValue>Health Check</controllingFieldValue>
+            <controllingFieldValue>Strategic On-Site</controllingFieldValue>
+            <controllingFieldValue>Implementation Workshop</controllingFieldValue>
+            <controllingFieldValue>Installation Set-Up</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Kick-off</controllingFieldValue>
+            <controllingFieldValue>Check-in</controllingFieldValue>
+            <controllingFieldValue>Close Out</controllingFieldValue>
+            <controllingFieldValue>Success Planning</controllingFieldValue>
+            <valueName>Attempting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Optimization Session</controllingFieldValue>
+            <controllingFieldValue>Internal Planning Meeting</controllingFieldValue>
+            <controllingFieldValue>Escalation</controllingFieldValue>
+            <controllingFieldValue>Onboarding Wrap Up</controllingFieldValue>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <controllingFieldValue>Pre-Sale</controllingFieldValue>
+            <controllingFieldValue>Health Check</controllingFieldValue>
+            <controllingFieldValue>Strategic On-Site</controllingFieldValue>
+            <controllingFieldValue>Implementation Workshop</controllingFieldValue>
+            <controllingFieldValue>Installation Set-Up</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Kick-off</controllingFieldValue>
+            <controllingFieldValue>Check-in</controllingFieldValue>
+            <controllingFieldValue>Close Out</controllingFieldValue>
+            <controllingFieldValue>Success Planning</controllingFieldValue>
+            <valueName>Scheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Optimization Session</controllingFieldValue>
+            <controllingFieldValue>Internal Planning Meeting</controllingFieldValue>
+            <controllingFieldValue>Escalation</controllingFieldValue>
+            <controllingFieldValue>Onboarding Wrap Up</controllingFieldValue>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <controllingFieldValue>Pre-Sale</controllingFieldValue>
+            <controllingFieldValue>Health Check</controllingFieldValue>
+            <controllingFieldValue>Strategic On-Site</controllingFieldValue>
+            <controllingFieldValue>Implementation Workshop</controllingFieldValue>
+            <controllingFieldValue>Installation Set-Up</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Kick-off</controllingFieldValue>
+            <controllingFieldValue>Check-in</controllingFieldValue>
+            <controllingFieldValue>Close Out</controllingFieldValue>
+            <controllingFieldValue>Success Planning</controllingFieldValue>
+            <valueName>Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Optimization Session</controllingFieldValue>
+            <controllingFieldValue>Internal Planning Meeting</controllingFieldValue>
+            <controllingFieldValue>Escalation</controllingFieldValue>
+            <controllingFieldValue>Onboarding Wrap Up</controllingFieldValue>
+            <controllingFieldValue>Pre-Sale</controllingFieldValue>
+            <controllingFieldValue>Health Check</controllingFieldValue>
+            <controllingFieldValue>Strategic On-Site</controllingFieldValue>
+            <controllingFieldValue>Implementation Workshop</controllingFieldValue>
+            <controllingFieldValue>Installation Set-Up</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Kick-off</controllingFieldValue>
+            <controllingFieldValue>Check-in</controllingFieldValue>
+            <controllingFieldValue>Close Out</controllingFieldValue>
+            <controllingFieldValue>Success Planning</controllingFieldValue>
+            <valueName>Unresponsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <controllingFieldValue>Check-in</controllingFieldValue>
+            <valueName>Assigned</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Disqualified</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

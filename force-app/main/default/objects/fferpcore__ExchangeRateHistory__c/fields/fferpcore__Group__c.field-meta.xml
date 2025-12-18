@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Group__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The group that the exchange rate entry relates to.</description>
+    <label>Group</label>
+    <referenceTo>fferpcore__ExchangeRateGroup__c</referenceTo>
+    <relationshipLabel>Exchange Rate History</relationshipLabel>
+    <relationshipName>ExchangeRateHistory</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

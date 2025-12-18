@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Sync</fullName>
+    <active>false</active>
+    <description>Validation rule for Product Syncing</description>
+    <errorConditionFormula>AND(
+ ISBLANK(Product2.netsuite_conn__NetSuite_Id__c),
+ NOT(ISPICKVAL( Product2.Product_Type__c, &apos;License Subscription&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Product2Id</errorDisplayField>
+    <errorMessage>Product is not synced with Netsuite. Please sync product to NetSuite.</errorMessage>
+</ValidationRule>

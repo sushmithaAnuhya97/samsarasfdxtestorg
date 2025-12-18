@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_360_Customer_Type__c</fullName>
+    <label>Billing 360 Customer Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full 360</fullName>
+                <default>false</default>
+                <label>Full 360</label>
+            </value>
+            <value>
+                <fullName>Partial 360</fullName>
+                <default>false</default>
+                <label>Partial 360</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

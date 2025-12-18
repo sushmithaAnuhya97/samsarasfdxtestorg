@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Program__c</fullName>
+    <description>GTMS-26117: Created as part of Partners H1 project</description>
+    <inlineHelpText>Please select the appropriate program from the available list. If you do not see the program you want it is because the Partner is not yet actively enrolled.</inlineHelpText>
+    <label>Partner Program</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Partner_Program__c.Program_Status__c</field>
+            <operation>contains</operation>
+            <value>Pilot, Active</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Partner_Program__c</referenceTo>
+    <relationshipLabel>Partner Program Enrollments</relationshipLabel>
+    <relationshipName>Partner_Program_Enrollments</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

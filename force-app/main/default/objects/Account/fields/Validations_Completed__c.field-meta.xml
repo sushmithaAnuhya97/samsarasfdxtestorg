@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validations_Completed__c</fullName>
+    <description>This field is used to track the account fields that have been validated</description>
+    <label>Validations Completed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Organization Size</fullName>
+                <default>false</default>
+                <label>Organization Size</label>
+            </value>
+            <value>
+                <fullName>Industry</fullName>
+                <default>false</default>
+                <label>Industry</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Duplicate Check</fullName>
+                <default>false</default>
+                <label>Duplicate Check</label>
+            </value>
+            <value>
+                <fullName>Parent/Subsidiary Check</fullName>
+                <default>false</default>
+                <label>Parent/Subsidiary Check</label>
+            </value>
+            <value>
+                <fullName>Billing State</fullName>
+                <default>false</default>
+                <label>Billing State</label>
+            </value>
+            <value>
+                <fullName>Number of Vehicles</fullName>
+                <default>false</default>
+                <label>Number of Vehicles</label>
+            </value>
+            <value>
+                <fullName>Number of Powered Assets</fullName>
+                <default>false</default>
+                <label>Number of Powered Assets</label>
+            </value>
+            <value>
+                <fullName>Number of Unpowered Assets</fullName>
+                <default>false</default>
+                <label>Number of Unpowered Assets</label>
+            </value>
+            <value>
+                <fullName>Current Telematics Provider</fullName>
+                <default>false</default>
+                <label>Current Telematics Provider</label>
+            </value>
+            <value>
+                <fullName>Current Camera Provider</fullName>
+                <default>false</default>
+                <label>Current Camera Provider</label>
+            </value>
+            <value>
+                <fullName>Current Equipment Telematics Provider</fullName>
+                <default>false</default>
+                <label>Current Equipment Telematics Provider</label>
+            </value>
+            <value>
+                <fullName>DUNS Verification</fullName>
+                <default>false</default>
+                <label>DUNS Verification</label>
+            </value>
+            <value>
+                <fullName>Made 20 calls</fullName>
+                <default>false</default>
+                <label>Made 20 calls</label>
+            </value>
+            <value>
+                <fullName>Number of Sites</fullName>
+                <default>false</default>
+                <label>Number of Sites</label>
+            </value>
+            <value>
+                <fullName>EMEA Current Telematics Provider</fullName>
+                <default>false</default>
+                <label>EMEA Current Telematics Provider</label>
+            </value>
+            <value>
+                <fullName>Camera Contract End date</fullName>
+                <default>false</default>
+                <label>Camera Contract End date</label>
+            </value>
+            <value>
+                <fullName>Telematics Contract End date</fullName>
+                <default>false</default>
+                <label>Telematics Contract End date</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>New Contact Added</fullName>
+                <default>false</default>
+                <label>New Contact Added</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

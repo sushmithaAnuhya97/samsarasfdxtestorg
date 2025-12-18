@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Change_Custom_Billing_Schedule</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Custom_Schedule__c ),
+NOT(OR($Profile.Name =&apos;System Administrator&apos;,
+CONTAINS( $Profile.Name , &apos;Samsara - Finance&apos;),
+$Permission.Validation_Rule_Exemption))
+)</errorConditionFormula>
+    <errorMessage>You cannot change the Custom Billing Schedule</errorMessage>
+</ValidationRule>

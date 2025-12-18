@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Roll_Up_Delimeter__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specify the delimiter (e.g., ,, ;, or |) to use when performing a string CONCAT rollup operation in this job. The delimiter separates the concatenated values from the child records in the resulting string. Ensure the delimiter is appropriate for the data and use case to avoid parsing issues. If left blank, the job may use a default delimiter as specified in the documentation.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specify the delimiter (e.g., ,, ;, or |) to use when performing a string CONCAT rollup operation in this job. The delimiter separates the concatenated values from the child records in the resulting string. Ensure the delimiter is appropriate for the data and use case to avoid parsing issues. If left blank, the job may use a default delimiter as specified in the documentation.</inlineHelpText>
+    <label>Roll-Up Delimeter</label>
+    <length>10</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inbound_Fleet_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR(CONTAINS(Inbound_Form_Fleet__c, &quot;-&quot;),CONTAINS(Inbound_Form_Fleet__c, &quot;+&quot;)),IF(Or(
+Inbound_Form_Fleet__c =&quot;21+&quot;,
+Inbound_Form_Fleet__c =&quot;21 - 50&quot;,
+Inbound_Form_Fleet__c =&quot;25 - 49&quot;,
+Inbound_Form_Fleet__c =&quot;50+&quot;
+                         ),1,IF(OR(
+Inbound_Form_Fleet__c =&quot;3 - 50&quot;,
+Inbound_Form_Fleet__c =&quot;10 - 24&quot;,
+Inbound_Form_Fleet__c =&quot;N/A&quot;
+),0.5,IF(Inbound_Form_Fleet__c =&quot;1 - 2&quot;,-1,0))),IF(VALUE(Inbound_Form_Fleet__c)&gt;20,1,IF(Inbound_Form_Fleet__c =&quot;1 - 2&quot;,-1,0)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Inbound Fleet Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

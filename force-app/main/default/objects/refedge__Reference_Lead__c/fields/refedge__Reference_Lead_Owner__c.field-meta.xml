@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Reference_Lead_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is typically the Opportunity Owner but could be replaced with another name if the Opportunity Owner is no longer the correct contact</description>
+    <inlineHelpText>This is typically the Opportunity Owner but could be replaced with another name if the Opportunity Owner is no longer the correct contact</inlineHelpText>
+    <label>Reference Lead Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Reference_Leads</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

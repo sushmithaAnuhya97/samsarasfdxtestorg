@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_post_last_dashboard_login__c</fullName>
+    <description>Days since last login to Samsara Dashboard</description>
+    <externalId>false</externalId>
+    <formula>if(
+
+ISBLANK(Dashboard_Last_Activity_Datetime__c), -1, Today() - datevalue(Dashboard_Last_Activity_Datetime__c)
+
+)</formula>
+    <label>Days post last dashboard login</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

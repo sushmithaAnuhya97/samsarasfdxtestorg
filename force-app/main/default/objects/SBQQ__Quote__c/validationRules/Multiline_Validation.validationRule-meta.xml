@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Multiline_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c)&amp;&amp; NOT(ISNEW())&amp;&amp; NOT($Permission.Validation_Rule_Exemption)&amp;&amp;(Override_Freight_Shipping__c = False &amp;&amp; Override__c = False ) &amp;&amp;  (ISCHANGED( Shipping_Carrier__c ) || ISCHANGED(  Shipping_Method__c  ) ) &amp;&amp;  (ISPICKVAL(Shipping_Country__c,  &apos;United States&apos;) || ISPICKVAL( Shipping_Country__c , &apos;Canada&apos;))</errorConditionFormula>
+    <errorMessage>Override Multiline or override freight shipping should be true</errorMessage>
+</ValidationRule>

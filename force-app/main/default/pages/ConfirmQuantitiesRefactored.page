@@ -1,0 +1,130 @@
+<apex:page lightningStylesheets="true" standardController="Opportunity" extensions="QuantityControllerExtensionRefactored" docType="html-5.0" >
+<font color="#FF0000"><apex:pageMessages id="msgs"/></font>
+<apex:form >
+ 
+<apex:pageBlock title="Opportunity Product - Summary">
+        <apex:pageBlockTable value="{!uniqueLineItems}" var="uniqueOpportunityLineItem" columnsWidth="25%,20%,15%,15%,15%">
+            <apex:column headerValue="Product Name" value="{!uniqueOpportunityLineItem.PricebookEntry.Name}"/>
+            <apex:column headerValue="Product Code" value="{!uniqueOpportunityLineItem.Product_Code_Copy__c}"/>
+            <apex:column headerValue="Billed Quantity" value="{!shipQuantities[uniqueOpportunityLineItem.Product_Code_Copy__c]}"/>
+            <apex:column headerValue="Quantity to Ship" value="{!NonFreeTrialCount[uniqueOpportunityLineItem.Product_Code_Copy__c]}">
+            </apex:column>
+            <apex:column headerValue="Trial Units Purchased" value="{!FreeTrialCount[uniqueOpportunityLineItem.Product_Code_Copy__c]}">
+            </apex:column>
+        </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="Open Trials Shipped">
+    <apex:outputText value="Please choose how many units you will be purchasing from each of the trials that you have open. Make sure that the purchased units do not exceed:"/> <b> a) The available units per trial  b) The products to be shipped.</b>
+        <br/>
+        <br/>
+        <apex:pageBlockTable value="{!trialOpportunityLineItems}" var="openTrialLineItem" columnsWidth="20%,10%,25%,35%,10%,2%,3%" rendered="{!trialOpportunityLineItems.size > 0}">
+            <apex:column value="{!openTrialLineItem.PricebookEntry.Name}" headerValue="Product Name"/>
+            <apex:column value="{!openTrialLineItem.Product_Code_Copy__c}" headerValue="Product Code"/>
+            <apex:column headerValue="Trial Name">
+                <apex:outputLink value="/{!openTrialLineItem.Opportunity.Id}"><apex:outputText value="{!openTrialLineItem.Opportunity.Name}" /></apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Shipping Address">
+                <apex:outputText value="{!openTrialLineItem.Ship_To_Address_Concatenated__c}" rendered="{!IF((openTrialLineItem.Ship_To_Address_Concatenated__c!=null), True, False)}"/>
+                <apex:outputText value="There is no shipping address available." rendered="{!IF((openTrialLineItem.Ship_To_Address_Concatenated__c!=null), False, True)}"/>
+            </apex:column>
+            <apex:column headerValue="Available / Purchased Trial Units">
+                        {!openTrialLineItem.Quantity - openTrialLineItem.Purchased_From_Trial__c} / {!openTrialLineItem.Purchased_From_Trial__c}
+            </apex:column>
+            <apex:column headerValue="Trial Units to Purchase">
+                <apex:input value="{!inputTrialQuantityMap[openTrialLineItem.Id]}" disabled="{!OpportunityStageFlag}"/>
+            </apex:column>
+            <apex:column value="{!openTrialLineItem.Related_Order_Number__c}" headerValue="Order Number"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable value="{!trialOpportunityLineItems}" var="openTrialLineItem" columnsWidth="100%" rendered="{!trialOpportunityLineItems.size == 0}">
+               <apex:column headerValue="There are no open Trial line items to display.">
+                </apex:column>
+        </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="Opportunity Product - Details">
+    <b> Quantites to be shipped</b>
+    <br/>
+    <br/>
+        <apex:pageBlockTable value="{!allShippedOpportunityLineItems}" var="opportunityLineItem" columnsWidth="25%,10%,7%,8%,30%,15%" rendered="{!allShippedOpportunityLineItems.size != 0}">
+            <apex:column headerValue="Product Name" value="{!opportunityLineItem.PricebookEntry.Name}"/>
+            <apex:column headerValue="Product Code" value="{!opportunityLineItem.Product_Code_Copy__c}"/>
+            <apex:column headerValue="Billed Quantity" value="{!opportunityLineItem.Quantity}"/>
+            <apex:column headerValue="Ship From Location" value="{!opportunityLineItem.Ship_From_Location__c}"/>
+            <apex:column headerValue="Shipping Address">
+            <apex:outputText value="{!opportunityLineItem.Ship_To_Address_Concatenated__c}" rendered="{!IF((opportunityLineItem.Ship_To_Address_Concatenated__c!=null), True, False)}"/>
+            <apex:outputText value="There is no shipping address available." rendered="{!IF((opportunityLineItem.Ship_To_Address_Concatenated__c!=null), False, True)}"/>
+            </apex:column>
+            <apex:column headerValue="Ship From">
+              <apex:selectList value="{!shipRevenueOpportunityLocationMap[opportunityLineItem.Id]}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!LocationOption}"/>
+              </apex:selectList>
+            </apex:column>         
+        </apex:pageBlockTable>
+
+        <apex:pageBlockTable value="{!allShippedOpportunityLineItems}" var="opportunityLineItem" rendered="{!allShippedOpportunityLineItems.size == 0}">
+            <apex:column headerValue="There are no revenue line items that needs to be shipped.">
+            </apex:column>  
+        </apex:pageBlockTable>
+
+        <br/>
+       
+        <b> Quantites purchased from Trial</b>
+        <br/>
+        <br/>
+        <apex:pageBlockTable value="{!allFreeTrialOpportunityLineItems}" var="opportunityFreeTrialLineItem" columnsWidth="25%,10%,7%,8%,30%,15%" rendered="{!allFreeTrialOpportunityLineItems.size != 0}">
+            <apex:column headerValue="Product Name" value="{!opportunityFreeTrialLineItem.PricebookEntry.Name}"/>
+            <apex:column headerValue="Product Code" value="{!opportunityFreeTrialLineItem.Product_Code_Copy__c}"/>
+            <apex:column headerValue="Billed Quantity" value="{!opportunityFreeTrialLineItem.Quantity}"/>
+            <apex:column headerValue="Ship From Location" value="{!opportunityFreeTrialLineItem.Ship_From_Location__c}"/>
+            <apex:column headerValue="Shipping Address">
+            <apex:outputText value="{!opportunityFreeTrialLineItem.Ship_To_Address_Concatenated__c}" rendered="{!IF((opportunityFreeTrialLineItem.Ship_To_Address_Concatenated__c!=null), True, False)}"/>
+            <apex:outputText value="There is no shipping address available." rendered="{!IF((opportunityFreeTrialLineItem.Ship_To_Address_Concatenated__c!=null), False, True)}"/>
+            </apex:column>
+             <apex:column headerValue="Trial Order Number" value="{!opportunityFreeTrialLineItem.Trial_Order_Number__c}"/> 
+        </apex:pageBlockTable>
+
+        <apex:pageBlockTable value="{!allFreeTrialOpportunityLineItems}" var="opportunityFreeTrialLineItem" rendered="{!allFreeTrialOpportunityLineItems.size == 0}">
+            <apex:column headerValue="There are no free Trial revenue line items.">
+            </apex:column>  
+        </apex:pageBlockTable>
+
+</apex:pageBlock>
+
+<apex:pageBlock title="Opportunity Detail's">
+    <b> Open Trial's</b>
+    <br/>
+    <br/>
+    <apex:pageBlockTable value="{!trialOpportunitiesList}" var="trialOpportunity" columnsWidth="50%,50%" rendered="{!trialOpportunitiesList.size != 0}">
+        <apex:column headerValue="Trial Name">
+            <apex:outputLink value="/{!trialOpportunity.Id}"><apex:outputText value="{!trialOpportunity.Name}" /></apex:outputLink>
+        </apex:column>  
+        <apex:column value="{!trialOpportunity.CloseDate}" headerValue="Shipping Date" />    
+    </apex:pageBlockTable>
+
+    <apex:pageBlockTable value="{!trialOpportunitiesList}" var="trialOpportunity" columnsWidth="50%,50%" rendered="{!trialOpportunitiesList.size == 0}">
+        <apex:column headerValue="There are no open Trial opportunities.">
+        </apex:column>  
+    </apex:pageBlockTable>
+    <br/>
+    <b>Revenue Opportunity</b>
+    <br/>
+    <br/>
+    <apex:pageBlockTable value="{!opportunity}" var="currentOpportunity" columnsWidth="50%,50%">
+        <apex:column headerValue="Opportunity Name">
+            <apex:outputLink value="/{!currentOpportunity.Id}"><apex:outputText value="{!currentOpportunity.Name}" /></apex:outputLink>
+        </apex:column>  
+        <apex:column value="{!currentOpportunity.CloseDate}" headerValue="Shipping Date" />    
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock >
+    <div align="center" draggable="false">
+        <apex:commandButton value="Back to Opportunity" action="{!returnToOpportunity}" />
+        <apex:commandButton value="Refresh" action="{!refresh}" />
+        <apex:commandButton value="Submit" action="{!submit}"/>
+    </div>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

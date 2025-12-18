@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Blocker__c</fullName>
+    <description>This field is used to track technical blockers</description>
+    <inlineHelpText>In case opportunity includes products from multiple divisions, select all that apply.</inlineHelpText>
+    <label>Tech Blocker</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CE - Hardware (3rd Party)</fullName>
+                <default>false</default>
+                <label>CE - Hardware (3rd Party)</label>
+            </value>
+            <value>
+                <fullName>CE - Hardware (Samsara)</fullName>
+                <default>false</default>
+                <label>CE - Hardware (Samsara)</label>
+            </value>
+            <value>
+                <fullName>CE - Legal/NDA</fullName>
+                <default>false</default>
+                <label>CE - Legal/NDA</label>
+            </value>
+            <value>
+                <fullName>CE - Software Feature</fullName>
+                <default>false</default>
+                <label>CE - Software Feature</label>
+            </value>
+            <value>
+                <fullName>CE - Waiting on Customer</fullName>
+                <default>false</default>
+                <label>CE - Waiting on Customer</label>
+            </value>
+            <value>
+                <fullName>CS - Hardware (3rd Party)</fullName>
+                <default>false</default>
+                <label>CS - Hardware (3rd Party)</label>
+            </value>
+            <value>
+                <fullName>CS - Hardware (Samsara)</fullName>
+                <default>false</default>
+                <label>CS - Hardware (Samsara)</label>
+            </value>
+            <value>
+                <fullName>CS - Legal/NDA</fullName>
+                <default>false</default>
+                <label>CS - Legal/NDA</label>
+            </value>
+            <value>
+                <fullName>CS - Software Feature</fullName>
+                <default>false</default>
+                <label>CS - Software Feature</label>
+            </value>
+            <value>
+                <fullName>CS - Waiting on Customer</fullName>
+                <default>false</default>
+                <label>CS - Waiting on Customer</label>
+            </value>
+            <value>
+                <fullName>Hardware (3rd Party)</fullName>
+                <default>false</default>
+                <label>Fleet - Hardware (3rd Party)</label>
+            </value>
+            <value>
+                <fullName>Hardware (Samsara)</fullName>
+                <default>false</default>
+                <label>Fleet - Hardware (Samsara)</label>
+            </value>
+            <value>
+                <fullName>Legal//NDA</fullName>
+                <default>false</default>
+                <label>Fleet - Legal//NDA</label>
+            </value>
+            <value>
+                <fullName>Software Feature</fullName>
+                <default>false</default>
+                <label>Fleet - Software Feature</label>
+            </value>
+            <value>
+                <fullName>Waiting on Customer</fullName>
+                <default>false</default>
+                <label>Fleet - Waiting on Customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

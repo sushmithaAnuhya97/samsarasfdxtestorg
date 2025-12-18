@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Disable_cache__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>TC UI cache the all assigned assignments/project along with the milestones while it loads. This may lead to salesforce&apos;s viewstate limit, if user have many assignments/projects. Setting this config value to true will minimize this cache.</description>
+    <inlineHelpText>TC UI cache the all assigned assignments/project along with the milestones while it loads. This may lead to salesforce&apos;s viewstate limit, if user have many assignments/projects. Setting this config value to true will minimize this cache.</inlineHelpText>
+    <label>Disable cache</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

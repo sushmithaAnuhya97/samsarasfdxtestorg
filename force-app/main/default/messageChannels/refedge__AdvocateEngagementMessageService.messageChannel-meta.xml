@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Send responses for selected check boxes.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Activity checkbox label</description>
+        <fieldName>activityName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Selected referenceability type</description>
+        <fieldName>referenceabilityType</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Check box is checked or unchecked.</description>
+        <fieldName>response</fieldName>
+    </lightningMessageFields>
+    <masterLabel>AdvocateEngagementMessageService</masterLabel>
+</LightningMessageChannel>

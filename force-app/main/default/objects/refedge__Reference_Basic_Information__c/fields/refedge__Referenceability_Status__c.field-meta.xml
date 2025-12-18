@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Referenceability_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>The Reference Status for an Account or Contact, in combination with Reference Program Membership, determines if a record may be included in Reference Search results. Only records with Active or Caution status may be included.</inlineHelpText>
+    <label>Reference Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Caution</fullName>
+                <default>false</default>
+                <label>Caution</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

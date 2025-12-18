@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Compliance_Status_Only_One_Lookup</fullName>
+    <active>true</active>
+    <description>Compliance Status can only be linked to one of Manufacturer Part or Item Revision. Never both.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(PDLM__Manufacturer_Part__c)),NOT(ISBLANK(PDLM__Item_Revision__c)))</errorConditionFormula>
+    <errorMessage>Compliance Status can only be linked to one of Manufacturer Part or Item Revision. Never both.</errorMessage>
+</ValidationRule>

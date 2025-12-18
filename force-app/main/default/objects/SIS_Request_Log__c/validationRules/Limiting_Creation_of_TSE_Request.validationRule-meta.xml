@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limiting_Creation_of_TSE_Request</fullName>
+    <active>true</active>
+    <description>Added &apos;IC&apos; as per the request from GTMS-3623</description>
+    <errorConditionFormula>AND(
+ISNEW(),
+AND(
+NOT(CONTAINS($UserRole.Name, &apos;SE&apos;)),
+NOT(CONTAINS($UserRole.Name, &apos;Management&apos;)),
+NOT(CONTAINS($UserRole.Name, &apos;CSM&apos;)),
+NOT(CONTAINS($UserRole.Name, &apos;CS&apos;)),
+NOT(CONTAINS($UserRole.Name, &apos;SIC&apos;)),
+NOT(CONTAINS($UserRole.Name, &apos;IC&apos;)),
+NOT(CONTAINS($UserRole.Name, &apos;TSE&apos;)),
+NOT(CONTAINS($UserRole.Name, &apos;Operations&apos;))
+)
+)</errorConditionFormula>
+    <errorMessage>Records can only be created by SE, TSE , CSM, Operations or management</errorMessage>
+</ValidationRule>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enterprise_Geography__c</fullName>
+    <description>Enterprise team geographies</description>
+    <externalId>false</externalId>
+    <formula>CASE(BillingState,&apos;Alabama&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Alaska&apos;,&apos;West&apos;,
+&apos;Arizona&apos;,&apos;West&apos;,
+&apos;Arkansas&apos;,&apos;Central&apos;,
+&apos;California&apos;,&apos;West&apos;,
+&apos;Colorado&apos;,&apos;West&apos;,
+&apos;Connecticut&apos;,&apos;Northeast&apos;,
+&apos;Delaware&apos;,&apos;Northeast&apos;,
+&apos;District of Columbia&apos;,&apos;Northeast&apos;,
+&apos;Florida&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Georgia&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Hawaii&apos;,&apos;West&apos;,
+&apos;Idaho&apos;,&apos;West&apos;,
+&apos;Illinois&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Indiana&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Iowa&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Kansas&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Kentucky&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Louisiana&apos;,&apos;Central&apos;,
+&apos;Maine&apos;,&apos;Northeast&apos;,
+&apos;Maryland&apos;,&apos;Northeast&apos;,
+&apos;Massachusetts&apos;,&apos;Northeast&apos;,
+&apos;Michigan&apos;,&apos;Northeast&apos;,
+&apos;Minnesota&apos;,&apos;Northeast&apos;,
+&apos;Mississippi&apos;,&apos;Central&apos;,
+&apos;Missouri&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Montana&apos;,&apos;West&apos;,
+&apos;Nebraska&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Nevada&apos;,&apos;West&apos;,
+&apos;New Hampshire&apos;,&apos;Northeast&apos;,
+&apos;New Jersey&apos;,&apos;Northeast&apos;,
+&apos;New Mexico&apos;,&apos;West&apos;,
+&apos;New York&apos;,&apos;Northeast&apos;,
+&apos;North Carolina&apos;,&apos;South &amp; Midwest&apos;,
+&apos;North Dakota&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Ohio&apos;,&apos;Northeast&apos;,
+&apos;Oklahoma&apos;,&apos;Central&apos;,
+&apos;Oregon&apos;,&apos;West&apos;,
+&apos;Pennsylvania&apos;,&apos;Northeast&apos;,
+&apos;Rhode Island&apos;,&apos;Northeast&apos;,
+&apos;South Carolina&apos;,&apos;South &amp; Midwest&apos;,
+&apos;South Dakota&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Tennessee&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Texas&apos;,&apos;Central&apos;,
+&apos;Utah&apos;,&apos;West&apos;,
+&apos;Vermont&apos;,&apos;Northeast&apos;,
+&apos;Virginia&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Washington&apos;,&apos;West&apos;,
+&apos;West Virginia&apos;,&apos;South &amp; Midwest&apos;,
+&apos;Wisconsin&apos;,&apos;Northeast&apos;,
+&apos;Wyoming&apos;,&apos;West&apos;,
+&apos;Other&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Enterprise Geography</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

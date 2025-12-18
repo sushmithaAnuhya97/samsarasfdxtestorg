@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SF_IT_Team_Category__c</fullName>
+    <label>SF IT Team Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin Support Team</fullName>
+                <default>false</default>
+                <label>Admin Support Team</label>
+            </value>
+            <value>
+                <fullName>L2 Team</fullName>
+                <default>false</default>
+                <label>L2 Team</label>
+            </value>
+            <value>
+                <fullName>Service Account</fullName>
+                <default>false</default>
+                <label>Service Account</label>
+            </value>
+            <value>
+                <fullName>SF DevOps Team</fullName>
+                <default>false</default>
+                <label>SF DevOps Team</label>
+            </value>
+            <value>
+                <fullName>Do Not Deactivate User</fullName>
+                <default>false</default>
+                <label>Do Not Deactivate User</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

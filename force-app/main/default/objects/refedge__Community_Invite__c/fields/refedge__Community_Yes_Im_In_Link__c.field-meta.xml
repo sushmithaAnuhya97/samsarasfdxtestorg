@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Community_Yes_Im_In_Link__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(  $Setup.refedge__POR_App_Configuration__c.refedge__Refedge_Community_URL__c  +&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;RefedgeCommunityParticipate?Id=&apos;+ Id+&apos;&amp;response=yes&apos;,&quot;Yes, I&apos;m in!&quot;, &quot;_blank&quot;)</formula>
+    <label>Community Yes I&apos;m In Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

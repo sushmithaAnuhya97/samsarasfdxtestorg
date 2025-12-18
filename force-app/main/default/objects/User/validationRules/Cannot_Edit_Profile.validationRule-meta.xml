@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Profile</fullName>
+    <active>true</active>
+    <description>Updated per ticket 16184 to allow the Partner team to change the Profiles only for Partner type users.</description>
+    <errorConditionFormula>AND(
+   ISCHANGED( ProfileId),
+   $Profile.Name != &apos;System Administrator&apos;,
+text($User.SF_IT_Team_Category__c) != &apos;L2 Team&apos;,
+NOT( $Permission.Validation_Rule_Exemption),				 
+NOT(CONTAINS(TEXT(UserType),&quot;Partner&quot;))
+)</errorConditionFormula>
+    <errorMessage>You cannot edit the Profile on a User, please submit a GTMS Admin ticket to make these changes within production.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>And_symbol_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>CONTAINS(Shipping_Address_Line_1__c, &quot;&amp;&quot;) || CONTAINS(Shipping_Address_Line_2__c, &quot;&amp;&quot;)</errorConditionFormula>
+    <errorMessage>Please replace the &apos; &amp; &apos; with &apos; and &apos; in the Shipping address</errorMessage>
+</ValidationRule>

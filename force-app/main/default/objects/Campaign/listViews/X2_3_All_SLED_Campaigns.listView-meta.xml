@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2_3_All_SLED_Campaigns</fullName>
+    <booleanFilter>1 AND (2 or 3)</booleanFilter>
+    <columns>CAMPAIGN.NAME</columns>
+    <columns>CAMPAIGN.START_DATE</columns>
+    <columns>CAMPAIGN.END_DATE</columns>
+    <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+    <columns>CAMPAIGN.STATUS</columns>
+    <columns>Targeted_Vertical__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Operations_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CAMPAIGN.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_FISCAL_YEAR</value>
+    </filters>
+    <filters>
+        <field>Targeted_Vertical__c</field>
+        <operation>includes</operation>
+        <value>Government - Airport,Government - Local</value>
+    </filters>
+    <filters>
+        <field>Targeted_Vertical__c</field>
+        <operation>includes</operation>
+        <value>Government - State,Tribe/Nation,Education - K-12,Education - Higher Ed</value>
+    </filters>
+    <label>2.3-All SLED Campaigns</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_before_submiting</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ TEXT(Status__c) = &apos;Ready to Approve&apos;, 
+ OR(
+  ISBLANK(Product_Name__c ),
+  ISBLANK(Description__c),
+  ISBLANK(Product_Code__c),
+  ISBLANK(BOM_Cost__c),
+  ISBLANK(Product_Rules__c),
+  AND(
+   ISBLANK(Standard_Price_CAD__c),
+   ISBLANK(Standard_Price_CHF__c),
+   ISBLANK(Standard_Price_EUR__c),
+   ISBLANK(Standard_Price_GBP__c),
+   ISBLANK(Standard_Price_MXN__c),
+   ISBLANK(Standard_Price_USD__c)
+  )
+ )
+)</errorConditionFormula>
+    <errorMessage>Please fill out before submitting for approval: Product Name; Product SKU; Description; Product Rules (N/A if not applicable); Pricing (0 if N/A); Weight, Dimensions, and BOM cost (0 if license); and Revenue Recognition Type</errorMessage>
+</ValidationRule>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_Outcome__c</fullName>
+    <description>GTMS-22785
+GTMS-29220: created new picklist option and deactivated &quot;Amendment Opportunity&quot; picklist option as per business requirement.</description>
+    <label>AE Outcome</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Opportunity</fullName>
+                <default>false</default>
+                <label>New Opportunity</label>
+            </value>
+            <value>
+                <fullName>Matched Opportunity</fullName>
+                <default>false</default>
+                <label>Matched Opportunity</label>
+            </value>
+            <value>
+                <fullName>Create New Amendment</fullName>
+                <default>false</default>
+                <label>Create New Amendment</label>
+            </value>
+            <value>
+                <fullName>Amendment Opportunity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Amendment Opportunity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

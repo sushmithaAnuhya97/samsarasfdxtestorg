@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>DHS Thresholds</label>
+    <protected>false</protected>
+    <values>
+        <field>Config_JSON__c</field>
+        <value xsi:type="xsd:string">{
+    &quot;PRODUCT_DOMINANCE_THRESHOLD&quot;: 0.85,
+    &quot;REVENUE_BAND_1_THRESHOLD&quot;: 50000,
+    &quot;REVENUE_BAND_3_THRESHOLD&quot;: 250000,
+    &quot;LICENSE_TERM_THRESHOLD&quot;: 36,
+    &quot;WAVE_QUERY_DISCOUNT_THRESHOLD&quot;: 10,
+    &quot;WAVE_QUERY_DISCOUNT_ADJUSTMENT&quot;: 5,
+    &quot;CACHE_TTL_24_HOURS&quot;: 86400,
+    &quot;LICENSE_TERM_UNKNOWN&quot;: &quot;Unknown&quot;,
+    &quot;LICENSE_TERM_LEQ_3_YEARS&quot;: &quot;&lt;=3 years&quot;,
+    &quot;LICENSE_TERM_GT_3_YEARS&quot;: &quot;&gt;3 years&quot;
+  }</value>
+    </values>
+    <values>
+        <field>Config_Type__c</field>
+        <value xsi:type="xsd:string">DHS_Thresholds</value>
+    </values>
+</CustomMetadata>

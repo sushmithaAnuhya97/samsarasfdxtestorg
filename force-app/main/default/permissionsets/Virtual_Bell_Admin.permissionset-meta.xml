@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allow the user to manipulate if a virtual bell should be sent for a specific transaction or not</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Send_Virtual_Bell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Virtual Bell Admin</label>
+</PermissionSet>

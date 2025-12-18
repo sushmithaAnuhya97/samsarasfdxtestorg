@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reps_Cannot_Change_Account_Owner</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OwnerId &lt;&gt; $User.ADR_Assignment__c,
+NOT($Permission.Account_Owner_Overwrite),
+OR(Send_to_My_ADR__c=false),
+ISCHANGED( OwnerId ),
+OR(
+AND(
+NOT(OR(
+($Profile.Name =&quot;Samsara Sales - New System&quot;),
+($Profile.Name =&quot;Samsara Inbound ADRs&quot;),
+($Profile.Name =&quot;Samsara ADRs&quot;),
+($Profile.Name =&quot;Samsara Industrial ADRs&quot;),
+($Profile.Name =&quot;Samsara Machine Vision ADRs&quot;),
+($Profile.Name =&quot;Samsara Connected Worker ADRs&quot;),
+($Profile.Name =&quot;Samsara Field ADRs&quot;),
+($Profile.Name =&quot;Samsara Account Book ADRs&quot;)
+)
+),
+NOT(
+AND(
+PRIORVALUE(OwnerId) = &apos;SFDC Pool&apos;,
+OR(
+$Profile.Name=&quot;Samsara Sales - New System Pilot&quot;
+),
+OR(
+Owner.Profile.Name=&quot;Samsara Sales Management - New System&quot;,
+Owner.Profile.Name = &quot;Industrial Sales Management&quot;
+)
+)
+),
+NOT(
+AND(
+PRIORVALUE(OwnerId) = &apos;SFDC Pool&apos;,
+$Profile.Name=&quot;Samsara Sales Management - New System&quot;,
+OR(
+Owner.Profile.Name=&quot;Samsara Sales Management - New System&quot;,
+Owner.Profile.Name=&quot;Samsara Inbound ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Industrial ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Machine Vision ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Connected Worker ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Field ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Account Book ADRs&quot;,
+Owner.Profile.Name=&quot;Order Operations Admin&quot;
+)
+)
+),
+NOT(
+AND(
+PRIORVALUE(OwnerId) = &apos;SFDC Pool&apos;,
+$Profile.Name=&quot;Industrial Sales Management&quot;,
+OR(
+Owner.Profile.Name=&quot;Samsara Industrial ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Inbound ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Industrial ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Machine Vision ADRs&quot;,
+Owner.Profile.Name=&quot;Samsara Connected Worker ADRs&quot;,
+Owner.Profile.Name=&quot;Order Operations Admin&quot;,
+Owner.Profile.Name=&quot;System Administrator API&quot;
+)
+)
+),
+NOT(
+OR(
+$Permission.Validation_Rule_Exemption,
+Overwrite_Validation_Rule__c,
+PRIORVALUE(Overwrite_Validation_Rule__c),
+($Profile.Name =&quot;Order Operations Admin&quot;),
+($Profile.Name =&quot;Samsara Marketing - General&quot;),
+($Profile.Name =&quot;Samsara Channel Account Managers&quot;),
+($Profile.Name =&quot;Samsara - Product Management&quot;),
+($Profile.Name =&quot;Automated Process&quot;)
+
+)
+)
+),
+AND(
+PRIORVALUE(OwnerId) = &apos;0054p000002s99P&apos;,
+NOT(OR(
+$Profile.Name=&quot;System Administrator&quot;,
+$Profile.Name=&quot;Automated Process&quot;,
+$Profile.Name=&quot;System Administrator API&quot;,
+$Profile.Name=&quot;Samsara Sales Management - New System&quot;,
+$Profile.Name=&quot;Sales Ops Profile&quot;
+))
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>CSM_Tier_old__c</errorDisplayField>
+    <errorMessage>You cannot change the owner of any account that is not owned by you. Contact sales ops team if you have any question.</errorMessage>
+</ValidationRule>

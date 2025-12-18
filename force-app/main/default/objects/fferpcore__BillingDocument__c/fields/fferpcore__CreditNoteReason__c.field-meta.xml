@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__CreditNoteReason__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Reason for the credit note. Can also be set on negative invoices.</description>
+    <inlineHelpText>Reason for the credit note. Can also be set on negative invoices.</inlineHelpText>
+    <label>Credit Note Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Damaged Goods</fullName>
+                <default>false</default>
+                <label>Damaged Goods</label>
+            </value>
+            <value>
+                <fullName>Goods Returned</fullName>
+                <default>false</default>
+                <label>Goods Returned</label>
+            </value>
+            <value>
+                <fullName>Incorrect Shipment</fullName>
+                <default>false</default>
+                <label>Incorrect Shipment</label>
+            </value>
+            <value>
+                <fullName>Overcharge</fullName>
+                <default>false</default>
+                <label>Overcharge</label>
+            </value>
+            <value>
+                <fullName>Retrospective Discount</fullName>
+                <default>false</default>
+                <label>Retrospective Discount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

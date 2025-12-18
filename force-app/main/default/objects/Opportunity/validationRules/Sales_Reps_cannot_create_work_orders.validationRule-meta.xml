@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Reps_cannot_create_work_orders</fullName>
+    <active>true</active>
+    <description>This validation rule is to stop Sales Reps from creating work order opportunities</description>
+    <errorConditionFormula>And(
+    $User.Id != &apos;0051a000002JKtR&apos;,   
+    ISPICKVAL(Type, &apos;Work Order&apos;), 
+    NOT($Permission.Validation_Rule_Exemption),
+    NOT(CONTAINS($Profile.Name, &quot;Finance&quot;)), 
+    NOT($Profile.Name = &quot;Order Operations Admin&quot;)
+)</errorConditionFormula>
+    <errorMessage>If you need to create a &apos;Work Order&apos; Opportunity contact salesops@samsara.com</errorMessage>
+</ValidationRule>

@@ -1,0 +1,54 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-01-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page controller="QuoteCustomCongaComposer" action="{!validateQuote}" lightningStylesheets="true">
+    <style>
+        body .message, .slds-vf-scope .message {
+        font-size: 1rem !important;
+        margin-bottom: 0 !important;
+        }
+        
+    </style>
+    <head>
+      <apex:slds />
+    </head>
+ <apex:form >
+ <div style="width:70%;margin: auto;">
+  <div id="pageSpinner" class="slds-spinner_container" >
+      <div role="status" class="slds-spinner slds-spinner--large slds-spinner--brand">
+          <div class="slds-spinner__dot-a"></div>
+          <div class= "slds-spinner__dot-b"></div>
+      </div>
+  </div>
+   <apex:pageblock >    
+    <apex:pageMessages ></apex:pageMessages>  
+    <apex:includeLightning />
+    <div id="prorateCallErrorContainer"/>
+    <a href="{!returnURL}" class="slds-m-top_x-small">Go Back to Quote</a>
+     <apex:commandLink action="{!navigateQuoteDocumnet}" rendered="{! AND(!quoteDocument,validation)}" style="float:right">Click here to continue to Generate Document</apex:commandLink>   
+    </apex:pageblock>
+    </div>
+ </apex:form>
+ <script>
+  if ({!proratedAPIFailed}) {
+      $Lightning.use("c:RecalculateProrateCall", function() {
+      $Lightning.createComponent("c:billingProrationAPIBanner",
+      {
+          errorInQuoteGeneration : true,
+          recordId: '{!quoteId}',
+          showErrorHeading: '{!(validation && proratedAPIFailed)}'
+        },
+      "prorateCallErrorContainer", // the Id of div tag where your component will be rendered
+      function(cmp) {
+          document.getElementById('pageSpinner').classList.add('slds-hide');
+        });
+      });
+    } else {
+    document.getElementById('pageSpinner').classList.add('slds-hide');
+  }
+</script>
+</apex:page>

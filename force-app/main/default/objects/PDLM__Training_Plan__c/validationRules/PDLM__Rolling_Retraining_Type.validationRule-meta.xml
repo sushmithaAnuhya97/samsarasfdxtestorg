@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Rolling_Retraining_Type</fullName>
+    <active>true</active>
+    <description>When Retraining is on, and Retraining Type is &apos;Rolling&apos;, Retraining Date should be empty.</description>
+    <errorConditionFormula>AND(
+        PDLM__Retraining__c = true,
+        TEXT(PDLM__Retraining_Type__c) = &apos;Rolling&apos;,
+        TEXT(PDLM__Retraining_Date__c) != null
+    )</errorConditionFormula>
+    <errorMessage>When Retraining is on, and Retraining Type is &apos;Rolling&apos;, Retraining Date should be empty.</errorMessage>
+</ValidationRule>

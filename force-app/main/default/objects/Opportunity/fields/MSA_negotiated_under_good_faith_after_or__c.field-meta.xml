@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MSA_negotiated_under_good_faith_after_or__c</fullName>
+    <inlineHelpText>MSA negotiated under good faith after order form signed</inlineHelpText>
+    <label>MSA negotiated under good faith</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>approved</fullName>
+                <default>false</default>
+                <label>approved</label>
+            </value>
+            <value>
+                <fullName>not approved</fullName>
+                <default>false</default>
+                <label>not approved</label>
+            </value>
+            <value>
+                <fullName>not requested</fullName>
+                <default>true</default>
+                <label>not requested</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

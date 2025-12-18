@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blended_Discretionary_Discount__c</fullName>
+    <formula>IF (List_Price__c &gt; 0, 
+
+IF( ISPICKVAL(Selected_Payment_Type__c,&quot;Direct Annual&quot;), 
+
+((List_Price_Less_Default_Discounts__c - (Amount + Sum_of_Rebates__c)) / List_Price__c)-0.1, 
+
+
+((List_Price_Less_Default_Discounts__c - (Amount + Sum_of_Rebates__c)) / List_Price__c) 
+
+) 
+
+, 0)</formula>
+    <label>Blended Discretionary Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

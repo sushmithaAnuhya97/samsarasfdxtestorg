@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Original_Quote_Checkout_Discount_check</name>
+        <label>Original Quote Checkout Discount check</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Original_Quote_has_Checkout_Discount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__MasterContract__r.SBQQ__Quote__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Amendment_with_Checkout_Discount</targetReference>
+            </connector>
+            <label>Original Quote has Checkout Discount</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Quote_Created_or_Updated</name>
+        <label>Quote Created or Updated</label>
+        <locationX>1139</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Quote_Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Quote_Type</targetReference>
+            </connector>
+            <label>Quote Created</label>
+        </rules>
+        <rules>
+            <name>Quote_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Quote Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Quote_Type</name>
+        <label>Quote Type</label>
+        <locationX>644</locationX>
+        <locationY>455</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Type_Amendment</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Amendment</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Original_Quote_Checkout_Discount_check</targetReference>
+            </connector>
+            <label>Type = Amendment</label>
+        </rules>
+        <rules>
+            <name>Type_Quote</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quote</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Type = Quote</label>
+        </rules>
+        <rules>
+            <name>Type_Renewal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Type = Renewal</label>
+        </rules>
+    </decisions>
+    <description>Changed API Version to 54 in order to deploy to PreProd/Prod</description>
+    <interviewLabel>Quote - On Create/Update - After Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote - On Create/Update - After Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Updates the Amendment Quote with the Checkout Discount from the original Quote.</description>
+        <name>Update_Amendment_with_Checkout_Discount</name>
+        <label>Update Amendment with Checkout Discount</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Checkout_Discount__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__MasterContract__r.SBQQ__Quote__r.Checkout_Discount__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Checkout_Discount__c</field>
+            <value>
+                <elementReference>$Record.SBQQ__MasterContract__r.SBQQ__Quote__r.Checkout_Discount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1013</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Quote_Created_or_Updated</targetReference>
+        </connector>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

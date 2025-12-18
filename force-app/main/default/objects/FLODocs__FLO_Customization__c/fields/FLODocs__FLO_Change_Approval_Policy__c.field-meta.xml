@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__FLO_Change_Approval_Policy__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This field designates the approval policy and change management path relating to this customization.  If not specified, the policy from any related process applies.  Otherwise the default policy applies.</description>
+    <inlineHelpText>This field designates the approval policy and change management path relating to this customization.  If not specified, the policy from any related process applies.  Otherwise the default policy applies.</inlineHelpText>
+    <label>Change / Approval Policy</label>
+    <referenceTo>FLODocs__FLO_Change_Approval_Policy__c</referenceTo>
+    <relationshipLabel>Customizations</relationshipLabel>
+    <relationshipName>FLO_Customizations</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,51 @@
+<!--
+*This VF Page is used for ADR Transfer
+*GTMS 6307 - Siddharth kumar Mishra
+-->
+<apex:page standardController="Contact" extensions="ADRTransferController" docType="html-5.0" action="{!setRoundRobinUser}" >
+<apex:slds />
+<apex:form id="formId">
+<script type="text/javascript">
+        function run(){ 
+        document.getElementById("thepage:theform:transferbutton").disabled=true;
+        }
+</script>
+<apex:actionFunction name="transferAccountAction" action="{!submit}" />
+
+<apex:actionstatus id="pageStatus">
+     <apex:facet name="start">
+      <div class="slds-spinner_container" style="position:fixed">
+         <div id="mySpinner" role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+        <span class="slds-assistive-text">Loading..</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+  </apex:facet>
+</apex:actionstatus>
+
+<apex:pageBlock title="ADR Transfer" id="pageBlockId">
+    <apex:pageMessages />
+    <apex:pageBlockButtons location="top">
+        <apex:commandButton id="transferbutton" value="Transfer Account" reRender="formId" status="pageStatus" action="{!submit}"/>
+        <apex:commandButton value="Back to Contact" action="{!backToContact}" immediate="true"
+                html-formnovalidate="formnovalidate"/>
+    </apex:pageBlockButtons>
+    <apex:pageBlockSection id="pageBlockSectionId">
+        <apex:outputField value="{!auxContact.Account.Name}"/>
+        <apex:outputText value="{!transferOwnerName}" label="Transfer To"/>
+        <apex:inputField value="{!transferLog.ADR_Notes__c}" label="ADR Notes" required="true" id="ADRNotes" />
+        <apex:inputField value="{!transferLog.ADR_Demo_Date__c}" required="true" id="ADRDemoDate" />
+        <apex:inputField value="{!transferLog.Meeting_Origination__c}" label="Meeting Origination" id="MeetingOrigination" />
+        <apex:inputField value="{!transferLog.Booking_Method__c}" label="Booking Method" id="BookingMethod" />
+    </apex:pageBlockSection>
+    
+    <apex:outputText style="font-style:bold; color:red;" value="{!stringOpp}">
+
+         </apex:outputText>
+
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

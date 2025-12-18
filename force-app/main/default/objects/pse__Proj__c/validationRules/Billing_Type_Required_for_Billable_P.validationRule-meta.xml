@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Type_Required_for_Billable_P</fullName>
+    <active>true</active>
+    <description>When &apos;Is Billable&apos; is checked, &apos;Billing Type&apos; must be specified.</description>
+    <errorConditionFormula>AND(
+    pse__Is_Billable__c,
+    ISPICKVAL(pse__Billing_Type__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>pse__Billing_Type__c</errorDisplayField>
+    <errorMessage>If &apos;Is Billable&apos; is checked, &apos;Billing Type&apos; must be specified.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Time_Zone_Offset__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Stores the offset from GMT for the user who is creating this schedule.
+Format is sHHMM
+Where s= + or - depending on if the time zone is ahead or behind gmt
+  and HH is the number of hours to offset
+  and MM is the number of minutes to offset (used for partial hour time zones)</description>
+    <externalId>false</externalId>
+    <label>Time Zone Offset</label>
+    <length>5</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

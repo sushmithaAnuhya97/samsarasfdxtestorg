@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Jira_Issue_Type_Category__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates whether the issue type the project task will be created as in Jira is a standard issue or a sub-task issue type.</description>
+    <inlineHelpText>Indicates whether the issue type the project task will be created as in Jira is a standard issue or a sub-task issue type. After selecting a value, you must select a Jira Issue Type.</inlineHelpText>
+    <label>Jira Issue Type Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard Issue Type</fullName>
+                <default>false</default>
+                <label>Standard Issue Type</label>
+            </value>
+            <value>
+                <fullName>Sub-Task Issue Type</fullName>
+                <default>false</default>
+                <label>Sub-Task Issue Type</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

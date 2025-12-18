@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_Kit_Type__c</fullName>
+    <description>Updated 7/17 per GTMS-1045 to remove Shipping Country check for EU free trial kits</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+AND( 
+ISPICKVAL(Account.Industry, &quot;Transportation &amp; Warehousing&quot;), 
+ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;), 
+ISPICKVAL(Configuration_Segment__c,&apos;Non Express&apos;), 
+ISNULL(Account.Free_Trial_Kit_Sent_Date__c), 
+Probability &gt;= 0.95, 
+ISPICKVAL(Shipping_Country__c, &quot;United States&quot;) 
+), 
+&quot;Transport &amp; Warehousing&quot;, 
+IF( 
+AND( 
+ISPICKVAL(Account.Industry, &quot;Food &amp; Beverage&quot;), 
+ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;), 
+ISPICKVAL(Configuration_Segment__c,&apos;Non Express&apos;), 
+ISNULL(Account.Free_Trial_Kit_Sent_Date__c), 
+Probability &gt;= 0.95, 
+ISPICKVAL(Shipping_Country__c, &quot;United States&quot;) 
+), 
+&quot;Food &amp; Beverage&quot;, 
+IF( 
+AND( 
+ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;), 
+ISPICKVAL(Configuration_Segment__c,&apos;Non Express&apos;), 
+ISNULL(Account.Free_Trial_Kit_Sent_Date__c), 
+Probability &gt;= 0.95, 
+ISPICKVAL(Shipping_Country__c, &quot;United States&quot;) 
+), 
+&quot;Standard&quot;, 
+IF( 
+AND( 
+ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;), 
+ISPICKVAL(Configuration_Segment__c,&apos;Non Express&apos;), 
+ISNULL(Account.Free_Trial_Kit_Sent_Date__c), 
+Probability &gt;= 0.95 
+), 
+&quot;FREE-TRIAL-KIT-EU&quot;, 
+&quot;&quot; 
+))))</formula>
+    <label>Free Trial Kit Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

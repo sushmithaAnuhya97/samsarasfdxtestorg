@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_required__c</fullName>
+    <inlineHelpText>Location, runtime, IO signal or industrial protocols</inlineHelpText>
+    <label>Data required</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GPS Location Only (AG46)</fullName>
+                <default>false</default>
+                <label>GPS Location Only (AG46)</label>
+            </value>
+            <value>
+                <fullName>GPS + Run Hours (AG46P)</fullName>
+                <default>false</default>
+                <label>GPS + Run Hours (AG46P)</label>
+            </value>
+            <value>
+                <fullName>GPS + Run Hours + DTCs (AG26)</fullName>
+                <default>false</default>
+                <label>GPS + Run Hours + DTCs (AG26)</label>
+            </value>
+            <value>
+                <fullName>GPS + Engine Data or Analog Inputs (IG15)</fullName>
+                <default>false</default>
+                <label>GPS + Engine Data or Analog Inputs (IG15)</label>
+            </value>
+            <value>
+                <fullName>Industrial Protocol Support - Modbus/Ethernet IP/ROC (IG41)</fullName>
+                <default>false</default>
+                <label>Industrial Protocol Support - Modbus/Ethernet IP/ROC (IG41)</label>
+            </value>
+            <value>
+                <fullName>Analog or Digital Inputs or Outputs (IG41)</fullName>
+                <default>false</default>
+                <label>Analog or Digital Inputs or Outputs (IG41)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

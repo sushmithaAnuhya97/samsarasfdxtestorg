@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Vendor_Invoice_Exchange_Rate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If not checked, rates at the line level always used rates defined on the system (unless they are themselves overridden).  If checked then all Vendor Invoice Lines used the specified rate (Vendor Exchange Rate Override) as described below.  This will also UN-check the checkbox for line-item-level overrides on all child Vendor Invoice Items:  Apply Item Exchange Rate Override.</description>
+    <label>Override Vendor Invoice Exchange Rate</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NonGA_Asset__c</fullName>
+    <formula>SBQQ__Product__r.GA__c = FALSE &amp;&amp; TEXT(SBQQ__Product__r.Family) = &quot;Asset&quot;</formula>
+    <label>NonGA_Asset</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

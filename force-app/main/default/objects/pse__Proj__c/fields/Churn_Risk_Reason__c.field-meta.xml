@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Churn_Risk_Reason__c</fullName>
+    <label>Churn Risk Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Technical Fit</fullName>
+                <default>false</default>
+                <label>Product Technical Fit</label>
+            </value>
+            <value>
+                <fullName>Product fit</fullName>
+                <default>false</default>
+                <label>Product fit</label>
+            </value>
+            <value>
+                <fullName>Customer service</fullName>
+                <default>false</default>
+                <label>Customer service</label>
+            </value>
+            <value>
+                <fullName>Business changes</fullName>
+                <default>false</default>
+                <label>Business changes</label>
+            </value>
+            <value>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <label>Commercial terms</label>
+            </value>
+            <value>
+                <fullName>Ease of doing business</fullName>
+                <default>false</default>
+                <label>Ease of doing business</label>
+            </value>
+            <value>
+                <fullName>Renewal admin issue</fullName>
+                <default>false</default>
+                <label>Renewal admin issue</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Adoption</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adoption</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Example</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Example</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

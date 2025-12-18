@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Approved_Discount__c</fullName>
+    <formula>MIN(
+	IF(
+		NOT(ISBLANK(SBQQ__Opportunity__r.Approved_Discount__c)),
+		SBQQ__Opportunity__r.Approved_Discount__c, 
+		IF(
+			SBQQ__Opportunity__r.Blended_Discount__c=0,NULL,
+			(SBQQ__Opportunity__r.Blended_Discount__c+0.001)
+		)
+	),0.401
+)
+
+/*MIN(
+		IF(
+				NOT(
+						ISBLANK(Original_Contracted_Opportunity__r.Approved_Discount__c)
+					),
+				Original_Contracted_Opportunity__r.Approved_Discount__c, 
+			IF(Original_Contracted_Opportunity__r.Blended_Discount__c=0,NULL,
+
+				(Original_Contracted_Opportunity__r.Blended_Discount__c+0.001
+				)
+			)
+		),0.401
+	)
+*/</formula>
+    <label>Original Approved Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

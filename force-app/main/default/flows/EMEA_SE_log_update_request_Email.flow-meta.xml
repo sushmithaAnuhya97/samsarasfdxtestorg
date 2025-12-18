@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_alert_to_Assigned_SE_and_Assigned_SE_Manager</name>
+        <label>Email alert to Assigned SE and Assigned SE Manager</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>Sales_Engineering_Log__c.EMEA_SE_log_update_request_Email_alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Sales_Engineering_Log__c.EMEA_SE_log_update_request_Email_alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Checking_for_last_modified_date_more_than_30_days</name>
+        <label>Checking for last modified date more than 30 days</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>matching</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LastModifiedDate</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>Days30</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.SobjectType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales_Engineering_Log__c</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMEA_SE_Log</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OwnerRoleCopy_Matching</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Key_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Qualified</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Tech_Stage__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Tech Loss</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Trail__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Post-trial</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_alert_to_Assigned_SE_and_Assigned_SE_Manager</targetReference>
+            </connector>
+            <label>matching</label>
+        </rules>
+    </decisions>
+    <description>This flow is used to identify the EMEA SE log records where the last modified date is more than 30 days and send an Email to the Assigned SE and Assigned SE manager to request that to update the record.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Days30</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()-30</expression>
+    </formulas>
+    <formulas>
+        <name>OwnerRoleCopy_Matching</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;AE2&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;MM&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;AE3&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;COR&quot;)
+),
+OR(
+CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;EMEA&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;NL&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;UK&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;FR&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;DE&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;IT&quot;),CONTAINS({!$Record.Opportunity__r.Owner_Role_Copy__c}, &quot;ES&quot;)
+)
+)</expression>
+    </formulas>
+    <interviewLabel>EMEA SE log {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>EMEA SE log update request Email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Checking_for_last_modified_date_more_than_30_days</targetReference>
+        </connector>
+        <object>Sales_Engineering_Log__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-10-24</startDate>
+            <startTime>00:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

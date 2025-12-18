@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lost_Insights</fullName>
+    <active>false</active>
+    <description>This validation is to enforce that the user uses the closed lost flow</description>
+    <errorConditionFormula>AND(
+      
+      ISCHANGED(StageName),
+      ISPICKVAL(StageName, &quot;Closed Lost&quot;), 
+      Closed_Lost_Reason__c != &quot;see closed lost insight&quot;,
+      Renewal__c  = false, 
+      $Permission.Closed_Lost_Flow, 
+      ISPICKVAL(Type, &quot;Revenue Opportunity&quot;)
+
+)</errorConditionFormula>
+    <errorMessage>Use the Closed Lost Button to move this opportunity into Stage = Closed Lost</errorMessage>
+</ValidationRule>

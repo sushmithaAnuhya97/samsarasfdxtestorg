@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selected_Payment_Type__c</fullName>
+    <inlineHelpText>This dropdown list is populated based on what your customer has been approved for in Internal Financing. If you do not see a finance option then your customer has not been approved for that option.</inlineHelpText>
+    <label>Selected Payment Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct Monthly</fullName>
+                <default>false</default>
+                <label>Direct Monthly</label>
+            </value>
+            <value>
+                <fullName>Direct Annual</fullName>
+                <default>false</default>
+                <label>Direct Annual</label>
+            </value>
+            <value>
+                <fullName>Upfront Payments</fullName>
+                <default>false</default>
+                <label>Upfront Payments</label>
+            </value>
+            <value>
+                <fullName>Direct Semi-Annual</fullName>
+                <default>false</default>
+                <label>Direct Semi-Annual</label>
+            </value>
+            <value>
+                <fullName>Direct Quarterly</fullName>
+                <default>false</default>
+                <label>Direct Quarterly</label>
+            </value>
+            <value>
+                <fullName>Net-30</fullName>
+                <default>false</default>
+                <label>Net-30</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

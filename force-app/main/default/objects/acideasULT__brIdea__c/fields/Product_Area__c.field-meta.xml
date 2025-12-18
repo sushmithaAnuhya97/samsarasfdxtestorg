@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Area__c</fullName>
+    <label>Product Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Unit__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Safety Event Detection</fullName>
+                <default>false</default>
+                <label>Safety Event Detection</label>
+            </value>
+            <value>
+                <fullName>CV Based Safety Events</fullName>
+                <default>false</default>
+                <label>CV Based Safety Events</label>
+            </value>
+            <value>
+                <fullName>Map &amp; Diagnostic Based Safety Events</fullName>
+                <default>false</default>
+                <label>Map &amp; Diagnostic Based Safety Events</label>
+            </value>
+            <value>
+                <fullName>Speeding</fullName>
+                <default>false</default>
+                <label>Speeding</label>
+            </value>
+            <value>
+                <fullName>Coaching</fullName>
+                <default>false</default>
+                <label>Coaching</label>
+            </value>
+            <value>
+                <fullName>Safety Scoring</fullName>
+                <default>false</default>
+                <label>Safety Scoring</label>
+            </value>
+            <value>
+                <fullName>Safety Triage &amp; Inbox</fullName>
+                <default>false</default>
+                <label>Safety Triage &amp; Inbox</label>
+            </value>
+            <value>
+                <fullName>Safety Event Review Service</fullName>
+                <default>false</default>
+                <label>Safety Event Review Service</label>
+            </value>
+            <value>
+                <fullName>Safety APIs</fullName>
+                <default>false</default>
+                <label>Safety APIs</label>
+            </value>
+            <value>
+                <fullName>Safety Dashboard and Reporting</fullName>
+                <default>false</default>
+                <label>Safety Dashboard and Reporting</label>
+            </value>
+            <value>
+                <fullName>Video Retrieval, Live Streaming, Privacy</fullName>
+                <default>false</default>
+                <label>Video Retrieval, Live Streaming, Privacy</label>
+            </value>
+            <value>
+                <fullName>Site Visibility</fullName>
+                <default>false</default>
+                <label>Site Visibility</label>
+            </value>
+            <value>
+                <fullName>OEM Integrations</fullName>
+                <default>false</default>
+                <label>OEM Integrations</label>
+            </value>
+            <value>
+                <fullName>Location Visibility &amp; Reporting</fullName>
+                <default>false</default>
+                <label>Location Visibility &amp; Reporting</label>
+            </value>
+            <value>
+                <fullName>Fuel &amp; Sustainability</fullName>
+                <default>false</default>
+                <label>Fuel &amp; Sustainability</label>
+            </value>
+            <value>
+                <fullName>DVIR</fullName>
+                <default>false</default>
+                <label>DVIR</label>
+            </value>
+            <value>
+                <fullName>Fleet Security</fullName>
+                <default>false</default>
+                <label>Fleet Security</label>
+            </value>
+            <value>
+                <fullName>Fuel &amp; Mileage Taxes</fullName>
+                <default>false</default>
+                <label>Fuel &amp; Mileage Taxes</label>
+            </value>
+            <value>
+                <fullName>Snow Ops/ Service Delivery</fullName>
+                <default>false</default>
+                <label>Snow Ops/ Service Delivery</label>
+            </value>
+            <value>
+                <fullName>Fleet Reports</fullName>
+                <default>false</default>
+                <label>Fleet Reports</label>
+            </value>
+            <value>
+                <fullName>VG Telematics</fullName>
+                <default>false</default>
+                <label>VG Telematics</label>
+            </value>
+            <value>
+                <fullName>VG Connectivity</fullName>
+                <default>false</default>
+                <label>VG Connectivity</label>
+            </value>
+            <value>
+                <fullName>Other Telematics</fullName>
+                <default>false</default>
+                <label>Other Telematics</label>
+            </value>
+            <value>
+                <fullName>Powered Equipment (Un-operated) Telematics</fullName>
+                <default>false</default>
+                <label>Powered Equipment (Un-operated) Telematics</label>
+            </value>
+            <value>
+                <fullName>Trailer Telematics</fullName>
+                <default>false</default>
+                <label>Trailer Telematics</label>
+            </value>
+            <value>
+                <fullName>Unpowered Asset Tracking</fullName>
+                <default>false</default>
+                <label>Unpowered Asset Tracking</label>
+            </value>
+            <value>
+                <fullName>Trailer Cargo &amp; Cold Chain Monitoring (Cargo, Door, &amp; Environmental Monitors)</fullName>
+                <default>false</default>
+                <label>Trailer Cargo &amp; Cold Chain Monitoring (Cargo, Door, &amp; Environmental Monitors)</label>
+            </value>
+            <value>
+                <fullName>Trailer Tire Health (TPMS, ATIS, WES)</fullName>
+                <default>false</default>
+                <label>Trailer Tire Health (TPMS, ATIS, WES)</label>
+            </value>
+            <value>
+                <fullName>Connected Workflows (Forms)</fullName>
+                <default>false</default>
+                <label>Connected Workflows (Forms)</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Lone Worker</fullName>
+                <default>false</default>
+                <label>Lone Worker</label>
+            </value>
+            <value>
+                <fullName>Documents</fullName>
+                <default>false</default>
+                <label>Documents</label>
+            </value>
+            <value>
+                <fullName>Maintenance / Predictive Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance / Predictive Maintenance</label>
+            </value>
+            <value>
+                <fullName>Mobile Experience Management</fullName>
+                <default>false</default>
+                <label>Mobile Experience Management</label>
+            </value>
+            <value>
+                <fullName>Samsara Driver App</fullName>
+                <default>false</default>
+                <label>Samsara Driver App</label>
+            </value>
+            <value>
+                <fullName>Samsara Fleet App</fullName>
+                <default>false</default>
+                <label>Samsara Fleet App</label>
+            </value>
+            <value>
+                <fullName>Other Mobile</fullName>
+                <default>false</default>
+                <label>Other Mobile</label>
+            </value>
+            <value>
+                <fullName>Web Dashboard</fullName>
+                <default>false</default>
+                <label>Web Dashboard</label>
+            </value>
+            <value>
+                <fullName>Device Activation, Installation &amp; Monitoring</fullName>
+                <default>false</default>
+                <label>Device Activation, Installation &amp; Monitoring</label>
+            </value>
+            <value>
+                <fullName>Organizational Management &amp; Settings</fullName>
+                <default>false</default>
+                <label>Organizational Management &amp; Settings</label>
+            </value>
+            <value>
+                <fullName>Custom Reports</fullName>
+                <default>false</default>
+                <label>Custom Reports</label>
+            </value>
+            <value>
+                <fullName>Alerts</fullName>
+                <default>false</default>
+                <label>Alerts</label>
+            </value>
+            <value>
+                <fullName>Software Integrations</fullName>
+                <default>false</default>
+                <label>Software Integrations</label>
+            </value>
+            <value>
+                <fullName>Developer Ecosystem</fullName>
+                <default>false</default>
+                <label>Developer Ecosystem</label>
+            </value>
+            <value>
+                <fullName>Driver Assignment</fullName>
+                <default>false</default>
+                <label>Driver Assignment</label>
+            </value>
+            <value>
+                <fullName>Product Security</fullName>
+                <default>false</default>
+                <label>Product Security</label>
+            </value>
+            <value>
+                <fullName>Identity &amp; Access Management</fullName>
+                <default>false</default>
+                <label>Identity &amp; Access Management</label>
+            </value>
+            <value>
+                <fullName>Other Platform</fullName>
+                <default>false</default>
+                <label>Other Platform</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateways</fullName>
+                <default>false</default>
+                <label>Vehicle Gateways</label>
+            </value>
+            <value>
+                <fullName>ID / RFID Card Reader</fullName>
+                <default>false</default>
+                <label>ID / RFID Card Reader</label>
+            </value>
+            <value>
+                <fullName>Panic / Privacy Button</fullName>
+                <default>false</default>
+                <label>Panic / Privacy Button</label>
+            </value>
+            <value>
+                <fullName>Camera Connector</fullName>
+                <default>false</default>
+                <label>Camera Connector</label>
+            </value>
+            <value>
+                <fullName>Camera Modules</fullName>
+                <default>false</default>
+                <label>Camera Modules</label>
+            </value>
+            <value>
+                <fullName>Trailer and Equipment Gateway Devices and Sensor Hardware</fullName>
+                <default>false</default>
+                <label>Trailer and Equipment Gateway Devices and Sensor Hardware</label>
+            </value>
+            <value>
+                <fullName>Site Visibility Gateways &amp; Cameras</fullName>
+                <default>false</default>
+                <label>Site Visibility Gateways &amp; Cameras</label>
+            </value>
+            <value>
+                <fullName>Cables or Accessories</fullName>
+                <default>false</default>
+                <label>Cables or Accessories</label>
+            </value>
+            <value>
+                <fullName>Configuration &amp; Install Experience</fullName>
+                <default>false</default>
+                <label>Configuration &amp; Install Experience</label>
+            </value>
+            <value>
+                <fullName>Device Health &amp; Troubleshooting</fullName>
+                <default>false</default>
+                <label>Device Health &amp; Troubleshooting</label>
+            </value>
+            <value>
+                <fullName>Other Hardware Devices &amp; Accessories</fullName>
+                <default>false</default>
+                <label>Other Hardware Devices &amp; Accessories</label>
+            </value>
+            <value>
+                <fullName>Recognition</fullName>
+                <default>false</default>
+                <label>Recognition</label>
+            </value>
+            <value>
+                <fullName>NA Compliance (ELD)</fullName>
+                <default>false</default>
+                <label>NA Compliance (ELD)</label>
+            </value>
+            <value>
+                <fullName>EU Compliance</fullName>
+                <default>false</default>
+                <label>EU Compliance</label>
+            </value>
+            <value>
+                <fullName>Live Routing &amp; Dispatch</fullName>
+                <default>false</default>
+                <label>Live Routing &amp; Dispatch</label>
+            </value>
+            <value>
+                <fullName>Route Planning</fullName>
+                <default>false</default>
+                <label>Route Planning</label>
+            </value>
+            <value>
+                <fullName>Commercial Navigation</fullName>
+                <default>false</default>
+                <label>Commercial Navigation</label>
+            </value>
+            <value>
+                <fullName>Trailer OEM Integrations</fullName>
+                <default>false</default>
+                <label>Trailer OEM Integrations</label>
+            </value>
+            <value>
+                <fullName>Operated Equipment</fullName>
+                <default>false</default>
+                <label>Operated Equipment</label>
+            </value>
+            <value>
+                <fullName>Utilization Report</fullName>
+                <default>false</default>
+                <label>Utilization Report</label>
+            </value>
+            <value>
+                <fullName>Qualifications Management</fullName>
+                <default>false</default>
+                <label>Qualifications Management</label>
+            </value>
+            <value>
+                <fullName>Custom Dashboards</fullName>
+                <default>false</default>
+                <label>Custom Dashboards</label>
+            </value>
+            <value>
+                <fullName>Release Management</fullName>
+                <default>false</default>
+                <label>Release Management</label>
+            </value>
+            <value>
+                <fullName>Asset Profile</fullName>
+                <default>false</default>
+                <label>Asset Profile</label>
+            </value>
+            <value>
+                <fullName>Billing &amp; License Management</fullName>
+                <default>false</default>
+                <label>Billing &amp; License Management</label>
+            </value>
+            <value>
+                <fullName>Safety Events - Inward Facing (Mobile, Drowsy, Seatbelt, Inattentive)</fullName>
+                <default>false</default>
+                <label>Safety Events - Inward Facing (Mobile, Drowsy, Seatbelt, Inattentive)</label>
+            </value>
+            <value>
+                <fullName>Safety Events - Outward Facing (Following Distance, FCW, VRU, Lane Departure)</fullName>
+                <default>false</default>
+                <label>Safety Events - Outward Facing (Following Distance, FCW, VRU, Lane Departure)</label>
+            </value>
+            <value>
+                <fullName>Safety Events - Road Intelligence (Rolling Stop, Sign Detection)</fullName>
+                <default>false</default>
+                <label>Safety Events - Road Intelligence (Rolling Stop, Sign Detection)</label>
+            </value>
+            <value>
+                <fullName>Safety Events - Harsh Events</fullName>
+                <default>false</default>
+                <label>Safety Events - Harsh Events</label>
+            </value>
+            <value>
+                <fullName>Safety Events - Speeding</fullName>
+                <default>false</default>
+                <label>Safety Events - Speeding</label>
+            </value>
+            <value>
+                <fullName>Crashes &amp; Crash Risk</fullName>
+                <default>false</default>
+                <label>Crashes &amp; Crash Risk</label>
+            </value>
+            <value>
+                <fullName>Recognition &amp; Rewards</fullName>
+                <default>false</default>
+                <label>Recognition &amp; Rewards</label>
+            </value>
+            <value>
+                <fullName>Risk Center</fullName>
+                <default>false</default>
+                <label>Risk Center</label>
+            </value>
+            <value>
+                <fullName>Safety Event Detection - Other</fullName>
+                <default>false</default>
+                <label>Safety Event Detection - Other</label>
+            </value>
+            <value>
+                <fullName>Smart Maps (Weather Intelligence, Construction Overlay, etc.)</fullName>
+                <default>false</default>
+                <label>Smart Maps (Weather Intelligence, Construction Overlay, etc.)</label>
+            </value>
+            <value>
+                <fullName>APIs / Webhooks</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>APIs / Webhooks</label>
+            </value>
+            <value>
+                <fullName>Camera Devices</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Camera Devices</label>
+            </value>
+            <value>
+                <fullName>Compliance (ELD, Tachograph)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Compliance (ELD, Tachograph)</label>
+            </value>
+            <value>
+                <fullName>Connected Equipment Electrical Engineering</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Connected Equipment Electrical Engineering</label>
+            </value>
+            <value>
+                <fullName>Connected Equipment Firmware Engineering</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Connected Equipment Firmware Engineering</label>
+            </value>
+            <value>
+                <fullName>Device Activation &amp; Monitoring</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Device Activation &amp; Monitoring</label>
+            </value>
+            <value>
+                <fullName>Equipment Full-Stack</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Equipment Full-Stack</label>
+            </value>
+            <value>
+                <fullName>Equipment Telematics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Equipment Telematics</label>
+            </value>
+            <value>
+                <fullName>Fleet Operations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fleet Operations</label>
+            </value>
+            <value>
+                <fullName>Forms</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Forms</label>
+            </value>
+            <value>
+                <fullName>Inspections App</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inspections App</label>
+            </value>
+            <value>
+                <fullName>Integrations &amp; Data Connectors</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integrations &amp; Data Connectors</label>
+            </value>
+            <value>
+                <fullName>Learning Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Learning Management</label>
+            </value>
+            <value>
+                <fullName>Maintenance / DVIR</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Maintenance / DVIR</label>
+            </value>
+            <value>
+                <fullName>Messaging</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Messaging</label>
+            </value>
+            <value>
+                <fullName>New product development</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New product development</label>
+            </value>
+            <value>
+                <fullName>Operated Equipment Telematics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Operated Equipment Telematics</label>
+            </value>
+            <value>
+                <fullName>Other Assets</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Assets</label>
+            </value>
+            <value>
+                <fullName>Other Safety</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Safety</label>
+            </value>
+            <value>
+                <fullName>Other Trailers &amp; Equipment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Trailers &amp; Equipment</label>
+            </value>
+            <value>
+                <fullName>Routing &amp; Dispatch</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Routing &amp; Dispatch</label>
+            </value>
+            <value>
+                <fullName>Safety Camera Platform</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Safety Camera Platform</label>
+            </value>
+            <value>
+                <fullName>Safety Coaching</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Safety Coaching</label>
+            </value>
+            <value>
+                <fullName>Safety Event Review</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Safety Event Review</label>
+            </value>
+            <value>
+                <fullName>Safety Firmware</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Safety Firmware</label>
+            </value>
+            <value>
+                <fullName>Safety Inbox &amp; Events</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Safety Inbox &amp; Events</label>
+            </value>
+            <value>
+                <fullName>Safety Scoring and Insights</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Safety Scoring and Insights</label>
+            </value>
+            <value>
+                <fullName>Site-Visibility</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site-Visibility</label>
+            </value>
+            <value>
+                <fullName>Sites</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sites</label>
+            </value>
+            <value>
+                <fullName>Trailer and Reefer Telematics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trailer and Reefer Telematics</label>
+            </value>
+            <value>
+                <fullName>Unpowered Equipment Tracking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unpowered Equipment Tracking</label>
+            </value>
+            <value>
+                <fullName>VG Hotspot</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VG Hotspot</label>
+            </value>
+            <value>
+                <fullName>Vehicle Security</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vehicle Security</label>
+            </value>
+            <value>
+                <fullName>Video Retrieval, Live Streaming, Video Privacy, Camera Recording</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Video Retrieval, Live Streaming, Video Privacy, Camera Recording</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety Event Detection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>CV Based Safety Events</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Map &amp; Diagnostic Based Safety Events</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Speeding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Coaching</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety Scoring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety Triage &amp; Inbox</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety Event Review Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety APIs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety Dashboard and Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Video Retrieval, Live Streaming, Privacy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Site Visibility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>OEM Integrations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Safety Events - Inward Facing (Mobile, Drowsy, Seatbelt, Inattentive)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Safety Events - Outward Facing (Following Distance, FCW, VRU, Lane Departure)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Safety Events - Road Intelligence (Rolling Stop, Sign Detection)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Safety Events - Harsh Events</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety Events - Speeding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Crashes &amp; Crash Risk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Safety Event Detection - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Video-Based Safety</controllingFieldValue>
+            <valueName>Smart Maps (Weather Intelligence, Construction Overlay, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Connected Workflows (Forms)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Lone Worker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Documents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Maintenance / Predictive Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Qualifications Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Location Visibility &amp; Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Fuel &amp; Sustainability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>DVIR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Fleet Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Fuel &amp; Mileage Taxes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Snow Ops/ Service Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Fleet Reports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>VG Telematics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>VG Connectivity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Other Telematics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>NA Compliance (ELD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>EU Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Live Routing &amp; Dispatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Route Planning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vehicle Telematics</controllingFieldValue>
+            <valueName>Commercial Navigation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Apps</controllingFieldValue>
+            <valueName>Mobile Experience Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Apps</controllingFieldValue>
+            <valueName>Samsara Driver App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Apps</controllingFieldValue>
+            <valueName>Samsara Fleet App</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile Apps</controllingFieldValue>
+            <valueName>Other Mobile</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailers &amp; Equipment</controllingFieldValue>
+            <valueName>Powered Equipment (Un-operated) Telematics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailers &amp; Equipment</controllingFieldValue>
+            <valueName>Trailer Telematics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailers &amp; Equipment</controllingFieldValue>
+            <valueName>Unpowered Asset Tracking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailers &amp; Equipment</controllingFieldValue>
+            <valueName>Trailer Cargo &amp; Cold Chain Monitoring (Cargo, Door, &amp; Environmental Monitors)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailers &amp; Equipment</controllingFieldValue>
+            <valueName>Trailer Tire Health (TPMS, ATIS, WES)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailers &amp; Equipment</controllingFieldValue>
+            <valueName>Trailer OEM Integrations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trailers &amp; Equipment</controllingFieldValue>
+            <valueName>Utilization Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Web Dashboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Device Activation, Installation &amp; Monitoring</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Organizational Management &amp; Settings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Custom Reports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Alerts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Software Integrations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Developer Ecosystem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Driver Assignment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Product Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Identity &amp; Access Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Other Platform</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Custom Dashboards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Release Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Asset Profile</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Billing &amp; License Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform / General</controllingFieldValue>
+            <valueName>Recognition &amp; Rewards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Vehicle Gateways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>ID / RFID Card Reader</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Panic / Privacy Button</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Camera Connector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Camera Modules</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Trailer and Equipment Gateway Devices and Sensor Hardware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Site Visibility Gateways &amp; Cameras</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Cables or Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Configuration &amp; Install Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Device Health &amp; Troubleshooting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hardware Devices &amp; Accessories</controllingFieldValue>
+            <valueName>Other Hardware Devices &amp; Accessories</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

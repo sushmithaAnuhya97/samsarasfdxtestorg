@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SE_Next_Step__c</fullName>
+    <description>This field is for the SE to identify next steps on key accounts</description>
+    <inlineHelpText>7/14/22 - marked for removal. Per Rory O&apos;Dea, this is not used by Sales Engineering at the Opp level</inlineHelpText>
+    <label>zzzSE Next Step</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tech Discovery</fullName>
+                <default>false</default>
+                <label>Tech Discovery</label>
+            </value>
+            <value>
+                <fullName>SE Site Visit</fullName>
+                <default>false</default>
+                <label>SE Site Visit</label>
+            </value>
+            <value>
+                <fullName>Trial Check-In</fullName>
+                <default>false</default>
+                <label>Trial Check-In</label>
+            </value>
+            <value>
+                <fullName>Technical Troubleshooting</fullName>
+                <default>false</default>
+                <label>Technical Troubleshooting</label>
+            </value>
+            <value>
+                <fullName>Feature Request Process</fullName>
+                <default>false</default>
+                <label>Feature Request Process</label>
+            </value>
+            <value>
+                <fullName>Solution Review with Customer</fullName>
+                <default>false</default>
+                <label>Solution Review with Customer</label>
+            </value>
+            <value>
+                <fullName>Integration Acceptance</fullName>
+                <default>false</default>
+                <label>Integration Acceptance</label>
+            </value>
+            <value>
+                <fullName>Tech Solution Acceptance</fullName>
+                <default>false</default>
+                <label>Tech Solution Acceptance</label>
+            </value>
+            <value>
+                <fullName>Technical Close</fullName>
+                <default>false</default>
+                <label>Technical Close</label>
+            </value>
+            <value>
+                <fullName>None - Tech Work Completed</fullName>
+                <default>false</default>
+                <label>None - Tech Work Completed</label>
+            </value>
+            <value>
+                <fullName>Technical Win</fullName>
+                <default>false</default>
+                <label>Technical Win</label>
+            </value>
+            <value>
+                <fullName>Technical Loss</fullName>
+                <default>false</default>
+                <label>Technical Loss</label>
+            </value>
+            <value>
+                <fullName>Trial Inactive</fullName>
+                <default>false</default>
+                <label>Trial Inactive</label>
+            </value>
+            <value>
+                <fullName>Feature Request Follow Up</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Feature Request Follow Up</label>
+            </value>
+            <value>
+                <fullName>Meet with AE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Meet with AE</label>
+            </value>
+            <value>
+                <fullName>Trial Follow Up</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trial Follow Up</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

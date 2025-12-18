@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__ClickLinkJob__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>ClickLink Job</label>
+    <referenceTo>ffirule__IntegrationRuleJob__c</referenceTo>
+    <relationshipLabel>ClickLink Managed Jobs</relationshipLabel>
+    <relationshipName>IntegrationRuleJobs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

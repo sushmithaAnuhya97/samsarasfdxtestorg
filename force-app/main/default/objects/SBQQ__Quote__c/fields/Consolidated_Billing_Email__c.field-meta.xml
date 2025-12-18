@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consolidated_Billing_Email__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The Consolidated Billing Email is the contact who will receive the invoices for this order. It is populated first by the Billing Email(s) field on the quote; if blank, then it is populated from the Billing_Email field on the Bill To Account</inlineHelpText>
+    <label>Consolidated Billing Email</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_Cant_Change_Their_User_Info</fullName>
+    <active>true</active>
+    <description>Required for Xactly compliance!</description>
+    <errorConditionFormula>AND( 
+NOT($Permission.Validation_Rule_Exemption), 
+IsActive, 
+OR(ISCHANGED(Email), 
+ISCHANGED(EmployeeNumber), 
+ISCHANGED(FirstName), 
+ISCHANGED(LastName), 
+ISCHANGED(MiddleName), 
+ISCHANGED(Alias), 
+ISCHANGED(Username), 
+ISCHANGED(CommunityNickname), 
+ISCHANGED( EmployeeNumber ), 
+ISCHANGED( Slack_Username__c ) 
+) 
+)</errorConditionFormula>
+    <errorMessage>Please contact Sales Ops if you need to make changes to your user record.</errorMessage>
+</ValidationRule>

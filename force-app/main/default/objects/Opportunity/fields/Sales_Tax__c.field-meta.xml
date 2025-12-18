@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Tax__c</fullName>
+    <formula>IF(
+    ISPICKVAL(Type, &apos;Revenue Opportunity&apos;),
+    IF(
+        NOT(ISBLANK(Shipping_Address_NEW__c)),
+        IF(
+            Sales_Tax_Historical__c != 0, 
+            Sales_Tax_Historical__c,
+            IF(
+                NOT(ISBLANK(SBQQ__PrimaryQuote__c)), 
+                Sales_Tax_Amount__c, 
+                Total_Sales_Tax__c+S_H_Tax__c
+            )
+        ),
+        99999
+    ),
+    IF(
+        ISPICKVAL(Type, &apos;Rebate&apos;),
+        IF(
+            Sales_Tax_Historical__c != 0, 
+            Sales_Tax_Historical__c, 
+            Total_Sales_Tax__c
+        ), 
+        0
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

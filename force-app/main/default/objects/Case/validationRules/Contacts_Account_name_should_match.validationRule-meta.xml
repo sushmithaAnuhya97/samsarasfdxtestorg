@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contacts_Account_name_should_match</fullName>
+    <active>false</active>
+    <description>This rule is to ensure the contact&apos;s account name matches the account name in a case</description>
+    <errorConditionFormula>AND(Account.Id !=  Contact.AccountId,  Account.Name != &apos;Samsara&apos;)</errorConditionFormula>
+    <errorMessage>The contact&apos;s account name is different from the account name mentioned in the case. Please make sure that the account name associated with the case matches that of the contact.</errorMessage>
+</ValidationRule>

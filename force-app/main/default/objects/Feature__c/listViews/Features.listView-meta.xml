@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Features</fullName>
+    <columns>NAME</columns>
+    <columns>Category__c</columns>
+    <columns>PM_Owner__c</columns>
+    <columns>Total_Applicable_VS2_Units_on_Feature__c</columns>
+    <columns>VS2_Total_Unit_on_Feature_Assignment__c</columns>
+    <columns>Amount_of_VS2_Product_on_Feature__c</columns>
+    <columns>Sum_Opportunity_Amounts__c</columns>
+    <columns>Status__c</columns>
+    <columns>Description__c</columns>
+    <columns>LAST_ACTIVITY</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>Qualification</value>
+    </filters>
+    <label>Features with VS2 (All)</label>
+    <sharedTo>
+        <role>Management</role>
+        <roleAndSubordinates>Management</roleAndSubordinates>
+        <roleAndSubordinates>Operations</roleAndSubordinates>
+    </sharedTo>
+</ListView>

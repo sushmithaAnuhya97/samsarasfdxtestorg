@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Cable_Selection_For_Closing_Opp</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Permission.Validation_Rule_Exemption),
+    Alternative_Cable_Selection__c != TRUE,
+    ISBLANK(TEXT(Cable_Selection_Method__c)),
+    ISCHANGED(StageName),
+    VG_unit_count__c &gt; 0,
+    ISPICKVAL($User.Region__c ,&apos;North America&apos;),
+    ISPICKVAL($User.Business_Unit__c ,&apos;Fleet&apos;),
+   OR(
+     ISPICKVAL(StageName, &apos;Closing&apos;),
+     ISPICKVAL(StageName, &apos;Orders Processing&apos;)
+     ),
+   OR(
+      CONTAINS($UserRole.Name, &apos;AE1&apos;),
+      CONTAINS($UserRole.Name, &apos;AE2&apos;),
+      CONTAINS($UserRole.Name, &apos;AE3&apos;)
+     ),
+   OR(
+      ISPICKVAL(Type,&apos;Revenue Opportunity&apos;),
+      ISPICKVAL(Type,&apos;Free Trial Opportunity&apos;)
+     ),
+NOT(Is_Webstore_Upsell_Opportunity__c)
+)</errorConditionFormula>
+    <errorMessage>The cable selection tool must be completed for first purchases. If this is an add on order, please use the Cable Selection Link, or check the Alternative Cable Selection box to confirm that you completed cable selection with another method.</errorMessage>
+</ValidationRule>

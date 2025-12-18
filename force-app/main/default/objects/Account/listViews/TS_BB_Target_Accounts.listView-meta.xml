@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TS_BB_Target_Accounts</fullName>
+    <columns>Prospecting_Status__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>LinkedIn_URL__c</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>Current_Telematics_Provider__c</columns>
+    <columns>Last_Contacted__c</columns>
+    <columns>Account_Priority_Last_Updated__c</columns>
+    <columns>Number_of_Calls__c</columns>
+    <columns>Hashtag__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Account_Status_Updated__c</field>
+        <operation>equals</operation>
+        <value>Non Existing Customer</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>Open_Opportunity__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Prospecting_Status__c</field>
+        <operation>equals</operation>
+        <value>Open Opportunity,AE Prospecting,ADR Prospecting</value>
+    </filters>
+    <filters>
+        <field>Hashtag__c</field>
+        <operation>contains</operation>
+        <value>#BB</value>
+    </filters>
+    <label>TS / BB Target Accounts</label>
+</ListView>

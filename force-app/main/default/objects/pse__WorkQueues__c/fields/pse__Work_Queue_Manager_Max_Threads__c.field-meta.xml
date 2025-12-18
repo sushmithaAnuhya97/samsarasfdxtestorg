@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Work_Queue_Manager_Max_Threads__c</fullName>
+    <defaultValue>1</defaultValue>
+    <deprecated>false</deprecated>
+    <description>How many concurrent batch jobs should the work queue manager submit at once. Current salesforce governor limits restrict this to 5 or less.</description>
+    <externalId>false</externalId>
+    <label>Work Queue Manager Max Threads</label>
+    <precision>1</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

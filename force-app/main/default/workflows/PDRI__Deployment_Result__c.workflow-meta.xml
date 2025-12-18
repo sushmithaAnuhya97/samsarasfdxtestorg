@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PDRI__Notify_Deployment_Failed_Alert</fullName>
+        <description>Notify Deployment Failed Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PDRI__Prodly_Moover_Email_Templates/PDRI__Notify_Deployment_Failed_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>PDRI__Notify_Deployment_Started_Alert</fullName>
+        <description>Notify Deployment Started Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PDRI__Prodly_Moover_Email_Templates/PDRI__Notify_Deployment_Started_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>PDRI__Notify_Deployment_Succeeded_Alert</fullName>
+        <description>Notify Deployment Succeeded Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PDRI__Prodly_Moover_Email_Templates/PDRI__Notify_Deployment_Succeeded_Template</template>
+    </alerts>
+    <rules>
+        <fullName>PDRI__Deployment Failed Workflow</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>PDRI__Deployment_Result__c.PDRI__Status__c</field>
+            <operation>equals</operation>
+            <value>Finished</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDRI__Deployment_Result__c.PDRI__Result__c</field>
+            <operation>equals</operation>
+            <value>Failure</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>PDRI__Deployment Started Workflow</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>PDRI__Deployment_Result__c.PDRI__Status__c</field>
+            <operation>equals</operation>
+            <value>Started</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>PDRI__Deployment Succeeded Workflow</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>PDRI__Deployment_Result__c.PDRI__Status__c</field>
+            <operation>equals</operation>
+            <value>Finished</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PDRI__Deployment_Result__c.PDRI__Result__c</field>
+            <operation>equals</operation>
+            <value>Success</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

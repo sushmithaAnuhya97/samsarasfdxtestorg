@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreventADR_Mngr_updating_Transfer_Status</fullName>
+    <active>true</active>
+    <description>This is created as part of GTMS-26594 to prevent ADR Manager updating the ADR Transfer Status field</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(ADR_Transfer_Status__c),
+    CONTAINS($UserRole.Name, &quot;ADR&quot;),
+    CONTAINS($UserRole.Name, &quot;Manager&quot;),
+    NOT(AND(
+        Rejected_by_ADR_Manager__c = TRUE,
+        ISPICKVAL(Rejection_Reason__c, &apos;ADR Manager Audit - Does not meet criteria&apos;)
+    ))
+)</errorConditionFormula>
+    <errorDisplayField>ADR_Transfer_Status__c</errorDisplayField>
+    <errorMessage>ADR Managers are not permitted to modify the ADR Transfer Status.</errorMessage>
+</ValidationRule>

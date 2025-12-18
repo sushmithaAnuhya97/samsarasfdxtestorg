@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Field_Action_Edits_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+fpro__Service_Name__c = &apos;Field Actions&apos;,
+TEXT(fpro__Field_Action__c) = &apos;Field Edits&apos;,
+fpro__Description__c = null,
+fpro__Inline_Help_Text__c = null,
+fpro__Label_Add_Prefix__c = null,
+fpro__API_Name_Add_Prefix__c = null
+)</errorConditionFormula>
+    <errorMessage>Please enter one or more values</errorMessage>
+</ValidationRule>

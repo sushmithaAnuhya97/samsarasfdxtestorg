@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Country_and_State</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR ( ISBLANK( Country ),
+AND (Country = &quot;United States&quot;, ISBLANK( State ))
+)</errorConditionFormula>
+    <errorMessage>Required fields missing: Please update City / State in order to proceed. Further questions, contact partners@samsara.com</errorMessage>
+</ValidationRule>

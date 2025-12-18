@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Master_Object__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Select the master object (e.g., Account or CustomObject__c) for which this job will update records.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the API name of the master object (e.g., Account or CustomObject__c) for which records will be updated by this job. Incorrect or missing API names will prevent the job from executing.</inlineHelpText>
+    <label>Master Object</label>
+    <length>255</length>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

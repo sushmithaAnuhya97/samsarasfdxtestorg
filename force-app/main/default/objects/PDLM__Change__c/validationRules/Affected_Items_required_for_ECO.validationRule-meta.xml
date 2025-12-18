@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Affected_Items_required_for_ECO</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    PDLM__Status_lk__r.Name  = &quot;Doc Control&quot;,
+    PDLM__Category__r.Name = &quot;Engineering Change Order (ECO)&quot;,
+    PDLM__Affected_Item_Counter__c =0
+)</errorConditionFormula>
+    <errorMessage>Affected Items are required on an Engineering Change Order</errorMessage>
+</ValidationRule>

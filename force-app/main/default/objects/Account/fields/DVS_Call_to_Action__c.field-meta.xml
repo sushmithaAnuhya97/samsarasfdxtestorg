@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DVS_Call_to_Action__c</fullName>
+    <description>This field is used by DVS to identify actions needed to be performed by Sales Ops.
+Renamed picklist GTMS-26214</description>
+    <label>DVS Call to Action</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fake Account</fullName>
+                <default>false</default>
+                <label>Fake Account</label>
+            </value>
+            <value>
+                <fullName>Review Use Case</fullName>
+                <default>false</default>
+                <label>Review Use Case</label>
+            </value>
+            <value>
+                <fullName>Review Hierarchy</fullName>
+                <default>false</default>
+                <label>Review Hierarchy</label>
+            </value>
+            <value>
+                <fullName>Out of Business</fullName>
+                <default>false</default>
+                <label>Out of Business</label>
+            </value>
+            <value>
+                <fullName>GTM Blocked</fullName>
+                <default>false</default>
+                <label>GTM Blocked</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account</fullName>
+                <default>false</default>
+                <label>Duplicate Account</label>
+            </value>
+            <value>
+                <fullName>Out of Segment: Vehicles/Assets</fullName>
+                <default>false</default>
+                <label>Out of Segment: Vehicles/Assets</label>
+            </value>
+            <value>
+                <fullName>Out of Segment: Industry</fullName>
+                <default>false</default>
+                <label>Out of Segment: Industry</label>
+            </value>
+            <value>
+                <fullName>Out of Segment: Geography</fullName>
+                <default>false</default>
+                <label>Out of Segment: Geography</label>
+            </value>
+            <value>
+                <fullName>Deactivated/Written Off</fullName>
+                <default>false</default>
+                <label>Deactivated/Written Off</label>
+            </value>
+            <value>
+                <fullName>Review Account: Questionable Validity</fullName>
+                <default>false</default>
+                <label>Review Account: Questionable Validity</label>
+            </value>
+            <value>
+                <fullName>Delete - Fake Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delete - Fake Account</label>
+            </value>
+            <value>
+                <fullName>Delete - No Product Fit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delete - No Product Fit</label>
+            </value>
+            <value>
+                <fullName>Delete - Out of Business Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delete - Out of Business Account</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account - Do not work</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Duplicate Account - Do not work</label>
+            </value>
+            <value>
+                <fullName>Independent Subsidiary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Independent Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Keep as Non-Named Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Keep as Non-Named Account</label>
+            </value>
+            <value>
+                <fullName>Merge - Duplicate Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Merge - Duplicate Account</label>
+            </value>
+            <value>
+                <fullName>Move to AE1 Segment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to AE1 Segment</label>
+            </value>
+            <value>
+                <fullName>Move to AE2 Segment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to AE2 Segment</label>
+            </value>
+            <value>
+                <fullName>Move to AE3 Segment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to AE3 Segment</label>
+            </value>
+            <value>
+                <fullName>Move to ENT Segment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to ENT Segment</label>
+            </value>
+            <value>
+                <fullName>Move to Microfleet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to Microfleet</label>
+            </value>
+            <value>
+                <fullName>Move to Parent - Next FY</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to Parent - Next FY</label>
+            </value>
+            <value>
+                <fullName>Move to Partner Team - Channel Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to Partner Team - Channel Account</label>
+            </value>
+            <value>
+                <fullName>Move to SLED Segment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Move to SLED Segment</label>
+            </value>
+            <value>
+                <fullName>Review - inaccurate data</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Review - inaccurate data</label>
+            </value>
+            <value>
+                <fullName>Review Account - Questionable Validity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Review Account - Questionable Validity</label>
+            </value>
+            <value>
+                <fullName>Review Account Family Relationship</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Review Account Family Relationship</label>
+            </value>
+            <value>
+                <fullName>Subsidiary - Move under parent account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Subsidiary - Move under parent account</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

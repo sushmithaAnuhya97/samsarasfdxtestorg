@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>maps__ManagerVisibility__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Select which manager structure to adopt for Timesheet</description>
+    <label>Manager Visibility</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Role Hierarchy</fullName>
+                <default>true</default>
+                <label>Role Hierarchy</label>
+            </value>
+            <value>
+                <fullName>Manager Hierarchy</fullName>
+                <default>false</default>
+                <label>Manager Hierarchy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

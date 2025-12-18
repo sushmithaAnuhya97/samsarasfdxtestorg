@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"  controller="createDisclaimerController" access="global" >
+    <aura:attribute name="message" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     <aura:if isTrue="{!v.message}">
+        <div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+            <span class="slds-assistive-text">warning</span>
+            <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+                 <lightning:icon iconName="utility:warning" alternativeText="Warning!" title="Warning" />
+            </span>
+            <h2>{!v.message}</h2>
+        </div>
+    </aura:if>
+</aura:component>

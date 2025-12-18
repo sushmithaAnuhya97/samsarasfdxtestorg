@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Approval</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(SBQQ__PrimaryQuote__c != NULL, Discount_Approval_Status_from_Quote__c, AND (NOT($Permission.Validation_Rule_Exemption),
+     NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+     NOT(CONTAINS($Profile.Name,&quot;System Administrator&quot;)),
+     NOT(CONTAINS($Profile.Name,&quot;Samsara - Product Management&quot;)),
+     $Profile.Name&lt;&gt;&quot;Order Operations Admin&quot;,
+     NOT(CONTAINS($Profile.Name,&quot;Samsara SE&quot;)),
+     NOT(CONTAINS($Profile.Name,&quot;Samsara SE Management&quot;)),
+     OR(
+        ISPICKVAL(Type,&quot;Revenue Opportunity&quot;),
+        AND(
+            ISPICKVAL(Type,&quot;Promo Opportunity&quot;), 
+            NOT(ISPICKVAL(Promo_Reason__c,&quot;Exchange&quot;)),
+            NOT(ISPICKVAL(Promo_Reason__c,&quot;Warranty Exchange&quot;))
+        )
+     ),
+     ISCHANGED(StageName),
+     NOT(ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+     OR(Blended_Discount__c&gt;Approved_Discount__c,  Discount_Approval_Needed__c = true)
+))</errorConditionFormula>
+    <errorMessage>Discount Approval Required. Please lower discretionary discount, or request approval from a manager.</errorMessage>
+</ValidationRule>

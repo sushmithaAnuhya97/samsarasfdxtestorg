@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Customization_Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This Stage will be calculated based on FLO Customization Records created against the ones the FLO scanner count.
+
+VERIFIED: Means the counts match 
+RESCANNER: Means the type should be selected on the scanner page and rescanned. 
+DEDUPLICATE: Means that the deduplicate tool should be run. 
+NOT DETECTED: Means that no records of that type have been located.</description>
+    <externalId>false</externalId>
+    <formula>IF( FLODocs__Scanner_Count__c = FLODocs__Documented_Record_Count__c, &quot;VERIFIED&quot;, IF(FLODocs__Documented_Record_Count__c &lt; FLODocs__Scanner_Count__c,&quot;RESCANNER&quot;, IF(FLODocs__Documented_Record_Count__c &gt; FLODocs__Scanner_Count__c,&quot;DEDUPLICATE&quot;,&quot;NOT DETECTED&quot;)))</formula>
+    <inlineHelpText>This Stage will be calculated based on FLO Customization Records created against the ones the FLO scanner count. For more information see Field description.</inlineHelpText>
+    <label>Customization Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

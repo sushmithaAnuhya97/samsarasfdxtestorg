@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Summary</fullName>
+    <active>true</active>
+    <description>Please fill out request summary</description>
+    <errorConditionFormula>ISNULL( Request_Summary__c )</errorConditionFormula>
+    <errorDisplayField>Request_Summary__c</errorDisplayField>
+    <errorMessage>Please fill out request summary field before saving</errorMessage>
+</ValidationRule>

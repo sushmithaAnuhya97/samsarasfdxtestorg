@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Resource_Class__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Designates the class of OAuth2 resource. 
+Git =&gt; various Git-based version control services (eg, GitHub, GitLab, Bitbucket)
+Salesforce =&gt; Salesforce</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Designates the class of OAuth2 resource. 
+Git =&gt; various Git-based version control services (eg, GitHub, GitLab, Bitbucket)
+Salesforce =&gt; Salesforce</inlineHelpText>
+    <label>Resource Class</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Git</fullName>
+                <default>true</default>
+                <label>Git</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

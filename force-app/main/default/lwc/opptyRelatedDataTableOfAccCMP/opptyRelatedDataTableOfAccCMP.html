@@ -1,0 +1,101 @@
+<template>
+    <template if:true={spinner}>
+		<div class="demo-only" style="height:6rem;position:relative">
+			<div class="slds-spinner_container">
+				<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+					<span class="slds-assistive-text">Loading</span>
+					<div class="slds-spinner__dot-a"></div>
+					<div class="slds-spinner__dot-b"></div>
+				</div>
+			</div>
+		</div>
+	</template>
+    <template if:false={spinner}>
+        <lightning-modal-header>
+            <h3 class="slds-modal__title slds-hyphenate slds-text-heading--medium">New Opportunity</h3>
+        </lightning-modal-header>
+        <lightning-modal-body>
+                <template if:true={showOpptyData}>
+                    <c-create-oppty-generic-data-table 	object-name="Revenue Opportunity" 
+                                            allowed-records={filteredopptys}
+                                            scoped-message={displayInfo}
+                                            columns={columns}>
+                    </c-create-oppty-generic-data-table >
+                    <!-- <div class="container slds-m-horizontal_medium">
+                        <div class="header">
+                            <div class="header-content">
+                                <h3>Opportunities Related to Account</h3>
+                                <p class="oppty-count">Showing {filteredopptys.length} Opportunities of {opptys.length}
+                                </p>
+                            </div>
+                            <lightning-layout vertical-align="center">
+                                <lightning-layout-item>
+                                    <lightning-input label="Search Opportunities" type="search" value={searchKey}
+                                    onchange={handleSearchKeyChange}>
+                                </lightning-input>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <div class="slds-m-vertical_x-small">
+                                    <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-scoped-notification_light"
+                                        role="status">
+                                        <span>
+                                                <lightning-icon class="slds-m-right_x-small" size="x-small"
+                                                    aria-hidden="true" icon-name="utility:info"
+                                                    alternative-text="info">
+                                                </lightning-icon>
+                                        </span>
+                                        <span class="Margn">Free Trials can only be created from a Revenue Opportunity. Please select an Opportunity from the table and press next</span>
+                                    </div>
+                        </div>
+                        <div class="datatable-container">
+                            <div class="scrollable-table">
+                                <lightning-datatable key-field="Id" data={pagedopptys} columns={columns}
+                                    max-row-selection="1" 
+                                    onrowselection={handleRowSelection}
+                                selected-rows={selectedRowId}>
+                                </lightning-datatable>
+                            </div>
+                            <template if:true={nopagedOpptys}>
+                                <div class="no-data-message">
+                                    {noResultsMessage}
+                                </div>
+                            </template>
+
+                        </div>
+                        <div class="pagination slds-m-top_x-small">
+                            <lightning-button-icon icon-name="utility:chevronleft" alternative-text="Previous"
+                                onclick={handleOpptypageBack} disabled={isPreviousPageDisabled}>
+                            </lightning-button-icon>
+                            <span class="slds-m-horizontal_xx-small">{opptyPaginationStatus}</span>
+                            <lightning-button-icon icon-name="utility:chevronright" alternative-text="Next"
+                                onclick={handleOpptyNextpage} disabled={isNextpageDisabled}>
+                            </lightning-button-icon>
+                        </div>						
+                    </div> -->
+                </template>
+                <template if:false={showOpptyData}>
+                    <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_info"
+                        role="status">
+                        <span>
+                            <lightning-icon variant="inverse" class="slds-m-right_x-smal" size="medium"
+                                aria-hidden="true" icon-name="utility:info"
+                                alternative-text="info"></lightning-icon></span>
+                        <span class="Margn">{noDataMessage}</span>
+                    </div>
+                </template>
+            </lightning-modal-body>
+        
+            <lightning-modal-footer>
+               
+                <template if:true={showOpptyData}>
+                    <lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}>
+                    </lightning-button>
+                    <lightning-button variant="brand" label="Next" onclick={handleNavigateToFlow}></lightning-button>
+                </template>
+                <template if:false={showOpptyData}>
+                    <lightning-button variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+                </template>
+            </lightning-modal-footer>
+    </template>
+</template>

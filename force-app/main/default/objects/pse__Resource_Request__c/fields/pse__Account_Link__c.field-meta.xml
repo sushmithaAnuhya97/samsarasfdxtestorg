@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Account_Link__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A link to the Account associated with the related Opportunity, if one exists; otherwise, a link to the Account associated with the related Project, if one exists.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISNULL(pse__AccountId__c),&apos;&apos;,HYPERLINK(&apos;/&apos;&amp;pse__AccountId__c, IF(ISNULL(pse__Account__c),pse__AccountId__c,pse__Account__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>A link to the Account associated with the related Opportunity, if one exists; otherwise, a link to the Account associated with the related Project, if one exists.</inlineHelpText>
+    <label>Account Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

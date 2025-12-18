@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_All_4_Won_All_Opptys_this_Qtr</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>ACV_Bookings_SOT__c</columns>
+    <columns>Renewal_Risk__c</columns>
+    <columns>Managers_Renewal_ACV__c</columns>
+    <columns>Selected_Payment_Type__c</columns>
+    <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_FISCAL_QUARTER</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Incubate,Qualified,Proposal,Decision,Purchase,Closing,Orders Processing,Ready to Ship</value>
+    </filters>
+    <filters>
+        <field>Owner_Manager_Name_Copy__c</field>
+        <operation>equals</operation>
+        <value>Nikki Rusconi</value>
+    </filters>
+    <label>Team All 4 Won - All Opptys this Qtr</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Segment_Alignment__c</fullName>
+    <description>The segment OB ADRs are supporting, as this is not in the role hierarchy.</description>
+    <label>ADR Segment Alignment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AE2</fullName>
+                <default>false</default>
+                <label>AE2</label>
+            </value>
+            <value>
+                <fullName>AE2 SLED</fullName>
+                <default>false</default>
+                <label>AE2 SLED</label>
+            </value>
+            <value>
+                <fullName>AE3</fullName>
+                <default>false</default>
+                <label>AE3</label>
+            </value>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>DVS</fullName>
+                <default>false</default>
+                <label>DVS</label>
+            </value>
+            <value>
+                <fullName>Enterprise</fullName>
+                <default>false</default>
+                <label>Enterprise</label>
+            </value>
+            <value>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+                <label>Inbound</label>
+            </value>
+            <value>
+                <fullName>Inbound GS</fullName>
+                <default>false</default>
+                <label>Inbound GS</label>
+            </value>
+            <value>
+                <fullName>Mid - Market</fullName>
+                <default>false</default>
+                <label>Mid - Market</label>
+            </value>
+            <value>
+                <fullName>Mid - Market GS</fullName>
+                <default>false</default>
+                <label>Mid - Market GS</label>
+            </value>
+            <value>
+                <fullName>Mid - Market Pubsec</fullName>
+                <default>false</default>
+                <label>Mid - Market Pubsec</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>Partnerships</fullName>
+                <default>false</default>
+                <label>Partnerships</label>
+            </value>
+            <value>
+                <fullName>Select</fullName>
+                <default>false</default>
+                <label>Select</label>
+            </value>
+            <value>
+                <fullName>Select Pubsec</fullName>
+                <default>false</default>
+                <label>Select Pubsec</label>
+            </value>
+            <value>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+                <label>Strategic</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

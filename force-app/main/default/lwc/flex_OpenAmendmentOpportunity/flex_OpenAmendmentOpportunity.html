@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-13-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Amendment Opportunities" icon-name="custom:custom14">
+        <div class="slds-p-around_medium">
+            <div class="slds-scoped-notification slds-media slds-media_center slds-theme_error" role="alert">
+                <span class="slds-assistive-text">error</span>
+                <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+                    <lightning-icon icon-name="utility:error" size="small" variant="inverse"></lightning-icon>
+                </span>
+                <h2>A Cancel and Replace (C&R) process cannot be initiated because there are open amendment opportunities containing LIC SKUs. Please close or complete the following opportunities to proceed:</h2>
+            </div>
+        </div>
+        <template if:true={opportunities}>
+            <lightning-datatable
+                data={opportunities}
+                columns={columns}
+                key-field="Id"
+                hide-checkbox-column="true"
+            >
+            </lightning-datatable>
+        </template>
+
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+
+        <template if:false={opportunities}>
+            <p>No amendment opportunities found.</p>
+        </template>
+    </lightning-card>
+</template>

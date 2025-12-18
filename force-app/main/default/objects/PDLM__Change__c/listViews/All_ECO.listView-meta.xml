@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_ECO</fullName>
+    <columns>NAME</columns>
+    <columns>Product_Line_Affected__c</columns>
+    <columns>PDLM__Target_Implementation_Date__c</columns>
+    <columns>PDLM__Approved_Date__c</columns>
+    <columns>PDLM__Title__c</columns>
+    <columns>PDLM__Description_5000__c</columns>
+    <columns>Control_Run_Required__c</columns>
+    <columns>PDLM__In_Approval_Process__c</columns>
+    <columns>PDLM__Severity__c</columns>
+    <columns>PDLM__Status_lk__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>WO_Serial_Number_cut_in__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Line_Affected__c</field>
+        <operation>includes</operation>
+        <value>HW-VG54-NA,VG54 Class Cables,HW-VG54-EU,HW-VG54-FN,HW-VG54-NAE</value>
+    </filters>
+    <filters>
+        <field>PDLM__Status_lk__c</field>
+        <operation>notEqual</operation>
+        <value>cancelled</value>
+    </filters>
+    <label>Thor/Loki ECOs</label>
+</ListView>

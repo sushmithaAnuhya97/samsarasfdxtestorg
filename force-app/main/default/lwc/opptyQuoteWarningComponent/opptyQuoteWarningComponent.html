@@ -1,0 +1,82 @@
+<!-- 
+User Story: https://samsaradev.atlassian.net/browse/GTMS-21317
+Date: [06/10/2024]
+Sprint:  -
+Organization: Samara -Seller Exp Project
+Developer: Riyaz Shaik
+-->
+
+<template>
+
+    <template if:true={showData}>
+
+        <template if:true={selectedValues.length}>
+            <lightning-card icon-name="standard:cancel_checkout" size="small" alternative-text="Checkout"
+                title={checkOutLabel}>
+                <div>
+                    <template if:true={showSpinner}>
+                        <div>
+                            <lightning-spinner alternative-text="Loading" size="medium"
+                                variant="brand"></lightning-spinner>
+                        </div>
+                    </template>
+                    <div>
+
+                        <lightning-layout class="close-button">
+                            <lightning-layout-item>
+                                <lightning-button class="slds-m-top_x-small slds-m-bottom_x-small slds-align_right" icon-name="utility:help_doc_ext" label="Help" title="Help Link"
+                                    onclick={handleNavigate}></lightning-button>
+                            </lightning-layout-item>
+                            <div>&nbsp;</div>
+                            <lightning-layout-item>
+                                <lightning-button class="slds-m-top_x-small slds-m-bottom_x-small slds-align_right" icon-name="utility:close" label="Dismiss All" title="Dismiss All"
+                                    onclick={handleClose}></lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                    <div>
+                        &nbsp;
+                    </div>
+                    <template if:true={LabelChange}>
+                    <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_warning"
+                        role="status">
+                        <span>
+                            <lightning-icon variant="inverse" class="slds-m-right_x-smal" size="medium"
+                                aria-hidden="true" icon-name="utility:warning"
+                                alternative-text="Warning"></lightning-icon></span>
+                                
+                                    <span class="Margn"> {warningMessageLable}
+                               
+                               
+                        </span>
+                    </div>
+                </template>
+                <template if:false={LabelChange}>
+                    <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_warning"
+                        role="status">
+                        <span>
+                            <lightning-icon variant="inverse" class="slds-m-right_x-smal" size="medium"
+                                aria-hidden="true" icon-name="utility:warning"
+                                alternative-text="Warning"></lightning-icon></span>
+                                
+                                    <span class="Margn"> {warningMessageLable}
+                               
+                               
+                        </span>
+                    </div>
+                </template>
+                <div>
+                    &nbsp;
+                </div>
+                    <ul class="slds-list_dotted disk-style">
+                        <template for:each={selectedValues} for:item="value">
+                            <li key={value}>&nbsp;&nbsp;{value}</li>
+                        </template>
+                    </ul>
+                </div>
+            </lightning-card>
+
+        </template>
+
+    </template>
+</template>

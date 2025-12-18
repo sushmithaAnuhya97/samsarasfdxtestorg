@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Paid_Lease</fullName>
+    <active>true</active>
+    <label>Pre-Paid / Lease</label>
+    <picklistValues>
+        <picklist>Finance_Partner__c</picklist>
+        <values>
+            <fullName>Ascentium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crestmark Vendor Finance a Meta Bank company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dell Financial Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hitachi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samsara Capital Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAR Technology</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Period__c</picklist>
+        <values>
+            <fullName>Annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>In Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Watermark__c</picklist>
+        <values>
+            <fullName>DRAFT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

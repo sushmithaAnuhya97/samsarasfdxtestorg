@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Owner_s_Manager__c</fullName>
+    <description>Product Manager&apos;s Manager</description>
+    <externalId>false</externalId>
+    <formula>Product_Owner__r.Manager.FirstName+ &apos; &apos;+ Product_Owner__r.Manager.LastName</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Owner&apos;s Manager</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

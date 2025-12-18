@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Running_timer_Start_Date_after_Now</fullName>
+    <active>true</active>
+    <errorConditionFormula>pse__Start_Date_Time__c &gt;= NOW() &amp;&amp;  pse__Is_Running__c = true</errorConditionFormula>
+    <errorMessage>A currently running timer session cannot have a future-dated start date or time.</errorMessage>
+</ValidationRule>

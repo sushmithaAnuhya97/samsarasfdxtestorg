@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Notification_FR_Escalations_Resolved_Alert</fullName>
+        <description>Email Notification - FR Escalations: Resolved Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Last_Escalated_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>PM_Owner_Id__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/FR_Escalations_Resolved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>FR_Creation_Notification</fullName>
+        <description>FR Creation Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>PM_Owner_Id__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/FR_Creation_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>FR_Escalations_Reminder_Email_Alert</fullName>
+        <description>FR Escalations: Reminder Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PM_Owner_Manager__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PM_Owner_Id__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Feature_Request_Email_Templates/FR_Escalations_Reminder_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Featurec_Requests_Escalated</fullName>
+        <description>Featurec Requests Escalated</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Last_Escalated_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>PM_Owner_Id__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Feature_Request_Email_Templates/Feature_Requests_Escalated</template>
+    </alerts>
+</Workflow>

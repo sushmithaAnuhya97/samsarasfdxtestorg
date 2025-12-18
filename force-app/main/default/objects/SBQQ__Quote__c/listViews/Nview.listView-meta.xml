@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nview</fullName>
+    <columns>Opportunity_Owner_Role_Copy__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <columns>SBQQ__StartDate__c</columns>
+    <columns>Segment_Availability__c</columns>
+    <columns>Sales_Segment__c</columns>
+    <columns>NAME</columns>
+    <columns>SBQQ__Opportunity2__c</columns>
+    <columns>Geo_Availablity__c</columns>
+    <columns>License_Term__c</columns>
+    <columns>SBQQ__Status__c</columns>
+    <columns>SBQQ__Primary__c</columns>
+    <columns>SBQQ__PaymentTerms__c</columns>
+    <columns>Payment_Terms__c</columns>
+    <columns>P_P_Legacy__c</columns>
+    <columns>VG_Basic_Purchased__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SBQQ__Type__c</field>
+        <operation>contains</operation>
+        <value>Quote</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>9/8/2022 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>Draft</value>
+    </filters>
+    <filters>
+        <field>Oppty_Insurance_Partner_Check__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Nview</label>
+</ListView>

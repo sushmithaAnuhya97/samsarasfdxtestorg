@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Enable_Partner_Button__c</fullName>
+    <description>GTMS-25300: Created as part of Partner Application phase 2 project.
+GTMS-25476: Added Aron Howartan and Patrick Burns to get access to button using custom permissions</description>
+    <formula>AND(
+    RecordType.DeveloperName == &apos;Partner&apos;,
+				NOT(Partner_Portal_User_Id__r.IsActive),
+				OR(
+				    NOT(Account.Is_Finance_Partner_Active__c),
+								AND(
+								    Account.Is_Finance_Partner_Active__c,
+												NOT(ISPICKVAL(Account.Type,&apos;Finance Partner&apos;))
+								)
+				),
+				OR(
+				    CASESAFEID(OwnerId) ==  CASESAFEID($User.Id),
+								AND(
+								    CASESAFEID($Profile.Id) == CASESAFEID(&apos;00e1P000000xVGuQAM&apos;),/*Samsara Channel Account manager*/
+												CASESAFEID(OwnerId) ==  CASESAFEID($User.Id)
+								),
+        $Permission.Enable_Partner_User_Super_User_Access, 								
+								CASESAFEID($Profile.Id) == CASESAFEID(&apos;00e1P000000FBBDQA4&apos;),/*Sales Ops Profile*/
+								CASESAFEID($Profile.Id) == CASESAFEID(&apos;00e1a000000UoNcAAK&apos;)/*System Administratory*/
+				)	 
+)</formula>
+    <label>Show Enable Partner Button</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

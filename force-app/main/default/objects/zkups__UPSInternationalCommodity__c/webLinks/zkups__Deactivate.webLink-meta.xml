@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__Deactivate</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Deactivate/Activate</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/38.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/38.0/apex.js&quot;)} 
+
+var deactivateStatus = &apos;{!zkups__UPSInternationalCommodity__c.zkups__Deactivated__c}&apos;;
+var currentObject = new sforce.SObject(&quot;zkups__UPSInternationalCommodity__c&quot;); 
+currentObject.Id = &apos;{!zkups__UPSInternationalCommodity__c.Id}&apos;; 
+if (deactivateStatus == &apos;1&apos;) {
+  currentObject.zkups__Deactivated__c = &apos;false&apos;; 
+} else {
+  currentObject.zkups__Deactivated__c = &apos;true&apos;; 
+}
+var result = sforce.connection.update([currentObject]); 
+if (result[0].success==&apos;false&apos;) {
+  alert(result[0].errors.message);
+} else {
+  location.reload(true);
+}</url>
+</WebLink>

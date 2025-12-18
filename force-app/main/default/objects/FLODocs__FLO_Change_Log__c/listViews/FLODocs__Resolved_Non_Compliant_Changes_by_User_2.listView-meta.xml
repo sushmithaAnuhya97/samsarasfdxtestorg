@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Resolved_Non_Compliant_Changes_by_User_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__FLO_Customization__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>FLODocs__Status_Value__c</columns>
+    <columns>FLODocs__Short_Resolution_Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Noncompliance__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Status_Value__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Resolved Non-Compliant Changes (v2)</label>
+</ListView>

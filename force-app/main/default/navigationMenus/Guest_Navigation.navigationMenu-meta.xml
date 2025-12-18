@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>Samsara Partner Portal</container>
+    <containerType>Network</containerType>
+    <label>Guest Navigation</label>
+    <navigationMenuItem>
+        <label>LOGIN</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>https://www.partners-samsara.com/s/login/?language=en_US#loginSection</target>
+        <targetPreference>OpenExternalLinkInSameTab</targetPreference>
+        <type>ExternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>APPLY NOW</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>https://www.partners-samsara.com/s/login/SelfRegister</target>
+        <targetPreference>OpenExternalLinkInSameTab</targetPreference>
+        <type>ExternalLink</type>
+    </navigationMenuItem>
+</NavigationMenu>

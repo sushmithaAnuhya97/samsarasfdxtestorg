@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Desk_Authorization_Level_Required</fullName>
+    <active>true</active>
+    <description>Deal Desk Authorization Level is required for Deal Desk users when approving or rejecting Deal Desk approval rules</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Validation_Rule_Exemption),
+    OR(
+        CONTAINS($Label.Deal_Desk_Profiles, $Profile.Name),
+        $Profile.Name = &quot;System Administrator&quot;
+    ),
+    OR(
+        ISPICKVAL(sbaa__Status__c, &quot;Approved&quot;),
+        ISPICKVAL(sbaa__Status__c, &quot;Rejected&quot;)
+    ),
+    CONTAINS($Label.Deal_Desk_Approval_Rules, sbaa__Rule__r.Name),
+    ISBLANK(TEXT(Deal_Desk_Authorization_Level__c))
+)</errorConditionFormula>
+    <errorMessage>Deal Desk Authorization Level is required before approving or rejecting this Deal Desk approval.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Data_Change_Tracking__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Valid only for CustomObject, CustomField, and CustomObject data records. Determines how changes to data records are handled by Strongpoint.</description>
+    <inlineHelpText>Not Tracked: changes in data records are not tracked by Strongpoint
+Tracked, Blocking: changes in data records are blocked if there is no approved Change Request
+Tracked, Non-Blocking: changes in data records are logged by Strongpoint</inlineHelpText>
+    <label>Data Change Tracking</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Tracked</fullName>
+                <default>true</default>
+                <label>Not Tracked</label>
+            </value>
+            <value>
+                <fullName>Tracked, Blocking</fullName>
+                <default>false</default>
+                <label>Tracked, Blocking</label>
+            </value>
+            <value>
+                <fullName>Tracked, Non-Blocking</fullName>
+                <default>false</default>
+                <label>Tracked, Non-Blocking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

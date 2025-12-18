@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Deal_Registration_AE_Approval_Alert</fullName>
+        <description>Deal Registration AE Approval To PAM Alert : GTMS-20578</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PAM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Partner_Registration/Deal_Registration_AE_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_AE_Approval_To_Partner_Contact_Alert</fullName>
+        <description>Deal Registration AE Approval To Partner Contact Alert : GTMS-20578</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rodrigo.carpio@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Partner_Registration/Deal_Reg_AE_Approval_To_PartnerContact</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_AE_Rejection_Alert</fullName>
+        <description>Deal Registration AE Rejection To PAM Alert : GTMS-20579</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PAM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Partner_Registration/Deal_Registration_AE_Rejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_AE_Rejection_To_Partner_Contact_Alert</fullName>
+        <description>Deal Registration AE Rejection To Partner Contact Alert : GTMS-20579</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PAM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Partner_Registration/Deal_Reg_AE_Reject_PartnerContact</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_AE_SLA_Notification_Alert_GTMS_28939</fullName>
+        <description>Deal Registration AE SLA Notification Alert : GTMS-28939</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>PAM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Deal_Registration_AE_SLA_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_Channel_Opportunity_to_AE</fullName>
+        <description>Deal Registration Channel Opportunity to AE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Deal_Reg_Channel_Opportunity_to_AE</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_Creation_Alert</fullName>
+        <description>Deal Registration Creation Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Partner_Registration_Notification_to_PAM</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_PAM_Approval_Alert</fullName>
+        <description>Deal Registration PAM Approval Alert: GTMS-20571</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Deal_Registration_PAM_Approval_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_PAM_Rejection_Alert</fullName>
+        <description>Deal Registration PAM Rejection Alert: GTMS-20570</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rodrigo.carpio@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Deal_Reg_AE_Reject_PartnerContact</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Registration_PAM_Rejection_Partner_Contact</fullName>
+        <description>Deal Registration PAM Rejection Partner Contact: GTMS-26098</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PAM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Deal_Registration_Status_Update_Denied</template>
+    </alerts>
+    <alerts>
+        <fullName>Denied_PA_Alert</fullName>
+        <description>GTMS-22483: Created as part of partner application phase 2 project CR changes to send email for previosly denied application</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>partners@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Denied_PA_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Duplicate_Deal_Registration_Alert</fullName>
+        <description>GTMS-28072: Created as part of Patner H1 project Hyper care</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PAM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Duplicate_Deal_Registration_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>InReview_PA_Alert</fullName>
+        <description>GTMS-22483: Created as part of partner application phase 2 project CR changes to send email for previosly inreview application</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>partners@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/InReview_PA_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>PA_User_Authorization_Pending_Alert</fullName>
+        <description>GTMS-22483: Created as part of partner application phase 2 project CR changes to send email for application under user approval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>partners@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/User_Authorization_Pending_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Application_Creation_Alert</fullName>
+        <ccEmails>agamani.parida@samsara.com</ccEmails>
+        <description>Partner Application Creation Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Partner_Application_Notification_to_PAM</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Application_PAM_Approval_Alert</fullName>
+        <description>Partner Application PAM Approval Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Partner_Application_PAM_Approval_Temp</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Registration_ISV_Contact_Notification</fullName>
+        <description>Partner Registration ISV Contact Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Partner_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Partner_Registration_ISV_Contact_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Registration_SLA_Notification_for_AE</fullName>
+        <description>Partner Registration SLA Notification for AE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>partners@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/SLA_Notification_for_AE</template>
+    </alerts>
+</Workflow>

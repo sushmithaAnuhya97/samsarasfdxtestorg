@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA__AVAAI_options__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Options field for this object in Conversica</description>
+    <inlineHelpText>Options field for this object in Conversica</inlineHelpText>
+    <label>Conversica Options</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Stop</fullName>
+                <default>false</default>
+                <label>Stop</label>
+            </value>
+            <value>
+                <fullName>Skip to follow-up</fullName>
+                <default>false</default>
+                <label>Skip to follow-up</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

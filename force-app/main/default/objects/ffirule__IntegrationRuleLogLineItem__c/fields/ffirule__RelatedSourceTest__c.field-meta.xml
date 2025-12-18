@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__RelatedSourceTest__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Related Source Test</label>
+    <referenceTo>ffirule__IntegrationRuleSourceTest__c</referenceTo>
+    <relationshipLabel>Create Target Log</relationshipLabel>
+    <relationshipName>IntegrationRuleLogLineItems</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

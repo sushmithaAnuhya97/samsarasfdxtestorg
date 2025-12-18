@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Hierarchy_Path__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Path field for auto-generated concatenated ancestor names of the skill in the hierarchy.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(
+        		pse__Parent_Category__r.pse__Parent_Category__r.Name), &quot;&quot;,
+        		pse__Parent_Category__r.pse__Parent_Category__r.Name &amp; &quot; &gt; &quot;)
+        	&amp;
+        	IF(ISBLANK(pse__Parent_Category__r.Name), &quot;&quot;, pse__Parent_Category__r.Name)</formula>
+    <inlineHelpText>Path field for auto-generated concatenated ancestor names of the skill in the hierarchy.</inlineHelpText>
+    <label>Hierarchy Path</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

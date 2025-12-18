@@ -1,0 +1,384 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    
+    <template if:true={error}>
+        <div class="slds-text-color_error">
+            {error.message}
+        </div>
+    </template>
+    <!--template if:false={editMode}>
+        <lightning-button label="Edit" title="Edit" class="slds-m-right_x-small slds-float_right" slot="actions" onclick={handleEdit}></lightning-button>
+    </template-->
+    <div slot="actions" >
+        <template if:false={editMode}>
+            <lightning-button-icon
+                icon-name="utility:edit"
+                variant="border-filled"
+                alternative-text="Edit"
+                onclick={handleEdit}>
+            </lightning-button-icon>
+        </template>
+    </div>
+    
+    <template if:true={accountData}>
+        <template if:false={editMode}>
+            <lightning-record-view-form
+                record-id={extensionRecordId}
+                object-api-name="Account_Extension__c"
+            >
+            <lightning-accordion>
+                <lightning-accordion-section label="Partner Onboarding">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="MNDA_Signed__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Sales_Ops_Validation__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Legal_Agreement_Executed__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="PAM_Manager_Approval__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Partner_Onboarding_Complete__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+                <lightning-accordion-section label="Partner Lifecycle Milestones">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Agreement_Type__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Agreement_Received__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="MNDA_Status__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                           
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+                <lightning-accordion-section label="Other Information">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Onboarding_Type__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Is_PAM_Manager__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="LMS_license_Type__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                           
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Capabilities_Lead_gen_events_PR_etc__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Geographies_served__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Partner_Industries_Served__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Insurance_broker_or_carrier__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Do_you_have_an_internal_marketing_team__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Number_of_customers_estimate__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Avg_Customer_Fleet_Size__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Sales_employees_dedicated_to_IoT_fleet__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Primary_goal_in_partnering_with_Samsara__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Samsara_involve_a_technical_integration__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Currently_with_other_TelematicsProviders__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Currently_with_other_Telematics_Details__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Worked_telematics_providers_previously__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Worked_telematics_providers_prev_detls__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Sell_additional_telematics_related_prods__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="Sell_additional_telematics_related_detls__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+            </lightning-accordion>    
+            
+            
+            
+            
+            </lightning-record-view-form>
+        </template>
+        <template if:true={editMode}>
+            <lightning-record-edit-form
+                record-id={extensionRecordId}
+                object-api-name="Account_Extension__c"
+                onsuccess={handleSuccess}
+            >
+                
+            <lightning-accordion>
+                <lightning-accordion-section label="Partner Onboarding">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="MNDA_Signed__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Sales_Ops_Validation__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Legal_Agreement_Executed__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="PAM_Manager_Approval__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Partner_Onboarding_Complete__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+                <lightning-accordion-section label="Partner Lifecycle Milestones">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Agreement_Type__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Agreement_Received__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="MNDA_Status__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                           
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+                <lightning-accordion-section label="Other Information">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Onboarding_Type__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Is_PAM_Manager__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="LMS_license_Type__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                           
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Capabilities_Lead_gen_events_PR_etc__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Geographies_served__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Partner_Industries_Served__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Insurance_broker_or_carrier__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Do_you_have_an_internal_marketing_team__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Number_of_customers_estimate__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Avg_Customer_Fleet_Size__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Sales_employees_dedicated_to_IoT_fleet__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Primary_goal_in_partnering_with_Samsara__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Samsara_involve_a_technical_integration__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Currently_with_other_TelematicsProviders__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Currently_with_other_Telematics_Details__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Worked_telematics_providers_previously__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Worked_telematics_providers_prev_detls__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Sell_additional_telematics_related_prods__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Sell_additional_telematics_related_detls__c">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+            </lightning-accordion>  
+            <div class="slds-m-top_medium">
+                <lightning-button
+                class="slds-m-top_small"
+                label="Cancel"
+                onclick={handleSuccess}
+            ></lightning-button>
+                <lightning-button
+                    class="slds-m-top_small"
+                    type="submit"
+                    label="Save"
+                    variant="brand">
+                </lightning-button>
+            </div>
+            </lightning-record-edit-form>
+        </template>
+        <!--div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <lightning-record-view-form
+                    record-id={recordId}
+                    object-api-name="Account">
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    
+                </lightning-record-view-form>
+            </div>
+        </div-->
+        
+    </template>
+</template>

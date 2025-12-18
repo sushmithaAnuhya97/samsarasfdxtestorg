@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Quality_Issue_lk__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Quality Issue</label>
+    <referenceTo>PDLM__Quality__c</referenceTo>
+    <relationshipLabel>Affected Assets</relationshipLabel>
+    <relationshipName>Affected_Assets</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

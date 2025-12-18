@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAM_Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>Partner_Account_lr__r.Owner.FirstName &amp; &quot; &quot; &amp; Partner_Account_lr__r.Owner.LastName 
+/*rvpe__RVAccount__r.rvpe__SFAccount__r.Owner.FirstName  &amp; &quot; &quot; &amp; rvpe__RVAccount__r.rvpe__SFAccount__r.Owner.LastName*/</formula>
+    <label>CAM Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

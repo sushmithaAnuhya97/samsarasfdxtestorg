@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE1_CSM_Handoff_Notes_Must_be_Completed</fullName>
+    <active>false</active>
+    <description>Deactivated as part of GTMS-3587</description>
+    <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+    $Profile.Name &lt;&gt; &apos;System Administrator API&apos;,
+    Probability &gt; 0.95,
+    LEN( Account.AE_to_CSM_handoff_notes__c )&lt; 1,
+    TEXT(SBQQ__PrimaryQuote__r.Configuration_Segment__c) = &apos;Express&apos;,
+    NOT(Is_Webstore_Upsell_Opportunity__c),
+    NOT(Small_Fleet_Opportunity__c)
+)</errorConditionFormula>
+    <errorMessage>AE to CSM Handoff notes must be completed on the account prior to closing</errorMessage>
+</ValidationRule>

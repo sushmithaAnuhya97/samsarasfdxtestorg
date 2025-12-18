@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bad_Shipping_Cost_Ready_to_Ship</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(StageName, &quot;Ready to Ship&quot;),
+Shipping_and_Handling__c = 99999.99
+)</errorConditionFormula>
+    <errorMessage>Shipping Cost should not be 99,999.99 before going to Ready to Ship</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Ship_can_only_have_Production_Items</fullName>
+    <active>true</active>
+    <description>Only production Items are allowed on a Stop Ship</description>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL(PDLM__Item_Revision__r.PDLM__Lifecycle_Phase__c, &quot;EOP&quot;),
+ISPICKVAL(PDLM__Item_Revision__r.PDLM__Lifecycle_Phase__c, &quot;EOL&quot;)
+),
+PDLM__Change_Order_lk__r.PDLM__Category__r.Name = &quot;Stop Ship&quot;
+)</errorConditionFormula>
+    <errorMessage>A stop ship request can only have production or development Items. Please remove any non production/development items when selecting Affected Items.</errorMessage>
+</ValidationRule>

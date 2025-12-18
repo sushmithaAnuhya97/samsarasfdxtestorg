@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Prefix__c</fullName>
+    <deprecated>false</deprecated>
+    <description>When generating new items in this category, system will prefix the item number with this string.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Optional string to be prepended to Item Name when creating new Items for this category. Include a dash or other separator at end of string if one is desired between the prefix and the autonumber portion of the item name.</inlineHelpText>
+    <label>Prefix</label>
+    <length>10</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

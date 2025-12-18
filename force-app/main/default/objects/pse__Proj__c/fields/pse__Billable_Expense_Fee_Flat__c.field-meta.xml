@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Billable_Expense_Fee_Flat__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Flat fee in Project currency by which to increase the billable amount of any Expense logged for the Project.  The calculation will apply any percentage expense fee*before* this flat expense fee amount.</description>
+    <inlineHelpText>Flat fee in Project currency by which to increase the billable amount of any Expense logged for the Project.  The calculation will apply any percentage expense fee*before* this flat expense fee amount.</inlineHelpText>
+    <label>Billable Expense Fee Flat</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

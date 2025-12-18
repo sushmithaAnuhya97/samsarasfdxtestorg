@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISM_ISD_VP_Approval__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(Blended_Discount__c*100 &gt; 20, Blended_Discount__c*100 &lt;= 35), &apos;ISM&apos;,
+IF(
+AND(Blended_Discount__c*100 &gt; 35, Blended_Discount__c*100 &lt;= 40), &apos;ISD&apos;,
+IF(
+AND(Blended_Discount__c*100 &gt; 40, Blended_Discount__c*100 &lt;= 45), &apos;VP&apos;,
+&apos;Other&apos;
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ISM ISD VP Approval</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

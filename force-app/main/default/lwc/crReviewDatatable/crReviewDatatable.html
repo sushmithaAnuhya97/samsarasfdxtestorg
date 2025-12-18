@@ -1,0 +1,94 @@
+<template>
+    <div class="slds-card responsive-card">
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="table-container">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="Approve ?">Approve ?</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="Name">Name</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="Channel Partner">Channel Partner</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="Key Customer Insight">Key Customer Insight</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="Samsara Recommendation">Samsara Recommendation</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="Sales Cycle Investment">Sales Cycle Investment</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="Executive Introduction">Executive Introduction</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={tableData} for:item="record">
+                            <tr key={record.Id}>
+                                <td>
+                                    <lightning-input type="checkbox" 
+                                                    data-id={record.Id} 
+                                                    checked={record.approveCheckbox}
+                                                    onchange={handleCheckboxChange}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <a href={record.nameUrl} onclick={navigateToRecord} data-id={record.Id}>
+                                        {record.Name}
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href={record.partnerUrl} onclick={navigateToRecord} data-field={record.Channel_Partner__c}>
+                                        {record.Partner_Account_Name__c}
+                                    </a>
+                                </td>
+                                <td>
+                                    <lightning-input type="checkbox" 
+                                                    checked={record.Key_Customer_Insight__c}
+                                                    value={record.Key_Customer_Insight__c}
+                                                    data-field="Key_Customer_Insight__c"
+                                                    data-id={record.Id}
+                                                    onchange={handleFieldChange}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input type="checkbox" 
+                                                    checked={record.Samsara_Recommendation__c}
+                                                    value={record.Samsara_Recommendation__c}
+                                                    data-field="Samsara_Recommendation__c"
+                                                    data-id={record.Id}
+                                                    onchange={handleFieldChange}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input type="checkbox" 
+                                                    checked={record.Sales_Cycle_Investment__c}
+                                                    value={record.Sales_Cycle_Investment__c}
+                                                    data-field="Sales_Cycle_Investment__c"
+                                                    data-id={record.Id}
+                                                    onchange={handleFieldChange}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input type="checkbox" 
+                                                    checked={record.Executive_Introduction__c}
+                                                    value={record.Executive_Introduction__c}
+                                                    data-field="Executive_Introduction__c"
+                                                    data-id={record.Id}
+                                                    onchange={handleFieldChange}>
+                                    </lightning-input>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DataTransformationTable__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Data Transformation Table being used by this Declarative Subscription Custom Mapping.</description>
+    <inlineHelpText>The Data Transformation Table being used by this Declarative Subscription Custom Mapping.</inlineHelpText>
+    <label>Data Transformation Table</label>
+    <referenceTo>fferpcore__DataTransformationTable__c</referenceTo>
+    <relationshipLabel>Declarative Subscription Custom Mappings</relationshipLabel>
+    <relationshipName>Declarative_SubscriptionCustomMappings</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,277 @@
+<apex:page lightningStylesheets="true" standardController="Opportunity" extensions="ShippingQuantitySplitCtrl" docType="html-5.0" >
+    <apex:form id="formId">
+        <apex:actionFunction name="updateTrialUnits" action="{!updateTrialUnitsOnAddressChange}" rerender="formId" status="loading">
+            <apex:param name="selectedAddress" value="" assignTo="{!selectedAddress}"/>
+            <apex:param name="productCode" value="" assignTo="{!selectedProductCode}"/>
+            <apex:param name="incrementVar" value="" assignTo="{!incrementVarRef}"/>
+            <apex:param name="orderNumber" value="" assignTo="{!orderNumber}"/>
+            <apex:param name="ShipToaddressId" value="" assignTo="{!ShipToaddressId}"/>
+        </apex:actionFunction>
+        <apex:actionFunction name="splitTrialUnits" action="{!splitTrailItems}" rerender="formId" status="loading">
+            <apex:param name="selectedAddress" value="" assignTo="{!selectedAddress}"/>
+            <apex:param name="productCode" value="" assignTo="{!selectedProductCode}"/>
+            <apex:param name="incrementVar" value="" assignTo="{!incrementVarRef}"/>
+            <apex:param name="quantity" value="" assignTo="{!quantity}"/>
+            <apex:param name="toPurchase" value="" assignTo="{!toPurchase}"/>
+            <apex:param name="orderNumber" value="" assignTo="{!orderNumber}"/>
+            <apex:param name="ShipToaddressId" value="" assignTo="{!ShipToaddressId}"/>
+        </apex:actionFunction>
+        <apex:actionFunction name="trailValidation" action="{!trailValidation}" rerender="formId" status="loading">
+            <apex:param name="selectedAddress" value="" assignTo="{!selectedAddress}"/>
+            <apex:param name="productCode" value="" assignTo="{!selectedProductCode}"/>
+            <apex:param name="incrementVar" value="" assignTo="{!incrementVarRef}"/>
+            <apex:param name="quantity" value="" assignTo="{!quantity}"/>
+            <apex:param name="toPurchase" value="" assignTo="{!toPurchase}"/>
+            <apex:param name="availableinTarget" value="" assignTo="{!availableinTarget}"/>
+        </apex:actionFunction>
+        <apex:pageBlock title="Set Shipping Quantity ({!Opportunity.Name})">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save & Return To Opportunity" action="{!save}" rerender="formId" status="loading"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" rerender="formId" status="loading"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Opportunity Details" columns="1">
+                <apex:pageBlock >
+                    <b> Open Trials</b>
+                    <br/>
+                    <br/>
+                    <apex:pageBlockTable value="{!lstTrailOpportunity}" var="trialOpportunity" columnsWidth="50%,50%" rendered="{!lstTrailOpportunity.size > 0}">
+                        <apex:column headerValue="Trial Name">
+                            <apex:outputLink value="/{!trialOpportunity.Id}"><apex:outputText value="{!trialOpportunity.Name}" /></apex:outputLink>
+                        </apex:column>  
+                        <apex:column value="{!trialOpportunity.CloseDate}" headerValue="Shipping Date" />    
+                    </apex:pageBlockTable>
+                    
+                    <apex:pageBlockTable value="{!lstTrailOpportunity}" var="trialOpportunity" columnsWidth="50%,50%" rendered="{!lstTrailOpportunity.size == 0}">
+                        <apex:column headerValue="There are no open Trial opportunities.">
+                        </apex:column>  
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Opportunity Lines Details" columns="1">
+                <apex:pageBlock >
+                    <apex:pageBlockTable title="Revenue Lines" value="{!lstRevOppLines}" var="olir" >
+                        <apex:column headerValue="Opportunity Name (Revenue)">
+                            <apex:outputField value="{!olir.OpportunityId}"/>
+                        </apex:column>
+                        <apex:column headerValue="Product Name">
+                            <apex:outputField value="{!olir.Product2Id}"/>
+                        </apex:column>
+                        <apex:column headerValue="Product Code">
+                            <apex:outputText value="{!olir.Product_Code_Copy__c}"/>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Shipping Address">
+                            <apex:outputField value="{!olir.Ship_To__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Quantity">
+                            <apex:outputText value="{!olir.Quantity}"/>
+                        </apex:column>
+                        <apex:column headerValue="Sales Price">
+                            <apex:outputText value="{!olir.UnitPrice}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <apex:pageBlockTable title="Trial Lines Available" value="{!lstTrailOppLines}" var="olit" rendered="{!lstTrailOpportunity.size > 0}">
+                        <apex:column headerValue="Opportunity Name (Trial)">
+                            <apex:outputField value="{!olit.OpportunityId}"/>
+                        </apex:column>
+                        <apex:column headerValue="Product Name">
+                            <apex:outputField value="{!olit.Product2Id}"/>
+                        </apex:column>
+                        <apex:column headerValue="Product Code">
+                            <apex:outputText value="{!olit.Product_Code_Copy__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Shipping Address">
+                            <apex:outputField value="{!olit.Ship_To__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Quantity">
+                            <apex:outputText value="{!olit.Quantity}"/>
+                        </apex:column>
+                        <apex:column headerValue="Sales Price">
+                            <apex:outputText value="{!olit.UnitPrice}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <apex:pageBlockTable value="{!lstTrailOppLines}" var="olit" columnsWidth="50%,50%" rendered="{!lstTrailOpportunity.size == 0}">
+                        <apex:column headerValue="There are no open Trial opportunities.">
+                        </apex:column>  
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Adjust Product Details" columns="1">
+                <apex:pageBlock title="Product Details (Original)">
+                    <apex:pageMessages id="msgs"/>
+                    <apex:pageBlockButtons >
+                        <apex:commandButton value="Adjust Quantity" action="{!reCalculateQty}" rerender="formId" status="loading"/>
+                    </apex:pageBlockButtons>
+                    <b> Revenue Line Items </b>
+                    <br/>
+                    <br/>
+                    <apex:pageBlockTable value="{!lstOLIWrapperOriginal}" var="oliW" columnsWidth="20%,20%,20%,20%,20%">
+                        <apex:column headerValue="Product Name">
+                            <apex:outputField value="{!oliW.oli.Product2Id}"/>
+                        </apex:column>
+                        <apex:column headerValue="Product Code">
+                            <apex:outputText value="{!oliW.oli.Product_Code_Copy__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Shipping Address">
+                            <apex:outputText value="{!oliW.oli.Ship_To_Address_Concatenated__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Sales Price">
+                            <apex:outputText value="{!oliW.oli.UnitPrice}"/>
+                        </apex:column>
+                        <apex:column headerValue="Bill To Quantity">
+                            <apex:outputText value="{!oliW.billedQty}"/>
+                        </apex:column>
+                        <apex:column headerValue="Quantity to Ship">
+                            <apex:outputText value="{!oliW.qtyToShip}"/>
+                        </apex:column>
+                        <apex:column headerValue="Trial Units Purchased">
+                            <apex:outputText value="{!oliW.trailUnitpurchasedQty}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <br/>
+                    <b>Trail Line Items</b>
+                    <br/><br/>
+                    <apex:pageBlockTable value="{!lstOLIWrapperTrail}" var="oliW"  columnsWidth="10%,10%,10%,10%,10%,10%,10%,10%,10%,5%" rendered="{!lstOLIWrapperTrail.size > 0}">
+                        <div style="overflow-y: scroll; overflow-x: auto; max-height: 400px; width: 100%; border: 1px solid #ccc;">
+                            <apex:column headerValue="Product Name">
+                                <apex:outputField value="{!oliW.oli.Product2Id}"/>
+                            </apex:column>
+                            <apex:column headerValue="Product Code">
+                                <apex:outputText value="{!oliW.oli.Product_Code_Copy__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Trail Quantity">
+                                <apex:outputText value="{!oliW.trailQty}"/>
+                            </apex:column>
+                            <apex:column headerValue="Trial Name">
+                                <apex:outputField value="{!oliW.oli.OpportunityId}"/>
+                            </apex:column>
+                            <apex:column headerValue="Order No">
+                                <apex:outputText value="{!oliW.oli.Related_Order_Number__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Shipping Address">
+                                <apex:outputText value="{!oliW.oli.Ship_To_Address_Concatenated__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Target Address" >
+                               <apex:outputPanel rendered="{!NOT(ISBLANK(oliW.selectOptionOli))}">
+                            <apex:selectList value="{!oliW.selectedAddress}" size="1" style="width: 160px; border: 2px solid #0070d2;padding: 5px;" onchange="updateTrialUnitsOnChange(this.value, '{!oliW.oli.Product_Code_Copy__c}', '{!oliW.incrementVar}','{!oliW.oli.Related_Order_Number__c}','{!oliW.oli.Ship_To__c}')" >
+                               <apex:selectOption itemLabel="--None--" itemValue=""/>
+                               <apex:selectOptions value="{!oliW.selectOptionOli}"/>
+                            </apex:selectList>
+                              </apex:outputPanel>
+                            <apex:outputPanel rendered="{!ISBLANK(oliW.selectOptionOli)}">
+                                <span style="color: #666;">None</span>
+                           </apex:outputPanel>
+                            </apex:column>
+                            <apex:column headerValue="Available Units in Target">
+                                <apex:outputText value="{!oliW.availableTargetQty}" rendered="{!oliW.selectedAddress != ''}"/>
+                            </apex:column>
+                            <apex:column headerValue="Available to Purchase">
+                                <apex:outputText value="{!oliW.availableQty}/{!oliW.trailToPurchase}" rendered="{!oliW.selectedAddress != ''}"/>
+                                <apex:outputText value="--" rendered="{!oliW.selectedAddress == ''}"/>
+                            </apex:column>
+                            <apex:column headerValue="Trial Units to Purchase">
+                                <apex:inputText disabled="true" rendered="{!oliW.selectedAddress = ''}"/>
+                                <apex:inputText value="{!oliW.trailToPurchase}" required="true" rendered="{!oliW.selectedAddress != ''}" 
+                                                onchange="trailUnitsValidation('{!oliW.selectedAddress}', '{!oliW.oli.Product_Code_Copy__c}', '{!oliW.incrementVar}','{!oliW.oli.Quantity}',this.value,'{!oliW.availableTargetQty}')"/>
+                                <br/>
+                                <apex:outputPanel rendered="{!(oliW.selectedAddress!= '')}">
+                                    <a href="javascript:void(0);" style="font-size:12px; color: #0070d2; text-decoration: underline; cursor: pointer;" 
+                                       onclick="splitTrialUnitsOnChange('{!oliW.selectedAddress}', '{!oliW.oli.Product_Code_Copy__c}', '{!oliW.incrementVar}','{!oliW.oli.Quantity}','{!oliW.trailToPurchase}','{!oliW.oli.Related_Order_Number__c}','{!oliW.oli.Ship_To__c}'); return false;">Split Line Item</a>
+                                </apex:outputPanel>
+                            </apex:column>
+                            
+                        </div>
+                    </apex:pageBlockTable>
+                    <apex:pageBlockTable value="{!lstOLIWrapperTrail}" var="olit" columnsWidth="50%,50%" rendered="{!lstOLIWrapperTrail.size == 0}">
+                        <apex:column headerValue="There are no open Trial opportunities.">
+                        </apex:column>  
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Final Product Lines That Display On Opportunity" collapsible="true" columns="1">
+                <apex:pageBlock >
+                    <b> Revenue Product Lines To Ship </b>
+                    <br/>
+                    <br/>
+                    <apex:pageBlockTable value="{!lstOLIWrapperOriginalNew}" var="oliW" columnsWidth="20%,20%,20%,20%,20%">
+                        <apex:column headerValue="Product Name">
+                            <apex:outputField value="{!oliW.oli.Product2Id}"/>
+                        </apex:column>
+                        <apex:column headerValue="Product Code">
+                            <apex:outputText value="{!oliW.oli.Product_Code_Copy__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Shipping Address">
+                            <apex:outputField value="{!oliW.oli.Ship_To_Address_Concatenated__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Quantity">
+                            <apex:outputText value="{!oliW.actualQty}"/>
+                        </apex:column>
+                        <apex:column headerValue="Sales Price">
+                            <apex:outputText value="{!oliW.oli.UnitPrice}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <br/>
+                    <b>Converted Free Trail Line Already Shipped</b>
+                    <br/><br/>
+                    <apex:pageBlockTable value="{!lstOLIWrapperTrailNew}" var="oliW" columnsWidth="20%,20%,20%,20%,20%" rendered="{!lstOLIWrapperTrailNew.size > 0}">
+                        <apex:column headerValue="Product Name">
+                            <apex:outputField value="{!oliW.oli.Product2Id}"/>
+                        </apex:column>
+                        <apex:column headerValue="Product Code">
+                            <apex:outputText value="{!oliW.oli.Product_Code_Copy__c}"/>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Shipping Address">
+                            <apex:outputField value="{!oliW.oli.Ship_To_Address_Concatenated__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Quantity">
+                            <apex:outputText value="{!oliW.actualQty}"/>
+                        </apex:column>
+                        <apex:column headerValue="Sales Price">
+                            <apex:outputText value="{!oliW.oli.UnitPrice}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <apex:pageBlockTable value="{!lstOLIWrapperTrailNew}" var="olit" columnsWidth="50%,50%" rendered="{!lstOLIWrapperTrailNew.size == 0}">
+                        <apex:column headerValue="There are no open Trial opportunities.">
+                        </apex:column>  
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:actionstatus id="loading" startText="Requesting...">
+            <apex:facet name="start">
+                <div id="salesforceSource_blurybackground" style="position:absolute; left:1px; top:1px; width:100%; height:100%; text-align:center; vertical-align: middle; background-color: #dcdcdc; opacity:0.7;filter:alpha(opacity=60)"></div>
+                <div id="ManageMembersViewport_loading" class="waitingSearchDiv" style="width: 100%; height: 100%; display: ''; ">
+                    <div style="width: 144px;vertical-align: middle;" class="waitingHolder">
+                        <table  style="width: 100%; height: 30%">
+                            <tr align="center" valign="top" style="width: 100%; height: 30%">
+                                <td valign="top">
+                                    <img src="/img/loading.gif"/>
+                                    <span class="waitingDescription">
+                                        <b>Loading...</b>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="ManageMembersViewport_loading" class="waitingSearchDiv" style="width: 100%; height: 100%; display:''; "></div>
+                <script>document.getElementById('ManageMembersViewport_loading').height = window.innerHeight * (3/4);</script>
+                </apex:facet>
+                <apex:facet name="stop"></apex:facet>
+                </apex:actionstatus>
+                </apex:form>
+                <script>
+                    function updateTrialUnitsOnChange(address, productCode, incrementVar,orderNumber,ShipToaddressId) {
+                    updateTrialUnits(address, productCode, incrementVar,orderNumber,ShipToaddressId);
+                }
+                function splitTrialUnitsOnChange(address, productCode, incrementVar,quantity,toPurchase,orderNumber,ShipToaddressId) {
+                    splitTrialUnits(address, productCode, incrementVar,quantity,toPurchase,orderNumber,ShipToaddressId);
+                }
+                function trailUnitsValidation(address, productCode, incrementVar,quantity,toPurchase,availableinTarget) {
+                    trailValidation(address, productCode, incrementVar,quantity,toPurchase,availableinTarget);
+                }
+                </script>
+            </apex:page>

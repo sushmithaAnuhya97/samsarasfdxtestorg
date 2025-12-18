@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Stage__c</fullName>
+    <description>This field shows the Opportunity Stage Name from the related Opportunity. If the value doesn&apos;t match predefined options, it displays &quot;Other&quot;.</description>
+    <externalId>false</externalId>
+    <formula>CASE(pse__Opportunity__r.StageName,
+    &quot;Incubate&quot;, &quot;Incubate&quot;,
+    &quot;Qualified&quot;, &quot;Qualified&quot;,
+    &quot;Trial&quot;, &quot;Trial&quot;,
+    &quot;Proposal&quot;, &quot;Proposal&quot;,
+    &quot;Decision&quot;, &quot;Decision&quot;,
+    &quot;Purchase&quot;, &quot;Purchase&quot;,
+    &quot;Closing&quot;, &quot;Closing&quot;,
+    &quot;Orders Processing&quot;, &quot;Orders Processing&quot;,
+    &quot;Ready to Ship&quot;, &quot;Ready to Ship&quot;,
+    &quot;Closed Won&quot;, &quot;Closed Won&quot;,
+    &quot;Closed Lost&quot;, &quot;Closed Lost&quot;,
+    &quot;Return Cancelled&quot;, &quot;Return Cancelled&quot;,
+    &quot;Return Created&quot;, &quot;Return Created&quot;,
+    &quot;Return Initiated&quot;, &quot;Return Initiated&quot;,
+    &quot;Return Label Sent&quot;, &quot;Return Label Sent&quot;,
+    &quot;Products Processing&quot;, &quot;Products Processing&quot;,
+    &quot;Finance Processing&quot;, &quot;Finance Processing&quot;,
+    &quot;Refunded - Closed&quot;, &quot;Refunded - Closed&quot;,
+    &quot;End of Life&quot;, &quot;End of Life&quot;,
+    &quot;End of Life with Promo&quot;, &quot;End of Life with Promo&quot;,
+    &quot;Partially Received&quot;, &quot;Partially Received&quot;,
+    &quot;Other&quot;
+)</formula>
+    <inlineHelpText>Displays the Opportunity&apos;s Stage Name picklist value or &quot;Other&quot; if unmatched.</inlineHelpText>
+    <label>Opportunity Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

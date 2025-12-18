@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__SObjectType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A Salesforce standard, custom, or platform event object that is used by the configuration item&apos;s processes. Defining the object ensures that it cannot be deleted.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>A Salesforce standard, custom, or platform event object that is used by the configuration item&apos;s processes. Defining the object ensures that it cannot be deleted.</inlineHelpText>
+    <label>Object</label>
+    <referenceTo>EntityDefinition</referenceTo>
+    <relationshipLabel>Certinia Configuration Items</relationshipLabel>
+    <relationshipName>FinancialForceConfigurationItems</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__SOQL_Where_Clause__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Enter a valid SOQL WHERE clause to filter a specific set of records (e.g., WHERE Status = &apos;Closed&apos;). Use precise filters, such as field values or date ranges, to optimize query performance and reduce processing time. Ensure the query syntax is correct and matches the target object’s schema. Use the admin tool to dynamically create these records. This field is required, and invalid queries will prevent execution. See the documentation for SOQL syntax and efficient filter examples.</description>
+    <inlineHelpText>Enter a valid SOQL WHERE clause to filter a specific set of records (e.g., WHERE Status = &apos;Closed&apos;). Use precise filters, such as field values or date ranges, to optimize query performance and reduce processing time. Ensure the query syntax is correct and matches the target object’s schema. Use the admin tool to dynamically create these records. This field is required, and invalid queries will prevent execution. See the documentation for SOQL syntax and efficient filter examples.</inlineHelpText>
+    <label>SOQL (Where Clause)</label>
+    <length>131072</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

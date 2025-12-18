@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Scorecard_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(DNBI_Data_Available__c = False, null, 
+
+(0.25*
+	IF(DNBI_Commercial_Credit_Percentage__c&gt;0.90,10,
+		IF(DNBI_Commercial_Credit_Percentage__c&gt;0.70,8,
+			IF(DNBI_Commercial_Credit_Percentage__c&gt;0.50,6,
+				IF(DNBI_Commercial_Credit_Percentage__c&gt;0.30,4,
+					IF(DNBI_Commercial_Credit_Percentage__c&gt;0.10,2,0)))))) +
+(0.2*
+	IF(DNBI_SlowNegExpCount__c&lt;=0.05,10,
+		IF(DNBI_SlowNegExpCount__c&lt;=0.10,7,
+			IF(DNBI_SlowNegExpCount__c&lt;=0.15,5,
+				IF(DNBI_SlowNegExpCount__c&lt;=0.20,3,0))))) + 
+
+(0.3*
+	IF(DNBI_Financial_Stress_Score__c&gt;=0.95,10,
+		IF(DNBI_Financial_Stress_Score__c&gt;=0.69,9,
+			IF(DNBI_Financial_Stress_Score__c&gt;=0.34,7,
+				IF(DNBI_Financial_Stress_Score__c&gt;=0.2,3,0)))))  + 
+
+(0.25*
+	IF(DNBI_PAYDEX__c&gt;=80,10,
+		IF(DNBI_PAYDEX__c&gt;=75,8,
+			IF(DNBI_PAYDEX__c&gt;=70,6,
+				IF(DNBI_PAYDEX__c&gt;=65,4,
+					IF(DNBI_PAYDEX__c&gt;=60,2,IF(DNBI_PAYDEX__c&gt;=55,1,0))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Credit Scorecard Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

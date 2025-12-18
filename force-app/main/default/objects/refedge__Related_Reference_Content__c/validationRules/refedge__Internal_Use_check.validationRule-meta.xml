@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Internal_Use_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>refedge__Reference_Content__r.refedge__Internal_Use__c</errorConditionFormula>
+    <errorMessage>You cannot select this Reference Content, Internal Use is checked for this.</errorMessage>
+</ValidationRule>

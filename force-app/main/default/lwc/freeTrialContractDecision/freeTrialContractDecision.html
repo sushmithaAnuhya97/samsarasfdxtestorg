@@ -1,0 +1,103 @@
+<template>
+    <lightning-card>
+        <template if:true={showBuyOption} >
+            <article>
+                <div class="slds-align_absolute-center">
+
+                <div class="slds-col slds-size_2-of-2 slds-p-left_x-small slds-p-right_x-small ">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col  slds-size_9-of-12">
+                            <div class="slds-form_horizontal">
+                                <lightning-combobox data-id="displayDecision" 
+                                name="displayDecision" label="Decision" value={decisionModeValue}
+                                placeholder="Select the Decision" options={decisionModeOptions}
+                                onchange={handleDecisionMode}
+                                >
+                                </lightning-combobox>
+                            </div>
+                            
+                        </div>
+                        <div class="slds-col slds-size_3-of-12 slds-grid_vertical-align-end" >
+                            <lightning-button label="Process" variant="brand" class="slds-m-left_x-small" disabled={disableProcessButton} onclick={handleProcessButton}></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </article>
+        </template>
+        <template if:true={isProcessing}>
+            <lightning-spinner alternative-text="Processing"></lightning-spinner>
+        </template>
+        <template if:true={showMainSection}>
+            <template if:true={showProductTable}>
+                <div class="slds-p-left_small slds-p-right_small">
+                    <template if:true={showPartialTable}>
+                        <lightning-datatable
+                            key-field="Id"
+                            data={productData}
+                            columns={productColumns}
+                            onrowselection={getSelectedProduct}
+                            show-row-number-column="false"
+                            onsave={handleProductSave}
+                            draft-values={saveProductDraftValues}
+                            onrowaction={handleRowAction}
+                            oncellchange ={handleCellChange} 
+                            errors={errors}>
+                        </lightning-datatable>
+                    </template>
+                    <template if:true={showFullTable}>
+                        <lightning-datatable
+                            key-field="Id"
+                            data={productData}
+                            columns={productColumnsFull}
+                            onrowselection={getSelectedProduct}
+                            show-row-number-column="false"
+                            onsave={handleProductSave}
+                            hide-checkbox-column="true"
+                            draft-values={saveProductDraftValues}
+                            onrowaction={handleRowAction} >
+                        </lightning-datatable>
+                    </template>
+                </div>
+            </template>
+            <template if:true={showNoBuyMessage}>
+                <article>
+                    <div class="slds-p-left_small slds-p-right_small slds-align_absolute-center" style="height: 280px;">
+                        Return Opportunity will be Created when you click on Next button
+                    </div>
+                    
+                </article>
+            </template>
+            <template if:true={showExtension}>
+                <article>
+                    <!-- Default/basic -->
+                    <div class="slds-p-around_medium lgc-bg slds-align_absolute-center" style="height: 280px;">
+                        <lightning-input type="number" label="No. of days to extend"></lightning-input>
+                    </div>
+                </article>
+            </template>   
+                <!--article class="slds-card">
+                    <lightning-layout horizontal-align="end">
+                        <lightning-layout-item padding="around-small">
+                            <lightning-button label="Cancel" variant="brand" class="slds-m-left_x-small" disabled={disableSubmitButton} onclick={closeQuickAction}></lightning-button>
+                            <lightning-button label="Previous" variant="brand" class="slds-m-left_x-small" disabled={disableSubmitButton} onclick={handlePreviousButton}></lightning-button>
+                            <lightning-button label="Next" variant="brand" class="slds-m-left_x-small" disabled={disableSubmitButton} onclick={handleCreate}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </article-->
+            
+        </template>
+        
+        <template if:true={showFinalMessage}>
+            <article>
+                <div class="slds-p-left_small slds-p-right_small slds-align_absolute-center"  style="height: 300px;">
+                    <lightning-formatted-url value={opportunityRecordURL} tooltip="Use https://domain-name" label="Free Trial Opportunity " target="_blank" class="slds-m-right_small" ></lightning-formatted-url> has been created!
+                </div>
+                
+            </article>
+            <lightning-layout horizontal-align="end">
+                <lightning-button label="Close" variant="brand" class="slds-m-left_x-small" disabled={disableSubmitButton} onclick={closeQuickAction}></lightning-button>
+            </lightning-layout>
+        </template>
+    </lightning-card>
+</template>

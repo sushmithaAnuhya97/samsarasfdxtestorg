@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Execute_Creditsafe_Apex</name>
+        <label>Execute Creditsafe Apex</label>
+        <locationX>400</locationX>
+        <locationY>241</locationY>
+        <actionName>Creditsafe</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>newAcctList</name>
+            <value>
+                <elementReference>oAccount.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Creditsafe</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Execute_DNBI_Apex</name>
+        <label>Execute DNBI Apex</label>
+        <locationX>601</locationX>
+        <locationY>53</locationY>
+        <actionName>DNBI_Integration</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>newAcctList</name>
+            <value>
+                <elementReference>oAccount.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>DNBI_Integration</nameSegment>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Account_Country_Check</name>
+        <label>Account Country Check</label>
+        <locationX>392</locationX>
+        <locationY>52</locationY>
+        <defaultConnector>
+            <targetReference>Execute_Creditsafe_Apex</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Non US or CA</defaultConnectorLabel>
+        <rules>
+            <name>US_or_CA</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>oAccount.BillingCountryCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>US</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>oAccount.BillingCountryCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CA</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Execute_DNBI_Apex</targetReference>
+            </connector>
+            <label>US or CA</label>
+        </rules>
+    </decisions>
+    <description>Switching country check</description>
+    <interviewLabel>Credit Check {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Credit Check</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Acct_Details</name>
+        <label>Get Acct Details</label>
+        <locationX>193</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Account_Country_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>oAccount</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>BillingCountryCode</queriedFields>
+    </recordLookups>
+    <startElementReference>Get_Acct_Details</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>oAccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Exclude_from_Planners__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When selected, excludes the assignment from Work Planners and from the Resource
+		and Project Planners. Any excluded assignments are omitted from totals calculations in all
+		planners and from color coding in the Resource and Project Planners.</description>
+    <inlineHelpText>When selected, excludes the assignment from the Resource and Project Planners. Any excluded assignments are not included in totals calculations and color coding in Planners.</inlineHelpText>
+    <label>Exclude from Planners</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UTM_Campaign_First__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( FIND( &quot;,&quot; , utm_campaign_first_copy__c ) = 0 ,utm_campaign_first_copy__c , 
+LEFT( utm_campaign_first_copy__c , FIND(&quot;,&quot;, utm_campaign_first_copy__c )-1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>UTM Campaign First</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

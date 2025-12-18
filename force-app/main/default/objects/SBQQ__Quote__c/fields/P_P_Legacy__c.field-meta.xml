@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>P_P_Legacy__c</fullName>
+    <description>This formula evaluates if the Quote is to be marked as Legacy, PnP (this corresponds to the FY25 PnP tier) or FY26 PnP.
+
+It returns &quot;PnP FY26&quot; if the customer type is &quot;FY26 P&amp;P&quot; or if the first purchase date is blank, the type is &quot;Quote&quot;, and the customer type is blank, with the currency being USD or CAD or MXN or EUR or GBP or CHF, and the sales segment includes &quot;AE2&quot;, &quot;AE3&quot;, or &quot;Enterprise&quot;.
+
+It returns &quot;PnP&quot; if the customer type is &quot;FY25 P&amp;P&quot; or if similar conditions are met with geographical availability in &quot;USA&quot; or &quot;All&quot; and the currency is USD or CAD, excluding SLED roles.
+
+If none of these conditions are satisfied, the formula defaults to &quot;Legacy&quot;.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        OR(
+            (TEXT(P_P_Customer_Type__c) = &quot;FY26 P&amp;P&quot;),
+            (ISBLANK(First_PurchaseDate__c)
+            &amp;&amp; ISPICKVAL(SBQQ__Type__c, &quot;Quote&quot;)
+            &amp;&amp; ISBLANK(TEXT(P_P_Customer_Type__c)))
+        ),
+        (TEXT(CurrencyIsoCode) = &apos;USD&apos; || TEXT(CurrencyIsoCode) = &apos;CAD&apos; || TEXT(CurrencyIsoCode) = &apos;MXN&apos; || TEXT(CurrencyIsoCode) = &apos;EUR&apos; || TEXT(CurrencyIsoCode) = &apos;GBP&apos; || TEXT(CurrencyIsoCode) = &apos;CHF&apos;),
+        OR(SBQQ__Opportunity2__r.Segment_Sales_Role__c = &quot;AE1&quot;, SBQQ__Opportunity2__r.Segment_Sales_Role__c = &quot;AE2&quot;, 
+        SBQQ__Opportunity2__r.Segment_Sales_Role__c = &quot;AE3&quot;, SBQQ__Opportunity2__r.Segment_Sales_Role__c = &quot;Enterprise&quot;, SBQQ__Opportunity2__r.Segment_Sales_Role__c = &apos;Renewals&apos;)
+    ),
+    &quot;PnP FY26&quot;,
+    IF(
+        AND(
+            OR(
+                (TEXT(P_P_Customer_Type__c) = &quot;FY25 P&amp;P&quot; || P_P_Pilot_Customer__c = TRUE),
+                (ISBLANK(First_PurchaseDate__c)
+                &amp;&amp; ISPICKVAL(SBQQ__Type__c, &quot;Quote&quot;)
+                &amp;&amp; ISBLANK(TEXT(P_P_Customer_Type__c)))
+            ),
+            OR(
+                (INCLUDES(Geo_Availablity__c, &quot;USA&quot;) &amp;&amp; TEXT(CurrencyIsoCode) = &apos;USD&apos;),
+                ((INCLUDES(Geo_Availablity__c, &quot;All&quot;) || INCLUDES(Geo_Availablity__c, &quot;USA&quot;)) &amp;&amp; (TEXT(CurrencyIsoCode) = &apos;USD&apos; || TEXT(CurrencyIsoCode) = &apos;CAD&apos;))
+            ),
+            NOT(SLED_Role__c)
+        ),
+        &quot;PnP&quot;,
+        &quot;Legacy&quot;
+    )
+)</formula>
+    <label>P&amp;P/Legacy</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

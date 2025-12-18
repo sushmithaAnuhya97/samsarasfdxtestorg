@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check this box (true) to enable the job to run at the specified interval. When unchecked (false), the job will not run on a schedule. For best practice, keep this field set to false until the job has been thoroughly tested to avoid unintended executions. Ensure the interval is correctly configured before enabling.</description>
+    <inlineHelpText>Check this box (true) to enable the job to run at the specified interval. When unchecked (false), the job will not run on a schedule. For best practice, keep this field set to false until the job has been thoroughly tested to avoid unintended executions. Ensure the interval is correctly configured before enabling.</inlineHelpText>
+    <label>Active?</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Skill_Cert_Rating_Rejection_Notification</fullName>
+        <description>Skill Cert Rating Rejection Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Resource__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FFX_PSA_Email_Templates/Skill_Cert_Rating_Rejection_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>PSA_Set_Status_to_Approved</fullName>
+        <field>pse__Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>PSA Set Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Set_Status_to_Rejected</fullName>
+        <field>pse__Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>PSA Set Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Set_Status_to_Saved</fullName>
+        <field>pse__Approval_Status__c</field>
+        <literalValue>Saved</literalValue>
+        <name>PSA Set Status to Saved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Set_Status_to_Submitted</fullName>
+        <field>pse__Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>PSA Set Status to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

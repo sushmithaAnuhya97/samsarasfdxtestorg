@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__CommodityRegulatedLevelCode__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates the type of commodity</description>
+    <inlineHelpText>Indicates the type of commodity</inlineHelpText>
+    <label>Commodity Regulated Level Code</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LR</fullName>
+                <default>false</default>
+                <label>Lightly Regulated</label>
+            </value>
+            <value>
+                <fullName>FR</fullName>
+                <default>false</default>
+                <label>Fully Regulated</label>
+            </value>
+            <value>
+                <fullName>LQ</fullName>
+                <default>false</default>
+                <label>Limited Quantity</label>
+            </value>
+            <value>
+                <fullName>EQ</fullName>
+                <default>false</default>
+                <label>Excepted Quantity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

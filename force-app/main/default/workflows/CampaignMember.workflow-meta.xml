@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Campaign_Influence_Set_Date</fullName>
+        <field>Campaign_Influence_Date__c</field>
+        <formula>CreatedDate</formula>
+        <name>Campaign Influence Set Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ADR_Toggle_to_On</fullName>
+        <field>Inbound_ADR_Toggle_Status__c</field>
+        <literalValue>On</literalValue>
+        <name>Set ADR Toggle to On</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_utm_campaign_first</fullName>
+        <field>utm_campaign_first_copy__c</field>
+        <formula>LEFT(utm_campaign__c, 255)</formula>
+        <name>Update utm_campaign_first</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_utm_campaign_last</fullName>
+        <field>utm_campaign_last_copy__c</field>
+        <formula>RIGHT(utm_campaign__c, 255)</formula>
+        <name>Update utm_campaign_last</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update utm_campaign_first</fullName>
+        <actions>
+            <name>Update_utm_campaign_first</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_utm_campaign_last</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>CampaignMember.utm_campaign__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Updates utm_campaign first and last. Utm_campaign is a Long Text and can&apos;t be used in formulas.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

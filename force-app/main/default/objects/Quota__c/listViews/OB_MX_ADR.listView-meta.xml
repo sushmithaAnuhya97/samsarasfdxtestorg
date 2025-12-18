@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OB_MX_ADR</fullName>
+    <columns>NAME</columns>
+    <columns>ADR_Quota__c</columns>
+    <columns>Attainment__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Fiscal_Period__c</columns>
+    <columns>Fiscal_Period_End_Date__c</columns>
+    <columns>Fiscal_Period_Start_Date__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Manager__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>Quota__c</columns>
+    <columns>Total_ACV_Bookings__c</columns>
+    <columns>Total_Converted_ACV_Bookings__c</columns>
+    <columns>Trial_Quota__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Manager__c</field>
+        <operation>equals</operation>
+        <value>Koban Good</value>
+    </filters>
+    <label>OB MX ADR</label>
+</ListView>

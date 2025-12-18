@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remorse_Refund_more_than_30_days</fullName>
+    <active>false</active>
+    <description>This validation rule is for remorse refunds that are created more than 30 days from the revenue opportunity closing</description>
+    <errorConditionFormula>AND(
+      ISPICKVAL(Type, &quot;Remorse Refund&quot;),
+      NOT( $Permission.Validation_Rule_Exemption ), 
+     OR(
+        PRIORVALUE(StageName)= &apos;Return Created&apos;, 
+        ISPICKVAL(StageName, &apos;Return Initiated&apos;)),
+      
+     ISBLANK(Exemption_Request_Justification__c )
+)</errorConditionFormula>
+    <errorDisplayField>Exemption_Request_Justification__c</errorDisplayField>
+    <errorMessage>You need to fill out &apos;Exemption Request Justification&apos; before you can save the refund</errorMessage>
+</ValidationRule>

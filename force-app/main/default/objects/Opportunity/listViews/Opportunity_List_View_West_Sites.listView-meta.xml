@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_List_View_West_Sites</fullName>
+    <columns>Hashtag__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Sites_ACV_Bookings__c</columns>
+    <columns>ACV_Bookings_SOT__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <columns>Notes__c</columns>
+    <columns>SE_Next_Step__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Trial,Proposal,Decision,Purchase</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Standard_Opportunity</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FULL_NAME</field>
+        <operation>equals</operation>
+        <value>Colin Tick,Alex Fisher,Kate Souza,Lorin Cook,Justin Curry</value>
+    </filters>
+    <filters>
+        <field>Sites_ACV_Bookings__c</field>
+        <operation>greaterThan</operation>
+        <value>USD 0</value>
+    </filters>
+    <label>Opportunity List View - West Sites</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

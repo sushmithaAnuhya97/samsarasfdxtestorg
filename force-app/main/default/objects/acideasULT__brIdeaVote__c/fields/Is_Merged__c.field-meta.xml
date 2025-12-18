@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Merged__c</fullName>
+    <formula>IF( acideasULT__brIdea__r.acideasULT__brIdea__c  != null, true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Merged</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

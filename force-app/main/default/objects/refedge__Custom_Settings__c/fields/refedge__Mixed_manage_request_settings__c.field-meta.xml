@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Mixed_manage_request_settings__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determine what attributes and custom fields will appear on each request type form for managed requests.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;RequestSettingMatrix?customSettingId=&apos;+Id+&apos;&amp;isContentSetting=false&apos;, &apos;Manage&apos;, &apos;_blank&apos;)</formula>
+    <inlineHelpText>Determine what attributes and custom fields will appear on each request type form for managed requests.</inlineHelpText>
+    <label>Managed Request Settings</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

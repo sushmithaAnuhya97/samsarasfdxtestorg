@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Quarter_Open_Oppties_Managers</fullName>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>ACV_Bookings_SOT__c</columns>
+    <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <columns>Next_Step_Due_Date__c</columns>
+    <columns>Related_Contact__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Blended_Discount__c</columns>
+    <columns>Insurance_Partner__c</columns>
+    <columns>Camera_Only_Deal__c</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Standard_Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Incubate,Closing,Orders Processing,Ready to Ship,Closed Won,Closed Lost,Return Cancelled,Return Created,Return Initiated,Return Label Sent,Products Processing,Finance Processing,Refunded - Closed</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Revenue Opportunity,Free Trial Opportunity,Promo Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>equals</operation>
+        <value>NEXT_FISCAL_QUARTER</value>
+    </filters>
+    <label>Next Quarter Open Oppties - Managers</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

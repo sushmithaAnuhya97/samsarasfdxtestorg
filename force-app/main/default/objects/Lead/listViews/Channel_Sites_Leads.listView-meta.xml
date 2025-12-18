@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Sites_Leads</fullName>
+    <columns>LEAD.COMPANY</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.COUNTRY_CODE</columns>
+    <columns>Partner_Program_Segment__c</columns>
+    <columns>Fleet_Segment__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Channel Sites Leads</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <roleAndSubordinates>CNWKR_Global_General_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

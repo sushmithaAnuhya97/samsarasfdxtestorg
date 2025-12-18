@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Alert_Threshold__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Triggers an email when Percentage Used equals or exceeds the percentage value entered. Apply Billing Cap must be selected and there must also be a contact in the Alert Recipient field.</description>
+    <inlineHelpText>Enter the threshold percentage that will trigger an email when the value in the Percentage Used field equals or exceeds this value. You must also select Apply Billing Cap and select a contact from the Alert Recipient field.</inlineHelpText>
+    <label>Alert Threshold</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

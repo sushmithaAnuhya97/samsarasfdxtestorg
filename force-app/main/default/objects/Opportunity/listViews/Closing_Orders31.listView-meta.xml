@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closing_Orders31</fullName>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Price_Book_Name__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Order_Number__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Reseller__c</columns>
+    <columns>Shipping_Method__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Payment_Terms__c</columns>
+    <columns>Balance_Due__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>Finance_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Closing</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Promo Opportunity</value>
+    </filters>
+    <label>Closing Orders - Promo</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <role>Management</role>
+        <role>Operations</role>
+    </sharedTo>
+</ListView>

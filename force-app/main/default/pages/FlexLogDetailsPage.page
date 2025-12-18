@@ -1,0 +1,20 @@
+<!-- *************************************************************************************************************************
+ * Date      	- Project#      - Developer/ Company      	   - Description
+ * --------------------------------------------------------------------------------------------------------------------------
+ * 02/03/2025   - Flex C&R      - Manglesh Kumar/ Accenture    - VF Page to display the logs details
+ * -->
+
+<apex:page controller="FlexNotificationDataController" showHeader="true">
+    <head>
+        <apex:slds />
+    </head>
+    <apex:form >
+        <apex:pageBlock >
+            <c:FlexLogDetailsComponent accountParam="{!accountId}" 
+                userParam="{!userId}" 
+                notifyParam="{!notify}" 
+                showLogsParam="{!showLogs}" 
+            />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

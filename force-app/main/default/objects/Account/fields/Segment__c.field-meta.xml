@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <description>This field is being used by Netsuite and code for contracts. Before it is changed Business Systems needs to be notified, as it has a number of dependencies.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+
+CONTAINS(Owner.UserRole.Name, &quot;Small Fleets&quot;),
+&quot;Small Business&quot;,
+IF(
+CONTAINS(Owner.UserRole.Name, &quot;AE1&quot;),
+&quot;AE1&quot;,
+IF(
+OR(
+CONTAINS(Owner.UserRole.Name, &quot;Partner&quot;),
+CONTAINS(Owner.UserRole.Name, &quot;AE2&quot;)
+),
+&quot;AE2&quot;,
+IF(
+CONTAINS(Owner.UserRole.Name, &quot;AE3&quot;),
+&quot;AE3&quot;,
+IF(
+OR(
+CONTAINS(Owner.UserRole.Name, &quot;ENT&quot;),
+CONTAINS(Owner.UserRole.Name, &quot;Enterprise&quot;),
+CONTAINS(Owner.UserRole.Name, &quot;Major&quot;),
+CONTAINS(Owner.UserRole.Name, &quot;Field&quot;)
+),
+&quot;Enterprise&quot;,
+&quot;Management&quot;
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Segment (by Current Owner)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

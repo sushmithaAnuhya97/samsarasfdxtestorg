@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>New Case Auto-response</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>Express Returns</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.ContactEmail</field>
+                <operation>notContain</operation>
+                <value>samsara.com</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>express-returns@samsara.com</replyToEmail>
+            <senderEmail>no-reply@samsara.com</senderEmail>
+            <senderName>Samsara Express Returns</senderName>
+            <template>unfiled$public/Express_Returns_Auto_Response</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>IT related Queue</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>it@samsara.com</replyToEmail>
+            <senderEmail>no-reply@samsara.com</senderEmail>
+            <senderName>Samsara IT</senderName>
+            <template>Samsara_Email_Templates/IT_related_case_auto_response</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>Test Auto-Response</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.CaseNumber</field>
+                <operation>equals</operation>
+                <value>01406314</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Age_Since_Contact__c</field>
+                <operation>equals</operation>
+                <value>70</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>support@samsara.com</replyToEmail>
+            <senderEmail>no-reply@samsara.com</senderEmail>
+            <senderName>Samsara Support</senderName>
+            <template>unfiled$public/Support_Case_Awaiting_Customer_auto_reply</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

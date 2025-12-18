@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acideasULT__Disable_edit_in_Merged_Ideas</fullName>
+    <active>false</active>
+    <errorConditionFormula>acideasULT__brIdea__c &lt;&gt; null</errorConditionFormula>
+    <errorMessage>You can not edit merged idea</errorMessage>
+</ValidationRule>

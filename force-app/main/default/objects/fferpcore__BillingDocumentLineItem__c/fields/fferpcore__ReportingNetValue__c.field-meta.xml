@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ReportingNetValue__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Total Value of this billing document line item before tax based on the Document Type of the billing document. If the billing document is an invoice, the value is the same as the Net Value. If the document is a credit note, the value is calculated using the formula: Net Value * -1.</description>
+    <formula>IF (ISPICKVAL(fferpcore__BillingDocument__r.fferpcore__DocumentType__c, &quot;Credit Note&quot;),  fferpcore__NetValue__c * -1, fferpcore__NetValue__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total Value of this billing document line item before tax based on the Document Type of the billing document.</inlineHelpText>
+    <label>Reporting Net Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

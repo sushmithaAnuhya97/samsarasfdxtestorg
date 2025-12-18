@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Partner Regular User - Insurance</audienceName>
+    <container>Samsara Partner Portal</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <entityField>Profile.Name</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Samsara Partner Community Login License User</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <entityField>Profile.Name</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Samsara Partner Community Member License User</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>2</criteriaNumber>
+            <criterionValue>
+                <entityField>Contact.Account.$Account.Partner_Type__c</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Insurance</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AllCriteriaMatch</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+    <targets>
+        <target>
+            <groupName>2237667b-fe70-4233-bc81-df25a17557dc$#$094a4d31-efac-4ef7-b29c-66946c455ec2</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Onboarding_Tracks_HTML_Editor_3_Component</targetValue>
+        </target>
+    </targets>
+</Audience>

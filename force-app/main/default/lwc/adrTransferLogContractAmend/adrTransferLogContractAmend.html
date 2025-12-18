@@ -1,0 +1,42 @@
+<template>
+    <template if:true={spinner}>
+        <div class="demo-only" style="height:6rem;position:relative">
+            <div class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:false={spinner}>
+        <lightning-modal-header>
+            <h3 class="slds-modal__title slds-hyphenate slds-text-heading--medium">Contract Amendment</h3>
+        </lightning-modal-header>
+        <lightning-modal-body>
+            <c-create-oppty-generic-data-table-u-r-l
+                allowed-records={filteredContracts}
+                selected-record={selectedRowId}
+                columns={columns}
+                object-name="Contract"
+                table-title="Contracts"
+                table-data={label.Display_Message_1}
+                hyper-link={label.Display_Message_URL_2}
+                followup-text={label.Display_Message_3}>
+            </c-create-oppty-generic-data-table-u-r-l>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+            <lightning-button variant="brand" label="Next" onclick={handleNext}></lightning-button>
+        </lightning-modal-footer>
+    </template>
+
+    <c-reusable-flow-screen-toast
+        if:true={showToast}
+        type={toastType}
+        title={toastTitle}
+        message={statusMsg}
+        style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 20;">
+    </c-reusable-flow-screen-toast>
+</template>

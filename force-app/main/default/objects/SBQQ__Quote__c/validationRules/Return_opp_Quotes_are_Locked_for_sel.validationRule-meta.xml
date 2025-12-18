@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_opp_Quotes_are_Locked_for_sel</fullName>
+    <active>true</active>
+    <description>GTMS-25783</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+NOT(ISCHANGED(Flex_Bypass_Validation_Rule_Date_Time__c)),
+NOT($Permission.Validation_Rule_Exemption),
+NOT($Permission.Finance_Contractor),
+OR(
+$Profile.Name = &quot;Samsara Sales - NA US AE2&quot;,
+$Profile.Name = &quot;Samsara Sales - NA US AE3&quot;,
+$Profile.Name = &quot;Samsara Sales - NA AE1&quot;,
+$Profile.Name = &quot;Samsara Sales - NA ENT&quot;,
+$Profile.Name = &quot;Samsara Sales - CPQ&quot;,
+$Profile.Name = &quot;Samsara Sales - EMEA IS&quot;,
+$Profile.Name = &quot;Salesforce Sales - CPQ Mexico&quot;
+),
+
+SBQQ__Opportunity2__r.Upgraded_Opportunity_ID__c &lt;&gt; NULL
+)</errorConditionFormula>
+    <errorMessage>Cancellation Opportunities and Quotes are locked for sellers. Please contact Sales Operations for assistance.</errorMessage>
+</ValidationRule>

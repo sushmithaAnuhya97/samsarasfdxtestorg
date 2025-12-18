@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Segment__c</fullName>
+    <description>When updating this formula, please update the logic related to FinanceSegmentStamp field in &quot;OpportunityHelper&quot; class</description>
+    <externalId>false</externalId>
+    <formula>IF( CloseDate &lt;= DATEVALUE(&quot;2021-08-06&quot;) &amp;&amp; Finance_Segment_Stamp__c!=null, Finance_Segment_Stamp__c ,
+IF( CloseDate &lt;= DATEVALUE(&quot;2021-08-06&quot;) &amp;&amp; Finance_Segment_Stamp__c==null, Owner_Segment__c ,
+IF(
+OR(
+CONTAINS(Bookings_Owner_Segment__c, &quot;Small Business&quot;),
+CONTAINS(Bookings_Owner_Segment__c, &quot;AE1&quot;)
+),
+&quot;SMB&quot;,
+if(
+CONTAINS(Bookings_Owner_Segment__c, &quot;Enterprise&quot;),
+&quot;Enterprise&quot;,
+&quot;Mid Market&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Finance Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

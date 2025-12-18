@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Control_Training_Plan__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>User needs to Complete all Training Assignments for the Control Training Plan before the User can Complete the Dependent Training Plan&apos;s Training Assignments</description>
+    <label>Control Training Plan</label>
+    <referenceTo>PDLM__Training_Plan__c</referenceTo>
+    <relationshipLabel>Control Training Plans</relationshipLabel>
+    <relationshipName>Control_Training_Plans</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

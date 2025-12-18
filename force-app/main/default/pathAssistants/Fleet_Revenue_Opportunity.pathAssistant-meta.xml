@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Fleet Revenue Opportunity</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>SBQQ__PrimaryQuote__c</fieldNames>
+        <fieldNames>Primary_Quote_Status__c</fieldNames>
+        <fieldNames>Selected_Payment_Type__c</fieldNames>
+        <fieldNames>Checkout_Link_ID__c</fieldNames>
+        <info>&lt;p&gt;In order to progress to Purchase, the following criteria must be met: &lt;/p&gt;&lt;p&gt;-Docusign Sent, Primary Quote = Approved&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;- Timeline Understanding: Assess the prospect&amp;#39;s decision timeline.&lt;/p&gt;&lt;p&gt;- Solution Confirmation: Economic decision maker affirms Samsara as the chosen solution.&lt;/p&gt;&lt;p&gt;- Confirm VINs: Confirm VIN count to lock down discounting and license quantity. Ensure compatible cables are added.&lt;/p&gt;&lt;p&gt;- Proposal Sent: Review proposal with Champion and Executive Buyer, Confirm Main Quote is marked as Primary and recalculate; send proposal.&lt;/p&gt;&lt;p&gt;- Review Process: Economic decision maker reviews the proposal.&lt;/p&gt;&lt;p&gt;- Negotiation Points: Pricing, business, and legal terms are negotiated.&lt;/p&gt;&lt;p&gt;- Signatures: Send DocuSign and checkout link to prospect; update Close Date.&lt;/p&gt;</info>
+        <picklistValueName>Decision</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Budget_Confirmed__c</fieldNames>
+        <fieldNames>Need__c</fieldNames>
+        <fieldNames>Related_Contact__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <info>&lt;p&gt;In order to progress to Qualified, the following criteria must be met: &lt;/p&gt;&lt;p&gt;-Related Contact, Close Date, BANT Need, BANT Budget&lt;/p&gt;</info>
+        <picklistValueName>Incubate</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SBQQ__PrimaryQuote__c</fieldNames>
+        <fieldNames>Primary_Quote_Status__c</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <fieldNames>Checkout_Agreement_Link__c</fieldNames>
+        <info>&lt;p&gt;In order to progress to Closing, the following criteria must be met: &lt;/p&gt;&lt;p&gt;-Docusign = Signed, Close Date = In Quarter&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;- Verbal Agreement: Decision maker verbally agrees to deal terms.&lt;/p&gt;&lt;p&gt;- Document Completion: DocuSign and checkout link are signed by the customer.&lt;/p&gt;</info>
+        <picklistValueName>Purchase</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SBQQ__PrimaryQuote__c</fieldNames>
+        <fieldNames>Primary_Quote_Status__c</fieldNames>
+        <fieldNames>ACV_Bookings_SOT__c</fieldNames>
+        <fieldNames>Related_Contact__c</fieldNames>
+        <fieldNames>Trial_Start_Date__c</fieldNames>
+        <info>&lt;p&gt;In order to progress to Trial, the following criteria must be met: &lt;/p&gt;&lt;p&gt;-Trial Start Date, Primary Quote Created, ACV &amp;gt; $0 &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;In order to progress to Decision, the following criteria must be met:&lt;/p&gt;&lt;p&gt;-ACV &amp;gt; $0, Primary Quote = Submitted&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;- Initial Actions: Conduct intro calls, identify key contacts, and complete BANT.&lt;/p&gt;&lt;p&gt;- Demo and Trial: Complete demo, conduct trials, and ship products.&lt;/p&gt;&lt;p&gt;- CPQ Quote: Create CPQ Quote, mark as Primary Quote, and add products; recalculate quote.&lt;/p&gt;&lt;p&gt;- Incumbent Contracts: Confirm contract end date.&lt;/p&gt;</info>
+        <picklistValueName>Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SBQQ__PrimaryQuote__c</fieldNames>
+        <fieldNames>Primary_Quote_Status__c</fieldNames>
+        <fieldNames>ACV_Bookings_SOT__c</fieldNames>
+        <fieldNames>Related_Contact__c</fieldNames>
+        <info>&lt;p&gt;In order to progress to Decision, the following criteria must be met: &lt;/p&gt;&lt;p&gt;-ACV &amp;gt; $0, Primary Quote = Submitted&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;- Initial Actions: Conduct intro calls, identify key contacts, and complete BANT.&lt;/p&gt;&lt;p&gt;- Demo and Trial: Complete demo, conduct trials, and ship products.&lt;/p&gt;&lt;p&gt;- CPQ Quote: Create CPQ Quote, mark as Primary Quote, and add products; recalculate quote.&lt;/p&gt;&lt;p&gt;- Incumbent Contracts: Confirm contract end date.&lt;/p&gt;</info>
+        <picklistValueName>Trial</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Standard_Opportunity</recordTypeName>
+</PathAssistant>

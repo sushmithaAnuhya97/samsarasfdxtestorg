@@ -1,0 +1,63 @@
+<template>
+	<c-reusable-flow-screen-toast
+		if:true={showToast}
+		type={toastType}
+		title={toastTitle}
+		message={statusMsg}
+		style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 20;">
+	</c-reusable-flow-screen-toast>
+	
+	<template if:true={spinner}>
+		<div class="demo-only" style="height:6rem;position:relative">
+			<div class="slds-spinner_container">
+				<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+					<span class="slds-assistive-text">Loading</span>
+					<div class="slds-spinner__dot-a"></div>
+					<div class="slds-spinner__dot-b"></div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template if:false={spinner}>
+		<lightning-modal-header class="mirror-header">
+			<h3 class="slds-modal__title slds-hyphenate slds-text-heading--medium mirror-header-content">
+				Select Contact for this Opportunity
+				<template if:true={opportunityId}>
+					<template if:true={opportunityName}>
+						<br/>
+						<span class="slds-text-body_small slds-text-color_weak opportunity-subtitle" style="padding-left: 24px;">Opportunity: {opportunityName}</span>
+					</template>
+				</template>
+			</h3>
+		</lightning-modal-header>
+		<lightning-modal-body>
+		<template if:true={showContactData}>
+				<c-create-oppty-generic-data-table  object-name="Contact" 
+													allowed-records={contacts} 
+													selected-record={selectedContactId}
+													columns={columnsContacts}>
+				</c-create-oppty-generic-data-table>
+			</template>
+			<template if:false={showContactData}>
+				<div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_info"
+					role="status">
+					<span>
+							<lightning-icon variant="inverse" class="slds-m-right_x-smal" size="medium"
+								aria-hidden="true" icon-name="utility:info"
+								alternative-text="info"></lightning-icon>
+					</span>
+					<span class="Margn">No contacts found for this account.</span>
+				</div>
+			</template>
+		</lightning-modal-body> 
+		<lightning-modal-footer>
+			<template if:false={showContactData}>
+				<lightning-button variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+			</template>
+			<template if:true={showContactData}>
+				<lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+				<lightning-button variant="brand" label="Next" onclick={handleContactSelection}></lightning-button>
+			</template>
+		</lightning-modal-footer>
+	</template>
+</template>

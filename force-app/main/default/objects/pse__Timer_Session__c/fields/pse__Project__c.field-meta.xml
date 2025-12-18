@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The project that the time is logged against.</description>
+    <inlineHelpText>The project that the time is logged against.</inlineHelpText>
+    <label>Project</label>
+    <referenceTo>pse__Proj__c</referenceTo>
+    <relationshipLabel>Timer Sessions</relationshipLabel>
+    <relationshipName>Timer_Sessions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

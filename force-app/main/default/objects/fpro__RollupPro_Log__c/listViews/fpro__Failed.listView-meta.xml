@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Failed</fullName>
+    <columns>NAME</columns>
+    <columns>fpro__Status_Custom__c</columns>
+    <columns>fpro__RollupPro__c</columns>
+    <columns>fpro__Records_Queried_Master_Object__c</columns>
+    <columns>fpro__Records_Updated__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>fpro__Status__c</field>
+        <operation>equals</operation>
+        <value>Error</value>
+    </filters>
+    <label>Failed</label>
+</ListView>

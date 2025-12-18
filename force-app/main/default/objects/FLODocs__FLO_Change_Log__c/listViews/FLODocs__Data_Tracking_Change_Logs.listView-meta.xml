@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Data_Tracking_Change_Logs</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__FLO_Customization__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>FLODocs__Actual_Change_DateTime__c</columns>
+    <columns>FLODocs__Customization_Modified_ByLookup__c</columns>
+    <columns>FLODocs__Compliant_Indicator__c</columns>
+    <columns>FLODocs__Operation__c</columns>
+    <columns>FLODocs__Reason__c</columns>
+    <columns>FLODocs__Related_Change_Request__c</columns>
+    <columns>FLODocs__Policy__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Field_Name__c</field>
+        <operation>equals</operation>
+        <value>Data Change Tracking</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Metadata_Type__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Data Tracking Changes</label>
+</ListView>

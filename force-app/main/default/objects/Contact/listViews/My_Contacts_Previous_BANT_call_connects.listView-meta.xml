@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contacts_Previous_BANT_call_connects</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.CRM_Contact,Contact.Connected_Worker,Contact.Fleet,Contact.Industrial,Contact.Machine_Vision,Contact.PSA_Resource,Contact.Partner</value>
+    </filters>
+    <filters>
+        <field>Account.Owner_Name__c</field>
+        <operation>equals</operation>
+        <value>Lucy Mccullough</value>
+    </filters>
+    <label>My Contacts: Previous BANT/call connects</label>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__VR_RUL_Activites</fullName>
+    <active>true</active>
+    <description>You must specify &apos;Uses per Time Period&apos; in the period from 1 to 99</description>
+    <errorConditionFormula>( refedge__RUL_Activities_will_do__c  &gt; 99) || (refedge__RUL_Activities_will_do__c &lt; 1)</errorConditionFormula>
+    <errorMessage>You must specify &apos;Uses per Time Period&apos; in the period from 1 to 99</errorMessage>
+</ValidationRule>

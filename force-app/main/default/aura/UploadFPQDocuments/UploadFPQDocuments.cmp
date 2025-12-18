@@ -1,0 +1,86 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="FPQFileUpload" access="global" >
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+   <!-- <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChanged}" /> -->
+    <aura:attribute name="isLoading" type="Boolean" default="false" />
+    <aura:attribute name="currentStep" type="string" default="upload"/>
+    <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg']" />
+    <aura:attribute name="multiple" type="Boolean" default="true" />
+    <aura:attribute name="disabled" type="Boolean" default="true" />
+    <aura:attribute name="alreadyUploaded" type="Boolean" default="false" />
+   <!-- <aura:attribute name="parentId" type="Id" />  -->
+    <aura:attribute name="recordId" type="Id"  />
+    <aura:attribute name="fileName" type="String" default="No File Selected.." />
+    <aura:attribute name="FilesUploaded" type="List" />
+    <!-- PROGRESS INDICATOR START-->
+    <lightning:progressIndicator currentStep="{!v.currentStep}" type="path">
+        <lightning:progressStep label="Upload Documents" title="Upload Documents" value="upload"  aura:id="upload"/>
+        <lightning:progressStep label="Confirmation" title="Confirmation"  value="complete"/>
+    </lightning:progressIndicator>
+    <!-- PROGRESS INDICATOR END-->
+    
+    <div class = "maindiv" style ="background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, rgb(238, 238, 238)), color-stop(1, rgb(238, 238, 238)) ); background:-ms-linear-gradient(bottom,#EEEEEE,#EEEEEE); margin-top: -50px; " > 
+        <div class = "backbuttondiv"></div>
+        
+        <!--Loading Symbol-START -->
+        <div class="formdiv">
+            <aura:if isTrue="{!v.isLoading}">
+                <lightning:spinner variant="brand" size="large" alternativeText="Loading..."/>
+            </aura:if>
+            <!--Loading Symbol-End -->
+            
+            <!--Upload Tab-START -->
+            <br/>
+            <div class="{!v.currentStep == 'upload' ? 'slds-show' : 'slds-hide'}" >
+                <aura:if isTrue="{!not(v.alreadyUploaded)}">
+        <div role="alert" 
+          style="background-color:#fff;color:red;border-radius:0.25rem;font-size: 14px;">
+           * Please submit all files at once.
+        </div>
+                    <table border = "0" width = "100%">
+                        <col width="40%"/>
+                        <col width="5%"/>
+                        <col width="50%"/>
+                        <col width="10%"/>
+                        <tr>
+                            <td colspan="3">
+                            <lightning:input aura:id="fileId" onchange="{!c.handleFilesChange}" type="file" name="file" label="" multiple="true"/>
+                                <div class="slds-text-body_medium slds-text-color_error"><aura:unescapedHtml value="{!v.fileName}"/> </div>
+                       </td>
+                            </tr>
+                    </table>	
+                </aura:if>
+                
+            </div>      
+            <div class="{!v.currentStep == 'complete' ? 'slds-show' : 'slds-hide'}" >
+                <aura:if isTrue="{!v.alreadyUploaded}">
+                    <ui:message severity="confirm" closable="false">        
+                        <lightning:icon iconName="action:close" size="xx-small" />&nbsp;&nbsp;
+                        <b>No Action Needed</b>
+                        <br/>
+                        Documents are already uploaded. We will reach out in case of any additional information required.
+                    </ui:message>
+                    
+                    <br/>
+                </aura:if>
+                <aura:if isTrue="{!not(v.alreadyUploaded)}">
+                    <ui:message severity="confirm" closable="false">        
+                        <lightning:icon iconName="action:approval" size="xx-small" />&nbsp;&nbsp;
+                        <b>All Set!</b>
+                        <br/>
+                        Thank you for uploading the requested documents. We will reach out if additional information is required.
+                    </ui:message>
+                    
+                    <br/>
+                </aura:if>
+            </div>   
+            <br/><br/><br/>
+            
+            <div align="right" >
+                <aura:if isTrue="{!v.currentStep == 'upload'}">
+                    <lightning:button label="Submit" onclick="{!c.uploadFiles}"
+                                      variant="brand" class="slds-m-top--medium"/>
+                </aura:if>  
+            </div>
+        </div>
+    </div>
+</aura:component>

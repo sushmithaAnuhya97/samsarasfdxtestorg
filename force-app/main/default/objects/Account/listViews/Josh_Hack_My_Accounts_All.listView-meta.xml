@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Josh_Hack_My_Accounts_All</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>Closed_Lost_Opportunities__c</columns>
+    <columns>Prospecting_Status__c</columns>
+    <columns>Total_Purchased_VG_Count__c</columns>
+    <columns>Total_Purchased_CM_Count__c</columns>
+    <columns>Total_Purchased_AG_Count__c</columns>
+    <columns>Last_Contacted__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>Days_Since_Last_Call_By_Current_Owner__c</columns>
+    <columns>Validation_Complete__c</columns>
+    <columns>Billing_State__c</columns>
+    <columns>Open_Opportunity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>jhack</value>
+    </filters>
+    <label>Josh Hack My Accounts (All)</label>
+</ListView>

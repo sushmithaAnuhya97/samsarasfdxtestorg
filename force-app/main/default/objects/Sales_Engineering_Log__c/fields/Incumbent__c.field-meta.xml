@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incumbent__c</fullName>
+    <inlineHelpText>Select all that apply</inlineHelpText>
+    <label>Incumbent</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CE - Ayantra</fullName>
+                <default>false</default>
+                <label>CE - Ayantra</label>
+            </value>
+            <value>
+                <fullName>CE - OEM Telematics</fullName>
+                <default>false</default>
+                <label>CE - OEM Telematics</label>
+            </value>
+            <value>
+                <fullName>CE - OmniMetrix</fullName>
+                <default>false</default>
+                <label>CE - OmniMetrix</label>
+            </value>
+            <value>
+                <fullName>CE - Other</fullName>
+                <default>false</default>
+                <label>CE - Other</label>
+            </value>
+            <value>
+                <fullName>CE - Power Telematics</fullName>
+                <default>false</default>
+                <label>CE - Power Telematics</label>
+            </value>
+            <value>
+                <fullName>CE - Trackunit</fullName>
+                <default>false</default>
+                <label>CE - Trackunit</label>
+            </value>
+            <value>
+                <fullName>CE - ZTR</fullName>
+                <default>false</default>
+                <label>CE - ZTR</label>
+            </value>
+            <value>
+                <fullName>CS - ACTi</fullName>
+                <default>false</default>
+                <label>CS - ACTi</label>
+            </value>
+            <value>
+                <fullName>CS - Amcrest</fullName>
+                <default>false</default>
+                <label>CS - Amcrest</label>
+            </value>
+            <value>
+                <fullName>CS - Arecont</fullName>
+                <default>false</default>
+                <label>CS - Arecont</label>
+            </value>
+            <value>
+                <fullName>CS - Avigilon</fullName>
+                <default>false</default>
+                <label>CS - Avigilon</label>
+            </value>
+            <value>
+                <fullName>CS - Axis</fullName>
+                <default>false</default>
+                <label>CS - Axis</label>
+            </value>
+            <value>
+                <fullName>CS - Bosch</fullName>
+                <default>false</default>
+                <label>CS - Bosch</label>
+            </value>
+            <value>
+                <fullName>CS - Cap</fullName>
+                <default>false</default>
+                <label>CS - Cap</label>
+            </value>
+            <value>
+                <fullName>CS - Dahua</fullName>
+                <default>false</default>
+                <label>CS - Dahua</label>
+            </value>
+            <value>
+                <fullName>CS - Digital Watchdog</fullName>
+                <default>false</default>
+                <label>CS - Digital Watchdog</label>
+            </value>
+            <value>
+                <fullName>CS - Eagle Eye</fullName>
+                <default>false</default>
+                <label>CS - Eagle Eye</label>
+            </value>
+            <value>
+                <fullName>CS - Everfocus</fullName>
+                <default>false</default>
+                <label>CS - Everfocus</label>
+            </value>
+            <value>
+                <fullName>CS - Exacq</fullName>
+                <default>false</default>
+                <label>CS - Exacq</label>
+            </value>
+            <value>
+                <fullName>CS - Ganz</fullName>
+                <default>false</default>
+                <label>CS - Ganz</label>
+            </value>
+            <value>
+                <fullName>CS - Genetec</fullName>
+                <default>false</default>
+                <label>CS - Genetec</label>
+            </value>
+            <value>
+                <fullName>CS - Geovision</fullName>
+                <default>false</default>
+                <label>CS - Geovision</label>
+            </value>
+            <value>
+                <fullName>CS - HikVision</fullName>
+                <default>false</default>
+                <label>CS - HikVision</label>
+            </value>
+            <value>
+                <fullName>CS - Honeywell</fullName>
+                <default>false</default>
+                <label>CS - Honeywell</label>
+            </value>
+            <value>
+                <fullName>CS - Lorex</fullName>
+                <default>false</default>
+                <label>CS - Lorex</label>
+            </value>
+            <value>
+                <fullName>CS - LTS</fullName>
+                <default>false</default>
+                <label>CS - LTS</label>
+            </value>
+            <value>
+                <fullName>CS - March Networks</fullName>
+                <default>false</default>
+                <label>CS - March Networks</label>
+            </value>
+            <value>
+                <fullName>CS - Meraki</fullName>
+                <default>false</default>
+                <label>CS - Meraki</label>
+            </value>
+            <value>
+                <fullName>CS - Milestone</fullName>
+                <default>false</default>
+                <label>CS - Milestone</label>
+            </value>
+            <value>
+                <fullName>CS - Other</fullName>
+                <default>false</default>
+                <label>CS - Other</label>
+            </value>
+            <value>
+                <fullName>CS - Salient</fullName>
+                <default>false</default>
+                <label>CS - Salient</label>
+            </value>
+            <value>
+                <fullName>CS - Samsung-Hanwha</fullName>
+                <default>false</default>
+                <label>CS - Samsung-Hanwha</label>
+            </value>
+            <value>
+                <fullName>CS - Seawit</fullName>
+                <default>false</default>
+                <label>CS - Seawit</label>
+            </value>
+            <value>
+                <fullName>CS - Speco</fullName>
+                <default>false</default>
+                <label>CS - Speco</label>
+            </value>
+            <value>
+                <fullName>CS - Trendnet</fullName>
+                <default>false</default>
+                <label>CS - Trendnet</label>
+            </value>
+            <value>
+                <fullName>CS - Ubiquiti</fullName>
+                <default>false</default>
+                <label>CS - Ubiquiti</label>
+            </value>
+            <value>
+                <fullName>CS - Verkada</fullName>
+                <default>false</default>
+                <label>CS - Verkada</label>
+            </value>
+            <value>
+                <fullName>CS - Vitek</fullName>
+                <default>false</default>
+                <label>CS - Vitek</label>
+            </value>
+            <value>
+                <fullName>CS - Vivotek</fullName>
+                <default>false</default>
+                <label>CS - Vivotek</label>
+            </value>
+            <value>
+                <fullName>CS - Wisenet</fullName>
+                <default>false</default>
+                <label>CS - Wisenet</label>
+            </value>
+            <value>
+                <fullName>Fleet - 3rd Eye</fullName>
+                <default>false</default>
+                <label>Fleet - 3rd Eye</label>
+            </value>
+            <value>
+                <fullName>Fleet - Actia</fullName>
+                <default>false</default>
+                <label>Fleet - Actia</label>
+            </value>
+            <value>
+                <fullName>Fleet - Arlo</fullName>
+                <default>false</default>
+                <label>Fleet - Arlo</label>
+            </value>
+            <value>
+                <fullName>Fleet - Astrata</fullName>
+                <default>false</default>
+                <label>Fleet - Astrata</label>
+            </value>
+            <value>
+                <fullName>Fleet - Axxes</fullName>
+                <default>false</default>
+                <label>Fleet - Axxes</label>
+            </value>
+            <value>
+                <fullName>Fleet - Azuga</fullName>
+                <default>false</default>
+                <label>Fleet - Azuga</label>
+            </value>
+            <value>
+                <fullName>Fleet - Bornemann AG</fullName>
+                <default>false</default>
+                <label>Fleet - Bornemann AG</label>
+            </value>
+            <value>
+                <fullName>Fleet - CheckedSafe</fullName>
+                <default>false</default>
+                <label>Fleet - CheckedSafe</label>
+            </value>
+            <value>
+                <fullName>Fleet - Compology</fullName>
+                <default>false</default>
+                <label>Fleet - Compology</label>
+            </value>
+            <value>
+                <fullName>Fleet - C-Track</fullName>
+                <default>false</default>
+                <label>Fleet - C-Track</label>
+            </value>
+            <value>
+                <fullName>Fleet - Cyntrx</fullName>
+                <default>false</default>
+                <label>Fleet - Cyntrx</label>
+            </value>
+            <value>
+                <fullName>Fleet - DAF/Volvo</fullName>
+                <default>false</default>
+                <label>Fleet - DAF/Volvo</label>
+            </value>
+            <value>
+                <fullName>Fleet - Dako</fullName>
+                <default>false</default>
+                <label>Fleet - Dako</label>
+            </value>
+            <value>
+                <fullName>Fleet - Datev</fullName>
+                <default>false</default>
+                <label>Fleet - Datev</label>
+            </value>
+            <value>
+                <fullName>Fleet - DigitalAlly</fullName>
+                <default>false</default>
+                <label>Fleet - DigitalAlly</label>
+            </value>
+            <value>
+                <fullName>Fleet - DKV</fullName>
+                <default>false</default>
+                <label>Fleet - DKV</label>
+            </value>
+            <value>
+                <fullName>Fleet - Dossier</fullName>
+                <default>false</default>
+                <label>Fleet - Dossier</label>
+            </value>
+            <value>
+                <fullName>Fleet - Eagle Eye</fullName>
+                <default>false</default>
+                <label>Fleet - Eagle Eye</label>
+            </value>
+            <value>
+                <fullName>Fleet - Earthwave Fleetwatcher</fullName>
+                <default>false</default>
+                <label>Fleet - Earthwave Fleetwatcher</label>
+            </value>
+            <value>
+                <fullName>Fleet - Element</fullName>
+                <default>false</default>
+                <label>Fleet - Element</label>
+            </value>
+            <value>
+                <fullName>Fleet - Elliot</fullName>
+                <default>false</default>
+                <label>Fleet - Elliot</label>
+            </value>
+            <value>
+                <fullName>Fleet - EquipmentShare</fullName>
+                <default>false</default>
+                <label>Fleet - EquipmentShare</label>
+            </value>
+            <value>
+                <fullName>Fleet - E-road</fullName>
+                <default>false</default>
+                <label>Fleet - E-road</label>
+            </value>
+            <value>
+                <fullName>Fleet - EverySense</fullName>
+                <default>false</default>
+                <label>Fleet - EverySense</label>
+            </value>
+            <value>
+                <fullName>Fleet - EyeDrive</fullName>
+                <default>false</default>
+                <label>Fleet - EyeDrive</label>
+            </value>
+            <value>
+                <fullName>Fleet - Fleetboard</fullName>
+                <default>false</default>
+                <label>Fleet - Fleetboard</label>
+            </value>
+            <value>
+                <fullName>Fleet - FleetCheck</fullName>
+                <default>false</default>
+                <label>Fleet - FleetCheck</label>
+            </value>
+            <value>
+                <fullName>Fleet - FleetComplete</fullName>
+                <default>false</default>
+                <label>Fleet - FleetComplete</label>
+            </value>
+            <value>
+                <fullName>Fleet - FleetHolster</fullName>
+                <default>false</default>
+                <label>Fleet - FleetHolster</label>
+            </value>
+            <value>
+                <fullName>Fleet - Fleetio</fullName>
+                <default>false</default>
+                <label>Fleet - Fleetio</label>
+            </value>
+            <value>
+                <fullName>Fleet - Fleetmatics (Verizon)</fullName>
+                <default>false</default>
+                <label>Fleet - Fleetmatics (Verizon)</label>
+            </value>
+            <value>
+                <fullName>Fleet - FonixTelematics</fullName>
+                <default>false</default>
+                <label>Fleet - FonixTelematics</label>
+            </value>
+            <value>
+                <fullName>Fleet - Geoflotte</fullName>
+                <default>false</default>
+                <label>Fleet - Geoflotte</label>
+            </value>
+            <value>
+                <fullName>Fleet - Geotab</fullName>
+                <default>false</default>
+                <label>Fleet - Geotab</label>
+            </value>
+            <value>
+                <fullName>Fleet - GPS Connect (Verizon)</fullName>
+                <default>false</default>
+                <label>Fleet - GPS Connect (Verizon)</label>
+            </value>
+            <value>
+                <fullName>Fleet - GPS Hero</fullName>
+                <default>false</default>
+                <label>Fleet - GPS Hero</label>
+            </value>
+            <value>
+                <fullName>Fleet - GPS Insight</fullName>
+                <default>false</default>
+                <label>Fleet - GPS Insight</label>
+            </value>
+            <value>
+                <fullName>Fleet - GPS TrackIt</fullName>
+                <default>false</default>
+                <label>Fleet - GPS TrackIt</label>
+            </value>
+            <value>
+                <fullName>Fleet - Guardian Seeing Machines</fullName>
+                <default>false</default>
+                <label>Fleet - Guardian Seeing Machines</label>
+            </value>
+            <value>
+                <fullName>Fleet - Hallhub</fullName>
+                <default>false</default>
+                <label>Fleet - Hallhub</label>
+            </value>
+            <value>
+                <fullName>Fleet - Hirschmann</fullName>
+                <default>false</default>
+                <label>Fleet - Hirschmann</label>
+            </value>
+            <value>
+                <fullName>Fleet - iDrive</fullName>
+                <default>false</default>
+                <label>Fleet - iDrive</label>
+            </value>
+            <value>
+                <fullName>Fleet - Initions</fullName>
+                <default>false</default>
+                <label>Fleet - Initions</label>
+            </value>
+            <value>
+                <fullName>Fleet - Intellihub</fullName>
+                <default>false</default>
+                <label>Fleet - Intellihub</label>
+            </value>
+            <value>
+                <fullName>Fleet - InTouchGPS</fullName>
+                <default>false</default>
+                <label>Fleet - InTouchGPS</label>
+            </value>
+            <value>
+                <fullName>Fleet - IQ4 Mobility</fullName>
+                <default>false</default>
+                <label>Fleet - IQ4 Mobility</label>
+            </value>
+            <value>
+                <fullName>Fleet - Isaac</fullName>
+                <default>false</default>
+                <label>Fleet - Isaac</label>
+            </value>
+            <value>
+                <fullName>Fleet - JJ Keller Encompass</fullName>
+                <default>false</default>
+                <label>Fleet - JJ Keller Encompass</label>
+            </value>
+            <value>
+                <fullName>Fleet - KeepTruckin</fullName>
+                <default>false</default>
+                <label>Fleet - KeepTruckin</label>
+            </value>
+            <value>
+                <fullName>Fleet - Kienzle Telematics</fullName>
+                <default>false</default>
+                <label>Fleet - Kienzle Telematics</label>
+            </value>
+            <value>
+                <fullName>Fleet - Lightfoot</fullName>
+                <default>false</default>
+                <label>Fleet - Lightfoot</label>
+            </value>
+            <value>
+                <fullName>Fleet - LocalMotion</fullName>
+                <default>false</default>
+                <label>Fleet - LocalMotion</label>
+            </value>
+            <value>
+                <fullName>Fleet - LocTracker</fullName>
+                <default>false</default>
+                <label>Fleet - LocTracker</label>
+            </value>
+            <value>
+                <fullName>Fleet - Lytx</fullName>
+                <default>false</default>
+                <label>Fleet - Lytx</label>
+            </value>
+            <value>
+                <fullName>Fleet - MagicEye</fullName>
+                <default>false</default>
+                <label>Fleet - MagicEye</label>
+            </value>
+            <value>
+                <fullName>Fleet - Mandata</fullName>
+                <default>false</default>
+                <label>Fleet - Mandata</label>
+            </value>
+            <value>
+                <fullName>Fleet - Masternaut</fullName>
+                <default>false</default>
+                <label>Fleet - Masternaut</label>
+            </value>
+            <value>
+                <fullName>Fleet - Microlise</fullName>
+                <default>false</default>
+                <label>Fleet - Microlise</label>
+            </value>
+            <value>
+                <fullName>Fleet - MiX Telematics</fullName>
+                <default>false</default>
+                <label>Fleet - MiX Telematics</label>
+            </value>
+            <value>
+                <fullName>Fleet - MobileEye</fullName>
+                <default>false</default>
+                <label>Fleet - MobileEye</label>
+            </value>
+            <value>
+                <fullName>Fleet - Nauto</fullName>
+                <default>false</default>
+                <label>Fleet - Nauto</label>
+            </value>
+            <value>
+                <fullName>Fleet - Navman</fullName>
+                <default>false</default>
+                <label>Fleet - Navman</label>
+            </value>
+            <value>
+                <fullName>Fleet - Netradyne</fullName>
+                <default>false</default>
+                <label>Fleet - Netradyne</label>
+            </value>
+            <value>
+                <fullName>Fleet - NetworkFleet (Verizon)</fullName>
+                <default>false</default>
+                <label>Fleet - NetworkFleet (Verizon)</label>
+            </value>
+            <value>
+                <fullName>Fleet - NexTraq</fullName>
+                <default>false</default>
+                <label>Fleet - NexTraq</label>
+            </value>
+            <value>
+                <fullName>Fleet - Omnitracs</fullName>
+                <default>false</default>
+                <label>Fleet - Omnitracs</label>
+            </value>
+            <value>
+                <fullName>Fleet - Orbcomm</fullName>
+                <default>false</default>
+                <label>Fleet - Orbcomm</label>
+            </value>
+            <value>
+                <fullName>Fleet - Other</fullName>
+                <default>false</default>
+                <label>Fleet - Other</label>
+            </value>
+            <value>
+                <fullName>Fleet - Owl Cam</fullName>
+                <default>false</default>
+                <label>Fleet - Owl Cam</label>
+            </value>
+            <value>
+                <fullName>Fleet - Pedigree Technologies</fullName>
+                <default>false</default>
+                <label>Fleet - Pedigree Technologies</label>
+            </value>
+            <value>
+                <fullName>Fleet - PeopleNet</fullName>
+                <default>false</default>
+                <label>Fleet - PeopleNet</label>
+            </value>
+            <value>
+                <fullName>Fleet - Podfather</fullName>
+                <default>false</default>
+                <label>Fleet - Podfather</label>
+            </value>
+            <value>
+                <fullName>Fleet - ProVision</fullName>
+                <default>false</default>
+                <label>Fleet - ProVision</label>
+            </value>
+            <value>
+                <fullName>Fleet - Quartix</fullName>
+                <default>false</default>
+                <label>Fleet - Quartix</label>
+            </value>
+            <value>
+                <fullName>Fleet - Rand McNally</fullName>
+                <default>false</default>
+                <label>Fleet - Rand McNally</label>
+            </value>
+            <value>
+                <fullName>Fleet - Roscoe</fullName>
+                <default>false</default>
+                <label>Fleet - Roscoe</label>
+            </value>
+            <value>
+                <fullName>Fleet - SafeDrive</fullName>
+                <default>false</default>
+                <label>Fleet - SafeDrive</label>
+            </value>
+            <value>
+                <fullName>Fleet - SkyBitz</fullName>
+                <default>false</default>
+                <label>Fleet - SkyBitz</label>
+            </value>
+            <value>
+                <fullName>Fleet - SmartDrive</fullName>
+                <default>false</default>
+                <label>Fleet - SmartDrive</label>
+            </value>
+            <value>
+                <fullName>Fleet - Smart Witness</fullName>
+                <default>false</default>
+                <label>Fleet - Smart Witness</label>
+            </value>
+            <value>
+                <fullName>Fleet - Spedion</fullName>
+                <default>false</default>
+                <label>Fleet - Spedion</label>
+            </value>
+            <value>
+                <fullName>Fleet - Speedio</fullName>
+                <default>false</default>
+                <label>Fleet - Speedio</label>
+            </value>
+            <value>
+                <fullName>Fleet - Spireon</fullName>
+                <default>false</default>
+                <label>Fleet - Spireon</label>
+            </value>
+            <value>
+                <fullName>Fleet - Sterling</fullName>
+                <default>false</default>
+                <label>Fleet - Sterling</label>
+            </value>
+            <value>
+                <fullName>Fleet - Styletronics</fullName>
+                <default>false</default>
+                <label>Fleet - Styletronics</label>
+            </value>
+            <value>
+                <fullName>Fleet - Sud Telematics</fullName>
+                <default>false</default>
+                <label>Fleet - Sud Telematics</label>
+            </value>
+            <value>
+                <fullName>Fleet - SureCam</fullName>
+                <default>false</default>
+                <label>Fleet - SureCam</label>
+            </value>
+            <value>
+                <fullName>Fleet - SurfCam</fullName>
+                <default>false</default>
+                <label>Fleet - SurfCam</label>
+            </value>
+            <value>
+                <fullName>Fleet - SurfSight</fullName>
+                <default>false</default>
+                <label>Fleet - SurfSight</label>
+            </value>
+            <value>
+                <fullName>Fleet - Teletrac/Navman</fullName>
+                <default>false</default>
+                <label>Fleet - Teletrac/Navman</label>
+            </value>
+            <value>
+                <fullName>Fleet - Telogis (Verizon)</fullName>
+                <default>false</default>
+                <label>Fleet - Telogis (Verizon)</label>
+            </value>
+            <value>
+                <fullName>Fleet - Tenna</fullName>
+                <default>false</default>
+                <label>Fleet - Tenna</label>
+            </value>
+            <value>
+                <fullName>Fleet - TomTom</fullName>
+                <default>false</default>
+                <label>Fleet - TomTom</label>
+            </value>
+            <value>
+                <fullName>Fleet - Transics</fullName>
+                <default>false</default>
+                <label>Fleet - Transics</label>
+            </value>
+            <value>
+                <fullName>Fleet - Ubiquiti</fullName>
+                <default>false</default>
+                <label>Fleet - Ubiquiti</label>
+            </value>
+            <value>
+                <fullName>Fleet - Verizon Connect</fullName>
+                <default>false</default>
+                <label>Fleet - Verizon Connect</label>
+            </value>
+            <value>
+                <fullName>Fleet - Vodafone</fullName>
+                <default>false</default>
+                <label>Fleet - Vodafone</label>
+            </value>
+            <value>
+                <fullName>Fleet - Yellowfox</fullName>
+                <default>false</default>
+                <label>Fleet - Yellowfox</label>
+            </value>
+            <value>
+                <fullName>Fleet - Zenduit</fullName>
+                <default>false</default>
+                <label>Fleet - Zenduit</label>
+            </value>
+            <value>
+                <fullName>Fleet - Zonar</fullName>
+                <default>false</default>
+                <label>Fleet - Zonar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

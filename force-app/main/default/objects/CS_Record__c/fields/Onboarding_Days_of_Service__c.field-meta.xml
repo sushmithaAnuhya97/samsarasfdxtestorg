@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Days_of_Service__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+CSM_Tier__c,
+&quot;Elite&quot;, 270,
+&quot;Premier&quot;, 90,
+&quot;Plus&quot;, 45,
+&quot;Starter&quot;, 30,
+NULL
+)</formula>
+    <label>Onboarding Days of Service</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

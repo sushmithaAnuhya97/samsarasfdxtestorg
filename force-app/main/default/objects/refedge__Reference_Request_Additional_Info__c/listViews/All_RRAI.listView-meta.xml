@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_RRAI</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Language_requirement__c</columns>
+    <columns>Required_title_level__c</columns>
+    <columns>Topics_of_interest__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>5/4/2025 12:00 AM</value>
+    </filters>
+    <label>All RRAI</label>
+</ListView>

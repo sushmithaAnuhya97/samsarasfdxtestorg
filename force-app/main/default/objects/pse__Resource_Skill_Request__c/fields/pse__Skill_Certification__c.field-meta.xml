@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Skill_Certification__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Skill or Certification</label>
+    <referenceTo>pse__Skill__c</referenceTo>
+    <relationshipLabel>Resource Skill Requests</relationshipLabel>
+    <relationshipName>Resource_Skill_Requests</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

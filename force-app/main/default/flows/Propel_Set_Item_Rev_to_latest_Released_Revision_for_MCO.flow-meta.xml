@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>setLatestRevision</name>
+        <label>setLatestRevision</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <assignmentItems>
+            <assignToReference>LatestReleasedRevision</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.PDLM__Item_Revision__r.PDLM__Master_Item__r.PDLM__Latest_Released_Revision__r.PDLM__Revision__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Revision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Revision_Count_1</name>
+        <label>Any Released Revisions yet</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_more_than_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PDLM__Item_Revision__r.PDLM__Master_Item__r.PDLM__Latest_Released_Revision__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setLatestRevision</targetReference>
+            </connector>
+            <label>Yes Released Revisions Exist</label>
+        </rules>
+    </decisions>
+    <description>When an MCO is launched on an Item, then keep the revision same as the last released revision</description>
+    <environments>Default</environments>
+    <interviewLabel>Propel: Set Item Rev to latest Released Revision for MCO {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Propel: Set Item Rev to latest Released Revision for MCO</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Revision</name>
+        <label>Update Revision</label>
+        <locationX>50</locationX>
+        <locationY>575</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.PDLM__Item_Revision__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>PDLM__Revision__c</field>
+            <value>
+                <elementReference>LatestReleasedRevision</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PDLM__Item_Revision__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Revision_Count_1</targetReference>
+        </connector>
+        <filterFormula>OR (
+{!$Record.PDLM__Change_Order_lk__r.PDLM__Category__r.Name} = &apos;MCO - Cost&apos;,
+{!$Record.PDLM__Change_Order_lk__r.PDLM__Category__r.Name} = &apos;MCO - Firmware&apos;,
+{!$Record.PDLM__Change_Order_lk__r.PDLM__Category__r.Name} = &apos;MCO - General&apos;
+)</filterFormula>
+        <object>PDLM__Affected_Item__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>LatestReleasedRevision</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

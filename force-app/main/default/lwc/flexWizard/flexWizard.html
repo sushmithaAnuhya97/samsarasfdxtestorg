@@ -1,0 +1,259 @@
+<!--
+    @description       : 
+    @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+    @group             : 
+    @last modified on  : 02-08-2025
+    @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+        <template if:true={showCnrReinitiatePopup}>
+                <c-flex-reinitiate-cnr-process account-id={accountId} onclosepopup={closeReinitiateCnrPopup} ongroupselected={handleGroupSelected}></c-flex-reinitiate-cnr-process>
+        </template>
+        <div>
+        <!--Loading Spinner-->
+        <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading.." style="position:fixed"  ></lightning-spinner>
+        </template>
+
+        <div class="slds-page-header slds-page-header_record-home" >
+                <div class="slds-page-header__row">
+                        <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                        <span class="slds-icon_container slds-icon-standard-account slds-icon_container_circle">
+                                            <lightning-icon icon-name="standard:account" alternative-text="Account" title="Account" size="large"></lightning-icon>
+                                        </span>
+                                        <!-- <div class="slds-media__body">
+                                                <div class="slds-page-header__name">
+                                                        <div class="slds-page-header__name-title">&nbsp;Cancel and Replace
+                                                                <h1>
+                                                                        <span class="slds-page-header__title slds-truncate" title={accountName}>&nbsp;{accountName}</span>
+                                                                        <div class="slds-text-body_small slds-m-top_x-small">
+                                                                            <template if:true={pnpBoolean1}>
+                                                                                Cancel & Replacement - PnP Customer
+                                                                            </template>
+                                                                            <template if:false={pnpBoolean1}>
+                                                                                Cancel & Replacement - Legacy Customer
+                                                                            </template>
+                                                                        </div>
+                                                                </h1>
+                                                        </div>
+                                                </div>
+                                        </div> -->
+                                        <div class="slds-media__body">
+                                                <div class="slds-grid slds-gutters slds-wrap">
+                                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_9-of-12">
+                                                        <div class="slds-page-header__name">
+                                                            <div class="slds-page-header__name-title">&nbsp;Cancel and Replace
+                                                                <h1>
+                                                                    <span class="slds-page-header__title slds-truncate" title={accountName}>&nbsp;{accountName}</span>
+                                                                    <div class="slds-text-body_small slds-m-top_x-small">
+                                                                        <template if:true={pnpBoolean1}>
+                                                                            Cancel & Replacement - PnP Customer
+                                                                        </template>
+                                                                        <template if:false={pnpBoolean1}>
+                                                                            Cancel & Replacement - Legacy Customer
+                                                                        </template>
+                                                                    </div>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div if:true={showReinitiateButton} class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-text-align_right slds-align-middle">
+                                                        <button class="slds-button slds-button_brand" onclick={handleReInitiateTrigger}>
+                                                            Re Initiate Trigger
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="slds-page-header__row slds-page-header__row_gutters" >
+                        <div class="slds-page-header__col-details">
+                                <div class="slds-page-header__detail-row">
+                                        <article class="slds-p-vertical_small" style="width: 100%;">
+                                                <div style="overflow : hidden !important">
+                                                <div class="slds-card__body slds-card__body_inner" style="width: 100vw;max-width: 100vw;margin-left: calc(-60vw + 50%); margin-right: calc(-60vw + 50%); position: relative; left: 50%; right: 50%; transform: translateX(-50%);">
+                                                        <div class="slds-grid slds-gutters" style="width: 100%;">
+                                                            <div class="slds-col slds-size_1-of-1" style="width: 100%;">
+                                                                <div class="slds-container_fluid" style="width: 100vw;max-width: 100vw;padding: 0;">
+                                                                    <div style="width: 134vw;position: relative; left: -5vw;right: 0;">
+                                                                        <template if:false={isSubmitted}>
+                                                                            <lightning-progress-indicator current-step={currentStep} type="base" variant="base" class="slds-progress_shade" style="width: 100%; margin: 0; padding: 0; overflow-x: hidden;" >
+                                                                                <template for:each={steps} for:item="step">
+                                                                                        <lightning-progress-step key={step.value} value={step.value} class={step.className} onclick={handleStepClick} data-step={step.value}></lightning-progress-step>
+                                                                                </template>
+                                                                            </lightning-progress-indicator>
+                                                                        </template>
+                                                                    </div>
+                                                                    <template if:false={isSubmitted}>
+                                                                        <template if:false={pnpBoolean1}>
+                                                                            <div class="slds-grid slds-wrap slds-grid_align-center" style="width: 115vw;position: relative; left: 5vw;right: auto;margin: 0; padding: 0; margin-left : 3px">
+                                                                                <template for:each={steps} for:item="step">
+                                                                                <div key={step.value} class="slds-col slds-size_1-of-4 slds-text-align_center">
+                                                                                    <div class="slds-text-body_small">{step.label}</div>
+                                                                                </div>
+                                                                                </template>
+                                                                            </div>
+                                                                        </template>
+                                                                        <template if:true={pnpBoolean1}>
+                                                                            <div class="slds-grid slds-wrap slds-grid_align-center" style="width: 108vw;position: relative; left: 8vw;right: auto;margin: 0; padding: 0; margin-left : 3px">
+                                                                                <template for:each={steps} for:item="step">
+                                                                                <div key={step.value} class="slds-col slds-size_1-of-5 slds-text-align_center">
+                                                                                    <div class="slds-text-body_small">{step.label}</div>
+                                                                                </div>
+                                                                                </template>
+                                                                            </div>
+                                                                        </template>
+                                                                    </template>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+                                                
+
+
+                                                <div class="slds-p-vertical_small test-abcd">
+                                                        <template if:true={showSelectedContracts}>
+                                                                <c-flex-selected-contract-details contract-ids={contractIds}></c-flex-selected-contract-details>
+                                                        </template>
+                                                        <template if:true={showOppInfo}>
+                                                                <c-flex-upgrade-opportunity-info config-data={configData} show-opp-info={showOppInfo}
+                                                                user-selected-term={userSelectedTermMonths}
+                                                                ></c-flex-upgrade-opportunity-info>
+                                                        </template>
+                                                        <template if:true={isStepOne}>
+                                                                <c-contract-cancel-replace account-id={accountId} onselect={handleContractSelection} onload={handleComponentLoad} contract-ids={contractIds}></c-contract-cancel-replace>
+                                                        </template>
+                                                        <template if:true={isStepTwo}>
+                                                                <template if:true={contractsWithOpenAmendsSize}>
+                                                                        <c-flex-_-open-amendment-opportunity contract-ids={contractIds}></c-flex-_-open-amendment-opportunity>
+                                                                </template>
+                                                                <template if:false={contractsWithOpenAmendsSize}>
+                                                                        <c-flex-admin-override-card contract-ids={contractIds} 
+                                                                        onoverridecontractids={handleOverrideContractIds}
+                                                                        
+                                                                        ></c-flex-admin-override-card>
+                                                                        <c-flex-upgrade-opportunity-info is-step-two={isStepTwo} ondateempty={handleDateEmpty} ondateerror={handleDateError} onselect={handleLicenseTerms} config-id={controlCenterConfigId} contract-ids={contractIds} onconfigchange={handleConfigChange} user-selected-term={userSelectedTermMonths}  ondatachange={handleStartDateChange} cached-start-date={cachedStartDate} cached-booking-type={cachedBookingType} onrebookchange={handleBooinTypeChange} current-step={currentStep}></c-flex-upgrade-opportunity-info>
+                                                                        
+                                                                </template>
+                                                        </template>
+                                                        
+                                                        <template if:true={isStepThree}>
+                                                                <template if:false={pnpBoolean1}>
+                                                                        <c-flex-product-replacement-info account-pilot-customer={pnpBoolean1} contract-ids={contractIds} pricebook-id={priceBookId} 
+                                                                        onproductfieldsvalidationchange={handleFieldValidation}
+                                                                        onproductselectionchange={handleProductSelectionChange}
+                                                                        updated-subscription-data ={subscriptionData}
+                                                                        ineligible-product-list = {ineligibleProductList}
+                                                                        oncurrentscreen={handleCurrentScreen}
+                                                                        onbannerchange={handleBannerChange}
+                                                                        temp-ids={tempIds}
+                                                                        ineligible-banner-boolean ={ineligibleBannerBoolean}
+                                                                        subscription-data={subscriptionData}
+                                                                        is-loading={isLoading}
+                                                                        ></c-flex-product-replacement-info>
+                                                                </template>                                                                
+                                                        </template>
+                                                       
+                                                        <template if:true={pnpBoolean1}>
+                                                                <template if:true={isStepThreeA}>
+                                                                        <c-flex-pn-p-license-upgrade account-pilot-customer={pnpBoolean1} contract-ids={contractIds} pricebook-id={priceBookId}
+                                                                        onnextpnpsubscriptiondatachange={handlePnpStepOneSubscriptionData}
+                                                                        oncurrentpnpscreen={handlePnpCurrentScreen}
+                                                                        onscreenonetoggleoffdata = {handleScreenOneToggleOffData}
+                                                                        onscreenonetoggleondata = {handleScreenOneToggleOnData}
+                                                                        onpnponedatadispatchone={handlePnpOneDataDispatchOne}
+                                                                        onpnponetoggledispatch={handlePnpOneToggleDispatch}
+                                                                        pnp-one-data = {pnpOneData}
+                                                                        temp-ids={tempIds}
+                                                                        pnp-toggle-data={toggleButton}
+                                                                        screen-one-toggle-off-data-from-wizard = {screenOneToggleOffData}
+                                                                        ></c-flex-pn-p-license-upgrade>
+                                                                </template>
+                                                                <template if:true={isStepThreeB}>
+                                                                        <c-flex-product-replacement-info account-pilot-customer={pnpBoolean1} contract-ids={contractIds} pricebook-id={priceBookId}
+                                                                        ineligible-product-list-from-wizard={ineligibleProductList}
+                                                                        pnp-screen-one-subscription-data={subscriptionData}
+                                                                        onproductfieldsvalidationchangej={handleFieldValidationj}
+                                                                        onpnponedatafromselectalldispatch={handlePnpTwoDataFromSelectAllDispatch}
+                                                                        pnp-two-data ={pnpTwoData}
+                                                                        temp-ids={tempIds}
+                                                                        oncurrentscreen={handleCurrentScreen}
+                                                                        is-loading-pnp-one={isLoading}
+                                                                        ></c-flex-product-replacement-info>
+                                                                </template>            
+                                                        </template>
+                                                        <template if:true={isLastStep}>
+                                                                <c-flex-upgrade-opportunity-info config-data={configData} is-step-four={isStepFour} current-step={currentStep}
+                                                                user-selected-term={userSelectedTermMonths}
+                                                                ></c-flex-upgrade-opportunity-info>
+
+                                                                <c-flex-confirmation-screen final-confirmation-screen-json = {finalConfirmationScreenJson}
+                                                                pnp-boolean = {pnpBoolean1}
+                                                                >
+                                                                </c-flex-confirmation-screen>
+                                                        </template>
+                                                        <template if:true={isSubmitted}>
+                                                                <template if:true={isSubmittedSuccess}>
+                                                                        <div class="slds-scoped-notification slds-media slds-media_center slds-theme_success" role="status">
+                                                                                <div class="slds-media__figure">
+                                                                                        <span class="slds-icon_container slds-icon-utility-success" title="success">
+                                                                                                <lightning-icon icon-name="utility:success" size="small" variant="inverse"></lightning-icon>
+                                                                                        </span>
+                                                                                </div>
+                                                                                <div class="slds-media__body">
+                                                                                        <p>The C&R process has successfully started. Please give it a few minutes for the required Opportunities to be created by the system. You will be notified both in Salesforce and by email when the process is complete. Click the button below to go back to the Account.</p>
+                                                                                </div>
+                                                                        </div>
+                                                                </template>
+                                                                <template if:true={isSubmittedFailed}>
+                                                                        <div class="slds-scoped-notification slds-media slds-media_center slds-theme_error" role="status">
+                                                                                <div class="slds-media__figure">
+                                                                                        <span class="slds-icon_container slds-icon-utility-error" title="error">
+                                                                                                <lightning-icon icon-name="utility:error" size="small" variant="inverse"></lightning-icon>
+                                                                                        </span>
+                                                                                </div>
+                                                                                <div class="slds-media__body">
+                                                                                        <p>{errorMessage}</p>
+                                                                                        <p>There has been a fatal error when the system attempted to kickstart the C&R Process. Please go back to the Account and re-start the process. The admin team has already been notified of this issue, but please feel free to raise a ticket for escalated support.</p>
+                                                                                </div>
+                                                                        </div>
+                                                                </template>
+                                                        </template>
+                                                </div>
+                                                <template if:false={isSubmitted}>
+                                                        <div class="slds-grid slds-grid_align-center ">
+                                                                <template if:false={disableSubmitButton}>
+                                                                        <lightning-button label={backButtonLabel} onclick={handleBack} class="slds-m-right_small" disabled={disableBackButton}></lightning-button>
+                                                                </template>
+                                                                <template if:true={disableSubmitButton}>
+                                                                        <lightning-button label={backButtonLabel}  class="slds-m-right_small" disabled></lightning-button>
+                                                                </template>
+                                                                        
+
+                                                                <template if:false={disableNextBtn}>
+                                                                        <template if:true={disableSubmitButton}>
+                                                                                <lightning-button label={nextButtonLabel} variant="brand" onclick={handleNext} disabled></lightning-button>
+                                                                        </template>
+                                                                        <template if:false={disableSubmitButton}>
+                                                                                <lightning-button label={nextButtonLabel} variant="brand" onclick={handleNext} disabled={isNextDisabled}></lightning-button>
+                                                                        </template>
+                                                                </template>
+                                                        </div>
+                                                </template>
+                                                <template if:true={isSubmitted}>
+                                                        <div class="slds-grid slds-grid_align-center slds-p-vertical_small">
+                                                                <lightning-button label="Go to Account" variant="brand" onclick={handleGoToAccount}></lightning-button>
+                                                        </div>
+                                                </template>
+                                        </article>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+</template>

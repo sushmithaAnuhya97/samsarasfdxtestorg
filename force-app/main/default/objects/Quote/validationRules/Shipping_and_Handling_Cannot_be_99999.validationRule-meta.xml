@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_and_Handling_Cannot_be_99999</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ShippingHandling &gt;= 99999,
+   Pricebook2.Name = &quot;Samsara Express&quot;
+)</errorConditionFormula>
+    <errorMessage>Shipping and Handling Can&apos;t Be $99,999.00 for Express Quotes, Please Update Opportunity Before Creating Quote</errorMessage>
+</ValidationRule>

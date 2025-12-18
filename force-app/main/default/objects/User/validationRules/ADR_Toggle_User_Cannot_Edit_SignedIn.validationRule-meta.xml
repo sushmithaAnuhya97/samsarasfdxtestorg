@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Toggle_User_Cannot_Edit_SignedIn</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+    CONTAINS($User.LastName,&apos;Toggle&apos;),
+     OR(
+        AND(
+            TimeZone__c = &apos;America/Los_Angeles&apos;,
+            TIMENOW() &gt;= TIMEVALUE(&quot;00:00:00.000&quot;),
+            TIMENOW() &lt;= TIMEVALUE(&quot;12:50:00.000&quot;)
+            ),
+        AND(
+            OR(TimeZone__c = &apos;America/New_York&apos;,
+               TimeZone__c = &apos;America/Panama&apos;
+               ),
+            OR(TIMENOW() &gt;= TIMEVALUE(&quot;21:00:00.000&quot;),
+               TIMENOW() &lt;= TIMEVALUE(&quot;11:50:00.000&quot;)
+               )
+            ),
+        AND(
+            OR(CONTAINS(TimeZone__c, &apos;Europe&apos;),
+               CONTAINS(TimeZone__c, &apos;GMT&apos;)
+               ),
+            OR(TIMENOW() &gt;= TIMEVALUE(&quot;17:00:00.000&quot;),
+               TIMENOW() &lt;= TIMEVALUE(&quot;06:00:00.000&quot;)
+               )
+            )
+        ),
+    OR(ISCHANGED(Signed_In__c), 
+       ISCHANGED(Inbound_ADR_Out_Of_Office__c)
+       )
+)</errorConditionFormula>
+    <errorMessage>Toggle User Can&apos;t Touch this during off-hours!</errorMessage>
+</ValidationRule>

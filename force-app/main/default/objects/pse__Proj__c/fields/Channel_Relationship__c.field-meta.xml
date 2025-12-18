@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Relationship__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup field for Channel Relationships (Partners) associated with the Opportunity linked to this Project.</description>
+    <inlineHelpText>Select the Channel Relationship associated with this Project.
+This lookup creates a direct connection for visibility and reporting purposes to Channel Relationships</inlineHelpText>
+    <label>Channel Relationship</label>
+    <referenceTo>Channel_Relationship__c</referenceTo>
+    <relationshipLabel>Projects</relationshipLabel>
+    <relationshipName>Projects</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

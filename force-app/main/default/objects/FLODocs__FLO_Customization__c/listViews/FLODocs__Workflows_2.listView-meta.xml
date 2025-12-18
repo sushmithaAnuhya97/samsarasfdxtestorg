@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Workflows_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__Salesforce_Types__c</columns>
+    <columns>FLODocs__Last_Modified_File_Date__c</columns>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>FLODocs__Data_Source_es__c</columns>
+    <columns>FLODocs__Customization_Last_Modified_By__c</columns>
+    <columns>FLODocs__Customization_Created_By__c</columns>
+    <columns>FLODocs__Clean_up_Classification__c</columns>
+    <columns>FLODocs__Improvement_Comments__c</columns>
+    <columns>FLODocs__Clean_up_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>contains</operation>
+        <value>Workflow,WorkflowAlert,WorkflowFieldUpdate,WorkflowKnowledgePublish,Flow</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>FLODocs__FLO_Customization__c.FLODocs__Workflows_Approvals</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Namespace_Prefix__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Workflows (v2)</label>
+</ListView>

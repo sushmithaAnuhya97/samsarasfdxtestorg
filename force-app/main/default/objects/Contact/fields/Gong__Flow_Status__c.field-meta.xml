@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gong__Flow_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Engage Flow Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In progress</fullName>
+                <default>false</default>
+                <label>In progress</label>
+            </value>
+            <value>
+                <fullName>Finished (replied)</fullName>
+                <default>false</default>
+                <label>Finished (replied)</label>
+            </value>
+            <value>
+                <fullName>Finished (no reply)</fullName>
+                <default>false</default>
+                <label>Finished (no reply)</label>
+            </value>
+            <value>
+                <fullName>Finished (meeting booked)</fullName>
+                <default>false</default>
+                <label>Finished (meeting booked)</label>
+            </value>
+            <value>
+                <fullName>Finished (removed manually)</fullName>
+                <default>false</default>
+                <label>Finished (removed manually)</label>
+            </value>
+            <value>
+                <fullName>Bounced</fullName>
+                <default>false</default>
+                <label>Bounced</label>
+            </value>
+            <value>
+                <fullName>Removed (other)</fullName>
+                <default>false</default>
+                <label>Removed (other)</label>
+            </value>
+            <value>
+                <fullName>To-do expired</fullName>
+                <default>false</default>
+                <label>To-do expired</label>
+            </value>
+            <value>
+                <fullName>No license</fullName>
+                <default>false</default>
+                <label>No license</label>
+            </value>
+            <value>
+                <fullName>Person deleted</fullName>
+                <default>false</default>
+                <label>Person deleted</label>
+            </value>
+            <value>
+                <fullName>Flow deleted</fullName>
+                <default>false</default>
+                <label>Flow deleted</label>
+            </value>
+            <value>
+                <fullName>Paused</fullName>
+                <default>false</default>
+                <label>Paused</label>
+            </value>
+            <value>
+                <fullName>Opted Out</fullName>
+                <default>false</default>
+                <label>Opted Out</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

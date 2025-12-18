@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FY26_H2_Alec_Tier_1_Support_Accounts</fullName>
+    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>X18_Digit_Account_ID__c</columns>
+    <columns>Domain_Name__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.ADDRESS1_ZIP</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>X18_Digit_Account_ID__c</field>
+        <operation>equals</operation>
+        <value>0011a00000cJ0SNAA0,0011a00000cJ3rRAAS,0011a00000hGHZJAA4,0011a00000hGlk8AAC,0011P000014oVVyQAM,0011a00000vW7fWAAS,0011a00000hGk9oAAC,0011a00000IsvMGAAZ</value>
+    </filters>
+    <filters>
+        <field>X18_Digit_Account_ID__c</field>
+        <operation>equals</operation>
+        <value>0011a00000qYlUdAAK,0015e00001EhZhIAAV,0014p00001xheU8AAI,0011a00000hFs3pAAC,0011a00000cJ0GbAAK,0011a00000ggr4DAAQ,0011P0000133EnjQAE,0011a00000cIz2nAAC</value>
+    </filters>
+    <filters>
+        <field>X18_Digit_Account_ID__c</field>
+        <operation>equals</operation>
+        <value>0011a00000gfN5VAAU,0011a00000cn6zEAAQ,0011a00000hGlxHAAS,0011a00000cnILwAAM,0011a00000ksuJQAAY,0011a00000cIz2rAAC,0011P00000zWOckQAG,0011a00000t1mhYAAQ,0011a00000hGmEDAA0,0011a00000Xnl1AAAR,0011a00000cJ2nEAAS</value>
+    </filters>
+    <filters>
+        <field>X18_Digit_Account_ID__c</field>
+        <operation>equals</operation>
+        <value>0011a00000gfN5VAAU,0011a00000cn6zEAAQ,0011a00000cJSCBAA4,0011a00000cJ0fbAAC,0011P00000xMI65QAG,0011P00000zTh8EQAS,0011a00000cJ0e4AAC,0011P0000105oXtQAI,0011a00000hGqekAAC,0011a00000hGoLzAAK,0011a00000oWqfuAAC</value>
+    </filters>
+    <label>FY26 H2 | Alec Tier 1 Support | Accounts</label>
+</ListView>

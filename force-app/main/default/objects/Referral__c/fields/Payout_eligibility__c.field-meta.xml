@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payout_eligibility__c</fullName>
+    <label>Payout Eligibility</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Waiting for review</fullName>
+                <default>true</default>
+                <label>Waiting for review</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Disqualified - self referral</fullName>
+                <default>false</default>
+                <label>Disqualified - self referral</label>
+            </value>
+            <value>
+                <fullName>Disqualified - duplicate</fullName>
+                <default>false</default>
+                <label>Disqualified - duplicate</label>
+            </value>
+            <value>
+                <fullName>Disqualified - referred friend already a customer</fullName>
+                <default>false</default>
+                <label>Disqualified - referred friend already a customer</label>
+            </value>
+            <value>
+                <fullName>Disqualified - did not make eligible purchase</fullName>
+                <default>false</default>
+                <label>Disqualified - did not make eligible purchase</label>
+            </value>
+            <value>
+                <fullName>Disqualified - not a Samsara customer</fullName>
+                <default>false</default>
+                <label>Disqualified - not a Samsara customer</label>
+            </value>
+            <value>
+                <fullName>Disqualified - referred friend already engaged with sales team prior to referral</fullName>
+                <default>false</default>
+                <label>Disqualified - referred friend already engaged with sales team prior to referral</label>
+            </value>
+            <value>
+                <fullName>All criteria are met</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>All criteria are met</label>
+            </value>
+            <value>
+                <fullName>Camera-only purchase, no gateways</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Camera-only purchase, no gateways</label>
+            </value>
+            <value>
+                <fullName>Did not purchase within 6 months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Did not purchase within 6 months</label>
+            </value>
+            <value>
+                <fullName>First oppty date before referral date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>First oppty date before referral date</label>
+            </value>
+            <value>
+                <fullName>Microfleet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Microfleet</label>
+            </value>
+            <value>
+                <fullName>New customer has not met 30 day criteria</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New customer has not met 30 day criteria</label>
+            </value>
+            <value>
+                <fullName>Not a customer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not a customer</label>
+            </value>
+            <value>
+                <fullName>Referred self</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Referred self</label>
+            </value>
+            <value>
+                <fullName>Referring account delinquent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Referring account delinquent</label>
+            </value>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unresponsive</label>
+            </value>
+            <value>
+                <fullName>duplicate referrals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>duplicate referrals</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

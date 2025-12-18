@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Components__c</fullName>
+    <label>Deal Components</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Competitor Buyout</fullName>
+                <default>false</default>
+                <label>Competitor Buyout</label>
+            </value>
+            <value>
+                <fullName>Installation Costs</fullName>
+                <default>false</default>
+                <label>Installation Costs</label>
+            </value>
+            <value>
+                <fullName>Future Free Months</fullName>
+                <default>false</default>
+                <label>Future Free Months</label>
+            </value>
+            <value>
+                <fullName>One Time Discount</fullName>
+                <default>false</default>
+                <label>One Time Discount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,92 @@
+<template>
+
+    <div class="top-approval-section">
+        <div class="approval-box">
+            <lightning-icon icon-name="utility:approval" variant="inverse" size="medium" class="approval-icon"></lightning-icon>
+            <div class="approval-info">
+                <p class="approval-title">{quoteName}</p>
+                <p class="approval-text"><b>Preview Approvals</b></p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <lightning-button label="Submit for Approval" variant="brand" onclick={handleSubmit}></lightning-button>
+            <lightning-button label="Return to CPQ Quote" variant="neutral" onclick={handleReturn}></lightning-button>
+        </div>
+    </div>
+
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+    </template>
+
+    <template if:false={isLoading}>
+    <template if:true={hasData}>
+        <div class="container">
+            <div class="left-section">
+                <article>
+                    <div>
+                        <b>List of Approval Rules where the conditions are satisfied by the Quote.</b>
+                    </div>
+                    <div class="slds-card__body">
+                        <ul class="approval-list">
+                            <template for:each={approvalData} for:item="chain">
+                                <li key={chain.chainId} class="approval-chain">
+                                    <div class="approval-chain-header" data-id={chain.chainId} onclick={toggleExpand}>
+                                        <lightning-icon icon-name={chain.expandIcon} size="small" class="expand-icon"></lightning-icon>
+                                        <span class="approval-chain-title">Approval Chain: {chain.chainName}</span>
+                                    </div>
+                                    
+                                    <template if:true={chain.isExpanded}>
+                                        <ul class="approver-list">
+                                            <div class="rule-container-wrapper">
+                                                <template for:each={chain.approvalRuleDetailsList} for:item="rule">
+                                                    <li key={rule.id} class="rule-container">
+                                                        <div class="rule-content-wrapper">
+                                                            <div class="rule-card">
+                                                                <div class={rule.ruleClass}>{rule.ruleName}</div>
+                                                            </div>
+                                                            <!-- Hide Reason for Approval section for Product Approval chains -->
+                                                            <template if:false={chain.isProductApproval}>
+                                                                <div class="approval-trigger-fields">
+                                                                    <div class="trigger-header">Reason for Approval</div>
+                                                                    <ul class="trigger-list">
+                                                                        <template if:true={rule.triggerFields}>
+                                                                            <template for:each={rule.triggerFields} for:item="field">
+                                                                                <li key={field.fieldName} class="trigger-item">
+                                                                                    <div class="trigger-field">
+                                                                                        <span class="field-label">{field.fieldLabel}</span>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </template>
+                                                                        </template>
+                                                                        <template if:false={rule.triggerFields}>
+                                                                            <li class="trigger-item">
+                                                                                <div class="trigger-field">
+                                                                                    <span class="field-label">No changes since last recall</span>
+                                                                                </div>
+                                                                            </li>
+                                                                        </template>
+                                                                    </ul>
+                                                                </div>
+                                                            </template>
+                                                        </div>
+                                                    </li>
+                                                </template>
+                                            </div>
+                                        </ul>
+                                    </template>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </template>
+
+    <template if:false={hasData}>
+        <p class="slds-text-title_caps slds-m-around_medium"><b>No Approvals Found</b></p>
+        <div class="imageSize"><img src={noDataFoundImage}></div>
+    </template>
+</template>
+</template>

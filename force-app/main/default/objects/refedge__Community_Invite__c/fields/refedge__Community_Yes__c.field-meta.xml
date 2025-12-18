@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Community_Yes__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Community Yes</label>
+    <summaryFilterItems>
+        <field>refedge__Community_Invite_Contact__c.refedge__Response__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </summaryFilterItems>
+    <summaryForeignKey>refedge__Community_Invite_Contact__c.refedge__Community_Invite__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

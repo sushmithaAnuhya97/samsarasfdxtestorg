@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Segment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Segment</label>
+    <referenceTo>LeanData__Long_Text_Setting__c</referenceTo>
+    <relationshipLabel>LeanData Journey Members</relationshipLabel>
+    <relationshipName>LD_Journey_Member_Segment</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

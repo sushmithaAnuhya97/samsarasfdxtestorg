@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Loss_Reason__c</fullName>
+    <inlineHelpText>In case opportunity includes products from multiple divisions, select all that apply.</inlineHelpText>
+    <label>Tech Loss Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Feature Gap</fullName>
+                <default>false</default>
+                <label>Fleet - Feature Gap</label>
+            </value>
+            <value>
+                <fullName>Problem Report</fullName>
+                <default>false</default>
+                <label>Fleet - Problem Report</label>
+            </value>
+            <value>
+                <fullName>Technical Competition</fullName>
+                <default>false</default>
+                <label>Fleet - Technical Competition</label>
+            </value>
+            <value>
+                <fullName>Not Tech Related</fullName>
+                <default>false</default>
+                <label>Fleet - Not Tech Related</label>
+            </value>
+            <value>
+                <fullName>Hardware Limitation</fullName>
+                <default>false</default>
+                <label>Fleet - Hardware Limitation</label>
+            </value>
+            <value>
+                <fullName>Missing Integration</fullName>
+                <default>false</default>
+                <label>Fleet - Missing Integration</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Fleet - Other</label>
+            </value>
+            <value>
+                <fullName>CS - Feature Gap</fullName>
+                <default>false</default>
+                <label>CS - Feature Gap</label>
+            </value>
+            <value>
+                <fullName>CS - Hardware limitation</fullName>
+                <default>false</default>
+                <label>CS - Hardware limitation</label>
+            </value>
+            <value>
+                <fullName>CS - Missing integration</fullName>
+                <default>false</default>
+                <label>CS - Missing integration</label>
+            </value>
+            <value>
+                <fullName>CS - Other</fullName>
+                <default>false</default>
+                <label>CS - Other</label>
+            </value>
+            <value>
+                <fullName>CE - Feature Gap</fullName>
+                <default>false</default>
+                <label>CE - Feature Gap</label>
+            </value>
+            <value>
+                <fullName>CE - Hardware limitation</fullName>
+                <default>false</default>
+                <label>CE - Hardware limitation</label>
+            </value>
+            <value>
+                <fullName>CE - Missing integration</fullName>
+                <default>false</default>
+                <label>CE - Missing integration</label>
+            </value>
+            <value>
+                <fullName>CE - Other</fullName>
+                <default>false</default>
+                <label>CE - Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

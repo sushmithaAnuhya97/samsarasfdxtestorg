@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Approval__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( (ProductApprovalNeeded__c  = TRUE &amp;&amp;  NOT(ISPICKVAL(SBQQ__Status__c,&quot;Approved&quot;))) &amp;&amp; (  NumOfProductsNeedingApproval__c  &gt;  ApprovedProductsCount__c ), IMAGE(&quot;/img/msg_icons/error16.png&quot;,&quot;Yes:&quot;,20,20)+ &quot; Preview Approvals After Saving&quot;, IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;No:&quot;, 20, 20) + &quot; No Approval Needed&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Approval?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

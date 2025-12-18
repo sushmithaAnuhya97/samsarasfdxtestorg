@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Item_Exchange_Rate_Override__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Item-level vendor currency exchange rate override.  Is applied if and only if the above &quot;Override Item Exchange Rate&quot; checkbox is checked.  If not checked then this field value has no effect.  Note that this will be set as the relative rate between the Vendor currency and the Project currency.</description>
+    <externalId>false</externalId>
+    <label>Item Exchange Rate Override</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>6</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

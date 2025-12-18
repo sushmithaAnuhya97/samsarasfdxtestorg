@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Approve_Multiple_Nomination_Settings__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos; + $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c + &apos;ApproveMultipleNominationSettings&apos;, &apos;Manage&apos;, &apos;_self&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Populate default values to allow for bulk approval of nominations.</inlineHelpText>
+    <label>Approve Multiple Nominations</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

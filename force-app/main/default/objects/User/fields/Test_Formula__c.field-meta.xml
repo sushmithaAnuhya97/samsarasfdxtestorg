@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+        AND( TEXT(RBAC_Department__c) = &apos;AccountDev&apos;,
+        OR(
+            TEXT(Job_Function__c) = &apos;PipelineExcellence&apos;,
+            TEXT(Job_Function__c) = &apos;RecruitingOps&apos;,
+            TEXT(Job_Function__c) = &apos;ADPrograms&apos;
+        )),
+        TEXT(RBAC_Department__c) &amp; &quot;-&quot; &amp;
+        TEXT(Job_Function__c) &amp; &quot;-&quot; &amp;
+        CASE(
+            TEXT(Role_Level__c),
+            &quot;SeniorDirector&quot;, &quot;Director&quot;,
+            &quot;SeniorManager&quot;, &quot;Manager&quot;,
+            TEXT(Role_Level__c)
+        ),
+        IF(
+            OR(
+                TEXT(Role_Level__c) = &apos;IC&apos;,
+                TEXT(Role_Level__c) = &apos;TL&apos;,
+                TEXT(Role_Level__c) = &apos;Intern&apos;,
+                TEXT(Role_Level__c) = &apos;Contractor&apos;
+            ),
+            TEXT(RBAC_Department__c) &amp; &quot;-&quot; &amp;
+            TEXT(Sales_Country__c) &amp; &quot;-&quot; &amp;
+            TEXT(Sales_Segment__c) &amp; &quot;-&quot; &amp;
+            TEXT(Sales_Sector__c) &amp; &quot;-&quot; &amp;
+            TEXT(Job_Function__c) &amp; &quot;-&quot; &amp;
+            CASE(
+                TEXT(Role_Level__c),
+                &quot;SeniorDirector&quot;, &quot;Director&quot;,
+                &quot;SeniorManager&quot;, &quot;Manager&quot;,
+                TEXT(Role_Level__c)
+            ),
+            
+            IF(
+                OR(
+                    TEXT(Role_Level__c) = &apos;Manager&apos;,
+                    TEXT(Role_Level__c) = &apos;SeniorManager&apos;,
+                    TEXT(Role_Level__c) = &apos;Director&apos;,
+                    TEXT(Role_Level__c) = &apos;SeniorDirector&apos;
+                ),
+                TEXT(RBAC_Department__c) &amp; &quot;-&quot; &amp;
+                TEXT(Sales_Region__c) &amp; &quot;-&quot; &amp;
+                CASE(
+                    TEXT(Sales_Segment_Parent__c),
+                    &quot;ENT+&quot;, &quot;ENT&quot;,
+                    TEXT(Sales_Segment_Parent__c)
+                ) &amp; &quot;-&quot; &amp;
+                TEXT(Job_Function__c) &amp; &quot;-&quot; &amp;
+                CASE(
+                    TEXT(Role_Level__c),
+                    &quot;SeniorDirector&quot;, &quot;Director&quot;,
+                    &quot;SeniorManager&quot;, &quot;Manager&quot;,
+                    TEXT(Role_Level__c)
+                ),
+                
+                IF(
+                    OR(
+                        TEXT(Role_Level__c) = &apos;AVP&apos;,
+                        TEXT(Role_Level__c) = &apos;VP&apos;,
+                        TEXT(Role_Level__c) = &apos;SVP&apos;
+                    ),
+                    TEXT(RBAC_Department__c) &amp; &quot;-&quot; &amp;
+                    TEXT(Sales_Region__c) &amp; &quot;-&quot; &amp;
+                    TEXT(Job_Function__c) &amp; &quot;-&quot; &amp;
+                    CASE(
+                        TEXT(Role_Level__c),
+                        &quot;SeniorDirector&quot;, &quot;Director&quot;,
+                        &quot;SeniorManager&quot;, &quot;Manager&quot;,
+                        TEXT(Role_Level__c)
+                    ),
+                    
+                    IF(
+                        OR(
+                            TEXT(Role_Level__c) = &apos;EVP&apos;,
+                            TEXT(Role_Level__c) = &apos;CRO&apos;
+                        ),
+                        TEXT(RBAC_Department__c) &amp; &quot;-&quot; &amp;
+                        TEXT(Job_Function__c) &amp; &quot;-&quot; &amp;
+                        CASE(
+                            TEXT(Role_Level__c),
+                            &quot;SeniorDirector&quot;, &quot;Director&quot;,
+                            &quot;SeniorManager&quot;, &quot;Manager&quot;,
+                            TEXT(Role_Level__c)
+                        ),
+                            &quot;Invalid Template&quot;
+                    )
+                )
+            )
+        )
+        
+    )</formula>
+    <label>RBAC Test Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

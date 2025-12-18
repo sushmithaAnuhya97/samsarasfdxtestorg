@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kwaku_Ofori_Darko_Projects</fullName>
+    <columns>Trial_Success_Manager__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Account__c</columns>
+    <columns>TSM_Project_Type__c</columns>
+    <columns>pse__Stage__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>Segment__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>pse__Group__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Trial_Success_Manager__c</field>
+        <operation>equals</operation>
+        <value>Kwaku Ofori-Darko</value>
+    </filters>
+    <filters>
+        <field>pse__Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Completed,Canceled,Abandoned</value>
+    </filters>
+    <label>Kwaku Ofori-Darko Projects</label>
+</ListView>

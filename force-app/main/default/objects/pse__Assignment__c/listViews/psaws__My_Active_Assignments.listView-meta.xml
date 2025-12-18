@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psaws__My_Active_Assignments</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Role__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>psaws__Is_Resource_Current_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Scheduled</value>
+    </filters>
+    <label>Pat&apos;t Active TSM Assignments</label>
+</ListView>

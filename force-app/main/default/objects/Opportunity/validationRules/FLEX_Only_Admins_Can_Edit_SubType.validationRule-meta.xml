@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLEX_Only_Admins_Can_Edit_SubType</fullName>
+    <active>true</active>
+    <description>No one should edit subType field except system admins</description>
+    <errorConditionFormula>AND( ISCHANGED (Sub_Type__c),
+					OR(ISPICKVAL(PRIORVALUE(Sub_Type__c),&quot;Contract Cancellation&quot;),
+								ISPICKVAL(PRIORVALUE(Sub_Type__c),&quot;Contract Replacement&quot;)
+					),
+ NOT($Profile.Name = &quot;System Administrator&quot;),
+	NOT($Profile.Name = &quot;Order Operations Admin&quot;),
+	NOT($Permission.Validation_Rule_Exemption)
+	)</errorConditionFormula>
+    <errorDisplayField>Sub_Type__c</errorDisplayField>
+    <errorMessage>The Subtype for a Cancel &amp; Replace (C&amp;R) Opportunity cannot be changed.  If you require this change, please contact a Salesforce Admin.</errorMessage>
+</ValidationRule>

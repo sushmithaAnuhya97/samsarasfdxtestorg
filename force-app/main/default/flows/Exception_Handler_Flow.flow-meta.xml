@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Parent_Flow_Has_Logging</name>
+        <label>Parent Flow Has Logging</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>SubFlow_FlowError</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_RecordId</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LogRecordId</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Error</targetReference>
+            </connector>
+            <label>Yes - RecordId</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <description>This is to take the particular error message from the exception to store it in Error_Message__c field in log__c object</description>
+        <name>Error_Message_From_Exception</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    CONTAINS({!faultMessage}, &quot;UNABLE_TO_LOCK_ROW: unable to obtain exclusive access&quot;),
+    &quot;UNABLE_TO_LOCK_ROW: unable to obtain exclusive access&quot;,
+    IF(
+    ISBLANK( {!faultMessage}),
+    &quot;&quot;,
+	IF(
+	         FIND(&quot;FIELD_CUSTOM_VALIDATION_EXCEPTION&quot;,  {!faultMessage}) &gt; 0,
+             MID(
+                 {!faultMessage},
+                FIND(&quot;FIELD_CUSTOM_VALIDATION_EXCEPTION:&quot;,  {!faultMessage}) + LEN(&quot;FIELD_CUSTOM_VALIDATION_EXCEPTION:&quot;),
+                FIND(&quot;.&quot;,  {!faultMessage} &amp; &quot;.&quot;, FIND(&quot;FIELD_CUSTOM_VALIDATION_EXCEPTION:&quot;,  {!faultMessage})) - FIND(&quot;FIELD_CUSTOM_VALIDATION_EXCEPTION:&quot;, {!faultMessage}) - LEN(&quot;FIELD_CUSTOM_VALIDATION_EXCEPTION:&quot;) + 1
+                ),
+	
+       IF(
+           FIND(&quot;CANNOT_EXECUTE_FLOW_TRIGGER&quot;,  {!faultMessage}) &gt; 0,
+             MID(
+                 {!faultMessage},
+                FIND(&quot;CustomException:&quot;,  {!faultMessage}) + LEN(&quot;CustomException:&quot;),
+                FIND(&quot;.&quot;,  {!faultMessage} &amp; &quot;.&quot;, FIND(&quot;CustomException:&quot;,  {!faultMessage})) - FIND(&quot;CustomException:&quot;, {!faultMessage}) - LEN(&quot;CustomException:&quot;) + 1
+                ),
+		IF(
+           CONTAINS( {!faultMessage}, &quot;UNABLE_TO_LOCK_ROW, unable to obtain exclusive access&quot;),
+            &quot;UNABLE_TO_LOCK_ROW, unable to obtain exclusive access&quot;,
+		If(
+		CONTAINS( {!faultMessage}, &quot;System.AsyncException: You&apos;ve exceeded the limit of 100 jobs&quot;),
+            &quot;You&apos;ve exceeded the limit of 100 jobs&quot;,
+		
+ 		IF(
+           FIND(&quot;CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY&quot;,  {!faultMessage}) &gt; 0,
+             MID(
+                 {!faultMessage},
+                FIND(&quot;CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY&quot;,  {!faultMessage}) + LEN(&quot;CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY:&quot;),
+                FIND(&quot;.&quot;,  {!faultMessage} &amp; &quot;.&quot;, FIND(&quot;CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY:&quot;,  {!faultMessage})) - FIND(&quot;CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY:&quot;, {!faultMessage}) - LEN(&quot;CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY:&quot;) + 1
+                ),		
+         IF(
+           FIND(&quot;This error occurred&quot;,  {!faultMessage}) &gt; 0,
+             MID(
+                 {!faultMessage},
+                FIND(&quot;This error occurred&quot;,  {!faultMessage}) + LEN(&quot;This error occurred:&quot;),
+                FIND(&quot;.&quot;,  {!faultMessage} &amp; &quot;.&quot;, FIND(&quot;This error occurred:&quot;,  {!faultMessage})) - FIND(&quot;This error occurred:&quot;, {!faultMessage}) - LEN(&quot;This error occurred:&quot;) + 1
+                ),
+             {!faultMessage}
+          )				
+          )
+		  )
+		  )
+)
+)
+)
+)</expression>
+    </formulas>
+    <interviewLabel>Exception Handler Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Exception Handler Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <name>Update_Error</name>
+        <label>Update Error</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>SubFlow_FlowError</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LogRecordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>End_Date_Time__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Error_Message__c</field>
+            <value>
+                <elementReference>Error_Message_From_Exception</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ExceptionMessage__c</field>
+            <value>
+                <elementReference>faultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LogLevel__c</field>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Timestamp__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Log__c</object>
+    </recordUpdates>
+    <screens>
+        <name>SubFlow_FlowError</name>
+        <label>SubFlow-FlowError</label>
+        <locationX>182</locationX>
+        <locationY>434</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Faulttext3</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!faultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Faulttext2</name>
+            <fieldText>&lt;p&gt;{!ErrorMessagewithLink}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>faultMessage</leftValueReference>
+                    <operator>Contains</operator>
+                    <rightValue>
+                        <stringValue>Unable to find Approver for Rule ID:</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorVariables</name>
+            <fieldText>&lt;p&gt;{!HyperLink}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Parent_Flow_Has_Logging</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ErrorMessagewithLink</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>faultMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>HyperLink</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>LogRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

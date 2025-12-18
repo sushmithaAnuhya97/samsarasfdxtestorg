@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>docebo_v3__CourseMustBeCompatibleWithSessions</fullName>
+    <active>true</active>
+    <description>This makes sure that the session course has a type wich allows sessions (e.g. webinar and ilt classrooms)</description>
+    <errorConditionFormula>NOT(
+  ISPICKVAL(docebo_v3__Course__r.docebo_v3__Type__c, &quot;webinar&quot;) 
+  || ISPICKVAL(docebo_v3__Course__r.docebo_v3__Type__c, &quot;classroom&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>docebo_v3__Course__c</errorDisplayField>
+    <errorMessage>Session course must be of type &apos;webinar&apos; or &apos;classroom&apos;</errorMessage>
+</ValidationRule>

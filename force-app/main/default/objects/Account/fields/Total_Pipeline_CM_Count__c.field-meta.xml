@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Pipeline_CM_Count__c</fullName>
+    <description>Total number of CM hardware in the pipeline</description>
+    <label>Total Pipeline-CM Count</label>
+    <summarizedField>Opportunity.CM_Unit_Count__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>notEqual</operation>
+        <value>Closing, Ready to Ship, Closed Won, Closed Lost, Return Cancelled, Return Created, Return Initiated, Return Label Sent, Products Processing, Finance Processing, Refunded - Closed</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

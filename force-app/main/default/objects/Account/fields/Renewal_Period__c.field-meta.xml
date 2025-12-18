@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Period__c</fullName>
+    <externalId>false</externalId>
+    <formula>If((Contract_Renewed_On__c+90)&lt;Today(),&apos;No Coordination Required&apos;,
+If(AND(OR(Segment__c =&apos;AE1&apos;,Segment__c =&apos;Small Fleets&apos;,Segment__c =&apos;Management&apos;),(Contract_Renewed_On__c-30)&lt;=Today()),&apos;Verification&apos;,
+If(AND(OR(Segment__c =&apos;AE2&apos;,Segment__c=&apos;AE3&apos;,Segment__c =&apos;Enterprise&apos;),(Contract_Renewed_On__c-90)&lt;= Today()),&apos;Verification&apos;,
+If(AND(OR(CONTAINS(Segment__c,&apos;AE&apos;),Segment__c =&apos;Small Fleets&apos;,Segment__c =&apos;Management&apos;),(Contract_Renewed_On__c-180)&lt;=Today(),(Contract_Renewed_On__c-90 )&gt;Today()),&apos;Informed&apos;,
+If(AND(OR(CONTAINS(Segment__c,&apos;AE&apos;),Segment__c =&apos;Small Fleets&apos;,Segment__c =&apos;Management&apos;),(Contract_Renewed_On__c -180)&gt;Today()),&apos;No Coordination Required&apos;,
+If(AND(Segment__c =&apos;Enterprise&apos;,(Contract_Renewed_On__c-365)&lt;=Today(),(Contract_Renewed_On__c-90)&gt;Today()),&apos;Informed&apos;,
+If(AND(Segment__c=&apos;Enterprise&apos;,(Contract_Renewed_On__c-365)&gt;Today()),&apos;No Coordination Required&apos;,
+&apos;&apos;)))))))</formula>
+    <label>Renewal Period</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

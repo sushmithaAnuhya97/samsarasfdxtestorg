@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project_Phase__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to Project Phase</description>
+    <inlineHelpText>Lookup to Project Phase</inlineHelpText>
+    <label>Project Phase</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>pse__Project_Phase__c.pse__Project__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.pse__Project__c</valueField>
+        </filterItems>
+        <infoMessage>The phases of the related project are shown initially.</infoMessage>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>pse__Project_Phase__c</referenceTo>
+    <relationshipLabel>Expenses</relationshipLabel>
+    <relationshipName>Expenses</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

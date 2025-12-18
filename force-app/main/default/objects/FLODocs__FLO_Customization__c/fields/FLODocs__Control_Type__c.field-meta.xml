@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Control_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is optional. Select Count to record the number</description>
+    <inlineHelpText>This field is optional. Select Count to record the number</inlineHelpText>
+    <label>Control Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LOG</fullName>
+                <default>false</default>
+                <label>LOG</label>
+            </value>
+            <value>
+                <fullName>ISSUE</fullName>
+                <default>false</default>
+                <label>ISSUE</label>
+            </value>
+            <value>
+                <fullName>TASK</fullName>
+                <default>false</default>
+                <label>TASK</label>
+            </value>
+            <value>
+                <fullName>STORE DATA</fullName>
+                <default>false</default>
+                <label>STORE DATA</label>
+            </value>
+            <value>
+                <fullName>COUNT</fullName>
+                <default>false</default>
+                <label>COUNT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

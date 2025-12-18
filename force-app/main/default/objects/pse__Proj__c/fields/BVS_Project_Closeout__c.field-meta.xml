@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BVS_Project_Closeout__c</fullName>
+    <description>Count of BVS Surveys associated with Project. Should be greater than or equal to 1</description>
+    <label>BVS Project Closeout</label>
+    <summaryForeignKey>BVS_Project_Closeout_Process__c.Project__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

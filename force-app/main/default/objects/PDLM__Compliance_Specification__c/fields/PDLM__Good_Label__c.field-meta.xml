@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Good_Label__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Sets the good or compliant picklist value for this specification. The default value = Compliant.</description>
+    <inlineHelpText>Sets the good or compliant picklist value for this specification. The default value = Compliant.</inlineHelpText>
+    <label>Good Label</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>PDLM__Compliance_Statuses</valueSetName>
+    </valueSet>
+</CustomField>

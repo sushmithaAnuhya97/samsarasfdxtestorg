@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Discount_Approval_Needed__c</fullName>
+    <formula>AND( 
+
+Blended_Discount__c &gt; Approved_Discount__c,
+OR(
+RecordTypeId = &apos;0121a000000VnAB&apos;,
+RecordTypeId = &apos;0121a000000VnUx&apos;
+), 
+
+
+OR( 
+AND(
+ISPICKVAL(Configuration_Segment__c,&apos;Express&apos;), 
+Blended_Discount__c &gt; 0.102
+), 
+
+AND( 
+
+ISPICKVAL(Configuration_Segment__c,&apos;Non Express&apos;), 
+ISPICKVAL(Selected_Payment_Type__c , &apos;Direct Monthly&apos;), 
+
+OR( 
+AND(License_Term__c &lt; 60, Blended_Discount__c &gt; 0.05), 
+AND(License_Term__c &gt;=60, Blended_Discount__c &gt; 0.15)
+)
+), 
+
+OR( 
+AND(ISPICKVAL(Configuration_Segment__c,&apos;Non Express&apos;), 
+
+OR( 
+
+AND(
+License_Term__c &lt; 36, 
+Blended_Discount__c &gt;= 0.00
+), 
+AND(
+License_Term__c &gt;= 36, 
+License_Term__c &lt; 60, 
+Blended_Discount__c &gt; 0.25
+), 
+AND(
+License_Term__c &gt;= 60, 
+Blended_Discount__c &gt; 0.35)
+)
+) 
+
+)	
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Industrial Discount Approval Needed</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

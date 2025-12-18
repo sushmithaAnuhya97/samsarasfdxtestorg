@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contacts_to_validate</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>Account.Validation_Complete__c</columns>
+    <columns>Account.Validation_Complete_Date__c</columns>
+    <columns>Account.Validations_Completed__c</columns>
+    <columns>Account.EMEA_Current_Telematics_Provider__c</columns>
+    <columns>Account.Number_of_Vehicles__c</columns>
+    <columns>Account.Telematics_Contract_End_Date__c</columns>
+    <columns>Account.Organization_Size__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>Account.Current_Camera_Provider__c</columns>
+    <columns>Account.Registered_Insurance_Partner__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Fleet</value>
+    </filters>
+    <filters>
+        <field>CONTACT.ADDRESS2_STATE_CODE</field>
+        <operation>equals</operation>
+        <value>TX</value>
+    </filters>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>contains</operation>
+        <value>safety</value>
+    </filters>
+    <label>Contacts to validate</label>
+</ListView>

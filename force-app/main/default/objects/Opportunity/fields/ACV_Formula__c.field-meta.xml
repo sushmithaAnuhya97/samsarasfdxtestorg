@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_Formula__c</fullName>
+    <description>2/6/18 Previous formula: IF(License_Term__c &lt;&gt; 0,  Total_Hardware_Due__c + (( Total_License_Due__c /  License_Term__c )*12),0)</description>
+    <formula>IF(License_Term__c &gt;= 12,  Amount /  License_Term__c *12,Amount)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ACV from Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

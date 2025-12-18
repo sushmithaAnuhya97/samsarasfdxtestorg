@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Projected_Hours__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF (ISBLANK(pse__Estimated_Time_To_Completion__c), pse__Estimated_Hours__c, pse__Actual_Hours__c  +  pse__Estimated_Time_To_Completion__c)</formula>
+    <inlineHelpText>Formula field. The sum of Actual Hours and Estimated Time to Completion (Task). When Estimated Time to Completion (Task) is blank, Projected Hours is Estimated Hours.</inlineHelpText>
+    <label>Projected Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Order_Padded__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Order Padded used for SOQL sorting while the Order used for WBS user interface.</description>
+    <externalId>false</externalId>
+    <formula>if ( NOT(ISBLANK(PDLM__Project_Stage__r.PDLM__Stage_Order__c)), text(10 + PDLM__Project_Stage__r.PDLM__Stage_Order__c)&amp;&quot;.&quot;,&quot;0.&quot;)
+&amp;
+if ( NOT(ISBLANK(PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__c)),
+text(1000 + PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Sibling_Order__c)&amp;&quot;.&quot;,&quot;&quot;)
+&amp;
+if ( NOT(ISBLANK(PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__c)),
+text(1000 + PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Sibling_Order__c)&amp;&quot;.&quot;,&quot;&quot;)
+&amp;
+if ( NOT(ISBLANK(PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__c)),
+text(1000 + PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Sibling_Order__c)&amp;&quot;.&quot;,&quot;&quot;)
+&amp;
+if ( NOT(ISBLANK(PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__c)),
+text(1000 + PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Sibling_Order__c)&amp;&quot;.&quot;,&quot;&quot;)
+&amp;
+if ( NOT(ISBLANK(PDLM__Parent_Activity__r.PDLM__Parent_Activity__c)),
+text(1000 + PDLM__Parent_Activity__r.PDLM__Parent_Activity__r.PDLM__Sibling_Order__c)&amp;&quot;.&quot;,&quot;&quot;)
+&amp;
+if ( NOT(ISBLANK(PDLM__Parent_Activity__c)),
+text(1000 + PDLM__Parent_Activity__r.PDLM__Sibling_Order__c)&amp;&quot;.&quot;,&quot;&quot;)
+&amp;text(1000 + PDLM__Sibling_Order__c)</formula>
+    <label>Order Padded</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

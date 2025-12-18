@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subsidy_Type__c</fullName>
+    <description>added for GTMS-6824</description>
+    <inlineHelpText>Indicates whether is subsidy is applied to a single product line or multiple product lines (ie VG only or VG+CM)</inlineHelpText>
+    <label>Subsidy Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Single Product</fullName>
+                <default>false</default>
+                <label>Single Product</label>
+            </value>
+            <value>
+                <fullName>Multi Product</fullName>
+                <default>false</default>
+                <label>Multi Product</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

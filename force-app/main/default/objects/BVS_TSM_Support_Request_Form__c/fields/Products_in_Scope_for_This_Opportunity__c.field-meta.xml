@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_in_Scope_for_This_Opportunity__c</fullName>
+    <label>Products in Scope for This Opportunity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Asset Tags &amp; Tracking</fullName>
+                <default>false</default>
+                <label>Asset Tags &amp; Tracking</label>
+            </value>
+            <value>
+                <fullName>Data &amp; Integrations</fullName>
+                <default>false</default>
+                <label>Data &amp; Integrations</label>
+            </value>
+            <value>
+                <fullName>Equipment Monitoring</fullName>
+                <default>false</default>
+                <label>Equipment Monitoring</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Routing</fullName>
+                <default>false</default>
+                <label>Routing</label>
+            </value>
+            <value>
+                <fullName>Vehicle Telematics</fullName>
+                <default>false</default>
+                <label>Vehicle Telematics</label>
+            </value>
+            <value>
+                <fullName>Video-Based Safety</fullName>
+                <default>false</default>
+                <label>Video-Based Safety</label>
+            </value>
+            <value>
+                <fullName>Workforce Apps</fullName>
+                <default>false</default>
+                <label>Workforce Apps</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

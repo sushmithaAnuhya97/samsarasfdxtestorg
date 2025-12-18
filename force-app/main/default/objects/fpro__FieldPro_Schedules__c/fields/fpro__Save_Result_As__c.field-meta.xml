@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Save_Result_As__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specify where to save FieldTrip results on</description>
+    <inlineHelpText>Specify where to save FieldTrip results on</inlineHelpText>
+    <label>Save Results On</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Dataset</fullName>
+                <default>false</default>
+                <label>New Dataset</label>
+            </value>
+            <value>
+                <fullName>FieldPro Records</fullName>
+                <default>false</default>
+                <label>FieldPro Records</label>
+            </value>
+            <value>
+                <fullName>Both</fullName>
+                <default>false</default>
+                <label>Both</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

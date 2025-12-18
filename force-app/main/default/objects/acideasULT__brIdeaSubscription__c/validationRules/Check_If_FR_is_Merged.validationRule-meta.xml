@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_If_FR_is_Merged</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Is_Merged__c,
+NOT(ISNEW()),
+OR(
+ISCHANGED( acideasULT__User__c )
+
+)
+)</errorConditionFormula>
+    <errorMessage>This Feature Request has been merged.</errorMessage>
+</ValidationRule>

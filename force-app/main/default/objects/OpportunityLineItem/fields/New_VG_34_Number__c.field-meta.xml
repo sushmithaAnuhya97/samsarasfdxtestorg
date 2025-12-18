@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_VG_34_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+   OR(
+AND ( 
+Product_Code_Copy__c = &quot;HW-VG34-EU&quot;, 
+DATEVALUE(  Opportunity.Went_to_Ready_to_Ship_Date__c ) &gt;= DATE(2019,03,04) 
+),
+AND ( 
+Product_Code_Copy__c = &quot;HW-VG34&quot;, 
+DATEVALUE( Opportunity.Went_to_Ready_to_Ship_Date__c ) &gt;= DATE(2019,02,18) 
+)),  1,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>New VG - 34 Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Task_Time__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the related task time record.</description>
+    <inlineHelpText>Task time record this work log is included in.</inlineHelpText>
+    <label>Task Time</label>
+    <referenceTo>pse__Task_Time__c</referenceTo>
+    <relationshipLabel>Jira Work Logs</relationshipLabel>
+    <relationshipName>Jira_Work_Logs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

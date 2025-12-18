@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Parent_Level_Check</fullName>
+    <active>false</active>
+    <errorConditionFormula>refedge__Level__c = refedge__Parent__r.refedge__Level__c + 1 || refedge__Level__c = 0</errorConditionFormula>
+    <errorDisplayField>refedge__Parent__c</errorDisplayField>
+    <errorMessage>Child level must be one more than it&apos;s parent or 0 if it&apos;s a root attribute</errorMessage>
+</ValidationRule>

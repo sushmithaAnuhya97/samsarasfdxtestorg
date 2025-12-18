@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Changes_Allowed_on_Approved_Discount</fullName>
+    <active>false</active>
+    <description>AND(ISPICKVAL(ApprovalStatus__c, &apos;Approved&apos;),CONTAINS(&apos;AE1&apos;,  Owner_Role__c), ISCHANGED( Blended_Discount__c ) )
+
+Moved to quote line - JSG</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+$Profile.Name != &apos;Sales Ops Profile&apos;,
+$User.Email != &apos;corpweb-sfdc-robot@samsara.com&apos;,
+ISPICKVAL(ApprovalStatus__c, &apos;Approved&apos;),
+Total_License_Price__c != PRIORVALUE(Total_License_Price__c)
+)</errorConditionFormula>
+    <errorMessage>Changes are not allowed on Discount after Quote is Approved</errorMessage>
+</ValidationRule>

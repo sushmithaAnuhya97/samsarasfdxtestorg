@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ToggleAttribute__c</fullName>
+    <deprecated>false</deprecated>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Toggle Attribute</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>On and off</fullName>
+                <default>true</default>
+                <label>On and off</label>
+            </value>
+            <value>
+                <fullName>On only</fullName>
+                <default>false</default>
+                <label>On only</label>
+            </value>
+            <value>
+                <fullName>Off only</fullName>
+                <default>false</default>
+                <label>Off only</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Hidden</fullName>
+                <default>false</default>
+                <label>Hidden</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

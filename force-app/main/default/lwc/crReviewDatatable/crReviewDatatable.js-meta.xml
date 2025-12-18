@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="channelRelationshipRecords" type="@salesforce/schema/Channel_Relationship__c[]" label="Channel Relationship Records" description="List of Channel Relationship records to display in the table" required="true"/>
+            <property name="selectedRows" type="@salesforce/schema/Channel_Relationship__c[]" label="Selected Records" description="List of selected Channel Relationship records" role="outputOnly"/>
+            <property name="unSelectedRows" type="@salesforce/schema/Channel_Relationship__c[]" label="UnSelected Records" description="List of unSelected Channel Relationship records" role="outputOnly"/>
+            <property name="recordIdList" type="String[]" label="Selected Record IDs" description="List of selected Channel Relationship record IDs" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

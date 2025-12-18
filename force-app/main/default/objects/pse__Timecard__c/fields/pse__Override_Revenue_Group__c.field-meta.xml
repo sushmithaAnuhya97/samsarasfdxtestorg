@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Revenue_Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If set, it overrides the Group to which the TC Split &apos;s Revenue Transactions will roll up for Group Actuals, even if its Project or Resource are in a different Group. Note that either way, the Revenue Transactions will continue to roll up to the same Project&apos;s Project Actuals and same Resource&apos;s Resource Actuals.</description>
+    <inlineHelpText>If set, it overrides the Group to which the TC Split &apos;s Revenue Transactions will roll up for Group Actuals, even if its Project or Resource are in a different Group.</inlineHelpText>
+    <label>Override Revenue Group</label>
+    <referenceTo>pse__Grp__c</referenceTo>
+    <relationshipLabel>Override Revenue Group For Timecard Splits</relationshipLabel>
+    <relationshipName>Override_Revenue_Group_For_TC_Splits</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

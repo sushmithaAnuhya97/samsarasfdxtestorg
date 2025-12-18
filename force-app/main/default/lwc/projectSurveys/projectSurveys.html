@@ -1,0 +1,118 @@
+<template>
+    <!--lightning-card title="Survey Details" if:true={editBVS}>
+
+        <div class="slds-p-around_medium slds-grid slds-align-top slds-wrap">
+            <div class="slds-col slds-size_1-of-6 slds-m-right_small">  
+            
+            <lightning-combobox 
+                name="BVS Survey"
+                label={surveyLable}
+                placeholder="Choose Survey Status"
+                options={SurveyOptions}
+                onchange={handleSurveyChange}
+            ></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-6 slds-m-right_small slds-m-top_large">
+            <lightning-button 
+                label="Update"
+                onclick={handleUpdateClick}
+                class="slds-m-top_small"
+                variant="brand"
+            ></lightning-button>
+            </div>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={projects}
+                columns={columns}
+                onrowselection={handleRowSelection}
+            ></lightning-datatable>
+        </div>
+        
+        <div slot="footer">
+            <lightning-button label="Go to Projects" onclick={navigateToProjectObjectHome}></lightning-button>
+        </div>
+    </lightning-card-->
+    <!--lightning-card title="Survey Details" if:true={editServices}>
+        
+        <div class="slds-p-around_medium slds-grid slds-align-top slds-wrap">
+            
+            <div class="slds-col slds-size_1-of-6 slds-m-right_small">  
+            <lightning-combobox 
+                name="Services Survey"
+                label={surveyLable}
+                placeholder="Choose Survey Status"
+                options={SurveyOptions}
+                onchange={handleSurveyChange}
+            ></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-6 slds-m-right_small slds-m-top_large">
+            <lightning-button 
+                label="Update"
+                onclick={handleUpdateClick}
+                class="slds-m-top_small"
+                variant="brand"
+            ></lightning-button>
+            </div>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={projects}
+                columns={columns}
+                onrowselection={handleRowSelection}
+            ></lightning-datatable>
+        </div>
+
+        <div slot="footer">
+            <lightning-button label="Go to Projects" onclick={navigateToProjectObjectHome}></lightning-button>
+        </div>
+    </lightning-card-->
+    <lightning-card title="Survey Details">
+        
+        <div class="slds-p-around_medium slds-grid slds-align-top slds-wrap">
+            <div class="slds-col slds-size_1-of-6 slds-m-right_small">  
+            
+                <lightning-combobox 
+                    name="Survey Type"
+                    label="Survey Type"
+                    placeholder="Select Survey Type"
+                    options={surveyTypes}
+                    onchange={updateSurveyType}
+                    value={surveyType}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-6 slds-m-right_small" if:true={viewSurveys}>  
+            <lightning-combobox if:false={flag}
+                name="BVS Survey"
+                label={surveyLable}
+                placeholder="Choose Survey Status"
+                options={SurveyOptions}
+                onchange={handleSurveyChange}
+            ></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-6 slds-m-right_small slds-m-top_large" if:true={viewSurveys}>
+            <lightning-button if:false={flag}
+                label="Update"
+                onclick={handleUpdateClick}
+                class="slds-m-top_small"
+                variant="brand"
+            ></lightning-button>
+            </div>
+        </div>
+        <div class="slds-p-around_medium" if:true={projects}>
+            <lightning-datatable
+                key-field="Id"
+                data={projects}
+                columns={columns}
+                onrowselection={handleRowSelection}
+            ></lightning-datatable>
+        </div>
+        <div slot="footer">
+            <lightning-button label="Go to Projects" onclick={navigateToProjectObjectHome}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

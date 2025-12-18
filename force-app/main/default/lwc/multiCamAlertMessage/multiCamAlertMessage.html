@@ -1,0 +1,17 @@
+<template>
+    <div if:true={showAlert} class="slds-card slds-has-cushion flexipageRichText">
+        <div class="red-banner-alert">
+            <div class="alert-content">
+                {alertMessage}
+            </div>
+        </div>
+    </div>
+    
+    <div if:true={showError} class="slds-card slds-has-cushion flexipageRichText">
+        <div class="error-banner-alert">
+            <div class="alert-content">
+                {errorMessage}
+            </div>
+        </div>
+    </div>
+</template>

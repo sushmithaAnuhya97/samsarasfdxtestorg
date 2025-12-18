@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>GTMS-25568: Created to manager other partner users related to same account in partner portal</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Deligate External Admin To Partner User</label>
+    <license>Partner Community Login</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>DelegatedPortalUserAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewRoles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewUserPII</name>
+    </userPermissions>
+</PermissionSet>

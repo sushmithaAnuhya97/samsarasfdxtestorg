@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Classification_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Classification Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>File Type</fullName>
+                <default>false</default>
+                <label>File Type</label>
+            </value>
+            <value>
+                <fullName>File Size</fullName>
+                <default>false</default>
+                <label>File Size</label>
+            </value>
+            <value>
+                <fullName>Language</fullName>
+                <default>false</default>
+                <label>Language</label>
+            </value>
+            <value>
+                <fullName>PII</fullName>
+                <default>false</default>
+                <label>PII</label>
+            </value>
+            <value>
+                <fullName>Financial Records</fullName>
+                <default>false</default>
+                <label>Financial Records</label>
+            </value>
+            <value>
+                <fullName>GDPR Restricted</fullName>
+                <default>false</default>
+                <label>GDPR Restricted</label>
+            </value>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>GLBA</fullName>
+                <default>false</default>
+                <label>GLBA</label>
+            </value>
+            <value>
+                <fullName>HIPAA</fullName>
+                <default>false</default>
+                <label>HIPAA</label>
+            </value>
+            <value>
+                <fullName>PCI DSS</fullName>
+                <default>false</default>
+                <label>PCI DSS</label>
+            </value>
+            <value>
+                <fullName>PHI</fullName>
+                <default>false</default>
+                <label>PHI</label>
+            </value>
+            <value>
+                <fullName>CCPA</fullName>
+                <default>false</default>
+                <label>CCPA</label>
+            </value>
+            <value>
+                <fullName>CMMC</fullName>
+                <default>false</default>
+                <label>CMMC</label>
+            </value>
+            <value>
+                <fullName>Credentials</fullName>
+                <default>false</default>
+                <label>Credentials</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

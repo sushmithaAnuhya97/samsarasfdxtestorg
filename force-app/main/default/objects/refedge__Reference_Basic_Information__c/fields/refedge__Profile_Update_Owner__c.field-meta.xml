@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Profile_Update_Owner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Profile Update Owner field identifies the individual designated as the point of contact for Reference Profile Updates for the Account.
+
+If no user is identified in this field, then the Profile Update Minder notification should be sent to the Reference Owner.
+
+If there is not a Reference Owner identified in the Reference Owner field, then the Profile Update Minder notification should be sent to the Account Owner.</description>
+    <inlineHelpText>The Profile Update Owner field identifies the individual designated as the point of contact for Reference Profile Updates for the Account.</inlineHelpText>
+    <label>Profile Update Owner</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Reference_Profiles2</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

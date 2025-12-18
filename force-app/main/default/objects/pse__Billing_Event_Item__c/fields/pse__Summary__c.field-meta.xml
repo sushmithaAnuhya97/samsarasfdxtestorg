@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Summary__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Summary of Billing Event Item Description.</description>
+    <externalId>false</externalId>
+    <formula>IF (ISPICKVAL(pse__Category__c, &quot;Expense&quot;),
+		SUBSTITUTE(
+			SUBSTITUTE(
+				IF(ISBLANK(pse__Expense__r.pse__Description__c),
+					$Label.pse__BillingEventItemExpenseSummaryDescriptionWithNoExpenseDescription,
+					SUBSTITUTE($Label.pse__BillingEventItemExpenseSummaryDescription, &apos;{2}&apos;, &apos;(&apos; + pse__Expense__r.pse__Description__c + &apos;)&apos;)
+				), 
+				&apos;{0}&apos;, 
+				pse__Subcategory__c
+			),
+			&apos;{1}&apos;,
+			TEXT (pse__Expense__r.pse__Expense_Date__c)
+		)
+		+ &quot; &quot; + pse__Expense__r.pse__Resource__r.FirstName + &quot; &quot; + pse__Expense__r.pse__Resource__r.LastName,
+		IF (ISPICKVAL(pse__Category__c, &quot;Milestone&quot;),
+			SUBSTITUTE(
+				SUBSTITUTE(
+					SUBSTITUTE($Label.pse__BillingEventItemMilestoneSummaryDescription, &apos;{0}&apos;, TEXT( pse__Milestone__r.pse__Actual_Date__c)),
+					&apos;{1}&apos;,
+					TEXT ( pse__Milestone__r.pse__Milestone_Amount__c)
+				),
+				&apos;{2}&apos;,
+				TEXT (pse__Milestone__r.CurrencyIsoCode)
+			),
+			pse__Description__c
+		)
+	)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Summary of Billing Event Item Description.</inlineHelpText>
+    <label>Summary</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

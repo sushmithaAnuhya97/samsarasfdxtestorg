@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SLED_Account__c</fullName>
+    <description>Checks if an account is SLED (public sector) and returns true if so.</description>
+    <formula>OR(
+        Public_Sector__c = true,
+        CONTAINS(Owner_Role__c, &quot;SLED&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Local&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Federal&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;State&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;K-12&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;2 Year Institution&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;4 Year Institution&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Utility&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Transit&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Healthcare&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Correctional Facility&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Police&quot;),
+        ISPICKVAL(Sub_Industry__c, &quot;Other&quot;)
+    )</formula>
+    <label>SLED Account?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

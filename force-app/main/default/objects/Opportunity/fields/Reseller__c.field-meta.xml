@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reseller__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The reseller account for an opportunity (used by finance)</description>
+    <inlineHelpText>Used for finance/PO purposes.</inlineHelpText>
+    <label>Reseller</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Reseller End-Customer</relationshipLabel>
+    <relationshipName>Reseller_End_Cust_Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

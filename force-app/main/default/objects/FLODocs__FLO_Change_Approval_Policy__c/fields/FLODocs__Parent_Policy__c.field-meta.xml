@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Parent_Policy__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is the parent policy for this policy.  Policies inherit properties from parent policies.  Parents are required unless the policy is the top default policy.</description>
+    <inlineHelpText>This is the parent policy for this policy.  Policies inherit properties from parent policies.  Parents are required unless the policy is the top default policy.</inlineHelpText>
+    <label>Parent Policy</label>
+    <referenceTo>FLODocs__FLO_Change_Approval_Policy__c</referenceTo>
+    <relationshipName>FLO_Changes_Approval_Policies</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

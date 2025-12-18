@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_FR_ACV_Open__c</fullName>
+    <description>GTMS-24026: Created as part of Feature Request Phase 2 project to roll up Total ACV of open opportunities</description>
+    <inlineHelpText>Sum of all open Opportunity ACV related to this FR.</inlineHelpText>
+    <label>Total FR ACV(Open)</label>
+    <summarizedField>Opportunity_Idea_Assignment__c.ACV__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity_Idea_Assignment__c.Opportunity_Stage_Text__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Won</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity_Idea_Assignment__c.Opportunity_Stage_Text__c</field>
+        <operation>notEqual</operation>
+        <value>Return Cancelled</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity_Idea_Assignment__c.Opportunity_Stage_Text__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Lost</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity_Idea_Assignment__c.AC_Idea__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

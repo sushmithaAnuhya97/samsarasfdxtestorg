@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isStandalone__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates if the entity is a member of a legal family tree. - If true, indicates that the entity is not a member of a legal family tree.  This means it cannot play any family tree role and corporateLinkage will not be present.- If false, indicates that the entity is a member of a legal family tree.  The roles it plays is indicated by Family Tree Member Roles played.</description>
+    <inlineHelpText>Indicates if the entity is a member of a legal family tree. - If true, indicates that the entity is not a member of a legal family tree.  This means it cannot play any family tree role and corporateLinkage will not be present.- If false, indicates that the entity is a member of a legal family tree.  The roles it plays is indicated by Family Tree Member Roles played.</inlineHelpText>
+    <label>Is Standalone</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

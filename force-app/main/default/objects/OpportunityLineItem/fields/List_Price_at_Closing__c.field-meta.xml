@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_Price_at_Closing__c</fullName>
+    <description>Populates with the list price if the opp isn&apos;t closed yet, and populates with the Process Builder-made copy of the list price at closing if it is closed.</description>
+    <formula>IF(
+OR( TEXT(Opportunity.StageName) != &quot;Closing&quot;,  Opportunity.IsClosed = FALSE ),
+ListPrice,
+Copy_of_List_Price_at_Closing__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>[DON&apos;T USE] List Price at Closing</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

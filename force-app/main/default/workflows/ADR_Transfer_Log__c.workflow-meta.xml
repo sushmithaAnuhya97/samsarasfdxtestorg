@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ADR_Transfer_2nd_Pass_Completed</fullName>
+        <description>ADR Transfer - 2nd Pass Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ADR_Transfer_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_2nd_Pass_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>ADR_Transfer_2nd_Pass_Requested</fullName>
+        <description>ADR Transfer - 2nd Pass Requested</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ADR_Transfer_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_2nd_Pass_Requested</template>
+    </alerts>
+    <alerts>
+        <fullName>ADR_Transfer_New_Scheduled_Transfer</fullName>
+        <description>ADR Transfer - New Scheduled Transfer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_New_Scheduled_Transfer</template>
+    </alerts>
+    <alerts>
+        <fullName>ADR_Transfer_Scheduled_Transfer_Reminder</fullName>
+        <description>ADR Transfer - Scheduled Transfer Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_Scheduled_Transfer_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>ADR_Transfer_Transfer_Accepted</fullName>
+        <description>ADR Transfer - Transfer Accepted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ADR_Transfer_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_Transfer_Accepted</template>
+    </alerts>
+    <alerts>
+        <fullName>ADR_Transfer_Transfer_Qualified</fullName>
+        <description>ADR Transfer - Transfer Qualified</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_Transfer_Qualified</template>
+    </alerts>
+    <alerts>
+        <fullName>ADR_Transfer_Transfer_Rejected</fullName>
+        <description>ADR Transfer - Transfer Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ADR_Manager_Email_Email_Field__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>AE_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>ADR_Transfer_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_Transfer_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_for_ADR_Demo_Reschedule</fullName>
+        <description>Alert for ADR Demo Reschedule</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_Demo_Reschedule_Accepted</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_for_ADR_Demo_Reschedule_Rejected</fullName>
+        <description>Alert for ADR Demo Reschedule - Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ADR_Manager_Email_Email_Field__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_Demo_Reschedule_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Auto_Reject_ADR_crossed_72_hours</fullName>
+        <description>Auto Reject ADR - crossed 72 hours</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ADR_Manager_Email_Email_Field__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>ADR_Transfer_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Auto_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Hot_Transfer_email_alert</fullName>
+        <description>ADR Transfer - New Hot Transfer Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Transfer_New_Hot_Transfer</template>
+    </alerts>
+    <alerts>
+        <fullName>Reminder_Email_alert_ADR_SLA</fullName>
+        <description>Reminder Email alert- ADR SLA</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ADR_Manager_Email_Email_Field__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>ADR_Transfer_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Demo_Transfer_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>AE_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/ADR_Reminder_SLA</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ADR_Manager</fullName>
+        <field>ADR_Manager_Name_Second_Pass__c</field>
+        <formula>$User.Manager_Name__c</formula>
+        <name>ADR Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ADR_Role_Copy</fullName>
+        <field>ADR_Role_Copy_Second_Pass_Completed__c</field>
+        <formula>$UserRole.Name</formula>
+        <name>ADR Role Copy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ADR_Segment_Alignment_at_Qualification</fullName>
+        <field>ADR_Segment_Alignment_at_Qualification__c</field>
+        <formula>TEXT(ADR_Transfer_By__r.ADR_Segment_Alignment__c)</formula>
+        <name>ADR Segment Alignment at Qualification</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ADR_Transfer_ADR_Edit</fullName>
+        <description>Updates the ADR Transfer Log Record Type to ADR Edit</description>
+        <field>RecordTypeId</field>
+        <lookupValue>ADR_Edit</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>ADR Transfer - ADR Edit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ADR_Transfer_AE_Edit</fullName>
+        <description>Updates ADR Transfer Log Record Type to AE Edit.</description>
+        <field>RecordTypeId</field>
+        <lookupValue>AE_Edit</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>ADR Transfer - AE Edit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ADR_Transfer_Read_Only</fullName>
+        <description>Updates ADR Transfer Log Record Type to Read Only</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Read_Only</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>ADR Transfer - Read Only</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ADR_Transfer_Status_Move_to_Qualified</fullName>
+        <field>ADR_Transfer_Status__c</field>
+        <literalValue>Accepted and Qualified</literalValue>
+        <name>ADR Transfer Status: Move to Qualified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>AE_Edit_Fleet</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>AE_Edit_Fleet</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>AE Edit - Fleet</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>AE_Manager_update</fullName>
+        <field>AE_Manager_Name_SecondPass__c</field>
+        <formula>$User.Manager_Name__c</formula>
+        <name>AE Manager update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>AE_Role_Copy_at_Qualification</fullName>
+        <field>AE_Role_Copy_at_Qualification__c</field>
+        <formula>Opportunity__r.Owner_Role_Copy__c</formula>
+        <name>AE Role Copy at Qualification</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>AE_role_update</fullName>
+        <field>AE_Role_Copy_SecondPass__c</field>
+        <formula>$UserRole.Name</formula>
+        <name>AE role update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_ADR_manager_at_time_of_ADR_quOLD</fullName>
+        <description>OLD</description>
+        <field>ADR_Manager_Name_Copy_at_Qualificati_OLD__c</field>
+        <formula>ADR_Transfer_By__r.Manager.FirstName &amp;&quot; &quot;&amp; ADR_Transfer_By__r.Manager.LastName</formula>
+        <name>Copy ADR manager at time of ADR qualific</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_ADR_manager_at_time_of_ADR_transfer</fullName>
+        <field>ADR_Manager_Name_Copy__c</field>
+        <formula>ADR_Transfer_By__r.Manager.FirstName &amp;&quot; &quot;&amp;ADR_Transfer_By__r.Manager.LastName</formula>
+        <name>Copy ADR manager at time of ADR transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_AE_Manager_Name_at_ADR_Accept</fullName>
+        <field>AE_Manager_Name_Copy_at_Qualification__c</field>
+        <formula>AE_Qualified_Transfer_To__r.Manager.FirstName &amp;&quot; &quot;&amp; AE_Qualified_Transfer_To__r.Manager.LastName</formula>
+        <name>Copy AE Manager Name at ADR Accept</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_AE_Manager_Name_at_ADR_demo_sched</fullName>
+        <field>AE_Manager_Name_Copy_at_Transfer__c</field>
+        <formula>AE_Demo_Transfer_To__r.Manager.FirstName &amp;&quot; &quot;&amp; AE_Demo_Transfer_To__r.Manager.LastName</formula>
+        <name>Copy AE Manager Name at ADR demo sched</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_AE_role_when_ADR_transfer_is_accept</fullName>
+        <field>AE_Role_Copy_at_Qualification__c</field>
+        <formula>AE_Qualified_Transfer_To__r.UserRole.Name</formula>
+        <name>Copy AE role when ADR transfer is accept</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_AE_role_when_ADR_transfer_is_sched</fullName>
+        <description>Copies AE role upon demo scheduled</description>
+        <field>AE_Role_Copy_at_Transfer__c</field>
+        <formula>AE_Demo_Transfer_To__r.UserRole.Name</formula>
+        <name>Copy AE role when ADR transfer is sched</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Demo_Completed_True</fullName>
+        <field>Demo_Completed__c</field>
+        <literalValue>1</literalValue>
+        <name>Demo Completed True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_By_Manager</fullName>
+        <field>Rejected_By_Manager__c</field>
+        <formula>$User.Manager_Name__c</formula>
+        <name>Rejected By Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_By_Role_Copy</fullName>
+        <field>Rejected_By_Role_Copy__c</field>
+        <formula>$UserRole.Name</formula>
+        <name>Rejected By Role Copy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Second_Pass_Completed</fullName>
+        <field>Second_Pass_Completed__c</field>
+        <literalValue>1</literalValue>
+        <name>Second Pass Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Second_Pass_Completion_time</fullName>
+        <field>Second_Pass_Completed_Time__c</field>
+        <formula>Now()</formula>
+        <name>Second Pass Completion time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Second_Pass_Requested</fullName>
+        <field>Second_Pass_Requested__c</field>
+        <literalValue>1</literalValue>
+        <name>Second Pass Requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Second_Pass_update_Time</fullName>
+        <field>Second_Pass_Stage_Update_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Second Pass update Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_ADR_Role_Copy</fullName>
+        <field>ADR_Role_Copy__c</field>
+        <formula>ADR_Transfer_By__r.UserRole.Name</formula>
+        <name>Update ADR Role Copy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_ADR_Role_Copy_at_Qualification</fullName>
+        <field>ADR_Role_Copy_at_Qualification__c</field>
+        <formula>ADR_Transfer_By__r.UserRole.Name</formula>
+        <name>Update ADR Role Copy at Qualification</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Asset_Count_at_Transfer</fullName>
+        <field>Powered_Asset_Count_at_Transfer__c</field>
+        <formula>Account__r.Number_of_Powered_Assets__c</formula>
+        <name>Update Powered Asset Count at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contact_Description_at_Transfer</fullName>
+        <field>Contact_Description_at_Transfer__c</field>
+        <formula>Contact__r.Description</formula>
+        <name>Update Contact Description at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Industry_at_Transfer</fullName>
+        <field>Industry_at_Transfer__c</field>
+        <formula>TEXT(Account__r.Industry)</formula>
+        <name>Update Industry at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Org_Size_at_Transfer</fullName>
+        <field>Org_Size_at_Transfer__c</field>
+        <formula>TEXT(Account__r.Organization_Size__c)</formula>
+        <name>Update Org Size at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Original_Owner_Copy_at_Transfer</fullName>
+        <field>Original_Owner_Copy_at_Transfer__c</field>
+        <formula>Account__r.Original_Owner_for_Recycling_Campaign__r.FirstName &amp; &quot; &quot; &amp; Account__r.Original_Owner_for_Recycling_Campaign__r.LastName</formula>
+        <name>Update Original Owner Copy at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Qualified_Date</fullName>
+        <field>ADR_Transfer_Qualified_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Qualified Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejection_Time</fullName>
+        <field>Rejection_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Update Rejection Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Segment_Alignment_at_Transfer</fullName>
+        <field>ADR_Segment_Alignment_at_Transfer__c</field>
+        <formula>TEXT(Owner:User.ADR_Segment_Alignment__c)</formula>
+        <name>Update Segment Alignment at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Unpowered_Asset_Count_at_Transfer</fullName>
+        <field>Unpowered_Asset_Count_at_Transfer__c</field>
+        <formula>Account__r.Number_of_Unpowered_Assets__c</formula>
+        <name>Update Unpowered Asset Count at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_User_Level_at_Transfer</fullName>
+        <field>ADR_Level_Copy_at_Transfer__c</field>
+        <formula>TEXT(Owner:User.Level__c)</formula>
+        <name>Update User Level at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Vehicle_Count_at_Transfer</fullName>
+        <field>Vehicle_Count_at_Transfer__c</field>
+        <formula>Account__r.Number_of_Vehicles__c</formula>
+        <name>Update Vehicle Count at Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>ADR Transfer - ADR Edit</fullName>
+        <actions>
+            <name>ADR_Transfer_ADR_Edit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Status__c</field>
+            <operation>equals</operation>
+            <value>Second Pass Requested</value>
+        </criteriaItems>
+        <description>Sets record type to ADR Edit when transfer log is in status Pending or Second Pass Requested</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - AE Edit</fullName>
+        <actions>
+            <name>ADR_Transfer_AE_Edit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Status__c</field>
+            <operation>equals</operation>
+            <value>Demo Scheduled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.Business_Unit__c</field>
+            <operation>notEqual</operation>
+            <value>Fleet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Status__c</field>
+            <operation>equals</operation>
+            <value>Second Pass Complete</value>
+        </criteriaItems>
+        <description>Updates ADR Transfer Log record type to AE Edit when ADR Transfer Status is Demo Scheduled or Second Pass Complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - AE Edit - Fleet</fullName>
+        <actions>
+            <name>AE_Edit_Fleet</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Status__c</field>
+            <operation>equals</operation>
+            <value>Demo Scheduled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Fleet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Status__c</field>
+            <operation>equals</operation>
+            <value>Second Pass Complete</value>
+        </criteriaItems>
+        <description>Updates ADR Transfer Log record type to AE Edit when ADR Transfer Status is Demo Scheduled or Second Pass Complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Accepted - Copy AE Manager Name</fullName>
+        <actions>
+            <name>Copy_AE_Manager_Name_at_ADR_Accept</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Manager_Name_Copy_at_Qualification__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Qualified_Transfer_To__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Accepted - Update AE Role</fullName>
+        <actions>
+            <name>Copy_AE_role_when_ADR_transfer_is_accept</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Qualified_Transfer_To__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Role_Copy_at_Qualification__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Complete - Update Demo Completion checkbox</fullName>
+        <actions>
+            <name>Demo_Completed_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(IF( ISPICKVAL(ADR_Transfer_Status__c,&apos;Accepted&apos;), TRUE, False), IF( AND(ISPICKVAL(ADR_Transfer_Status__c,&apos;Second Pass Requested&apos;),OR( ISPICKVAL(Demo_Completion__c,&apos;Phone Call&apos;),ISPICKVAL(Demo_Completion__c,&apos;Zoom Meeting&apos;) )), TRUE, False), IF( AND(ISPICKVAL(ADR_Transfer_Status__c,&apos;Rejected&apos;),OR( ISPICKVAL(Demo_Completion__c,&apos;Phone Call&apos;),ISPICKVAL(Demo_Completion__c,&apos;Zoom Meeting&apos;) )), TRUE, False))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - Copy ADR Manager</fullName>
+        <actions>
+            <name>Copy_ADR_manager_at_time_of_ADR_transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_By__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Manager_Name_Copy__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - Copy ADR Role</fullName>
+        <actions>
+            <name>Update_ADR_Role_Copy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Demo_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Role_Copy__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - Copy AE Manager Name</fullName>
+        <actions>
+            <name>Copy_AE_Manager_Name_at_ADR_demo_sched</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Manager_Name_Copy_at_Transfer__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Demo_Transfer_To__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - Copy AE Role</fullName>
+        <actions>
+            <name>Copy_AE_role_when_ADR_transfer_is_sched</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Demo_Transfer_To__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.AE_Role_Copy_at_Transfer__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - Copy Original Owner Name</fullName>
+        <actions>
+            <name>Update_Original_Owner_Copy_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Demo_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.Original_Owner_Copy_at_Transfer__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Workflow copies the Original Owner for Recycling Campaign account field at the time of an ADR transfer for routing quality assurance.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - New Hot Transfer</fullName>
+        <actions>
+            <name>New_Hot_Transfer_email_alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(TEXT( ADR_Transfer_Status__c)=&quot;Demo Scheduled&quot;, Hot_Transfer__c=TRUE)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - New Scheduled Transfer</fullName>
+        <actions>
+            <name>ADR_Transfer_New_Scheduled_Transfer</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(TEXT( ADR_Transfer_Status__c)=&quot;Demo Scheduled&quot;, Hot_Transfer__c=FALSE)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - Scheduled Transfer Reminder</fullName>
+        <actions>
+            <name>ADR_Transfer_Scheduled_Transfer_Reminder</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( NOW()  &gt;  ADR_Demo_Date__c ,  ISPICKVAL( ADR_Transfer_Status__c ,&apos;Demo Scheduled&apos;),  Hot_Transfer__c =FALSE )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Demo Scheduled - Updates at Transfer</fullName>
+        <actions>
+            <name>Update_Asset_Count_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Contact_Description_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Industry_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Org_Size_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Segment_Alignment_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Unpowered_Asset_Count_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_User_Level_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Vehicle_Count_at_Transfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISPICKVAL(ADR_Transfer_Status__c,&apos;Demo Scheduled&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Failed Transfer Status Update</fullName>
+        <actions>
+            <name>ADR_Transfer_Status_Move_to_Qualified</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Qualified_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(NOW()&gt;Failed_Status_Update_Trigger__c, TEXT(ADR_Transfer_Status__c) = &quot;Accepted&quot;,   Related_Opportunity_Stage__c = &quot;Qualified&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Qualified - Copy ADR Role</fullName>
+        <actions>
+            <name>Update_ADR_Role_Copy_at_Qualification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Qualified__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Role_Copy_at_Qualification__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Qualified - NA Fleet Email Alert</fullName>
+        <actions>
+            <name>ADR_Transfer_Transfer_Qualified</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Qualified__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.Global_Geography__c</field>
+            <operation>equals</operation>
+            <value>East,Central,West,Canada East,Canada West</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Fleet</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Qualified - Updates at Qualification</fullName>
+        <actions>
+            <name>ADR_Segment_Alignment_at_Qualification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>AE_Role_Copy_at_Qualification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Copy_ADR_manager_at_time_of_ADR_quOLD</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_ADR_Role_Copy_at_Qualification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Qualified__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Read Only</fullName>
+        <actions>
+            <name>ADR_Transfer_Read_Only</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Status__c</field>
+            <operation>equals</operation>
+            <value>Accepted,Accepted and Qualified,Rejected</value>
+        </criteriaItems>
+        <description>Updates ADR Transfer Log record type to Read Only when ADR Transfer Log is in status Accepted, Accepted &amp; Qualified, or Rejected</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Read Only 2</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>ADR_Transfer_Log__c.ADR_Transfer_Status__c</field>
+            <operation>equals</operation>
+            <value>Accepted,Accepted and Qualified,Rejected</value>
+        </criteriaItems>
+        <description>Updates ADR Transfer Log record type to Read Only when ADR Transfer Log is in status Accepted, Accepted &amp; Qualified, or Rejected</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ADR_Transfer_Read_Only</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Rejected - Rejection Time</fullName>
+        <actions>
+            <name>Rejected_By_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Rejected_By_Role_Copy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Rejection_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISChanged( ADR_Transfer_Status__c ) &amp;&amp; ISPICKVAL(ADR_Transfer_Status__c,&apos;Rejected&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Second Pass Completed - Second pass completed</fullName>
+        <actions>
+            <name>ADR_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ADR_Role_Copy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Second_Pass_Completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Second_Pass_Completion_time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISChanged( ADR_Transfer_Status__c ) &amp;&amp; ISPICKVAL(ADR_Transfer_Status__c,&apos;Second Pass Complete&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>ADR Transfer - Second Pass Requested - Second Pass Stage update</fullName>
+        <actions>
+            <name>AE_Manager_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>AE_role_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Second_Pass_Requested</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Second_Pass_update_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISChanged( ADR_Transfer_Status__c ) &amp;&amp; ISPICKVAL(ADR_Transfer_Status__c,&apos;Second Pass Requested&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

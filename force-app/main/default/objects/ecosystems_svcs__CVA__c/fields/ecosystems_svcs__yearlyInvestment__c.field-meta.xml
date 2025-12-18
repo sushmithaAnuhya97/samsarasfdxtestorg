@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ecosystems_svcs__yearlyInvestment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Yearly Investment</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>ecosystems_svcs__YearlyFinancial__c.ecosystems_svcs__financialType__c</field>
+            <operation>equals</operation>
+            <value>INVESTMENT</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>ecosystems_svcs__YearlyFinancial__c</referenceTo>
+    <relationshipLabel>Collaborative Value Assessments (Yearly Investment)</relationshipLabel>
+    <relationshipName>Collaborative_Value_Assessments2</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

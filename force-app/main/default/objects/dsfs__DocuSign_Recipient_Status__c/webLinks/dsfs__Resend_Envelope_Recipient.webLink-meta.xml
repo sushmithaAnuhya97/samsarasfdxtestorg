@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dsfs__Resend_Envelope_Recipient</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Resend DocuSign Email</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/dsfs__DocuSign_ResendEnvelope?id={!dsfs__DocuSign_Status__c.Id}&amp;sId={!dsfs__DocuSign_Recipient_Status__c.Id}</url>
+</WebLink>

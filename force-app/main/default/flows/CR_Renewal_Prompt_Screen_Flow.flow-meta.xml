@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to assign CR status values based on AE action</description>
+        <name>Assign_values_based_on_AE_Action</name>
+        <label>Assign values based on AE Action</label>
+        <locationX>270</locationX>
+        <locationY>1124</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Over_Selected_CR_Records.CR_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Renewed by AE</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Loop_Over_Selected_CR_Records.Registration_Expiration_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Expiration_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Loop_Over_Selected_CR_Records.Last_Validated_By__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Loop_Over_Selected_CR_Records.Last_Validated_Datetime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Loop_Over_Selected_CR_Records.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Selected_Records_Eligible_For_Payout_Formula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_To_Update_list</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Over_Selected_CR_Records</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Over_Selected_CR_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to assign CR status values based on AE action</description>
+        <name>Assign_values_based_on_AE_Action_For_Rejection</name>
+        <label>Assign values based on AE Action For Rejection</label>
+        <locationX>270</locationX>
+        <locationY>1424</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_over_Unselected_CRs.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.CR_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Expired</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Last_Validated_By__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Last_Validated_Datetime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Registration_Expiration_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_over_Unselected_CRs.Registration_Expiration_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_To_Update_list</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CR_Record_To_Update</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_over_Unselected_CRs</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Approve_Renewal</name>
+        <choiceText>Extend CR Validity</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Approve_Renewal</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project</description>
+        <name>Deny_Renewal</name>
+        <choiceText>Expire CR Validity</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Deny_Renewal</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>GTMS-26120 &amp; GTMS-26118: Created as part of Partners H1 project</description>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>GTMS-26120 &amp; GTMS-26118: Created as part of Partner H1 project</description>
+        <name>Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS-26120: To check the confirmation screen selection</description>
+        <name>Confirmation_Values_Check</name>
+        <label>Confirmation Values Check</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>CR_Selection_Screen_For_Approval</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Expire_All_CRs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Sure_you_want_to_expire_all_CRs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Over_Selected_CR_Records</targetReference>
+            </connector>
+            <label>Yes, Expire All CRs</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to check the CR status</description>
+        <name>CR_Status_Check</name>
+        <label>CR Status Check</label>
+        <locationX>424</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Not_Pending_CR_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other Statuses</defaultConnectorLabel>
+        <rules>
+            <name>Pending_For_Renewal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>crListPendingForRenewal</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>crListPendingForRenewal</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CR_Selection_Screen_For_Approval</targetReference>
+            </connector>
+            <label>Pending For Renewal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Finals_Screen_Display_Decision</name>
+        <label>Finals Screen Display Decision</label>
+        <locationX>182</locationX>
+        <locationY>1724</locationY>
+        <defaultConnector>
+            <targetReference>Final_Screen1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Rows Selected</defaultConnectorLabel>
+        <rules>
+            <name>Rows_Are_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>selected_CR_Records</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>selected_CR_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Final_Screen</targetReference>
+            </connector>
+            <label>Rows Are Selected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS-26120</description>
+        <name>Selected_Ros_Check</name>
+        <label>Selected Ros Check</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Confirmation_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_Selected_Rows</name>
+            <conditionLogic>(1 AND 2) OR (3 AND NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>selected_CR_Records</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>selected_CR_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Sure_you_want_to_expire_all_CRs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>No</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Over_Selected_CR_Records</targetReference>
+            </connector>
+            <label>Has Selected Rows</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to display this flow in an lwc component as a popup for AE to take action on pending renewal CR
+Changed Experiation days to 180
+GTMS-28150: Updated logic to update the influence criteria fields for the selected records and provided feasibility for inline editing for influence criteria fields</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to generate a message based on CR Status</description>
+        <name>CR_Status_Error_Formula</name>
+        <dataType>String</dataType>
+        <expression>&apos;No CR is Pending under AE approval for Deal Registration extension&apos;</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to create Expiration Date formula</description>
+        <name>Expiration_Date</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+NOT(ISNULL({!Loop_Over_Selected_CR_Records.Registration_Expiration_Date__c})),
+{!Loop_Over_Selected_CR_Records.Registration_Expiration_Date__c}+180,
+{!$Flow.CurrentDate}+180
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to display final message after AE&apos;s action</description>
+        <name>Final_Display_Message</name>
+        <dataType>String</dataType>
+        <expression>&apos;Selected Channel Relationship records validity is extended by 180 Days and Unselected Channel Relationship Records status is updated to Expired&apos;</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-27118 &amp; GTMS-26120: Created as part of Partners H1 project to update the payout eligibility values based on AE approval action
+GTMS-28150: updated as part of Partners H1 project hyper care ticket</description>
+        <name>Selected_Records_Eligible_For_Payout_Formula</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Loop_Over_Selected_CR_Records.Eligible_For_Payout__c})</expression>
+    </formulas>
+    <interviewLabel>CR Renewal Prompt Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CR Renewal Prompt Screen Flow</label>
+    <loops>
+        <description>GTMS-28150: Created as part of Partners H1 project Hypercare to loop over selected records</description>
+        <name>Loop_Over_Selected_CR_Records</name>
+        <label>Loop Over Selected CR Records</label>
+        <locationX>182</locationX>
+        <locationY>1016</locationY>
+        <collectionReference>selected_CR_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_values_based_on_AE_Action</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Loop_over_Unselected_CRs</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>GTMS-28150: Created as part of Partners H1 project to loop over unselected records</description>
+        <name>Loop_over_Unselected_CRs</name>
+        <label>Loop over Unselected CRs</label>
+        <locationX>182</locationX>
+        <locationY>1316</locationY>
+        <collectionReference>unselected_CR_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_values_based_on_AE_Action_For_Rejection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_CR_Record</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to fetch the cr record</description>
+        <name>Get_CR_Record</name>
+        <label>Get CR Record</label>
+        <locationX>424</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CR_Status_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CR_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending AE Renewal</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Is_Deal_Registration__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Channel_Relationship__c</object>
+        <outputReference>crListPendingForRenewal</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CR_Status__c</queriedFields>
+        <queriedFields>Eligible_For_Payout__c</queriedFields>
+        <queriedFields>Registration_Expiration_Date__c</queriedFields>
+        <queriedFields>Last_Validated_By__c</queriedFields>
+        <queriedFields>Last_Validated_Datetime__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Channel_Partner__c</queriedFields>
+        <queriedFields>Key_Customer_Insight__c</queriedFields>
+        <queriedFields>Samsara_Recommendation__c</queriedFields>
+        <queriedFields>Sales_Cycle_Investment__c</queriedFields>
+        <queriedFields>Executive_Introduction__c</queriedFields>
+        <queriedFields>Partner_Account_Name__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to update the CR record</description>
+        <name>Update_CR_Record</name>
+        <label>Update CR Record</label>
+        <locationX>182</locationX>
+        <locationY>1616</locationY>
+        <connector>
+            <targetReference>Finals_Screen_Display_Decision</targetReference>
+        </connector>
+        <inputReference>CR_To_Update_list</inputReference>
+    </recordUpdates>
+    <screens>
+        <description>GTMS-26120 &amp; GTMS-26118: Confirmation screen if no CR rows selected for</description>
+        <name>Confirmation_Screen</name>
+        <label>Confirmation Screen</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Confirmation_Values_Check</targetReference>
+        </connector>
+        <fields>
+            <name>Sure_you_want_to_expire_all_CRs</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sure you want to expire all CRs ?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project</description>
+        <name>CR_Selection_Screen_For_Approval</name>
+        <label>CR Selection Screen For Approval</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Selected_Ros_Check</targetReference>
+        </connector>
+        <fields>
+            <name>CR_Extension_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 11pt; font-family: Roboto, sans-serif; color: rgb(51, 51, 51); background-color: transparent;&quot;&gt;Deal Reg Expiration: Should we extend the deal registration? &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Roboto, sans-serif; color: rgb(51, 51, 51); background-color: transparent;&quot;&gt;Partner Deal Registrations expire every 180 days unless the Account Executive authorizes an extension.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Roboto, sans-serif; color: rgb(51, 51, 51); background-color: transparent;&quot;&gt;If you’re seeing this notification, the Channel Relationships below should be either be extended or denied. &lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);&quot;&gt;Please select ‘Approve&apos; to extend the engagement, otherwise it will be denied when you click &apos;Submit’&lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-family: Roboto, sans-serif; color: rgb(51, 51, 51); background-color: transparent;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Expiration_CRs_Table</name>
+            <extensionName>c:crReviewDatatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>channelRelationshipRecords</name>
+                <value>
+                    <elementReference>crListPendingForRenewal</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>selected_CR_Records</assignToReference>
+                <name>selectedRows</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>unselected_CR_Records</assignToReference>
+                <name>unSelectedRows</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>crListPendingForRenewal</assignToReference>
+                <name>channelRelationshipRecords</name>
+            </outputParameters>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Submit</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to show the final message</description>
+        <name>Final_Screen</name>
+        <label>Final Screen</label>
+        <locationX>50</locationX>
+        <locationY>1832</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Final_Display_Test</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;{!Final_Display_Message}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to show the final message</description>
+        <name>Final_Screen1</name>
+        <label>Final Screen</label>
+        <locationX>314</locationX>
+        <locationY>1832</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_1_of_Final_Display_Test</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;All related Channel Relationship records that are pending for Deal Registration extension are expired&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to show a message if the CR is not pending in AE Renewal</description>
+        <name>Not_Pending_CR_Screen</name>
+        <label>Not_Pending_CR_Screen</label>
+        <locationX>666</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Not_Pending_CR_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(231, 109, 47);&quot;&gt;{!CR_Status_Error_Formula}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>298</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_CR_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to update the CR value based on AE&apos;s action</description>
+        <name>CR_Record_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26118 &amp; GTMS-26120</description>
+        <name>CR_To_Update_list</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-28150: Created to store the CR List</description>
+        <name>crListPendingForRenewal</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to store the Channel Relationship recordid</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-28150: Created as part of Partners H1 project Hypercare to store selected CR records</description>
+        <name>selected_CR_Records</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>selectedCRIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-28150: Created as part of Partners H1 project hypercare to store unselected CR records</description>
+        <name>unselected_CR_Records</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+</Flow>

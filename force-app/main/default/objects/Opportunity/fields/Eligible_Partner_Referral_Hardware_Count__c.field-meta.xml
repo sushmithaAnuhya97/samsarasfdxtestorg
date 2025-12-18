@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligible_Partner_Referral_Hardware_Count__c</fullName>
+    <description>No longer in use as of April 2019</description>
+    <externalId>false</externalId>
+    <formula>MIN((AG2_Unit_Count__c + CM12_HW_Count__c + CM22_HW_Count__c + CM3_Rollup__c+ VG_unit_count__c),300)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Eligible Partner Referral HW Count (Dep)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

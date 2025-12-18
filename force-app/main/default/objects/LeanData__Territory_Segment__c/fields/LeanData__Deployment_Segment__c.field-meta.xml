@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Deployment_Segment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Deployment Segment Id</label>
+    <referenceTo>LeanData__Territory_Segment__c</referenceTo>
+    <relationshipLabel>Deployed Territory Segment</relationshipLabel>
+    <relationshipName>DeployedTerritorySegment</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

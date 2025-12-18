@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Template_Projects_do_not_require_Account</fullName>
+    <active>true</active>
+    <description>Allow Account to be blank for Template Projects only</description>
+    <errorConditionFormula>AND(
+    OR(
+        ISBLANK(pse__Account__c),
+        ISBLANK(pse__Opportunity__c)
+    ),
+    pse__Is_Template__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>Non &quot;Template&quot; Projects require an Account</errorMessage>
+</ValidationRule>

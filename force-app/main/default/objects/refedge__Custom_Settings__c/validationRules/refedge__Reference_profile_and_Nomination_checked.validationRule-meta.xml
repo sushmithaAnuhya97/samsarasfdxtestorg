@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Reference_profile_and_Nomination_checked</fullName>
+    <active>true</active>
+    <description>Reference profile and Nomination both cannot be checked/unchecked</description>
+    <errorConditionFormula>OR(AND(refedge__Create_Nomination__c, refedge__Create_Reference_Profile__c), AND(NOT(refedge__Create_Nomination__c), NOT(refedge__Create_Reference_Profile__c)))</errorConditionFormula>
+    <errorMessage>Reference profile and Nomination both cannot be checked/unchecked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Renewal Flag CoE</label>
+    <protected>false</protected>
+    <values>
+        <field>Logic_Type__c</field>
+        <value xsi:type="xsd:string">Formula</value>
+    </values>
+    <values>
+        <field>Logic__c</field>
+        <value xsi:type="xsd:string">IF(ISPICKVAL(Type,&apos;Revenue Opportunity&apos;), IF(First_Purchase__c,&apos;First Purchase&apos;,&apos;Expansion/Renewals&apos;),&apos;&apos;)</value>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+    <values>
+        <field>Source_Field__c</field>
+        <value xsi:type="xsd:string">Renewal_Flag_CoE__c</value>
+    </values>
+    <values>
+        <field>Target_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

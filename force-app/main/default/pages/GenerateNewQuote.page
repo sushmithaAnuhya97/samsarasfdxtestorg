@@ -1,0 +1,26 @@
+<apex:page standardController="Opportunity"  extensions="GenerateNewQuote" action="{!genQuote}" >
+    <apex:slds />
+    <apex:outputPanel rendered="{!IF(Opportunity.SBQQ__AmendedContract__c != null, true, false)}">
+        <div class="slds-p-around_small">
+        	<div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                <span class="slds-assistive-text">error</span>
+                <h2>You can’t create a new quote on an amendment. Please clone an existing quote.</h2>
+                <div class="slds-notify__close">
+            
+                </div>
+            </div>    
+        </div>
+        <div class="slds-align_absolute-center">
+        	<button class="slds-button slds-button_neutral" onclick="redirectToPreviousPage()">
+                Back
+            </button>     
+        </div>
+    </apex:outputPanel>
+   
+    <script>
+    	function redirectToPreviousPage(){
+            var recordId = '{!Opportunity.Id}';
+            window.open('/'+recordId, '_self');
+       	}     
+    </script>
+</apex:page>

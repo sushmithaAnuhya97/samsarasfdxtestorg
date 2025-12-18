@@ -1,0 +1,140 @@
+<template>
+  <lightning-card>
+    <!-- CONTROL BAR -->
+    <div class="slds-grid slds-wrap slds-var-p-horizontal_small slds-var-m-bottom_small slds-gutters_small">
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_2-of-5">
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="search-input">Search</label>
+          <div class="slds-form-element__control">
+            <div class="slds-grid slds-gutters_x-small">
+              <div class="slds-col slds-has-flexi-truncate">
+                <lightning-input
+                  input-id="search-input"
+                  type="text"
+                  variant="label-hidden"
+                  value={searchKey}
+                  placeholder="Search by quote, account, opportunity, sales rep, rule, or segment — Press Enter to search"
+                  onchange={handleSearchInputChange}
+                  onkeyup={handleSearchKeyPress}
+                  disabled={isLoading}
+                  class="search-input-wrapper"
+                ></lightning-input>
+              </div>
+              <div class="slds-col slds-no-flex">
+                <lightning-button
+                  variant="brand"
+                  label="Search"
+                  icon-name="utility:search"
+                  onclick={handleSearchClick}
+                  disabled={isLoading}
+                  class="search-button"
+                ></lightning-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-5">
+        <lightning-combobox
+          label="Sort"
+          value={sortOption}
+          options={sortOptions}
+          onchange={handleSortOptionChange}
+          disabled={isLoading}
+        ></lightning-combobox>
+      </div>
+      
+    </div>
+
+    <!-- HEADERS -->
+    <div class="slds-card__body slds-card__body_inner slds-is-relative" aria-busy={isLoading}>
+      <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading approvals..." size="medium"></lightning-spinner>
+      </template>
+      <div class="lwc-container">
+        <div class="slds-grid slds-grid_vertical-align-start slds-border_bottom slds-p-around_x-small slds-text-title_caps slds-theme_shade header-row">
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">Approval</div>
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">Quote</div>
+          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">Opportunity</div>
+        </div>
+
+        <!-- Scrollable LIST -->
+        <div class="scroll-body">
+          <template for:each={records} for:item="rec">
+            <div key={rec.recordId} class="slds-grid slds-wrap slds-p-vertical_small slds-border_bottom slds-gutters_small row">
+              <!-- Approval Column -->
+              <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <div class="slds-text-title_bold"><a href={rec.approvalLink} target="_blank">{rec.approvalName}</a></div>
+                <div class="slds-m-vertical_x-small">
+                  <lightning-button-group>
+                    <lightning-button class="btn-outline btn-approve" variant="neutral" label="Approve" onclick={handleApprove} data-id={rec.processId}></lightning-button>
+                    <lightning-button class="btn-outline btn-reject" variant="neutral" label="Reject" onclick={handleReject} data-id={rec.processId}></lightning-button>
+                  </lightning-button-group>
+                </div>
+                <div><span class="label">Rule:</span> <span class="value">{rec.approvalRuleName}</span></div>
+                <div><span class="label">Most Recent Approver:</span> <span class="value">{rec.mostRecentApprover}</span></div>
+                <div>
+                  <span class="label">Date Submitted:</span> <span class="value">{rec.dateSubmitted}</span>
+                  <template if:true={rec.ageBadge}>
+                    <lightning-badge label={rec.ageBadge} class={rec.ageBadgeClass}></lightning-badge>
+                  </template>
+                </div>
+              </div>
+
+              <!-- Quote Column -->
+              <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <div class="slds-text-title_bold"><a href={rec.quoteLink} target="_blank">{rec.relatedTo}</a></div>
+                <div><span class="label">Blended Discount (%):</span> <span class={rec.discountClass}>{rec.blendedDiscount}</span></div>
+                <div><span class="label">License Term:</span> <span class="value">{rec.licenseTerm}</span></div>
+                <div><span class="label">Sales Rep:</span> <span class="value">{rec.salesRep}</span></div>
+                <div class="wrap">
+                  <span class="label">Reason for Discount:</span> <span class="value">{rec.reasonForDiscount}</span>
+                </div>
+              </div>
+
+              <!-- Opportunity Column -->
+              <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                <div class="slds-text-title_bold"><a href={rec.opportunityLink} target="_blank">{rec.opportunityName}</a></div>
+                <div class="slds-text-title_bold"><a href={rec.accountLink} target="_blank">{rec.accountName}</a></div>
+                <div><span class="label">Type:</span> <span class="value">{rec.opportunityType}</span></div>
+                <div><span class="label">Stage:</span> <span class={rec.stageClass}>{rec.opportunityStage}</span></div>
+                <div><span class="label">Close Date:</span> <lightning-formatted-date-time value={rec.opportunityCloseDate} year="numeric" month="short" day="2-digit"></lightning-formatted-date-time></div>
+                <div><span class="label">ACV ({rec.accountCurrencyIsoCode}):</span> <span class="value"><lightning-formatted-number value={rec.opportunityACV} format-style="currency" currency-code={rec.accountCurrencyIsoCode}></lightning-formatted-number></span></div>
+                <div><span class="label">Customer ARR ({rec.accountCurrencyIsoCode}):</span> <span class="value"><lightning-formatted-number value={rec.accountCustomerARR} format-style="currency" currency-code={rec.accountCurrencyIsoCode}></lightning-formatted-number></span></div>
+                <div><span class="label">Segment:</span> <span class="value">{rec.accountSegment}</span></div>
+                
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <template if:true={records}>
+          <!-- Footer fixed under scrollable list -->
+          <div class="sticky-footer slds-grid slds-grid_align-spread slds-p-around_small">
+            <div class="slds-text-body_small">
+              <span>Showing {pageStart}-{pageEnd} ({recordsOnPage} on this page) — Total {totalRecords}</span>
+            </div>
+            <div>
+              <lightning-button
+                variant="base"
+                label="Previous"
+                icon-name="utility:chevronleft"
+                onclick={previousPage}
+                disabled={isPrevDisabled}
+              ></lightning-button>
+              <span class="slds-var-m-horizontal_small">Page {pageNumber} of {totalPages}</span>
+              <lightning-button
+                variant="base"
+                label="Next"
+                icon-name="utility:chevronright"
+                icon-position="right"
+                onclick={nextPage}
+                disabled={isNextDisabled}
+              ></lightning-button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </lightning-card>
+</template>

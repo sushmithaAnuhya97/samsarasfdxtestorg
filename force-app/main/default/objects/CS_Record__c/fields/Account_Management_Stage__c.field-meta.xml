@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Management_Stage__c</fullName>
+    <label>Account Management Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Account_Management_Sub_Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+                <label>Business Review</label>
+            </value>
+            <value>
+                <fullName>Optimization Session</fullName>
+                <default>false</default>
+                <label>Optimization Session</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Check-In</fullName>
+                <default>false</default>
+                <label>Check-In</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>On Track</controllingFieldValue>
+            <controllingFieldValue>Steady State</controllingFieldValue>
+            <valueName>Business Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Track</controllingFieldValue>
+            <valueName>Optimization Session</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Track</controllingFieldValue>
+            <valueName>Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Track</controllingFieldValue>
+            <controllingFieldValue>At Risk</controllingFieldValue>
+            <controllingFieldValue>Steady State</controllingFieldValue>
+            <valueName>Check-In</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

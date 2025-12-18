@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Partner Admin User - Sales</audienceName>
+    <container>Samsara Partner Portal</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <entityField>Profile.Name</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Samsara Partner Community Member License Admin</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <entityField>Profile.Name</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Samsara Partner Community Login License Admin</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>2</criteriaNumber>
+            <criterionValue>
+                <entityField>Contact.Account.$Account.Partner_Type__c</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Resale</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>2</criteriaNumber>
+            <criterionValue>
+                <entityField>Contact.Account.$Account.Partner_Type__c</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Referral</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AllCriteriaMatch</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+    <targets>
+        <target>
+            <groupName>2237667b-fe70-4233-bc81-df25a17557dc$#$1ef831b7-3774-47d9-aaac-2f97aa9fcd15</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Onboarding_Tracks_HTML_Editor_Component</targetValue>
+        </target>
+    </targets>
+</Audience>

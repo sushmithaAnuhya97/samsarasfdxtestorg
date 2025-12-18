@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_Monthly_Annual_through_Checkout__c</fullName>
+    <description>Satisfies criteria node Direct Monthly/Annual through Checkout Link on Opportunity Consolidate process builder</description>
+    <formula>AND( 
+ Payment_Method__c &lt;&gt; &quot;directDebit&quot;, 
+ OR( 
+  Direct_Monthly__c = TRUE, 
+  Direct_Annual__c = TRUE 
+ ), 
+ ISPICKVAL(Shipping_Country__c, &quot;United States&quot;) 
+)</formula>
+    <label>Direct Monthly/Annual through Checkout?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

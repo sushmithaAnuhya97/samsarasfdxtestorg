@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Webstore_Opportunity__c</fullName>
+    <description>GTMS-17606: Created to use in Docusign Status async flow
+GTMS-17930: Updated formula field.</description>
+    <formula>OR( dsfs__Opportunity__r.Is_Webstore_Upsell_Opportunity__c, dsfs__Opportunity__r.Small_Fleet_Opportunity__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Webstore Opportunity</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

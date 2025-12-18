@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clear_the_Hold_Reason_before_FinalStage</fullName>
+    <active>false</active>
+    <description>Hold Reason field must be blank before progressing to the final stage to ensure accurate return processing</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(TEXT(Hold_Reason__c))),
+  OR(
+    ISPICKVAL(StageName, &apos;Refunded - Closed&apos;),
+    ISPICKVAL(StageName, &apos;Partially Received&apos;)
+  )
+)</errorConditionFormula>
+    <errorMessage>Please clear the Hold Reason field before progressing to the final stage. This field must be blank to ensure accurate return processing</errorMessage>
+</ValidationRule>

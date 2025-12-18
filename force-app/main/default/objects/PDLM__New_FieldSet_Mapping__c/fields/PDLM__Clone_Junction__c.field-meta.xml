@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Clone_Junction__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Primarily intended for Item Revision lookups using a junction object. On Create Draft, the system will clone the junction object record, and point the lookup to the new draft revision</inlineHelpText>
+    <label>Clone related records on Create Draft</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

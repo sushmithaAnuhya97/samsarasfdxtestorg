@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>License term buckets</label>
+    <protected>false</protected>
+    <values>
+        <field>Logic_Type__c</field>
+        <value xsi:type="xsd:string">Formula</value>
+    </values>
+    <values>
+        <field>Logic__c</field>
+        <value xsi:type="xsd:string">IF(
+    ISBLANK(Original_License_Term__c) || Original_License_Term__c &lt;= 36,
+    &apos;&lt;=3 years&apos;,
+    &apos;&gt;3 years&apos;
+)</value>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">SBQQ__Quote__c</value>
+    </values>
+    <values>
+        <field>Source_Field__c</field>
+        <value xsi:type="xsd:string">License_term_buckets__c</value>
+    </values>
+    <values>
+        <field>Target_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Netsuite_Delinquent_Status</fullName>
+    <active>true</active>
+    <description>CR : GTMS-11088 Added Remorse Refund Check</description>
+    <errorConditionFormula>AND(ISPICKVAL(Account.Netsuite_Delinquent_Status__c,&apos;Written-off&apos;),
+NOT(ISPICKVAL( Type ,&apos;Remorse Refund&apos;)),
+NOT(OR($Profile.Name=&apos;Sales Ops Profile&apos;,$Profile.Name=&apos;Samsara - Finance Admin&apos;,$Profile.Name=&apos;Samsara - Finance&apos;,
+$Permission.NetSuite_Service_User_Permission, $Profile.Name=&apos;System Administrator&apos;)),
+Account.Delinquent_Override__c==FALSE)</errorConditionFormula>
+    <errorMessage>This Account is blocked due to delinquency. Please reach out to Finance for additional information!</errorMessage>
+</ValidationRule>

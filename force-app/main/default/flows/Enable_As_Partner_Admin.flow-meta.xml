@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-25568: Created to assign Portal Admin profile id to users</description>
+        <name>Assing_Partner_Portal_Admin_Profile</name>
+        <label>Assing Partner Portal Admin Profile</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>User_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_User_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>User_To_Update.ProfileId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Samsara_Partner_Community_Login_License_Admin_Pofile_Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_User_Record</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>GTMS-25568: Created to check if the Partner User is active</description>
+        <name>Is_Active_User</name>
+        <label>Is Active User</label>
+        <locationX>666</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Inactive_User_Msg_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Inactive User</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Active_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User_Record.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assing_Partner_Portal_Admin_Profile</targetReference>
+            </connector>
+            <label>Yes, Active User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-25568: To check if Partner Admin permission set was already assigned</description>
+        <name>Is_Partner_Admin_Permission_Set_Assigned</name>
+        <label>Is Partner Admin Permission Set Assigned ?</label>
+        <locationX>314</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <targetReference>Success_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes, Permission Set Assigned</defaultConnectorLabel>
+        <rules>
+            <name>No_Permission_Not_Set_Assigned</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Permission_Set_Assignment_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Permission_Set_To_User</targetReference>
+            </connector>
+            <label>No, Permission Not Set Assigned</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-25568: Created to check if partner user was created or not</description>
+        <name>Is_Partner_User_Created</name>
+        <label>Is Partner User Created</label>
+        <locationX>974</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>No_Partner_Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Partner User Was Not Created</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Partner_User_Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_User_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Active_User</targetReference>
+            </connector>
+            <label>Yes, Partner User Created</label>
+        </rules>
+    </decisions>
+    <description>GTMS-25568: Created to provide External Admin access to partner users</description>
+    <environments>Default</environments>
+    <interviewLabel>Enable As Partner Admin {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Enable As Partner Admin</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>GTMS-25568: Created to assign Deligate_Exiternal_Admin_To_Partner_User permission Set</description>
+        <name>Assign_Permission_Set_To_User</name>
+        <label>Assign Permission Set To User</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <targetReference>Success_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Fault_Screen</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>AssigneeId</field>
+            <value>
+                <elementReference>Get_User_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PermissionSetId</field>
+            <value>
+                <elementReference>Get_Permission_Set_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PermissionSetAssignment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>GTMS-25568: To fetch already assigned permission set record</description>
+        <name>Get_Permission_Set_Assignment_Record</name>
+        <label>Get Permission Set Assignment Record</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Partner_Admin_Permission_Set_Assigned</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AssigneeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_User_Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>PermissionSetId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Permission_Set_Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PermissionSetAssignment</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-25568: Created to fetch Deligate_External_Admin_To_Partner_User</description>
+        <name>Get_Permission_Set_Record</name>
+        <label>Get Permission Set Record</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Permission_Set_Assignment_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Deligate_External_Admin_To_Partner_User</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PermissionSet</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMs-25568: Created to fetch the Partner user record based on contact Id</description>
+        <name>Get_User_Record</name>
+        <label>Get User Record</label>
+        <locationX>974</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Partner_User_Created</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>IsActive</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordRollbacks>
+        <name>Roll_Back_Changes</name>
+        <label>Roll Back Changes</label>
+        <locationX>754</locationX>
+        <locationY>782</locationY>
+    </recordRollbacks>
+    <recordUpdates>
+        <description>GTMS-25568: used to update the user record</description>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>314</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Get_Permission_Set_Record</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_Screen</targetReference>
+        </faultConnector>
+        <inputReference>User_To_Update</inputReference>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <description>GTMS-25568</description>
+        <name>Fault_Screen</name>
+        <label>Fault Screen</label>
+        <locationX>754</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Roll_Back_Changes</targetReference>
+        </connector>
+        <fields>
+            <name>Fault_Error</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(237, 32, 32);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-25568: Created to display a info message if Partner User is inactive</description>
+        <name>Inactive_User_Msg_Screen</name>
+        <label>Inactive User Msg Screen</label>
+        <locationX>1018</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Inactive_Partner_User_Msg</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(238, 148, 22); background-color: rgb(255, 255, 255);&quot;&gt;Partner user was already Deactivated. Please Active the partner user before Enabling as Admin&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-25568: Created to show the No Partner user Error</description>
+        <name>No_Partner_Error_Screen</name>
+        <label>No Partner Error Screen</label>
+        <locationX>1282</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>No_Partner_User_Error</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(238, 148, 22); background-color: rgb(255, 255, 255);&quot;&gt;Partner user was not yet created for this contact.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-25568</description>
+        <name>Success_Screen</name>
+        <label>Success Screen</label>
+        <locationX>314</locationX>
+        <locationY>1238</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Success_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(138, 192, 29);&quot;&gt;Partner Admin access is provided to the Contact related Partner User Successfully&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>848</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_User_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-25568: created to provide Deligated External Admin access to the selected contact</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-25568: Created to assign the profile values for users</description>
+        <name>User_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+</Flow>

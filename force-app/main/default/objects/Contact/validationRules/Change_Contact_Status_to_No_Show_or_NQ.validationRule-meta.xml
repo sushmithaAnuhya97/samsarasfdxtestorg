@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_Contact_Status_to_No_Show_or_NQ</fullName>
+    <active>true</active>
+    <description>You can&apos;t move the contact status to demo no show or demo completed - not qualified unless there is a valid schedule demo date</description>
+    <errorConditionFormula>AND(OR(ISPICKVAL(Status__c, &apos;Demo No Show&apos;), ISPICKVAL(Status__c, &apos;Demo Completed - Not Qualified&apos;)),
+ISBLANK(Scheduled_Demo_Date__c), 
+CONTAINS(Owner.UserRole.Name, &apos;SMB&apos;),
+NOT( $Permission.Validation_Rule_Exemption ), 
+ISBLANK(ADR_Transfer_By__c), 
+ISBLANK(Hot_Transfer_To__c), 
+OR(ISPICKVAL(Source__c, &apos;List Import (no prior engagement)&apos;), 
+ISPICKVAL(Source__c, &apos;Outbound call / email / linkedin&apos;)))</errorConditionFormula>
+    <errorMessage>You can&apos;t move the contact status to demo no show or demo completed - not qualified unless there is a valid schedule demo date</errorMessage>
+</ValidationRule>

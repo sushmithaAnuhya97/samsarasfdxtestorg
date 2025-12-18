@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closeout_Process_Validation</fullName>
+    <active>true</active>
+    <description>Prevents saving projects (created on/after 2/16/2025) with stage &apos;Deliverables Complete&apos;, group &apos;Business Value Strategy&apos;, and engagement type &apos;BVS Engagement&apos; if no related closeout record exists</description>
+    <errorConditionFormula>AND(
+    DATEVALUE(CreatedDate) &gt;= DATE(2025, 2, 16),
+    ISPICKVAL(pse__Stage__c, &quot;BVS Deliverables Complete&quot;),
+    pse__Group__r.Name = &quot;Business Value Strategy&quot;,
+    ISPICKVAL(Engagement_Type__c, &quot;BVS Engagement&quot;),
+    BVS_Project_Closeout__c = 0
+)</errorConditionFormula>
+    <errorMessage>Please complete the closeout survey process before proceeding. These questions are listed on the right side of your screen titled PSA BVS Closeout Survey Screen Flow</errorMessage>
+</ValidationRule>

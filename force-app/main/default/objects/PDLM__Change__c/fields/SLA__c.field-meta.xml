@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SLA__c</fullName>
+    <description>SLA for StopShip</description>
+    <inlineHelpText>Service Level Agreement : Time to Stop Ship Decision</inlineHelpText>
+    <label>SLA</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>S0 - Urgent</fullName>
+                <default>false</default>
+                <label>S0 - Urgent</label>
+            </value>
+            <value>
+                <fullName>S1 - High</fullName>
+                <default>false</default>
+                <label>S1 - High</label>
+            </value>
+            <value>
+                <fullName>S2 - Med</fullName>
+                <default>false</default>
+                <label>S2 - Med</label>
+            </value>
+            <value>
+                <fullName>S3 - Low</fullName>
+                <default>false</default>
+                <label>S3 - Low</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

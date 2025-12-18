@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>FFX_PSA_Outstanding_Expenses_EmailAlert</fullName>
+        <description>PSA Outstanding Expenses</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Resource__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>FFX_PSA_Email_Templates/FFX_PSA_Outstanding_Expenses</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>PSA_Set_Exp_Rec_Method_to_Deliverable</fullName>
+        <field>pse__Recognition_Method__c</field>
+        <literalValue>Deliverable</literalValue>
+        <name>PSA Set Exp Rec Method to Deliverable</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>FFX PSA Rev Forecast Set Deliverable Recognition Method on Expenses</fullName>
+        <actions>
+            <name>PSA_Set_Exp_Rec_Method_to_Deliverable</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Sets recognition method to deliverable on expenses for t/m projects</description>
+        <formula>ISPICKVAL( pse__Project__r.pse__Billing_Type__c , &quot;Time and Materials&quot;) &amp;&amp; pse__Billable__c = true</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_s__c</fullName>
+    <inlineHelpText>Please select all regions in which this program is authorized for Partner engagement. Individual partner accounts can be restricted at the Partner Member level.</inlineHelpText>
+    <label>Region(s)</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NORAM</fullName>
+                <default>true</default>
+                <label>NORAM</label>
+            </value>
+            <value>
+                <fullName>MX</fullName>
+                <default>false</default>
+                <label>MX</label>
+            </value>
+            <value>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+                <label>EMEA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

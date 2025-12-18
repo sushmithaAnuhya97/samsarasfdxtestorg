@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>acideasULT__brIdea__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>this will be user for the Feature Requests reports</description>
+    <label>Feature Requests</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Feature Requests ID</displayNameOverride>
+            <field>Id</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Title</displayNameOverride>
+            <field>Name</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ACV_Total__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PM_Owner__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PM_Owner_Manager__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Top_Feature_Request__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_ACV_AE1_Segment__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_ACV_AE2_AE3_Segment__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_ACV_ENT_Segment__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_FR_ACV_Closed_Lost__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Total_FR_ACV_Open__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type</displayNameOverride>
+            <field>RecordType</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity Date</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Archived</displayNameOverride>
+            <field>acideasULT__Archived__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Body</displayNameOverride>
+            <field>acideasULT__Body__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Comment Count</displayNameOverride>
+            <field>acideasULT__CommentCount__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>acideasULT__Description__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Effort</displayNameOverride>
+            <field>acideasULT__Effort__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Visible For Guests</displayNameOverride>
+            <field>acideasULT__Is_Visible_For_Guests__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Jira Issue</displayNameOverride>
+            <field>acideasULT__Jira_Issue__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Kanban Path</displayNameOverride>
+            <field>acideasULT__Kanban_Path__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Official Answer Date</displayNameOverride>
+            <field>acideasULT__Official_Answer_Date__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Official Answer</displayNameOverride>
+            <field>acideasULT__Official_Answer__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>On Moderation</displayNameOverride>
+            <field>acideasULT__On_Moderation__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Feature Requests Campaign</displayNameOverride>
+            <field>acideasULT__brIdeaCampaign__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Feature Requests Status</displayNameOverride>
+            <field>acideasULT__brIdeaStatus__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Parent Feature Request</displayNameOverride>
+            <field>acideasULT__brIdea__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AC Zone</displayNameOverride>
+            <field>acideasULT__brZone__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vote Total</displayNameOverride>
+            <field>acideasULT__VoteTotal__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Effort Value</displayNameOverride>
+            <field>acideasULT__EffortValue__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status Name</displayNameOverride>
+            <field>acideasULT__Status_Name__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zone Name</displayNameOverride>
+            <field>acideasULT__Zone_Name__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Vote Score</displayNameOverride>
+            <field>acideasULT__VoteScore__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Critical</displayNameOverride>
+            <field>Critical__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Post to Customers</displayNameOverride>
+            <field>Post_to_Customers__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total FR ACV</displayNameOverride>
+            <field>Total_ACV__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Escalated</displayNameOverride>
+            <field>Escalated__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Business Context / Internal Comments</displayNameOverride>
+            <field>Business_Context__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total FR ARR</displayNameOverride>
+            <field>Total_ARR__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PM Comments</displayNameOverride>
+            <field>PM_Comments__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Talk Tracks / Workarounds</displayNameOverride>
+            <field>Talk_tracks_Workarounds__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Theme</displayNameOverride>
+            <field>Theme__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PM Only Notes</displayNameOverride>
+            <field>PM_Only_Notes__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Estimated Launch Date</displayNameOverride>
+            <field>Estimated_GA_Date__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Regional Availability</displayNameOverride>
+            <field>Regional_Availability__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ok to announce?</displayNameOverride>
+            <field>Ok_to_announce__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is an API coverage gap?</displayNameOverride>
+            <field>Is_an_API_coverage_gap__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>What data type does this pertain to?</displayNameOverride>
+            <field>What_data_type_does_this_pertain_to__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Which type of coverage gap is it?</displayNameOverride>
+            <field>Which_type_of_coverage_gap_is_it__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Which endpoint is this for?</displayNameOverride>
+            <field>Which_endpoint_is_this_for__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>API/Webhook gap additional details</displayNameOverride>
+            <field>API_Webhook_gap_additional_details__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>If Partner, identify what type</displayNameOverride>
+            <field>If_Partner__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account</displayNameOverride>
+            <field>Account__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Sentiment</displayNameOverride>
+            <field>Account_Sentiment__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Count of Accounts</displayNameOverride>
+            <field>Count_of_Accounts__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Disable Public Comments</displayNameOverride>
+            <field>Disable_Public_Comments__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Id</displayNameOverride>
+            <field>Record_Id__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status Field - Last Modified Date</displayNameOverride>
+            <field>Status_Last_Modified_Date__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Count of Escalated Account</displayNameOverride>
+            <field>Count_of_Escalated_Account__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Count of Escalated Opportunity</displayNameOverride>
+            <field>Count_of_Escalated_Opportunity__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PM Owner</displayNameOverride>
+            <field>PM_Owner_Id__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PM Owner Name</displayNameOverride>
+            <field>PM_Owner_Name__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>PM Owner Email</displayNameOverride>
+            <field>PM_Owner_Email__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Escalated Date</displayNameOverride>
+            <field>Last_Escalated_Date__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Resolution Date</displayNameOverride>
+            <field>Last_Resolution_Date__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Stage</displayNameOverride>
+            <field>Stage__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Escalated By</displayNameOverride>
+            <field>Last_Escalated_By__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Since Escalation</displayNameOverride>
+            <field>Days_Since_Escalation_Calc__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Resolved Calc</displayNameOverride>
+            <field>Days_Resolved_Calc__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Escalated Calc</displayNameOverride>
+            <field>Days_Escalated_Calc__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Escalated By Name</displayNameOverride>
+            <field>Escalated_By_Name__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Merged</displayNameOverride>
+            <field>Is_Merged__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Product Area</displayNameOverride>
+            <field>Product_Area__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BU</displayNameOverride>
+            <field>Business_Unit__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <masterLabel>Feature Requests</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Moderation Status</displayNameOverride>
+            <field>Monitor_Status__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>Status__c</field>
+            <table>acideasULT__brIdea__c</table>
+        </columns>
+        <masterLabel>Feature Requests Details</masterLabel>
+    </sections>
+</ReportType>

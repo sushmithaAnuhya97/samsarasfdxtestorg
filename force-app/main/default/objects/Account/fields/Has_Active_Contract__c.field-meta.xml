@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Active_Contract__c</fullName>
+    <description>True if the account&apos;s latest contract is currently active.</description>
+    <formula>Latest_Active_Contract__r.Is_Active__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Has Active Contract</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

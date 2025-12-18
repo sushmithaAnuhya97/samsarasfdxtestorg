@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dca_mass_action__All</fullName>
+    <columns>NAME</columns>
+    <columns>dca_mass_action__Active__c</columns>
+    <columns>dca_mass_action__Schedule_Frequency__c</columns>
+    <columns>dca_mass_action__Source_Type__c</columns>
+    <columns>dca_mass_action__Source_Report_ID__c</columns>
+    <columns>dca_mass_action__Target_Type__c</columns>
+    <columns>dca_mass_action__Last_Run_Completed_Date__c</columns>
+    <columns>dca_mass_action__Target_Action_Name__c</columns>
+    <columns>dca_mass_action__Batch_Size__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>dca_mass_action__Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

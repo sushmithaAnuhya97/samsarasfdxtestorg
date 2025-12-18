@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Scheduled_Total__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The total amount of scheduled revenue within the relevant time period.</description>
+    <formula>pse__Equal_Split_Milestone_Scheduled__c +
+		pse__Equal_Split_Project_Scheduled__c + 
+		pse__Eva_Scheduled__c +
+		pse__Milestone_Scheduled__c + 
+		pse__Percent_Complete_Milestone_Scheduled__c + 
+		pse__Percent_Complete_Milestone_Unscheduled__c +
+		pse__Percent_Complete_Project_Scheduled__c + 
+		pse__Percent_Complete_Project_Unscheduled__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The total amount of scheduled revenue within the relevant time period.</inlineHelpText>
+    <label>Scheduled Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

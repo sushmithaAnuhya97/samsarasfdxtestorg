@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Contract_Finance_Rebate_Oppty_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule enabled to allow Rebate Oppty editability</description>
+        <label>[Contract Finance] Rebate Oppty Access</label>
+        <sharedTo>
+            <role>Contract_Finance</role>
+        </sharedTo>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Rebate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owner_Role_Copy__c</field>
+            <operation>contains</operation>
+            <value>AE1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owner_Role_Copy__c</field>
+            <operation>contains</operation>
+            <value>SMB</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Contract_Finance_Revenue_Oppty_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing setting to allow read access to Contractors for AE1 oppty return creation</description>
+        <label>[Contract Finance] Revenue Oppty Access</label>
+        <sharedTo>
+            <role>Contract_Finance</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Revenue Opportunity - Bill Only,Revenue Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owner_Role_Copy__c</field>
+            <operation>contains</operation>
+            <value>AE1</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Pool_User_Records</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Pool User Records</label>
+        <sharedTo>
+            <group>All_Roles</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Account_Owners_18_Digit_User_ID__c</field>
+            <operation>equals</operation>
+            <value>0051a000002W9InAAK</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rebate_Return_opportunities</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Rebate/Return opportunities</label>
+        <sharedTo>
+            <group>All_Roles</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Exchange,Free Trial Opportunity,Rebate,Promo Opportunity,Free Trial Return,Remorse Refund</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingGuestRules>
+        <fullName>BuyoutPortal_FileUpload</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>This sharing rule allows guest users to upload files for Communities</description>
+        <label>BuyoutPortal FileUpload</label>
+        <sharedTo>
+            <guestUser>Samsarahelpcenter</guestUser>
+        </sharedTo>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Rebate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Rebate_Type__c</field>
+            <operation>equals</operation>
+            <value>Buyout</value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+    <sharingOwnerRules>
+        <fullName>Aviso_OpptyAccess</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Aviso-OpptyAccess</label>
+        <sharedTo>
+            <group>EMEA_SE_Management</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Fleet_VP_EMEA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CNWKR_Global_General_Manager</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CNWKR Global General Manager</label>
+        <sharedTo>
+            <group>CNWKR_Global_General_Manager</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>CNWKR_Global_General_Manager</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Enterprise_Sales_Global</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Enterprise Sales Global</label>
+        <sharedTo>
+            <group>Level5_ENT</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Enterprise_Sales_Global</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_ENT_Director_1_EMEA_UK</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet ENT Director 1 EMEA UK</label>
+        <sharedTo>
+            <group>Fleet_ENT_Director_1_EMEA_UK</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_ENT_Director_1_EMEA_UK</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_ENT_Director_1_NA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet ENT Director 1 NA</label>
+        <sharedTo>
+            <group>Fleet_ENT_Director_1_NA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_ENT_Director_1_NA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_ENT_Director_2_NA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet ENT Director 2 NA</label>
+        <sharedTo>
+            <group>Fleet_ENT_Director_2_NA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_ENT_Director_2_NA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_ENT_Director_3_NA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet ENT Director 3 NA</label>
+        <sharedTo>
+            <group>Fleet_ENT_Director_3_NA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_ENT_Director_3_NA</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_ENT_SLED_Director_4_NA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet ENT SLED Director 4 NA</label>
+        <sharedTo>
+            <role>SEL_Fleet_ENT_AE_NA_US_Team_4</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>SEL_Fleet_ENT_AE_NA_US_Team_4</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_ENT_SLED_Director_6_NA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet ENT SLED Director 6 NA</label>
+        <sharedTo>
+            <role>SEL_Fleet_ENT_AE_NA_US_Team_6</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>SEL_Fleet_ENT_AE_NA_US_Team_6</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_EMEA_UK_ISD</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS EMEA UK - ISD</label>
+        <sharedTo>
+            <group>Fleet_IS_EMEA_UK_ISD</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_EMEA_UK_ISD</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_1</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 1</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_1</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_1</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 2</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_2</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_2</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_3</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 3</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_3</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_3</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_4</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 4</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_4</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_4</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_5</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 5</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_5</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_5</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_6</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 6</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_6</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_6</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_7</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 7</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_7</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_7</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Fleet_IS_NA_US_ISD_8</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Fleet IS NA US - ISD 8</label>
+        <sharedTo>
+            <group>Fleet_IS_NA_US_ISD_8</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Fleet_IS_NA_US_ISD_8</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Global_SE</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Global SE</label>
+        <sharedTo>
+            <group>Global_SE</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>All_Roles</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Global_SE_All</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Global SE All</label>
+        <sharedTo>
+            <group>Global_SE</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Management</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Global_SE_Pool</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Global SE Pool</label>
+        <sharedTo>
+            <group>Global_SE</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Pool_Management</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IND_VP</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IND VP</label>
+        <sharedTo>
+            <group>IND_VP</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>IND_VP</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Inside_Sales_AE1</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Inside Sales - AE1</label>
+        <sharedTo>
+            <group>Level4_AE1Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Inside_Sales_AE1</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Inside_Sales_AE2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Inside Sales AE2</label>
+        <sharedTo>
+            <group>Level4_AE2Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Inside_Sales_AE2</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Inside_Sales_AE3</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Inside Sales - AE3</label>
+        <sharedTo>
+            <group>Level4_AE3Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Inside_Sales_AE3</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Inside_Sales_Global</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Inside Sales Global</label>
+        <sharedTo>
+            <group>Level5_IS</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Inside_Sales_Global</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Pool_and_Deactivated</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Pool and Deactivated</label>
+        <sharedTo>
+            <group>All_Roles</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Pool_And_Deactivated</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Public_Sector_SLED_AEs</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Public Sector/SLED AEs</label>
+        <sharedTo>
+            <group>Public_sector_SLED_AEs</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Public_sector_SLED_AEs</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sis_Request_Log</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sis Request Log</label>
+        <sharedTo>
+            <group>SIS_Request_Log_Edit_Access</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>All_Roles</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

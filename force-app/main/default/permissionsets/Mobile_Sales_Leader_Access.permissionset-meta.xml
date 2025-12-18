@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Mobile_Launchpad_Leader_Access</name>
+    </customPermissions>
+    <description>Mobile app permissions for Sales Leaders.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Mobile Sales Leader Access</label>
+    <license>Salesforce</license>
+    <tabSettings>
+        <tab>Approvals</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Created_by_Me_Mobile</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>My_Team_s_Opportunities</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Nearby_Accounts1</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Recent_Reports_Mobile</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Reports_Launchpad_Mobile</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Sales_Dashboard_Mobile</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Samsara_Home</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

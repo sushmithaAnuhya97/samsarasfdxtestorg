@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Delete_Out_of_Range_Records_With_Actuals__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Delete Est vs Actuals records even if they have actuals set for records that are no longer within a modified schedule&apos;s date range. NOTE: Records without actuals will always be deleted.</description>
+    <inlineHelpText>Delete Est vs Actuals records even if they have actuals set for records that are no longer within a modified schedule&apos;s date range. NOTE: Records without actuals will always be deleted.</inlineHelpText>
+    <label>Delete Out of Range Records With Actuals</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

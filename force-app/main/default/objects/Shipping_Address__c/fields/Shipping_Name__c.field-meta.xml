@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Name__c</fullName>
+    <description>added for GTMS-8481</description>
+    <externalId>false</externalId>
+    <formula>Shipping_FirstName__c + &apos;, &apos; + Shipping_LastName__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Shipping name is the name which is printed on the package</inlineHelpText>
+    <label>Shipping Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Book_Of_Business__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Used to locate Account Books</description>
+    <label>Account Book</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Book ID</displayNameOverride>
+            <field>Id</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Account Book Name</displayNameOverride>
+            <field>Name</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Active</displayNameOverride>
+            <field>Active__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR</displayNameOverride>
+            <field>ADR__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR LoA End Date</displayNameOverride>
+            <field>ADR_LoA_End_Date__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR LoA Start Date</displayNameOverride>
+            <field>ADR_LoA_Start_Date__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AE</displayNameOverride>
+            <field>AE__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AE LoA End Date</displayNameOverride>
+            <field>AE_LoA_End_Date__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AE LoA Start Date</displayNameOverride>
+            <field>AE_LoA_Start_Date__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AE Ramp Status</displayNameOverride>
+            <field>AE_Ramp_Status__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Leave of Absence(LoA)</displayNameOverride>
+            <field>Leave_of_Absence__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>POD Name</displayNameOverride>
+            <field>POD_Name__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Ops Account Book Notes</displayNameOverride>
+            <field>Sales_Ops_Account_Book_Notes__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AE Territory</displayNameOverride>
+            <field>AE_Territory__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AE Validation Check</displayNameOverride>
+            <field>AE_Validation_Check__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Public Sector State</displayNameOverride>
+            <field>Public_Sector_State__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>18 Digit Account Book ID</displayNameOverride>
+            <field>X18_Digit_Account_Book_ID__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Book Status</displayNameOverride>
+            <field>Account_Book_Status__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner.UserRole</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>AE__c.UserRole</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>AE__c.UserRole.Name</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>AE__c.Manager_Name__c</field>
+            <table>Book_Of_Business__c</table>
+        </columns>
+        <masterLabel>Accounts Book</masterLabel>
+    </sections>
+</ReportType>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Discount_PickList__c</fullName>
+    <description>added for GTMS-13640</description>
+    <label>Reason Type(s) for Discount</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer budget</fullName>
+                <default>false</default>
+                <label>Customer budget</label>
+            </value>
+            <value>
+                <fullName>Competitor pressure</fullName>
+                <default>false</default>
+                <label>Competitor pressure</label>
+            </value>
+            <value>
+                <fullName>Contract buyout / subsidy</fullName>
+                <default>false</default>
+                <label>Contract buyout / subsidy</label>
+            </value>
+            <value>
+                <fullName>Payment terms</fullName>
+                <default>false</default>
+                <label>Payment terms</label>
+            </value>
+            <value>
+                <fullName>Increase deal momentum</fullName>
+                <default>false</default>
+                <label>Increase deal momentum</label>
+            </value>
+            <value>
+                <fullName>Increase deal size</fullName>
+                <default>false</default>
+                <label>Increase deal size</label>
+            </value>
+            <value>
+                <fullName>Price matching</fullName>
+                <default>false</default>
+                <label>Price matching</label>
+            </value>
+            <value>
+                <fullName>Seasonality</fullName>
+                <default>false</default>
+                <label>Seasonality</label>
+            </value>
+            <value>
+                <fullName>Non-ELD</fullName>
+                <default>false</default>
+                <label>Non-ELD</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>EOQ Exception</fullName>
+                <default>false</default>
+                <label>EOQ Exception</label>
+            </value>
+            <value>
+                <fullName>Motive Deal</fullName>
+                <default>false</default>
+                <label>Motive Deal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

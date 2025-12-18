@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Policy_Days_Left__c</fullName>
+    <description>This tells you if the return fits within the 30 day return policy. If the number is &gt;3 days, then the return is created. If the number is less than 3, then the return is initiated. If the return is negative, it is out of the policy, and needs to go directly to collections.</description>
+    <externalId>false</externalId>
+    <label>Return Policy Days</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

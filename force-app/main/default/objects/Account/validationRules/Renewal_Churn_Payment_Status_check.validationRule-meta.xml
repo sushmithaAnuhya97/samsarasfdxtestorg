@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Churn_Payment_Status_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+OR(
+CONTAINS($Profile.Name,&apos;Renewal&apos;),
+CONTAINS($Profile.Name,&apos;CS&apos;),
+CONTAINS($Profile.Name,&apos;Customer Success&apos;)
+),
+OR(AND(TEXT(Churn_Payment_Status__c)!=&apos;Delinquent&apos;,ISPICKVAL(PRIORVALUE(Churn_Payment_Status__c),&quot;Delinquent&quot;)),
+AND(TEXT(Churn_Payment_Status__c)= &apos;Delinquent&apos;,ISCHANGED(  Quarantine_Enabled_At__c  ) 
+)))</errorConditionFormula>
+    <errorMessage>Churn Payment Status cannot be changed when Delinquent</errorMessage>
+</ValidationRule>

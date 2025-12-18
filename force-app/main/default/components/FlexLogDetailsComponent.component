@@ -1,0 +1,67 @@
+<!-- ************************************************************************************************************************
+ * Date      	- Project#      - Developer/ Company      	   - Description
+ * --------------------------------------------------------------------------------------------------------------------------
+ * 02/03/2025   - Flex C&R      - Manglesh Kumar/ Accenture    - VF Component to display the logs details
+ * -->
+
+<apex:component controller="FlexNotificationDataController" access="global">
+    <apex:attribute name="accountParam" type="String" description="Account ID" assignTo="{!accountId}" />
+    <apex:attribute name="userParam" type="String" description="User ID" assignTo="{!userId}" />
+    <apex:attribute name="notifyParam" type="Boolean" description="Notify Flag" assignTo="{!notify}" />
+    <apex:attribute name="showLogsParam" type="Boolean" description="Display  logs  Flag" assignTo="{!showLogs}" />
+
+    <!-- Header Section -->
+    <apex:outputPanel >
+        <div style="display: flex; justify-content: center; align-items: center">
+            <h2 style="font-size: 32px;  font-weight: bold; color: black;">C&amp;R Details</h2>
+        </div>
+    </apex:outputPanel>
+
+    <!-- C&R Process Details Section -->
+    <apex:pageBlock title="C&R Process Details">
+        <apex:pageBlockSection title="C&R Contracts" columns="1">
+            <apex:pageBlockTable value="{!logs}" var="log">
+                <apex:column value="{!log.AccountId__c}" headerValue="Account" />
+                <apex:column value="{!log.ContractId__c}" headerValue="Contract" />
+                <apex:column headerValue="C&R Status" >
+                    <span style="color: {!IF(log.Status__c == 'Failed', 'red', IF(log.Status__c == 'Completed', 'green', 'black'))}">{!log.Status__c}</span>
+                </apex:column>
+                <apex:column value="{!log.CreatedDate}" headerValue="C&R Captured Date/Time" />
+                <apex:column value="{!log.CreatedById}" headerValue="Created By" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="Cancellation and Replacement Details" columns="1">
+            <apex:pageBlockTable value="{!logs}" var="log">
+                <apex:column value="{!log.ContractId__c}" headerValue="Contract" />
+                <apex:column value="{!log.RevenueOpportunityId__c}" headerValue="Replacement Opportunity" />
+                <apex:column value="{!log.RevenueQuoteId__c}" headerValue="Replacement Quote" />
+                <apex:column value="{!log.AmendedOpportunityId__c}" headerValue="Cancellation Opportunity" />
+                <apex:column value="{!log.AmendedQuoteId__c}" headerValue="Cancellation Quote" />
+                <apex:column value="{!log.CreatedDate}" headerValue="C&R Captured Date/Time" />
+            <apex:column value="{!log.CreatedById}" headerValue="Created By" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    <!-- Logs Section -->
+    <apex:pageBlock title="Logs Details" rendered="{! showLogsParam}">
+        <apex:pageBlockTable value="{!logs}" var="log">
+            <apex:column headerValue="Log No." >
+                <a href="{!baseUrl}/{!log.Id}" target="_blank"> {!log.Name}  </a>
+            </apex:column>
+            <apex:column value="{!log.AccountId__c}" headerValue="Account " />
+            <apex:column headerValue="Contract " value="{!log.ContractId__c}" />
+            <apex:column value="{!log.RevenueOpportunityId__c}" headerValue="Replacement Opportunity" />
+            <apex:column value="{!log.RevenueQuoteId__c}" headerValue="Replacement Quote" />
+            <apex:column value="{!log.AmendedOpportunityId__c}" headerValue="Cancellation Opportunity" />
+            <apex:column value="{!log.AmendedQuoteId__c}" headerValue="Cancellation Quote" />
+            <apex:column value="{!log.Queueable_Job_Id__c}" headerValue="Queueable Job Id" />
+            <apex:column headerValue="C&R Status" >
+                    <span style="color: {!IF(log.Status__c == 'Failed', 'red', IF(log.Status__c == 'Completed', 'green', 'black'))}">{!log.Status__c}</span>
+                </apex:column>
+            <apex:column value="{!log.ErrorMessage__c}" headerValue="Error Message" />
+            <apex:column value="{!log.CreatedById}" headerValue="Created By" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:component>

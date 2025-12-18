@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Global Data Quality</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+window.EDQConfigurationsUrl=&apos;{!URLFOR(&quot;/resource/EDQConfigurations&quot;)}&apos;
+window.EDQGlobalSettingsUrl=&apos;{!URLFOR(&quot;/resource/EDQGlobalSettings&quot;)}&apos;
+window.EDQSessionTokenUrl=&apos;{!URLFOR(&quot;/resource/EDQSessionToken&quot;)}&apos;
+{!REQUIRESCRIPT(&quot;/resource/1424969980000/EDQ__EDQBootstrap&quot;)}</url>
+</CustomPageWebLink>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Emails__c</fullName>
+    <description>Holds additional Billing Emails as comma separated text values. This field is synced into Netsuite when the Sales Order is created</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If needed, add multiple emails here separated by commas. This will override the account billing email for invoicing.</inlineHelpText>
+    <label>Billing Email(s)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

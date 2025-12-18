@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Account_Executive__c</field>
+        <field>Account_Executive_Manager__c</field>
+        <field>Additional_details__c</field>
+        <field>Exception_Request_Primary_Reason__c</field>
+        <field>Exception_Type__c</field>
+        <field>Account_Name__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bobby.long@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(
+BEGINS(Account_Executive__r.UserRole.Name,&apos;COR&apos;)
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Enterprise Core AVP Approval</label>
+        <name>Enterprise_Core_AVP_Approval_v1</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bobby.boyle@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(
+Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+Contains( Account_Executive__r.UserRole.Name , &apos;NA US&apos;),
+ NOT(
+    CONTAINS(Account_Executive__r.UserRole.Name,&apos;SLED&apos;) 
+    ) 
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Enterprise Select AVP Approval</label>
+        <name>Enterprise_Select_AVP_Approval_v1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jon.corn@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(
+OR(
+Begins( Account_Executive__r.UserRole.Name , &apos;STR&apos;),
+AND(
+Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+Contains( Account_Executive__r.UserRole.Name , &apos;MX&apos;)
+),
+AND(
+Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+Contains( Account_Executive__r.UserRole.Name , &apos;CA&apos;)
+)
+)
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>ENT Strategic,Mexico,Canada AVP (STR) Approval</label>
+        <name>ENT_Strategic_Mexico_Canada_AVP_STR_Approval_v1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>sean.mccann@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(
+Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+Contains( Account_Executive__r.UserRole.Name , &apos;SLED&apos;)
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Enterprise Public Sector AVP (SLED)</label>
+        <name>Enterprise_Public_Sector_AVP_SLED_v1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>anish.shah@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>deborah.ohianijegede@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Sales Operations Approval</description>
+        <label>Sales Operations Approval</label>
+        <name>Step_1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>heather.belton@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>jennifer.jagusch@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Sales Comp Directors Approval</description>
+        <label>Sales Comp Directors Approval</label>
+        <name>Step_2</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>bryan.stephenson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Sr Director Finance Approval</description>
+        <label>Sr Director Finance Approval</label>
+        <name>Step_3</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>deborah.ohianijegede@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Enteprise SVP</description>
+        <entryCriteria>
+            <formula>AND(    
+    AND(
+        ABS(Opportunity__r.ACV_Bookings_USD__c) &gt;= 15000,
+        ABS(Opportunity__r.ACV_Bookings_USD__c) &lt;= 250000
+        ),
+    OR(
+       Opportunity__r.Account.Segment__c = &apos;Enterprise&apos;,
+       Opportunity__r.Account.Segment__c = &apos;AE3&apos;
+    )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Enteprise SVP</label>
+        <name>Step_8_v1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>deborah.ohianijegede@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>VP Revenue Operations Approval</description>
+        <entryCriteria>
+            <formula>AND(
+ABS(Opportunity__r.ACV_Bookings_USD__c) &gt;= 15000,
+ABS(Opportunity__r.ACV_Bookings_USD__c) &lt;= 250000
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>VP Revenue Operations Approval</label>
+        <name>Step_10_v1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>heather.belton@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>SVP Revenue Operations Approval</description>
+        <entryCriteria>
+            <formula>ABS(Opportunity__r.ACV_Bookings_USD__c) &gt; 250000</formula>
+        </entryCriteria>
+        <label>SVP Revenue Operations Approval</label>
+        <name>Step_11_v1</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>New Approval Matrix</description>
+    <emailTemplate>unfiled$public/Approval_Request_for_Renewal_Exception</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+    AND(
+        Opportunity__r.IsClosed,
+        OR (
+            ISPICKVAL(Opportunity__r.Account.BillingCountryCode, &apos;US&apos;),
+            ISPICKVAL(Opportunity__r.Account.BillingCountryCode, &apos;MX&apos;),
+            ISPICKVAL(Opportunity__r.Account.BillingCountryCode, &apos;CA&apos;)
+        ),
+        OR(
+            Opportunity__r.Account.Segment__c == &apos;Enterprise&apos;,
+            Opportunity__r.Account.Segment__c == &apos;AE3&apos;
+        )
+    ),
+    OR(
+       BEGINS(Account_Executive__r.UserRole.Name,&apos;COR&apos;),
+       AND(
+           Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+           Contains( Account_Executive__r.UserRole.Name , &apos;NA US&apos;),
+           NOT(
+               CONTAINS(Account_Executive__r.UserRole.Name,&apos;SLED&apos;)
+              )
+       ),
+       AND(
+        OR(
+            Begins( Account_Executive__r.UserRole.Name , &apos;STR&apos;),
+            AND(
+                Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+                Contains( Account_Executive__r.UserRole.Name , &apos;MX&apos;)
+            ),
+            AND(
+                Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+                Contains( Account_Executive__r.UserRole.Name , &apos;CA&apos;)
+            )
+         )
+       ),
+       AND(
+           Begins( Account_Executive__r.UserRole.Name , &apos;SEL&apos;),
+           Contains( Account_Executive__r.UserRole.Name , &apos;SLED&apos;)
+       )
+    )
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Send_Approved_Notification_To_AE</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_To_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Send_Rejected_Notification_To_AE_Manager</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_To_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Remove_Approved_Date</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Status_To_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Renewal Exception Approval</label>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Send_Recalled_Notification_To_AE_Manager_Submitter</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_To_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

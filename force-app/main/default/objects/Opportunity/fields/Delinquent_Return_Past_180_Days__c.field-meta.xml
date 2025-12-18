@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delinquent_Return_Past_180_Days__c</fullName>
+    <description>FY21 Return Policy (Effective 2/3/20)
+-Delinq Rebates that close and creation date is &gt; 365 days from the returning oppty close date not book to AE
+-Remorse Refunds that close and creation date is &gt; 365 days from the associated rev oppty’s close date not book to AE
+
+Pre FY21: Field was named &quot;Delinquent Return Past 180 Days&quot;</description>
+    <formula>IF( 
+   AND(
+       DATEVALUE(CreatedDate) &lt; DATE(2020,02,03),
+       Age_of_Return_by_First_Purchase_Date__c &gt; 180,
+       CONTAINS(Pricebook2.Name,&quot;Express&quot;),
+       ISPICKVAL(Type, &quot;Rebate&quot;),
+       ISPICKVAL(Rebate_Type__c, &quot;Delinquent&quot;)
+   ),
+   TRUE,
+   IF(
+      AND(
+          DATEVALUE(CreatedDate) &gt; DATE(2020, 02, 02),
+          Age_of_Return_by_Rev_Oppty_close_date__c &gt; 365,
+          ISPICKVAL(Type, &quot;Rebate&quot;),
+          ISPICKVAL(Rebate_Type__c, &quot;Delinquent&quot;)
+      ),
+      TRUE,
+      IF(
+         AND(            
+             Age_of_Return_by_Rev_Oppty_close_date__c &gt; 365,
+             ISPICKVAL(Type, &quot;Remorse Refund&quot;),
+             Swap__c = FALSE
+         ),
+         TRUE,
+         FALSE
+      )
+   )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If true, return WILL NOT book to AE. If false, return WILL book to AE.</inlineHelpText>
+    <label>Return not booked to AE</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

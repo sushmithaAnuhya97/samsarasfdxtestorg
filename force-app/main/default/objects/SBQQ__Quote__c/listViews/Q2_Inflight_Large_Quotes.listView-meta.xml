@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q2_Inflight_Large_Quotes</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>SBQQ__Opportunity2__c</columns>
+    <columns>Associated_Opportunity_Probability__c</columns>
+    <columns>SBQQ__Primary__c</columns>
+    <columns>Recalculate_Quote__c</columns>
+    <columns>Total_Sales_Tax__c</columns>
+    <columns>Close_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Close_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>8/2/2020</value>
+    </filters>
+    <filters>
+        <field>Close_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>5/1/2020</value>
+    </filters>
+    <filters>
+        <field>Shipping_Address_NEW__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>SBQQ__LineItemCount__c</field>
+        <operation>greaterThan</operation>
+        <value>100</value>
+    </filters>
+    <filters>
+        <field>Associated_Opportunity_Probability__c</field>
+        <operation>notEqual</operation>
+        <value>100</value>
+    </filters>
+    <label>Q2 Inflight Large Quotes</label>
+    <language>en_US</language>
+</ListView>

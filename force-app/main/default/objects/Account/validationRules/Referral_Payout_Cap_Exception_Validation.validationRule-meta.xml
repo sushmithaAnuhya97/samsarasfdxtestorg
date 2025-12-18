@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Payout_Cap_Exception_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISCHANGED(Referral_Payout_Cap__c),
+  AND (
+    NOT (OR (
+      $Profile.Name = &apos;Samsara Channel Account Managers&apos;,
+      $Profile.Name = &apos;System Administrator&apos;
+    )), 
+   NOT (
+      OR (
+         $UserRole.Name = &apos;Fleet Commercial Partner - Manager&apos;,
+         $UserRole.Name = &apos;Fleet Insurance Partner - Manager&apos;,
+         $UserRole.Name = &apos;Fleet Partner Programs - Manager&apos;,
+         $UserRole.Name = &apos;Management&apos;
+      )
+   )
+  )
+)</errorConditionFormula>
+    <errorMessage>You cannot change Referral Payout Cap Exception</errorMessage>
+</ValidationRule>

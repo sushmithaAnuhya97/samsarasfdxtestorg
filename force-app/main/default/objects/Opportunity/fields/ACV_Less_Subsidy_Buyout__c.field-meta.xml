@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_Less_Subsidy_Buyout__c</fullName>
+    <description>ACV after subtracting customer subsidies or buyout costs.</description>
+    <formula>IF(
+    AND(
+SBQQ__PrimaryQuote__r.New_DC_architecture__c ,
+        NOT(ISBLANK(License_Term__c))
+    ),
+    ACV_Bookings_SOT__c +
+    ABS(
+        (SBQQ__PrimaryQuote__r.Subsidy_Amount__c - SBQQ__PrimaryQuote__r.X3rd_PF_Interest_Subsidy__c) 
+        / License_Term__c * 12
+    ) +
+    ABS(ACV_of_Buyouts__c),
+ACV_Bookings_SOT__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This value represents the true ACV by deducting buyout or subsidy amounts.</inlineHelpText>
+    <label>ACV Less Subsidy/Buyout</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

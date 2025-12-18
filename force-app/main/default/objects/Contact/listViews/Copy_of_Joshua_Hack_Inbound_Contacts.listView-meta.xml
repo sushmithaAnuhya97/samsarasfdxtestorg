@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Joshua_Hack_Inbound_Contacts</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account.Number_of_Vehicles__c</columns>
+    <columns>Account.Last_Marketing_Engagement_Date__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>Inbound_Form_Message__c</columns>
+    <columns>Account.Closed_Lost_Opportunities__c</columns>
+    <columns>Status__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Last_Call__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Account.Last_Call__c</columns>
+    <columns>Account.Last_Contacted__c</columns>
+    <columns>Inbound_Call_Email_Source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>jhack</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Account.Last_Marketing_Engagement_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>CONTACT.FIRST_NAME</field>
+        <operation>notContain</operation>
+        <value>unknown,NA,none</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>New,Assigned,Attempting,Contact Established,Demo Scheduled,Qualified,Retouch - Confirmed No Opportunity</value>
+    </filters>
+    <filters>
+        <field>Last_Marketing_Engagement_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Copy of Joshua Hack Inbound Contacts</label>
+</ListView>

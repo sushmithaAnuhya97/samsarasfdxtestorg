@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_to_AE3</name>
+        <label>Email to AE3</label>
+        <locationX>727</locationX>
+        <locationY>354</locationY>
+        <actionName>Opportunity.Closing_Alert_for_AE3_ISM_ISD</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Closing_Alert_for_AE3_ISM_ISD</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_email_to_AE2</name>
+        <label>Send email to AE2</label>
+        <locationX>1016</locationX>
+        <locationY>101</locationY>
+        <actionName>Opportunity.Closing_Alert_for_MM_US</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Closing_Alert_for_MM_US</nameSegment>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Owner_Role_Copy</name>
+        <label>Check Owner Role Copy</label>
+        <locationX>716</locationX>
+        <locationY>105</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Role_Copy_AE2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner_Role_Copy__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>AE2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>EMEAOwnerRoleCopy</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_email_to_AE2</targetReference>
+            </connector>
+            <label>Owner Role Copy AE2</label>
+        </rules>
+        <rules>
+            <name>Owner_Role_Copy_AE3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner_Role_Copy__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>AE3</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>EMEAOwnerRoleCopy</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_to_AE3</targetReference>
+            </connector>
+            <label>Owner Role Copy AE3</label>
+        </rules>
+    </decisions>
+    <description>v.3</description>
+    <formulas>
+        <name>EMEAOwnerRoleCopy</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(CONTAINS({!$Record.Owner_Role_Copy__c},&quot;EMEA&quot;))</expression>
+    </formulas>
+    <interviewLabel>Closing Alert for MM US {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Closing Alert for MM US</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Check_Owner_Role_Copy</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>(1 OR 2 OR 3) AND 4</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Refunded - Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Orders Processing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Revenue Opportunity</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

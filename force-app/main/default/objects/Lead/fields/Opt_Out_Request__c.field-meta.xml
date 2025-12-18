@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opt_Out_Request__c</fullName>
+    <description>Record a contact&apos;s opt out request</description>
+    <inlineHelpText>This contact&apos;s requests to opt-out of communication</inlineHelpText>
+    <label>Opt Out Request</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Both Phone and Email</fullName>
+                <default>false</default>
+                <label>Both Phone and Email</label>
+            </value>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>TPS List</fullName>
+                <default>false</default>
+                <label>TPS List</label>
+            </value>
+            <value>
+                <fullName>CTPS List</fullName>
+                <default>false</default>
+                <label>CTPS List</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

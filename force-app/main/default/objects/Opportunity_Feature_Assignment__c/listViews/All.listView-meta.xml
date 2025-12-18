@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Feature__c</columns>
+    <columns>NAME</columns>
+    <columns>ACV_Bookings_from_Opportunity__c</columns>
+    <columns>acv_copy__c</columns>
+    <columns>Amount_from_Opportunity__c</columns>
+    <columns>amount_copy__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Feature__c</field>
+        <operation>contains</operation>
+    </filters>
+    <label>All</label>
+</ListView>

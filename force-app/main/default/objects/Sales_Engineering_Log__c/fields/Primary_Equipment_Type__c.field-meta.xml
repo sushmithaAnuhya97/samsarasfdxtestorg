@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Equipment_Type__c</fullName>
+    <inlineHelpText>Customer equipment that Samsara will monitor</inlineHelpText>
+    <label>Primary Equipment Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Generators</fullName>
+                <default>false</default>
+                <label>Generators</label>
+            </value>
+            <value>
+                <fullName>Boilers</fullName>
+                <default>false</default>
+                <label>Boilers</label>
+            </value>
+            <value>
+                <fullName>Chillers</fullName>
+                <default>false</default>
+                <label>Chillers</label>
+            </value>
+            <value>
+                <fullName>Compressors</fullName>
+                <default>false</default>
+                <label>Compressors</label>
+            </value>
+            <value>
+                <fullName>Construction Equipment</fullName>
+                <default>false</default>
+                <label>Construction Equipment</label>
+            </value>
+            <value>
+                <fullName>Oil and Gas Equipment</fullName>
+                <default>false</default>
+                <label>Oil and Gas Equipment</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

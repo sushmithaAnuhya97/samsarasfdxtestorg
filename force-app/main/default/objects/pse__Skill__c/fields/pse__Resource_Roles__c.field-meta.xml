@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_Roles__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Resource roles associated with this skill. The picklist values available come from the Resource Role global picklist value set.</description>
+    <inlineHelpText>Resource roles associated with this skill. The picklist values available come from the Resource Role global picklist value set.</inlineHelpText>
+    <label>Resource Roles</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>pse__Resource_Role</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

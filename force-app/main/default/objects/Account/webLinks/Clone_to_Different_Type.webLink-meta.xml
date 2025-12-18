@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clone_to_Different_Type</fullName>
+    <availability>online</availability>
+    <description>Clones the account to a different record type.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Clone to Different Type</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Account_Cloner?AccountId={!Account.Id}&amp;retURL=/{!Account.Id}</url>
+</WebLink>

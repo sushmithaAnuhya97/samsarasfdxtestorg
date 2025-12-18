@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reps_Cannot_Delete_Type_From_Opportunity</fullName>
+    <active>true</active>
+    <description>Reps cannot delete type from opportunity if its already entered.</description>
+    <errorConditionFormula>AND( 
+ISCHANGED(Type), 
+NOT(ISBLANK(PRIORVALUE(Type))), 
+ISBLANK(TEXT(Type)), 
+CONTAINS(Owner.Profile.Name,&quot;Sales&quot;) 
+)</errorConditionFormula>
+    <errorMessage>Opportunity type cannot be changed to blank. Please select a type.</errorMessage>
+</ValidationRule>

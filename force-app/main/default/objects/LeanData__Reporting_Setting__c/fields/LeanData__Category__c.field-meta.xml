@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Category__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>LeanData__Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Display Fields</fullName>
+                <default>false</default>
+                <label>Display Fields</label>
+            </value>
+            <value>
+                <fullName>Search Fields</fullName>
+                <default>false</default>
+                <label>Search Fields</label>
+            </value>
+            <value>
+                <fullName>Task Type</fullName>
+                <default>false</default>
+                <label>Task Type</label>
+            </value>
+            <value>
+                <fullName>Event Type</fullName>
+                <default>false</default>
+                <label>Event Type</label>
+            </value>
+            <value>
+                <fullName>Campaign Type</fullName>
+                <default>false</default>
+                <label>Campaign Type</label>
+            </value>
+            <value>
+                <fullName>Account Type</fullName>
+                <default>false</default>
+                <label>Account Type</label>
+            </value>
+            <value>
+                <fullName>Day Range</fullName>
+                <default>false</default>
+                <label>Day Range</label>
+            </value>
+            <value>
+                <fullName>Open Opportunity Stage</fullName>
+                <default>false</default>
+                <label>Open Opportunity Stage</label>
+            </value>
+            <value>
+                <fullName>Open Opportunity Type</fullName>
+                <default>false</default>
+                <label>Open Opportunity Type</label>
+            </value>
+            <value>
+                <fullName>Closed Opportunity Stage</fullName>
+                <default>false</default>
+                <label>Closed Opportunity Stage</label>
+            </value>
+            <value>
+                <fullName>Closed Opportunity Type</fullName>
+                <default>false</default>
+                <label>Closed Opportunity Type</label>
+            </value>
+            <value>
+                <fullName>Task Status</fullName>
+                <default>false</default>
+                <label>Task Status</label>
+            </value>
+            <value>
+                <fullName>Campaign Member Status</fullName>
+                <default>false</default>
+                <label>Campaign Member Status</label>
+            </value>
+            <value>
+                <fullName>Exclude Campaign Member Status</fullName>
+                <default>false</default>
+                <label>Exclude Campaign Member Status</label>
+            </value>
+            <value>
+                <fullName>Exclude Lead Status</fullName>
+                <default>false</default>
+                <label>Exclude Lead Status</label>
+            </value>
+            <value>
+                <fullName>Opportunity Created Filter</fullName>
+                <default>false</default>
+                <label>Opportunity Created Filter</label>
+            </value>
+            <value>
+                <fullName>Opportunity Closed Filter</fullName>
+                <default>false</default>
+                <label>Opportunity Closed Filter</label>
+            </value>
+            <value>
+                <fullName>Exclude Opportunity Type</fullName>
+                <default>false</default>
+                <label>Exclude Opportunity Type</label>
+            </value>
+            <value>
+                <fullName>Exclude Opportunity Stage</fullName>
+                <default>false</default>
+                <label>Exclude Opportunity Stage</label>
+            </value>
+            <value>
+                <fullName>Delete All Bulk Campaigns</fullName>
+                <default>false</default>
+                <label>Delete All Bulk Campaigns</label>
+            </value>
+            <value>
+                <fullName>Unchecked Campaigns</fullName>
+                <default>false</default>
+                <label>Unchecked Campaigns</label>
+            </value>
+            <value>
+                <fullName>Exclude Campaign Type</fullName>
+                <default>false</default>
+                <label>Exclude Campaign Type</label>
+            </value>
+            <value>
+                <fullName>Campaign Type Weighting On</fullName>
+                <default>false</default>
+                <label>Campaign Type Weighting On</label>
+            </value>
+            <value>
+                <fullName>Campaign Member Status Weighting On</fullName>
+                <default>false</default>
+                <label>Campaign Member Status Weighting On</label>
+            </value>
+            <value>
+                <fullName>Campaign Type Weight</fullName>
+                <default>false</default>
+                <label>Campaign Type Weight</label>
+            </value>
+            <value>
+                <fullName>Campaign Member Status Weight</fullName>
+                <default>false</default>
+                <label>Campaign Member Status Weight</label>
+            </value>
+            <value>
+                <fullName>Query Limit</fullName>
+                <default>false</default>
+                <label>Query Limit</label>
+            </value>
+            <value>
+                <fullName>Campaign Member Status By Campaign Type Exclusion</fullName>
+                <default>false</default>
+                <label>Campaign Member Status By Campaign Type Exclusion</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Account Funnel</controllingFieldValue>
+            <valueName>Account Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Funnel</controllingFieldValue>
+            <valueName>Open Opportunity Stage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Funnel</controllingFieldValue>
+            <valueName>Open Opportunity Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Funnel</controllingFieldValue>
+            <valueName>Closed Opportunity Stage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Funnel</controllingFieldValue>
+            <valueName>Closed Opportunity Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Scoring</controllingFieldValue>
+            <valueName>Task Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Scoring</controllingFieldValue>
+            <valueName>Event Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Scoring</controllingFieldValue>
+            <controllingFieldValue>Account View</controllingFieldValue>
+            <valueName>Task Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Scoring</controllingFieldValue>
+            <controllingFieldValue>Account View</controllingFieldValue>
+            <valueName>Campaign Member Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account View</controllingFieldValue>
+            <valueName>Display Fields</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account View</controllingFieldValue>
+            <valueName>Search Fields</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account View</controllingFieldValue>
+            <valueName>Day Range</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Campaign Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Exclude Campaign Member Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Exclude Lead Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Opportunity Created Filter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Opportunity Closed Filter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Exclude Opportunity Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Exclude Opportunity Stage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Delete All Bulk Campaigns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Unchecked Campaigns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Exclude Campaign Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Campaign Type Weighting On</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Campaign Member Status Weighting On</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Campaign Type Weight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Campaign Member Status Weight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Campaign Opportunity</controllingFieldValue>
+            <valueName>Query Limit</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

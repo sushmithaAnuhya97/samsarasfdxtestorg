@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Rules_Processed_Execute_Node__c</fullName>
+    <description>Use this with Duplicate Rules Processed = TRUE for process builder node.</description>
+    <formula>RecordTypeId != &quot;0121P0000006W06&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Duplicate Rules Processed - Execute Node</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

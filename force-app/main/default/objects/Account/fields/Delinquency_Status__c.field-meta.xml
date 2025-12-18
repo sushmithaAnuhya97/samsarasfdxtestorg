@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delinquency_Status__c</fullName>
+    <description>GTMS-2843</description>
+    <inlineHelpText>Delinquency Status
+Orders Blocked: You will not be able to submit your quote for discount approval until the delinquency is resolved
+Quotes Approved: You will NOT be able to create a quote document for your customer or generate a checkout link.</inlineHelpText>
+    <label>Delinquency Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Orders Blocked</fullName>
+                <default>false</default>
+                <label>Orders Blocked</label>
+            </value>
+            <value>
+                <fullName>Quotes Approved</fullName>
+                <default>false</default>
+                <label>Quotes Approved</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

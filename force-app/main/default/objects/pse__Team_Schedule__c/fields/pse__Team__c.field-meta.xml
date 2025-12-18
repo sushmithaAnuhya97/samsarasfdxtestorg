@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Team__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The team associated with the schedule.</description>
+    <inlineHelpText>The team associated with the schedule.</inlineHelpText>
+    <label>Team</label>
+    <referenceTo>pse__Team__c</referenceTo>
+    <relationshipLabel>Team Schedules</relationshipLabel>
+    <relationshipName>Team_Schedules</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

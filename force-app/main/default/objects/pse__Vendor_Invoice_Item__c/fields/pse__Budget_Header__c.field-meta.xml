@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Budget_Header__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>A reference to the budget header that this item applies to. This field is required.</description>
+    <label>Budget Header</label>
+    <referenceTo>pse__Budget_Header__c</referenceTo>
+    <relationshipLabel>Vendor Invoice Items</relationshipLabel>
+    <relationshipName>Vendor_Invoice_Items</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

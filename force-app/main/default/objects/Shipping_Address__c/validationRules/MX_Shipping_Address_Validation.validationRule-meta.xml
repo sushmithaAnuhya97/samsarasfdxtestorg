@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MX_Shipping_Address_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(), 
+NOT( Account__r.Samsara_Official_Account__c ),
+OR(AND(CONTAINS(&apos;United States&apos;, Account__r.BillingCountry),
+    CONTAINS(&apos;Mexico&apos;,  TEXT( Shipping_Country__c ))), 
+    AND(CONTAINS($Label.MX_Valid_ShippingCountries, Account__r.BillingCountry), NOT(
+CONTAINS($Label.MX_Valid_ShippingCountries,  TEXT( Shipping_Country__c ))))))</errorConditionFormula>
+    <errorMessage>Please make sure to match the shipping country with the billing country</errorMessage>
+</ValidationRule>

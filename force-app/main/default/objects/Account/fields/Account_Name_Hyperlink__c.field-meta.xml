@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Name_Hyperlink__c</fullName>
+    <description>Hyperlink to account used in flows</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://samsara.my.salesforce.com/&quot;&amp; X18_Digit_Account_ID__c ,  Name )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Name Hyperlink</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__TimeToLive__c</fullName>
+    <defaultValue>null</defaultValue>
+    <deprecated>false</deprecated>
+    <description>A value that limits the number of resulting messages when sending messages between registered applications. The value is initially set from the Max Message Delivery Loop Count in the FDN Background Processing Settings custom setting. Each resulting message reduces the value by one until it reaches zero. Once this occurs, resulting messages automatically fail.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A value that limits the number of resulting messages when sending messages between registered applications.</inlineHelpText>
+    <label>Time to Live</label>
+    <precision>4</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Declined: Unknown reason</fullName>
+                <default>false</default>
+                <label>Declined: Unknown reason</label>
+            </value>
+            <value>
+                <fullName>Declined: Company policy</fullName>
+                <default>false</default>
+                <label>Declined: Company policy</label>
+            </value>
+            <value>
+                <fullName>Declined: Not implemented yet</fullName>
+                <default>false</default>
+                <label>Declined: Not implemented yet</label>
+            </value>
+            <value>
+                <fullName>Declined: Support issue</fullName>
+                <default>false</default>
+                <label>Declined: Support issue</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

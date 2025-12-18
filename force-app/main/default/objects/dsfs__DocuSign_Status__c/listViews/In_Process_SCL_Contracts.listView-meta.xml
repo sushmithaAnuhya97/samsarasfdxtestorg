@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Process_SCL_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>dsfs__Sent_Age__c</columns>
+    <columns>Email_Recipient__c</columns>
+    <columns>dsfs__Company__c</columns>
+    <columns>dsfs__Opportunity__c</columns>
+    <columns>dsfs__Sender__c</columns>
+    <columns>dsfs__Subject__c</columns>
+    <columns>dsfs__Envelope_Status__c</columns>
+    <columns>dsfs__Completed_Date_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>dsfs__Sender__c</field>
+        <operation>equals</operation>
+        <value>Patrick Burns,Aaron Howerton,Jennifer Vangelisti</value>
+    </filters>
+    <filters>
+        <field>dsfs__Envelope_Status__c</field>
+        <operation>equals</operation>
+        <value>Sent,delivered</value>
+    </filters>
+    <filters>
+        <field>dsfs__Subject__c</field>
+        <operation>notContain</operation>
+        <value>[Signature Required],TEST,Referral</value>
+    </filters>
+    <label>P: In Process SCL Contracts</label>
+</ListView>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Purchase Order</fullName>
+                <default>false</default>
+                <label>Customer Purchase Order</label>
+            </value>
+            <value>
+                <fullName>Vendor Purchase Order</fullName>
+                <default>false</default>
+                <label>Vendor Purchase Order</label>
+            </value>
+            <value>
+                <fullName>Work Order</fullName>
+                <default>false</default>
+                <label>Work Order</label>
+            </value>
+            <value>
+                <fullName>Internal Budget</fullName>
+                <default>false</default>
+                <label>Internal Budget</label>
+            </value>
+            <value>
+                <fullName>Customer Purchase Order Change Request</fullName>
+                <default>false</default>
+                <label>Customer Purchase Order Change Request</label>
+            </value>
+            <value>
+                <fullName>Vendor Purchase Order Change Request</fullName>
+                <default>false</default>
+                <label>Vendor Purchase Order Change Request</label>
+            </value>
+            <value>
+                <fullName>Work Order Change Request</fullName>
+                <default>false</default>
+                <label>Work Order Change Request</label>
+            </value>
+            <value>
+                <fullName>Internal Budget Change Request</fullName>
+                <default>false</default>
+                <label>Internal Budget Change Request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

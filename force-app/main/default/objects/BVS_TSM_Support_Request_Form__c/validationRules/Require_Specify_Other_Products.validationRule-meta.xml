@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Specify_Other_Products</fullName>
+    <active>true</active>
+    <errorConditionFormula>INCLUDES(Products_in_Scope_for_This_Opportunity__c, &quot;Other&quot;) &amp;&amp;
+ISBLANK(Specify_Other_Products__c)</errorConditionFormula>
+    <errorDisplayField>Specify_Other_Products__c</errorDisplayField>
+    <errorMessage>Please specify the product(s) in the &quot;Other Products&quot; field if you selected &quot;Other&quot; in the Products in Scope list.</errorMessage>
+</ValidationRule>

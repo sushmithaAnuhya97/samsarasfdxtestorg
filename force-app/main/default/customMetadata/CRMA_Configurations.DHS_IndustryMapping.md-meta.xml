@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>DHS IndustryMapping</label>
+    <protected>false</protected>
+    <values>
+        <field>Config_JSON__c</field>
+        <value xsi:type="xsd:string">{
+    &quot;Construction&quot;: &quot;Construction + Utilities&quot;,
+    &quot;Utilities&quot;: &quot;Construction + Utilities&quot;,
+    &quot;Field Services&quot;: &quot;Field services + mining, quarrying, and oil &amp; gas&quot;,
+    &quot;Mining, Quarrying, Oil &amp; Gas&quot;: &quot;Field services + mining, quarrying, and oil &amp; gas&quot;,
+    &quot;Mining, Quarrying, Oil and Gas&quot;: &quot;Field services + mining, quarrying, and oil &amp; gas&quot;,
+    &quot;Remote Infrastructure&quot;: &quot;Field services + mining, quarrying, and oil &amp; gas&quot;,
+    &quot;Health Care &amp; Social Assistance&quot;: &quot;Passenger transit + healthcare &amp; social assistance&quot;,
+    &quot;Passenger Transit&quot;: &quot;Passenger transit + healthcare &amp; social assistance&quot;,
+    &quot;Educational Services&quot;: &quot;Public sector (government, education)&quot;,
+    &quot;Government&quot;: &quot;Public sector (government, education)&quot;,
+    &quot;Food &amp; Beverage&quot;: &quot;Transportation&quot;,
+    &quot;Manufacturing&quot;: &quot;Transportation&quot;,
+    &quot;Retail Trade&quot;: &quot;Transportation&quot;,
+    &quot;Transportation &amp; Warehousing&quot;: &quot;Transportation&quot;,
+    &quot;Transportation and Warehousing&quot;: &quot;Transportation&quot;,
+    &quot;Wholesale Trade&quot;: &quot;Transportation&quot;,
+    &quot;INDUSTRY_DEFAULT&quot;: &quot;Consumer products and unknown&quot;
+  }</value>
+    </values>
+    <values>
+        <field>Config_Type__c</field>
+        <value xsi:type="xsd:string">DHS_IndustryMapping</value>
+    </values>
+</CustomMetadata>

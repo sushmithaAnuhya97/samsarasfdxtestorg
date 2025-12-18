@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Approved_Payment_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( CONTAINS(Pricebook2.Name, &apos;Express&apos;), &apos;Direct Monthly&apos;,TEXT(Account.Approved_Payment_Type__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Approved Payment Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

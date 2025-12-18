@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ScannedPayableDocumentNumber__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Holds the Payable Document Number.</description>
+    <label>Scanned Payable Document Number</label>
+    <referenceTo>fferpcore__ScannedPayableDocument__c</referenceTo>
+    <relationshipLabel>Scanned Payable Document Lines</relationshipLabel>
+    <relationshipName>ScannedPayableDocumentLines</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

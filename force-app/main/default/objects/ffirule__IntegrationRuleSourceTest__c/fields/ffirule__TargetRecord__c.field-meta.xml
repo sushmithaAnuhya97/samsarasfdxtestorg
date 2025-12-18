@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__TargetRecord__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Target Record</label>
+    <referenceTo>ffirule__IntegrationRuleTargetTest__c</referenceTo>
+    <relationshipLabel>Integration Rule Source Tests</relationshipLabel>
+    <relationshipName>IntegrationRuleSourceTests</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

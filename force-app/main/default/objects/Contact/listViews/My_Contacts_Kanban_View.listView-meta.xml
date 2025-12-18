@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contacts_Kanban_View</fullName>
+    <columns>Account.Number_of_Vehicles__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>ACCOUNT.INDUSTRY</field>
+        <operation>contains</operation>
+        <value>Educational Services,&quot;Mining, Quarrying, Oil &amp; Gas&quot;,Unknown</value>
+    </filters>
+    <label>My Contacts - Kanban View</label>
+</ListView>

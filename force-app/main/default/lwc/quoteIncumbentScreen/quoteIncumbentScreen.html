@@ -1,0 +1,78 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="slds-is-relative slds-p-around_medium">
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </div>
+    </template>
+    
+    <template if:false={isLoading}>
+        <!-- Incumbent Competitor Selection -->
+        <template if:true={hasCompetitorOptions}>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label slds-m-bottom_x-small">
+                    <span class="slds-text-color_error">*</span>Who are the main incumbents on this deal?
+                </label>
+                <template for:each={competitorOptions} for:item="opt">
+                    <div key={opt.value} class="slds-p-vertical_x-small">
+                        <lightning-input
+                            type="checkbox"
+                            label={opt.label}
+                            value={opt.value}
+                            checked={opt.checked}
+                            onchange={handleCheckboxChange}>
+                        </lightning-input>
+                    </div>
+                </template>
+            </div>
+
+            <template if:true={showError}>
+                <div class="slds-text-color_error slds-m-top_x-small">
+                    Please select at least one incumbent competitor.
+                </div>
+            </template>
+        </template>
+
+        <!-- Other Text Input -->
+        <template if:true={showOtherTextbox}>
+            <div class="slds-m-top_medium">
+                <lightning-input
+                    required
+                    type="text"
+                    label="Please specify other incumbent"
+                    value={otherValue}
+                    onchange={handleOtherInputChange}>
+                </lightning-input>
+                <template if:true={showError}>
+                    <div class="slds-text-color_error slds-m-top_x-small">
+                        Please specify the other incumbent competitor.
+                    </div>
+                </template>
+            </div>
+        </template>
+    </template>
+
+    <!-- Footer with Buttons -->
+    <footer class="slds-card__footer slds-theme_shade animate-slide-in-up">
+        <div class="slds-grid slds-grid_align-spread">
+            <div class="slds-col">
+              <!--  <lightning-button
+                    label="Back"
+                    variant="neutral"
+                    icon-name="utility:back"
+                    onclick={handleBack}
+                    class="custom-button animate-hover">
+                </lightning-button>-->
+            </div>
+            <div class="slds-col slds-text-align_right">
+                <lightning-button
+                    label="Next"
+                    variant="brand"
+                    icon-name="utility:forward"
+                    icon-position="right"
+                    onclick={handleNext}
+                    class="custom-button animate-hover">
+                </lightning-button>
+            </div>
+        </div>
+    </footer>
+</template>

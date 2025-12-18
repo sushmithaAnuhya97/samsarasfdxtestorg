@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__WeightUnits__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Applies to Certificate of Origin and SED forms only.</description>
+    <inlineHelpText>Applies to Certificate of Origin and SED forms only.</inlineHelpText>
+    <label>Weight Units</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>KGS</fullName>
+                <default>false</default>
+                <label>KGS</label>
+            </value>
+            <value>
+                <fullName>LBS</fullName>
+                <default>true</default>
+                <label>LBS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

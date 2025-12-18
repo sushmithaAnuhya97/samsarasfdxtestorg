@@ -1,0 +1,91 @@
+<template>
+    <lightning-card>
+        <div class="custom-header">
+            <h2 class="header-title">
+                Amend Contract
+            </h2>
+            <template if:false={noContactsFound}>
+            <p class="header-subtitle warning-subtitle">
+                Select the contact for the amendment opportunity
+            </p>
+        </template>
+        </div>
+        
+        <div class="slds-m-around_medium">
+            <template if:true={spinner}>
+                <div class="slds-text-align_center slds-p-around_large">
+                    <lightning-spinner alternative-text="Loading Contacts" size="medium"></lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={showContactData}>
+                <c-create-oppty-generic-data-table
+                    if:true={hasContacts}
+                    object-name="Contact"
+                    allowed-records={contacts}
+                    selected-record={selectedContactId}
+                    columns={columns}
+                    onselection={handleRowSelection}>
+                </c-create-oppty-generic-data-table>
+            </template>
+
+            <template if:true={noContactsFound}>
+                <div class="slds-text-align_center slds-p-around_large">
+                    <div class="slds-illustration slds-illustration_small">
+                        <div class="slds-text-color_weak">
+                            <p class="slds-text-body_regular slds-m-top_small">
+                                No contacts are associated with this contract's account.
+                            </p>
+                            <template if:true={accountName}>
+                                <p class="slds-text-body_regular slds-m-top_medium">
+                                    Click on
+                                    <a onclick={handleNavigateToAccount} class="slds-text-link" style="cursor: pointer; color: #0070d2; text-decoration: none; font-weight: 600;">
+                                        &nbsp;{accountName}&nbsp;
+                                    </a>
+                                    to view the account details or create a new contact for this account.
+                                </p>
+                            </template>
+                        </div>
+                        <lightning-button
+                        label="Create Contact"
+                        variant="brand"
+                        icon-name="utility:add"
+                        onclick={handleCreateContact}>
+                    </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <template if:true={showContactData}>
+            <div slot="footer" class="slds-grid slds-grid_align-spread">
+                <lightning-button
+                    label="Close"
+                    variant="neutral"
+                    onclick={handleBack}>
+                </lightning-button>
+                <lightning-button
+                    label="Proceed to Amend Contract"
+                    variant="brand"
+                    onclick={handleAmendContract}>
+                </lightning-button>
+            </div>
+        </template>
+
+        <template if:true={noContactsFound}>
+            <div slot="footer" class="slds-grid slds-grid_align-spread">
+                <lightning-button
+                    label="Close"
+                    variant="neutral"
+                    onclick={handleBack}>
+                </lightning-button>
+               
+                <lightning-button
+                    label="Proceed to Amend Contract"
+                    variant="brand"
+                    onclick={handleAmendContract}>
+                </lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>

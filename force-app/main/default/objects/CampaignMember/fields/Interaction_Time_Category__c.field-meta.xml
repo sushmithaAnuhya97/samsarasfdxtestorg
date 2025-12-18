@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interaction_Time_Category__c</fullName>
+    <description>Calculates which of the following buckets an inbound lead falls into depending on campaign interaction date: weekend, off-hour, on-hour non decency, on-hour</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(Day_of_Interaction__c=&apos;Saturday&apos;,Day_of_Interaction__c=&apos;Sunday&apos;),&apos;Weekend&apos;,IF(OR(Hour_of_interaction__c&lt;6,Hour_of_interaction__c&gt;18),&apos;Off-hour&apos;,&apos;On-hour&apos;))</formula>
+    <inlineHelpText>Calculates which of the following buckets an inbound lead falls into depending on campaign interaction date: weekend, off-hour, on-hour non decency, on-hour</inlineHelpText>
+    <label>Interaction Time Category</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

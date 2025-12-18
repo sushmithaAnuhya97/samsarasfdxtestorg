@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Program_Status__c</fullName>
+    <description>GTMS-26117: Created as part of Partners project H1</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Partner_Program__r.Program_Status__c)</formula>
+    <inlineHelpText>This field displays the current status of the parent program. Terminated programs are not eligible for term updates or renegotians.</inlineHelpText>
+    <label>Partner Program Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

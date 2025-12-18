@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Default_Bill_Rate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If configured, Timecards for this Milestone will inherit this Bill Rate.  In order for this to happen, the default-timecard-bill-rate-from-milestone Milestone config must be true (default false) and the &apos;Apply Default Bill Rate to Timecard&apos; checkbox on the Milestone must be checked.  Defaults to and must always be same currency as Project.</description>
+    <inlineHelpText>If configured, Timecards for this Milestone will inherit this Bill Rate.  Defaults to and must always be same currency as Project.</inlineHelpText>
+    <label>Default Bill Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

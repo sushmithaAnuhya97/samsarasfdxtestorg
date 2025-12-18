@@ -1,0 +1,11 @@
+<aura:component controller="BreadCrumbController"
+    implements="forceCommunity:availableForAllPageTypes,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:backgroundUtilityItem"
+    access="global">
+    <aura:attribute name="settings" type="BreadCrumbSettings"></aura:attribute>
+    <aura:attribute name="routeChangeCounter" default="0" type="Integer" required="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="aura:locationChange" value="{!this}" action="{!c.handleLocationChangeEvent}" />
+    <aura:handler event="forceCommunity:routeChange" action="{!c.handleLocationChangeEvent}" />
+    <aura:registerEvent name="BuddyEvent" type="c:BuddyEvent" />
+
+</aura:component>

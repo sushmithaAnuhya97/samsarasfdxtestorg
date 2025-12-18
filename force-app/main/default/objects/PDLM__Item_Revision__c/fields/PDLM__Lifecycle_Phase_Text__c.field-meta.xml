@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Lifecycle_Phase_Text__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If the current item revision is not released, append &quot; (Pending)&quot; to the lifecycle phase so the user knows it is a draft.</description>
+    <externalId>false</externalId>
+    <formula>IF(PDLM__Released__c = true,  text(PDLM__Lifecycle_Phase__c), text(PDLM__Lifecycle_Phase__c)+&quot; (Pending)&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lifecycle Phase</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

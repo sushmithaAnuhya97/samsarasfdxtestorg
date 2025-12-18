@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bundle_SKU_Naming__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+OR(SBQQ__ProductName__c = &quot;License for Vehicle Gateways - Public Sector&quot;, SBQQ__ProductName__c = &quot;License for Vehicle Gateways&quot;), 
+&quot;VG-34 Bundle - Public Sector&quot;, SBQQ__ProductName__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Use: To display certain products as a bundle on quote documents</inlineHelpText>
+    <label>Bundle SKU Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expressed_Deferred_Payment_not_changed</fullName>
+    <active>true</active>
+    <description>This validation rule is to prevent sales people from changing the &apos;Payment Terms&apos; after the trial link is populated.</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+ISCHANGED(SBQQ__PaymentTerms__c),
+NOT(ISBLANK(Express_Agreement_Accepted_Date__c)) ,
+NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+NOT($Permission.Validation_Rule_Exemption)
+)</errorConditionFormula>
+    <errorDisplayField>SBQQ__PaymentTerms__c</errorDisplayField>
+    <errorMessage>You cannot change the Payment Terms field after the Checkout Agreement Link is populated.</errorMessage>
+</ValidationRule>

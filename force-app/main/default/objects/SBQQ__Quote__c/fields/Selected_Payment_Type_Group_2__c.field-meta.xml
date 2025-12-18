@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selected_Payment_Type_Group_2__c</fullName>
+    <formula>IF(OR( TEXT(Selected_Payment_Type__c)=&apos;Direct Monthly&apos;, TEXT(Selected_Payment_Type__c)=&apos;Direct Quarterly&apos;, TEXT(Selected_Payment_Type__c)=&apos;Direct Semi-Annual&apos;),TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>this field contains indicator logic when Selected Payment Type is to Direct Monthly, Direct Quarterly or Direct Semi-Annual</inlineHelpText>
+    <label>Selected Payment Type Group 2</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

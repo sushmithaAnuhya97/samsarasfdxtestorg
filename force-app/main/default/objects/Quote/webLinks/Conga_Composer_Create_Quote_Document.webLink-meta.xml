@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Create_Quote_Document</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://samsara--apxtconga4.visualforce.com/a1X1P000004JakBUAS
+20-Mar-2020 09:37:58 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create Quote Document</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Quote.Id}
+
+&amp;QueryId=[MoLicense]a1R1P000002igTY,
+[AnnLicense]a1R1P000002igUH,
+[UpfrontHW]a1R1P000002igUM,
+[Upfr]a1R1P000002igUR
+
+&amp;DS8=0
+&amp;TemplateGroup={!Quote.Renewals_Conga__c}
+&amp;DocuSignVisible=1
+&amp;SC0=1
+&amp;SC1=Attachments
+&amp;FP0=1
+&amp;OFN={!Account.Name}+-+{Template.Label}
+&amp;DocuSignExpireIn=7</url>
+    <width>900</width>
+</WebLink>

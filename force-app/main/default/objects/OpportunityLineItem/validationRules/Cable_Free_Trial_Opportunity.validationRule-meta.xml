@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cable_Free_Trial_Opportunity</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Opportunity.Type,&quot;Free Trial Opportunity&quot;),
+Opportunity.Cable_Send_Only__c = TRUE,
+NOT(CONTAINS(Product2.ProductCode, &quot;CBL&quot;)),
+OR(CONTAINS(Product2.ProductCode, &quot;ACC&quot;),
+   CONTAINS(Product2.ProductCode, &quot;VG&quot;),
+   CONTAINS(Product2.ProductCode, &quot;AG&quot;),
+   CONTAINS(Product2.ProductCode, &quot;HW&quot;),
+   CONTAINS(Product2.ProductCode, &quot;LIC&quot;),
+   CONTAINS(Product2.ProductCode, &quot;SHRT&quot;),
+   CONTAINS(Product2.ProductCode, &quot;Samsara&quot;),
+   CONTAINS(Product2.ProductCode, &quot;TRK&quot;),
+   CONTAINS(Product2.ProductCode, &quot;Express&quot;),
+   CONTAINS(Product2.ProductCode, &quot;ACT&quot;),
+   CONTAINS(Product2.ProductCode, &quot;ELOG&quot;)))</errorConditionFormula>
+    <errorMessage>You have tried to add a product other than a cable when the Cable Send Only checkbox is checked on this free trial.  Please select a cable or uncheck Cable Send Only.</errorMessage>
+</ValidationRule>

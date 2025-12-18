@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_ACV_Formula__c</fullName>
+    <formula>IF(
+    ISPICKVAL(SBQQ__Product__r.Product_Type__c, &apos;License&apos;),
+
+   IF(  
+        AND(SBQQ__RenewedSubscription__c &lt;&gt; NULL, SBQQ__EffectiveQuantity__c &gt; 0, Upgraded_QL__c = NULL), 
+
+        SBQQ__EffectiveQuantity__c * Annual_Unit_Price__c,
+
+        IF(
+            AND(SBQQ__RenewedSubscription__c &lt;&gt; NULL, Upgraded_QL__c &lt;&gt; NULL),
+
+            IF(
+                (SBQQ__EffectiveQuantity__c * Annual_Unit_Price__c) &gt;= (Upgraded_QL__r.Annual_Unit_Price__c * Quantity_Upgraded__c),
+                Upgraded_QL__r.Annual_Unit_Price__c * Quantity_Upgraded__c,
+                SBQQ__EffectiveQuantity__c * Annual_Unit_Price__c
+            ),
+
+            IF(
+                AND(SBQQ__RenewedSubscription__c = NULL, Upgraded_QL__c &lt;&gt; NULL),
+
+                IF(
+                    Annual_Unit_Price__c &gt;= Upgraded_QL__r.Annual_Unit_Price__c,
+                    Upgraded_QL__r.Annual_Unit_Price__c * Quantity_Upgraded__c,
+                    Annual_Unit_Price__c * Quantity_Upgraded__c
+                ),
+
+                0
+            )
+        )
+    ),
+
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Renewal ACV Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

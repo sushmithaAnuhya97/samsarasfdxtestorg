@@ -1,0 +1,62 @@
+<template>
+    <lightning-card icon-name="standard:checkout">
+        <p slot="title">Checkout Link</p>
+
+        <!-- Spinner shown while loading -->
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+
+        <!-- Main content, hidden while loading -->
+        <template if:false={isLoading}>
+            <div class="slds-p-horizontal_small">
+                <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-scoped-notification_light"
+                    role="status">
+                    <span>
+                        <lightning-icon class="slds-m-right_x-small" size="medium"
+                            aria-hidden="true" icon-name="utility:info"
+                            alternative-text="Information"></lightning-icon>
+                    </span>
+                    <span class="margin" >{opportunityMsg}</span>
+                </div>
+            </div>
+            <div>&nbsp;</div>
+
+            <template lwc:if={isOpptyNotTodayWarningMsg}>
+                <div class="slds-p-horizontal_small">
+                    <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_warning"
+                        role="status">
+                        <span>
+                            <lightning-icon variant="inverse" class="slds-m-right_x-small" size="medium"
+                                aria-hidden="true" icon-name="utility:warning"
+                                alternative-text="Warning"></lightning-icon>
+                        </span>
+                        <span class="margin">{label.opptyCheckoutWarningMsg}</span>
+                    </div>
+                    <div>&nbsp;</div>
+                </div>
+            </template>
+
+            <div class="slds-p-horizontal_small">
+                <div class="demo-only">
+                    <ul class="slds-has-dividers_around-space">
+                        <li class="slds-item">
+                            <article class="slds-tile slds-tile_board">
+                                <p>
+                                    <lightning-button-icon icon-name={iconName} variant="bare" style="margin-right: 5px;"
+                                        title={altText} onclick={copyUrlToClipboard}></lightning-button-icon>
+                                    <lightning-formatted-url value={currentUrl} tooltip="Copy paste this value [...]"
+                                        target="_blank"></lightning-formatted-url>
+                                </p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="popup success-popup" data-id="popup">
+                <lightning-icon icon-name="utility:success" variant="inverse" size="small" class="popup-icon"></lightning-icon>
+                <span>{popupMessage}</span>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nonowners_cannot_change_fields</fullName>
+    <active>true</active>
+    <description>If you don&apos;t own the account you cannot change key fields</description>
+    <errorConditionFormula>AND(
+  NOT(
+    AND(
+      OwnerId = &quot;0054p000002s4iA&quot;,  
+      CONTAINS($UserRole.Name, &quot;CML&quot;),
+      OR(
+        ISCHANGED(BillingState),
+	ISCHANGED(BillingCity),
+        ISCHANGED(BillingCountry),
+        ISCHANGED(BillingStreet),
+        ISCHANGED(BillingPostalCode),
+        ISCHANGED(Number_of_Powered_Assets__c),
+        ISCHANGED(Number_of_Unpowered_Assets__c),
+        ISCHANGED(Number_of_Vehicles__c)
+      )
+    )
+  ),
+  NOT(
+    AND(
+            OR (
+                $Profile.Name = &quot;Samsara - Finance&quot;,
+                $Profile.Name = &quot;Samsara - Finance Admin&quot;
+            ),
+            OR (
+                ISCHANGED(BillingState),
+                ISCHANGED(BillingCountry),
+                ISCHANGED(BillingStreet),
+                ISCHANGED(BillingPostalCode),
+                ISCHANGED(Billing_Contact__c),
+                ISCHANGED(Billing_Email__c),
+                ISCHANGED(Billing_First_Name__c),
+                ISCHANGED(Billing_Last_Name__c)
+            )
+        )
+    ),
+OR(
+AND(
+      NOT(CONTAINS($UserRole.Name, &quot;SLED&quot;)),
+OR(
+ISCHANGED(Number_of_Citizens__c) ,
+ISCHANGED(Number_of_Students__c)
+),
+NOT(
+OR(
+$Profile.Name = &apos;Samsara Inbound ADRs&apos;,
+$Profile.Name = &apos;Sales Ops Profile&apos;,
+$Profile.Name = &apos;Samsara Field ADRs&apos;,
+		  $Profile.Name = &apos;Samsara Sales - NA US AE2&apos;,
+AND(
+OwnerId = &quot;0051a000002lwW3&quot;,
+Owner.RR_Is_Pool_User__c,
+NOT($Permission.Validation_Rule_Exemption),
+OR(
+$Profile.Name = &quot;Samsara Industrial Sales - Field Services CPQ&quot;,
+$Profile.Name = &quot;Samsara Industrial Sales - Manufacturing CPQ&quot;,
+$Profile.Name = &quot;Samsara Partner Sales - CPQ&quot;,
+$Profile.Name = &quot;Samsara Channel Account Managers&quot;
+)
+)
+)
+)
+),
+AND(
+      NOT(CONTAINS($UserRole.Name, &quot;SLED&quot;)),
+OR(
+ISCHANGED(Number_of_Powered_Assets__c),
+ISCHANGED(Number_of_Unpowered_Assets__c),
+ISCHANGED(Number_of_Vehicles__c),
+ISCHANGED(BillingState),
+ISCHANGED(BillingCountry),
+ISCHANGED(BillingStreet),
+ISCHANGED(NumberOfEmployees),
+ISCHANGED(Organization_Size__c)
+),
+Owner.RR_Is_Pool_User__c,
+NOT($Permission.Validation_Rule_Exemption),
+NOT(
+AND(
+OwnerId = &quot;0051a000002lwW3&quot;,
+OR(
+$Profile.Name = &quot;Samsara Industrial Sales - Field Services CPQ&quot;,
+$Profile.Name = &quot;Samsara Industrial Sales - Manufacturing CPQ&quot;,
+$Profile.Name = &quot;Samsara Partner Sales - CPQ&quot;,
+            $Profile.Name = &quot;Samsara Channel Account Managers&quot;,
+	    $Profile.Name = &quot;Samsara Sales - NA US AE2&quot;
+          )
+)
+)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot change fields of a record you do not own.</errorMessage>
+</ValidationRule>

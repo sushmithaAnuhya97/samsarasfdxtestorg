@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Mark as primary(Trial Page)</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;NOTE: There is no need to submit for approval since this is a $0.00 opportunity&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;NEXT:&lt;/p&gt;&lt;p&gt;Navigate to the opportunity to retrieve the “Trial Agreement Link”. &lt;/p&gt;</body>
+        <customApplication>standard__LightningSalesConsole</customApplication>
+        <delayDays>1</delayDays>
+        <description>NOTE: no need to submit for approval since this is a $0.00 opportunity!</description>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Mark as primary(Trial Page)</masterLabel>
+        <publishedDate>2023-09-13</publishedDate>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;sfdc:RecordField.SBQQ__Quote__c.SBQQ__Primary__c&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;e749965136cc4d4d9fc02c6f9c4a08b7&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;force_detailPanel&quot;}},&quot;version&quot;:2,&quot;interactions&quot;:[{&quot;unless&quot;:{&quot;css&quot;:&quot;[aria-selected=true]&quot;},&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;flexipage_tab2Tab&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;flexipage_tabset&quot;}},&quot;type&quot;:&quot;click&quot;}]}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2023-08-24</startDate>
+        <targetPageKey1>SBQQ__Quote__c</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <targetRecordType>SBQQ__Quote__c.AAE_Approved_Quote</targetRecordType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Mark Quote as primary</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,9 @@
+<aura:component implements="force:lightningQuickAction,lightning:availableForFlowActions">
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    <aura:dependency resource="markup://force:showToast" type="EVENT"/>
+
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="showToast" type="Boolean" default="false" />
+    <aura:attribute name="recordName" type="String" />
+    <aura:attribute name="toastMessage" type="String" default="" />
+</aura:component>

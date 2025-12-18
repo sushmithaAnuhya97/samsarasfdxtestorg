@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Partner_Payment_Frequency__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(SBQQ__PrimaryQuote__r.Total_Subsidy_Products__c &gt; 0, &apos;Upfront&apos;, TEXT(Insurance_Partner__r.Billing_Type__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Insurance Partner Payment Frequency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

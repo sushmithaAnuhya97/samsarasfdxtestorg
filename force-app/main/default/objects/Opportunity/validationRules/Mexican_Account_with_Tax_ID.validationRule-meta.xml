@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mexican_Account_with_Tax_ID</fullName>
+    <active>true</active>
+    <description>If the associated account is of Mexican and
+Tax ID on the associated Account is not null and
+Tax ID of the associated account is available on the &apos;MX Non-Compliant Taxpayers&apos; object and
+Opportunity Stage is either &apos;Purchase&apos; or past &apos;Purchase&apos; stage</description>
+    <errorConditionFormula>AND(
+Account.BillingCountry =&apos;Mexico&apos;,
+Account.MX_Non_Compliant_Tax_Payer__c  = True,
+Probability &gt;= 0.9,
+NOT(ISPICKVAL(MX_Approval_status__c,&quot;Approved&quot; )),
+ISPICKVAL(Type,&quot;Revenue Opportunity&quot;))</errorConditionFormula>
+    <errorMessage>The RFC # for this account requires approval before the opportunity can move to any future stages. Please click the &quot;Initiate RFC Approval&quot; button to initiate the approval process. You will receive an email notification when the opportunity is approved.</errorMessage>
+</ValidationRule>

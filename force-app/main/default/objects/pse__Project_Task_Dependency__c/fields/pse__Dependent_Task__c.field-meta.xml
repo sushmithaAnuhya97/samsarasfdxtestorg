@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Dependent_Task__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This master-detail lookup references the Project Task that is the dependent Task in this relationship.</description>
+    <inlineHelpText>This master-detail lookup references the Project Task that is the dependent Task in this relationship.</inlineHelpText>
+    <label>Dependent Task</label>
+    <referenceTo>pse__Project_Task__c</referenceTo>
+    <relationshipLabel>Preceding Tasks</relationshipLabel>
+    <relationshipName>Preceding_Tasks</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

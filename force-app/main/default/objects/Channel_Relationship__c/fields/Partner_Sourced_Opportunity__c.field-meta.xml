@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Sourced_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>GTMS-26114: Created as part of Partners H1 project</description>
+    <label>Partner Sourced Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Channel Relationships (Partner Sourced Opportunity)</relationshipLabel>
+    <relationshipName>Channel_Relationships1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

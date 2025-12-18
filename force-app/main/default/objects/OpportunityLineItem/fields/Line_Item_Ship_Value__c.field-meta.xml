@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_Item_Ship_Value__c</fullName>
+    <description>Line Item MSRP for Hardware and Accessories</description>
+    <formula>IF (BEGINS (PricebookEntry.Product2.ProductCode, &quot;HW-&quot;),  ListPrice * Quantity , 
+    IF (BEGINS(PricebookEntry.Product2.ProductCode, &quot;ACC-&quot;), ListPrice * Quantity, 0        
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Line Item MSRP for Hardware and Accessories</inlineHelpText>
+    <label>Line Item Ship Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

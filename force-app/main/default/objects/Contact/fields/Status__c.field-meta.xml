@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Contact Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>Attempting</fullName>
+                <default>false</default>
+                <label>Attempting</label>
+            </value>
+            <value>
+                <fullName>Demo Scheduled</fullName>
+                <default>false</default>
+                <label>Demo Scheduled</label>
+            </value>
+            <value>
+                <fullName>Demo No Show</fullName>
+                <default>false</default>
+                <label>Demo No Show</label>
+            </value>
+            <value>
+                <fullName>Demo Completed - Not Qualified</fullName>
+                <default>false</default>
+                <label>Demo Completed - Not Qualified</label>
+            </value>
+            <value>
+                <fullName>Qualified</fullName>
+                <default>false</default>
+                <label>Qualified</label>
+            </value>
+            <value>
+                <fullName>Retouch - Did Not Connect</fullName>
+                <default>false</default>
+                <label>Retouch - Did Not Connect</label>
+            </value>
+            <value>
+                <fullName>Retouch - Confirmed No Opportunity</fullName>
+                <default>false</default>
+                <label>Connected-Disqualified</label>
+            </value>
+            <value>
+                <fullName>Send Small Fleet Link</fullName>
+                <default>false</default>
+                <label>Send Small Fleet Link</label>
+            </value>
+            <value>
+                <fullName>Small Fleet Link Sent</fullName>
+                <default>false</default>
+                <label>Small Fleet Link Sent</label>
+            </value>
+            <value>
+                <fullName>Inactive - See Parent Account</fullName>
+                <default>false</default>
+                <label>Inactive - See Parent Account</label>
+            </value>
+            <value>
+                <fullName>Small Fleet Link Failed - Invalid Email</fullName>
+                <default>false</default>
+                <label>Small Fleet Link Failed - Invalid Email</label>
+            </value>
+            <value>
+                <fullName>Small Fleet Link Pending - Manual Review</fullName>
+                <default>false</default>
+                <label>Small Fleet Link Pending - Manual Review</label>
+            </value>
+            <value>
+                <fullName>Faulty Lead</fullName>
+                <default>false</default>
+                <label>Faulty Lead</label>
+            </value>
+            <value>
+                <fullName>Do Not Contact - Open Conversation</fullName>
+                <default>false</default>
+                <label>Do Not Contact - Open Conversation</label>
+            </value>
+            <value>
+                <fullName>Contact Established</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contact Established</label>
+            </value>
+            <value>
+                <fullName>Create Webstore Opportunity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Create Webstore Opportunity</label>
+            </value>
+            <value>
+                <fullName>Delete Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delete Account</label>
+            </value>
+            <value>
+                <fullName>Delete Contact Only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delete Contact Only</label>
+            </value>
+            <value>
+                <fullName>GDPR Delete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GDPR Delete</label>
+            </value>
+            <value>
+                <fullName>Inactive - No Longer There</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inactive - No Longer There</label>
+            </value>
+            <value>
+                <fullName>Multiple Campaign Interactions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Multiple Campaign Interactions</label>
+            </value>
+            <value>
+                <fullName>No Authority</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Authority</label>
+            </value>
+            <value>
+                <fullName>Opt out - Do not contact</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Opt out - Do not contact</label>
+            </value>
+            <value>
+                <fullName>Webstore Opportunity Created</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webstore Opportunity Created</label>
+            </value>
+            <value>
+                <fullName>Webstore Opportunity Creation In Progress</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Webstore Opportunity Creation In Progress</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

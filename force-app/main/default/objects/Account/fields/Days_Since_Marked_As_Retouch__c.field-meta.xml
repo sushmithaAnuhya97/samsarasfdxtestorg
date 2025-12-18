@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Since_Marked_As_Retouch__c</fullName>
+    <description>Days since the Account was marked as Retouch. N/A is -1.</description>
+    <externalId>false</externalId>
+    <formula>IF( AND(CONTAINS( Status__c , &apos;Retouch&apos;), NOT(ISBLANK( Account_Status_Changed__c ))),TODAY()- DATEVALUE(Account_Status_Changed__c),-1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days Since Marked As Retouch</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

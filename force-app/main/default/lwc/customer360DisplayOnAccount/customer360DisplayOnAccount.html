@@ -1,0 +1,44 @@
+<template>
+  <!-- Top divider -->
+  <hr
+    class="slds-horizontal-rule slds-m-top_none slds-m-bottom_xx-small"
+    style="border:0;border-top:1px solid var(--lwc-colorBorder,#dddbda);" />
+
+  <lightning-card title={headerTitle} icon-name="standard:related_list">
+    <div slot="actions" class="slds-button-group" role="group">
+      <lightning-button-icon
+        icon-name="utility:refresh"
+        alternative-text="Refresh"
+        title="Refresh"
+        variant="border-filled"
+        onclick={handleRefresh}>
+      </lightning-button-icon>      
+    </div>
+
+    <template if:true={isLoading}>
+      <lightning-spinner size="small"></lightning-spinner>
+    </template>
+
+    <template if:true={rows}>
+      <lightning-datatable
+        key-field="id"
+        data={rows}
+        columns={columns}
+        onrowaction={handleRowAction}>
+      </lightning-datatable>
+    </template>
+
+    <template if:true={error}>
+      <div class="slds-p-around_small slds-text-color_error">{error.body.message}</div>
+    </template>
+
+    <div class="slds-p-vertical_x-small slds-text-align_center slds-m-top_xx-small">
+      <lightning-button variant="base" label="View All" onclick={handleViewAll}></lightning-button>
+    </div>
+  </lightning-card>
+
+  <!-- Bottom divider -->
+  <hr
+    class="slds-horizontal-rule slds-m-top_xx-small slds-m-bottom_none"
+    style="border:0;border-top:1px solid var(--lwc-colorBorder,#dddbda);" />
+</template>

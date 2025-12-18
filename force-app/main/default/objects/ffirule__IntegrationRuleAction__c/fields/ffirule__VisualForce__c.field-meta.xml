@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__VisualForce__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>&apos;&lt;apex:page standardController=&quot;&apos; + ffirule__IntegrationRule__r.ffirule__SourceObject__c + &apos;&quot; extensions=&quot;ffirule.IntegrationRuleEngine&quot; docType=&quot;html-5.0&quot; standardStylesheets=&quot;false&quot; showheader=&quot;false&quot; sidebar=&quot;false&quot;&gt;&apos;+ BR() +
+&apos;&lt;apex:variable var=&quot;sourceId&quot; value=&quot;&apos; + &apos;{&apos; + &apos;!&apos; + ffirule__IntegrationRule__r.ffirule__SourceObject__c + &apos;.Id}&quot;/&gt;&apos; + BR()
+ +&apos;&lt;ffirule:IntegrationRule engine=&quot;&apos;+&apos;{&apos;+&apos;!&apos;+&apos;engine&apos;+&apos;}&apos;+&apos;&quot; actionName=&quot;&apos; + ffirule__ActionName__c + &apos;&quot;  sourceId=&quot;&apos;+&apos;{&apos;+&apos;!&apos;+&apos;sourceId&apos;+&apos;}&apos;+&apos;&quot;/&gt;&apos;+ BR() + &apos;&lt;/apex:page&gt;&apos;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>VisualForce</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

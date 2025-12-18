@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>New_TSE_Request</fullName>
+        <ccEmails>cs-sis@samsara.com</ccEmails>
+        <ccEmails>cs-esm@samsara.com</ccEmails>
+        <description>New TSE Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>anthony.taitingfong@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gokula.rangarajan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gonzalo.alvarez@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kavita.joshi@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>saahil.desai@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/New_TSE_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>SIS_Office_Hours_Request</fullName>
+        <ccEmails>fwd-cs-sis@samsara.com</ccEmails>
+        <description>SIS Office Hours Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>SIS</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>FFX_PSA_Email_Templates/SIS_Office_Hours_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>TSE_Assignment_Email_Alert</fullName>
+        <description>TSE Assignment Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>TSE_Assignment__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Samsara_Email_Templates/TSE_Assignment_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>TSE_Request_Approval_Status</fullName>
+        <description>TSE Request Approval Status</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/TSE_Approval_Status</template>
+    </alerts>
+    <alerts>
+        <fullName>TSE_Request_Approval_Status_Change</fullName>
+        <description>TSE Request Approval Status Change</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/SIS_Approval_Status_Change_v2</template>
+    </alerts>
+    <rules>
+        <fullName>New TSE Request</fullName>
+        <actions>
+            <name>New_TSE_Request</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>SIS_Request_Log__c.CreatedDate</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SIS_Request_Log__c.Record_Type_Name__c</field>
+            <operation>notEqual</operation>
+            <value>SIS Office Hours - In Take Form</value>
+        </criteriaItems>
+        <description>This workflow rule is used to trigger an email alert anytime a new TSE Request is created by an SE.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSE Approval Status</fullName>
+        <actions>
+            <name>TSE_Request_Approval_Status</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow rule is used to notify the TSE request submitter of the approval status.</description>
+        <formula>ISCHANGED( TSE_Request_Status__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSE Approval Status Change Alert</fullName>
+        <actions>
+            <name>TSE_Request_Approval_Status_Change</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(  NOT(ISNEW()),  ISCHANGED(SIS_Status__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSE Assignment Notification</fullName>
+        <actions>
+            <name>TSE_Assignment_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow rule is used to notify TSE that is assigned to an oppty</description>
+        <formula>ISCHANGED(TSE_Assignment__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

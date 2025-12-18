@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Total_Number_of_Activities__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field rolls up the number of records on the Activities tab</description>
+    <inlineHelpText>This field rolls up the number of records on the Activities tab</inlineHelpText>
+    <label>Total Number of Activities</label>
+    <summaryForeignKey>PDLM__Deliverable__c.PDLM__Project__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

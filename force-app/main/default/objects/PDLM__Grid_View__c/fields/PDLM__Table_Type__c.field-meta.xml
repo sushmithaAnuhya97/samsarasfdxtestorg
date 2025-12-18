@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Table_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Table Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BOM</fullName>
+                <default>false</default>
+                <label>BOM</label>
+            </value>
+            <value>
+                <fullName>Affected_Items</fullName>
+                <default>false</default>
+                <label>Affected Items</label>
+            </value>
+            <value>
+                <fullName>Attachments</fullName>
+                <default>false</default>
+                <label>Attachments</label>
+            </value>
+            <value>
+                <fullName>Declarations</fullName>
+                <default>false</default>
+                <label>Declarations</label>
+            </value>
+            <value>
+                <fullName>AML</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AML</label>
+            </value>
+            <value>
+                <fullName>Deliverables_Activities</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deliverables_Activities</label>
+            </value>
+            <value>
+                <fullName>Routable_Attachments</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Routable_Attachments</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

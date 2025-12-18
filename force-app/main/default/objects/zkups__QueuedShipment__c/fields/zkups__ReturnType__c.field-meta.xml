@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__ReturnType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Return Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Electronic Return Label</fullName>
+                <default>false</default>
+                <label>Electronic Return Label</label>
+            </value>
+            <value>
+                <fullName>Print Return Label</fullName>
+                <default>false</default>
+                <label>Print Return Label</label>
+            </value>
+            <value>
+                <fullName>Print and Mail</fullName>
+                <default>false</default>
+                <label>Print and Mail</label>
+            </value>
+            <value>
+                <fullName>Return Service 1 Attempt</fullName>
+                <default>false</default>
+                <label>Return Service 1 Attempt</label>
+            </value>
+            <value>
+                <fullName>Return Service 3 Attempts</fullName>
+                <default>false</default>
+                <label>Return Service 3 Attempts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

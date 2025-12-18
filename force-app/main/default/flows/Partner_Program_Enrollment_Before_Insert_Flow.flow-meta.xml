@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-26117: Created as part of Partners H1 Project to assign Activation Date</description>
+        <name>Assign_Activation_Date</name>
+        <label>Assign Activation Date</label>
+        <locationX>314</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Partner_Account_Details</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26117: Created as part of Partners H2 project to map Enrollment Name</description>
+        <name>Assign_Enrollment_Name</name>
+        <label>Assign Enrollment Name</label>
+        <locationX>380</locationX>
+        <locationY>1211</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Enrollment_Name_Formula_Limit80Char</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.SalesProgramType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Details.SalesProgramType__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.SalesProgramType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Details.SalesProgramType__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AE_Influence_Confirmation_Required__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Program_Details.AE_Influence_Confirmation_Required__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <customErrors>
+        <description>GTMS-26117: Created to throw custom error message if PE records exists with overlapping dates</description>
+        <name>Overlapping_Dates_Custom_Error_Message</name>
+        <label>Overlapping Dates Custom Error Message</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <customErrorMessages>
+            <errorMessage>An active Enrollment record is already exists for the selected Partner Account and Partner Program, Please deactivate the existing Active enrollment before creating a new enrollment.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <description>GTMS-26117: Created as part of Partner H1 Project to check the criteria for the triggering record</description>
+        <name>Criteria_check_for_overlapping_Dates</name>
+        <label>Criteria check for overlapping Dates</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Get_Partner_Account_Details</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_Inserted_to_match_criteria</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Member_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Existing_Active_PE_Record</targetReference>
+            </connector>
+            <label>Record Inserted to match criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26117: Created to check if the PE records exists with overlapping dates</description>
+        <name>Existing_PE_record_Check</name>
+        <label>Existing PE record Check</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Activation_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No PE records does not exists</defaultConnectorLabel>
+        <rules>
+            <name>Yes_PE_records_exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_Active_PE_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Overlapping_Dates_Custom_Error_Message</targetReference>
+            </connector>
+            <label>Yes, PE records exists</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26117: Created as part of Partners H1 project
+GTMS-26936: Mapping of sales Program type from Partner Program
+GTMS-28936 |  Mapping of AE_Influence_Confirmation_Required__c from Partner Program to Partner Program Enrollment</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-26117: Created as part of Partners H1 Project create the Name for partner Program Enrollment</description>
+        <name>Enrollment_Name_Formula</name>
+        <dataType>String</dataType>
+        <expression>{!Get_Partner_Account_Details.Name}+&apos; &apos;+{!Get_Partner_Program_Details.Name}+&apos; &apos;+&apos;Enrollment&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Enrollment_Name_Formula_Limit80Char</name>
+        <dataType>String</dataType>
+        <expression>if (LEN({!Enrollment_Name_Formula}) &lt; 80, {!Enrollment_Name_Formula},MID({!Enrollment_Name_Formula}, 0, 79))</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26117: Created to check if the record is new reocrd</description>
+        <name>New_Record</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Partner Program Enrollment Before Insert Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Partner Program Enrollment Before Insert Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>GTMS-26117: Created as part of Partners H1 project to fetch existing active Program Enrollment records record with Same Partner</description>
+        <name>Get_Existing_Active_PE_Record</name>
+        <label>Get Existing Active PE Record</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Existing_PE_record_Check</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4</filterLogic>
+        <filters>
+            <field>Partner_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Program__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Program__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Member_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Partner_Program_Enrollment__c</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26117: Created as part of Partners H1 Project to fetch Partner Account Details</description>
+        <name>Get_Partner_Account_Details</name>
+        <label>Get Partner Account Details</label>
+        <locationX>380</locationX>
+        <locationY>995</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Partner_Program_Details</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26117: Created as part of Partners H1 project to fetch Partner Program Details</description>
+        <name>Get_Partner_Program_Details</name>
+        <label>Get Partner Program Details</label>
+        <locationX>380</locationX>
+        <locationY>1103</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Enrollment_Name</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Program__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Partner_Program__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>SalesProgramType__c</queriedFields>
+        <queriedFields>AE_Influence_Confirmation_Required__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Criteria_check_for_overlapping_Dates</targetReference>
+        </connector>
+        <object>Partner_Program_Enrollment__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

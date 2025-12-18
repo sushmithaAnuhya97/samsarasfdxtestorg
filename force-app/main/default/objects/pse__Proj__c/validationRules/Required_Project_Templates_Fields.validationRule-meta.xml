@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Project_Templates_Fields</fullName>
+    <active>false</active>
+    <description>This validation rule ensures that the Expected_End_Date__c, pse__Region__c, and pse__Group__c fields are populated when the Engagement_Type__c is not equal to &quot;BVS Engagement&quot;. This is to ensure that all necessary information is provided for non-BVS Projs</description>
+    <errorConditionFormula>AND(
+  NOT(ISPICKVAL(Engagement_Type__c, &quot;BVS Engagement&quot;)),
+  OR(
+    ISBLANK(Expected_End_Date__c),
+    ISBLANK(pse__Region__c),
+    ISBLANK(pse__Group__c)
+  )
+)</errorConditionFormula>
+    <errorMessage>Expected End Date, Region, and Group are required for the selected Engagement Type. Please ensure all these fields are filled in.</errorMessage>
+</ValidationRule>

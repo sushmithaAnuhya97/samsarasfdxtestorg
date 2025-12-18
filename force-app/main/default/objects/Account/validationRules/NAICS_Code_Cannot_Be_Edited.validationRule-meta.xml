@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NAICS_Code_Cannot_Be_Edited</fullName>
+    <active>true</active>
+    <description>If the NAICS code is blank and billing country is MX, then the NAICS code can be edited. Otherwise, NAICS code cannot be edited by AEs and ADRs.</description>
+    <errorConditionFormula>AND(
+OR(CONTAINS($Profile.Name,&quot;AE&quot;),CONTAINS($Profile.Name,&quot;ADR&quot;)),
+ ISCHANGED(NAICS_Code__c),
+ OR(
+  NOT(ISPICKVAL(BillingCountryCode, &quot;MX&quot;)),
+  AND(
+    NOT(ISBLANK(PRIORVALUE(NAICS_Code__c))), 
+    ISPICKVAL(BillingCountryCode, &quot;MX&quot;)
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>The NAICS Code field cannot be updated by AEs/ADRs.</errorMessage>
+</ValidationRule>

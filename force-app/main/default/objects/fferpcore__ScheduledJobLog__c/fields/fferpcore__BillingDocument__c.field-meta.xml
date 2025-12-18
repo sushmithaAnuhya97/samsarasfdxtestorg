@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__BillingDocument__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the billing document that was processed in the batch to which this log relates.</description>
+    <inlineHelpText>Lookup to the billing document that was processed in the batch to which this log relates.</inlineHelpText>
+    <label>Billing Document</label>
+    <referenceTo>fferpcore__BillingDocument__c</referenceTo>
+    <relationshipLabel>Batch Logs</relationshipLabel>
+    <relationshipName>BatchLogs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

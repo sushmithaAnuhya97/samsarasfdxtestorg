@@ -1,0 +1,80 @@
+<template>
+    <lightning-card>
+       <div class="center-container">
+          <c-reusable-flow-screen-toast
+          if:true={showToast}
+          type={toastType}
+          title={toastTitle}
+          message={statusMsg}
+          style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 20;">
+          </c-reusable-flow-screen-toast>      
+             <div class="content-container">
+                <div class="datatable-wrapper">
+                   <!-- Spinner overlay when showSpinner is true -->
+                   <template if:true={showSpinner}>
+                      <div>
+                         <lightning-spinner size="large" alternative-text="Loading..."></lightning-spinner>
+                      </div>
+                   </template>
+
+                   <!-- No Data Message -->
+                   <template if:true={showNoDataMessage}>
+                       <div class="slds-notify slds-notify_alert slds-theme_warning slds-m-bottom_medium" role="alert">
+                           <lightning-icon icon-name="utility:warning" size="small" class="slds-m-right_x-small"></lightning-icon>
+                           <h2>No eligible trial products found for partial buy</h2>
+                       </div>
+                       <div class="slds-box slds-theme_default">
+                           <div class="slds-text-body_regular">
+                               <p>This could be because:</p>
+                               <ul class="slds-list_dotted slds-m-left_medium">
+                                   <li>There are no hardware, cable, or accessory products in the trial</li>
+                                   <li>The trial opportunity is not in Closed Won stage</li>
+                                   <li>The products may have already been processed</li>
+                               </ul>
+                               <p class="slds-m-top_small">Please verify the trial opportunity and try again.</p>
+                           </div>
+                       </div>
+                   </template>
+
+                   <!-- Data Table -->
+                   <template if:true={showDataTable}>
+                       <div class="card">
+                         <div class="container">
+                           <div class="left">
+                             <div class="status-ind"></div>
+                           </div>
+                           <div class="right">
+                             <div class="text-wrap">
+                               <p class="text-content">
+                                 {helpTextLabel}
+                               </p>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                       <lightning-datatable
+                          class="datatable-wrapper hideFirstColTable"
+                          key-field="Id"
+                          data={displayData}
+                          columns={columns}
+                          draft-values={draftValues}
+                          oncellchange={handleCellChange}
+                          onrowaction={handleRowAction}
+                          hide-checkbox-column="true"
+                          errors={errors}
+                          suppress-bottom-bar="true">
+                       </lightning-datatable>
+                   </template>
+                </div>
+             </div>
+             <!-- Modal Footer -->
+             <template if:true={showFooter}>
+             <lightning-modal-footer>
+                <lightning-button class="slds-button" variant="neutral" label="Previous" onclick={handlePrevious}></lightning-button>
+                <lightning-button class="slds-button" variant="brand" label="Next" onclick={handleFinish} disabled={isDisabled}></lightning-button>
+             </lightning-modal-footer>
+             </template>
+          <!-- </template> -->
+       </div>
+    </lightning-card>
+ </template>

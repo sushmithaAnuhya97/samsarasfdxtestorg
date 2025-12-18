@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Active_Content</fullName>
+    <columns>NAME</columns>
+    <columns>refedge__Title__c</columns>
+    <columns>refedge__Reference_Content_Type_Name__c</columns>
+    <columns>refedge__Language__c</columns>
+    <columns>refedge__Content_Status__c</columns>
+    <columns>refedge__Allow_Social_Sharing__c</columns>
+    <columns>refedge__Internal_Use__c</columns>
+    <columns>refedge__Content_File__c</columns>
+    <columns>refedge__Content_ID__c</columns>
+    <columns>refedge__Attributes__c</columns>
+    <columns>refedge__Review_Date__c</columns>
+    <columns>refedge__Expiration_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>refedge__Content_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Active Content</label>
+    <language>en_US</language>
+</ListView>

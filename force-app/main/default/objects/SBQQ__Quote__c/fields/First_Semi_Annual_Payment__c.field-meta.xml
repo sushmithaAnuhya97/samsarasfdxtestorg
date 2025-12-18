@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Semi_Annual_Payment__c</fullName>
+    <formula>ROUND(
+(
+IF(
+AND(
+SBQQ__Opportunity2__r.Billing_360_Transaction__c,
+Prorated_Amount__c &gt; 0,
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Semi-Annual&apos;)
+),
+Prorated_Amount__c,
+Semi_Annual_Payment__c
+)
++ Estimated_Upfront_Amount__c
++ IF(
+ISBLANK(Shipping_Address_NEW__c),
+0,
+Hardware_Sales_Tax__c
++ IF(
+AND(
+SBQQ__Opportunity2__r.Billing_360_Transaction__c,
+Prorated_Amount__c &gt; 0,
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Semi-Annual&apos;)
+),
+Prorated_Amount_with_Tax__c - Prorated_Amount__c,
+Semi_Annual_License_Sales_Tax__c
+)
++ IF(Shipping_and_Handling__c = 99999.99, 0, Shipping_and_Handling__c + S_H_Tax__c)
+)
+)
+- IF(AND(ISPICKVAL(Finance_Partner__c, &quot;&quot;),ISBLANK(Finance_Partner_Account__c)),Competitor_Buyout_Amount__c - Buyout_Sales_Tax__c,0)
++ ABS(IF(ISPICKVAL(Is_Installation_Reimbursable__c, &apos;Yes&apos;),Total_Estimated_Installation_Costs__c,0))
+- IF(Future_Free_Months_Amount__c &gt; 0,Future_Free_Months_Amount__c - Free_Service_Sales_Tax__c,0)
+- IF(OTD_Amt__c &gt; 0, OTD_Amt__c - OTD_Sales_Tax__c, 0),2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>First Semi-Annual Payment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

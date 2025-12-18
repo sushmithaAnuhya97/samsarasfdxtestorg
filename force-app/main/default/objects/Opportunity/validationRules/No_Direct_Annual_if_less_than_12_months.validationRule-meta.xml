@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Direct_Annual_if_less_than_12_months</fullName>
+    <active>false</active>
+    <description>Prevents reps from selection direct annual payments for add-on opportunities</description>
+    <errorConditionFormula>AND( 
+OR( 
+Direct_Annual__c = TRUE, 
+ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Annual&quot;) 
+),
+TEXT(Type) = &apos;Revenue Opportunity&apos;, 
+License_Term_Formula__c &lt; 12 
+)</errorConditionFormula>
+    <errorMessage>Direct annual payments are not allowed for license terms less than 12 months, please select direct monthly.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Geography__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+BillingState,
+&apos;Alabama&apos;,&apos;Central&apos;,
+&apos;Alaska&apos;,&apos;West&apos;,
+&apos;Arizona&apos;,&apos;West&apos;,
+&apos;Arkansas&apos;,&apos;Central&apos;,
+&apos;California&apos;,&apos;West&apos;,
+&apos;Colorado&apos;,&apos;West&apos;,
+&apos;Connecticut&apos;,&apos;East&apos;,
+&apos;Delaware&apos;,&apos;East&apos;,
+&apos;District of Columbia&apos;,&apos;East&apos;,
+&apos;Florida&apos;,&apos;East&apos;,
+&apos;Georgia&apos;,&apos;East&apos;,
+&apos;Hawaii&apos;,&apos;West&apos;,
+&apos;Idaho&apos;,&apos;West&apos;,
+&apos;Illinois&apos;,&apos;Central&apos;,
+&apos;Indiana&apos;,&apos;Central&apos;,
+&apos;Iowa&apos;,&apos;Central&apos;,
+&apos;Kansas&apos;,&apos;Central&apos;,
+&apos;Kentucky&apos;,&apos;Central&apos;,
+&apos;Louisiana&apos;,&apos;Central&apos;,
+&apos;Maine&apos;,&apos;East&apos;,
+&apos;Maryland&apos;,&apos;East&apos;,
+&apos;Massachusetts&apos;,&apos;East&apos;,
+&apos;Michigan&apos;,&apos;East&apos;,
+&apos;Minnesota&apos;,&apos;Central&apos;,
+&apos;Mississippi&apos;,&apos;Central&apos;,
+&apos;Missouri&apos;,&apos;Central&apos;,
+&apos;Montana&apos;,&apos;West&apos;,
+&apos;Nebraska&apos;,&apos;Central&apos;,
+&apos;Nevada&apos;,&apos;West&apos;,
+&apos;New Hampshire&apos;,&apos;East&apos;,
+&apos;New Jersey&apos;,&apos;East&apos;,
+&apos;New Mexico&apos;,&apos;West&apos;,
+&apos;New York&apos;,&apos;East&apos;,
+&apos;North Carolina&apos;,&apos;East&apos;,
+&apos;North Dakota&apos;,&apos;Central&apos;,
+&apos;Ohio&apos;,&apos;East&apos;,
+&apos;Oklahoma&apos;,&apos;Central&apos;,
+&apos;Oregon&apos;,&apos;West&apos;,
+&apos;Pennsylvania&apos;,&apos;East&apos;,
+&apos;Rhode Island&apos;,&apos;East&apos;,
+&apos;South Carolina&apos;,&apos;East&apos;,
+&apos;South Dakota&apos;,&apos;Central&apos;,
+&apos;Tennessee&apos;,&apos;Central&apos;,
+&apos;Texas&apos;,&apos;Central&apos;,
+&apos;Utah&apos;,&apos;West&apos;,
+&apos;Vermont&apos;,&apos;East&apos;,
+&apos;Virginia&apos;,&apos;East&apos;,
+&apos;Washington&apos;,&apos;West&apos;,
+&apos;West Virginia&apos;,&apos;East&apos;,
+&apos;Wisconsin&apos;,&apos;Central&apos;,
+&apos;Wyoming&apos;,&apos;West&apos;,
+&apos;Other&apos;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Geography</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

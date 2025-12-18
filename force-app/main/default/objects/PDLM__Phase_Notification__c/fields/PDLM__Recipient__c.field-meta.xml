@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Recipient__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Recipient</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Approvers</fullName>
+                <default>true</default>
+                <label>Approvers on This Phase Only</label>
+            </value>
+            <value>
+                <fullName>UserGroup</fullName>
+                <default>false</default>
+                <label>User/Group</label>
+            </value>
+            <value>
+                <fullName>All_Approvers</fullName>
+                <default>false</default>
+                <label>Approvers from All Phases</label>
+            </value>
+            <value>
+                <fullName>Creator</fullName>
+                <default>false</default>
+                <label>Owner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

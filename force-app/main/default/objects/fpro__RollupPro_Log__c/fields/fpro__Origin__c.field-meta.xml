@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Origin__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is automatically populated with the origin of this job run, identifying the source or trigger that started the job (e.g., scheduled task, user-initiated action, or test class request). Use this information for reporting to track the job&apos;s context and initiation point. Do not modify this field, as it is system-generated and essential for accurate reporting.</description>
+    <inlineHelpText>This field is automatically populated with the origin of this job run, identifying the source or trigger that started the job (e.g., scheduled task, user-initiated action, or test class request). Use this information for reporting to track the job&apos;s context and initiation point. Do not modify this field, as it is system-generated and essential for accurate reporting.</inlineHelpText>
+    <label>Origin</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Realtime (&quot;Run&quot; Action)</fullName>
+                <default>false</default>
+                <label>Realtime (&quot;Run&quot; Action)</label>
+            </value>
+            <value>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+                <label>Scheduled</label>
+            </value>
+            <value>
+                <fullName>Test Class</fullName>
+                <default>false</default>
+                <label>Test Class</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

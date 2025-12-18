@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospecting_Call__c</fullName>
+    <description>A prospecting call is when the call goes to an account with no open, qualified oppty; account status is not &quot;open opportunity&quot;, &quot;existing customer&quot; with an open oppty, the qualification date is blank, OR the call occurred before the first oppty qualification date</description>
+    <formula>IF( 
+    ISNULL(Related_Contact__r.Account.First_Purchase_Opportunity__r.Qualified_Date__c) || 
+    ActivityDate &lt;= DATEVALUE(Related_Contact__r.Account.First_Purchase_Opportunity__r.Qualified_Date__c), 
+TRUE, 
+
+
+IF(
+Account_Status_Copy__c  = &quot;Open Opportunity&quot; ||
+(Account_Status_Copy__c  = &quot;Existing Customer&quot; &amp;&amp;   OR(Open_Oppty_Rev_Copy__c &gt; 0,ISNULL(Open_Oppty_Rev_Copy__c))) ||
+ISBLANK(Account_Status_Copy__c) ||
+ISBLANK(Related_Contact__c)
+, FALSE, TRUE)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Prospecting Call</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Kickback_Reason__c</fullName>
+    <description>GTMS-16802: Added new picklist values and updated existing picklist values as per the excel in jira comments</description>
+    <label>Closing Delay Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Order Form/ PO not attached to SFDC</fullName>
+                <default>false</default>
+                <label>Order Form/ PO not attached to SFDC</label>
+            </value>
+            <value>
+                <fullName>Order Form not signed</fullName>
+                <default>false</default>
+                <label>Incomplete signature on Order Form</label>
+            </value>
+            <value>
+                <fullName>Missing 1st payment</fullName>
+                <default>false</default>
+                <label>Missing 1st payment</label>
+            </value>
+            <value>
+                <fullName>Incorrect 1st payment</fullName>
+                <default>false</default>
+                <label>Incorrect Amount Received</label>
+            </value>
+            <value>
+                <fullName>Difference in license total on Order Form/ SFDC</fullName>
+                <default>false</default>
+                <label>Difference in license total on Order Form/ SFDC</label>
+            </value>
+            <value>
+                <fullName>Difference in products on Order Form/SFDC</fullName>
+                <default>false</default>
+                <label>Difference in products on Order Form/SFDC</label>
+            </value>
+            <value>
+                <fullName>Tax discrepancy</fullName>
+                <default>false</default>
+                <label>Tax discrepancy</label>
+            </value>
+            <value>
+                <fullName>Tax listed as $99K in error</fullName>
+                <default>false</default>
+                <label>Tax listed as $99K in error</label>
+            </value>
+            <value>
+                <fullName>S&amp;H listed as $99k in error</fullName>
+                <default>false</default>
+                <label>S&amp;H listed as $99k in error</label>
+            </value>
+            <value>
+                <fullName>S&amp;H listed on 100% discounted items - Promo</fullName>
+                <default>false</default>
+                <label>S&amp;H listed on 100% discounted items - Promo</label>
+            </value>
+            <value>
+                <fullName>Increase in license term due to change in close date</fullName>
+                <default>false</default>
+                <label>Increase in license term due to change in close date</label>
+            </value>
+            <value>
+                <fullName>Decrease in license term due to change in close date</fullName>
+                <default>false</default>
+                <label>Decrease in license term due to change in close date</label>
+            </value>
+            <value>
+                <fullName>Mismatch payment type on Order Form/SFDC</fullName>
+                <default>false</default>
+                <label>Mismatch payment type on Order Form/SFDC</label>
+            </value>
+            <value>
+                <fullName>Mismatch currency on Order Form/ SFDC</fullName>
+                <default>false</default>
+                <label>Mismatch currency on Order Form/ SFDC</label>
+            </value>
+            <value>
+                <fullName>Missing subsidy</fullName>
+                <default>false</default>
+                <label>Missing subsidy</label>
+            </value>
+            <value>
+                <fullName>Incorrect Buyout Amount in SFDC</fullName>
+                <default>false</default>
+                <label>Incorrect Buyout Amount in SFDC</label>
+            </value>
+            <value>
+                <fullName>Renewal date has passed</fullName>
+                <default>false</default>
+                <label>Renewal date has passed</label>
+            </value>
+            <value>
+                <fullName>NCS/ Rebate does not match SER value</fullName>
+                <default>false</default>
+                <label>NCS/ Rebate does not match SER value</label>
+            </value>
+            <value>
+                <fullName>Invalid VAT</fullName>
+                <default>false</default>
+                <label>Invalid VAT</label>
+            </value>
+            <value>
+                <fullName>Primary Quote Not Approved</fullName>
+                <default>false</default>
+                <label>Primary Quote Not Approved</label>
+            </value>
+            <value>
+                <fullName>Technical SFDC Issue</fullName>
+                <default>false</default>
+                <label>Technical SFDC Issue</label>
+            </value>
+            <value>
+                <fullName>Order received after shipping cutoff</fullName>
+                <default>false</default>
+                <label>Order received after shipping cutoff</label>
+            </value>
+            <value>
+                <fullName>Close Date is not equal to current date</fullName>
+                <default>false</default>
+                <label>Close Date is not equal to current date</label>
+            </value>
+            <value>
+                <fullName>Currency Mismatch across Opportunity, CPQ, and Docusign</fullName>
+                <default>false</default>
+                <label>Currency Mismatch across Opportunity, CPQ, and Docusign</label>
+            </value>
+            <value>
+                <fullName>VAT Discrepancy</fullName>
+                <default>false</default>
+                <label>VAT Discrepancy</label>
+            </value>
+            <value>
+                <fullName>No Payment Method on File</fullName>
+                <default>false</default>
+                <label>No Payment Method on File</label>
+            </value>
+            <value>
+                <fullName>S&amp;H not matching Docusign</fullName>
+                <default>false</default>
+                <label>S&amp;H not matching Docusign</label>
+            </value>
+            <value>
+                <fullName>Billing Company Name does not match between the DocuSign and the CPQ quote</fullName>
+                <default>false</default>
+                <label>Billing Company Name does not match between the DocuSign and the CPQ quote</label>
+            </value>
+            <value>
+                <fullName>The customer is enrolled in automated billing (New Billing Process)</fullName>
+                <default>false</default>
+                <label>The customer is enrolled in automated billing (New Billing Process)</label>
+            </value>
+            <value>
+                <fullName>The billing frequency on the DocuSign do not match the payments on the CPQ quote</fullName>
+                <default>false</default>
+                <label>The billing frequency on the DocuSign do not match the payments on the CPQ quote</label>
+            </value>
+            <value>
+                <fullName>The payment terms on the DocuSign do not match the payments on the CPQ quote</fullName>
+                <default>false</default>
+                <label>The payment terms on the DocuSign do not match the payments on the CPQ quote</label>
+            </value>
+            <value>
+                <fullName>Close Date has exceeded Latest Close date</fullName>
+                <default>false</default>
+                <label>Close Date has exceeded Latest Close date</label>
+            </value>
+            <value>
+                <fullName>Mismatch in Shipping Address</fullName>
+                <default>false</default>
+                <label>Mismatch in Shipping Address</label>
+            </value>
+            <value>
+                <fullName>HW only opps should be have Upfront selected payment type</fullName>
+                <default>false</default>
+                <label>HW only opps should be have Upfront selected payment type</label>
+            </value>
+            <value>
+                <fullName>Incorrect 1st invoice amount on pg 1</fullName>
+                <default>false</default>
+                <label>Incorrect 1st invoice amount on pg 1</label>
+            </value>
+            <value>
+                <fullName>Missing Selected Payment Type in CPQ quote</fullName>
+                <default>false</default>
+                <label>Missing Selected Payment Type in CPQ quote</label>
+            </value>
+            <value>
+                <fullName>Incorrect Payment Type in CPQ</fullName>
+                <default>false</default>
+                <label>Incorrect Payment Type in CPQ</label>
+            </value>
+            <value>
+                <fullName>Need clarification on rebate</fullName>
+                <default>false</default>
+                <label>Need clarification on rebate</label>
+            </value>
+            <value>
+                <fullName>Net Terms require Deal Desk Approval</fullName>
+                <default>false</default>
+                <label>Net Terms require Deal Desk Approval</label>
+            </value>
+            <value>
+                <fullName>Difference in S&amp;H</fullName>
+                <default>false</default>
+                <label>Difference in S&amp;H</label>
+            </value>
+            <value>
+                <fullName>Promos cannot have license sku without approval</fullName>
+                <default>false</default>
+                <label>Promos cannot have license sku without approval</label>
+            </value>
+            <value>
+                <fullName>The system has detected a change in the Total Hardware Due or Total License Due on the opportunity compared to the DocuSign. This may be due to a change in the tax calculation, shipping address, shipping and handling charge, or product pricing.</fullName>
+                <default>false</default>
+                <label>The system has detected a change in the Total Hardware Due or Total License Due on the opportunity compared to the DocuSign. This may be due to a change in the tax calculation, shipping address, shipping and handling charge, or product pricing.</label>
+            </value>
+            <value>
+                <fullName>PO lists freight terms consisting of FOB Destination</fullName>
+                <default>false</default>
+                <label>PO lists freight terms consisting of FOB Destination</label>
+            </value>
+            <value>
+                <fullName>Missing Documentation - MXN. 1st Purchase (Persona Morale)</fullName>
+                <default>false</default>
+                <label>Missing Documentation - MXN. 1st Purchase (Persona Morale)</label>
+            </value>
+            <value>
+                <fullName>Missing Documentation - MXN. 1st Purchase (Persona Fisica)</fullName>
+                <default>false</default>
+                <label>Missing Documentation - MXN. 1st Purchase (Persona Fisica)</label>
+            </value>
+            <value>
+                <fullName>Inaccurate prefill of Finance Partner/Reseller</fullName>
+                <default>false</default>
+                <label>Inaccurate prefill of Finance Partner/Reseller</label>
+            </value>
+            <value>
+                <fullName>Annual opp for 12 months or less</fullName>
+                <default>false</default>
+                <label>Annual opp for 12 months or less</label>
+            </value>
+            <value>
+                <fullName>Shipping costs pending on Order Form (OF)</fullName>
+                <default>false</default>
+                <label>Shipping costs pending on Order Form (OF)</label>
+            </value>
+            <value>
+                <fullName>Account payment terms do not match opp level</fullName>
+                <default>false</default>
+                <label>Account payment terms do not match opp level</label>
+            </value>
+            <value>
+                <fullName>Missing buyout language on OF</fullName>
+                <default>false</default>
+                <label>Missing buyout language on OF</label>
+            </value>
+            <value>
+                <fullName>Missing DD approval for custom OF (installation, free months, buyout)</fullName>
+                <default>false</default>
+                <label>Missing DD approval for custom OF (installation, free months, buyout)</label>
+            </value>
+            <value>
+                <fullName>Incorrect template for order form</fullName>
+                <default>false</default>
+                <label>Incorrect template for order form</label>
+            </value>
+            <value>
+                <fullName>License term mismatch</fullName>
+                <default>false</default>
+                <label>License term mismatch</label>
+            </value>
+            <value>
+                <fullName>Missing ISD approval for promo on CPQ</fullName>
+                <default>false</default>
+                <label>Missing ISD approval for promo on CPQ</label>
+            </value>
+            <value>
+                <fullName>Promo missing 100% discount</fullName>
+                <default>false</default>
+                <label>Promo missing 100% discount</label>
+            </value>
+            <value>
+                <fullName>Missing Renewal Contract ID Field</fullName>
+                <default>false</default>
+                <label>Missing Renewal Contract ID Field</label>
+            </value>
+            <value>
+                <fullName>Missing reason for discount on promo</fullName>
+                <default>false</default>
+                <label>Missing reason for discount on promo</label>
+            </value>
+            <value>
+                <fullName>Missing multiline check on CPQ</fullName>
+                <default>false</default>
+                <label>Missing multiline check on CPQ</label>
+            </value>
+            <value>
+                <fullName>Free Trial line item with cost on OF</fullName>
+                <default>false</default>
+                <label>Free Trial line item with cost on OF</label>
+            </value>
+            <value>
+                <fullName>Payment terms on CPQ do not align with app level</fullName>
+                <default>false</default>
+                <label>Payment terms on CPQ do not align with app level</label>
+            </value>
+            <value>
+                <fullName>Missing SKU related additional documentation (ie: Professional Services, Insurance Subsidy,etc)</fullName>
+                <default>false</default>
+                <label>Missing SKU related additional documentation (ie: Professional Services, Insurance Subsidy,etc)</label>
+            </value>
+            <value>
+                <fullName>Missing CS POC First Name, CS POC Email &amp; key value points on the account level</fullName>
+                <default>false</default>
+                <label>Missing CS POC First Name, CS POC Email &amp; key value points on the account level</label>
+            </value>
+            <value>
+                <fullName>Mismatch in HW Costs</fullName>
+                <default>false</default>
+                <label>Mismatch in HW Costs</label>
+            </value>
+            <value>
+                <fullName>Missing Samsara Q# reference on Purchase Order</fullName>
+                <default>false</default>
+                <label>Missing Samsara Q# reference on Purchase Order</label>
+            </value>
+            <value>
+                <fullName>Missing copy of Order Form (unsigned)</fullName>
+                <default>false</default>
+                <label>Missing copy of Order Form (unsigned)</label>
+            </value>
+            <value>
+                <fullName>Missing PO #</fullName>
+                <default>false</default>
+                <label>Missing PO #</label>
+            </value>
+            <value>
+                <fullName>Missing all pages of Order Form</fullName>
+                <default>false</default>
+                <label>Missing all pages of Order Form</label>
+            </value>
+            <value>
+                <fullName>Missing Reseller Purchase Order</fullName>
+                <default>false</default>
+                <label>Missing Reseller Purchase Order</label>
+            </value>
+            <value>
+                <fullName>Missing 3PF Profile</fullName>
+                <default>false</default>
+                <label>Missing 3PF Profile</label>
+            </value>
+            <value>
+                <fullName>Missing T&amp;C for Installation</fullName>
+                <default>false</default>
+                <label>Missing T&amp;C for Installation</label>
+            </value>
+            <value>
+                <fullName>Missing shipping details on the order form</fullName>
+                <default>false</default>
+                <label>Missing shipping details on the order form</label>
+            </value>
+            <value>
+                <fullName>Difference in Total License Cost on Order Form/SFDC</fullName>
+                <default>false</default>
+                <label>Difference in Total License Cost on Order Form/SFDC</label>
+            </value>
+            <value>
+                <fullName>Discrepancy on Total Sales Tax on Order Form/SFDC</fullName>
+                <default>false</default>
+                <label>Discrepancy on Total Sales Tax on Order Form/SFDC</label>
+            </value>
+            <value>
+                <fullName>The system has detected a change in the Number of Free Months in CPQ compared to the DocuSign</fullName>
+                <default>false</default>
+                <label>The system has detected a change in the Number of Free Months in CPQ compared to the DocuSign</label>
+            </value>
+            <value>
+                <fullName>The system has detected a change in the Free Service Amount in CPQ compared to the DocuSign</fullName>
+                <default>false</default>
+                <label>The system has detected a change in the Free Service Amount in CPQ compared to the DocuSign</label>
+            </value>
+            <value>
+                <fullName>The system has detected a change in the Free Service Tax Amount in CPQ compared to the DocuSign</fullName>
+                <default>false</default>
+                <label>The system has detected a change in the Free Service Tax Amount in CPQ compared to the DocuSign</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connected_Trainings_FRs_View</fullName>
+    <columns>NAME</columns>
+    <columns>Total_ACV__c</columns>
+    <columns>Total_ARR__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>PM_Owner_Id__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Area__c</field>
+        <operation>equals</operation>
+        <value>Training</value>
+    </filters>
+    <label>Connected Trainings FRs View</label>
+</ListView>

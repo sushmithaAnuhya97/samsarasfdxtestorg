@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psaws__Projects_with_Eligible_Billing_Records</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>pse__Billing_Type__c</columns>
+    <columns>pse__Billing_Eligible_Timecard_Splits__c</columns>
+    <columns>pse__Billing_Eligible_Expenses__c</columns>
+    <columns>pse__Billing_Eligible_Milestones__c</columns>
+    <columns>pse__Billing_Eligible_Misc_Adjustments__c</columns>
+    <columns>pse__Billing_Eligible_Budgets__c</columns>
+    <columns>pse__Bookings__c</columns>
+    <columns>pse__Billings__c</columns>
+    <columns>pse__Billed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Is_Billable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Exclude_From_Billing__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Billing_Eligible_Budgets__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Billing_Eligible_Expenses__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Billing_Eligible_Milestones__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Billing_Eligible_Misc_Adjustments__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Billing_Eligible_Timecard_Splits__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Projects with Eligible Billing Records</label>
+</ListView>

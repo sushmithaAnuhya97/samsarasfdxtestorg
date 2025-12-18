@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UG_Mapped_Industry__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( UserGem__CurrentCompanyIndustry__c,
+&apos;Construction&apos;,&apos;Construction&apos;,
+&apos;Building Materials&apos;,&apos;Construction&apos;,
+&apos;Civil Engineering&apos;,&apos;Construction&apos;,
+&apos;Consumer Goods&apos;,&apos;Consumer Products&apos;,
+&apos;Education&apos;,&apos;Educational Services&apos;,
+&apos;Education Management &apos;,&apos;Educational Services&apos;,
+&apos;E-Learning&apos;,&apos;Educational Services&apos;,
+&apos;Higher Education&apos;,&apos;Educational Services&apos;,
+&apos;Primary/Secondary Education&apos;,&apos;Educational Services&apos;,
+&apos;Research&apos;,&apos;Educational Services&apos;,
+&apos;Consumer Services&apos;,&apos;Field Services&apos;,
+&apos;Environmental Services&apos;,&apos;Field Services&apos;,
+&apos;Facilities Services&apos;,&apos;Field Services&apos;,
+&apos;Food Production&apos;,&apos;Food &amp; Beverage&apos;,
+&apos;Food &amp; Beverages&apos;,&apos;Food &amp; Beverage&apos;,
+&apos;Agriculture&apos;,&apos;Food &amp; Beverage&apos;,
+&apos;Public Safety&apos;,&apos;Government&apos;,
+&apos;Law Enforcement&apos;,&apos;Government&apos;,
+&apos;Military&apos;,&apos;Government&apos;,
+&apos;Public Administration&apos;,&apos;Government&apos;,
+&apos;Government Administration&apos;,&apos;Government&apos;,
+&apos;Health Care&apos;,&apos;Health Care &amp; Social Assistance&apos;,
+&apos;Hospital &amp; Health Care&apos;,&apos;Health Care &amp; Social Assistance&apos;,
+&apos;Manufacturing&apos;,&apos;Manufacturing&apos;,
+&apos;Machinery&apos;,&apos;Manufacturing&apos;,
+&apos;Oil &amp; Energy&apos;,&apos;Mining, Quarrying, Oil &amp; Gas&apos;,
+&apos;Mining &amp; Metals&apos;,&apos;Mining, Quarrying, Oil &amp; Gas&apos;,
+&apos;Retail&apos;,&apos;Retail Trade&apos;,
+&apos;Transportation &amp; Logistics&apos;,&apos;Transportation &amp; Warehousing&apos;,
+&apos;Logistics &amp; Supply Chain&apos;,&apos;Transportation &amp; Warehousing&apos;,
+&apos;Package/Freight delivery&apos;,&apos;Transportation &amp; Warehousing&apos;,
+&apos;Import &amp; Export&apos;,&apos;Transportation &amp; Warehousing&apos;,
+&apos;Warehousing&apos;,&apos;Transportation &amp; Warehousing&apos;,
+&apos;Transportation/Trucking/Railroad&apos;,&apos;Transportation &amp; Warehousing&apos;,
+&apos;Utilities&apos;,&apos;Utilities&apos;,
+&apos;Wholesale&apos;,&apos;Wholesale Trade&apos;,
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>UG Mapped Industry</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

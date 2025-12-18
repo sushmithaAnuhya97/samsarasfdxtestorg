@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BRIGID_ECOs</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Product_Line_Affected__c</columns>
+    <columns>PDLM__Target_Implementation_Date__c</columns>
+    <columns>PDLM__Approved_Date__c</columns>
+    <columns>PDLM__Title__c</columns>
+    <columns>PDLM__Description_5000__c</columns>
+    <columns>Control_Run_Required__c</columns>
+    <columns>PDLM__In_Approval_Process__c</columns>
+    <columns>PDLM__Severity__c</columns>
+    <columns>PDLM__Status_lk__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>WO_Serial_Number_cut_in__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PDLM__Status_lk__c</field>
+        <operation>notEqual</operation>
+        <value>cancelled</value>
+    </filters>
+    <filters>
+        <field>PDLM__Title__c</field>
+        <operation>contains</operation>
+        <value>BRIGID</value>
+    </filters>
+    <filters>
+        <field>PDLM__Title__c</field>
+        <operation>contains</operation>
+        <value>CM33</value>
+    </filters>
+    <filters>
+        <field>PDLM__Title__c</field>
+        <operation>contains</operation>
+        <value>CM34</value>
+    </filters>
+    <label>BRIGID ECOs</label>
+</ListView>

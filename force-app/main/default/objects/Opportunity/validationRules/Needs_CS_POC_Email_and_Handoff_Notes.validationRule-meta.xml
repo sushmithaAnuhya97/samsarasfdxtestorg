@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_CS_POC_Email_and_Handoff_Notes</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(StageName),
+ISPICKVAL(Type,&apos;Revenue Opportunity&apos;),
+CONTAINS(Owner_Manager_Role_Copy__c , &apos;Fleet&apos;),
+First_Purchase__c,
+CONTAINS(Owner_Role_Copy__c,&apos;EMEA&apos;),
+OR(
+  ISPICKVAL(StageName, &apos;Closing&apos;),
+  ISPICKVAL(StageName, &apos;Orders Processing&apos;)),
+OR(
+  ISBLANK( Account.CS_POC_Email_Address__c ),
+  ISBLANK( Account.CS_POC_First_Name__c )),
+OR(
+  CONTAINS(Owner_Role_Copy__c,&apos;AE1&apos;),
+  CONTAINS(Owner_Role_Copy__c,&apos;AE2&apos;),
+  CONTAINS($User.ProfileId,&apos;00e1P000000FBBD&apos;)))</errorConditionFormula>
+    <errorMessage>Please fill out CS POC (first name, email and AE CSM Handoff notes) on the Account prior to moving this deal to the closing and/or orders processing stages</errorMessage>
+</ValidationRule>

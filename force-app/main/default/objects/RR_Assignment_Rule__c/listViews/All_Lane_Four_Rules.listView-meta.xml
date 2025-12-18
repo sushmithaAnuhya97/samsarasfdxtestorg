@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Lane_Four_Rules</fullName>
+    <columns>NAME</columns>
+    <columns>Rule_Description__c</columns>
+    <columns>Active__c</columns>
+    <columns>Object__c</columns>
+    <columns>Order__c</columns>
+    <columns>Type__c</columns>
+    <columns>Next_Assignment__c</columns>
+    <columns>Next_Assignment_Mapping__c</columns>
+    <columns>Always_Use_Next_Assignment__c</columns>
+    <columns>Deal_Reg_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>equals</operation>
+        <value>Lane Four</value>
+    </filters>
+    <label>All Lane Four Rules</label>
+</ListView>

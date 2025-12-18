@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_From_Trial_Ship_To_Activation__c</fullName>
+    <description>Days that passed since the first trial ship to the account and the day its devices were claimed. It only take into account trials shipped before any purchase.</description>
+    <externalId>false</externalId>
+    <formula>IF( NOT( ISBLANK(First_Purchase_Date__c) ) , 
+
+IF(
+AND(First_Purchase_Date__c-First_Trial_Ship_Date__c&gt;=0,
+First_Purchase_Date__c-DATEVALUE(Free_Trial_First_Device_Claim_Datetime__c)&gt;=0),
+
+IF(DATEVALUE(Free_Trial_First_Device_Claim_Datetime__c)-First_Trial_Ship_Date__c&gt;=0,
+
+DATEVALUE(Free_Trial_First_Device_Claim_Datetime__c)-First_Trial_Ship_Date__c,
+
+NULL),
+
+NULL), 
+
+IF(DATEVALUE(Free_Trial_First_Device_Claim_Datetime__c)-First_Trial_Ship_Date__c&gt;=0,
+
+DATEVALUE(Free_Trial_First_Device_Claim_Datetime__c)-First_Trial_Ship_Date__c,
+
+NULL))</formula>
+    <label>Days From Trial Ship To Activation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

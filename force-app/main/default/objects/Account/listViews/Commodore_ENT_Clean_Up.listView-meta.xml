@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commodore_ENT_Clean_Up</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PARENT_NAME</columns>
+    <columns>Owner_Role__c</columns>
+    <columns>CS_Tier__c</columns>
+    <columns>First_Purchase_Date__c</columns>
+    <columns>SIC__c</columns>
+    <columns>Account_Status_Updated__c</columns>
+    <columns>Total_parent_child_ARR__c</columns>
+    <columns>Customer_ARR__c</columns>
+    <columns>CS_Tier_Override__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CS_Tier__c</field>
+        <operation>equals</operation>
+        <value>Core Basic,Core Standard,Core High</value>
+    </filters>
+    <filters>
+        <field>Total_parent_child_ARR__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>Owner_Role__c</field>
+        <operation>notContain</operation>
+        <value>SLED</value>
+    </filters>
+    <filters>
+        <field>Owner_Role__c</field>
+        <operation>notContain</operation>
+        <value>cor</value>
+    </filters>
+    <filters>
+        <field>Customer_ARR__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Commodore ENT Clean Up</label>
+</ListView>

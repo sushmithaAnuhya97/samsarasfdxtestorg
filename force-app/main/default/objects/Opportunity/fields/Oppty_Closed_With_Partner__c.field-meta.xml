@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty_Closed_With_Partner__c</fullName>
+    <formula>IF(
+AND(OR(ISPICKVAL(Type,&apos;Revenue Opportunity&apos;),ISPICKVAL(Type,&apos;Rebate&apos;),ISPICKVAL(Type,&apos;Remorse Refund&apos;)), OR(ISPICKVAL(StageName,&apos;Closed Won&apos;), ISPICKVAL(StageName,&apos;Refunded - Closed&apos;)),
+(OR(
+NOT(ISBLANK(Referral_Partner__c)),
+NOT(ISBLANK(Reseller_Partner__c)),
+NOT(ISBLANK(Reseller__c)),
+NOT(ISBLANK(Insurance_Partner__c ))
+)
+)
+),
+True, False)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Oppty Closed With Partner</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

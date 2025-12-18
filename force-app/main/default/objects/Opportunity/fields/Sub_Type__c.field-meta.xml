@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Type__c</fullName>
+    <label>Sub - Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not For Resale (NFR)</fullName>
+                <default>false</default>
+                <label>Not For Resale (NFR)</label>
+            </value>
+            <value>
+                <fullName>Paid Pilot</fullName>
+                <default>false</default>
+                <label>Paid Pilot</label>
+            </value>
+            <value>
+                <fullName>Upfitter</fullName>
+                <default>false</default>
+                <label>Upfitter</label>
+            </value>
+            <value>
+                <fullName>Auto-Renewal</fullName>
+                <default>false</default>
+                <label>Auto-Renewal</label>
+            </value>
+            <value>
+                <fullName>Split Opp - Q1</fullName>
+                <default>false</default>
+                <label>Split Opp - Q1</label>
+            </value>
+            <value>
+                <fullName>Split Opp - Q2</fullName>
+                <default>false</default>
+                <label>Split Opp - Q2</label>
+            </value>
+            <value>
+                <fullName>Split Opp - Q3</fullName>
+                <default>false</default>
+                <label>Split Opp - Q3</label>
+            </value>
+            <value>
+                <fullName>Split Opp - Q4</fullName>
+                <default>false</default>
+                <label>Split Opp - Q4</label>
+            </value>
+            <value>
+                <fullName>Split Opp</fullName>
+                <default>false</default>
+                <label>Split Opp</label>
+            </value>
+            <value>
+                <fullName>Reprocessing Return</fullName>
+                <default>false</default>
+                <label>Reprocessing Return</label>
+            </value>
+            <value>
+                <fullName>Clickpath</fullName>
+                <default>false</default>
+                <label>Clickpath</label>
+            </value>
+            <value>
+                <fullName>Consolidated Renewal</fullName>
+                <default>false</default>
+                <label>Consolidated Renewal</label>
+            </value>
+            <value>
+                <fullName>Renewal Extension</fullName>
+                <default>false</default>
+                <label>Renewal Extension</label>
+            </value>
+            <value>
+                <fullName>Virtual Return</fullName>
+                <default>false</default>
+                <label>Virtual Return</label>
+            </value>
+            <value>
+                <fullName>Sales Order X Processing</fullName>
+                <default>false</default>
+                <label>Sales Order X Processing</label>
+            </value>
+            <value>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+                <label>Upgrade</label>
+            </value>
+            <value>
+                <fullName>MX Data Migration</fullName>
+                <default>false</default>
+                <label>MX Data Migration</label>
+            </value>
+            <value>
+                <fullName>ETF</fullName>
+                <default>false</default>
+                <label>ETF</label>
+            </value>
+            <value>
+                <fullName>Remorse Refund - In Policy</fullName>
+                <default>false</default>
+                <label>Remorse Refund - In Policy</label>
+            </value>
+            <value>
+                <fullName>Remorse Refund - Approved Out of Policy</fullName>
+                <default>false</default>
+                <label>Remorse Refund - Approved Out of Policy</label>
+            </value>
+            <value>
+                <fullName>Contract Cancellation</fullName>
+                <default>false</default>
+                <label>Contract Cancellation</label>
+            </value>
+            <value>
+                <fullName>Contract Replacement</fullName>
+                <default>false</default>
+                <label>Contract Replacement</label>
+            </value>
+            <value>
+                <fullName>3PL to OEM transfer</fullName>
+                <default>false</default>
+                <label>3PL to OEM transfer</label>
+            </value>
+            <value>
+                <fullName>OEM to Customer delivery</fullName>
+                <default>false</default>
+                <label>OEM to Customer delivery</label>
+            </value>
+            <value>
+                <fullName>HOS No Vehicle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HOS No Vehicle</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Free Trial Opportunity</controllingFieldValue>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <controllingFieldValue>Free Trial Return</controllingFieldValue>
+            <controllingFieldValue>Exchange</controllingFieldValue>
+            <valueName>3PL to OEM transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Free Trial Opportunity</controllingFieldValue>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <controllingFieldValue>Free Trial Return</controllingFieldValue>
+            <controllingFieldValue>Exchange</controllingFieldValue>
+            <valueName>OEM to Customer delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Not For Resale (NFR)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Paid Pilot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Upfitter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Auto-Renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Split Opp - Q1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Split Opp - Q2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Split Opp - Q3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Split Opp - Q4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Split Opp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Reprocessing Return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Clickpath</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Renewal Extension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>Virtual Return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue Opportunity</controllingFieldValue>
+            <valueName>Contract Replacement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>Sales Order X Processing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>MX Data Migration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>ETF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>Remorse Refund - In Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>Remorse Refund - Approved Out of Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Remorse Refund</controllingFieldValue>
+            <valueName>Contract Cancellation</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

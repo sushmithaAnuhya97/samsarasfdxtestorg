@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__change_quality_uniqueness</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(OR(VLOOKUP($ObjectType.PDLM__Change__c.Fields.Name, $ObjectType.PDLM__Change__c.Fields.Name, Name) = Name, VLOOKUP($ObjectType.PDLM__Quality__c.Fields.Name, $ObjectType.PDLM__Quality__c.Fields.Name, Name) = Name), OR(ISNEW(), ISCHANGED(Name)))</errorConditionFormula>
+    <errorMessage>This name already exists as a Change / Quality</errorMessage>
+</ValidationRule>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Sync_with_Zendesk</name>
+        <label>Sync with Zendesk</label>
+        <locationX>177</locationX>
+        <locationY>348</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Sync_with_Zendesk__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Free_Trial_Accounts</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>First_Trial_Ship_Date_Last_3_Days</name>
+        <label>First Trial Ship Date Last 3 Days</label>
+        <locationX>461</locationX>
+        <locationY>344</locationY>
+        <defaultConnectorLabel>False</defaultConnectorLabel>
+        <rules>
+            <name>True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.First_Trial_Ship_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Last3Days</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sync_with_Zendesk</targetReference>
+            </connector>
+            <label>True</label>
+        </rules>
+    </decisions>
+    <description>Initial Launch</description>
+    <formulas>
+        <name>Last3Days</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$System.OriginDateTime}-3</expression>
+    </formulas>
+    <interviewLabel>Free Trial Accounts --&gt; Zendesk Retry {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Free Trial Accounts --&gt; Zendesk Retry</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Free_Trial_Accounts</name>
+        <label>Update Free Trial Accounts</label>
+        <locationX>177</locationX>
+        <locationY>546</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>First_Trial_Ship_Date_Last_3_Days</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>First_Trial_Ship_Date__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <dateValue>2020-07-01</dateValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2020-08-19</startDate>
+            <startTime>18:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

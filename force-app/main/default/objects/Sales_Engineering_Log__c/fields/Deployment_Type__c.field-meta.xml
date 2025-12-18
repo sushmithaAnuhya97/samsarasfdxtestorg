@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Type__c</fullName>
+    <description>Type of Industrial deployment: Customer Deployment, Integrator Deployment, Fast Start Deployment</description>
+    <inlineHelpText>Select what type of deployment will be used for this opportunity</inlineHelpText>
+    <label>Deployment Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Fast Start</fullName>
+                <default>false</default>
+                <label>Fast Start</label>
+            </value>
+            <value>
+                <fullName>Integrator</fullName>
+                <default>false</default>
+                <label>Integrator</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

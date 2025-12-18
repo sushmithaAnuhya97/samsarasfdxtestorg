@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_SE_log_review</fullName>
+    <columns>LAST_UPDATE</columns>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>ACV_Bookings__c</columns>
+    <columns>SE_Assignment__c</columns>
+    <columns>Opportunity_Owner__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Tech_Close_Date__c</columns>
+    <columns>SE_Follow_Up_Date__c</columns>
+    <columns>SE_Next_Step__c</columns>
+    <columns>SE_Notes__c</columns>
+    <columns>Tech_Why_Samsara__c</columns>
+    <columns>Tech_Discovery__c</columns>
+    <columns>Tech_Loss_Notes__c</columns>
+    <columns>Opportunity_Stage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SE_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Sherry Xu</value>
+    </filters>
+    <filters>
+        <field>Opportunity_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Won,Closed Lost</value>
+    </filters>
+    <label>Copy of SE log review</label>
+</ListView>

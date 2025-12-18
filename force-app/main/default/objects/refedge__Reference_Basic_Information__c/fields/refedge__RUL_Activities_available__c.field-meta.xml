@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__RUL_Activities_available__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>refedge__RUL_Activities_will_do__c -  refedge__RUL_Activities_used__c</formula>
+    <inlineHelpText>The Available Uses is the difference between the Uses per Time Period and Completed uses.</inlineHelpText>
+    <label>Available Uses</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

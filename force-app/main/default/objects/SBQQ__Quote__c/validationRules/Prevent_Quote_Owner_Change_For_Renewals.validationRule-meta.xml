@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Quote_Owner_Change_For_Renewals</fullName>
+    <active>true</active>
+    <description>GTMS - 27773 - Restrict user to change Owner and Sales rep on renewal quotes</description>
+    <errorConditionFormula>AND(
+    NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+    NOT(ISBLANK(SBQQ__Opportunity2__r.SBQQ__RenewedContract__c)),
+
+    OR(
+        ISCHANGED(OwnerId),
+        ISCHANGED(SBQQ__SalesRep__c)
+    ),
+
+    NOT($Permission.Validation_Rule_Exemption),
+
+    NOT(
+        AND(
+            ISCHANGED(OwnerId),
+            OwnerId = SBQQ__Opportunity2__r.OwnerId
+        )
+    ),
+
+    NOT(
+        AND(
+            ISCHANGED(SBQQ__SalesRep__c),
+            SBQQ__SalesRep__c = SBQQ__Opportunity2__r.OwnerId
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Quote Owner/Sales Rep needs to match with Opportunity Owner.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Reference_Lead_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates where this Reference Lead is in the process</description>
+    <inlineHelpText>Indicates where this Reference Lead is in the process</inlineHelpText>
+    <label>Reference Lead Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial notification sent</fullName>
+                <default>false</default>
+                <label>Initial notification sent</label>
+            </value>
+            <value>
+                <fullName>Follow up</fullName>
+                <default>false</default>
+                <label>Follow up</label>
+            </value>
+            <value>
+                <fullName>Converted to Nomination</fullName>
+                <default>false</default>
+                <label>Converted to Nomination</label>
+            </value>
+            <value>
+                <fullName>Converted to Program Member</fullName>
+                <default>false</default>
+                <label>Converted to Program Member</label>
+            </value>
+            <value>
+                <fullName>No response</fullName>
+                <default>false</default>
+                <label>No response</label>
+            </value>
+            <value>
+                <fullName>Reminder Sent</fullName>
+                <default>false</default>
+                <label>Reminder Sent</label>
+            </value>
+            <value>
+                <fullName>Request Pending</fullName>
+                <default>false</default>
+                <label>Request Pending</label>
+            </value>
+            <value>
+                <fullName>No New Contacts</fullName>
+                <default>false</default>
+                <label>No New Contacts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

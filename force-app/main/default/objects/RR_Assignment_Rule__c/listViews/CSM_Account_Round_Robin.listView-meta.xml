@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Account_Round_Robin</fullName>
+    <columns>Active__c</columns>
+    <columns>NAME</columns>
+    <columns>Order__c</columns>
+    <columns>Field_To_Assign_User__c</columns>
+    <columns>Rule_Description__c</columns>
+    <columns>Global_Geography__c</columns>
+    <columns>CS_Tier__c</columns>
+    <columns>Customer_ARR__c</columns>
+    <columns>Owner_Role__c</columns>
+    <columns>Which_Written_Language__c</columns>
+    <columns>Owner_Manager__c</columns>
+    <columns>Timezone__c</columns>
+    <columns>Onboarding_Complete__c</columns>
+    <columns>Last_Run_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Field_To_Assign_User__c</field>
+        <operation>equals</operation>
+        <value>CSM__c,SIC__c</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>CSM Account Round Robin</label>
+</ListView>

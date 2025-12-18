@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Revenue_Oppty_Transfer__c</fullName>
+    <formula>IF(DATEVALUE(ADR_Accepted_Date__c)=DATEVALUE(Account__r.First_Revenue_Oppty_Creation_Date__c), True, False)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>First Revenue Oppty Transfer</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

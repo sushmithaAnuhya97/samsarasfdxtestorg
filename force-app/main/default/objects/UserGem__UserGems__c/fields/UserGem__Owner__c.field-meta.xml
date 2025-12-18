@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserGem__Owner__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(
+ISBLANK( UserGem__CurrentContact__r.OwnerId ),
+IF(
+ISBLANK( UserGem__CurrentLead__r.OwnerId ),
+NULL,
+IF(
+LEFT( UserGem__CurrentLead__r.OwnerId , 3) = &quot;OOG&quot;,
+UserGem__CurrentLead__r.Owner:Queue.QueueName ,
+UserGem__CurrentLead__r.Owner:User.FirstName &amp; &quot; &quot; &amp; UserGem__CurrentLead__r.Owner:User.LastName
+)
+),
+UserGem__CurrentContact__r.Owner.FirstName &amp; &quot; &quot; &amp; UserGem__CurrentContact__r.Owner.LastName
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

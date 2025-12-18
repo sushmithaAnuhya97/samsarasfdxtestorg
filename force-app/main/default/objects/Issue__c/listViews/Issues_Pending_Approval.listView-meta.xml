@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issues_Pending_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>Issue_Subject__c</columns>
+    <columns>Support_Priority__c</columns>
+    <columns>Issue_Age__c</columns>
+    <columns>Case_Count__c</columns>
+    <columns>Account_Count__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Issue_Approvers__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Issue_Status__c</field>
+        <operation>notEqual</operation>
+        <value>dev-fixed,closed</value>
+    </filters>
+    <label>***Issues Pending Approval***</label>
+</ListView>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sentiment_Root_Cause__c</fullName>
+    <description>Used by CSM team to report on the root cause of unhealthy / escalated customers</description>
+    <label>Churn Risk Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Adoption</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adoption</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Business changes</fullName>
+                <default>false</default>
+                <label>Business changes</label>
+            </value>
+            <value>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <label>Commercial terms</label>
+            </value>
+            <value>
+                <fullName>COVID-19</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COVID-19</label>
+            </value>
+            <value>
+                <fullName>Customer service</fullName>
+                <default>false</default>
+                <label>Customer service</label>
+            </value>
+            <value>
+                <fullName>Ease of doing business</fullName>
+                <default>false</default>
+                <label>Ease of doing business</label>
+            </value>
+            <value>
+                <fullName>Feature Release Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Feature Release Management</label>
+            </value>
+            <value>
+                <fullName>Finance Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Finance Issues</label>
+            </value>
+            <value>
+                <fullName>Footage Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Footage Request</label>
+            </value>
+            <value>
+                <fullName>Implementation Project Management Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Implementation Project Management Issues</label>
+            </value>
+            <value>
+                <fullName>Installation Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Installation Issues</label>
+            </value>
+            <value>
+                <fullName>Integration / API Challenges</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration / API Challenges</label>
+            </value>
+            <value>
+                <fullName>Lack of Formal Training</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lack of Formal Training</label>
+            </value>
+            <value>
+                <fullName>Net New Feature Requests</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Net New Feature Requests</label>
+            </value>
+            <value>
+                <fullName>Product Defects</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Defects</label>
+            </value>
+            <value>
+                <fullName>Product fit</fullName>
+                <default>false</default>
+                <label>Product fit</label>
+            </value>
+            <value>
+                <fullName>Product Technical Fit</fullName>
+                <default>false</default>
+                <label>Product Technical Fit</label>
+            </value>
+            <value>
+                <fullName>Product technical issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product technical issues</label>
+            </value>
+            <value>
+                <fullName>Progress on Feature Commits</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Progress on Feature Commits</label>
+            </value>
+            <value>
+                <fullName>Renewal admin issue</fullName>
+                <default>false</default>
+                <label>Renewal admin issue</label>
+            </value>
+            <value>
+                <fullName>Sales Expectation Setting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sales Expectation Setting</label>
+            </value>
+            <value>
+                <fullName>Shipping Delays and RMA Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Shipping Delays and RMA Issues</label>
+            </value>
+            <value>
+                <fullName>Technical Support Dissatisfaction</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Technical Support Dissatisfaction</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OB_Archiver__All_Policies</fullName>
+    <columns>NAME</columns>
+    <columns>OB_Archiver__SObjectNameFormula__c</columns>
+    <columns>OB_Archiver__Query__c</columns>
+    <columns>OB_Archiver__Frequency__c</columns>
+    <columns>OB_Archiver__ScheduleOn__c</columns>
+    <columns>OB_Archiver__ScheduleTime__c</columns>
+    <columns>OB_Archiver__Active__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>OB_Archiver__Override_Protection_period__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OB_Archiver__Soft_deleted__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Policies</label>
+</ListView>

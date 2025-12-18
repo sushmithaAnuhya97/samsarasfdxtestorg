@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Partner_Values</name>
+        <label>Assign Partner Values</label>
+        <locationX>506</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Channel_Partner_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Record.Partner_Discount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Checkout_link_Condition_met</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_1_of_Assign_Partner_Values</name>
+        <label>Copy 1 of Assign Partner Values</label>
+        <locationX>242</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Channel_Partner_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Partner_Record.Partner_Discount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Checkout_link_Condition_met</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>update_payment_method</name>
+        <label>update payment method</label>
+        <locationX>242</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Customer_Preferred_Payment_Method__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Credit Card/ACH Debit</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Checkout_link_Condition_met</name>
+        <label>Checkout link Condition met</label>
+        <locationX>374</locationX>
+        <locationY>803</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>update_true</name>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND (7 OR 8) AND 9 AND 10 AND 11</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Opportunity2__r.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Revenue Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ownerSegment</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>AE2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Opportunity2__r.Is_Webstore_Upsell_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Finance_Partner_Account__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Reseller_Account__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>sledRole</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CurrencyIsoCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>USD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CurrencyIsoCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CAD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>firstPurchase</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Customer_Preferred_Payment_Method__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Check/Wire</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Samsara - Finance</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_payment_method</targetReference>
+            </connector>
+            <label>update true</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CPQ_QUOTE_CHECK_FOR_FT_OPPORTUNITY</name>
+        <label>CPQ QUOTE CHECK FOR FT OPPORTUNITY</label>
+        <locationX>374</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Get_Partner_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CPQ_Quote_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__Opportunity2__r.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Free Trial Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Get_Partner_Record</targetReference>
+            </connector>
+            <label>CPQ Quote Status</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_Flows</name>
+        <label>Skip Flows?</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>CPQ_QUOTE_CHECK_FOR_FT_OPPORTUNITY</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Global_Automation_Settings__c.Skip_Flow_Automation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>True</label>
+        </rules>
+    </decisions>
+    <description>This flow is used to set the &quot;Channel Partner Discount&quot; field on quote
+GTMS-12023- Removed Free trial Approval Status Update and added it to Apex</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>firstPurchase</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.SBQQ__Account__r.First_Purchase_Date__c} = {!$Record.SBQQ__Opportunity2__r.CloseDate} || ISBLANK({!$Record.SBQQ__Account__r.First_Purchase_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>ownerSegment</name>
+        <dataType>String</dataType>
+        <expression>IF(
+
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;Small Fleets&quot;),
+&quot;Small Business&quot;,
+IF(
+OR(
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;AE1&quot;),
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;SMB&quot;)
+),
+&quot;AE1&quot;,
+IF(
+OR(
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;AE2&quot;),
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;MM&quot;)
+),
+&quot;AE2&quot;,
+IF(
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;AE3&quot;),
+&quot;AE3&quot;,
+IF(
+OR(
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;Major&quot;),
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;Enterprise&quot;),
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;ENT&quot;),
+CONTAINS({!$Record.SBQQ__Opportunity2__r.Owner_Role_Copy__c},&quot;Field&quot;)
+),
+&quot;Enterprise&quot;,
+&quot;Other&quot;
+)
+)
+)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>sledRole</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+CONTAINS({!ownerSegment}, &quot;SLED&quot;),
+CONTAINS({!$Record.Owner:User.Profile.Name}, &quot;Sales Ops&quot;)
+)</expression>
+    </formulas>
+    <interviewLabel>CPQ Quote - Set Channel Partner Discount {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CPQ Quote - Set Channel Partner Discount</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Copy_1_of_Get_Partner_Record</name>
+        <label>Copy 1 of Get Partner Record</label>
+        <locationX>242</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Assign_Partner_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Partner__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Partner_Discount__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Partner_Record</name>
+        <label>Get Partner Record</label>
+        <locationX>506</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Partner_Values</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SBQQ__Partner__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Partner_Discount__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Skip_Flows</targetReference>
+        </connector>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ChannelpartnerValue</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>checkoutLinkRequired</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>paymentMethod</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Exchange_Rate_Resource_Defined__c</fullName>
+    <deprecated>false</deprecated>
+    <description>When set, this field sets the *relative* exchange rate between Incurred Rate and Reimbursement Rate that is experienced by the Resource incurring the Expense.  This then overrides the Incurred Exchange Rate (relative to corporate rate) so that it has the right ratio to the Reimbursement Exchange Rate (relative to corporate rate).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When set, this field sets the *relative* exchange rate between Incurred Rate and Reimbursement Rate that is experienced by the Resource incurring the Expense.</inlineHelpText>
+    <label>Exchange Rate (Resource-Defined)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>6</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

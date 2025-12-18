@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Tax__c</fullName>
+    <description>Sales tax pulled from Opportunity Record. Use this field, not built-in &quot;Tax&quot; field.</description>
+    <formula>Sales_Tax_Time_Stamp__c</formula>
+    <label>Sales Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

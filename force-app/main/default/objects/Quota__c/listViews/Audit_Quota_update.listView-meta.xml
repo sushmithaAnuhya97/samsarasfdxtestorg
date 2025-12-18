@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audit_Quota_update</fullName>
+    <columns>NAME</columns>
+    <columns>Role_at_Start_of_Fiscal_Period__c</columns>
+    <columns>User__c</columns>
+    <columns>Employee_Number__c</columns>
+    <columns>AE1_or_AE2__c</columns>
+    <columns>Quota__c</columns>
+    <columns>ADR_Quota__c</columns>
+    <columns>Quota_Period__c</columns>
+    <columns>Role_End_Date__c</columns>
+    <columns>Role_Start_Date__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>User__c</field>
+        <operation>contains</operation>
+        <value>Nate Mchugh</value>
+    </filters>
+    <label>Audit: Quota update</label>
+</ListView>

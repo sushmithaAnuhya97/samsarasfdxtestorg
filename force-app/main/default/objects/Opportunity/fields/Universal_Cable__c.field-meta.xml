@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Universal_Cable__c</fullName>
+    <description>Used for a universal cable pilot project, headed by Marjan and EJ.</description>
+    <formula>AND(
+ TEXT(Type) != &quot;Promo Opportunity&quot;,
+Owner.Universal_Cable_User__c ,
+Universal_Cable_Replacement_Products__c &gt; 0 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Universal Cable</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

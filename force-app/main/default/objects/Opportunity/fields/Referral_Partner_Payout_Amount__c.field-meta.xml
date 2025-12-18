@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Partner_Payout_Amount__c</fullName>
+    <description>(DEPRECATED) Partner referral payout amount effective prior to April 1, 2019.</description>
+    <formula>MAX(If( 
+(AND
+(ISPICKVAL(LeadSource, &quot;Partner Referral&quot;), License_Term__c &gt;=36, Eligible_Partner_Referral_Hardware_Count__c &gt;=5)), 
+((AG2_Unit_Count__c *-75)+(( CM_Unit_Count__c + VG_License_Count__c )* -125)), 0.00),-37500)</formula>
+    <label>Referral Partner Payout Amt (Deprecated)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

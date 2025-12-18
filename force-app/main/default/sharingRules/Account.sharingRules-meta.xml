@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ADR_Team_1_Account_Sharing_Rules</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share Accounts for transfers and note taking with ADR Team 1 Manager and Subordinates</description>
+        <label>ADR Team 1 Account Sharing Rules</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Fleet_ADR_NA_US_Team_1_Manager</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Unauthorized Reseller,Unauthorized Referral Partner,End Customer,Authorized Reseller,Authorized Referral Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AE2_Reservoir_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <description>Accounts owned by the SFDC Reservoir User will be editable by US and CA AE2 users</description>
+        <label>AE2 Reservoir Accounts</label>
+        <sharedTo>
+            <group>AE2_Reservoir_Account_Managers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>0054p000002s4iA</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Contract_Finance_Account_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Access provided to Contractors to enable them to create returns for Opportunities</description>
+        <label>[Contract Finance] Account Access</label>
+        <sharedTo>
+            <role>Contract_Finance</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Delinquent__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Customer_Success</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Customer success org rolls up to andy M. The renewals team # needs to roll up to our VP of CS --&gt; EVP of sales. In order to maintain the same level of access, this rule is required.</description>
+        <label>Customer Success</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Chief_Operating_Officer</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Unauthorized Reseller,Unauthorized Referral Partner,End Customer,Authorized Reseller,Authorized Referral Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>MM_AE_Read_only</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Allows MM AEs to see other accounts</description>
+        <label>MM AE Read only</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Fleet_IS_VP</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Unauthorized Reseller,Unauthorized Referral Partner,End Customer,Authorized Reseller,Authorized Referral Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Major_and_Enterprise_Read_Only</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Allows Major account and Enterprise AEs to see other accounts</description>
+        <label>Major and Enterprise Read Only</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SEL_Fleet_ENT_VP</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Unauthorized Reseller,Unauthorized Referral Partner,End Customer,Authorized Reseller,Authorized Referral Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Management_only_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share End Customer and Reseller Accounts with Management</description>
+        <label>Management only Account Sharing</label>
+        <sharedTo>
+            <role>Management</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Unauthorized Reseller,Unauthorized Referral Partner,End Customer,Authorized Reseller,Authorized Referral Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Operations_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share End Customer and Reseller Accounts with Operations Role.</description>
+        <label>Operations Account Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Operations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Unauthorized Reseller,Unauthorized Referral Partner,End Customer,Authorized Reseller,Authorized Referral Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Partner_Account_Edit</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>GTMS-17287</description>
+        <label>Partner Account Edit</label>
+        <sharedTo>
+            <group>Partner_Account_Edit</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Propel_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share ALL Accounts with Propel Role.</description>
+        <label>Propel Account Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Propel</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Unauthorized Reseller,SC: Manufacturer,End Customer,SC: Integrator,SC: Distributor</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sites_Specialist</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Sites Specialist</label>
+        <sharedTo>
+            <group>Sites_Specialist</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sites_Specialist__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>ADR_sharing_rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Sharing rule for ADR managers and ADR&apos;s</description>
+        <label>ADR sharing rule</label>
+        <sharedTo>
+            <group>ADR_Manager</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>ADR</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>AE_and_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>AE and Operations</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Operations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <group>AE_Sales_Team</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Aqueduct_User</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Aqueduct User</label>
+        <sharedTo>
+            <role>Management</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>Aqueduct_User</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>EMEA_Sales</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>EMEA Sales</label>
+        <sharedTo>
+            <group>EMEA_SE_Management</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Fleet_VP_EMEA</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Management_Read_Only_All</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Management Read Only All</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Management</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Management</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Pool_and_AE_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>This sharing rule has been created so that AE&apos;s can pull accounts from the pool.</description>
+        <label>Pool and AE Users</label>
+        <sharedTo>
+            <group>AE_Sales_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Pool_Management</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Pool_and_Channel_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Pool and Channel Users</label>
+        <sharedTo>
+            <group>Channel_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Pool_Management</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

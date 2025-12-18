@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reps_Cannot_Change_Oppty_Owner</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+    ISCHANGED( OwnerId ),
+     ($User.X18_Digit_User_ID__c != &apos;0051a000000V1cvAAC&apos;),
+    NOT(
+        OR(
+        ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+        ISPICKVAL(StageName, &quot;Closed Won&quot;),
+        ISPICKVAL(StageName, &quot;Closing&quot;)
+        )
+        ),
+    NOT(
+        OR( 
+        ($Permission.Validation_Rule_Exemption),
+        ($Permission.Finance_Contractor),
+        (CONTAINS($Profile.Name,&quot;Finance&quot;)),
+        ($Profile.Name=&quot;Order Operations Admin&quot;),
+        ($Profile.Name=&quot;Samsara Sales - Renewals - Specialist&quot;),
+         Overwrite_Validation_Rule__c,
+            (CONTAINS($Profile.Name, &quot;System Admin&quot;)),
+             ($Profile.Name = &quot;Sales Ops Profile&quot;),
+            AND(
+                OR(
+                    ($Profile.Name = &quot;Salesforce Sales - CPQ Mexico&quot;),
+                    ($Profile.Name = &quot;Samsara Sales - CPQ&quot;),
+                    ($Profile.Name = &quot;Samsara Sales - EMEA IS&quot;),
+                    ($Profile.Name = &quot;Samsara Sales - NA ENT&quot;),
+                    ($Profile.Name = &quot;Samsara Sales - NA US AE2&quot;),
+                    ($Profile.Name = &quot;Samsara Sales Management - New System&quot;)
+                ),
+                OR(
+                    CONTAINS($UserRole.Name, &quot;Manager&quot;),
+                    CONTAINS($UserRole.Name, &quot;Director&quot;),
+                    CONTAINS($UserRole.Name, &quot;ISD&quot;),
+                    CONTAINS($UserRole.Name, &quot;VP&quot;),
+                    CONTAINS($UserRole.Name, &quot;AVP&quot;)
+                )
+            )
+        )
+    ),
+    NOT(    
+            OR( 
+                 ($User.Id = Owner.ManagerId),
+                 ISPICKVAL(Rebate_Type__c, &quot;License Term Credit&quot;)
+                )
+            )
+        )</errorConditionFormula>
+    <errorMessage>You cannot change this Opportunity&apos;s owner. Contact sales ops team if you have any questions.</errorMessage>
+</ValidationRule>

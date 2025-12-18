@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Stories_80_coverage</fullName>
+    <columns>NAME</columns>
+    <columns>copado__Has_Apex_Code__c</columns>
+    <columns>copado__Release__c</columns>
+    <columns>copado__User_Story_Title__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>copado__Last_Validation_Deployment_Status__c</columns>
+    <columns>copado__Environment__c</columns>
+    <columns>copado__Org_Credential__c</columns>
+    <columns>copado__Apex_Code_Coverage__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>copado__Has_Apex_Code__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>copado__Apex_Code_Coverage__c</field>
+        <operation>lessThan</operation>
+        <value>80.0</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>8/1/2025 12:00 AM</value>
+    </filters>
+    <label>User Stories &lt;80% coverage</label>
+</ListView>

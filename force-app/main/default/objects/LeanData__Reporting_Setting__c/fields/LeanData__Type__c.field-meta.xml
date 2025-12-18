@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Funnel</fullName>
+                <default>false</default>
+                <label>Account Funnel</label>
+            </value>
+            <value>
+                <fullName>Account Scoring</fullName>
+                <default>false</default>
+                <label>Account Scoring</label>
+            </value>
+            <value>
+                <fullName>Account View</fullName>
+                <default>false</default>
+                <label>Account View</label>
+            </value>
+            <value>
+                <fullName>Campaign Opportunity</fullName>
+                <default>false</default>
+                <label>Campaign Opportunity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

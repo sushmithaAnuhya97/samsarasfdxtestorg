@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Type__c</fullName>
+    <label>Master Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Company Firmographics</fullName>
+                <default>false</default>
+                <label>Company Firmographics</label>
+            </value>
+            <value>
+                <fullName>Company Size</fullName>
+                <default>false</default>
+                <label>Company Size</label>
+            </value>
+            <value>
+                <fullName>Company Digital Footprint</fullName>
+                <default>false</default>
+                <label>Company Digital Footprint</label>
+            </value>
+            <value>
+                <fullName>Competitor Intel</fullName>
+                <default>false</default>
+                <label>Competitor Intel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

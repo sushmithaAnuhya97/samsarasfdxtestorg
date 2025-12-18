@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Rule_Logic_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Rule Logic Name</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Share Items with Field</fullName>
+                <default>true</default>
+                <label>Share Items with Field</label>
+            </value>
+            <value>
+                <fullName>Share Items with Mfrs and Distributors</fullName>
+                <default>false</default>
+                <label>Share Items with Mfrs and Distributors</label>
+            </value>
+            <value>
+                <fullName>Share Changes with Field</fullName>
+                <default>false</default>
+                <label>Share Changes with Field</label>
+            </value>
+            <value>
+                <fullName>Share Changes with AI Field</fullName>
+                <default>false</default>
+                <label>Share Changes with AI Field</label>
+            </value>
+            <value>
+                <fullName>Share Change with Users Who Can Access Affected Items</fullName>
+                <default>false</default>
+                <label>Share Change with Users Who Can Access Affected Items</label>
+            </value>
+            <value>
+                <fullName>Share Quality with Field</fullName>
+                <default>false</default>
+                <label>Share Quality with Field</label>
+            </value>
+            <value>
+                <fullName>Share Quality with AI Field</fullName>
+                <default>false</default>
+                <label>Share Quality with AI Field</label>
+            </value>
+            <value>
+                <fullName>Share Quality with Users Who Can Access Affected Items</fullName>
+                <default>false</default>
+                <label>Share Quality with Users Who Can Access Affected Items</label>
+            </value>
+            <value>
+                <fullName>Share Mfr Parts with Mfrs and Distributors</fullName>
+                <default>false</default>
+                <label>Share Mfr Parts with Mfrs and Distributors</label>
+            </value>
+            <value>
+                <fullName>Share Mfr Parts with Field</fullName>
+                <default>false</default>
+                <label>Share Mfr Parts with Field</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

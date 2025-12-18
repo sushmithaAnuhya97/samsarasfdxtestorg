@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CAM_New_Lead_Email_Alert</fullName>
+        <description>CAM New Lead Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Channel_CAM_NewLead_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Email_verification_Alert</fullName>
+        <description>Lead Email verification Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Partner_Application_Verification_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Partner_For_Deal_Registration</fullName>
+        <description>Notify Partner For Deal Registration</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Customer_Deal_Reg_Partner_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Application_Routing_Alert</fullName>
+        <description>Partner_Application_Routing_Alert (GTMS-16041): Used to send lead assignment emails to lead owners when a partner application type lead is created form partner portal(this is implemented due to lead assignment email issue from salesforce side)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Partner_Application_Routing_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Notified_For_Email_Domain_Not_Supported</fullName>
+        <description>GTMS-26099: Created to send email to partner if Email Domain is not supported</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Partner_Email_Domain_not_Supported</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Notified_of_Application_Denied</fullName>
+        <description>Partner Notified of Application Denied</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Partner_Application_Application_Denied</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Notified_of_Country_not_Supported</fullName>
+        <description>Partner Notified of Country not Supported</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Partner_Country_not_Supported</template>
+    </alerts>
+    <alerts>
+        <fullName>Partner_Notified_of_Deal_Denied</fullName>
+        <description>Partner Notified of Deal Denied</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Partner_User_lr__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Partner_Deal_Is_Denied</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Auto_Create_Account</fullName>
+        <field>RR_Auto_Create_Account__c</field>
+        <literalValue>1</literalValue>
+        <name>Auto Create Account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Transfer_Status</fullName>
+        <description>Update Lead Transfer Status to Pending</description>
+        <field>Lead_Transfer_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Lead Transfer Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Non_Free_Domain</fullName>
+        <field>Non_Free_Domain_Stamp__c</field>
+        <formula>IF(Domain_Name__c != NULL, Domain_Name__c, IF(Non_Free_Domain__c != &quot;btconnect.com&quot; &amp;&amp; Non_Free_Domain__c != NULL ,Non_Free_Domain__c,&apos;&apos;))</formula>
+        <name>Stamp Non-Free Domain</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Lead_Status_Change</fullName>
+        <description>Updates Lead Status Changed</description>
+        <field>Lead_Status_Changed__c</field>
+        <formula>Now()</formula>
+        <name>Update Lead Status Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Lead_Transfer_By</fullName>
+        <field>Transferred_by_ADR__c</field>
+        <formula>$User.FirstName + &quot; &quot; +$User.LastName</formula>
+        <name>Update Lead Transfer By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Lead_Transfer_Date</fullName>
+        <field>Lead_Transfer_Date__c</field>
+        <formula>Now()</formula>
+        <name>update Lead Transfer Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Account Creation Lead Conversion</fullName>
+        <actions>
+            <name>Auto_Create_Account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(RR_Duplicate_Rules_Processed__c = true, Duplicate_Rules_Processed_Execute_Node__c = true, RR_Has_Matched_Account__c = false)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CAM New Lead Alert</fullName>
+        <actions>
+            <name>CAM_New_Lead_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Is_Deal_Registration__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Channel Registration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Partner_User_lr__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Non-Free Domain Stamp</fullName>
+        <actions>
+            <name>Stamp_Non_Free_Domain</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Non_Free_Domain__c &lt;&gt; NULL</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

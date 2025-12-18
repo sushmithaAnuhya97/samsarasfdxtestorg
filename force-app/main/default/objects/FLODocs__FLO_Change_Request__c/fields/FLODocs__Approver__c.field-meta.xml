@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is the person whose approval is required for the specified change. It is set by the approval script based on the approval path rules.</description>
+    <inlineHelpText>This is the person whose approval is required for the specified change. It is set by the approval script based on the approval path rules.</inlineHelpText>
+    <label>Approver</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>FLO_Change_Requests</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

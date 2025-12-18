@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_No_Show_or_Complete_Prevention</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT($Permission.Validation_Rule_Exemption), 
+ISCHANGED(Demo_Status__c), 
+OR(
+ISPICKVAL(PRIORVALUE(Demo_Status__c), &apos;Demo No Show&apos;),
+ISPICKVAL(PRIORVALUE(Demo_Status__c), &apos;Demo Completed - Qualified&apos;), 
+ISPICKVAL(PRIORVALUE(Demo_Status__c), &apos;Demo Completed - Not Qualified&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot edit a No Show, or completed Demo to another status. Please create another demo or reach out to Sales Ops</errorMessage>
+</ValidationRule>

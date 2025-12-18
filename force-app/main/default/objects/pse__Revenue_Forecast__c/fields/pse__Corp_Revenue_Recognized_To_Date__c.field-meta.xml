@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Corp_Revenue_Recognized_To_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>In the corporate currency, the revenue that has already been recognized on this revenue forecast.</description>
+    <inlineHelpText>In the corporate currency, the revenue that has already been recognized on this revenue forecast.</inlineHelpText>
+    <label>Corp: Revenue Recognized to Date</label>
+    <summarizedField>pse__Revenue_Forecast_Type__c.pse__Corp_Revenue_Recognized_To_Date__c</summarizedField>
+    <summaryForeignKey>pse__Revenue_Forecast_Type__c.pse__Revenue_Forecast__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

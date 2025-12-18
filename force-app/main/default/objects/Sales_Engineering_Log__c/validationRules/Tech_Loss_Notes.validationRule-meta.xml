@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Loss_Notes</fullName>
+    <active>true</active>
+    <description>This validation rule prevents an Industrial SE log moving to tech loss without notes</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Tech_Stage__c , &quot;Tech Loss&quot;),
+ISBLANK( Tech_Loss_Notes__c ), Opportunity__r.Account.RecordType.Name = &quot;Industrial&quot;)</errorConditionFormula>
+    <errorMessage>Please add tech loss notes before moving the tech stage to &quot;Tech Loss&quot;</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_VG34_EU__c</fullName>
+    <formula>AND ( 
+Product_Code_Copy__c = &quot;HW-VG34-EU&quot;, 
+DATEVALUE( Opportunity.Went_to_Closed_Won_Date__c) &gt;= DATE(2019,03,04) 
+)</formula>
+    <inlineHelpText>This is to track which opportunities have a new HW-VG34-EU</inlineHelpText>
+    <label>New VG34-EU</label>
+    <type>Checkbox</type>
+</CustomField>

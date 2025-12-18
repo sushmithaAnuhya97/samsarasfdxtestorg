@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unlock_Capability_Validation_For_AE</fullName>
+    <active>true</active>
+    <description>GTMS-16285: To remove unlock capability for AE if quote is approved for order validation opps.</description>
+    <errorConditionFormula>AND(
+    NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+    ISPICKVAL(PRIORVALUE(SBQQ__Status__c),&apos;Approved&apos;),
+				ISPICKVAL(SBQQ__Status__c,&apos;Draft&apos;),
+				ISPICKVAL(SBQQ__Opportunity2__r.Type,&apos;Revenue Opportunity&apos;),
+				NOT(Renewal__c),
+				NOT( SBQQ__Opportunity2__r.Custom_Schedule__c),
+				SBQQ__Opportunity2__r.Probability = 0.95,
+				SBQQ__Opportunity2__r.Owner_Segment__c != &apos;AE1&apos;,
+				NOT(ISBLANK(SBQQ__Opportunity2__r.Owner_Role_Copy__c)),
+    NOT(CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&apos;SLED&apos;)),
+				NOT(ISBLANK(SBQQ__Opportunity2__r.Owner_Manager_Role_Copy__c)),
+    NOT(CONTAINS(SBQQ__Opportunity2__r.Owner_Manager_Role_Copy__c,&apos;SLED&apos;)),
+				OR(
+				    AND(
+								    SBQQ__Opportunity2__r.Finance_Segment__c=&apos;Enterprise&apos;,
+												SBQQ__Opportunity2__r.Is_Webstore_Upsell_Opportunity__c
+								),
+								SBQQ__Opportunity2__r.Finance_Segment__c=&apos;Mid Market&apos;
+				),
+				SBQQ__Opportunity2__r.Payment_Type__c&lt;&gt;&apos;Reseller&apos;,
+				SBQQ__Opportunity2__r.Payment_Type__c&lt;&gt;&apos;Finance Partner&apos;,
+				NOT(CONTAINS(SBQQ__Opportunity2__r.Name,&apos;InventorySplit&apos;)),
+				NOT(ISPICKVAL(SBQQ__Opportunity2__r.Selected_Payment_Type__c,&apos;Direct Quarterly&apos;)),
+				ISBLANK(SBQQ__Opportunity2__r.Buyout_Opportunity__c),
+				ISBLANK(SBQQ__Opportunity2__r.Subsidy_Opportunity__c),
+				OR(
+				    AND(
+								    ISPICKVAL(SBQQ__Opportunity2__r.Payment_Terms__c,&apos;Due in Advance&apos;),
+												ISPICKVAL(SBQQ__Opportunity2__r.Initial_Payment_Terms__c,&apos;Due in Advance&apos;)
+								),
+								AND(
+								    CONTAINS(TEXT(SBQQ__Opportunity2__r.Payment_Terms__c),&apos;Net&apos;),
+												CONTAINS(TEXT(SBQQ__Opportunity2__r.Initial_Payment_Terms__c),&apos;Net&apos;)
+								)
+				),
+				CASESAFEID($Profile.Id) != &apos;00e1P000000FBBDQA4&apos;,
+				CASESAFEID($Profile.Id) != &apos;	00e1a000000UoNcAAK&apos;,
+				CASESAFEID($Profile.Id) != &apos;00e1a000000dxEqAAI&apos;
+								
+				
+														
+)</errorConditionFormula>
+    <errorMessage>Please move opportunity to 90% to make Edit or to unlock the quote.</errorMessage>
+</ValidationRule>

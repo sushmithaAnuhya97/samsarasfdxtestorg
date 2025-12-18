@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-16451: Created as part of FPQ Phase 2 project</description>
+        <name>Expiration_Email_Alert_For_AE</name>
+        <label>Expiration Email Alert For AE</label>
+        <locationX>729</locationX>
+        <locationY>712</locationY>
+        <actionName>Finance_Partner_Quote__c.X3PF_Expiration_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Finance_Partner_Quote__c.X3PF_Expiration_Email_Alert</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-16451: Created as part of 3PF Phase 2 project</description>
+        <name>X14_Days_Expiration_Email_Alert</name>
+        <label>14 Days Expiration Email Alert</label>
+        <locationX>359</locationX>
+        <locationY>561</locationY>
+        <actionName>Finance_Partner_Quote__c.X3PF_14_Days_Expiration_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Finance_Partner_Quote__c.X3PF_14_Days_Expiration_Email_Alert</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-16451: Created as part of 3PF Phase 2 project</description>
+        <name>X7_Days_Expiration_Email_Alert</name>
+        <label>7 Days Expiration Email Alert</label>
+        <locationX>985</locationX>
+        <locationY>345</locationY>
+        <actionName>Finance_Partner_Quote__c.X3PF_7_Days_Expiration_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Finance_Partner_Quote__c.X3PF_7_Days_Expiration_Alert</nameSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>checking todays date is 7 Days prior to todays date</description>
+        <name>X14_Days_Before_Check</name>
+        <label>14 Days Before Check</label>
+        <locationX>352</locationX>
+        <locationY>373</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_14_Days_Before_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Is14DaysBefore</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X14_Days_Expiration_Email_Alert</targetReference>
+            </connector>
+            <label>Is 4 Days Before</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>checking todays date is 1 Day after Expiration Date is Todays Date</description>
+        <name>X1_Day_After_Exp_Date</name>
+        <label>1 Day After Exp Date</label>
+        <locationX>718</locationX>
+        <locationY>385</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_1_Day_After</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Is1DayAfterExpDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Expire_FPQ_Financing_Decision</targetReference>
+            </connector>
+            <label>Is 1 Day After</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>checking todays date is 7 Days prior to todays date</description>
+        <name>X7_Days_Before_Check</name>
+        <label>7 Days Before Check</label>
+        <locationX>975</locationX>
+        <locationY>169</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_7_Days_Before</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>is_Seven_Days_Before</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X7_Days_Expiration_Email_Alert</targetReference>
+            </connector>
+            <label>Is 7 Days Before</label>
+        </rules>
+    </decisions>
+    <description>GTMS-16451: Created as part of 3PF Phase 2 Project</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>to check if todays date is 14 Days before Expiration Date</description>
+        <name>Is14DaysBefore</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.Expiration_Date__c} - 14 == TODAY()</expression>
+    </formulas>
+    <formulas>
+        <description>returns true if todays date is 1 day after expiration date</description>
+        <name>Is1DayAfterExpDate</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.Expiration_Date__c} + 1 == TODAY()</expression>
+    </formulas>
+    <formulas>
+        <description>formula which return true if today is 7 days before Expiration Date</description>
+        <name>is_Seven_Days_Before</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.Expiration_Date__c} - 7 == TODAY()</expression>
+    </formulas>
+    <interviewLabel>FPQ Scheduled Flow For Finance Decision Expiration {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FPQ Scheduled Flow For Finance Decision Expiration</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>GTMS-16451: Created as part of 3PF Phase 2 Project.</description>
+        <name>Expire_FPQ_Financing_Decision</name>
+        <label>Expire FPQ Financing Decision</label>
+        <locationX>729</locationX>
+        <locationY>541</locationY>
+        <connector>
+            <targetReference>Expiration_Email_Alert_For_AE</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Financing_Decision__c</field>
+            <value>
+                <stringValue>Expired</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>448</locationX>
+        <locationY>48</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Expiration_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Financing_Decision__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Finance_Partner_Quote__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>X14_Days_Expiration_Alert</name>
+            <connector>
+                <targetReference>X14_Days_Before_Check</targetReference>
+            </connector>
+            <label>14 Days Expiration Alert</label>
+            <offsetNumber>-14</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Expiration_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X7_Days_Expiration_Alert</name>
+            <connector>
+                <targetReference>X7_Days_Before_Check</targetReference>
+            </connector>
+            <label>7 Days Expiration Alert</label>
+            <offsetNumber>-7</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Expiration_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>FPQ_Expiration_Path</name>
+            <connector>
+                <targetReference>X1_Day_After_Exp_Date</targetReference>
+            </connector>
+            <label>FPQ Expiration Path</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Expiration_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

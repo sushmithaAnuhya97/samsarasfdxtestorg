@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__SaveAsAccount</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Save as Account</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/{!$ObjectType.Account}/e?retURL=/{!zkups__UPSShipment__c.Id}&amp;acc2={!zkups__UPSShipment__c.zkups__RecipientCompany__c}&amp;acc10={!zkups__UPSShipment__c.zkups__RecipientPhone__c}&amp;acc18street={!zkups__UPSShipment__c.zkups__RecipientStreet__c}&amp;acc18city={!zkups__UPSShipment__c.zkups__RecipientCity__c}&amp;acc18state={!zkups__UPSShipment__c.zkups__RecipientState__c}&amp;acc18zip={!zkups__UPSShipment__c.zkups__RecipientPostalCode__c}&amp;acc18country={!zkups__UPSShipment__c.zkups__RecipientCountry__c}</url>
+</WebLink>

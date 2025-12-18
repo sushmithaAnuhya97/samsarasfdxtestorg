@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Primary_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Shows the name of the Primary Reference. If blank no Primary Reference has been designated for this account.</inlineHelpText>
+    <label>Primary Contact</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Primary Contact must be associated to the Account.</errorMessage>
+        <filterItems>
+            <field>$Source.refedge__Account__c</field>
+            <operation>equals</operation>
+            <valueField>Contact.AccountId</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Reference Profiles (Primary Contact)</relationshipLabel>
+    <relationshipName>Reference_Profiles</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

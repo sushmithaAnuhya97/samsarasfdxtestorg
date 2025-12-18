@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Duplicate_Account_Extension</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNEW() &amp;&amp; 
+NOT(ISBLANK( Account__r.Account_Extension__c ))</errorConditionFormula>
+    <errorDisplayField>Account__c</errorDisplayField>
+    <errorMessage>An Account Extension already exists for this Account. Only one Account Extension is allowed.</errorMessage>
+</ValidationRule>

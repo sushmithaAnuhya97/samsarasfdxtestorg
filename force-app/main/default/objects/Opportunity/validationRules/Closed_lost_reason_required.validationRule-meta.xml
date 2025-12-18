@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_lost_reason_required</fullName>
+    <active>true</active>
+    <description>Require closed lost reason before moving opportunity to closed lost</description>
+    <errorConditionFormula>AND(NOT( $Permission.Validation_Rule_Exemption ),TEXT(StageName) = &quot;Closed Lost&quot;, TEXT(Type) = &quot;Revenue Opportunity&quot;, ISCHANGED(StageName),
+NOT(CONTAINS($Profile.Name,&quot;Renewal&quot;)),
+NOT(CONTAINS($Profile.Name, &quot;Samsara CSM&quot;)), ISBLANK(Closed_Lost_Reason__c), RecordTypeId != &apos;0121a000000VnAB&apos; )</errorConditionFormula>
+    <errorMessage>Please write a closed lost reason before moving to closed lost.  Amit thanks you!</errorMessage>
+</ValidationRule>

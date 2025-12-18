@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Disable Logging using Synchronous</label>
+    <protected>false</protected>
+    <values>
+        <field>Bypass_Level__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Bypass_Logging__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Bypass_Target__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Is_Active__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Logging_Mechanism__c</field>
+        <value xsi:type="xsd:string">Synchronous Apex</value>
+    </values>
+</CustomMetadata>

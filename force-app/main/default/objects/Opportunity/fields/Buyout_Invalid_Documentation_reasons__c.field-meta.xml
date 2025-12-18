@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyout_Invalid_Documentation_reasons__c</fullName>
+    <description>Reasons why buyout documentation is invalid</description>
+    <label>Documentation Invalid</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>invoice missing contract term</fullName>
+                <default>false</default>
+                <label>invoice missing contract term</label>
+            </value>
+            <value>
+                <fullName>invoice missing the letterhead of the customer&apos;s previous provider</fullName>
+                <default>false</default>
+                <label>invoice missing the letterhead of the customer&apos;s previous provider</label>
+            </value>
+            <value>
+                <fullName>unofficial Excel spreadsheet</fullName>
+                <default>false</default>
+                <label>unofficial Excel spreadsheet</label>
+            </value>
+            <value>
+                <fullName>unofficial email screenshot</fullName>
+                <default>false</default>
+                <label>unofficial email screenshot</label>
+            </value>
+            <value>
+                <fullName>unofficial letter signed by customer</fullName>
+                <default>false</default>
+                <label>unofficial letter signed by customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

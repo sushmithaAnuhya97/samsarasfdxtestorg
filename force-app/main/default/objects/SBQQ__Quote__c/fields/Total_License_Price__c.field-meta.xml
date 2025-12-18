@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_License_Price__c</fullName>
+    <formula>ROUND(
+IF( SBQQ__SubscriptionTerm__c &lt; 12, Estimated_Monthly_Payment__c * SBQQ__SubscriptionTerm__c,
+
+Estimated_Annual_Payment__c  * ( SBQQ__SubscriptionTerm__c/12)) , 2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total License Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

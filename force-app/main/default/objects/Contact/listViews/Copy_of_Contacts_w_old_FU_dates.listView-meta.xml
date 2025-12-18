@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Contacts_w_old_FU_dates</fullName>
+    <columns>Account.Validation_Complete__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Scheduled_Demo_Date__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Follow_Up_Date__c</columns>
+    <columns>Status__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Last_Call__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Account.Last_Call__c</columns>
+    <columns>Account.Last_Contacted__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>Inbound_Form_Message__c</columns>
+    <columns>ACCOUNT.OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Account.Status__c</field>
+        <operation>equals</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Copy of Contacts w/ old FU dates</label>
+</ListView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__UserAndGroup</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(PDLM__User__c)),NOT(ISBLANK(PDLM__GroupName__c)))</errorConditionFormula>
+    <errorMessage>Trainee cannot have both User and Group. It can only point to one or the other.</errorMessage>
+</ValidationRule>

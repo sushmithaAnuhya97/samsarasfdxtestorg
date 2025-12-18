@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Sourced_Bookings_Attribution_Amount__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF( LeanData__Related_Opportunity__r.IsWon &amp;&amp; LeanData__Related_Opportunity__r.IsClosed, LeanData__Weighted_Sourced_Attribution_Amount__c, 0 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sourced Bookings Attribution Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

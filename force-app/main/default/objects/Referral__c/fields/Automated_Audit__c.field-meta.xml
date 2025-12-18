@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automated_Audit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+OR(  
+   Created_date__c &lt;= Referred_Friend_First_Purchase_Date__c, 
+   ISBLANK(Referred_Friend_First_Purchase_Date__c)),
+   Referred_friend_email__c &lt;&gt; Customer_email__c),
+   
+&quot;Eligible&quot;,&quot;Not Eligible&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Automated Audit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

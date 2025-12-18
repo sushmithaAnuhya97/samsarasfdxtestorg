@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Unused_Fields_Wo_Critical_Dependencies_2</fullName>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>NAME</columns>
+    <columns>FLODocs__Customization_Created_By__c</columns>
+    <columns>FLODocs__Records__c</columns>
+    <columns>FLODocs__Populated_on__c</columns>
+    <columns>FLODocs__Populate__c</columns>
+    <columns>FLODocs__Clean_up_Classification__c</columns>
+    <columns>FLODocs__Improvement_Comments__c</columns>
+    <columns>FLODocs__Clean_up_Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>FLODocs__Date_Last_Used__c</columns>
+    <columns>FLODocs__Searches__c</columns>
+    <columns>FLODocs__Scripts__c</columns>
+    <columns>FLODocs__Workflows__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>equals</operation>
+        <value>CustomField</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Date_Last_Used__c</field>
+        <operation>lessThan</operation>
+        <value>N_DAYS_AGO:180</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Date_Last_Used__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>FLODocs__FLO_Customization__c.FLODocs__Objects_Fields</value>
+    </filters>
+    <filters>
+        <field>FLODocs__ScriptId__c</field>
+        <operation>startsWith</operation>
+        <value>account.</value>
+    </filters>
+    <label>Unused Fields--No Crit Dependencies (v2)</label>
+</ListView>

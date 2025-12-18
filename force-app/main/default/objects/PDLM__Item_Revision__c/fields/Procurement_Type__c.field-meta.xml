@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procurement_Type__c</fullName>
+    <inlineHelpText>Select whether the part is an Off-the-Shelf Purchased Part (Not Consigned), or a Custom Part (Consigned)</inlineHelpText>
+    <label>Procurement Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consigned</fullName>
+                <default>false</default>
+                <label>Consigned</label>
+            </value>
+            <value>
+                <fullName>Not Consigned</fullName>
+                <default>false</default>
+                <label>Not Consigned</label>
+            </value>
+            <value>
+                <fullName>CM Custom Manufactured</fullName>
+                <default>false</default>
+                <label>CM Custom Manufactured</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

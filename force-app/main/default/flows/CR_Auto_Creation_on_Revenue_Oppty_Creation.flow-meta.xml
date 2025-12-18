@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-28672: Created to assign the recently closed lost CR to Source CR variable.</description>
+        <name>Assign_recently_closed_lost_CR_to_source_CR</name>
+        <label>Assign recently closed lost CR to source CR</label>
+        <locationX>314</locationX>
+        <locationY>1079</locationY>
+        <assignmentItems>
+            <assignToReference>Source_CR</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_over_Filtered_CRs</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>X14_Days_Auto_Tagging</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Is_CR_Exist_and_Oppty_Closed_Date_With_in_Eligibility</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26739: created as part of partners H1 project to map cr values</description>
+        <name>Assign_values_to_source_cr</name>
+        <label>Assign values to source cr</label>
+        <locationX>50</locationX>
+        <locationY>2087</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Registration_Approval_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Registration_Expiration_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Registration_Expiration_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Partner_Interaction_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Partner_Sourced_Interaction_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Source_Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Opportunity__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Partner_Deal_14_Day_Auto_Tag__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>X14_Days_Auto_Tagging</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Channel_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Channel_Partner__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Channel_Partner_Representative__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Channel_Partner_Representative__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Customer_Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Customer_Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.AE_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Owner.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.CAM_Owner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.CAM_Owner__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Channel_Partner_User_lr__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Channel_Partner_User_lr__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Customer_Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Customer_Contact__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Deal_Registration_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Deal_Registration_Discount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.End_Customer_Discount_CML__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.End_Customer_Discount_CML__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.End_Customer_Discount_MM_ENT__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.End_Customer_Discount_MM_ENT__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Executive_Introduction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Executive_Introduction__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Key_Customer_Insight__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Key_Customer_Insight__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Number_of_units__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Number_of_units__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Partner_Discount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Partner_Discount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Partner_Enrollment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Partner_Enrollment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Partner_Opportunity_Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Partner_Opportunity_Description__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Partner_Program_Segment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Partner_Program_Segment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Payment_Method__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Payment_Method__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Product_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Product_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Program_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Program_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Referral_Rebate_MSRP__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Referral_Rebate_MSRP__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Sales_Cycle_Investment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Sales_Cycle_Investment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Samsara_Recommendation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Samsara_Recommendation__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Teaming_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Teaming_Partner__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Close_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CloseDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Partner_Program__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR.Partner_Program__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Insert.Is_Deal_Registration__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Is_Deal_Registration</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Source_CR</targetReference>
+        </connector>
+    </assignments>
+    <collectionProcessors>
+        <description>GTMS-28672: Created to filter the CR related to only Revenue opportunities but not renewals</description>
+        <name>Revenue_Opportunity_Filter_At_CR_Level</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Revenue Opportunity Filter At CR Level</label>
+        <locationX>380</locationX>
+        <locationY>647</locationY>
+        <assignNextValueToReference>currentItem_Revenue_Opportunity_Filter_At_CR_Level</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>Channel_Relationship_List</collectionReference>
+        <conditionLogic>formula_evaluates_to_true</conditionLogic>
+        <connector>
+            <targetReference>Does_Source_CR_exists_with_closed_lost_oppty</targetReference>
+        </connector>
+        <formula>AND(
+{!currentItem_Revenue_Opportunity_Filter_At_CR_Level.Opportunity__r.RecordTypeId} == {!$Label.Revenue_Opportunity_Record_Type},
+ISPICKVAL({!currentItem_Revenue_Opportunity_Filter_At_CR_Level.Opportunity__r.Type}, &apos;Revenue Opportunity&apos;),
+NOT({!currentItem_Revenue_Opportunity_Filter_At_CR_Level.Opportunity__r.SBQQ__Renewal__c})
+)</formula>
+    </collectionProcessors>
+    <decisions>
+        <description>GTMS-28672: Created to check if the source CR is already mapped to a CR</description>
+        <name>Copy_1_of_Is_Source_CR_is_already_mapped</name>
+        <label>Is Source CR is already mapped</label>
+        <locationX>226</locationX>
+        <locationY>1421</locationY>
+        <defaultConnector>
+            <targetReference>Fetch_First_CR_Of_The_First_Closed_Won_Oppty_For_The_Customer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Source CR not mapped</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Source_CR_Mapped</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Source_CR</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Source_CR</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Is_CR_Exist_and_Oppty_Closed_Date_With_in_Eligibility</targetReference>
+            </connector>
+            <label>Yes, Source CR mapped</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28672: created to check if the source CR exists with closed lost oppty</description>
+        <name>Does_Source_CR_exists_with_closed_lost_oppty</name>
+        <label>Does Source CR exists with closed lost oppty</label>
+        <locationX>380</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Fetch_First_CR_Of_The_First_Closed_Won_Oppty_For_The_Customer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Source CR doesnt exists with closed lost oppty</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Source_CR_exists_with_the_closed_lost_oppty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Revenue_Opportunity_Filter_At_CR_Level</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Revenue_Opportunity_Filter_At_CR_Level</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_over_Filtered_CRs</targetReference>
+            </connector>
+            <label>Yes, Source CR exists with the closed lost oppty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26739: Created as part of Partners H1 project to check if the CR Exist and Oppty Closed Date is with in 365 Days
+GTMS-28352: Created as part of Partners Project to check Rebate Timeline Eligibility on PE and validate CR accordingly</description>
+        <name>Is_CR_Exist_and_Oppty_Closed_Date_With_in_Eligibility</name>
+        <label>Is CR Exist and Oppty Closed Date With in Eligibility</label>
+        <locationX>182</locationX>
+        <locationY>1979</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_CR_Exis</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Source_CR</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Source_CR.Channel_Partner__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transacting Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RebateTimelineFormula</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RebateTimelineFormula</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Todays_Formula</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_values_to_source_cr</targetReference>
+            </connector>
+            <label>Yes, CR Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28672: Crated to check if First Purchase Oppty was created after May release (05/29/2025)</description>
+        <name>Is_First_Purchase_Oppty_Created_After_May_Release</name>
+        <label>Is First Purchase Oppty Created After May Release</label>
+        <locationX>380</locationX>
+        <locationY>1871</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Created_After_May_Release</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Source_CR</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Source_CR.Opportunity__r.CreatedDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>H1_Golive_Date_Formula</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_CR_Exist_and_Oppty_Closed_Date_With_in_Eligibility</targetReference>
+            </connector>
+            <label>Yes, Created After May Release</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26739: Created as part of Partners H1 project to check if source CR exist
+GTMS-28672: updated logic to check for cr list</description>
+        <name>Is_Source_CR_Exist_for_Closed_Lost_Oppty</name>
+        <label>IS Source CR Exist for Closed Lost Oppty</label>
+        <locationX>611</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Fetch_First_CR_Of_The_First_Closed_Won_Oppty_For_The_Customer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Source CR Doesnt Exist</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Source_CR_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Channel_Relationship_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Channel_Relationship_List</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Revenue_Opportunity_Filter_At_CR_Level</targetReference>
+            </connector>
+            <label>Yes, Source CR Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26739: Created as part of Partners H1 project to check the opportunity recordType</description>
+        <name>Is_Standard_Opportunity</name>
+        <label>Is Standard Opportunity</label>
+        <locationX>858</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>No, Not a standard oppty</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Oppty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.Revenue_Opportunity_Record_Type</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Revenue Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_Source_CR_For_a_Closed_Lost_Oppty</targetReference>
+            </connector>
+            <label>Yes, Standard Oppty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28672: Created to check if the source CR is already mapped to a CR</description>
+        <name>IsSource_CR_is_already_mapped</name>
+        <label>Is Source CR is already mapped</label>
+        <locationX>446</locationX>
+        <locationY>971</locationY>
+        <defaultConnector>
+            <targetReference>Iterate_over_Filtered_CRs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes, Source CR mapped</defaultConnectorLabel>
+        <rules>
+            <name>No_Source_CR_not_mapped</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Source_CR</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Source_CR</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_recently_closed_lost_CR_to_source_CR</targetReference>
+            </connector>
+            <label>No, Source CR not mapped</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26739: Created as part of Partners H1 project to create CRs on new Opportunity creation
+Removed Renewal and Amendmend conditions
+GTMS-28672: Updated first purcahse source CR auto tagging logic.
+Added first purchase oppty fetch conditions in Get Oppty element
+
+GTMS-28352: Controls partner rebate payouts for sourced opportunities based on the &apos;Rebate Timeline Eligibility&apos; in Partner Enrollment, supporting multi-year and evergreen programs.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-26739: Created as part of Partners H1 project to get the date before 14 days</description>
+        <name>Date_Before_14Days</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() - 14</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26739: Used to calculate the date before 365 days</description>
+        <name>Date_Before_365Days</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() - 365</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-28672: Created to convert the date store in custom label to date type value</description>
+        <name>H1_Golive_Date_Formula</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Label.Partners_H1_Go_Live_Date})</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-2868: This values will decide what should be mapped to Is Deal Registration field at CR</description>
+        <name>Is_Deal_Registration</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+{!X14_Days_Auto_Tagging},
+{!$Record.Is_Deal_Registration__c},
+true
+)</expression>
+    </formulas>
+    <formulas>
+        <name>RebateTimelineFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+  TEXT({!Source_CR.Partner_Enrollment__r.Rebate_Timeline_Eligibility__c}) = &quot;Perpetual&quot;,
+    DATE(9999, 12, 31),
+  IF(
+    TEXT({!Source_CR.Partner_Enrollment__r.Rebate_Timeline_Eligibility__c}) = &quot;1 Year&quot;,
+      DATE(
+        YEAR({!Source_CR.Close_Date__c}) + 1,
+        MONTH({!Source_CR.Close_Date__c}),
+        DAY({!Source_CR.Close_Date__c})
+      ),
+    IF(
+      TEXT({!Source_CR.Partner_Enrollment__r.Rebate_Timeline_Eligibility__c}) = &quot;2 Years&quot;,
+        DATE(
+          YEAR({!Source_CR.Close_Date__c}) + 2,
+          MONTH({!Source_CR.Close_Date__c}),
+          DAY({!Source_CR.Close_Date__c})
+        ),
+      IF(
+        TEXT({!Source_CR.Partner_Enrollment__r.Rebate_Timeline_Eligibility__c}) = &quot;3 Years&quot;,
+          DATE(
+            YEAR({!Source_CR.Close_Date__c}) + 3,
+            MONTH({!Source_CR.Close_Date__c}),
+            DAY({!Source_CR.Close_Date__c})
+          ),
+        NULL
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26739: Created as part of Partners H1 project to create Expiration Date</description>
+        <name>Registration_Expiration_Date</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()+180</expression>
+    </formulas>
+    <formulas>
+        <name>Todays_Formula</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26739: Created as part of Partners H1 project to calculate no of Days between today date and Oppty Closed Date</description>
+        <name>XNoOfDaysBeforeClosed</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+NOT(ISNULL({!Source_CR.Close_Date__c})),
+TODAY() - {!Source_CR.Close_Date__c},
+null
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>CR Auto Creation on Revenue Oppty Creation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CR Auto Creation on Revenue Oppty Creation</label>
+    <loops>
+        <description>GTMS-28672: Created to itterate over the filtered  CRs</description>
+        <name>Iterate_over_Filtered_CRs</name>
+        <label>Iterate over Filtered CRs</label>
+        <locationX>226</locationX>
+        <locationY>863</locationY>
+        <collectionReference>Revenue_Opportunity_Filter_At_CR_Level</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>IsSource_CR_is_already_mapped</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Copy_1_of_Is_Source_CR_is_already_mapped</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>GTMS-26739: Created as part of Partners H1 project to create the source CR</description>
+        <name>Create_Source_CR</name>
+        <label>Create Source CR</label>
+        <locationX>50</locationX>
+        <locationY>2195</locationY>
+        <inputReference>CR_Record_To_Insert</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>GTMS-26739: Created as part of Partners H1 project to fetch 1st Source CR of the First Closed Won Oppty.</description>
+        <name>Fetch_First_CR_Of_The_First_Closed_Won_Oppty_For_The_Customer</name>
+        <label>Fetch First CR of the First Closed Won Oppty For The Customer</label>
+        <locationX>380</locationX>
+        <locationY>1763</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_First_Purchase_Oppty_Created_After_May_Release</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Customer_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Interaction_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Partner_Sourced_Interaction_Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Is_First_Purchase_Oppty__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Is_Deal_Registration__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Channel_Relationship__c</object>
+        <outputReference>Source_CR</outputReference>
+        <queriedFields>AE_Email__c</queriedFields>
+        <queriedFields>CAM_Owner__c</queriedFields>
+        <queriedFields>Channel_Partner__c</queriedFields>
+        <queriedFields>Channel_Partner_Representative__c</queriedFields>
+        <queriedFields>Channel_Partner_User_lr__c</queriedFields>
+        <queriedFields>CurrencyIsoCode</queriedFields>
+        <queriedFields>Customer_Account__c</queriedFields>
+        <queriedFields>Customer_Contact__c</queriedFields>
+        <queriedFields>Deal_Registration_Discount__c</queriedFields>
+        <queriedFields>End_Customer_Discount_CML__c</queriedFields>
+        <queriedFields>End_Customer_Discount_MM_ENT__c</queriedFields>
+        <queriedFields>Executive_Introduction__c</queriedFields>
+        <queriedFields>Is_Deal_Registration__c</queriedFields>
+        <queriedFields>Key_Customer_Insight__c</queriedFields>
+        <queriedFields>Number_of_units__c</queriedFields>
+        <queriedFields>Minimum_Customer_Discount__c</queriedFields>
+        <queriedFields>Partner_Discount__c</queriedFields>
+        <queriedFields>Partner_Enrollment__c</queriedFields>
+        <queriedFields>Partner_Opportunity_Description__c</queriedFields>
+        <queriedFields>Partner_Program__c</queriedFields>
+        <queriedFields>Partner_Program_Segment__c</queriedFields>
+        <queriedFields>Payment_Method__c</queriedFields>
+        <queriedFields>Product_Type__c</queriedFields>
+        <queriedFields>Program_Type__c</queriedFields>
+        <queriedFields>Referral_Rebate_MSRP__c</queriedFields>
+        <queriedFields>Sales_Cycle_Investment__c</queriedFields>
+        <queriedFields>Samsara_Recommendation__c</queriedFields>
+        <queriedFields>Teaming_Partner__c</queriedFields>
+        <queriedFields>Close_Date__c</queriedFields>
+        <queriedFields>Opportunity__c</queriedFields>
+        <queriedFields>Is_First_Purchase_Oppty__c</queriedFields>
+        <sortField>Close_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26739: Created as part of Partner H1 project to fetch source CR for closed lost oppty</description>
+        <name>Fetch_Source_CR_For_a_Closed_Lost_Oppty</name>
+        <label>Fetch Source CR For a Closed Lost Oppty</label>
+        <locationX>611</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Source_CR_Exist_for_Closed_Lost_Oppty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Partner_Interaction_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Partner_Sourced_Interaction_Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Close_Date__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>Date_Before_14Days</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Customer_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <object>Channel_Relationship__c</object>
+        <outputReference>Channel_Relationship_List</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Channel_Partner__c</queriedFields>
+        <queriedFields>Channel_Partner_Representative__c</queriedFields>
+        <queriedFields>Customer_Account__c</queriedFields>
+        <queriedFields>AE_Email__c</queriedFields>
+        <queriedFields>CAM_Owner__c</queriedFields>
+        <queriedFields>Channel_Partner_User_lr__c</queriedFields>
+        <queriedFields>CurrencyIsoCode</queriedFields>
+        <queriedFields>Customer_Contact__c</queriedFields>
+        <queriedFields>Deal_Registration_Discount__c</queriedFields>
+        <queriedFields>End_Customer_Discount_CML__c</queriedFields>
+        <queriedFields>Executive_Introduction__c</queriedFields>
+        <queriedFields>Is_Deal_Registration__c</queriedFields>
+        <queriedFields>Key_Customer_Insight__c</queriedFields>
+        <queriedFields>Number_of_units__c</queriedFields>
+        <queriedFields>Partner_Discount__c</queriedFields>
+        <queriedFields>Partner_Enrollment__c</queriedFields>
+        <queriedFields>Partner_Opportunity_Description__c</queriedFields>
+        <queriedFields>Partner_Program_Segment__c</queriedFields>
+        <queriedFields>Payment_Method__c</queriedFields>
+        <queriedFields>Product_Type__c</queriedFields>
+        <queriedFields>Referral_Rebate_MSRP__c</queriedFields>
+        <queriedFields>Sales_Cycle_Investment__c</queriedFields>
+        <queriedFields>Samsara_Recommendation__c</queriedFields>
+        <queriedFields>Teaming_Partner__c</queriedFields>
+        <queriedFields>Close_Date__c</queriedFields>
+        <queriedFields>Opportunity__c</queriedFields>
+        <queriedFields>Partner_Program__c</queriedFields>
+        <queriedFields>End_Customer_Discount_MM_ENT__c</queriedFields>
+        <queriedFields>Is_First_Purchase_Oppty__c</queriedFields>
+        <queriedFields>Program_Type__c</queriedFields>
+        <sortField>Close_Date__c</sortField>
+        <sortOrder>Desc</sortOrder>
+    </recordLookups>
+    <start>
+        <locationX>732</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Standard_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Revenue Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__Renewal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-28672: Created to store the channel relationship records list</description>
+        <name>Channel_Relationship_List</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26739: Created as part of Partners H1 Project to Map Source CR VAlues</description>
+        <name>CR_Record_To_Insert</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Revenue_Opportunity_Filter_At_CR_Level</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItemFromSourceCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26739: Created as part of partners H1 project</description>
+        <name>Source_CR</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-28672: Created to map true or false based on the source CR availability with in 14 days of closed lost</description>
+        <name>X14_Days_Auto_Tagging</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

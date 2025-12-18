@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Nomination_Source__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Indicates the source of the Nomination record.</inlineHelpText>
+    <label>Nomination Source</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Influitive</fullName>
+                <default>false</default>
+                <label>Influitive</label>
+            </value>
+            <value>
+                <fullName>Nomination Form</fullName>
+                <default>true</default>
+                <label>Nomination Form</label>
+            </value>
+            <value>
+                <fullName>UserEvidence</fullName>
+                <default>false</default>
+                <label>UserEvidence</label>
+            </value>
+            <value>
+                <fullName>Web Form</fullName>
+                <default>false</default>
+                <label>Web Form</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Amount_Greater_Than_Remain_Credit__c</fullName>
+    <description>Used as an error condition on product rule &quot;Credit Limit Reached&quot;</description>
+    <formula>Estimated_Monthly_Payment__c  &gt;  Monthly_Credit_Remaining_on_Account__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If you want monthly payments, go to account page and select &apos;Internal Financing/Credit Limit Increase&apos; to request credit increase.</inlineHelpText>
+    <label>Monthly Credit Limit Increase Required</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

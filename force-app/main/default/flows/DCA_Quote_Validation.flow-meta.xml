@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Account_Error</name>
+        <label>Account Error</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>Please select either financial Account OR Reseller Account</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Contract_Buyout_Error</name>
+        <label>Contract Buyout Error</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>Contract buyouts are not supported on a monthly billing frequency. Select an annual or upfront billing frequency in order to proceed with the buyout inclusion on the quote.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Payment_Method_validation_Screen</name>
+        <label>Payment Method validation Screen</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>You cannot select “Due in Advance” Payment Terms if the Customer will be paying via Check or Wire. Select deferred (net) payment terms in order to proceed</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>DCA_User_Validation</name>
+        <label>DCA User Validation</label>
+        <locationX>776</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>User_Validation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DCA_Validation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>DCA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Permission.Validation_Rule_Exemption</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>System Administrator</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>QuoteFieldsValidation</targetReference>
+            </connector>
+            <label>User Validation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-16585</description>
+        <name>QuoteFieldsValidation</name>
+        <label>QuoteFieldsValidation</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Payment_Method_Validation</name>
+            <conditionLogic>1 AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__PaymentTerms__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Due in advance</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Customer_Preferred_Payment_Method__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Check/Wire</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Payment_Method_validation_Screen</targetReference>
+            </connector>
+            <label>Payment Method Validation</label>
+        </rules>
+        <rules>
+            <name>Contract_Buyout_Requested_Validation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Competitor_Buyout_Amount__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Selected_Payment_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Direct Monthly</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Competitor_Buyout_Amount__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Contract_Buyout_Error</targetReference>
+            </connector>
+            <label>Contract Buyout Requested Validation</label>
+        </rules>
+        <rules>
+            <name>Account_Information</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Finance_Partner_Account__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Reseller_Account__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Account_Error</targetReference>
+            </connector>
+            <label>Account Information</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_Flows</name>
+        <label>Skip Flows?</label>
+        <locationX>281</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>DCA_User_Validation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Global_Automation_Settings__c.Skip_Flow_Automation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>True</label>
+        </rules>
+    </decisions>
+    <description>GTMS-27572 - Removed the checkbox check for Contract Buyout and Free Service Months. License term validation is being moved to LWC.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ConvertLicenseTermtoNumber</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(TEXT({!$Record.License_Term__c}))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CutOffDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Label.DCA_Cutoff_Date})</expression>
+    </formulas>
+    <formulas>
+        <name>QuoteFieldValues</name>
+        <dataType>String</dataType>
+        <expression>&apos;Proposed buyout amount :&apos;  + Text({!$Record.Buyout_Amount__c}) +  &apos;Net Amount:&apos; + Text({!$Record.SBQQ__NetAmount__c})</expression>
+    </formulas>
+    <interviewLabel>DCA Quote Validation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>DCA Quote Validation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>155</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Skip_Flows</targetReference>
+        </connector>
+        <object>SBQQ__Quote__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

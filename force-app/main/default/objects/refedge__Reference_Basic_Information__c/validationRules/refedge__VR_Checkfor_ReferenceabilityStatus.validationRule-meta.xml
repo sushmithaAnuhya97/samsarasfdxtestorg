@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__VR_Checkfor_ReferenceabilityStatus</fullName>
+    <active>true</active>
+    <description>You must select &apos;Reference Program Member&apos; checkbox if &apos;Reference Status&apos; is &apos;Active&apos; or &apos;Caution&apos;.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(refedge__Referenceability_Status__c, &apos;Active&apos;), ISPICKVAL(refedge__Referenceability_Status__c, &apos;Caution&apos;)) ,
+refedge__Is_Referenceable__c = false
+)</errorConditionFormula>
+    <errorMessage>You must select &apos;Reference Program Member&apos; checkbox if &apos;Reference Status&apos; is &apos;Active&apos; or &apos;Caution&apos;.</errorMessage>
+</ValidationRule>

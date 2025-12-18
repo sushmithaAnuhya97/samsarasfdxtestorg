@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Change_Request_to_Customization</fullName>
+    <active>true</active>
+    <label>Change Request to Customization</label>
+    <picklistValues>
+        <picklist>FLODocs__FLO_Process_Type__c</picklist>
+        <values>
+            <fullName>Affected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FLODocs__Field__c</picklist>
+        <values>
+            <fullName>Additional Approver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apex Class%2FTrigger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Customization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supporting Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visualforce Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workflow%2FFlow%2FApproval Process</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FLODocs__User_Type__c</picklist>
+        <values>
+            <fullName>Additional Approver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved By</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clean up rule owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deployment Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Developer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mandated Approver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected By</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report Owner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

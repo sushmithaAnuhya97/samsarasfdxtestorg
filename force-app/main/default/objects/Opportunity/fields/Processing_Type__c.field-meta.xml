@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Processing_Type__c</fullName>
+    <label>Processing Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Fixed End Date</fullName>
+                <default>false</default>
+                <label>Fixed End Date</label>
+            </value>
+            <value>
+                <fullName>Consolidated Renewal</fullName>
+                <default>false</default>
+                <label>Consolidated Renewal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Notification_Response__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates the response submitted from the VF page.</description>
+    <inlineHelpText>Indicates the response submitted from the VF page.</inlineHelpText>
+    <label>Notification Response</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, this is a very happy account</fullName>
+                <default>false</default>
+                <label>Yes, this is a very happy account</label>
+            </value>
+            <value>
+                <fullName>Check back with me later</fullName>
+                <default>false</default>
+                <label>Check back with me later</label>
+            </value>
+            <value>
+                <fullName>I don’t know, I’m not the right person to ask</fullName>
+                <default>false</default>
+                <label>I don’t know, I’m not the right person to ask</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

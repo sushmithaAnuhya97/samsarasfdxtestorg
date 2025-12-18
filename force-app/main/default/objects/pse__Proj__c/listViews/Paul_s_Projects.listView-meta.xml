@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Paul_s_Projects</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>pse__Account__c</columns>
+    <columns>Lead_Implementation_Consultant__c</columns>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>pse__Project_Status__c</columns>
+    <columns>pse__Stage__c</columns>
+    <columns>Opportunity_ACV__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>Expected_End_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>Project_Phase__c</columns>
+    <columns>Project_POC_Email_Address__c</columns>
+    <columns>Engagement_Type__c</columns>
+    <columns>Total_parent_child_ARR__c</columns>
+    <columns>CS_Tier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Is_Template__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Project_Type__c</field>
+        <operation>equals</operation>
+        <value>Customer Project</value>
+    </filters>
+    <filters>
+        <field>pse__Project_Manager__c</field>
+        <operation>contains</operation>
+        <value>Paul Bauman</value>
+    </filters>
+    <filters>
+        <field>Lead_Implementation_Consultant__c</field>
+        <operation>equals</operation>
+        <value>Paul Bauman</value>
+    </filters>
+    <filters>
+        <field>Engagement_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Services Opportunity</value>
+    </filters>
+    <label>Paul&apos;s Projects</label>
+</ListView>

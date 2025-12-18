@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stub_Payment_Amount_Not_Allowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR( AND(ISCHANGED(Stub_Payment_Amount__c), !ISBLANK(Stub_Payment_Amount__c), Stub_Payment__c = false), 
+AND(ISCHANGED(Stub_Payment__c), Stub_Payment__c = false, !ISBLANK(Stub_Payment_Amount__c))
+)</errorConditionFormula>
+    <errorMessage>Stub Payment Amount should be empty When Stub Payment is false</errorMessage>
+</ValidationRule>

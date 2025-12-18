@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Customization__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>These are the customizations being tested.  This field is optional but should be used if the test did not fully complete.</description>
+    <inlineHelpText>These are the customizations being tested.  This field is optional but should be used if the test did not fully complete.</inlineHelpText>
+    <label>Customization</label>
+    <referenceTo>FLODocs__FLO_Customization__c</referenceTo>
+    <relationshipLabel>Test Records</relationshipLabel>
+    <relationshipName>FLO_Test_Records</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

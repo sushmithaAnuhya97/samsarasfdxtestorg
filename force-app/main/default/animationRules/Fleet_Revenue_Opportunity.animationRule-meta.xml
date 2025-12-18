@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>rarely</animationFrequency>
+    <developerName>Fleet_Revenue_Opportunity</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Fleet Revenue Opportunity</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>Standard_Opportunity</recordTypeName>
+    <sobjectType>Opportunity</sobjectType>
+    <targetField>StageName</targetField>
+    <targetFieldChangeToValues>Closing</targetFieldChangeToValues>
+</AnimationRule>

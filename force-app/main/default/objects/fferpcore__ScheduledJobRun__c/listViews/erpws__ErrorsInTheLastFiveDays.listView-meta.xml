@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>erpws__ErrorsInTheLastFiveDays</fullName>
+    <columns>fferpcore__ApexJobId__c</columns>
+    <columns>fferpcore__Process__c</columns>
+    <columns>NAME</columns>
+    <columns>fferpcore__TotalNumberOfLogs__c</columns>
+    <columns>fferpcore__TotalNumberOfErrors__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>fferpcore__Status__c</field>
+        <operation>equals</operation>
+        <value>Error</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:5</value>
+    </filters>
+    <label>Errors in the Last Five Days</label>
+</ListView>

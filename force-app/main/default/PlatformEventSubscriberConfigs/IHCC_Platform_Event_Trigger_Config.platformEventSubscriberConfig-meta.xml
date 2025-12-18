@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlatformEventSubscriberConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <batchSize>2000</batchSize>
+    <masterLabel>IHCC_Platform_Event_Trigger_Config</masterLabel>
+    <numPartitions>1</numPartitions>
+    <partitionKey>EventUuid</partitionKey>
+    <platformEventConsumer>fferpcore__ihcc_PlatformEventTrigger</platformEventConsumer>
+    <user>svc-cs-certinia@samsara.com.opspoc</user>
+</PlatformEventSubscriberConfig>

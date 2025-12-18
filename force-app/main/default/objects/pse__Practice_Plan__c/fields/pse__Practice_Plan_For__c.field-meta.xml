@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Practice_Plan_For__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Concatenated Practice and Time Period Names (with a hyphen, &apos; - &apos;, in between).</description>
+    <externalId>false</externalId>
+    <formula>pse__Practice__r.Name &amp; &apos; - &apos; &amp; pse__Time_Period__r.Name</formula>
+    <label>Practice Plan For</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

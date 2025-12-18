@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scrub_View</fullName>
+    <columns>NAME</columns>
+    <columns>PDLM__Status_lk__c</columns>
+    <columns>PDLM__Title__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Product_Line_Affected__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PDLM__Status_lk__c</field>
+        <operation>lessThan</operation>
+        <value>Implemented</value>
+    </filters>
+    <filters>
+        <field>PDLM__Status_lk__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Complete,Deviation Active,Doc Control,Draft</value>
+    </filters>
+    <label>Scrub View</label>
+    <sharedTo>
+        <group>NPI_Group</group>
+        <group>Propel_NPI</group>
+    </sharedTo>
+</ListView>

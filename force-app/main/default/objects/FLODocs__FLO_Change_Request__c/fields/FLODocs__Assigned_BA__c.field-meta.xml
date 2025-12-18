@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Assigned_BA__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Business Analyst assigned to this Change Request.</description>
+    <inlineHelpText>Business Analyst assigned to this Change Request.</inlineHelpText>
+    <label>Assigned BA</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Change_Requests</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

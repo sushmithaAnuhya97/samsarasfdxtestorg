@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_access__c</fullName>
+    <defaultValue>&quot;all&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If the config value equals &apos;all&apos; , this means all of the resources will be loaded, that the current user has permission control access for, to log time. If the value equals &apos;resource&apos; or null, only the current user resource will be loaded.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If config value equals to &apos;all&apos; , means all resources along with current user resources will be loaded. Else if value equals to &apos;resource&apos; or null, only current user resources will be loaded.</inlineHelpText>
+    <label>Resource access</label>
+    <length>30</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

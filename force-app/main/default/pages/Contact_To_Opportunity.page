@@ -1,0 +1,547 @@
+<apex:page standardController="Contact" extensions="ContactToOpportunityController" docType="html-5.0">
+    <head>
+        <apex:slds />
+        <script type="text/javascript">
+            function showSpinner(){
+                document.getElementById('pageSpinner').classList.remove('slds-hide');
+            }
+        </script>
+        <style>
+            body {
+                background: #f3f6fb;
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                width: 100vw;
+            }
+            .main-container {
+                background: #fff;
+                border-radius: 0;
+                box-shadow: none;
+                margin: 0;
+                width: 100vw;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            .header-section {
+                padding: .5rem 2.0rem .5rem 2rem;
+                background: #f3f6fb;
+                border-bottom: 1px solid #e5e5e5;
+                display: flex;
+                align-items: center;
+            }
+            .header-section h2 {
+                color: #032d60;
+                font-size: 1.5rem;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                margin: 0;
+            }
+            /* Content section styling 
+            .content-section {
+                flex: 1;
+                padding: 2rem 2.5rem;
+                width: 100%;
+                box-sizing: border-box;
+                background: #f3f6fb;
+            }*/
+            .info-banner {
+                background: #eaf5fe;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                border-left: 4px solid #0176d3;
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+            }
+            .info-icon {
+                margin-right: 0.75rem;
+                color: #0176d3;
+            }
+            .info-text {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #032d60;
+            }
+            .form-section {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+                border: 1px solid #e3e6ea;
+                padding: 1rem 1rem 1rem 1rem;
+            }
+            .form-header {
+                padding-bottom: 1rem;
+                font-weight: 700;
+                color: #032d60;
+                font-size: 1.15rem;
+            }
+            .form-row {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 0;
+                margin-bottom: 1.5rem;
+                align-items: flex-start;
+                min-height: 4rem;
+                width: 100%;
+                position: relative;
+            }
+            /* Middle separator line */
+            .form-row::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background-color: transparent;
+                transform: translateX(-50%);
+            }
+            .form-field {
+                flex: 0 0 45%;
+                margin-bottom: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0 1rem;
+                box-sizing: border-box;
+            }
+            /* Left column - ends before the middle line */
+            .form-field:first-child {
+                padding-right: 2rem;
+                margin-right: 1rem;
+            }
+            /* Right column - starts after the middle line */
+            .form-field:last-child {
+                padding-left: 2rem;
+                margin-left: 1rem;
+            }
+            .form-field label {
+                font-weight: 700;
+                color: #032d60;
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+                letter-spacing: 0.01em;
+            }
+            .form-field input,
+            .form-field select,
+            .form-field textarea {
+                width: 100%;
+                padding: 0.5rem 0.7rem;
+                border: 1px solid #dddbda;
+                border-radius: 4px;
+                font-size: 1rem;
+                font-family: 'Salesforce Sans', Arial, sans-serif;
+                font-weight: 400;
+                line-height: 1.5;
+                background: #fff;
+            }
+            .form-field input:focus,
+            .form-field select:focus,
+            .form-field textarea:focus {
+                outline: none;
+                border-color: #0176d3;
+                box-shadow: 0 0 3px rgba(1, 118, 211, 0.15);
+            }
+            /* Picklist styling */
+            .form-field select {
+                cursor: pointer;
+            }
+            
+            /* Ensure consistent font for all form inputs */
+            .form-field .form-input {
+                font-size: 1rem !important;
+                font-family: 'Salesforce Sans', Arial, sans-serif !important;
+                font-weight: 400 !important;
+                line-height: 1.5 !important;
+            }
+            
+            /* Force consistent font for all input elements */
+            .form-field input,
+            .form-field select,
+            .form-field textarea,
+            .form-field .form-input {
+                font-size: 1rem !important;
+                font-family: 'Salesforce Sans', Arial, sans-serif !important;
+                font-weight: 400 !important;
+                line-height: 1.5 !important;
+            }
+            /* Multi-picklist styling */
+            .form-field .slds-dueling-list,
+            .form-field .apex-multiselect {
+                border: 1px solid #dddbda !important;
+                border-radius: 4px !important;
+                background: #fff !important;
+                min-height: 120px;
+                height: 120px;
+                font-size: 1rem !important;
+                font-family: 'Salesforce Sans', Arial, sans-serif !important;
+                font-weight: 400 !important;
+                line-height: 1.5 !important;
+            }
+            .form-field .apex-multiselect {
+                padding: 0.5rem;
+            }
+            /* Date field styling */
+            .form-field input[type="date"] {
+                background: #fff;
+                cursor: pointer;
+            }
+            /* Checkbox styling */
+            .checkbox-field {
+                display: flex;
+                align-items: center;
+                margin: 1rem 0 0.5rem 0;
+            }
+            .checkbox-field input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                margin-right: 0.75rem;
+                cursor: pointer;
+                accent-color: #0070d2;
+            }
+            .checkbox-field label {
+                margin: 0;
+                font-weight: 600;
+                font-size: 1rem;
+                font-family: 'Salesforce Sans', Arial, sans-serif;
+                line-height: 1.5;
+            }
+            /* Required field indicator */
+            .form-field label[for*="opptyName"],
+            .form-field label[for*="closeDate"] {
+                position: relative;
+            }
+            .form-field label[for*="opptyName"]::after,
+            .form-field label[for*="closeDate"]::after {
+                content: " *";
+                color: #ba0517;
+                font-weight: bold;
+            }
+            /* Multi-picklist alignment fix 
+            .form-row .form-field:last-child {
+                flex-basis: 100%;
+                max-width: 100%;
+            } */
+            .form-field .apex-multiselect,
+            .form-field .slds-dueling-list {
+                width: 100% !important;
+                min-width: 100% !important;
+                max-width: 100% !important;
+            }
+            /* Make the multi-picklist and its label stack nicely */
+            .form-field-multiselect {
+                flex-basis: 100%;
+                max-width: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            /* Special handling for multi-select fields to span full width */
+            .form-field:has(.apex-multiselect),
+            .form-field:has(.slds-dueling-list) {
+                flex-basis: 100%;
+                max-width: 100%;
+                margin-top: 0.5rem;
+            }
+            /* Responsive adjustments */
+            @media (max-width: 900px) {
+                .form-row {
+                    flex-direction: column;
+                }
+                .form-row::after {
+                    display: none;
+                }
+                .form-field {
+                    flex: 1;
+                    padding: 0;
+                    margin: 0 0 1rem 0;
+                }
+                .form-field:first-child,
+                .form-field:last-child {
+                    padding: 0;
+                    margin: 0 0 1rem 0;
+                }
+            }
+            .button-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1.5rem 1rem 1.5rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .button-left {
+                flex: 1;
+                text-align: left;
+            }
+            .button-right {
+                flex: 1;
+                text-align: right;
+            }
+            .btn {
+                padding: 0.75rem 1.5rem;
+                border: none;
+                border-radius: 4px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                text-decoration: none;
+                display: inline-block;
+            }
+            .btn-brand {
+                background: #0176d3;
+                color: white;
+            }
+            .btn-neutral {
+                background: #f3f2f2;
+                color: #514f4d;
+                border: 1px solid #dddbda;
+            }
+            .btn-neutral:hover {
+                background: #eef1f6;
+            }
+            .custom-error-banner {
+                display: flex;
+                align-items: center;
+                background: #fdecea;
+                border: 1.5px solid #f5b7b1;
+                border-radius: 8px;
+                padding: 1.2rem 1.5rem;
+                margin: 1.5rem 0;
+                box-shadow: 0 2px 8px rgba(186, 5, 23, 0.08);
+                font-size: 1.1rem;
+                color: #ba0517;
+                font-weight: 500;
+                animation: shake 0.3s;
+            }
+            .custom-error-icon {
+                font-size: 2rem;
+                margin-right: 1rem;
+                color: #ba0517;
+            }
+            .custom-error-text {
+                flex: 1;
+                line-height: 1.5;
+            }
+            .custom-warning-banner {
+                display: flex;
+                align-items: center;
+                background: #fff3cd;
+                border: 1.5px solid #ffc107;
+                border-radius: 8px;
+                padding: .2rem .5rem;
+                margin: .5rem 0;
+                box-shadow: 0 2px 8px rgba(255, 193, 7, 0.08);
+                font-size: 1.1rem;
+                color: #856404;
+                font-weight: 500;
+            }
+            .custom-warning-icon {
+                font-size: 2rem;
+                margin-right: 1rem;
+                color: #ffc107;
+            }
+            .custom-warning-text {
+                flex: 1;
+                line-height: 1.5;
+            }
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                20% { transform: translateX(-5px); }
+                40% { transform: translateX(5px); }
+                60% { transform: translateX(-5px); }
+                80% { transform: translateX(5px); }
+                100% { transform: translateX(0); }
+            }
+            
+            /* Custom styling for page messages */
+            .custom-error-messages .message {
+                display: flex;
+                align-items: center;
+                background: #fdecea;
+                border: 1.5px solid #f5b7b1;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(186, 5, 23, 0.08);
+                font-size: 1.1rem;
+                color: #ba0517;
+                font-weight: 500;
+                animation: shake 0.3s;
+            }
+            
+            .custom-error-messages .message .messageText {
+                flex: 1;
+                line-height: 1.5;
+                font-weight: 500;
+            }
+            
+            .custom-error-messages .message .messageIcon {
+                font-size: 2rem;
+                margin-right: 1rem;
+                color: #ba0517;
+            }
+            
+            /* Warning message styling */
+            .custom-error-messages .message.warning {
+                background: #fff3cd;
+                border-color: #ffc107;
+                color: #856404;
+            }
+            
+            .custom-error-messages .message.warning .messageIcon {
+                color: #ffc107;
+            }
+            
+            /* Info message styling */
+            .custom-error-messages .message.info {
+                background: #eaf5fe;
+                border-color: #0176d3;
+                color: #032d60;
+            }
+            
+            .custom-error-messages .message.info .messageIcon {
+                color: #0176d3;
+            }
+            
+            /* Success message styling */
+            .custom-error-messages .message.success {
+                background: #d4edda;
+                border-color: #28a745;
+                color: #155724;
+            }
+            
+            .custom-error-messages .message.success .messageIcon {
+                color: #28a745;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slds-is-relative">
+            <apex:form >
+                <!-- Lightning Spinner -->
+                <div id="pageSpinner" class="slds-spinner_container slds-hide" >
+                    <div role="status" class="slds-spinner slds-spinner--large slds-spinner--brand">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+                
+                <div class="main-container">
+                    <!-- Header Section -->
+                    <div class="header-section">
+                        <h2>Create Opportunity</h2>
+                    </div>
+                    
+                    <div class="content-section">
+                        <!-- Error Message for Contract Flag -->
+                        <apex:pageMessage severity="Error" rendered="{!contractFlag}">
+                            Please create an Add-On Opportunity from the Contract.
+                        </apex:pageMessage>
+                        
+                        <!-- General Error Messages from Controller -->
+                        <div class="custom-error-messages">
+                            <apex:pageMessages id="pageMessages" />
+                        </div>
+                        
+                        <!-- Error message for open Partner Registration -->
+                        <apex:pageBlock title="Error" rendered="{!openPartnerRegistrationExists}">
+                            <div class="custom-error-banner">
+                                <span class="custom-error-icon">⚠️</span>
+                                <span class="custom-error-text">
+                                    There is an open<b> Partner Registration</b> for this account.
+                                    Please <b>approve or deny</b> it prior to creating a new opportunity.
+                                </span>
+                            </div>
+                            <div style="text-align: center; padding: 1rem 0;">
+                                <apex:commandButton value="Back to Contact" action="{!backToContact}" immediate="true" 
+                                                   html-formnovalidate="formnovalidate" 
+                                                   styleClass="slds-button slds-button_neutral"/>
+                            </div>
+                        </apex:pageBlock>
+                        
+                        <!-- Create Opportunity page block - only shown when no open Partner Registration exists -->
+                        <apex:pageBlock rendered="{!!openPartnerRegistrationExists}">
+                            <!-- Info Banner -->
+                            <div class="info-banner">
+                                <span class="info-icon">ℹ</span>
+                                <span class="info-text">Complete the opportunity details below to create a new opportunity for this contact.</span>
+                            </div>
+                            
+                            <!-- ADR Transfer Notice -->
+                            <apex:outputPanel rendered="{!adrTransferSize > 0}">
+                                <div class="custom-warning-banner">
+                                    <span class="custom-warning-icon">⚠️</span>
+                                    <span class="custom-warning-text">
+                                        {!stringADR}
+                                    </span>
+                                </div>
+                            </apex:outputPanel>
+                            
+                            <!-- Hidden Fields -->
+                            <apex:outputText value="{!Contact.Status__c}" rendered="false"></apex:outputText>
+                            <apex:outputText value="{!Contact.Inbound_Reason_Faulty__c}" rendered="false"></apex:outputText>
+                            
+                            <!-- Form Section -->
+                            <div class="form-section">
+                            <div class="form-header">
+                                Opportunity Information
+                            </div>
+                            <div class="form-content">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="opptyName">Opportunity Name</label>
+                                        <apex:inputText id="opptyName" value="{!oppty.Name}" styleClass="form-input"/>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="closeDate">Close Date</label>
+                                        <apex:inputField id="closeDate" value="{!oppty.CloseDate}" styleClass="form-input"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="need">BANT Need</label>
+                                        <apex:inputField id="need" value="{!oppty.Need__c}" styleClass="form-input"/>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="budgetConfirmed">BANT Budget Confirmed</label>
+                                        <apex:inputField id="budgetConfirmed" value="{!oppty.Budget_Confirmed__c}" styleClass="form-input"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="demoDate">Demo Date</label>
+                                        <apex:inputField id="demoDate" value="{!Contact.Demo_Date__c}" styleClass="form-input"/>
+                                    </div>
+                                    <div class="form-field" style="align-items: flex-start; margin-top: 2rem; min-width: 200px;">
+                                        <div class="checkbox-field">
+                                            <apex:inputCheckbox value="{!noDemo}" id="noDemo"/>
+                                            <label for="noDemo">No Demo</label>
+                                        </div>
+                                        <apex:outputPanel rendered="{!IF(adrTransferSize > 0, 'true', 'false')}">
+                                            <div class="checkbox-field">
+                                                <apex:inputCheckbox value="{!adrTransferExists}" id="adrTransferExists"/>
+                                                <label for="adrTransferExists">*ADR Transfer Exists*</label>
+                                            </div>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                                
+                                <!-- Button Section (moved inside form-section) -->
+                                <div style="text-align: center; padding: 1.5rem 0;">
+                                    <apex:commandButton value="Back to Contact" action="{!backToContact}" immediate="true" 
+                                                       styleClass="slds-button slds-button_neutral" html-formnovalidate="formnovalidate"
+                                                       style="margin-right: 1rem;"/>
+                                    <apex:commandButton id="submitButton" value="{!clickLabel}" action="{!submit}" 
+                                                       rendered="{!!contractFlag}" onclick="showSpinner()" 
+                                                       styleClass="slds-button slds-button_brand" html-formnovalidate=""/>
+                                </div>
+                            </div>
+                        </div>
+                        </apex:pageBlock>
+                    </div>
+                </div>
+            </apex:form>
+        </div>
+    </body>
+</apex:page>

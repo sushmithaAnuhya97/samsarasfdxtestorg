@@ -1,0 +1,138 @@
+<apex:page standardController="Opportunity" extensions="QuantityControllerExtension" docType="html-5.0" >
+<font color="#FF0000"><apex:pageMessages id="msgs"/></font>
+<apex:form >
+<apex:variable var="trialQuantities" value="{!trialQuantities}">
+<apex:variable var="purchasedTrialQuantities" value="{!purchasedTrialQuantities}">
+<apex:variable var="inputQuantities" value="{!inputQuantities}">
+
+<apex:pageBlock title="Opportunity Product - Summary">
+        <apex:pageBlockTable value="{!hardwareLineItems}" var="opptyLineItem">
+            <apex:column value="{!opptyLineItem.PricebookEntry.Name}" headerValue="Product Name"/>
+            <apex:column value="{!opptyLineItem.Product_Code_Copy__c}" headerValue="Product Code"/>
+            <apex:column value="{!opptyLineItem.Ship_To__c}" headerValue="Shipping Address"/>
+            <apex:column headerValue="Billed Quantity">
+                <apex:variable var="purchased_trial_quantities" value="{!purchasedTrialQuantities[opptyLineItem.Product_Code_Copy__c]}" />
+                <apex:outputText value="{!ShipQuantities[opptyLineItem.Product_Code_Copy__c]+purchased_trial_quantities}"/>
+            </apex:column>
+            <apex:column headerValue="Quantity to Ship">
+                <apex:outputText value="{!ShipQuantities[opptyLineItem.Product_Code_Copy__c]}" />
+            </apex:column>
+            <apex:column headerValue="Trial Units Purchased" >
+                  <apex:outputText value="{!purchasedTrialQuantities[opptyLineItem.Product_Code_Copy__c]}"/>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="Open Trials Shipped">
+        <apex:outputText value="Please choose how many units you will be purchasing from each of the trials that you have open. Make sure that the purchased units do not exceed: a) the available units per trial and b) the products to be shipped."/>
+        <apex:outputText value=""/>
+        
+        <br></br>
+        <br></br>
+        <apex:pageBlockTable value="{!trialOpptyProduct}" var="opptyLineItem">
+            <apex:column value="{!opptyLineItem.PricebookEntry.Name}" headerValue="Product Name"/>
+            <apex:column value="{!opptyLineItem.Product_Code_Copy__c}" headerValue="Product Code"/>
+            <apex:column headerValue="Trial Name">
+                <apex:outputLink value="/{!opptyLineItem.Opportunity.Id}"><apex:outputText value="{!opptyLineItem.Opportunity.Name}" /></apex:outputLink>
+            </apex:column>
+            <apex:column value="{!opptyLineItem.Ship_To__c}" headerValue="Shipping Address"/>
+            <apex:column headerValue="Available Trial Units">
+                <apex:variable var="purchased_from_trial" value="{!opptyLineItem.Purchased_From_Trial__c}" />
+                <apex:outputText value="{!opptyLineItem.Quantity-purchased_from_trial} / {!opptyLineItem.Quantity}"/>
+            </apex:column>
+            <!--<apex:column headerValue="Trial Units to Purchase">
+                <apex:variable var="purchased_from_trial" value="{!opptyLineItem.Purchased_From_Trial__c}" />
+                <apex:input value="{!inputQuantities[opptyLineItem.Id]}" disabled="{!IF(opptyLineItem.Quantity-purchased_from_trial=0, True, False)}"/>
+            </apex:column>-->
+            <apex:column headerValue="Trial Units to Purchase" rendered="{!IF(admin_permission, False, True)}">
+                <apex:input value="{!inputQuantities[opptyLineItem.Id]}" disabled="{!post_closing}"/>
+            </apex:column>
+            <apex:column headerValue="Trial Units to Purchase (rep's suggestion)" rendered="{!IF(admin_permission, True, False)}">
+                <apex:input value="{!inputQuantities[opptyLineItem.Id]}" disabled="{!post_closing}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="Opportunity Product - Details" rendered="{!IF(admin_permission, True, False)}">
+        
+        <br></br>
+        <h1>Quantities to be shipped</h1>
+        <br></br>
+        <apex:pageBlockTable value="{!physicalLineItems}" var="opptyLineItem">
+            <apex:column value="{!opptyLineItem.PricebookEntry.Name}" headerValue="Product Name"/>
+            <apex:column value="{!opptyLineItem.Product_Code_Copy__c}" headerValue="Product Code"/>
+            <apex:column headerValue="Quantity">
+                <apex:outputText value="{!ShipQuantities[opptyLineItem.Product_Code_Copy__c]}" />
+            </apex:column>
+            <!--<apex:column headerValue="Ship From">
+                <apex:input value="{!shipLocations[opptyLineItem.Id]}" />
+            </apex:column>-->
+            <!--<apex:selectList size="4" >
+                <apex:selectOptions value="{!opptyLineItem.Ship_From_Location__c}"/>
+            </apex:selectList>-->
+            <apex:column headerValue="Ship From">
+              <apex:selectList value="{!shipLocations[opptyLineItem.Id]}" multiselect="false" size="1" disabled="{!post_closing}">
+                    <!--<apex:selectOptions value="{!opptyLineItem.Ship_From_Location__c}"/>-->
+                    <apex:selectOptions value="{!LocationOption}"/>
+              </apex:selectList>
+            </apex:column>
+            
+            
+        </apex:pageBlockTable>
+        
+        <br></br>
+        <h1>Quantities purchased from Trials</h1>
+        <br></br>
+        <apex:pageBlockTable value="{!trialLineItems}" var="opptyLineItem">
+            <apex:column value="{!opptyLineItem.PricebookEntry.Name}" headerValue="Product Name"/>
+            <apex:column value="{!opptyLineItem.Product_Code_Copy__c}" headerValue="Product Code"/>
+            <apex:column headerValue="Quantity">
+                <apex:outputText value="{!purchasedTrialQuantities[opptyLineItem.Product_Code_Copy__c]}" />
+            </apex:column>
+            <apex:column value="{!fixed_values[1]}" headerValue="Ship From"/>
+        </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:pageBlock title="Open Trials - Links and shipped date" rendered="{!IF(admin_permission, True, False)}">
+    <apex:pageBlockTable value="{!trialOpptiesList}" var="trialOppty">
+    <apex:column headerValue="Trial Name">
+        <apex:outputLink value="/{!trialOppty.Id}"><apex:outputText value="{!trialOppty.Name}" /></apex:outputLink>
+    </apex:column>
+    
+    
+    <apex:column value="{!trialOppty.CloseDate}" headerValue="Shipping Date" />
+    
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+ <!--<apex:variable value="" var="rep_section" rendered="{!invalid_form}" >
+            <br></br>
+            <apex:outputText style="color:back; font-size:12px;" value="Please make sure that the purchased units do not exceed the quantity to be shipped. "/>
+            <br></br>
+ </apex:variable>-->
+ 
+
+<apex:pageBlock >
+    <div align="center" draggable="false">
+        <apex:commandButton value="Back to Opportunity" action="{!backToOppty}" />
+        <apex:commandButton value="Refresh" action="{!refresh}" />
+        <apex:commandButton value="Submit" action="{!submit}" rendered="{!IF(admin_permission, True, False)}" oncomplete="showAlert({!invalid_form})"/>
+        <apex:commandButton value="Submit" action="{!submit_rep}" rendered="{!IF(admin_permission, False, True)}" oncomplete="showAlert({!invalid_form})"/>
+    </div>
+</apex:pageBlock>
+
+</apex:variable>
+</apex:variable>
+</apex:variable>
+</apex:form>
+
+<script>
+    function showAlert(t) {
+      if(t) {
+        alert('Make sure that the purchased units do not exceed: a) the available units per trial and b) the products to be shipped.');
+      } 
+    }
+ </script>
+
+</apex:page>

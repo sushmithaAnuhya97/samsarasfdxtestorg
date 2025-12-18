@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Target_Utilization_Approach__c</fullName>
+    <defaultValue>&quot;WEIGHTED&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>For a value of “LAST” only the Utilization Target at the end date of any Time Period is used for the Utilization Detail result for that period, multiplying it with the calendar hours.
+For a value of “WEIGHTED” (default) between each Resource Change, the effective Target Utilization for each segment between Resource Change is multiplied with the calendar hours for that segment, and the resulting subtotals from each segment are summed (across both Historical and Scheduled periods) to arrive at Utilization Target Hours.</description>
+    <externalId>false</externalId>
+    <label>Target Utilization Approach</label>
+    <length>20</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

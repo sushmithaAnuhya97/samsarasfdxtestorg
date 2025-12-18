@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Prioritization_Score__c</fullName>
+    <description>AE1 ONLY: Score Indicating Increased Likelihood of Converting to an Opportunity - &lt;Deprecated as part of GTMS-1805 and will be deleted by Nov 16th&gt;</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+
+Account_Size_Segment__c,&apos;AE1&apos;,
+
+IF(AND(Number_of_Vehicles__c &gt; 20, Number_of_Vehicles__c &lt;= 30), 5,
+IF(AND(Number_of_Vehicles__c &gt; 10, Number_of_Vehicles__c &lt;= 20), 3,
+IF(Number_of_Vehicles__c &lt; 10, 0,0))), 0)
+
++IF(CONTAINS(&apos;Waste Management, Electrical, Healthcare, Other, Transportation &amp; Warehousing&apos;, TEXT(Industry)), 5,
+IF(CONTAINS(&apos;Oil &amp; Gas, Landscaping, Professional Services, Transportation - Passenger Transit&apos;, TEXT(Industry)), 3,0))
+
++IF(Closed_Lost_Opportunities__c &gt; 0, 5, 0)
+
++IF(CONTAINS(&apos;(Parent) Adwords, (Parent) Website Visitor, (Parent) Bing, (Parent) Free Trial Form, (Parent) Software Advice, (Parent) Referrals, (Parent) External Lead Gen, (Parent) Capterra, (Parent) Inbound call/email&apos;, Parent_Campaign_FT__c),5,
+IF(CONTAINS(&apos;(Parent) Facebook, (Parent) Adwords Non Branded, (Parent) Facebook Non Branded&apos;, Parent_Campaign_FT__c),3,0))
+
++IF(CONTAINS(&apos;Texas, Georgia, Louisiana, Florida, Nevada, New Jersey, California&apos;, BillingState ),5,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>AE1 ONLY: Score Indicating Increased Likelihood of Converting to an Opportunity</inlineHelpText>
+    <label>Account Prioritization Score[Don&apos;t Use]</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

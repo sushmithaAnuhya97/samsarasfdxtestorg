@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Subject__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Auto-populate a new field called ‘Subject’ with “Request for
+[opportunity name]”</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( &quot;/&quot;+Id , IF( ISBLANK(refedge__Opportunity__c) , &apos;Request without Opportunity&apos;, &apos;Request for &apos;+ refedge__Opportunity__r.Name))</formula>
+    <label>Request Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

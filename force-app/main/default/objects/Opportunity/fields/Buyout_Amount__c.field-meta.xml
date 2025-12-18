@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyout_Amount__c</fullName>
+    <description>updated the label for GTMS-26318</description>
+    <formula>IF(SBQQ__PrimaryQuote__r.New_DC_architecture__c ,SBQQ__PrimaryQuote__r.Buyout_Amount__c*-1,Buyout_Opportunity__r.Rebate_Amount__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sum of Buyouts</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_No_shipping_only_approved_regions</fullName>
+    <active>true</active>
+    <description>This is a validation rule to prevent reps from selling outside approved regions in the EU
+
+-Added validation bypass. Tommy 1/18/21</description>
+    <errorConditionFormula>AND(
+NOT( $Permission.Validation_Rule_Exemption ),
+Account.Overwrite_Shipping_rule__c != TRUE, Shipping_Address_NEW__c != &quot;&quot;,
+ Probability &gt; 0.1,
+ NOT(OR(ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Mexico&quot;),
+
+AND(ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Spain&quot;),
+NOT(OR(
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;35&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;51&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;52&quot;)))),
+
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Canada&quot;),
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;United States&quot;),
+
+
+AND(ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;United Kingdom&quot;),
+NOT(OR(
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;GX&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;GY&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;JE&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;IM&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;TKCA&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;SIQQ&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;TDCU&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;ASCN&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;STHL&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;PCRN&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;MSR&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;FIQQ&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;AI&quot;)))),
+
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Bermuda&quot;),
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Ireland&quot;),
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Austria&quot;),
+
+AND(ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Italy&quot;),
+NOT(OR(
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;47&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;23&quot;),
+BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;22&quot;)))),
+
+AND(ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;France&quot;),
+NOT(BEGINS( Shipping_Address_NEW__r.Shipping_Zip_Code__c ,&quot;97&quot;))),
+
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Germany&quot;),
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Switzerland&quot;),
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Netherlands&quot;),
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Belgium&quot;),
+ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c,&quot;Luxembourg&quot;) ) ))</errorConditionFormula>
+    <errorDisplayField>Express_Agreement_Accepted__c</errorDisplayField>
+    <errorMessage>The shipping address on this account is outside our list of approved regions. Please update the shipping address, unload this account, or if under special circumstances email SalesOps &amp; Finance for approval.</errorMessage>
+</ValidationRule>

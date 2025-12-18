@@ -1,0 +1,21 @@
+<template>
+     <template if:true={hasPermission}>
+    <div style="margin-top: 8px;margin-bottom: 8px;">
+    <lightning-card title="Admin Only" >
+        <div class="slds-p-horizontal_small">
+            <lightning-textarea 
+                name="largeTextArea" 
+                label="JSON Data"
+                class={textAreaClass}
+                onchange={handleJsonDataChange}
+                value={jsonData}
+                style="height: 25vh !important; width: 100%;">
+            </lightning-textarea>
+            <div if:true={hasError} style="color: red;">
+                Please provide Valid Json
+            </div>
+        </div>
+    </lightning-card>
+</div>
+ </template>
+</template>

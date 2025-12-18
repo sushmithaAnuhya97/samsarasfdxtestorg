@@ -1,0 +1,95 @@
+<template>    
+    <template if:true={hasProProduct}>
+        <c-message-banner variation="warning" message="Pro SKU Detected on Selected Contract(s) : One or more selected contracts contain a Pro SKU license. If you are upgrading a software license that is currently associated with a Pro SKU, ensure that you also upgrade the same quantity of Pro SKU licenses to maintain a 1:1 match." ></c-message-banner>
+    </template>
+    <lightning-card>
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text="Loading.." style=" position : absolute !important ; top:0px !important; height: 100% !important;" size="medium"></lightning-spinner>
+        </template>
+    <div class="slds-grid slds-gutters" style="padding: 0 1rem 0.5rem 1rem;">
+        <div class="slds-col slds-size_1-of-2">
+            <div style="font-weight: bold; color: black; font-size: 1.25rem;">Product License Upgrade</div>
+        </div>
+        <div class="slds-col slds-size_1-of-2" style="display: flex; justify-content: flex-end;">
+            <div class="slds-form-element__control" style="width: fit-content; padding: 5px;">
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <div style="font-size: 1rem;">Upgrading Platform Entitlements</div>
+                    <lightning-input 
+                        type="toggle"
+                        checked={togglePnP}
+                        onchange={handleLicenseUpgradeChange}
+                        class="toggle-narrow"
+                        style="transform: scale(1);"
+                        message-toggle-active=""
+                        message-toggle-inactive="">
+                    </lightning-input>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-p-around_small">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left slds-p-horizontal_small slds-border_right" scope="col" style="width: 60%;">Ready for Upgrade</th>
+                    <th class="slds-text-align_left slds-p-horizontal_small slds-border_right" scope="col" style="width: 40%;">Total Qty</th>
+                    <th class="slds-text-align-left slds-p-horizontal_small slds-border_right" scope="col" style="width: 40%;">Upgrade to</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={subscriptionData} for:item="wrapper" for:index="rowIndex">
+                    <tr key={wrapper.productId} class="slds-hint-parent">
+                        <td>
+                            <a href={wrapper.productLink} class="product-link" target="_blank">
+                                {wrapper.productName}
+                            </a>
+                        </td>
+                        <td style="text-align: left; width: 100%;">{wrapper.totalQuantity}</td>
+                        <td style="padding-top: 0px !important; padding-bottom: 0px !important;">
+                            <div class="slds-text-color_weak">
+                                <div class="slds-grid slds-gutters slds-grid_vertical-align-left">
+                                    <div class="slds-col">
+                                        <div class="combobox-container">
+                                            <lightning-combobox
+                                                class="custom-combobox"
+                                                name="licenseUpgradeProduct"
+                                                placeholder="Select Product"
+                                                options={wrapper.availableProductOptions}
+                                                onchange={handleProductSelect}
+                                                data-id={wrapper.subscriptionWrappers.shipTo}
+                                                data-productid={wrapper.productId} 
+                                                data-product-code={wrapper.productCode}
+                                                data-index={rowIndex}
+                                                disabled={wrapper.subscriptionWrappers.isProductNotReplaceable}
+                                                value={wrapper.pnpOneProductDetails.selectedProductId}
+                                                variant="label-hidden"
+                                                style="width: 25vw !important"
+                                                dropdown-alignment="auto">
+                                            </lightning-combobox>
+                                            <template if:true={wrapper.hasValidationError}>
+                                                <div class="validation-error-message" data-tooltip={wrapper.bannerMessage}>
+                                                    {wrapper.validationMessage}
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12" style="text-align: center;">
+                                        <lightning-helptext 
+                                            content={wrapper.pnpOneProductDetails.selectedProductCode}
+                                            icon-name="utility:info"
+                                            icon-size="medium"
+                                            class="custom-info-icon"
+                                            style="margin-top: 9px;">
+                                        </lightning-helptext>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</lightning-card>
+</template>

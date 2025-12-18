@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Event_Key__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <deprecated>false</deprecated>
+    <description>Generated key to identify a Billing Event. Contains concatenation of Billing_Event_Batch__c, Project__c, and an optional two-character suffix based on the type of business records it contains (if the records are configured to be in separate billing events).</description>
+    <externalId>true</externalId>
+    <label>Event Key</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

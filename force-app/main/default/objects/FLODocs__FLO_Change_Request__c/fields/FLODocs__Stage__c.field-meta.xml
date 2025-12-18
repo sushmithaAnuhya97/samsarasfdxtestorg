@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the stage of the change request:
+Change Request - a unapproved or approved request for a change
+Development Project - a change under development in production or sandbox
+Deployment Record - a completed development project being approved back to development</description>
+    <inlineHelpText>This is the stage of the change request (see description for value details)</inlineHelpText>
+    <label>Stage</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>FLODocs__FLO_Change_Request_Stage</valueSetName>
+    </valueSet>
+</CustomField>

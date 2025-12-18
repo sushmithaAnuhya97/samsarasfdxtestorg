@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserGem__CurrentJobStartedWithinLast6Month__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(  UserGem__CurrentJobStartedDate__c ), &quot;&quot;, IF( TODAY() - UserGem__CurrentJobStartedDate__c  &gt; 182, &quot;&quot;, &quot;yes&quot; ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Job Started Within Last 6 Months</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Wave Sdk Request Channel</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>This is the request Id</description>
+        <fieldName>requestId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The method to call</description>
+        <fieldName>methodName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The parameters to call</description>
+        <fieldName>methodParameters</fieldName>
+    </lightningMessageFields>
+    <masterLabel>WaveSdkRequest</masterLabel>
+</LightningMessageChannel>

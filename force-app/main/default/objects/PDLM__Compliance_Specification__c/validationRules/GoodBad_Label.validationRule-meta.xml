@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GoodBad_Label</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+ISPICKVAL(PDLM__Good_Label__c, &quot;&quot;),
+ISPICKVAL(PDLM__Bad_Label__c , &quot;&quot;)
+)</errorConditionFormula>
+    <errorMessage>Please enter both Good and Bad Label values.</errorMessage>
+</ValidationRule>

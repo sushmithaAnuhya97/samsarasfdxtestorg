@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-26099: Created as part of Partners H1 project to send email to partners if country is not supported</description>
+        <name>Send_Email_To_Partner_If_Country_is_Not_Supported_By_Samsara</name>
+        <label>Send Email To Partner If Country is Not Supported By Samsara</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <actionName>Lead.Partner_Notified_of_Country_not_Supported</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Partner_Notified_of_Country_not_Supported</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-26099: Created as part of Partners H1 project to send email to partners if email used is a personal email</description>
+        <name>Send_Email_To_Partner_If_Email_Domain_Is_Not_Supported</name>
+        <label>Send Email To Partner If Email Domain Is Not Supported</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <actionName>Lead.Partner_Notified_For_Email_Domain_Not_Supported</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Partner_Notified_For_Email_Domain_Not_Supported</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>GTMS-26099: checking the value of application denial reason</description>
+        <name>Application_Denial_Reason_Check</name>
+        <label>Application Denial Reason Check</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Country_Not_Supported</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Application_Denied_Reason_p__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Country is not supported</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_To_Partner_If_Country_is_Not_Supported_By_Samsara</targetReference>
+            </connector>
+            <label>If Country Not Supported</label>
+        </rules>
+        <rules>
+            <name>If_Email_Domain_Not_Supported</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Application_Denied_Reason_p__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Email Domain Not Supported</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_To_Partner_If_Email_Domain_Is_Not_Supported</targetReference>
+            </connector>
+            <label>If Email Domain Not Supported</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26099: Created as part of Partners H1 project to send emails to partner email if lead is disqualified</description>
+        <name>Is_Lead_Disqualified</name>
+        <label>Is Lead Disqualified</label>
+        <locationX>534</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>No, Lead is Not Disqualified</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Lead_is_Disqualified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Disqualified</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Application_Denial_Reason_Check</targetReference>
+            </connector>
+            <label>Yes, Lead is Disqualified</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26099: Created as part of Partners H1 project to send emails to partners if their applications are disqualified</description>
+    <environments>Default</environments>
+    <interviewLabel>Lead After Insert Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead After Insert Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>408</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Lead_Disqualified</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

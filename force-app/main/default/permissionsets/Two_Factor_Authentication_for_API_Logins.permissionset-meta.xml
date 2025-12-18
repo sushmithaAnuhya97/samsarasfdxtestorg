@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows the user to have access to the &quot;Two-Factor Authentication for API Logins&quot; system permission</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>zzzTwo-Factor Authentication for API Logins</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ForceTwoFactor</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>TwoFactorApi</name>
+    </userPermissions>
+</PermissionSet>

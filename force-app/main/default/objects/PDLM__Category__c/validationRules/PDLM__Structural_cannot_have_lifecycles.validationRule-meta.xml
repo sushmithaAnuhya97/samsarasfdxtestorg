@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Structural_cannot_have_lifecycles</fullName>
+    <active>true</active>
+    <description>All structural categories must not have Lifecycles</description>
+    <errorConditionFormula>PDLM__Is_Structural__c &amp;&amp; !ISBLANK( PDLM__Lifecycle__c )</errorConditionFormula>
+    <errorDisplayField>PDLM__Lifecycle__c</errorDisplayField>
+    <errorMessage>Lifecycle cannot be specified on category group name</errorMessage>
+</ValidationRule>

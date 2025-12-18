@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Buttons__c</fullName>
+    <formula>IF(copado__Org_Credential__r.Name = &apos;INT&apos;, 
+    IF(UAT_Deployment__c = true, true,false),
+			 (IF(
+								copado__Org_Credential__r.Name = &apos;staging&apos;,false,true 
+				    )
+				 )
+		)</formula>
+    <label>Restrict Buttons</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

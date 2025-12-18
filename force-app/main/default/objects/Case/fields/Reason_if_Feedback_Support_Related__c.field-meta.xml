@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_if_Feedback_Support_Related__c</fullName>
+    <label>Reason if Feedback Support Related</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Slow Response</fullName>
+                <default>false</default>
+                <label>Slow Response</label>
+            </value>
+            <value>
+                <fullName>Unresolved due to open Issue</fullName>
+                <default>false</default>
+                <label>Unresolved due to open Issue</label>
+            </value>
+            <value>
+                <fullName>Poor Support Demeanor</fullName>
+                <default>false</default>
+                <label>Poor Support Demeanor</label>
+            </value>
+            <value>
+                <fullName>Expectations Broken/ Incorrect</fullName>
+                <default>false</default>
+                <label>Expectations Broken/ Incorrect</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

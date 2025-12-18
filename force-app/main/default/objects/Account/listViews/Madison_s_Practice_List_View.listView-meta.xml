@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Madison_s_Practice_List_View</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Size_Segment__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Most_Recent_Source__c</field>
+        <operation>equals</operation>
+        <value>Website form</value>
+    </filters>
+    <filters>
+        <field>Global_Geography__c</field>
+        <operation>equals</operation>
+        <value>West</value>
+    </filters>
+    <filters>
+        <field>Owner_Name__c</field>
+        <operation>equals</operation>
+        <value>Samsara Small Fleets</value>
+    </filters>
+    <label>Madison&apos;s Practice List View</label>
+</ListView>

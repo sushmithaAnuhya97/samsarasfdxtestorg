@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Kickback_Resolution__c</fullName>
+    <description>GTMS-16802: Added new picklist values and updated existing picklist values as per the excel in jira comments</description>
+    <label>Closing Delay Resolution</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Attach Signed Order Form/ PO to SFDC</fullName>
+                <default>false</default>
+                <label>Attach Signed Order Form/ PO to SFDC</label>
+            </value>
+            <value>
+                <fullName>Please acquire Customer Signature</fullName>
+                <default>false</default>
+                <label>Please acquire Customer Signature</label>
+            </value>
+            <value>
+                <fullName>Customer must complete checkout link</fullName>
+                <default>false</default>
+                <label>Customer must complete checkout link</label>
+            </value>
+            <value>
+                <fullName>Need customer authorization to process balance due</fullName>
+                <default>false</default>
+                <label>Need customer authorization to process balance due</label>
+            </value>
+            <value>
+                <fullName>Align license total in SFDC with Order Form</fullName>
+                <default>false</default>
+                <label>Align license total in SFDC with Order Form</label>
+            </value>
+            <value>
+                <fullName>Align products in SFDC with Order Form</fullName>
+                <default>false</default>
+                <label>Align products in SFDC with Order Form</label>
+            </value>
+            <value>
+                <fullName>Email Tax Team</fullName>
+                <default>false</default>
+                <label>Email Tax Team</label>
+            </value>
+            <value>
+                <fullName>Email Sales Ops</fullName>
+                <default>false</default>
+                <label>Email Sales Ops</label>
+            </value>
+            <value>
+                <fullName>Email Order Ops</fullName>
+                <default>false</default>
+                <label>Email Order Ops</label>
+            </value>
+            <value>
+                <fullName>Email Order Ops to update S&amp;H</fullName>
+                <default>false</default>
+                <label>Email Order Ops to update S&amp;H</label>
+            </value>
+            <value>
+                <fullName>Need new order form or move to closing on original close date</fullName>
+                <default>false</default>
+                <label>Need new order form or move to closing on original close date</label>
+            </value>
+            <value>
+                <fullName>Need new order form</fullName>
+                <default>false</default>
+                <label>Need new order form</label>
+            </value>
+            <value>
+                <fullName>Align payment type on Order Form/SFDC</fullName>
+                <default>false</default>
+                <label>Align payment type on Order Form/SFDC</label>
+            </value>
+            <value>
+                <fullName>Align currency on Order Form/SFDC</fullName>
+                <default>false</default>
+                <label>Align currency on Order Form/SFDC</label>
+            </value>
+            <value>
+                <fullName>Email Accounts Receivable</fullName>
+                <default>false</default>
+                <label>Email Accounts Receivable</label>
+            </value>
+            <value>
+                <fullName>Attach Subsidy/ Short Pay Letter</fullName>
+                <default>false</default>
+                <label>Attach Subsidy/ Short Pay Letter</label>
+            </value>
+            <value>
+                <fullName>Update Subsidy Field to match PO</fullName>
+                <default>false</default>
+                <label>Update Subsidy Field to match PO</label>
+            </value>
+            <value>
+                <fullName>1st payment due in advance</fullName>
+                <default>false</default>
+                <label>1st payment due in advance</label>
+            </value>
+            <value>
+                <fullName>Align SER rebate /ncs revenue opp to SER value</fullName>
+                <default>false</default>
+                <label>Align SER rebate /ncs revenue opp to SER value</label>
+            </value>
+            <value>
+                <fullName>Confirm VAT Number</fullName>
+                <default>false</default>
+                <label>Confirm VAT Number</label>
+            </value>
+            <value>
+                <fullName>Update SFDC with the correct close date</fullName>
+                <default>false</default>
+                <label>Update SFDC with the correct close date</label>
+            </value>
+            <value>
+                <fullName>Approve primary quote</fullName>
+                <default>false</default>
+                <label>Approve primary quote</label>
+            </value>
+            <value>
+                <fullName>See Note Below</fullName>
+                <default>false</default>
+                <label>See Note Below</label>
+            </value>
+            <value>
+                <fullName>Provide payment method</fullName>
+                <default>false</default>
+                <label>Provide payment method</label>
+            </value>
+            <value>
+                <fullName>Email Deal Desk</fullName>
+                <default>false</default>
+                <label>Email Deal Desk</label>
+            </value>
+            <value>
+                <fullName>Email Internal Finance</fullName>
+                <default>false</default>
+                <label>Email Internal Finance</label>
+            </value>
+            <value>
+                <fullName>Remove Buyout Amount from SFDC</fullName>
+                <default>false</default>
+                <label>Remove Buyout Amount from SFDC</label>
+            </value>
+            <value>
+                <fullName>Please have customer confirm updated Tax Amount</fullName>
+                <default>false</default>
+                <label>Please have customer confirm updated Tax Amount</label>
+            </value>
+            <value>
+                <fullName>Please update close date to today</fullName>
+                <default>false</default>
+                <label>Please update close date to today</label>
+            </value>
+            <value>
+                <fullName>Align currency on Opportunity, CPQ and Docusign</fullName>
+                <default>false</default>
+                <label>Align currency on Opportunity, CPQ and Docusign</label>
+            </value>
+            <value>
+                <fullName>Please update close date to today and recalculate CPQ</fullName>
+                <default>false</default>
+                <label>Please update close date to today and recalculate CPQ</label>
+            </value>
+            <value>
+                <fullName>Order was received after shipping cutoff (2PM GMT). Update close date to next business day and recalculate CPQ quote</fullName>
+                <default>false</default>
+                <label>Order was received after shipping cutoff (2PM GMT). Update close date to next business day and recalculate CPQ quote</label>
+            </value>
+            <value>
+                <fullName>Ensure VAT number and rate correct</fullName>
+                <default>false</default>
+                <label>Ensure VAT number and rate correct</label>
+            </value>
+            <value>
+                <fullName>Please align SFDC S&amp;H to Docusign. Email Order Ops</fullName>
+                <default>false</default>
+                <label>Please align SFDC S&amp;H to Docusign. Email Order Ops</label>
+            </value>
+            <value>
+                <fullName>Please send a new DocuSign to the customer with a Billing Company Name that matches the CPQ quote</fullName>
+                <default>false</default>
+                <label>Please send a new DocuSign to the customer with a Billing Company Name that matches the CPQ quote</label>
+            </value>
+            <value>
+                <fullName>Please select Credit Card or ACH as the Payment Method, and have a new DocuSign signed reflecting the updated Payment Method</fullName>
+                <default>false</default>
+                <label>Please select Credit Card or ACH as the Payment Method, and have a new DocuSign signed reflecting the updated Payment Method</label>
+            </value>
+            <value>
+                <fullName>Please send a new DocuSign to the customer with billing frequency that match the CPQ quote</fullName>
+                <default>false</default>
+                <label>Please send a new DocuSign to the customer with billing frequency that match the CPQ quote</label>
+            </value>
+            <value>
+                <fullName>Please send a new DocuSign to the customer with Payment Terms that match the CPQ quote</fullName>
+                <default>false</default>
+                <label>Please send a new DocuSign to the customer with Payment Terms that match the CPQ quote</label>
+            </value>
+            <value>
+                <fullName>Have Customer Complete Capture Link</fullName>
+                <default>false</default>
+                <label>Have Customer Complete Checkout Link</label>
+            </value>
+            <value>
+                <fullName>Update shipping address in SFDC to match address on order form/ PO</fullName>
+                <default>false</default>
+                <label>Update shipping address in SFDC to match address on order form/ PO</label>
+            </value>
+            <value>
+                <fullName>Update selected payment type in CPQ to Upfront</fullName>
+                <default>false</default>
+                <label>Update selected payment type in CPQ to Upfront</label>
+            </value>
+            <value>
+                <fullName>Update SFDC to match PO</fullName>
+                <default>false</default>
+                <label>Update SFDC to match PO</label>
+            </value>
+            <value>
+                <fullName>Update selected payment type field in CPQ</fullName>
+                <default>false</default>
+                <label>Update selected payment type field in CPQ</label>
+            </value>
+            <value>
+                <fullName>Selected payment type in CPQ needs to set up as Monthly for non standard payments</fullName>
+                <default>false</default>
+                <label>Selected payment type in CPQ needs to set up as Monthly for non standard payments</label>
+            </value>
+            <value>
+                <fullName>Confirm how rebate needs to be applied</fullName>
+                <default>false</default>
+                <label>Confirm how rebate needs to be applied</label>
+            </value>
+            <value>
+                <fullName>Check box for adjusted start date</fullName>
+                <default>false</default>
+                <label>Check box for adjusted start date</label>
+            </value>
+            <value>
+                <fullName>Provide approval for net terms from Deal Desk</fullName>
+                <default>false</default>
+                <label>Provide approval for net terms from Deal Desk</label>
+            </value>
+            <value>
+                <fullName>Align S&amp;H in SFDC with Order Form/ PO</fullName>
+                <default>false</default>
+                <label>Align S&amp;H in SFDC with Order Form/ PO</label>
+            </value>
+            <value>
+                <fullName>Remove promo license from oppty</fullName>
+                <default>false</default>
+                <label>Remove promo license from oppty</label>
+            </value>
+            <value>
+                <fullName>If the change to the Total Hardware Due or Total License Due is intentional, have the Customer sign a new Order Form for the updated values. If this was an unintentional change, revert the opportunity to the original values and resubmit to Closing.</fullName>
+                <default>false</default>
+                <label>If the change to the Total Hardware Due or Total License Due is intentional, have the Customer sign a new Order Form for the updated values. If this was an unintentional change, revert the opportunity to the original values and resubmit to Closing.</label>
+            </value>
+            <value>
+                <fullName>Please supply a new PO with FOB Destination removed or attach a signed Order Form</fullName>
+                <default>false</default>
+                <label>Please supply a new PO with FOB Destination removed or attach a signed Order Form</label>
+            </value>
+            <value>
+                <fullName>Attach Missing documentation to oppty level</fullName>
+                <default>false</default>
+                <label>Attach Missing documentation to oppty level</label>
+            </value>
+            <value>
+                <fullName>Need to confirm if customer is going through Samsara directly or is this a partner/reseller deal</fullName>
+                <default>false</default>
+                <label>Need to confirm if customer is going through Samsara directly or is this a partner/reseller deal</label>
+            </value>
+            <value>
+                <fullName>Update the selected payment type to upfront, then generate a new OF</fullName>
+                <default>false</default>
+                <label>Update the selected payment type to upfront, then generate a new OF</label>
+            </value>
+            <value>
+                <fullName>Generate a new OF with the correct shipping costs included in the first payment</fullName>
+                <default>false</default>
+                <label>Generate a new OF with the correct shipping costs included in the first payment</label>
+            </value>
+            <value>
+                <fullName>Obtain DD approval for the new terms and update the account level accordingly</fullName>
+                <default>false</default>
+                <label>Obtain DD approval for the new terms and update the account level accordingly</label>
+            </value>
+            <value>
+                <fullName>Update the order form to include the buyout language and amount</fullName>
+                <default>false</default>
+                <label>Update the order form to include the buyout language and amount</label>
+            </value>
+            <value>
+                <fullName>Have DD update the finance notes in the opportunity level to reflect approval for the custom deal</fullName>
+                <default>false</default>
+                <label>Have DD update the finance notes in the opportunity level to reflect approval for the custom deal</label>
+            </value>
+            <value>
+                <fullName>Generate the correct order form template</fullName>
+                <default>false</default>
+                <label>Generate the correct order form template</label>
+            </value>
+            <value>
+                <fullName>Align the license term with the order form</fullName>
+                <default>false</default>
+                <label>Align the license term with the order form</label>
+            </value>
+            <value>
+                <fullName>Obtain ISD approvals at the CPQ level</fullName>
+                <default>false</default>
+                <label>Obtain ISD approvals at the CPQ level</label>
+            </value>
+            <value>
+                <fullName>Update the promo to reflect a 100% discount</fullName>
+                <default>false</default>
+                <label>Update the promo to reflect a 100% discount</label>
+            </value>
+            <value>
+                <fullName>Update the renewed contract field to include the Contract ID</fullName>
+                <default>false</default>
+                <label>Update the renewed contract field to include the Contract ID</label>
+            </value>
+            <value>
+                <fullName>Provide a reason for the discount on the promo</fullName>
+                <default>false</default>
+                <label>Provide a reason for the discount on the promo</label>
+            </value>
+            <value>
+                <fullName>Ensure multiline shipping is checked on CPQ</fullName>
+                <default>false</default>
+                <label>Ensure multiline shipping is checked on CPQ</label>
+            </value>
+            <value>
+                <fullName>Ensure the license value matches the order form</fullName>
+                <default>false</default>
+                <label>Ensure the license value matches the order form</label>
+            </value>
+            <value>
+                <fullName>Align CPQ payment terms with the app level</fullName>
+                <default>false</default>
+                <label>Align CPQ payment terms with the app level</label>
+            </value>
+            <value>
+                <fullName>Align Total License cost in SFDC with Order Form</fullName>
+                <default>false</default>
+                <label>Align Total License cost in SFDC with Order Form</label>
+            </value>
+            <value>
+                <fullName>If the change to the Number of Free Months is intentional, the Customer must sign a new Order Form with the updated values. If this was an unintentional change, revert CPQ to the original values and resubmit to Closing</fullName>
+                <default>false</default>
+                <label>If the change to the Number of Free Months is intentional, the Customer must sign a new Order Form with the updated values. If this was an unintentional change, revert CPQ to the original values and resubmit to Closing</label>
+            </value>
+            <value>
+                <fullName>If the change to the Free Service Amount is intentional, the Customer must sign a new Order Form with the updated amounts. If this was an unintentional change, revert CPQ to the original values and resubmit to Closing</fullName>
+                <default>false</default>
+                <label>If the change to the Free Service Amount is intentional, the Customer must sign a new Order Form with the updated amounts. If this was an unintentional change, revert CPQ to the original values and resubmit to Closing</label>
+            </value>
+            <value>
+                <fullName>If the change to the Free Service Amount tax is due to a change in the Free Service Amount, the Customer must sign a new Order Form with the updated amounts. If this change is unintentional, please check with the Tax team</fullName>
+                <default>false</default>
+                <label>If the change to the Free Service Amount tax is due to a change in the Free Service Amount, the Customer must sign a new Order Form with the updated amounts. If this change is unintentional, please check with the Tax team</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

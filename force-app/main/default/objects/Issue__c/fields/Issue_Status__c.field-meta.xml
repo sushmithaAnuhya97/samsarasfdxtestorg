@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Status__c</fullName>
+    <defaultValue>&apos;ICEBOX&apos;</defaultValue>
+    <description>Determines process status of the issue.</description>
+    <label>Status</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TRIAGE</fullName>
+                <default>false</default>
+                <label>TRIAGE</label>
+            </value>
+            <value>
+                <fullName>ICEBOX</fullName>
+                <default>true</default>
+                <label>ICEBOX</label>
+            </value>
+            <value>
+                <fullName>TO DO</fullName>
+                <default>false</default>
+                <label>TO DO</label>
+            </value>
+            <value>
+                <fullName>REOPENED</fullName>
+                <default>false</default>
+                <label>REOPENED</label>
+            </value>
+            <value>
+                <fullName>IN DEVELOPMENT</fullName>
+                <default>false</default>
+                <label>IN DEVELOPMENT</label>
+            </value>
+            <value>
+                <fullName>BLOCKED OR WAITING</fullName>
+                <default>false</default>
+                <label>BLOCKED OR WAITING</label>
+            </value>
+            <value>
+                <fullName>RESOLVED</fullName>
+                <default>false</default>
+                <label>RESOLVED</label>
+            </value>
+            <value>
+                <fullName>CLOSED</fullName>
+                <default>false</default>
+                <label>CLOSED</label>
+            </value>
+            <value>
+                <fullName>Product_Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Management</label>
+            </value>
+            <value>
+                <fullName>closed-ignore</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>closed-ignore</label>
+            </value>
+            <value>
+                <fullName>dev-accepted</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>dev-accepted</label>
+            </value>
+            <value>
+                <fullName>dev-assigned</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>dev-assigned</label>
+            </value>
+            <value>
+                <fullName>dev-consider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>dev-consider</label>
+            </value>
+            <value>
+                <fullName>dev-fixed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>dev-fixed</label>
+            </value>
+            <value>
+                <fullName>dev-open</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>dev-open</label>
+            </value>
+            <value>
+                <fullName>dev-rejected</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>dev-rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

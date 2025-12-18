@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overdue_Status__c</fullName>
+    <description>This field indicates whether the project is overdue based on the current stage and step completion date. If the project is overdue, the field will display &apos;Overdue&apos;; otherwise, it will remain blank.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        OR(
+            ISPICKVAL(pse__Stage__c, &quot;In-Discussion&quot;),
+            ISPICKVAL(pse__Stage__c, &quot;Start Confirmed&quot;),
+            ISPICKVAL(pse__Stage__c, &quot;In Progress&quot;),
+            ISPICKVAL(pse__Stage__c, &quot;On Hold&quot;),
+            ISPICKVAL(pse__Stage__c, &quot;Deliverables Complete&quot;)
+        ),
+        TODAY() &gt; 
+            CASE(
+                pse__Stage__c,
+                &quot;In-Discussion&quot;, Current_Step_Date__c + 30,
+                &quot;Start Confirmed&quot;, Current_Step_Date__c + 30,
+                &quot;In Progress&quot;, Current_Step_Date__c + 14,
+                &quot;On Hold&quot;, Current_Step_Date__c + 60,
+                &quot;Deliverables Complete&quot;, Current_Step_Date__c + 60,
+                Current_Step_Date__c
+            )
+    ),
+    &quot;Overdue&quot;,
+    &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates whether the project is overdue based on the current stage and step completion date.</inlineHelpText>
+    <label>Overdue Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

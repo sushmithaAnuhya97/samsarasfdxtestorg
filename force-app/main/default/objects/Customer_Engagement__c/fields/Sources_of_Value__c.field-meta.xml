@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sources_of_Value__c</fullName>
+    <inlineHelpText>Select all applicable sources of value</inlineHelpText>
+    <label>Sources of Value</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Engagement_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Identified new sources of value or new business objectives</fullName>
+                <default>false</default>
+                <label>Identified new sources of value or new business objectives</label>
+            </value>
+            <value>
+                <fullName>Feature feedback / request / commit management</fullName>
+                <default>false</default>
+                <label>Feature feedback / request / commit management</label>
+            </value>
+            <value>
+                <fullName>Customer provided a success story / ROI or identified as an advocate</fullName>
+                <default>false</default>
+                <label>Customer provided a success story / ROI or identified as an advocate</label>
+            </value>
+            <value>
+                <fullName>Confirmed customer receiving value from products</fullName>
+                <default>false</default>
+                <label>Confirmed customer receiving value from products</label>
+            </value>
+            <value>
+                <fullName>Technical issue management</fullName>
+                <default>false</default>
+                <label>Technical issue management</label>
+            </value>
+            <value>
+                <fullName>Met new stakeholders critical to technical &amp; economic decision making</fullName>
+                <default>false</default>
+                <label>Met new stakeholders critical to technical &amp; economic decision making</label>
+            </value>
+            <value>
+                <fullName>Training opportunity identification</fullName>
+                <default>false</default>
+                <label>Training opportunity identification</label>
+            </value>
+            <value>
+                <fullName>Customer referrals or lead generation</fullName>
+                <default>false</default>
+                <label>Customer referrals or lead generation</label>
+            </value>
+            <value>
+                <fullName>HOLD #3</fullName>
+                <default>false</default>
+                <label>HOLD #3</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Identified new sources of value or new business objectives</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Feature feedback / request / commit management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Customer provided a success story / ROI or identified as an advocate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Confirmed customer receiving value from products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Technical issue management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Met new stakeholders critical to technical &amp; economic decision making</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Training opportunity identification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Review</controllingFieldValue>
+            <valueName>Customer referrals or lead generation</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

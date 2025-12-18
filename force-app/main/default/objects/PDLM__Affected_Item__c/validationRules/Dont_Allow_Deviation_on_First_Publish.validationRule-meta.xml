@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dont_Allow_Deviation_on_First_Publish</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(PDLM__Item_Revision__r.IR_Revision_Count__c = 1,
+PDLM__Change_Order_lk__r.PDLM__Category__r.Name = &apos;Deviation&apos;)</errorConditionFormula>
+    <errorMessage>Cannot publish an Item for the first time using a Deviation</errorMessage>
+</ValidationRule>

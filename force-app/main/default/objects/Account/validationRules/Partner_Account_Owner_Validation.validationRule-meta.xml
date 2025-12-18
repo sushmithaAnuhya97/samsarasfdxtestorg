@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Account_Owner_Validation</fullName>
+    <active>true</active>
+    <description>Restrict partner account ownership changes.</description>
+    <errorConditionFormula>AND(
+    $RecordType.DeveloperName = &quot;Partner&quot;,
+    ISCHANGED(OwnerId),
+    NOT(
+        OR(
+            Owner.Profile.Name = &quot;Samsara Channel Account Managers&quot;,Owner.Profile.Name = &quot;Samsara - Product Management&quot;,Owner.Profile.Name = &quot;Sales Ops Profile&quot;,
+            Owner.RR_Is_Pool_User__c = TRUE
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Only Partner Account Managers should own Partner Accounts</errorMessage>
+</ValidationRule>

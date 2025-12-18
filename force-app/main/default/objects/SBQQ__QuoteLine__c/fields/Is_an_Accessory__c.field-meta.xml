@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_an_Accessory__c</fullName>
+    <formula>OR(BEGINS(SBQQ__ProductCode__c, &quot;ELOG&quot;),BEGINS(SBQQ__ProductCode__c, &quot;CBL&quot;),AND(BEGINS(SBQQ__ProductCode__c, &quot;ACC-&quot;),NOT(CONTAINS(SBQQ__ProductCode__c, &quot;ACC-DRIVERID&quot;))),BEGINS(SBQQ__ProductCode__c, &quot;SHRT&quot;),BEGINS(SBQQ__ProductCode__c, &quot;WELCOME&quot;),BEGINS(SBQQ__ProductCode__c, &quot;EXPRESS-WELCOME&quot;),BEGINS(SBQQ__ProductCode__c, &quot;FREE-TRIAL&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is an Accessory ?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

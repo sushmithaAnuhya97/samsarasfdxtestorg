@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Active</fullName>
+    <columns>NAME</columns>
+    <columns>fpro__Active__c</columns>
+    <columns>fpro__Master_Object__c</columns>
+    <columns>fpro__Field_To_Update__c</columns>
+    <columns>fpro__Data_Source__c</columns>
+    <columns>fpro__Roll_Up_Type__c</columns>
+    <columns>fpro__Summarized_Object__c</columns>
+    <columns>fpro__Field_to_Aggregate__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>fpro__Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>fpro__Demo_Record__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Active</label>
+</ListView>

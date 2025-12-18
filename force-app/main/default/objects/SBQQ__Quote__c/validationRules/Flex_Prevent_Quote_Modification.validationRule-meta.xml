@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flex_Prevent_Quote_Modification</fullName>
+    <active>true</active>
+    <description>Restrict seller from editing Snapshot Quote</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+NOT($Setup.FlexCnRTriggerBypass__c.Bypass_Sync_and_Flag_Reset_Logic__c),
+NOT($Permission.FlexAccessQuoteLine),
+NOT(ISNEW()),
+Snapshot_Quote__c = TRUE,
+NOT(ISCHANGED(Flex_Bypass_Validation_Rule_Date_Time__c)),
+NOT(ISCHANGED(Snapshot_Quote__c))
+)</errorConditionFormula>
+    <errorMessage>This is a Snapshot Quote and cannot be edited. Please work with Sales Ops if adjustments are needed.</errorMessage>
+</ValidationRule>

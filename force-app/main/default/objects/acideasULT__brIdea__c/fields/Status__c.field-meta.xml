@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Request</fullName>
+                <default>true</default>
+                <label>New Request</label>
+            </value>
+            <value>
+                <fullName>Not on Roadmap</fullName>
+                <default>false</default>
+                <label>Not on Roadmap</label>
+            </value>
+            <value>
+                <fullName>On Roadmap</fullName>
+                <default>false</default>
+                <label>On Roadmap</label>
+            </value>
+            <value>
+                <fullName>Partial Release</fullName>
+                <default>false</default>
+                <label>Partial Release</label>
+            </value>
+            <value>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+                <label>Delivered</label>
+            </value>
+            <value>
+                <fullName>Closed - will not implement</fullName>
+                <default>false</default>
+                <label>Closed - will not implement</label>
+            </value>
+            <value>
+                <fullName>ACK</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ACK</label>
+            </value>
+            <value>
+                <fullName>Acknowledged</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Acknowledged</label>
+            </value>
+            <value>
+                <fullName>Investigating</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Investigating</label>
+            </value>
+            <value>
+                <fullName>No Status</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Status</label>
+            </value>
+            <value>
+                <fullName>Not Planned / Gathering Interest</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Planned / Gathering Interest</label>
+            </value>
+            <value>
+                <fullName>Released</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Released</label>
+            </value>
+            <value>
+                <fullName>Under Construction</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Under Construction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

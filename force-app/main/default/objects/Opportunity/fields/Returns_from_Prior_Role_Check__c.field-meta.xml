@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Returns_from_Prior_Role_Check__c</fullName>
+    <description>Used for Xactly auditing only. Only applicable for the current month.</description>
+    <formula>IF ( AND(
+
+OR ( 
+ISPICKVAL( Type , &quot;Remorse Refund&quot;),
+ISPICKVAL( Type , &quot;Rebate&quot;) ),
+
+Owner.UserRole.Name &lt;&gt; Owner_Role_Copy__c ),
+
+TRUE,
+FALSE)</formula>
+    <inlineHelpText>Used for Xactly auditing only. Only applicable for the current month.</inlineHelpText>
+    <label>Returns from Prior Role Check</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Sales_Tax_Historical_Entry_Control</fullName>
+    <active>true</active>
+    <description>Stopping product addition and manipulation and address changes to prevent sales tax from changing when the sales tax historical field is not blank</description>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK(Sales_Tax_Historical__c)), 
+NOT($Permission.Validation_Rule_Exemption),
+NOT(CONTAINS($Profile.Name, &quot;Order&quot;)),
+OR( 
+ISCHANGED(Product_Count__c), 
+ISCHANGED(Amount), 
+ISCHANGED(Shipping_Address_NEW__c), 
+ISCHANGED(Unique_Shipping_Addresses__c) 
+) 
+)</errorConditionFormula>
+    <errorMessage>Since Sales Tax Historical is populated, you can not edit the product list or address without Sales Ops approval</errorMessage>
+</ValidationRule>

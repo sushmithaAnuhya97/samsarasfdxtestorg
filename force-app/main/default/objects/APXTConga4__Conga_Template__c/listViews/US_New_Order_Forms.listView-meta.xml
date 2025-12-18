@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_New_Order_Forms</fullName>
+    <columns>APXTConga4__Name__c</columns>
+    <columns>NAME</columns>
+    <columns>APXTConga4__Template_Group__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>APXTConga4__Name__c</field>
+        <operation>notContain</operation>
+        <value>renewal,renewals</value>
+    </filters>
+    <label>US - New Order Forms</label>
+</ListView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__NotificationType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The type of notification sent when the process completed: Successful, Failure, or Mixed.</description>
+    <externalId>false</externalId>
+    <formula>IF( pse__TotalNumberOfLogs__c = 0, &apos;Undefined&apos;,
+    IF ( AND( pse__TotalNumberOfErrors__c=0,pse__TotalNumberOfAborts__c=0,pse__TotalNumberOfExternal__c=0), 
+        &apos;Successful&apos;, 
+        IF(pse__TotalNumberOfErrors__c = pse__TotalNumberOfLogs__c, 
+            &apos;Failure&apos;, 
+            IF(pse__TotalNumberOfAborts__c &gt; 0, 
+                &apos;Failure&apos;, 
+                IF( pse__TotalNumberOfExternal__c &gt; 0, 
+                    &apos;Failure&apos;, 
+                    &apos;Mixed&apos; 
+                ) 
+            ) 
+        )
+    )     
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The type of notification sent when the process completed: Successful, Failure, or Mixed.</inlineHelpText>
+    <label>Notification Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

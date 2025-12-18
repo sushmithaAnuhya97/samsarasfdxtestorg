@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sites_ACV_Bookings__c</fullName>
+    <label>Sites ACV Bookings</label>
+    <summarizedField>Opportunity.Sites_ACV_Booking_Copy__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Type</field>
+        <operation>equals</operation>
+        <value>revenue opportunity, Remorse Refund, Revenue Opportunity - Bill Only, Rebate</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>Closed Won, Refunded - Closed</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Sites_ACV_Booking_Copy__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Renewal__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

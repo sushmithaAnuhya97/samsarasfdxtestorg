@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_Request_Set__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the related resource request set.</description>
+    <inlineHelpText>Lookup to the related resource request set.</inlineHelpText>
+    <label>Resource Request Set</label>
+    <referenceTo>pse__Resource_Request_Set__c</referenceTo>
+    <relationshipLabel>Resource Requests</relationshipLabel>
+    <relationshipName>Resource_Requests</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

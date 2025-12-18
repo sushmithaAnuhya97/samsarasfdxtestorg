@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unworkable_Case</fullName>
+    <active>true</active>
+    <businessProcess>Unworkable case</businessProcess>
+    <label>Unworkable Case</label>
+    <picklistValues>
+        <picklist>Auto_Closed_No_Response__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CS_Request_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CS_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs more Info%2C reached out to rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Tag__c</picklist>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware Fault</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inspection%2FCompliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Support Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software Bug</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cloud_or_App__c</picklist>
+        <values>
+            <fullName>API%2F Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOS%2F DVIR%2F Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>K-12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Routing %26 Dispatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delinquency_Reason__c</picklist>
+        <values>
+            <fullName>Billing issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%2FUnknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unreachable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delinquency_Status__c</picklist>
+        <values>
+            <fullName>Attempting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved - Pending Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delinquency_Subreason__c</picklist>
+        <values>
+            <fullName>Bankruptcy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COVID-19 Impact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change in decision maker%2Fownership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contesting payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Terms Dispute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract length</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract renewed after 30-day window</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Card Requires Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Reached%2C Became Unresponsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer no longer likes pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer requested reprocessing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer treated 30 day period as a trial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer wanted features that do not exist yet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer was unsatisfied with onboarding process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer was unsatisfied with response time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer was unsatisfied with warranty terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer went with a different vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer went with another vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downsizing %2F Partial Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downsizing%2FPartial Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Termination of Full Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exchanging product %2F not a real return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explanation in Notes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware failed in some manner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect products sent out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation complexity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of financing %2F denied financing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Left message with other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not eligible for a payment plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Please explain in notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product did not meet customer%27s expectations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product is incompatiable with company%27s fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retry Original Payment Method</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Rep misrepresented the product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software underperformed%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Reach Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to cancel previous contract with another vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to make full payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Detailed_Case_Reason__c</picklist>
+        <values>
+            <fullName>Driver App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samsara Cloud</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Early_Access_STATUS__c</picklist>
+        <values>
+            <fullName>Feature Enabled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending PM Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Finance_Case_Result__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Termination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Termination Fee Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Returned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Write Off</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Finance_Case_Status__c</picklist>
+        <values>
+            <fullName>10th Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1st Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2nd Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3rd Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4th Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5th Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6th Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7th Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8th Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9th Attempt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>First_Response_Type__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hardware_Related__c</picklist>
+        <values>
+            <fullName>AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hardware_type__c</picklist>
+        <values>
+            <fullName>HW-AG15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-CM11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-EM11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-EM12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-EM21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-EM22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-GW22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-HM11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-IM31</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-IM32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-IM33</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-PM10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-PM20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-VG32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-VG33</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW-VG34</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IT_related_sub_category__c</picklist>
+        <values>
+            <fullName>Account Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conferencing %2F Audio %2F Visual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry__c</picklist>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Educational Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care %26 Social Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mining%2C Quarrying%2C Oil %26 Gas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passenger Transit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation %26 Warehousing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale Trade</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Netsuite_Delinquent_Status__c</picklist>
+        <values>
+            <fullName>Current</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deactivated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delinquent w%2F Dashboard Banner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delinquent w%2Fo Dashboard Banner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Written-off</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>CSAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DriverApp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Ops</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Returns</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>s0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>s1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>s2</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>s3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>s4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority_Customer_Voicemail__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Area__c</picklist>
+        <values>
+            <fullName>API%2FIntegrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cameras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DVIR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboard-UI%2F Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOS %26 Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>K-12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Routing %26 Dispatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety %28non-camera%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temperature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIFI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Cancellation Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churn Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delinquent Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Concession Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadside Inspection</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_case_not_resolved__c</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unfixed Bug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>de-prioritized Bug</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_if_Feedback_Support_Related__c</picklist>
+        <values>
+            <fullName>Expectations Broken%2F Incorrect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Support Demeanor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slow Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unresolved due to open Issue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Resolution_Type__c</picklist>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Past Due</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Delay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspension- Partial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Responded__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Type__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Top_Case_Reason__c</picklist>
+        <values>
+            <fullName>Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How do I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Something is Broken</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>%5BEnt AE Only%5D - Onboarding services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canadian HOS Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalation support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Hardware Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IC Kickback Request Log</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ongoing training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-sale concessions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-sale support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROI Benchmark Analysis Slides</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unworkable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade CS Tier  - Customer Success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade CS Tier - Services</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>venkata.konduru@samsara.com</contactEmail>
+    <label>TI</label>
+    <plugin>TIConnectedAppCustomAttrHandler</plugin>
+    <samlConfig>
+        <acsUrl>https://academy.samsara.com/access/saml/consumer/partner-academy</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://academy.samsara.com/access/saml/metadata/partner-academy</entityUrl>
+        <issuer>https://samsara.my.salesforce.com</issuer>
+        <samlNameIdFormat>Unspecified</samlNameIdFormat>
+        <samlSigningAlgoType>SHA1</samlSigningAlgoType>
+        <samlSubjectType>Username</samlSubjectType>
+    </samlConfig>
+    <startUrl>https://academy.samsara.com/</startUrl>
+</ConnectedApp>

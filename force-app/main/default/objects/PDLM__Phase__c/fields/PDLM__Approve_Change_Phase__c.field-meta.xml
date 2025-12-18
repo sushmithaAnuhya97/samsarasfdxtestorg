@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Approve_Change_Phase__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>After the last approval in this phase, marks the record as Approved and releases non-descriptive Change&apos;s Affected Items. Every Workflow can have only one phase with this setting checked. This is typically the phase immediately before an &quot;Approved&quot; or &quot;Released&quot; phase.</inlineHelpText>
+    <label>Approve (Release AI on non-desc Changes)</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

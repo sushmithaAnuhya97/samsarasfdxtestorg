@@ -1,0 +1,160 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-01-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="slds-m-around_xx-small">
+        <lightning-card variant="Narrow" title={pageTitle} icon-name="standard:contract">
+            <!-- Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+
+            <!-- Combobox Row: Add horizontal padding -->
+            <template if:true={showFilterControls}>
+                <div class="slds-p-horizontal_medium">
+                    <div class="slds-grid slds-grid_align-start slds-gutters slds-m-bottom_small">
+                        <div class="slds-m-right_small">
+                            <lightning-combobox
+                                name="quarter"
+                                label="Quarter"
+                                value={selectedQuarter}
+                                options={dynamicQuarterOptions}
+                                class="slds-size_small"
+                                onchange={handleQuarterChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div>
+                            <lightning-combobox
+                                name="year"
+                                label="Year"
+                                value={selectedYear}
+                                options={yearOptions}
+                                class="slds-size_small"
+                                onchange={handleYearChange}>
+                            </lightning-combobox>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={showError}>
+                <div class="slds-p-horizontal_medium">
+                    <div class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_small" role="alert" style="width:97.8%;">
+                        <span class="slds-assistive-text">error</span>
+                        <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Error icon">
+                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+                            </svg>
+                        </span>
+                        <h2>
+                            {errorMessage}
+                            <a href="#" onclick={handleGoBack}>Go Back</a>
+                        </h2>
+                    </div>
+                </div>
+            </template>
+
+            
+            <!-- No Records Found Message (0 contracts) -->
+            <template if:true={showNoRecordsMessage}>
+                <div class="slds-p-around_medium slds-text-align_center">
+                    <div class="slds-illustration slds-illustration_small">
+                        <div class="slds-text-color_weak">
+                            <h3 class="slds-text-heading_medium">No Contracts Found</h3>
+                            <p class="slds-m-top_small">No contracts found for the selected quarter and year.</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Warning Message (only 1 contract) -->
+            <template if:true={showInsufficientContractsWarning}>
+                <div class="slds-notify slds-notify_alert slds-alert_warning slds-m-horizontal_medium slds-m-bottom_small" role="alert">
+                    <span class="slds-assistive-text">warning</span>
+                    <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small">
+                        <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                        </svg>
+                    </span>
+                    <h2>At least 2 contracts are required for renewal consolidation.</h2>
+                </div>
+            </template>
+            
+            <template if:true={hasActiveContracts}>
+                <div class="slds-p-horizontal_medium">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Master</th>
+                                <th scope="col">Contract Number</th>
+
+                                <th scope="col">Start Date</th>
+
+                                <!-- <th scope="col">End Date</th> -->
+
+                <th scope="col">
+                        <div class="slds-truncate" title="End Date" onclick={sortColumn} data-field="EndDate">
+                            End Date
+                            <lightning-icon icon-name={closeDateSortIcon} size="xx-small"></lightning-icon>
+                        </div>
+                    </th>
+
+                                <th scope="col">Renewal Opportunity</th>
+                                <th scope="col">Renewal Opportunity Stage</th>
+                                <th scope="col">Consolidated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={activeContracts} for:item="contract">
+                                <tr key={contract.c.Id} >
+                                    <td>
+                                        <lightning-input type="checkbox" name="selectedContractsChild" value={contract.c.Id}
+                                            checked={contract.isChildSelected} disabled={contract.contractConsolidated}
+                                            onchange={handleChildContractSelection}></lightning-input>
+                                    </td>
+                                    <td>
+                                        <lightning-input type="radio" name="selectedContractMaster" 
+                                            value={contract.c.Id} checked={contract.isMasterSelected} 
+                                            disabled={contract.contractConsolidated} 
+                                            onchange={handleMasterContractSelection}></lightning-input>
+                                    </td>                                                                        
+                                    <td><a href={contract.contractURL} target="_blank" rel="noopener">{contract.c.ContractNumber}</a></td>
+                                    <td>{contract.c.StartDate}</td>
+                                    <td>{contract.c.EndDate}</td>
+                                    <td>
+                                        <template if:true={contract.c.SBQQ__RenewalOpportunity__c}>
+                                            <a href={contract.renewalOppURL} target="_blank" rel="noopener">{contract.c.SBQQ__RenewalOpportunity__r.Name}</a>
+                                        </template>
+                                    </td>                                     
+                                    <td>
+                                        <template if:true={contract.c.SBQQ__RenewalOpportunity__c}>
+                                            {contract.c.SBQQ__RenewalOpportunity__r.StageName}
+                                        </template>
+                                    </td>  
+                                    <td>
+                                        <lightning-input type="checkbox" 
+                                            checked={contract.isConsolidated} 
+                                            disabled>
+                                        </lightning-input>
+                                    </td>                                   
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Only show buttons when there are at least 2 contracts -->
+                <template if:true={hasSufficientContracts}>
+                    <div class="slds-p-horizontal_medium slds-m-top_small slds-align_absolute-center">
+                        <lightning-button variant="neutral" label="Cancel" onclick={handleGoBack}></lightning-button>
+                        <lightning-button variant="brand" label="Renew" onclick={handleRenew} class="slds-m-left_small"></lightning-button>
+                    </div>
+                </template>
+            </template>
+        </lightning-card>
+    </div>
+</template>

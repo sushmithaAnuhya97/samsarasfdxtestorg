@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_should_have_proper_format</fullName>
+    <active>true</active>
+    <description>Email should have &apos;@&apos; and &apos;.&apos; to maintain proper data quality</description>
+    <errorConditionFormula>AND(
+				NOT($Profile.Name = &quot;System Administrator&quot;),
+				NOT($Permission.Validation_Rule_Exemption),
+    ISNEW(), 
+				NOT( CONTAINS( $Label.Users_Validated_for_Shipping_Address,$User.Username)), 
+    NOT(ISBLANK(Shipping_Email__c)),
+				NOT(REGEX(Shipping_Email__c, &quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,10}&quot;))
+)</errorConditionFormula>
+    <errorMessage>The email entered has an incorrect format. Please review and make sure your email includes both an “@” and a “.”</errorMessage>
+</ValidationRule>

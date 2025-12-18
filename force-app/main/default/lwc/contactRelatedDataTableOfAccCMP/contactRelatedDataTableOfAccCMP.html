@@ -1,0 +1,105 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<template if:true={spinner}>
+		<div class="demo-only" style="height:6rem;position:relative">
+			<div class="slds-spinner_container">
+				<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+					<span class="slds-assistive-text">Loading</span>
+					<div class="slds-spinner__dot-a"></div>
+					<div class="slds-spinner__dot-b"></div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template if:false={spinner}>
+		<lightning-modal-header>
+			<h3 class="slds-modal__title slds-hyphenate slds-text-heading--medium">New Opportunity</h3>
+		</lightning-modal-header>
+		<lightning-modal-body>
+		<template if:true={showConData}>
+			<c-create-oppty-generic-data-table  object-name="Contact" 
+												allowed-records={contacts} 
+												selected-record=""
+												columns={columns}
+												utility-button-label="Create Contact"
+												onselection={handleSelection}
+												onutilityclick={handleCreateContact}>
+			</c-create-oppty-generic-data-table>
+		</template>
+		<!-- 
+		
+			<lightning-modal-body>
+				<div class="container slds-m-horizontal_medium">
+					<div class="header">
+						<div class="header-content">
+							<h3>Contacts Related to Account</h3>
+							<p class="contact-count">Showing {filteredContacts.length} Contacts of {contacts.length}</p>
+						</div>
+						<lightning-layout vertical-align="center">
+							<lightning-layout-item>
+								<lightning-input label="Search Contacts" 
+												type="search" value={searchKey}
+												onchange={handleSearchKeyChange}>
+								</lightning-input>
+							</lightning-layout-item>
+						</lightning-layout>
+					</div>
+					<div class="slds-m-vertical_x-small">{label.Contact_Display_Message}</div>
+					<div class="datatable-container">
+						<div class="scrollable-table">
+							<lightning-datatable class="Contacts" key-field="Id" data={pagedContacts} columns={columns}
+								max-row-selection="1" 
+								onrowselection={handleRowSelection}
+							selected-rows={selectedRowId}>
+							</lightning-datatable>
+						</div>
+						<template if:true={NopagedContacts}>
+							<div class="no-data-message">
+								{noResultsMessage}
+							</div>
+						</template>
+	
+					</div>
+					<div class="pagination slds-m-top_x-small">
+						<lightning-button-icon icon-name="utility:chevronleft" 
+												alternative-text="Previous" 
+												onclick={handleconpageBack} 
+												disabled={isPreviousPageDisabled}>
+						</lightning-button-icon>
+						<span class="slds-m-horizontal_xx-small">{ConpaginationStatus}</span>
+						<lightning-button-icon icon-name="utility:chevronright" 
+												alternative-text="Next"
+												onclick={handleConNextpage} 
+												disabled={isNextpageDisabled}>
+						</lightning-button-icon>
+						<lightning-button label="Create Contact" onclick={handleCreateContact} class="slds-float_right"></lightning-button>
+					</div>							
+				</div>
+			</lightning-modal-body>
+		</template>-->
+			<template if:false={showConData}>
+				<div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_info"
+					role="status">
+					<span>
+						<lightning-icon variant="inverse" 
+										class="slds-m-right_x-small" size="small"
+										aria-hidden="true" 
+										icon-name="utility:info"
+										alternative-text="info">
+						</lightning-icon>
+					</span>
+					<span class="Margn">{label.Contact_Display_Empty_Error}</span>
+				</div>
+			</template>
+		</lightning-modal-body>
+		<lightning-modal-footer>
+			<template if:true={showConData}>
+				<lightning-button variant="brand" label="Next" onclick={handleNavigateToVF}></lightning-button>
+			</template>
+			<template if:false={showConData}>
+				<lightning-button label="Create Contact" onclick={handleCreateContact} class="slds-m-around_medium"></lightning-button>
+			</template>
+			<lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+		</lightning-modal-footer>
+	</template>
+</template>

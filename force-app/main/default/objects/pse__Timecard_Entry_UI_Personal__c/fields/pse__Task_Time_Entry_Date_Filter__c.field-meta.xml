@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Task_Time_Entry_Date_Filter__c</fullName>
+    <defaultValue>&quot;None&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines the filtering behavior on task dates when choosing tasks to enter time against. Set to None or Overlap. If None, no filtering occurs. If Overlap, tasks are listed only when the timecard and selectable tasks have some overlap on dates.</inlineHelpText>
+    <label>Task Time: Filter task dates</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

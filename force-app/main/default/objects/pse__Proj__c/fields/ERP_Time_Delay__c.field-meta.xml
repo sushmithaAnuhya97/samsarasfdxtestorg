@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERP_Time_Delay__c</fullName>
+    <description>Field used to delay the ERP message creating Dimension 4 records by 1 minute. This is triggered by Process builder and avoids salesforce platform limits</description>
+    <formula>NOW()-((1/1440)*59)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FDN Time Delay</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

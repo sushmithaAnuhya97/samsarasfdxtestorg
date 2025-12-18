@@ -1,0 +1,24 @@
+<template>
+  <template if:true={showBanner}>
+    <div class="slds-text-color_error slds-m-top_small custom-error" style="border: 2px solid #ccc; border-radius: 5px; padding: 10px;">
+    <span class="error-label">Error:</span>
+    <span class="error-body slds-text-color_default">      
+      <lightning-formatted-rich-text
+        value={prefixError}>
+      </lightning-formatted-rich-text>&nbsp;
+      <lightning-formatted-rich-text
+        value={errorMessage}>
+      </lightning-formatted-rich-text>&nbsp;
+       <a href="#" onclick={handleRetry} class={linkClass}>Please click here</a>&nbsp;
+      <lightning-formatted-rich-text
+        value={suffixError}>
+      </lightning-formatted-rich-text>
+      <template if:true={mismatchWarning}>
+        <div class="slds-m-top_x-small" style="color: #c23934;">
+          {mismatchWarning}
+        </div>
+      </template>
+    </span>
+  </div>       
+  </template>
+</template>

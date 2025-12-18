@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Follow_Up_Status__c</fullName>
+    <description>Created as per GTMS-18101</description>
+    <label>Lead Follow-Up Status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Routed</fullName>
+                <default>false</default>
+                <label>Routed</label>
+            </value>
+            <value>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+                <label>Attempted</label>
+            </value>
+            <value>
+                <fullName>Followed Up</fullName>
+                <default>false</default>
+                <label>Followed Up</label>
+            </value>
+            <value>
+                <fullName>Connected</fullName>
+                <default>false</default>
+                <label>Connected</label>
+            </value>
+            <value>
+                <fullName>No Follow-up Required</fullName>
+                <default>false</default>
+                <label>No Follow-up Required</label>
+            </value>
+            <value>
+                <fullName>Attempted: Missed SLA</fullName>
+                <default>false</default>
+                <label>Attempted: Missed SLA</label>
+            </value>
+            <value>
+                <fullName>Attempted: Met SLA</fullName>
+                <default>false</default>
+                <label>Attempted: Met SLA</label>
+            </value>
+            <value>
+                <fullName>Missed SLA</fullName>
+                <default>false</default>
+                <label>Missed SLA</label>
+            </value>
+            <value>
+                <fullName>Connected: Missed SLA</fullName>
+                <default>false</default>
+                <label>Connected: Missed SLA</label>
+            </value>
+            <value>
+                <fullName>Connected: Met SLA</fullName>
+                <default>false</default>
+                <label>Connected: Met SLA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>FFX_PSA_Milestone_Approved_True</fullName>
+        <field>pse__Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Milestone Approved True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Milestone_Closed_4_Expense_True</fullName>
+        <field>pse__Closed_for_Expense_Entry__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Milestone Closed For Expense True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Milestone_Closed_4_Time_Entry_T</fullName>
+        <field>pse__Closed_for_Time_Entry__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Milestone Closed Fo Time Entry True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Milestone_IIF_True</fullName>
+        <field>pse__Include_In_Financials__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Milestone IIF True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Milestone_Status_Open</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Open</literalValue>
+        <name>PSA Milestone Status Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Milestone_Status_Set_To_Approved</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>PSA Milestone Status Set To Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>FFX PSA Actual Date Approves And Closes Milestone</fullName>
+        <actions>
+            <name>FFX_PSA_Milestone_Approved_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FFX_PSA_Milestone_Closed_4_Expense_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FFX_PSA_Milestone_Closed_4_Time_Entry_T</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FFX_PSA_Milestone_IIF_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FFX_PSA_Milestone_Status_Set_To_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Not(isblank(pse__Actual_Date__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>FFX PSA Milestone Creation Default</fullName>
+        <actions>
+            <name>FFX_PSA_Milestone_Status_Open</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

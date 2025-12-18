@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reseller_field_validation_rule</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND( 
+ISCHANGED( StageName ),
+ISCHANGED( Probability ),
+Probability &gt;= 0.50, 
+ISBLANK( Reseller_Partner__c ), 
+OR(ISBLANK( Hashtag__c ),NOT(CONTAINS( Hashtag__c, &apos;Q2_DD_Holdover&apos;))),
+CONTAINS( $UserRole.Name , &apos;AE&apos;),
+ISPICKVAL(Type,&apos;Revenue Opportunity&apos;),
+OR(ISPICKVAL(Sub_Type__c,&apos;&apos;),NOT(ISPICKVAL(Sub_Type__c,&apos;Not for Resale (NFR)&apos;))),
+RecordTypeId ==&apos;0121a000000VnAB&apos;)</errorConditionFormula>
+    <errorMessage>Please tag a Resale Partner to this opportunity by using the “Add Channel Partner&quot; button.</errorMessage>
+</ValidationRule>

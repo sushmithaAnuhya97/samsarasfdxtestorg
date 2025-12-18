@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__not_a_number</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(LOWER(TEXT(PDLM__Type__c)) = &apos;number&apos;, NOT(ISBLANK(PDLM__Value__c)), NOT(ISNUMBER(PDLM__Value__c)))</errorConditionFormula>
+    <errorMessage>An attribute with type &quot;Number&quot; must be a number.</errorMessage>
+</ValidationRule>

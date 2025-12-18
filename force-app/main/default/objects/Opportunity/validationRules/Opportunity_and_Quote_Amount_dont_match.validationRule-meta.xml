@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_and_Quote_Amount_dont_match</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT( $Permission.Validation_Rule_Exemption),
+ CPQ_Opportunity__c = TRUE,
+ OR( CEILING(Amount) != CEILING(SBQQ__PrimaryQuote__r.SBQQ__NetAmount__c),
+    TEXT(License_Term__c) !=  TEXT(SBQQ__PrimaryQuote__r.License_Term__c)),
+ ISCHANGED(StageName),
+OR(ISPICKVAL(StageName,&apos;Orders Processing&apos;), ISPICKVAL(StageName,&apos;Ready to Ship&apos;)))</errorConditionFormula>
+    <errorMessage>Amount/License term on opportunity doesn&apos;t match with the net amount/license term on primary quote. Please recalculate the primary quote.</errorMessage>
+</ValidationRule>

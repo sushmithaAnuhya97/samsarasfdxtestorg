@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Advance_on_Complete_or_No_Approval</fullName>
+    <active>true</active>
+    <description>The use of Auto Advance Phase and Auto Reject Phase is not recommended when No Approval is set TRUE</description>
+    <errorConditionFormula>AND(OR(NOT(PDLM__Auto_Advance_Phase__c=&apos;&apos;), NOT(PDLM__Auto_Reject_Phase__c=&apos;&apos;)),  PDLM__No_Approval__c )</errorConditionFormula>
+    <errorMessage>Auto Advance/Reject Phase is not recommended when No Approval is set TRUE</errorMessage>
+</ValidationRule>

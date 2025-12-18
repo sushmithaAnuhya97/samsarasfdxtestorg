@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Multiples_Five__c</fullName>
+    <description>GTMS-28754 : EA Sept 4, 2025: Vanguard Launch- WorkerSafety Wearable Bundle</description>
+    <formula>If(SBQQ__ProductCode__c =&apos;HW-CW21&apos;,If(MOD(SBQQ__Quantity__c,5)&lt;&gt;0,true, false),false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quantity Multiples Five</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

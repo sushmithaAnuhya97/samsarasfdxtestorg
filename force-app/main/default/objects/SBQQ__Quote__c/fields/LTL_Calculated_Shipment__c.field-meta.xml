@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LTL_Calculated_Shipment__c</fullName>
+    <description>Used to indicate whether or not this deal is LTL</description>
+    <inlineHelpText>Greater than 0 is an LTL quote</inlineHelpText>
+    <label>LTL Calculated Shipment</label>
+    <summaryFilterItems>
+        <field>Shipping_Handling_Detail__c.Total_Boxes__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>25</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Shipping_Handling_Detail__c.CPQ_Quote__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

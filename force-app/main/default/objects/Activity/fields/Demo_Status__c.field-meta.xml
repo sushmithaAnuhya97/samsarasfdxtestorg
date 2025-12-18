@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Status__c</fullName>
+    <inlineHelpText>Statuses for working and completing demos</inlineHelpText>
+    <label>Demo Status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demo Scheduled</fullName>
+                <default>false</default>
+                <label>Demo Scheduled</label>
+            </value>
+            <value>
+                <fullName>Demo Completed - Qualified</fullName>
+                <default>false</default>
+                <label>Demo Completed - Qualified</label>
+            </value>
+            <value>
+                <fullName>Demo Completed - Not Qualified</fullName>
+                <default>false</default>
+                <label>Demo Completed - Not Qualified</label>
+            </value>
+            <value>
+                <fullName>Demo No Show</fullName>
+                <default>false</default>
+                <label>Demo No Show</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

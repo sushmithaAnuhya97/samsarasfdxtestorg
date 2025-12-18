@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__All</fullName>
+    <columns>NAME</columns>
+    <columns>PDLM__Autonumber__c</columns>
+    <columns>PDLM__Path__c</columns>
+    <columns>PDLM__Type__c</columns>
+    <columns>PDLM__Lifecycle__c</columns>
+    <columns>PDLM__Parent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>notContain</operation>
+        <value>inactive</value>
+    </filters>
+    <label>All</label>
+</ListView>

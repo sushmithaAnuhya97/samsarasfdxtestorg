@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Microsite_Clicks__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Number of times recipients have clicked on this particular content item in a Microsite.</inlineHelpText>
+    <label>Microsite Clicks</label>
+    <summarizedField>refedge__Invitation_ReferenceContent__c.refedge__Visits_clicks__c</summarizedField>
+    <summaryForeignKey>refedge__Invitation_ReferenceContent__c.refedge__Reference_Content__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

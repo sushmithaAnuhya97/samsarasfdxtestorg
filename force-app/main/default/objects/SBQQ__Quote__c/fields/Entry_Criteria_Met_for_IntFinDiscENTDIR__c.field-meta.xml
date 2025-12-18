@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Criteria_Met_for_IntFinDiscENTDIR__c</fullName>
+    <formula>AND(
+     Associated_Opportunity_Type__c = &apos;Revenue Opportunity&apos;, 
+				 OR(
+												CONTAINS( Owner:User.UserRole.Name, &apos;Director&apos; ),
+												CONTAINS( Owner:User.UserRole.Name, &apos;ISD&apos; )
+					),
+					OR(
+								CONTAINS( Owner:User.UserRole.Name, &apos;COR&apos; ),
+								CONTAINS( Owner:User.UserRole.Name, &apos;SEL&apos; ),
+								CONTAINS( Owner:User.UserRole.Name, &apos;STR&apos; )
+				)
+)
+&amp;&amp; FireDiscountApprovals__c = TRUE</formula>
+    <label>Entry Criteria Met for IntFinDiscENTDIR.</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

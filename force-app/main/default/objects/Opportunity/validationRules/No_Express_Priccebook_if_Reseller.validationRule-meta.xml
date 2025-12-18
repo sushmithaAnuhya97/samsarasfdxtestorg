@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Express_Priccebook_if_Reseller</fullName>
+    <active>true</active>
+    <description>Reps should not be using the Express Price book if there is a reseller opportunity attached.</description>
+    <errorConditionFormula>And(
+    ISPICKVAL(Configuration_Segment__c, &quot;Express&quot;),
+    NOT(ISBLANK(Reseller_Partner__c )),
+    IsClosed = FALSE,
+    $User.X18_Digit_User_ID__c &lt;&gt; &apos;0054p000002sSsEAAU&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot use resellers in the AE1 segment</errorMessage>
+</ValidationRule>

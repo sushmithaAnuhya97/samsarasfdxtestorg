@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Signed_In_ADRs</fullName>
+    <booleanFilter>(1 OR 2)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>USERHISTORY__User__c</columns>
+    <columns>USERHISTORY__Field_Label__c</columns>
+    <columns>USERHISTORY__Changed_By__c</columns>
+    <columns>USERHISTORY__Date_Time_Changed__c</columns>
+    <columns>USERHISTORY__Previous_Value__c</columns>
+    <columns>USERHISTORY__New_Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>USERHISTORY__Field_API_Name__c</field>
+        <operation>equals</operation>
+        <value>Signed_In__c</value>
+    </filters>
+    <filters>
+        <field>USERHISTORY__Field_API_Name__c</field>
+        <operation>equals</operation>
+        <value>Auto_Sign_Out__c</value>
+    </filters>
+    <label>Signed-In ADRs</label>
+    <sharedTo>
+        <role>Management</role>
+    </sharedTo>
+</ListView>

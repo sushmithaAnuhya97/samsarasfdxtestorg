@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Log_Failed_Records__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is automatically populated with exceptions and the record IDs that failed to update during this job run. Use this information to debug issues and monitor job performance by identifying problematic records or errors. Do not modify this field, as it is system-generated and essential for troubleshooting. Refer to the documentation for guidance on analyzing exceptions and handling failed updates.</description>
+    <inlineHelpText>This field is automatically populated with exceptions and the record IDs that failed to update during this job run. Use this information to debug issues and monitor job performance by identifying problematic records or errors. Do not modify this field, as it is system-generated and essential for troubleshooting. Refer to the documentation for guidance on analyzing exceptions and handling failed updates.</inlineHelpText>
+    <label>Log (Failed Records)</label>
+    <length>131072</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

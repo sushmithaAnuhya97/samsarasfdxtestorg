@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>PDLM__Change_Name</fullName>
+        <field>Name</field>
+        <formula>&quot;C&quot;&amp;PDLM__Auto_Number__c</formula>
+        <name>Change Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PDLM__Mark_as_Released</fullName>
+        <field>PDLM__State__c</field>
+        <literalValue>Released</literalValue>
+        <name>Change State to Released</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PDLM__Set_Approved_to_True</fullName>
+        <description>Sets Approved checkbox to true</description>
+        <field>PDLM__Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Set Approved to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PDLM__Set_Expire_Status</fullName>
+        <description>update the status field, which will set Expired if we are past the Expiration date</description>
+        <field>PDLM__State__c</field>
+        <literalValue>Expired</literalValue>
+        <name>Set Expire Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PDLM__Set_In_Approval_Process_to_False</fullName>
+        <description>Sets In Approval Process checkbox to False (unchecked)</description>
+        <field>PDLM__In_Approval_Process__c</field>
+        <literalValue>0</literalValue>
+        <name>Set In Approval Process to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PDLM__Set_In_Approval_Process_to_True</fullName>
+        <description>Sets In Approval Process checkbox to True (checked)</description>
+        <field>PDLM__In_Approval_Process__c</field>
+        <literalValue>1</literalValue>
+        <name>Set In Approval Process to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>PDLM__Autonumber Change</fullName>
+        <actions>
+            <name>PDLM__Change_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>LEFT(Name, 15) = LEFT(Id,15)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

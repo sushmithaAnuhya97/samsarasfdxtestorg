@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Accounts50</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Number_of_Calls_by_Current_Owner__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>Last_Contacted__c</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>VG_CM_AG_Count__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>Status__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Owner_Name__c</field>
+        <operation>equals</operation>
+        <value>Jack Eckblad</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notContain</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>PARENT_NAME</field>
+        <operation>equals</operation>
+    </filters>
+    <label>AMAC Team Accounts</label>
+</ListView>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acn_ttn__Gov_Tab_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Gov. Tab Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Schema Governance</fullName>
+                <default>false</default>
+                <label>Schema Governance</label>
+            </value>
+            <value>
+                <fullName>Security Governance</fullName>
+                <default>false</default>
+                <label>Security Governance</label>
+            </value>
+            <value>
+                <fullName>Code Governance</fullName>
+                <default>false</default>
+                <label>Code Governance</label>
+            </value>
+            <value>
+                <fullName>Async Job Governance</fullName>
+                <default>false</default>
+                <label>Async Job Governance</label>
+            </value>
+            <value>
+                <fullName>Error Governance Summary</fullName>
+                <default>false</default>
+                <label>Error Governance Summary</label>
+            </value>
+            <value>
+                <fullName>Org Percentage</fullName>
+                <default>false</default>
+                <label>Org Percentage</label>
+            </value>
+            <value>
+                <fullName>Data Governance</fullName>
+                <default>false</default>
+                <label>Data Governance</label>
+            </value>
+            <value>
+                <fullName>Report and Dashboard Governance</fullName>
+                <default>false</default>
+                <label>Report and Dashboard Governance</label>
+            </value>
+            <value>
+                <fullName>Batch Job Governance</fullName>
+                <default>false</default>
+                <label>Batch Job Governance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

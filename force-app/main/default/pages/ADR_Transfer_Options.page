@@ -1,0 +1,44 @@
+<!--
+*This VF page provides options to user for ADR transfer
+*GTMS 6307 - Siddharth kumar Mishra
+-->
+<apex:page standardController="Contact" extensions="ADRTransferOptionsController" docType="html-5.0" >
+    <apex:form >
+        
+        
+        
+        <apex:pageBlock title="ADR Transfer">
+            <apex:pageMessages />
+            
+            <apex:pageBlockButtons >
+                <!-- <apex:outputlink value="/apex/ADR_Transfer"> Next <apex:param name="msg" value="{!sentparameter}"/> </apex:outputlink>-->
+                <apex:commandButton value="Next" action="{!submit}"/><apex:param name="msg" value="success"/>
+                <apex:commandButton value="Back to Contact" action="{!backToContact}" immediate="true"
+                                    html-formnovalidate="formnovalidate"/>
+            </apex:pageBlockButtons>
+            <div style="text-align:center">
+                <apex:outputText style="font-weight: bold;font-size: medium;" value="Please Select an Option :"/>
+            </div>
+            
+            <apex:pageBlockSection >
+                <div style="text-align:center">
+                    <apex:selectRadio value="{!selectedValue}" styleClass="radioinput">
+                        <apex:selectOption itemLabel="Fleet" itemValue="Fleet"/>
+                        <apex:selectOption itemLabel="Fleet and Sites" itemValue="FleetAndSites"/>
+                        <apex:selectOption itemLabel="Sites Only" itemValue="SitesOnly"/>
+                    </apex:selectRadio>
+                </div>
+                
+            </apex:pageBlockSection>
+            
+            <apex:outputText style="font-style:bold; color:red;" value="{!stringOpp}">
+                
+            </apex:outputText>
+            
+        </apex:pageBlock>
+        
+        
+    </apex:form>
+    
+    
+</apex:page>

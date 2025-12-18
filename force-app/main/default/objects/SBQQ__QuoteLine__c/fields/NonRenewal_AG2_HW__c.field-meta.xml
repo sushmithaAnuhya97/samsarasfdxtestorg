@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NonRenewal_AG2_HW__c</fullName>
+    <formula>CONTAINS( SBQQ__ProductCode__c, &quot;HW-AG24&quot;) &amp;&amp;    SBQQ__Quote__r.Renewal__c = FALSE</formula>
+    <label>NonRenewal AG2 HW</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_pre_sale_BVS_support_do_you_need__c</fullName>
+    <inlineHelpText>Guidance: https://docs.google.com/presentation/d/1_WYveDOjanyHid7Kj38qBC4B0ttjkw-UdPT9ujJvs74/edit?slide=id.g336631578ee_1_6#slide=id.g336631578ee_1_6</inlineHelpText>
+    <label>What pre-sale BVS support do you need?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full business case (Trial analysis + ROI)</fullName>
+                <default>false</default>
+                <label>Full business case (Trial analysis + ROI)</label>
+            </value>
+            <value>
+                <fullName>ROI Only</fullName>
+                <default>false</default>
+                <label>ROI Only</label>
+            </value>
+            <value>
+                <fullName>Industry ROI only (outside-in data w no customer data)</fullName>
+                <default>false</default>
+                <label>Industry ROI only (outside-in data w no customer data)</label>
+            </value>
+            <value>
+                <fullName>BVS Consultation</fullName>
+                <default>false</default>
+                <label>BVS Consultation</label>
+            </value>
+            <value>
+                <fullName>BVS Value Realization</fullName>
+                <default>false</default>
+                <label>BVS Value Realization</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

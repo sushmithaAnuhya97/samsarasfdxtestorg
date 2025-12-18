@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__FLO_Change_Request_Source__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Change Request source in the rel between FLO Objects to represent a Join (e.g: CR with Customizations)</description>
+    <inlineHelpText>Change Request source in the rel between FLO Objects to represent a Join (e.g: CR with Customizations)</inlineHelpText>
+    <label>Change Request Source</label>
+    <referenceTo>FLODocs__FLO_Change_Request__c</referenceTo>
+    <relationshipLabel>Junctions</relationshipLabel>
+    <relationshipName>FLO_Junctions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

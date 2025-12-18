@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Machine_Vision</fullName>
+    <active>true</active>
+    <label>Machine Vision</label>
+    <picklistValues>
+        <picklist>ADR_Transfer_Status__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disqualified - No Opportunity</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AVA__AVAAI_options__c</picklist>
+        <values>
+            <fullName>Skip to follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stop</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AVA__AVAAI_score__c</picklist>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AVA__AVAAI_status__c</picklist>
+        <values>
+            <fullName>AVA Stopped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRM Stopped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Stopped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conversica Stopped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Excluded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Queue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Messaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Messaging Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opt Out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Preparing Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received Appt%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rep Stopped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent Appt%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent Feedback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Undeliverable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsubscribed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Associated_Lawful_Basis__c</picklist>
+        <values>
+            <fullName>Consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legitimate Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Buyer_Persona__c</picklist>
+        <values>
+            <fullName>C-Level%2FBiz Leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance%2FRisk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet%2FMaintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations Leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PubSec Leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation%2FLogistics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Campaign_Member_Status__c</picklist>
+        <values>
+            <fullName>Attended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Responded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visited Booth</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contact_Referenceability__c</picklist>
+        <values>
+            <fullName>Not Referenceable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referenceable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat Referenceable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Persona__c</picklist>
+        <values>
+            <fullName>Billing Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blocker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budget Holder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Champion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Sponsor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware Installation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal %26 Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No longer works at company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DOZISF__ZoomInfo_Enrich_Status__c</picklist>
+        <values>
+            <fullName>Company Enrich Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enriched</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No-Match</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_Addendum_Insurance_Providers__c</picklist>
+        <values>
+            <fullName>Bankers Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BevCap Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Great American Insurance Group%2FStrategic Comp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Higginbotham</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insureline Solutions Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Koffie Labs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marsh Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Munich</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National Indemnity Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Progressive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Hartford</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eMaxx Assurance Group</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Demo_Type__c</picklist>
+        <values>
+            <fullName>In-Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remote - Screen Share</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Validity_Score__c</picklist>
+        <values>
+            <fullName>Green%3A safe to email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orange%3A email with extreme caution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red%3A do not email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow%3A email with certain caution</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gong__Flow_Status__c</picklist>
+        <values>
+            <fullName>Bounced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finished %28meeting booked%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finished %28no reply%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finished %28removed manually%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finished %28replied%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flow deleted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No license</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opted Out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paused</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Person deleted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Removed %28other%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To-do expired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inbound_Reason_Faulty__c</picklist>
+        <values>
+            <fullName>Below minimum number of vehicles%2Fassets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delete Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delete Contact Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive - No Longer There</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invalid contact details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No purchase intent %28eg test lead%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not in a country Samsara operates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not in account owner%27s territory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opt out - Do Not Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Use case not a fit for Samsara products</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Influencer__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invalid_Contact_Details__c</picklist>
+        <values>
+            <fullName>Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LID__No_longer_at_Company__c</picklist>
+        <values>
+            <fullName>Ignore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not at Company</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>1st Party Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3rd Party Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AE Sourced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adwords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adwords %28Industrial%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chatbot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Companeo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Syndication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Reg Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Reg Form - Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Trial Request Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gated Content Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound call %2F email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intercom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>List Import %28no prior engagement%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LiveAnswer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MVF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound call %2F email %2F linkedin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Application Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner business registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Comparison</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referrals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sites Inbound Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telemarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar Registration Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Visitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YouTube</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>a16z EBC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Missing_BANT_Criteria__c</picklist>
+        <values>
+            <fullName>Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budget</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Herr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opt_Out_Request__c</picklist>
+        <values>
+            <fullName>Both Phone and Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CTPS List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GDPR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPS List</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority_Level__c</picklist>
+        <values>
+            <fullName>1 - High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Low</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SLA_Picklist__c</picklist>
+        <values>
+            <fullName>End SLA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Start SLA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Send_to_Round_Robin__c</picklist>
+        <values>
+            <fullName>Cold call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events - Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events - Red</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Routed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source__c</picklist>
+        <values>
+            <fullName>Adwords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adwords %28Industrial%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSA Scores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chatbot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Companeo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Reg Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Reg Form - Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Marketing Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Trial Request Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gated Content Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound call %2F email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>List Import %28no prior engagement%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MVF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound call %2F email %2F linkedin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Application Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Business Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral %28Unpaid%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar Registration Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Visitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YouTube</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>a16z EBC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attempting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo Completed - Not Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do Not Contact - Open Conversation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faulty Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retouch - Confirmed No Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retouch - Did Not Connect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>appirio_core__Licensed_Features__c</picklist>
+        <values>
+            <fullName>Expenses Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Enrollment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timecard Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>pse__Employment_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>pse__Level__c</picklist>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tertiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>pse__Resource_Role__c</picklist>
+        <values>
+            <fullName>Engagement Services Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation Consultant - Plus IC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation Consultant- New Hire %2F Extended Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation Consultant- Ramping IC%2FSIE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation- Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation- Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation- PubSec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation- Select</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation- Strategic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People Managers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions Architect %28TSE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions Developer %28TSE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Administrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trainer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>pw_pss__PhoneScreeningStatus__c</picklist>
+        <values>
+            <fullName>Caution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DoNotCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NotScreened</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>SafeToCall</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Ship_Quantity__c</fullName>
+    <description>Sum of Shipped Quantity field for each Opportunity Product</description>
+    <label>Total Ship Quantity</label>
+    <summarizedField>OpportunityLineItem.Shipped_Quantity__c</summarizedField>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

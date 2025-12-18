@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WASD_Equal_Opp_And_Quote__c</fullName>
+    <description>Alert the user on opportunity and quote when there is a mismatch on the Weighted Average Start Date field
+//GTMS-23000</description>
+    <externalId>false</externalId>
+    <formula>IF(
+NOT(ISBLANK(Weighted_Average_Start_Date__c)),
+IF(
+SBQQ__RenewalOpportunity__r.License_Start_Date__c != Weighted_Average_Start_Date__c,
+&quot;Opt Didnt Match&quot;,
+&quot;&quot;
+) &amp;
+IF(
+Weighted_Average_Start_Date__c != SBQQ__RenewalOpportunity__r.SBQQ__PrimaryQuote__r.SBQQ__StartDate__c,
+&quot;Quote didnt Match&quot;,
+&quot;&quot;
+),
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>WASD Equal Opp And Quote</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

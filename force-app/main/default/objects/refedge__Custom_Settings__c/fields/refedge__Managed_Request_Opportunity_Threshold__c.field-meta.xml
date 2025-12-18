@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Managed_Request_Opportunity_Threshold__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Any Request related to an Opportunity with a value that is greater than the amount specified here will automatically be marked as a Managed request and sent to the CRP Team</description>
+    <inlineHelpText>Any Request related to an Opportunity with a value that is greater than the amount specified here will automatically be converted to a Managed Request.</inlineHelpText>
+    <label>Opportunity Threshold Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

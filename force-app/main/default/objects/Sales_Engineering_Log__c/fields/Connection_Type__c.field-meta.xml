@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connection_Type__c</fullName>
+    <inlineHelpText>Identify each physical cable/connector over which the IG(s) will receive data</inlineHelpText>
+    <label>Connection Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IG41 - Samsara CAN cable</fullName>
+                <default>false</default>
+                <label>IG41 - Samsara CAN cable</label>
+            </value>
+            <value>
+                <fullName>IG41 - RS-485</fullName>
+                <default>false</default>
+                <label>IG41 - RS-485</label>
+            </value>
+            <value>
+                <fullName>IG41 - RS-232</fullName>
+                <default>false</default>
+                <label>IG41 - RS-232</label>
+            </value>
+            <value>
+                <fullName>IG41 - Ethernet</fullName>
+                <default>false</default>
+                <label>IG41 - Ethernet</label>
+            </value>
+            <value>
+                <fullName>IG41 - Analog</fullName>
+                <default>false</default>
+                <label>IG41 - Analog</label>
+            </value>
+            <value>
+                <fullName>IG41 - Other</fullName>
+                <default>false</default>
+                <label>IG41 - Other</label>
+            </value>
+            <value>
+                <fullName>IG15 - Samsara CAN cable</fullName>
+                <default>false</default>
+                <label>IG15 - Samsara CAN cable</label>
+            </value>
+            <value>
+                <fullName>IG15 - Custom Cable</fullName>
+                <default>false</default>
+                <label>IG15 - Custom Cable</label>
+            </value>
+            <value>
+                <fullName>IG15 - Samsara IO Cable</fullName>
+                <default>false</default>
+                <label>IG15 - Samsara IO Cable</label>
+            </value>
+            <value>
+                <fullName>IG15 - Other</fullName>
+                <default>false</default>
+                <label>IG15 - Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

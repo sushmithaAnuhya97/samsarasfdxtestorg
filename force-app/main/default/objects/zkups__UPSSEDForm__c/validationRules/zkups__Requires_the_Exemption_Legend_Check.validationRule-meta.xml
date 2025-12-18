@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__Requires_the_Exemption_Legend_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(zkups__EEIShipper__c)=&apos;Requires the Exemption Legend&apos;,TEXT(zkups__ExemptionLegend__c)=null)</errorConditionFormula>
+    <errorDisplayField>zkups__ExemptionLegend__c</errorDisplayField>
+    <errorMessage>Please select option</errorMessage>
+</ValidationRule>

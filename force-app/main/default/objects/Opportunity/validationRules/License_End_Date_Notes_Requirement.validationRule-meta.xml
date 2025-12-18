@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_End_Date_Notes_Requirement</fullName>
+    <active>true</active>
+    <description>Require license end date notes if the license end date is changed after the opportunity is closed won</description>
+    <errorConditionFormula>NOT($User.FirstName = &apos;Netsuite&apos;) &amp;&amp; 
+NOT($Permission.Validation_Rule_Exemption) &amp;&amp; NOT(ISBLANK(ContractId)) &amp;&amp; TEXT(StageName) = &quot;Closed Won&quot; &amp;&amp; (ISCHANGED( License_Term__c ) || ISCHANGED ( License_End_Date__c )) &amp;&amp; ISBLANK(License_End_Date_Notes__c )</errorConditionFormula>
+    <errorMessage>Please enter license end date notes for why this date is changing after the opportunity is closed won.</errorMessage>
+</ValidationRule>

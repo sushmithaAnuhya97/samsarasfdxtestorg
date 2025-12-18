@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Transfer_Log__c</fullName>
+    <description>Lookup to the ADR Transfer Log record.</description>
+    <label>ADR Transfer Log</label>
+    <referenceTo>ADR_Transfer_Log__c</referenceTo>
+    <relationshipLabel>Quota Transfer Logs</relationshipLabel>
+    <relationshipName>Quota_Transfer_Logs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

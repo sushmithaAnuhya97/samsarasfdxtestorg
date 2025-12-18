@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Only_one_Trigger_Training_on_Exit</fullName>
+    <active>true</active>
+    <description>Only one phase may be marked as Trigger Training on Exit</description>
+    <errorConditionFormula>AND( NOT(PRIORVALUE( PDLM__Trigger_Training_on_Exit__c )),
+PDLM__Trigger_Training_on_Exit__c,
+PDLM__Lifecycle__r.PDLM__Training_on_Exit_Phase_Count__c&gt;=1
+)</errorConditionFormula>
+    <errorDisplayField>PDLM__Trigger_Training_on_Exit__c</errorDisplayField>
+    <errorMessage>Only one phase may be marked as Trigger Training on Exit</errorMessage>
+</ValidationRule>

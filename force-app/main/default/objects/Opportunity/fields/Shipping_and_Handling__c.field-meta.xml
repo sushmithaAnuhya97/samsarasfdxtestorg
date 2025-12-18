@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_and_Handling__c</fullName>
+    <formula>IF( DATEVALUE(CreatedDate) &gt; DATE(
+    VALUE(MID($Label.Cut_off_Date_for_S_H_calculcation, 1, 4)), 
+    VALUE(MID($Label.Cut_off_Date_for_S_H_calculcation, 6, 2)),
+    VALUE(MID($Label.Cut_off_Date_for_S_H_calculcation, 9, 2))
+) , Shipping_and_Handling_Value__c,
+    IF( DATEVALUE(CreatedDate) &lt; DATE(2024, 12, 12), IF(
+    CPQ_Opportunity__c,
+    Shipping_and_Handling_Amount__c,
+    IF(
+    BEGINS(TEXT(Shipping_Account_Type__c), &apos;Cust/Partner Account&apos;)
+    || (
+    NOT(ISPICKVAL(Type,&apos;Revenue Opportunity&apos;)) &amp;&amp;
+    NOT(ISPICKVAL(Type,&apos;Revenue Opportunity - Bill Only&apos;))
+    )
+    || (of_Accessories__c + of_HW_Products__c) = 0,
+    0,
+    IF (
+    NOT(ISBLANK(Shipping_and_Handling_Manual__c)),
+    Shipping_and_Handling_Manual__c,
+    IF(
+    AND(
+    Freight_Cost__c &gt;= 0,
+    Freight_Cost__c &lt;&gt; 99999.99,
+    Freight_Cost__c &lt;&gt; 99999.00
+    ),
+    Freight_Cost__c,
+    IF(
+    AND(
+    ISBLANK(Shipping_and_Handling_Manual__c),
+    OR(
+    Freight_Cost__c = 99999.99,
+    Freight_Cost__c = 99999.00
+    )
+    ),
+    99999.99,
+    IF(
+    NOT(ISBLANK(Shipping_and_Handling_Manual__c)),
+    Shipping_and_Handling_Manual__c,0)))))),
+    IF(CPQ_Opportunity__c,
+Shipping_and_Handling_Amount__c,
+IF(
+NOT(ISBLANK(Shipping_and_Handling_Manual__c)),
+Shipping_and_Handling_Manual__c,
+IF(
+AND(
+ISPICKVAL(Type, &apos;Revenue Opportunity&apos;),
+OR(
+ISPICKVAL(Shipping_Country__c, &apos;United States&apos;),
+ISPICKVAL(Shipping_Country__c, &apos;Canada&apos;) ) ),
+IF(
+(of_HW_Products__c + of_Accessories__c) = 0,
+0,
+IF( OR(
+ISPICKVAL(Shipping_Method__c, &apos;Ground&apos;),
+ISPICKVAL(Shipping_Method__c, &apos;Worldwide Expedited&apos;)
+),
+IF(
+(of_HW_Products__c + of_Accessories__c) * 3.7 &gt; 15,
+(of_HW_Products__c + of_Accessories__c) * 3.7,
+20 ),
+IF(
+ISPICKVAL(Shipping_Method__c, &apos;ECONOMY&apos;),
+IF(
+(of_HW_Products__c + of_Accessories__c) * 3.7 &gt; 15,
+(of_HW_Products__c + of_Accessories__c) * 3.7,
+15 ),
+IF(OR(
+ISPICKVAL(Shipping_Method__c, &apos;Next Day Air&apos;),
+ISPICKVAL(Shipping_Method__c, &apos;ups_next_day_air&apos;)
+),
+IF(
+(of_HW_Products__c + of_Accessories__c) * 9.7 &gt; 60,
+(of_HW_Products__c + of_Accessories__c) * 9.7,
+60 ),
+IF( OR(
+BEGINS(TEXT(Shipping_Account_Type__c), &apos;Cust/Partner Account&apos;),
+(NOT(ISPICKVAL(Type, &apos;Revenue Opportunity&apos;))),
+(of_Accessories__c + of_HW_Products__c) = 0
+), 0,
+IF( AND(
+Freight_Cost__c &gt;= 0,
+Freight_Cost__c &lt;&gt; 99999.99,
+Freight_Cost__c &lt;&gt; 99999.00
+),
+Freight_Cost__c,
+IF( AND(
+ISBLANK(Shipping_and_Handling_Manual__c),
+OR(
+Freight_Cost__c = 99999.99,
+Freight_Cost__c = 99999.00
+) ), 99999.99, 0 ) ) ) ) ) ) ),
+IF( OR(
+BEGINS(TEXT(Shipping_Account_Type__c), &apos;Cust/Partner Account&apos;),
+(NOT(ISPICKVAL(Type, &apos;Revenue Opportunity&apos;))),
+(of_Accessories__c + of_HW_Products__c) = 0
+), 0,
+IF( NOT(ISBLANK(Shipping_and_Handling_Manual__c)),
+Shipping_and_Handling_Manual__c,
+IF( AND(
+Freight_Cost__c &gt;= 0,
+Freight_Cost__c &lt;&gt; 99999.99,
+Freight_Cost__c &lt;&gt; 99999.00
+), Freight_Cost__c,
+IF( AND(
+ISBLANK(Shipping_and_Handling_Manual__c),
+OR(
+Freight_Cost__c = 99999.99,
+Freight_Cost__c = 99999.00
+) ), 99999.99, 0 ) ) ) ) ) ) )))</formula>
+    <inlineHelpText>If stuck in $99,999, email 
+orders-requests@samsara.com for help</inlineHelpText>
+    <label>Shipping and Handling</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

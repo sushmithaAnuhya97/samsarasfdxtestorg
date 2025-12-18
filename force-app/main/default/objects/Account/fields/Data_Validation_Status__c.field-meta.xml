@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Validation_Status__c</fullName>
+    <label>Data Validation Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Needs Validation</fullName>
+                <default>false</default>
+                <label>Needs Validation</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Cannot Confirm Vehicles</fullName>
+                <default>false</default>
+                <label>Cannot Confirm Vehicles</label>
+            </value>
+            <value>
+                <fullName>Cannot Confirm Assets</fullName>
+                <default>false</default>
+                <label>Cannot Confirm Assets</label>
+            </value>
+            <value>
+                <fullName>Cannot Confirm Vehicles and Assets</fullName>
+                <default>false</default>
+                <label>Cannot Confirm Vehicles and Assets</label>
+            </value>
+            <value>
+                <fullName>Cannot confirm current provider</fullName>
+                <default>false</default>
+                <label>Cannot confirm current provider</label>
+            </value>
+            <value>
+                <fullName>Validation Complete</fullName>
+                <default>false</default>
+                <label>Validation Complete</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>netsuite_conn__Create_NetSuite_Order</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create NetSuite Order</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var Celigo = {};
+	Celigo.SFDC = (function() {
+		var opportunitySyncManager = function() {
+			this.triggerSync = function() {
+			this.openPopup();
+			};
+
+			this.openPopup = function() {
+				var top = screen.height - (screen.height * .7) - 80,
+				left = screen.width - (screen.width * .65) - 87,
+				params = &apos;dependent = yes,resizable=yes,scrollbars=false,toolbar=false,menubar=false,location=false,status=true,directories=false,width=575,height=200,top=&apos;;
+
+				params += top.toString();
+				params += &apos;,left=&apos; + left.toString() + &apos;\&apos;&apos;;
+
+
+				{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+				var resultOppStting = sforce.connection.query(&quot;select netsuite_conn__Account_Id__c from netsuite_conn__Opportunity_Sync_Settings__c where Name = \&apos;Opportunity Sync Settings\&apos;&quot;);
+				var rocordsOppStting = resultOppStting.getArray(&quot;records&quot;);
+				var selectedId = (rocordsOppStting[0].netsuite_conn__Account_Id__c).split(&apos;$$$&apos;)[0];
+				var selectedValue = (rocordsOppStting[0].netsuite_conn__Account_Id__c).split(&apos;$$$&apos;)[1];
+				
+				var oppId_results = sforce.connection.query(&quot;select OpportunityId from Quote where Id =&apos;{!Quote.Id}&apos;&quot;); 
+				var oppId = oppId_results.getArray(&quot;records&quot;)[0][&apos;OpportunityId&apos;]; 
+
+				var opp_results = sforce.connection.query(&quot;select Id,SyncedQuoteId,StageName,netsuite_conn__Originated_From_NetSuite__c,&quot;+selectedId+&quot; from Opportunity where Id =&apos;&quot; + oppId + &quot;&apos;&quot;);
+				var opportunityRecord = opp_results.getArray(&quot;records&quot;)[0];
+
+				if (!opportunityRecord) {
+					alert(&apos;Could not find the Opportunity related to this Quote with opportunity id: &apos; + oppId);
+					return;
+				}
+				//validations on SyncedQuote
+				if (!opportunityRecord.SyncedQuoteId ||
+				opportunityRecord.SyncedQuoteId.toString().indexOf(&apos;{!Quote.Id}&apos;) &lt; 0) {
+					alert(&apos;The Quote is not in sync with Opportunity it is created on. NetSuite Sales Order can be created only when Quote and Opportunity are in sync.&apos;);
+					return;
+				}
+
+				if (!opportunityRecord[selectedId]) {
+					alert(&quot;Please select &quot;+selectedValue+&quot; on the Opportunity of this Quote to start the sync.&quot;);
+					return;
+				}
+				if (opportunityRecord.netsuite_conn__Originated_From_NetSuite__c === &apos;1&apos;) {
+					alert(&quot;Opportunity on this Quote is created from NetSuite Sales Order, can not create another Sales Order.&quot;);
+					return;
+				}
+				var quoteId = &quot;{!Quote.Id}&quot;;
+				var popup_window = window.open(&apos;/apex/netsuite_conn__Opportunity_Sync?whence=&apos;+ oppId, &apos;NetSuite_Synchronization&apos;+ quoteId, params); 
+				
+				var intervalId = window.setInterval(function(){	
+					if(popup_window.closed){ 
+						window.clearInterval(intervalId); 
+						window.location.reload(); 
+					} 
+				},1000); 
+			};
+		};
+		return {
+			main: function() {
+				Celigo.opportunitySyncMgr = new opportunitySyncManager();
+				Celigo.opportunitySyncMgr.triggerSync();
+			}
+		};
+	})();
+	Celigo.SFDC.main();</url>
+</WebLink>

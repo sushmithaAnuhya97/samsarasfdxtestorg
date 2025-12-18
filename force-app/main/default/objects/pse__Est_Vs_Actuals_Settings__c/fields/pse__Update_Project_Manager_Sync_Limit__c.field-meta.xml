@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Update_Project_Manager_Sync_Limit__c</fullName>
+    <defaultValue>9000</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Defines the number of Est Vs Actuals records to process synchronously when updating the Project Manager field from Project. Records in excess of this value are processed in a batch. The default is 9000. Consult with Support before changing this setting.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Defines the number of Est Vs Actuals records to process synchronously when updating the Project Manager field from Project. Records in excess of this value are processed in a batch. The default is 9000. Consult with Support before changing this setting.</inlineHelpText>
+    <label>Update Project Manager Field Sync Limit</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

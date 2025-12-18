@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-25823: Created as part of FEature request phase 2 project</description>
+        <name>Execute_FR_Total_ACV_Batch</name>
+        <label>Execute FR Total ACV Batch</label>
+        <locationX>578</locationX>
+        <locationY>242</locationY>
+        <actionName>FR_Related_Opps_Update_Batch</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Success_Screen</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <nameSegment>FR_Related_Opps_Update_Batch</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>GTMS-25823: Created as part of Feature request phase 2 project to check the validations before executing the Total ACV batch</description>
+        <name>Validation_Checks</name>
+        <label>Validation Checks</label>
+        <locationX>314</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Execute_FR_Total_ACV_Batch</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Between_6AM_to_6PM_US_Timing</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Time_Value</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>2.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Time_Value</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>14.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Business_Hours_Error_Screen</targetReference>
+            </connector>
+            <label>Between 6AM to 6PM US Timing</label>
+        </rules>
+        <rules>
+            <name>X88_Days_Not_Completed_Ater_Last_Run</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Is_Last_Run_Before_88Days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X88_Days_Error_Screen</targetReference>
+            </connector>
+            <label>88 Days Not Completed Ater Last Run</label>
+        </rules>
+    </decisions>
+    <description>GTMS-25823: Created as part of Feature Request phase 2 project</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-25823: Created as part of Feature Request phase 2 project</description>
+        <name>Is_Last_Run_Before_88Days</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(NOT(ISBLANK({!$Setup.Last_FR_Total_ACV_Batch_Run_Date__c.Last_Run_Date__c})),
+IF(({!$Flow.CurrentDate} - DATEVALUE({!$Setup.Last_FR_Total_ACV_Batch_Run_Date__c.Last_Run_Date__c})) &gt; 88,
+True,
+False
+),
+True
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Time_Text</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Flow.CurrentDateTime}) +&apos; ////// &apos;+ TEXT({!$Flow.InterviewStartTime})+&apos; ////// &apos;+ TEXT({!$System.OriginDateTime})</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-25823: Created as part of Feature request phase 2 project</description>
+        <name>Time_Value</name>
+        <dataType>Number</dataType>
+        <expression>VALUE(MID(TEXT({!$Flow.CurrentDateTime}),12,2))</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>FR Total ACV Batch Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FR Total ACV Batch Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <description>GTMS-25823: Created as part of Feature Request phase 2 project</description>
+        <name>Business_Hours_Error_Screen</name>
+        <label>Business Hours Error Screen</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Business_Hours_Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(179, 108, 37);&quot;&gt;You should not run Total ACV Calculations during business hours (6AM - 6PM PST)&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-25823: to show the success message.</description>
+        <name>Success_Screen</name>
+        <label>Success Screen</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Success_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(107, 182, 27);&quot;&gt;Total ACV calculation is under process. You will be notified via email after once process is completed&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-25823: to display error message if last batch ran before 88 days</description>
+        <name>X88_Days_Error_Screen</name>
+        <label>88 Days Error Screen</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>X88_Days_Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(231, 157, 10);&quot;&gt;Previous Total ACV calculation was done on &lt;/span&gt;&lt;strong style=&quot;color: rgb(231, 157, 10);&quot;&gt;{!$Setup.Last_FR_Total_ACV_Batch_Run_Date__c.Last_Run_Date__c}&lt;/strong&gt;&lt;span style=&quot;color: rgb(231, 157, 10);&quot;&gt;. Please calculate  Total ACV after 88 days of &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(234, 145, 44);&quot;&gt;{!$Setup.Last_FR_Total_ACV_Batch_Run_Date__c.Last_Run_Date__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Validation_Checks</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

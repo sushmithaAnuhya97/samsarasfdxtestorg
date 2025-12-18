@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Opp_VAT_Status_Change_VR</fullName>
+    <active>true</active>
+    <description>To throw an error if VAT status was changed from/To to Confirmed OR Not applicable by any user other that finance for EMEA opporutnities.
+Initial creation : GTMS-16026, GTMS-16027
+GTMS-28416: Added a condition CurrencyIsoCode = &apos;MXN&apos; to include Mexico</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(CurrencyIsoCode,&apos;EUR&apos;),
+ISPICKVAL(CurrencyIsoCode,&apos;GBP&apos;),
+ISPICKVAL(CurrencyIsoCode,&apos;MXN&apos;)
+),
+ISCHANGED(VAT_Validation_Status__c),
+OR(
+ISPICKVAL(VAT_Validation_Status__c,&apos;Confirmed&apos;),
+ISPICKVAL(PRIORVALUE(VAT_Validation_Status__c),&apos;Confirmed&apos;),
+ISPICKVAL(VAT_Validation_Status__c,&apos;Not Applicable&apos;),
+ISPICKVAL(PRIORVALUE(VAT_Validation_Status__c),&apos;Not Applicable&apos;)
+),
+CASESAFEID($Profile.Id) != &apos;00e1a000000dxEqAAI&apos;,/*System Admin API*/
+CASESAFEID($Profile.Id) != &apos;00e1a000000UoNcAAK&apos;,/*System Admin*/
+CASESAFEID($Profile.Id) != &apos;00e1a000000i8JHAAY&apos;,/*Samsara Finance*/
+CASESAFEID($Profile.Id) != &apos;00e4p000001FKPaAAO&apos;,/*Samsara Finance Admin*/
+NOT(Bypass_Validation_rule__c)
+)</errorConditionFormula>
+    <errorDisplayField>VAT_Validation_Status__c</errorDisplayField>
+    <errorMessage>The VAT Validation Status can only be updated by Finance</errorMessage>
+</ValidationRule>

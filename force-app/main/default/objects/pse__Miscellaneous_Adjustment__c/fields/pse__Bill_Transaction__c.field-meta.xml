@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Bill_Transaction__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Bill Transaction</label>
+    <referenceTo>pse__Transaction__c</referenceTo>
+    <relationshipLabel>Miscellaneous Adjustment (Bill Transaction)</relationshipLabel>
+    <relationshipName>Bill_Tx_Miscellaneous_Adjustments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

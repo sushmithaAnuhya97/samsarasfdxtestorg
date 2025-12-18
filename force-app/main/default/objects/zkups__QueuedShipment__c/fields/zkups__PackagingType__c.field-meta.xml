@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__PackagingType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Packaging Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UPS Letter</fullName>
+                <default>false</default>
+                <label>UPS Letter</label>
+            </value>
+            <value>
+                <fullName>UPS Small Express Box</fullName>
+                <default>false</default>
+                <label>UPS Small Express Box</label>
+            </value>
+            <value>
+                <fullName>UPS Medium Express Box</fullName>
+                <default>false</default>
+                <label>UPS Medium Express Box</label>
+            </value>
+            <value>
+                <fullName>UPS Large Express Box</fullName>
+                <default>false</default>
+                <label>UPS Large Express Box</label>
+            </value>
+            <value>
+                <fullName>UPS PAK</fullName>
+                <default>false</default>
+                <label>UPS PAK</label>
+            </value>
+            <value>
+                <fullName>UPS Tube</fullName>
+                <default>false</default>
+                <label>UPS Tube</label>
+            </value>
+            <value>
+                <fullName>Your Packaging</fullName>
+                <default>false</default>
+                <label>Your Packaging</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

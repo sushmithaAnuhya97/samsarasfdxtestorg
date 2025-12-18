@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plus_to_Starter_New_Tier_Update</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Owner_Role__c</columns>
+    <columns>CS_Tier__c</columns>
+    <columns>CS_Tier_Override__c</columns>
+    <columns>Quarantine_Enabled__c</columns>
+    <columns>Account_Status_Updated__c</columns>
+    <columns>Total_Parent_Account_Customer_ARR__c</columns>
+    <columns>Customer_ARR__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CS_Tier__c</field>
+        <operation>notContain</operation>
+        <value>Starter,Plus,Premier,Elite,Core Basic,Core Standard,Core High,Select Basic,Select Standard,Select High,Strategic Basic,Strategic Standard,Strategic High</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>Quarantine_Enabled__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Account_Status_Updated__c</field>
+        <operation>notEqual</operation>
+        <value>Non Existing Customer</value>
+    </filters>
+    <label>Plus to Starter New Tier Update</label>
+</ListView>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__FastScan</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>FLODocs__Actual_Change_DateTime__c</columns>
+    <columns>FLODocs__FLO_Customization__c</columns>
+    <columns>FLODocs__Metadata_Type__c</columns>
+    <columns>FLODocs__Operation__c</columns>
+    <columns>FLODocs__Change_Overview__c</columns>
+    <columns>FLODocs__Compliant_Indicator__c</columns>
+    <columns>FLODocs__Compliance__c</columns>
+    <columns>FLODocs__Reason__c</columns>
+    <columns>FLODocs__Related_Change_Request__c</columns>
+    <columns>FLODocs__Policy__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>FLODocs__FLO_Change_Log__c.FLODocs__Change_Log_Audit_Trail</value>
+    </filters>
+    <label>Fast Scan Permission Changes</label>
+</ListView>

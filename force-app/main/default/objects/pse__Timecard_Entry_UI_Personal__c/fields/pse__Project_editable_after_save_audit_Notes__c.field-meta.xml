@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project_editable_after_save_audit_Notes__c</fullName>
+    <defaultValue>&apos;User &lt;user&gt; changed the Project from &lt;oldproject&gt; to &lt;newproject&gt; on &lt;date&gt;&apos;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The &quot;Assignment project editable after save&quot; gives user access to change the project/assignment for the saved timecards but this require audit note to be set for timecard.
+Audit notes can be set by this config. This config contains four tokens, which will be replaced during update.
+
+The valid token names are as follows:-
+&lt;user&gt; - the current user who is performing the action in the TC UI
+&lt;date&gt; - today&apos;s date
+&lt;oldproject&gt; - the original project name
+&lt;newproject&gt; - the new project name
+
+Default value:- User &lt;user&gt; changed the Project from &lt;oldproject&gt; to &lt;newproject&gt; on &lt;date&gt;.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The &quot;Assignment project editable after save&quot; gives user access to change the project/assignment for the saved timecards but this require audit note to be set for timecard. Audit notes can be set by this config.</inlineHelpText>
+    <label>Project editable after save audit Notes</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

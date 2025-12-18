@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Approve_Own_Discount</fullName>
+    <active>true</active>
+    <description>Prevents reps from approving their own approval records</description>
+    <errorConditionFormula>AND(
+ OwnerId = Current_User_ID__c  ,
+ sbaa__AssignedTo__r.Id !=  Current_User_ID__c ,
+ ISCHANGED(sbaa__Status__c),
+ TEXT(sbaa__Status__c) = &apos;Approved&apos;,
+ NOT( $Permission.Validation_Rule_Exemption)
+)</errorConditionFormula>
+    <errorMessage>You may not approve your own approval.</errorMessage>
+</ValidationRule>

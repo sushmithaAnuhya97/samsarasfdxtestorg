@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Total_Duration__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Total duration of non-running timer session events.</description>
+    <inlineHelpText>Total duration of non-running timer session events.</inlineHelpText>
+    <label>Total Duration</label>
+    <summarizedField>pse__Timer_Session_Event__c.pse__Duration__c</summarizedField>
+    <summaryFilterItems>
+        <field>pse__Timer_Session_Event__c.pse__Is_Running__c</field>
+        <operation>notEqual</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>pse__Timer_Session_Event__c.pse__Timer_Session__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

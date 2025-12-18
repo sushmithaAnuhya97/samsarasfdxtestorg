@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Stage_Progression</fullName>
+    <active>true</active>
+    <description>This validation rule prevents the SE from moving a technical stage backwards</description>
+    <errorConditionFormula>AND(OR($Profile.Name = &quot;Samsara SE - CPQ&quot;, $Profile.Name = &quot;Samsara SE&quot;), ISCHANGED( Tech_Stage__c ),
+OR(
+
+(AND(
+(ISPICKVAL(PRIORVALUE(Tech_Stage__c),&quot;Technical Proposal&quot;)),
+    OR(ISPICKVAL(Tech_Stage__c,&quot;New Key Account Identified&quot;),
+      ISPICKVAL(Tech_Stage__c,&quot;Technical Discovery&quot;),
+      ISPICKVAL(Tech_Stage__c,&quot;Trial Management&quot;))
+    )),
+
+    (AND(
+    (ISPICKVAL(PRIORVALUE(Tech_Stage__c),&quot;Trial Management&quot;)),
+        OR(ISPICKVAL(Tech_Stage__c,&quot;New Key Account Identified&quot;),
+          ISPICKVAL(Tech_Stage__c,&quot;Technical Discovery&quot;)
+        )
+    )),
+
+    (AND(
+    ISPICKVAL(PRIORVALUE(Tech_Stage__c),&quot;Technical Discovery&quot;),
+        ISPICKVAL(Tech_Stage__c,&quot;New Key Account Identified&quot;)
+        )),
+
+OR(ISPICKVAL(PRIORVALUE(Tech_Stage__c),&quot;Tech Loss&quot;),ISPICKVAL(PRIORVALUE(Tech_Stage__c),&quot;Tech Win&quot;))
+))</errorConditionFormula>
+    <errorMessage>Please reach out to your manager to move the tech stage backwards</errorMessage>
+</ValidationRule>

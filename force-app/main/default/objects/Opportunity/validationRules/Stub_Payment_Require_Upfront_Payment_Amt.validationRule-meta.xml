@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stub_Payment_Require_Upfront_Payment_Amt</fullName>
+    <active>true</active>
+    <description>GTMS-14161</description>
+    <errorConditionFormula>AND( Stub_Payment__c = True, OR(ISBLANK(Stub_Payment_Amount__c), Stub_Payment_Amount__c = 0,  ISPICKVAL( Selected_Payment_Type__c ,&apos;Upfront Payments&apos;) ))</errorConditionFormula>
+    <errorMessage>Enter Stub Payment Amount. When Stub Payment = True, the Payment Type cannot be Upfront Payment</errorMessage>
+</ValidationRule>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rejected_Account_Owner__c</fullName>
+    <description>Uses the account record type to determine the User ID that the account should be transferred to if the account is rejected.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+Account__r.RecordTypeId=&quot;0121P000000oQVg&quot;,
+&quot;0051P000003IOMR&quot;,
+IF(
+CONTAINS(ADR_Role_Copy__c, &apos;Sites&apos;),
+Account__r.OwnerId,
+IF(
+OR(
+CONTAINS(AE_Role_Copy_at_Transfer__c,&quot;ENT&quot;),
+AND(
+CONTAINS(AE_Role_Copy_at_Transfer__c,&quot;AE3&quot;),
+OR(
+ISBLANK(TEXT(Account__r.Inside_Sales_Assignment__c))=FALSE,
+Account__r.Number_of_Vehicles__c&gt;175,
+ADR_Segment_Alignment_at_Transfer__c=&quot;AE3&quot;
+)
+)
+),
+IF(
+ISBLANK(AE_Demo_Transfer_To__r.ADR_Assignment__c),
+ADR_Transfer_By__r.Id,
+AE_Demo_Transfer_To__r.ADR_Assignment_User_ID__c
+),
+IF(
+Account__r.RecordTypeId=&quot;0121a000000VnAp&quot;,
+&quot;0051a000002lwW3&quot;,
+IF(
+ISBLANK(Account__r.Original_Owner_for_Recycling_Campaign__c),
+&quot;0051a000002W9In&quot;,
+Account__r.Original_Owner_for_Recycling_Campaign__c
+)
+)
+)
+)
+)</formula>
+    <label>Rejected Account Owner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

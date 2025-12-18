@@ -1,0 +1,31 @@
+<apex:page standardController="SBQQ__Quote__c" extensions="QuoteExtController" showHeader="true" sidebar="false" lightningStylesheets="true">
+    
+    <!-- Approval Enablement Package 4.0 Enhancements
+        set sidebar = false and enable lightningStylesheets for Lightning
+        Add pageMessages to capture any errors during onSubmit such as validation or Apex custom errors
+        Add actionFunction for QuoteExtController.onSubmit()
+        Add Apex:facet start and stop to show loading image or cancel button
+        Add commandButton for QuoteExtController.onCancel() will show if an error occurs
+        Add LoadingImageAdvanceApprovals -->
+    <apex:pageblock >
+        <apex:form id="form">        
+            <apex:pageMessages escape="false" />
+            <apex:actionFunction name="onSubmit" action="{!onSubmit}" status="processing" reRender="form" />
+            <apex:actionStatus id="processing">
+                <apex:facet name="start">
+                    <div align="center">
+                        <img width="75" height="75" src="{!URLFOR($Resource.LoadingImageAdvancedApprovals)}" />
+                        <div class="format-message "> Submitting Quote for approval ... </div>
+                    </div>
+                </apex:facet>
+                <apex:facet name="stop">
+                    <apex:commandButton style="float:right" value="Return to Quote" action="{!onCancel}"/>
+                </apex:facet>            
+            </apex:actionStatus>
+        </apex:form>
+    </apex:pageblock>
+    
+    <script>
+        onSubmit();
+    </script>
+</apex:page>

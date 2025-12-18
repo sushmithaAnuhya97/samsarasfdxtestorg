@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chris_Murphy_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Account__c</columns>
+    <columns>pse__Group__c</columns>
+    <columns>TSM_Project_Type__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Stage__c</columns>
+    <columns>Segment__c</columns>
+    <columns>pse__Project_Status__c</columns>
+    <columns>pse__Is_Active__c</columns>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>Lead_Implementation_Consultant__c</columns>
+    <columns>Engagement_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Trial_Success_Manager__c</field>
+        <operation>equals</operation>
+        <value>Chris Murphy</value>
+    </filters>
+    <label>Chris Murphy Projects</label>
+</ListView>

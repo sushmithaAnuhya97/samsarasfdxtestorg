@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Lic_Term_greaterThan_ContractTerm</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),NOT( $Permission.Validation_Rule_Exemption ),
+Custom_License_Term__c &gt; SBQQ__MasterContract__r.ContractTerm,
+$User.Id &lt;&gt; &quot;0054p000002sSsE&quot;,  NOT ISPICKVAL(SBQQ__Opportunity2__r.Type, &apos;Remorse Refund&apos;)  )</errorConditionFormula>
+    <errorMessage>Custom License Term CANNOT be greater than original contract term.</errorMessage>
+</ValidationRule>

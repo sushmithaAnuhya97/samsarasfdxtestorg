@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CM_Licenses_and_Hardware_must_match</fullName>
+    <active>true</active>
+    <description>This rule makes sure that HW-CM12 only goes with LIC-CM1-ENT and HW-CM22 only goes with LIC-CM2-ENT.</description>
+    <errorConditionFormula>AND( 
+NOT($Permission.Validation_Rule_Exemption), 
+$Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;, 
+OR( 
+AND(CM12_HW_Count__c&gt;0, CM2_License_Count__c&gt;0, CM1_License_Count__c=0), 
+AND(CM22_HW_Count__c&gt;0, CM1_License_Count__c&gt;0, CM2_License_Count__c=0) 
+), 
+ISPICKVAL(StageName,&quot;Purchase&quot;) 
+)</errorConditionFormula>
+    <errorMessage>You are trying to move an opportunity to purchase with a mismatch between cameras licenses and hardware. HW-CM12 only goes with LIC-CM1-ENT and HW-CM22 only goes with LIC-CM2-ENT.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Community_Participate_Link__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( $Setup.refedge__POR_App_Configuration__c.refedge__Refedge_Community_URL__c +&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;RefedgeCommunityParticipate&apos;,&apos;Go to the Customer Reference Community&apos;, &quot;_blank&quot;)</formula>
+    <label>Community Participate Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Test_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the type of test being conducted.  New processes and customizations may go through repeated testing cycles. Unit testing is done by the implementer, developer or analyst who created the process or customization.  Beta testing is performed by the operational team to identify key issues. Acceptance is performed by the operational team to confirm all processes are resolved.  Quarterly and Annual Testing is performed by the operational team to confirm process compliance.</description>
+    <inlineHelpText>This is the type of test being conducted.</inlineHelpText>
+    <label>Test Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>FLODocs__FLO_Test_Type</valueSetName>
+    </valueSet>
+</CustomField>

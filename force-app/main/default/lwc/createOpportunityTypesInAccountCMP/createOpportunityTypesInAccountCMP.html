@@ -1,0 +1,49 @@
+<template>
+    <template if:true={isStepOne}>
+        <lightning-modal-header>
+            <h3 class="slds-modal__title slds-hyphenate slds-text-heading--medium">New Opportunity</h3>
+        </lightning-modal-header>
+        <lightning-modal-body>
+            <div class="container">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="opportunityType"><strong>What type of Opportunity would you like to create?</strong></label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-radio-group">
+                            <template for:each={recordTypeOptions} for:item="option">
+										<div key={option.value} class="slds-form-element__row slds-m-bottom_xxxs">
+                                    <div class="slds-form-element">
+                                        <span class="slds-radio">
+                                            <input type="radio" id={option.value} name="opportunityType" value={option.value} onchange={handleRecordTypeChange} />
+                                            <label class="slds-radio__label" for={option.value}>
+                                                <span class="slds-radio_faux"></span>
+                                                <span class="slds-form-element__label">{option.label}</span>
+                                            </label>
+                                            <template if:true={option.helpText}>
+                                                <lightning-helptext content={option.helpText} class="slds-m-left_x-small"></lightning-helptext>
+                                            </template>
+                                        </span>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button variant="brand" label="Next" onclick={handleNext} disabled={isNextButtonDisabled}>
+            </lightning-button>
+        </lightning-modal-footer>
+
+    </template>
+    <template if:true={isContactsTableVisible}>
+        <c-contact-related-data-table-of-acc-c-m-p record-id={recordId} onback={handleBack} onclose={handleClose}> </c-contact-related-data-table-of-acc-c-m-p>
+    </template>
+    <template if:true={isContractsTableVisible}>
+        <c-contract-related-data-table-of-acc-c-m-p record-id={recordId} onback={handleBack} onclose={handleClose}> </c-contract-related-data-table-of-acc-c-m-p>
+    </template>
+    <template if:true={isOpportunityTableVisible}>
+        <c-oppty-related-data-table-of-acc-c-m-p record-id={recordId} onback={handleBack} onclose={handleClose}> </c-oppty-related-data-table-of-acc-c-m-p>
+    </template>
+	
+</template>

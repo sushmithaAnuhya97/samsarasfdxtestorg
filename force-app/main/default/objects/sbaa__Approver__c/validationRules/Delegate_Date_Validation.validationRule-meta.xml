@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delegate_Date_Validation</fullName>
+    <active>true</active>
+    <description>This validation rule ensures that when a delegate approver is specified on the Approver object,
+both delegation start and end dates must be provided, and the end date must be after the start date.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(sbaa__DelegatedApprover__c)),
+    OR(
+        ISBLANK(sbaa__DelegationStart__c),
+        ISBLANK(sbaa__DelegationEnd__c),
+        sbaa__DelegationEnd__c &lt; sbaa__DelegationStart__c
+    )
+)</errorConditionFormula>
+    <errorMessage>Please specify both start and end dates for the delegation period, and ensure the end date is after the start date.</errorMessage>
+</ValidationRule>

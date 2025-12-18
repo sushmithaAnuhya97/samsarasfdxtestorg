@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Jira_Project_URL__c</fullName>
+    <deprecated>false</deprecated>
+    <description>URL to the related project in Jira.</description>
+    <externalId>false</externalId>
+    <formula>IF(pse__Sync_With_Jira__c &amp;&amp; !ISBLANK(pse__Jira_Correlation_ID__c) &amp;&amp; (ISPICKVAL(pse__Jira_Project__c , &apos;&apos;) || ISPICKVAL(pse__Jira_Project__c , &apos;None&apos;)), HYPERLINK($Setup.pse__Integration_Hub_Connector_Jira_PSA__c.pse__Jira_Application_URL__c + &apos;/browse/&apos; + pse__Jira_Project_Key__c, &apos;View Project in Jira&apos;, &apos;_blank&apos;), IF(pse__Sync_With_Jira__c &amp;&amp; !ISBLANK(pse__Jira_Correlation_ID__c) &amp;&amp; (!ISBLANK(TEXT(pse__Jira_Project__c))), HYPERLINK($Setup.pse__Integration_Hub_Connector_Jira_PSA__c.pse__Jira_Application_URL__c + &apos;/browse/&apos; + TEXT(pse__Jira_Project__c), &apos;View Project in Jira&apos;, &apos;_blank&apos;),&apos;&apos;))</formula>
+    <inlineHelpText>URL to the related project in Jira.</inlineHelpText>
+    <label>Jira Project URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

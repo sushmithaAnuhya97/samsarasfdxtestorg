@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Credit_Form__c</fullName>
+    <description>Issue a check for finance partner, upfront, and annual (in the last year when no remaining invoices are open) opportunities
+Issue a credit on the next invoice for direct annual and monthly deals</description>
+    <externalId>false</externalId>
+    <formula>if(not(isblank(Returning_Opportunity__r.Finance_Partner__c)),&quot;Check&quot;,
+
+if(
+ Returning_Opportunity__r.NS_Payment_Frequency__c = &quot;Upfront&quot; , &quot;Check&quot;,
+
+ 	IF(
+ 		AND(Returning_Opportunity__r.NS_Payment_Frequency__c = &quot;Annual&quot;,
+ 			License_End_Date__c - TODAY()&lt;365),
+ 			&quot;Check&quot;,
+ 		&quot;Next invoice credit&quot;
+
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>License Credit Form</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

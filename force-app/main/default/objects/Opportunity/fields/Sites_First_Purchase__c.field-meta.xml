@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sites_First_Purchase__c</fullName>
+    <formula>Account.Sites_First_Purchase_Date__c = CloseDate || ISBLANK(Account.Sites_First_Purchase_Date__c)</formula>
+    <label>Sites First Purchase</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

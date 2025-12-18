@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Processing_Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If set, this indicates the current processing stage of the resource request.</description>
+    <inlineHelpText>If set, this indicates the current processing stage of the resource request.</inlineHelpText>
+    <label>Processing Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Eligible for Auto-Assign</fullName>
+                <default>false</default>
+                <label>Eligible for Auto-Assign</label>
+            </value>
+            <value>
+                <fullName>Auto-Assign Initiated</fullName>
+                <default>false</default>
+                <label>Auto-Assign Initiated</label>
+            </value>
+            <value>
+                <fullName>Auto-Assigned</fullName>
+                <default>false</default>
+                <label>Auto-Assigned</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

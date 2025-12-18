@@ -1,0 +1,1639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Deal_Registration_AE_Approval_Alert</name>
+        <label>Deal Registration AE Approval Alert</label>
+        <locationX>1194</locationX>
+        <locationY>539</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_AE_Approval_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Task_For_PR_Approvel_By_AE_Email</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_AE_Approval_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Deal_Registration_AE_Approval_To_Partner_Contact_Alert_GTMS_20578_Action_1</name>
+        <label>Deal Registration AE Approval To Partner Contact Alert : GTMS-20578 Action 1</label>
+        <locationX>1194</locationX>
+        <locationY>947</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_AE_Approval_To_Partner_Contact_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_AE_Approval_To_Partner_Contact_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Deal_Registration_AE_Rejection_Alert</name>
+        <label>Deal Registration AE Rejection Alert</label>
+        <locationX>1854</locationX>
+        <locationY>539</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_AE_Rejection_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Task_For_PR_Denial_By_AE_Email</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_AE_Rejection_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Deal_Registration_AE_Rejection_To_Partner_Contact_Alert_GTMS_20579_Action_1</name>
+        <label>Deal Registration AE Rejection To Partner Contact Alert : GTMS-20579 Action 1</label>
+        <locationX>1810</locationX>
+        <locationY>947</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_AE_Rejection_To_Partner_Contact_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Check_AE_Denial_Reason</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_AE_Rejection_To_Partner_Contact_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Deal_Registration_Creation_Notification_to_PAM</name>
+        <label>Deal Registration Creation Notification to PAM</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_Creation_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Task_For_PR_creation_Email</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_Creation_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-20571: created as part of Partner Systems Alignment project to send emails to PAM</description>
+        <name>Deal_Registration_PAM_Approval_Alert</name>
+        <label>Deal Registration PAM Approval Alert</label>
+        <locationX>2426</locationX>
+        <locationY>539</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_PAM_Approval_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Task_for_AE</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_PAM_Approval_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-28672: Created to send emails to AE for DE approval when Account owner got updated and Deal Registration is waiting for AE Review.</description>
+        <name>Deal_Registration_PAM_Approval_Alert_For_AE_Review</name>
+        <label>Deal Registration PAM Approval Alert For AE Review</label>
+        <locationX>4054</locationX>
+        <locationY>431</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_PAM_Approval_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Task_for_New_AE</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_PAM_Approval_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-20570: created as part of Partner system Alignment project to send rejection alert to Partner Contact</description>
+        <name>Deal_Registration_PAM_Rejection_Alert</name>
+        <label>Deal Registration PAM Rejection Alert</label>
+        <locationX>3306</locationX>
+        <locationY>539</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_PAM_Rejection_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Check_PAM_Denial_Reason</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_PAM_Rejection_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Deal_Registration_PAM_Rejection_Partner_Contact</name>
+        <label>Deal Registration PAM Rejection Partner Contact</label>
+        <locationX>2536</locationX>
+        <locationY>1823</locationY>
+        <actionName>Partner_Registration__c.Deal_Registration_PAM_Rejection_Partner_Contact</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Deal_Registration_PAM_Rejection_Partner_Contact</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Partner_Application_Creation_Alert</name>
+        <label>Partner Application Creation Alert</label>
+        <locationX>446</locationX>
+        <locationY>755</locationY>
+        <actionName>Partner_Registration__c.Partner_Application_Creation_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Is_ISV_Partner_Application</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Partner_Application_Creation_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Partner_Application_PAM_Approval_Alert</name>
+        <label>Partner Application PAM Approval Alert</label>
+        <locationX>2690</locationX>
+        <locationY>539</locationY>
+        <actionName>Partner_Registration__c.Partner_Application_PAM_Approval_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Partner_Application_PAM_Approval_Alert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Partner_Registration_ISV_Contact_Notification</name>
+        <label>Partner Registration ISV Contact Notification</label>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
+        <actionName>Partner_Registration__c.Partner_Registration_ISV_Contact_Notification</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Check_if_Partner_Application</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Partner_Registration__c.Partner_Registration_ISV_Contact_Notification</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-28672: created to close the task related to the old AE</description>
+        <name>Assign_Status_and_Desicription_to_the_Task</name>
+        <label>Assign Status and Desicription to the Task</label>
+        <locationX>3922</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Task_Related_to_Old_AE.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Task_Related_to_Old_AE.Description</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue> Account is assigned to the new AE.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Updated_Task_Related_to_the_old_AE</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_AE_Denial_Reason</name>
+        <label>Check AE Denial Reason</label>
+        <locationX>1810</locationX>
+        <locationY>1055</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_AE_Insufficient_Influence_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DenialReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Insufficient Influence Criteria</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_PAM_Rejection_Partner_Contact</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Is AE Insufficient Influence Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_Record_Type</name>
+        <label>Check for Record Type</label>
+        <locationX>402</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Deal_Registration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_Creation_Notification_to_PAM</targetReference>
+            </connector>
+            <label>Is Deal Registration</label>
+        </rules>
+        <rules>
+            <name>Is_Partner_Application</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>User_Authorization</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Partner_Application_Creation_Alert</targetReference>
+            </connector>
+            <label>Is Partner Application</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28672: Added owner changed path to send email to new AE for the deal registrations which are under AE approval</description>
+        <name>Check_for_Status</name>
+        <label>Check for Status</label>
+        <locationX>2536</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Status_New</name>
+            <conditionLogic>(1 AND 5 AND (2 OR 8)) OR (((3 AND 6) OR (4 AND 7)) AND 2)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Application</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New User Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>User_Authorization</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Lead_Record</targetReference>
+            </connector>
+            <label>Is Status New</label>
+        </rules>
+        <rules>
+            <name>Is_Status_AE_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AE Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IS_NEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_PAM_Active</targetReference>
+            </connector>
+            <label>Is Status AE Approved</label>
+        </rules>
+        <rules>
+            <name>Is_Status_AE_Denied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AE Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IS_NEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Is_PAM_Active</targetReference>
+            </connector>
+            <label>Is Status AE Denied</label>
+        </rules>
+        <rules>
+            <name>Is_Status_PAM_Approved</name>
+            <conditionLogic>3 AND 4 AND 5 AND ((1 AND 2 AND 6)  OR (7 AND 8 AND 9) OR (10 AND 11 AND 12))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IS_NEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by PAM</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by PAM</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>User_Authorization</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Record_Type</targetReference>
+            </connector>
+            <label>Is Status PAM Approved</label>
+        </rules>
+        <rules>
+            <name>Is_Status_PAM_Denied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IS_NEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Has_Partner_Contact</targetReference>
+            </connector>
+            <label>Is Status PAM Denied</label>
+        </rules>
+        <rules>
+            <name>AE_Changed_After_PAM_Reviewed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner:User.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IS_NEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_PAM_Approval_Alert_For_AE_Review</targetReference>
+            </connector>
+            <label>AE Changed After PAM Reviewed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_Partner_Application</name>
+        <label>Check if Partner Application</label>
+        <locationX>710</locationX>
+        <locationY>1331</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Partner_Application2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New Application</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Partner_Account_Status_to_Application</targetReference>
+            </connector>
+            <label>Is Partner Application</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-28672: Created to check if there is a open task for the old AE</description>
+        <name>Check_if_the_Task_Existed</name>
+        <label>Check if the Task Existed</label>
+        <locationX>4054</locationX>
+        <locationY>755</locationY>
+        <defaultConnectorLabel>No, Task doesnt exists</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Task_Exist_for_Old_AE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Task_Related_to_Old_AE</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Status_and_Desicription_to_the_Task</targetReference>
+            </connector>
+            <label>Yes, Task Exist for Old AE</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_PAM_Denial_Reason</name>
+        <label>Check PAM Denial Reason</label>
+        <locationX>3306</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>is_PAM_Insufficient_Influence_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DenialReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Insufficient Influence Criteria</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_PAM_Rejection_Partner_Contact</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>is PAM Insufficient Influence Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Record_Type</name>
+        <label>Check Record Type</label>
+        <locationX>2690</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_PAM_Deal_Registration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_PAM_Approval_Alert</targetReference>
+            </connector>
+            <label>Is PAM Deal Registration</label>
+        </rules>
+        <rules>
+            <name>is_PAM_Partner_Application</name>
+            <conditionLogic>2 AND (1 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IS_NEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>User_Authorization</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Partner_Application_PAM_Approval_Alert</targetReference>
+            </connector>
+            <label>is PAM Partner Application</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check if Partner contact field value is not empty.</description>
+        <name>Copy_1_of_Has_Partner_Contact</name>
+        <label>Has Partner Contact</label>
+        <locationX>3482</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__r.Email</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Deactivated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_PAM_Rejection_Alert</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check is PAM is an active user</description>
+        <name>Copy_1_of_Is_PAM_Active</name>
+        <label>Is PAM Active</label>
+        <locationX>1986</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Has_Partner_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Copy_3_of_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PAM__r.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_AE_Rejection_Alert</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check if Partner contact field value is not empty.</description>
+        <name>Copy_2_of_Has_Partner_Contact</name>
+        <label>Has Partner Contact</label>
+        <locationX>1986</locationX>
+        <locationY>839</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__r.Email</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Deactivated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_AE_Rejection_To_Partner_Contact_Alert_GTMS_20579_Action_1</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check if Partner contact field value is not empty.</description>
+        <name>Has_Partner_Contact</name>
+        <label>Has Partner Contact</label>
+        <locationX>1326</locationX>
+        <locationY>839</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__r.Email</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Deactivated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_AE_Approval_To_Partner_Contact_Alert_GTMS_20578_Action_1</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_ISV_Partner_Application</name>
+        <label>Is ISV Partner Application</label>
+        <locationX>446</locationX>
+        <locationY>863</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_Partner_Application</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ISV_Partner_Application</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Team_Alignment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>ISV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Partner_Registration_ISV_Contact_Notification</targetReference>
+            </connector>
+            <label>ISV Partner Application</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22249: Created as part of Partner Application phase 1 project. to check the lead record created after go live date.</description>
+        <name>Is_New_Lead</name>
+        <label>Is New Lead</label>
+        <locationX>710</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_Partner_Application</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_New_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>New_Lead</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_for_Record_Type</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check is PAM is an active user</description>
+        <name>Is_PAM_Active</name>
+        <label>Is PAM Active</label>
+        <locationX>1326</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Has_Partner_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_PAM_Active</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PAM__r.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_AE_Approval_Alert</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>GTMS-20570: Added PAM Denial Alert
+GTMS-20571: Added PAM Approval Alert
+GTMS-20573: Created Task for AE
+GTMS-20582: Updated Task Remainder to 48 hours
+Added if element checks before sending emails to partners and PAM user
+Replaced PAM Approved Picklist value with PAM Reviewed
+GTMS-22483: Updated flow to send emails for Partner Application phase 2 project.
+GTMS-24952: Add Task creation element for each email alert on 10/16/24
+GTMS-28208: Added condition to send emails to PAM when Deal registration status is updated to New
+GTMS-26100 : Added partner deactivatied check
+GTMS-28672: Added logic to send emails to new AEs when Owner changed to Deal registrations which are under AE Approval.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-20573: Created as part of Partner Alignment project to created Due date for task</description>
+        <name>Due_Date</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()+30</expression>
+    </formulas>
+    <formulas>
+        <name>IS_NEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-22249: Created as part of Partner Application Phase 1 Project to check if the lead was created after Go Live date</description>
+        <name>New_Lead</name>
+        <dataType>Boolean</dataType>
+        <expression>DATEVALUE({!Get_Lead_Record.CreatedDate}) &gt; DATEVALUE({!$Label.PARTNER_APPLICATION_GO_LIVE_DATE})</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR owner saying the PR creation email is sent you.</description>
+        <name>New_PR_Email_Subject</name>
+        <dataType>String</dataType>
+        <expression>&quot;New Deal Registration - &quot;+ {!$Record.Account__r.Name}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR PAM saying the PR AE Approval  email is sent you.</description>
+        <name>PR_AE_Approval_Email_Subject</name>
+        <dataType>String</dataType>
+        <expression>&quot;Accepted Deal Registration - &quot;+{!$Record.Opportunity__r.Name}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR PAM saying the PR AE Denial  email is sent you.</description>
+        <name>PR_AE_Denial_Email_Subject</name>
+        <dataType>String</dataType>
+        <expression>&quot;Denied Deal Registration - &quot;+{!$Record.Account__r.Name}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR AE saying the PR PAM Approval email is sent you.</description>
+        <name>PR_PAM_Approval_Email_Subject</name>
+        <dataType>String</dataType>
+        <expression>&quot;New Deal Registration - &quot;+{!$Record.Account__r.Name}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-20573: Created as part of Partner Alignment project to set the reminder datetime value</description>
+        <name>Reminder_DateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() + 2</expression>
+    </formulas>
+    <interviewLabel>Partner Registration After Insert/Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Partner Registration After Insert/Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>GTMS-20573: Created as part of Partner Alignment project to create task for AE</description>
+        <name>Create_Task_for_AE</name>
+        <label>Create Task for AE</label>
+        <locationX>2426</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Task_For_PR_Approval_By_PAM_Email</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>Due_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>New Deal Registration was assigned for your review. </stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsReminderSet</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ReminderDateTime</field>
+            <value>
+                <elementReference>Reminder_DateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>GTMS-28672: Created task for new AE to mention that Deal Registration is pending under AE approval</description>
+        <name>Create_Task_for_New_AE</name>
+        <label>Create Task for New AE</label>
+        <locationX>4054</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Get_Task_Related_to_Old_AE</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>Due_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>New Deal Registration was assigned for your review. </stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsReminderSet</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ReminderDateTime</field>
+            <value>
+                <elementReference>Reminder_DateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR AE saying the PR PAM approval email is sent you.</description>
+        <name>Task_For_PR_Approval_By_PAM_Email</name>
+        <label>Task For PR Approval By PAM Email</label>
+        <locationX>2426</locationX>
+        <locationY>755</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>PR_PAM_Approval_Email_Body</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0121a000000RPWsAAO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>PR_PAM_Approval_Email_Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Email Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR PAM saying the PR AE Approval  email is sent you.</description>
+        <name>Task_For_PR_Approvel_By_AE_Email</name>
+        <label>Task For PR Approval By AE Email</label>
+        <locationX>1194</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Has_Partner_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>PR_AE_Approval_Email_Body</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.PAM__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0121a000000RPWsAAO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>PR_AE_Approval_Email_Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Email Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR owner saying the PR creation email is sent you.</description>
+        <name>Task_For_PR_creation_Email</name>
+        <label>Task For PR creation Email</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>New_PR_Email_Body</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0121a000000RPWsAAO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>New_PR_Email_Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Email Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR PAM saying the PR AE Denial  email is sent you.</description>
+        <name>Task_For_PR_Denial_By_AE_Email</name>
+        <label>Task For PR Denial By AE Email</label>
+        <locationX>1854</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Copy_2_of_Has_Partner_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>PR_AE_Denial_Email_Body</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.PAM__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>0121a000000RPWsAAO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>PR_AE_Denial_Email_Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Email Sent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>GTMS-22249: get existing lead record related to PR</description>
+        <name>Get_Lead_Record</name>
+        <label>Get Lead Record</label>
+        <locationX>710</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_New_Lead</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Lead__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-28672: Created to fetch the task related to old AE</description>
+        <name>Get_Task_Related_to_Old_AE</name>
+        <label>Get Task Related to Old AE</label>
+        <locationX>4054</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_the_Task_Existed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.OwnerId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Task</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+        <queriedFields>Description</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-22483: Created as part of Partner Application H2 project to update New Partner Account status to Application</description>
+        <name>Set_Partner_Account_Status_to_Application</name>
+        <label>Set Partner Account Status to Application</label>
+        <locationX>578</locationX>
+        <locationY>1439</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Partner_Status__c</field>
+            <value>
+                <stringValue>Application</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-28672: Created to update the task related to old AE</description>
+        <name>Updated_Task_Related_to_the_old_AE</name>
+        <label>Updated Task Related to the old AE</label>
+        <locationX>3922</locationX>
+        <locationY>971</locationY>
+        <inputReference>Get_Task_Related_to_Old_AE</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>2410</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_for_Status</targetReference>
+        </connector>
+        <object>Partner_Registration__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR owner saying the PR creation email is sent you.</description>
+        <name>New_PR_Email_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello {!$Record.Owner:User.FirstName} {!$Record.Owner:User.LastName},
+You have a new partner registration to review!
+Here is the new deal registration: {!$Record.Name}
+Lead Details:
+Channel Account: {!$Record.Partner_Account__r.Name}
+Channel Contact: {!$Record.Partner_Contact__r.FirstName} {!$Record.Partner_Contact__r.LastName}
+End Customer: {!$Record.Account__r.Name}
+End Customer Contact: {!$Record.Contact__r.FirstName} {!$Record.Contact__r.LastName}
+If you have any issues, please reach out to #help-sales for support with details of the issue. 
+Samsara Partner Programs and Operations</text>
+    </textTemplates>
+    <textTemplates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR PAM saying the PR AE Approval  email is sent you.</description>
+        <name>PR_AE_Approval_Email_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello {!$Record.PAM__r.FirstName} {!$Record.PAM__r.LastName},
+This email is to notify you that the following partner registration has been accepted by {!$Record.Owner:User.FirstName} {!$Record.Owner:User.LastName}, {!$Record.Opportunity__r.Owner_Role_Copy__c}.
+Opportunity Details:
+Partner Name: {!$Record.Partner_Account__r.Name}
+Partner Contact: {!$Record.Partner_Contact__r.FirstName} {!$Record.Partner_Contact__r.LastName}
+End Customer: {!$Record.Account__r.Name}
+End Customer Contact: {!$Record.Contact__r.FirstName} {!$Record.Contact__r.LastName}
+Samsara Partner Account Manager: {!$Record.PAM__r.FirstName} {!$Record.PAM__r.LastName}
+Opportunity Description: {!$Record.More_About_Opportunity__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR PAM saying the PR AE Denial  email is sent you.</description>
+        <name>PR_AE_Denial_Email_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello {!$Record.PAM__r.FirstName} {!$Record.PAM__r.LastName},
+This email is to notify you that the following partner registration has been denied.
+Reason for for denial: {!$Record.DenialReason__c}
+Opportunity Details:
+Partner Name: {!$Record.Partner_Account__r.Name}
+Partner Contact: {!$Record.Partner_Contact__r.FirstName} {!$Record.Partner_Contact__r.LastName}
+End Customer: {!$Record.Account__r.Name}
+End Customer Contact: {!$Record.Contact__r.FirstName} {!$Record.Contact__r.LastName}
+Samsara Partner Account Manager: {!$Record.PAM__r.FirstName} {!$Record.PAM__r.LastName}
+Opportunity Description: {!$Record.More_About_Opportunity__c}</text>
+    </textTemplates>
+    <textTemplates>
+        <description>GTMS-24952: Created as part of Partner Alignment hyper care to create a task for PR AE saying the PR PAM Approval email is sent you.</description>
+        <name>PR_PAM_Approval_Email_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hello {!$Record.Owner:User.FirstName} {!$Record.Owner:User.LastName},
+
+You have a partner lead that requires your review!
+
+CLICK HERE to access the deal registration and complete your review! Please choose to accept or deny this lead upon review, and, if accepted, the program type desired. Click here to review the step-by-step guide in Showpad. Please choose to accept or deny this lead upon review, and, if accepted, the program type desired. Partnerships Master List to see if there is a unique program guide associated with this partner.</text>
+    </textTemplates>
+    <triggerOrder>1</triggerOrder>
+</Flow>

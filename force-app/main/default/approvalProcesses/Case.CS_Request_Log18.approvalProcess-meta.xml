@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>CreatedDate</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>melanie.johnson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting Strategic Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting Strategic Basic</label>
+        <name>Custom_Reporting_Strategic_Basic</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>megan.combs@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting Select Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting Select Basic</label>
+        <name>Custom_Reporting_Select_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jasmin.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting Core Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting Core Basic</label>
+        <name>Custom_Reporting_Core_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Custom Reporting Standard/High
+Strategic Standard
+Strategic High
+Select High
+Select Standard
+Core Standard
+Core High</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Custom reporting</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard,Strategic High,Select High,Select Standard,Core Standard,Core High</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Custom Reporting Standard/High</label>
+        <name>Custom_Reporting_Standard_High</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>adam.wrobel@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Post-sale concessions Strategic Basic/Core Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Post-sale concessions</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic,Core Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Post-sale concessions Strategic Basic/Core Basic</label>
+        <name>Post_sale_concessions_Strategic_Basic_Core_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ryan.hammer@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Post-sale concessions Select Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Post-sale concessions</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Post-sale concessions Select Basic</label>
+        <name>Post_sale_concessions_Select_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Post-sale concessions Standard/High-Strategic/Core</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Post-sale concessions</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard,Strategic High,Core Standard,Core High</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Post-sale concessions Standard/High-Strategic/Core</label>
+        <name>Post_sale_concessions_Standard_High_Strategic_Core</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>katie.aicardi@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>molly.rindos@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Post-sale concessions Select High,Select Standard</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Post-sale concessions</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High,Select Standard</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Post-sale concessions Select High,Select Standard</label>
+        <name>Post_sale_concessions_Select_High_Select_Standard</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ryan.hammer@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services
+ Strategic Basic
+Select Basic\	Core Basic</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2  AND 5 AND (3 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic,Select Basic,Core Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services Basic</label>
+        <name>Ent_AE_only_Onboarding_Services_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>brian.wong@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services Strategic Standard/Strategic High</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2  AND 5 AND (3 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard,Strategic High</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services Strategic Standard/Strategic High</label>
+        <name>Ent_AE_only_Onboarding_Services_Strategic_Standard_Strategic_High</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>meha.shah@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services Select High/Select Standard</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2  AND 5 AND (3 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High,Select Standard</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services Select High/Select Standard</label>
+        <name>Ent_AE_only_Onboarding_Services_Select_High_Select_Standard</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ilan.belehssen@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services Core Standard,Core High</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2  AND 5 AND (3 OR 4)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Standard,Core High</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services Core Standard,Core High</label>
+        <name>Ent_AE_only_Onboarding_Services_Core_Standard_Core_High</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>etienne.regnier@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services Canada</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND 5 AND (3 OR 4 )</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA CA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services Canada</label>
+        <name>Ent_AE_only_Onboarding_Services_Canada</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>pierre.gross@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>[Ent AE only] - Onboarding Services PubSec</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND 5 AND (3 OR 4 )</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>[Ent AE Only] - Onboarding services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Customer_ARR__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>SLED</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>[Ent AE only] - Onboarding Services PubSec</label>
+        <name>Ent_AE_only_Onboarding_Services_PubSec</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>melanie.johnson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Other Strategic Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Other Strategic Basic</label>
+        <name>Other_Strategic_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>megan.combs@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Other Select Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Other Select Basic</label>
+        <name>Other_Select_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>jasmin.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Other Core Basic</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Basic</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Other Core Basic</label>
+        <name>Other_Core_Basic</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Other
+Strategic Standard
+Strategic High 
+Core Standard
+Core High</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard,Strategic High,Core Standard,Core High</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Other Standard/High Strategic/Code</label>
+        <name>Other_Standard_High_Strategic_Code</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>drew.thomas@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>katie.aicardi@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>molly.rindos@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Other Strategic Standard/Strategic High</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High,Select Standard</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Other Strategic Standard/Strategic High</label>
+        <name>Other_Strategic_Standard_Strategic_High</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>etienne.regnier@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Canadian HOS Training  Basic/Standard/High</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Canadian HOS Training</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic,Select Basic,Core Basic,Strategic Standard,Strategic High,Select High,Select Standard,Core Standard,Core High</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Canadian HOS Training  Basic/Standard/High</label>
+        <name>Canadian_HOS_Training_Basic_Standard_High</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>All Request Types related to Basic/Standard/High Tier</description>
+    <emailTemplate>unfiled$public/CS_Request_Log_Approval_Submission</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalActions>
+        <action>
+            <name>Approval_Email_Alert</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejection_Email_Alert</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>CS Request Log 1.8 New</label>
+    <processOrder>3</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

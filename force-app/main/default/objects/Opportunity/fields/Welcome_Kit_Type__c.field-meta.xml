@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Welcome_Kit_Type__c</fullName>
+    <description>Used in the last four nodes of the &apos;Add Welcome/Trial Kit Products on Closing&apos; Process Builder. Checks first if an oppty needs a Commercial Field Services kit, then if it needs a Commercial Food and Beverage kit, then an Express Welcome kit, then finally a Standard Welcome kit.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+   AND(
+       ISPICKVAL(Type, &quot;Revenue Opportunity&quot;),
+       Amount &gt;= 30000,
+       First_Purchase__c = true,
+       Renewal__c = false,
+       ISNULL(Account.Welcome_Kit_Sent_Date__c),
+       Probability &gt;= 0.95,
+       ISPICKVAL(Shipping_Country__c, &quot;United States&quot;)
+   ),
+   &quot;Standard Welcome Kit&quot;,
+   &quot;&quot;
+)</formula>
+    <label>Welcome Kit Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

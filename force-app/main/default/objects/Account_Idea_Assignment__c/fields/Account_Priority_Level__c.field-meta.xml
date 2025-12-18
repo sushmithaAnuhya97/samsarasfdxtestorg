@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Priority_Level__c</fullName>
+    <label>FR Priority Level</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>P0- Critical</fullName>
+                <default>false</default>
+                <label>P0- Critical</label>
+            </value>
+            <value>
+                <fullName>P1- High</fullName>
+                <default>false</default>
+                <label>P1- High</label>
+            </value>
+            <value>
+                <fullName>P2- Medium</fullName>
+                <default>false</default>
+                <label>P2- Medium</label>
+            </value>
+            <value>
+                <fullName>P3- Low</fullName>
+                <default>false</default>
+                <label>P3- Low</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

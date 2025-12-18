@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE1RoleOnly__c</fullName>
+    <formula>OR (
+CONTAINS(Owner_Role__c,&apos;AE1 NA&apos;),
+CONTAINS(Owner_Role__c,&apos;CAE1 NA&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AE1RoleOnly</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

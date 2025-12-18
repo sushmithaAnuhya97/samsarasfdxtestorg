@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_Programs</fullName>
+    <columns>NAME</columns>
+    <columns>Program_Status__c</columns>
+    <columns>Program_Compensation_Model__c</columns>
+    <columns>Approved_for_Add_a_Partner_workflow__c</columns>
+    <columns>SalesProgramType__c</columns>
+    <columns>Last_Reviewed__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Total_Members__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Program_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>All Active Programs</label>
+</ListView>

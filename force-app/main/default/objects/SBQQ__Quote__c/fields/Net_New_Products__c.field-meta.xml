@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_New_Products__c</fullName>
+    <description>Set to true if there are net new products on the quote.
+Created as part of GTMS-6113</description>
+    <formula>Count_of_Net_New_Products__c &gt; 0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>When checked, the Quote contains Net New Products.</inlineHelpText>
+    <label>Net New Products</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

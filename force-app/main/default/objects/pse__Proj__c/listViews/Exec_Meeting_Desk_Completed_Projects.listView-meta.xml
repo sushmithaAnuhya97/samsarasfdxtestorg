@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exec_Meeting_Desk_Completed_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Account__c</columns>
+    <columns>Trial_Success_Manager__c</columns>
+    <columns>pse__Group__c</columns>
+    <columns>TSM_Project_Type__c</columns>
+    <columns>pse__Stage__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>Segment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Stage__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>pse__Group__c</field>
+        <operation>equals</operation>
+        <value>Trial Success Manager</value>
+    </filters>
+    <filters>
+        <field>TSM_Project_Type__c</field>
+        <operation>equals</operation>
+        <value>Trial Desk Consultation</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Exec</value>
+    </filters>
+    <label>Exec Meeting Desk - Completed Projects</label>
+</ListView>

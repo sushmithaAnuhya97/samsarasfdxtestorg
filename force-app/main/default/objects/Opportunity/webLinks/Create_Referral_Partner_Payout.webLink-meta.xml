@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Referral_Partner_Payout</fullName>
+    <availability>online</availability>
+    <description>Create a rebate opportunity to payout referral partner</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create Referral Partner Payout</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://samsara.my.salesforce.com/006/e?
+RecordType=0121a000000ARoK
+&amp;accid={!Opportunity.AccountId}
+&amp;opp3={!Opportunity.Name}%20-Referral%20Partner%20Payout 
+&amp;opp9={!TODAY()} 
+&amp;opp11=Return%20Created 
+&amp;opp12=10
+&amp;00N1a00000A7Wnb={!TEXT(Opportunity.Referral_Partner_Payout_Amount__c)}
+&amp;opp5=Rebate
+&amp;CF00N1a000008bLcs={!Opportunity.Name}
+&amp;00N1a00000A7VgF=Partner%20Referral 
+&amp;CF00N1a000008bLcs_lkid={!Opportunity.Id}
+&amp;CF00N1a00000A7b0G={!Opportunity.Referral_Partner__c}
+&amp;00N1a000008ztGB=Operations 
+&amp;CF00N1a000009fpLK={!Opportunity.Shipping_Address_NEW__c}
+&amp;CF00N1a000009fpLK_lkid={!Opportunity.Shipping_Address_NEWId__c}
+&amp;00N1a00000A8HGM={!Opportunity.Owner_Manager_Name_Copy__c}
+&amp;00N1a000009g0h0={!Opportunity.Owner_Manager_Role_Copy__c}
+&amp;00N1a000009g0h5={!Opportunity.Owner_Manager_Email_Copy__c}
+&amp;00N1a000009efLv={!Opportunity.Owner_Role_Copy__c}
+&amp;00N1a000009qC7k={!Opportunity.OwnerEmail}
+&amp;00N1a000009fjpv={!Opportunity.License_Term__c}
+&amp;ownerid=0051a000002BW9X
+&amp;00N1a00000A8WmJ=1</url>
+</WebLink>

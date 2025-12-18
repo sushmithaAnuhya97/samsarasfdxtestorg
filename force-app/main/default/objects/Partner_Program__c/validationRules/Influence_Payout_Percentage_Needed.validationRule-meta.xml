@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Influence_Payout_Percentage_Needed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Influence_Payout_Model__c, &quot;Percentage&quot;),
+    OR(
+        Influence_Payout_Percentage__c &lt; 0,
+        Influence_Payout_Percentage__c &gt; 1, 
+ISNULL(Influence_Payout_Percentage__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Your new program needs review! 
+You’ve selected ‘Percentage’ for the Influenced Payout Model, but have not included the desired percentage amount. Please update the &apos;Influence Payout % Amount” to a number greater than 0 and lower than 100.</errorMessage>
+</ValidationRule>

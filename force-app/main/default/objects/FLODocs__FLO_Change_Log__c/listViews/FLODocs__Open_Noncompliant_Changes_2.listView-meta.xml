@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Open_Noncompliant_Changes_2</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>FLODocs__Compliance__c</columns>
+    <columns>FLODocs__Compliant_Indicator__c</columns>
+    <columns>FLODocs__Reason__c</columns>
+    <columns>FLODocs__Metadata_Type__c</columns>
+    <columns>FLODocs__Status_Value__c</columns>
+    <columns>FLODocs__Old_Value__c</columns>
+    <columns>FLODocs__New_Value__c</columns>
+    <columns>FLODocs__Short_Resolution_Description__c</columns>
+    <columns>FLODocs__Related_Change_Request__c</columns>
+    <columns>FLODocs__Related_Process_Issue__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Package__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>FLODocs__Noncompliance__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Status_Value__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Unresolved Non-Compliant Changes (v2)</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won</fullName>
+    <availability>online</availability>
+    <description>GTMS-3591 - June 24th Deployment</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Closed Won</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/New_Closed_Won?OpptyId={!Opportunity.Id}&amp;retURL={!Opportunity.Id}</url>
+</WebLink>

@@ -1,0 +1,64 @@
+<template>
+    <div class="slds-page-header slds-page-header_record-home">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <lightning-icon icon-name="standard:contract_line_outcome" alternative-text="Account" title="Account" size="large"></lightning-icon>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                &nbsp;Cancel and Replace
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate">
+                                        &nbsp;Non-Standard Terms Existing on the Selected Contract(s)
+                                    </span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-p-around_medium">
+        <template if:true={exceptions}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr>
+                        <th>Contract Number</th>
+                        <th>Opportunity Name</th>
+                        <th>Opportunity Owner</th>
+                        <th>Non Standard Exception Reasons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={exceptions} for:item="exception">
+                        <tr key={exception.opportunityId}>
+                            <td>
+                                <a href={exception.contractUrl} target="_blank">{exception.contractNumber}</a>
+                            </td>
+                            <td>
+                                <a href={exception.opportunityUrl} target="_blank">{exception.opportunityName}</a>
+                            </td>
+                            <td>
+                                <a href={exception.opportunityOwnerUrl} target="_blank">{exception.opportunityOwner}</a>
+                            </td>
+                            <td>
+                                <template for:each={exception.exceptionsArray} for:item="exceptionDetail">
+                                    <div key={exceptionDetail.label}>
+                                        <span class="bold-label">{exceptionDetail.label}</span>: {exceptionDetail.value}
+                                    </div>    
+                                </template>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+        <template if:true={error}>
+            <p>Error loading exceptions</p>
+        </template>
+    </div>
+</template>

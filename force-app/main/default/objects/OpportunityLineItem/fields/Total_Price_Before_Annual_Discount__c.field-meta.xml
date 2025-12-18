@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Price_Before_Annual_Discount__c</fullName>
+    <description>Price after discount before the annual discount is applied</description>
+    <formula>IF( TEXT(Opportunity.Selected_Payment_Type__c) = &quot;Upfront Payment&quot;,TotalPrice/(1-Express_Upfront_Discount__c),IF(TEXT(Opportunity.Selected_Payment_Type__c)=&quot;Direct Annual&quot;,TotalPrice/(1-Express_Annual_Discount__c),IF(TEXT(Opportunity.Selected_Payment_Type__c) = &quot;Direct Monthly&quot;,TotalPrice,NULL)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total  Price Before Annual Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

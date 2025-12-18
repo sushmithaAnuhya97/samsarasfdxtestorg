@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Feature__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Restricts where this filter set will be shown as an option. Currently only &quot;Resource Planner&quot; and &quot;Project Planner&quot; are supported.</inlineHelpText>
+    <label>Available In</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Resource Planner</fullName>
+                <default>false</default>
+                <label>Resource Planner</label>
+            </value>
+            <value>
+                <fullName>Project Planner</fullName>
+                <default>false</default>
+                <label>Project Planner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

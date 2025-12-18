@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Discount_Approval_Needed__c</fullName>
+    <description>Checks if there is an industrial discount approval needed</description>
+    <formula>AND( 
+
+Blended_Discount__c &gt; Approved_Discount__c, 
+
+OR( 
+AND( 
+CONTAINS(Pricebook_Name__c, &apos;Express&apos;), 
+Blended_Discount__c &gt; 0.102 
+), 
+
+AND( 
+
+CONTAINS(Pricebook_Name__c, &apos;Standard&apos;), 
+ISPICKVAL(Selected_Payment_Type__c , &apos;Direct Monthly&apos;), 
+
+OR( 
+AND(SBQQ__SubscriptionTerm__c &lt; 60, Blended_Discount__c &gt;= 0.05), 
+AND(SBQQ__SubscriptionTerm__c &gt;=60, Blended_Discount__c &gt;= 0.15) 
+) 
+), 
+
+OR( 
+AND(CONTAINS(Pricebook_Name__c, &apos;Standard&apos;), 
+
+OR( 
+
+AND( 
+SBQQ__SubscriptionTerm__c &lt; 36, 
+Blended_Discount__c &gt;= 0.0, 
+NOT(CONTAINS($UserRole.Name, &apos;IND ENT AE NA&apos;)) 
+), 
+AND( 
+SBQQ__SubscriptionTerm__c &gt;= 36, 
+SBQQ__SubscriptionTerm__c &lt; 60, 
+Blended_Discount__c &gt;= 0.25, 
+NOT(CONTAINS($UserRole.Name, &apos;IND ENT AE NA&apos;)) 
+), 
+AND( 
+SBQQ__SubscriptionTerm__c &gt;= 60, 
+Blended_Discount__c &gt;= 0.35), 
+
+AND( 
+SBQQ__SubscriptionTerm__c &lt; 36, 
+Blended_Discount__c &gt;= 0.20, 
+CONTAINS($UserRole.Name, &apos;IND ENT AE NA&apos;) 
+
+), 
+AND( 
+SBQQ__SubscriptionTerm__c &gt;= 36, 
+SBQQ__SubscriptionTerm__c &lt; 60, 
+Blended_Discount__c &gt;= 0.30, 
+CONTAINS($UserRole.Name, &apos;IND ENT AE NA&apos;) 
+
+) 
+
+) 
+) 
+
+) 
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Industrial Discount Approval Needed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

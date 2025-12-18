@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Earliest_Close_Date__c</fullName>
+    <description>Earliest close date of opptys attached (ignoring closed won &amp; closed lost)</description>
+    <label>Earliest Close Date</label>
+    <summarizedField>Opportunity_Feature_Assignment__c.Copy_of_Oppty_Close_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity_Feature_Assignment__c.Copy_of_Oppty_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Won</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity_Feature_Assignment__c.Copy_of_Oppty_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Lost</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity_Feature_Assignment__c.Feature__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

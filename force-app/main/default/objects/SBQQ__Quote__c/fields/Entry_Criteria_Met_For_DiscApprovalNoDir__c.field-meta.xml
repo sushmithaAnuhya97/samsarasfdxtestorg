@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Criteria_Met_For_DiscApprovalNoDir__c</fullName>
+    <formula>Associated_Opportunity_Type__c = &apos;Revenue Opportunity&apos; 
+&amp;&amp; SBQQ__SalesRep__r.Industrial_Team__c = FALSE 
+&amp;&amp; 
+(    Owner:User.UserRole.Name = &apos;MM - Team 8 - AE&apos; 
+	    || Owner:User.UserRole.Name = &apos;MM - Team 4 - AE&apos; 
+	    || Owner:User.UserRole.Name = &apos;MM - Team 11 - AE&apos;
+)     
+&amp;&amp;
+NOT(
+				OR(
+		    CONTAINS( Owner:User.UserRole.Name, &apos;COR&apos; ),
+		    CONTAINS( Owner:User.UserRole.Name, &apos;SEL&apos; ),
+		    CONTAINS( Owner:User.UserRole.Name, &apos;STR&apos; )
+	    )
+)
+&amp;&amp; ISBLANK(Manager_4__c) 
+&amp;&amp;  Discount_Approval_Needed__c = TRUE</formula>
+    <label>Entry Criteria Met For DiscApprovalNoDir</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

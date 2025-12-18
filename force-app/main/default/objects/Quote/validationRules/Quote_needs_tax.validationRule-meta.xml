@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_needs_tax</fullName>
+    <active>true</active>
+    <description>This validation rule is to ensure that quote has sales tax before they are sent to the customer.</description>
+    <errorConditionFormula>AND(
+Opportunity.Sales_Tax__c = 99999,
+NOT( $Permission.Validation_Rule_Exemption )
+)</errorConditionFormula>
+    <errorMessage>A quote cannot be created if the sales tax is not current on the opportunity.</errorMessage>
+</ValidationRule>

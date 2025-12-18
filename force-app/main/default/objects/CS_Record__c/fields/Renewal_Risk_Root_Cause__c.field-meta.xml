@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Risk_Root_Cause__c</fullName>
+    <label>Renewal Risk Root Cause</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Contract Length</fullName>
+                <default>false</default>
+                <label>Contract Length</label>
+            </value>
+            <value>
+                <fullName>Product Issues (Connectivity)</fullName>
+                <default>false</default>
+                <label>Product Issues (Connectivity)</label>
+            </value>
+            <value>
+                <fullName>Product Issues (Compatibility)</fullName>
+                <default>false</default>
+                <label>Product Issues (Compatibility)</label>
+            </value>
+            <value>
+                <fullName>Dashboard / Reporting Issues</fullName>
+                <default>false</default>
+                <label>Dashboard / Reporting Issues</label>
+            </value>
+            <value>
+                <fullName>Hardware Failures</fullName>
+                <default>false</default>
+                <label>Hardware Failures</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>Missing Product Feature</fullName>
+                <default>false</default>
+                <label>Missing Product Feature</label>
+            </value>
+            <value>
+                <fullName>Reduced Vehicle Count</fullName>
+                <default>false</default>
+                <label>Reduced Vehicle Count</label>
+            </value>
+            <value>
+                <fullName>Shut Down Business</fullName>
+                <default>false</default>
+                <label>Shut Down Business</label>
+            </value>
+            <value>
+                <fullName>Devices moved to different Account</fullName>
+                <default>false</default>
+                <label>Devices moved to different Account</label>
+            </value>
+            <value>
+                <fullName>Consolidated Renewal</fullName>
+                <default>false</default>
+                <label>Consolidated Renewal</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

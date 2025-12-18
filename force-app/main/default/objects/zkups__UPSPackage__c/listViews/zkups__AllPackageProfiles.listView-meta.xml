@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__AllPackageProfiles</fullName>
+    <columns>NAME</columns>
+    <columns>zkups__PackageProfileDescription__c</columns>
+    <columns>zkups__Weight__c</columns>
+    <columns>zkups__WeightUnits__c</columns>
+    <columns>zkups__Length__c</columns>
+    <columns>zkups__Width__c</columns>
+    <columns>zkups__Height__c</columns>
+    <columns>zkups__DimensionUnits__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>zkups__PackageProfile__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All Package Profiles</label>
+</ListView>

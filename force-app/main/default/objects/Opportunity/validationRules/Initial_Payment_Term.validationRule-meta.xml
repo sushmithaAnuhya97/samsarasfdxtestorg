@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Payment_Term</fullName>
+    <active>false</active>
+    <description>Addded and condition GTMS-9923</description>
+    <errorConditionFormula>AND
+(
+(NOT(SkipValidationRule__c)),
+(OR($Profile.Name = &apos;Samsara Sales - Renewals - New System&apos;,$Profile.Name = &apos;Samsara Sales - Renewal Manager - New System&apos;)),
+(OR(AND
+(ISCHANGED(Initial_Payment_Terms__c),
+NOT((ISPICKVAL(Initial_Payment_Terms__c, &apos;Due in advance&apos;))),
+NOT((ISPICKVAL(Initial_Payment_Terms__c, &apos;Due on Contract Start&apos;)))
+),
+AND(
+ISCHANGED(Payment_Terms__c),
+NOT((ISPICKVAL(Payment_Terms__c, &apos;Due in advance&apos;)))))
+)
+)</errorConditionFormula>
+    <errorMessage>Payment terms can only be changed to &quot;Due in Advance&quot; or &quot;Due on Contract&quot;</errorMessage>
+</ValidationRule>

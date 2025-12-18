@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Batch_Process__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The batch process used by this billing forecast calculation.</description>
+    <inlineHelpText>The batch process used by this billing forecast calculation.</inlineHelpText>
+    <label>Batch Process</label>
+    <referenceTo>pse__fflib_BatchProcess__c</referenceTo>
+    <relationshipLabel>Forecast Calculations</relationshipLabel>
+    <relationshipName>Forecast_Enhanced_Calculations</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

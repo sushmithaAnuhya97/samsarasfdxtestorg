@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acideasULT__Empty_Categories_field</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( acideasULT__Categories__c )</errorConditionFormula>
+    <errorDisplayField>acideasULT__Categories__c</errorDisplayField>
+    <errorMessage>You have to select categories.</errorMessage>
+</ValidationRule>

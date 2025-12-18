@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Stage_In_Progress_POC_Blank</fullName>
+    <active>true</active>
+    <description>This validation rule ensures that the project stage cannot be changed to &quot;In Progress&quot; unless both the Project POC Email Address and Project POC First Name fields are completed.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(pse__Stage__c, &quot;In Progress&quot;),
+  ISBLANK(Project_POC_Email_Address__c) || ISBLANK(Project_Point_of_Contact_txt__c),
+  OR(
+    ISPICKVAL(Engagement_Type__c, &quot;Initial Implementation&quot;),
+    ISPICKVAL(Engagement_Type__c, &quot;Upsell/Cross-sell&quot;),
+    ISPICKVAL(Engagement_Type__c, &quot;Services Opportunity&quot;)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>pse__Stage__c</errorDisplayField>
+    <errorMessage>&quot;The project stage cannot be set to &apos;In Progress&apos; until both the Project POC Email Address and Project POC First Name fields are completed.</errorMessage>
+</ValidationRule>

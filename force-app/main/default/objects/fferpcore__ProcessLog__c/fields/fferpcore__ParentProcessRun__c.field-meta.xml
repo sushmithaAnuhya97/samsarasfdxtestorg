@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ParentProcessRun__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>In the case of grouped process chaining, this displays the parent of all the process runs.</description>
+    <label>Parent Process Run</label>
+    <referenceTo>fferpcore__ProcessRun__c</referenceTo>
+    <relationshipLabel>Child Process Logs</relationshipLabel>
+    <relationshipName>Child_Process_Logs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

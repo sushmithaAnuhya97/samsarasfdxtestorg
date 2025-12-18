@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referring_Customer_Delinquent__c</fullName>
+    <description>&lt;Deprecated as part of GTMS-1785 and will be deleted by Nov 16th&gt;</description>
+    <formula>Referring_Customer__r.Account.Delinquent__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>[Don&apos;t Use]</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

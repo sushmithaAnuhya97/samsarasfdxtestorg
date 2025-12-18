@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Industrial_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>If there is a related industrial account, this links to it.</description>
+    <inlineHelpText>If there is a separate, related Industrial account, link it here. It should have the same name.</inlineHelpText>
+    <label>Related Industrial Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>Accounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

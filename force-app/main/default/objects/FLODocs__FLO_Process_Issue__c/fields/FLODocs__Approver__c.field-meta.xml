@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is the person assigned to approve the process issue. By default, it is the issue owner&apos;s supervisor.</description>
+    <inlineHelpText>This is the person assigned to approve the process issue. By default, it is the issue owner&apos;s supervisor.</inlineHelpText>
+    <label>Approver</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>FLO_Process_Issues</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

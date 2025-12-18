@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Raise_Error</name>
+        <label>Raise Error</label>
+        <locationX>688</locationX>
+        <locationY>451</locationY>
+        <customErrorMessages>
+            <errorMessage>This Feature Request has been merged.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_if_FR_is_merged</name>
+        <label>Check if FR is merged</label>
+        <locationX>577</locationX>
+        <locationY>348</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>is_merged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_Merged__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Raise_Error</targetReference>
+            </connector>
+            <label>is merged</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Feature Request Related Account - After Delete {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Feature Request Related Account - After Delete</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>554</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_if_FR_is_merged</targetReference>
+        </connector>
+        <object>Account_Idea_Assignment__c</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

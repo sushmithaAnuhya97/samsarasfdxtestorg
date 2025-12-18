@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Results_Filter__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Enter values that must be return by the report in order to clear it. 
+Example to allow administrator changes by John Smit on transaction 12345 or 12346 use:
+
+John Smit,INV03091448|INV03091448
+
+For changes by John Smit and Mark Smit on certain transactions use: 
+
+John Smit,INV03091448;Mark Smit,INV03091448
+
+For any change by John Smit use:
+
+John Smit</description>
+    <inlineHelpText>Enter values that must be return by the report in order to clear it. (see field description for samples)</inlineHelpText>
+    <label>Results Filter</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

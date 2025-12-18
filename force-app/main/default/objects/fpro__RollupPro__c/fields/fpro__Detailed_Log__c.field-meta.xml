@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Detailed_Log__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check this box (true) to enable comprehensive logging of job details, including records queried, updated, and SOQL queries performed. Use this feature for debugging purposes only on inactive jobs to minimize data storage usage. Keep this unchecked (false) for active jobs to reduce log volume.</description>
+    <inlineHelpText>Check this box (true) to enable comprehensive logging of job details, including records queried, updated, and SOQL queries performed. Use this feature for debugging purposes only on inactive jobs to minimize data storage usage. Keep this unchecked (false) for active jobs to reduce log volume.</inlineHelpText>
+    <label>Detailed Log?</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

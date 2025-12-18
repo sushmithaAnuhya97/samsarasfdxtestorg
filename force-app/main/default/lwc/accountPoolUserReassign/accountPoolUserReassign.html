@@ -1,0 +1,29 @@
+<template>
+    <lightning-quick-action-panel header="Reassign Record">
+        <template if:true={isWorking}>
+            <lightning-spinner size="small" alternative-text="Processing"></lightning-spinner>
+        </template>
+
+        <template if:true={showPopup}>
+            <p>
+                This record is currently owned by the SFDC Shark Tank User. To reassign this record to yourself, click <b>'Confirm.'</b>
+            </p>
+
+            <div slot="footer">
+                <lightning-button
+                    variant="neutral"
+                    label="Cancel"
+                    onclick={handleCancel}
+                    disabled={isWorking}>
+                </lightning-button>
+                <lightning-button
+                    class="slds-m-left_small"
+                    variant="brand"
+                    label="Confirm"
+                    onclick={handleConfirm}
+                    disabled={isWorking}>
+                </lightning-button>
+            </div>
+        </template>
+    </lightning-quick-action-panel>
+</template>

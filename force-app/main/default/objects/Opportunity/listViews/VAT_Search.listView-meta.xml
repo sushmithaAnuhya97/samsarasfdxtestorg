@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAT_Search</fullName>
+    <columns>Sort__c</columns>
+    <columns>Order_Management_Processor__c</columns>
+    <columns>Finance_Kickback_Reason__c</columns>
+    <columns>Finance_Notes__c</columns>
+    <columns>Went_to_Closing_Date__c</columns>
+    <columns>Finance_Segment__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Shipping_Method__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Customer_require_PO_for_invoicing__c</columns>
+    <columns>First_Purchase__c</columns>
+    <columns>Finance_Partner__c</columns>
+    <columns>Selected_Payment_Type__c</columns>
+    <columns>License_Term_Formula__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.PROBABILITY</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Closing</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Revenue Opportunity</value>
+    </filters>
+    <filters>
+        <field>Sub_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Auto-Renewal</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Is_Webstore_Upsell_Opportunity__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CURRENCY_ISO_CODE</field>
+        <operation>equals</operation>
+        <value>EUR,GBP</value>
+    </filters>
+    <filters>
+        <field>Finance_Notes__c</field>
+        <operation>notContain</operation>
+        <value>Validated by Orby</value>
+    </filters>
+    <filters>
+        <field>VAT_Number__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>VAT Search</label>
+</ListView>

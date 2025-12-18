@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Discount_on_CM31_or_CM32_Upgrades</fullName>
+    <active>false</active>
+    <description>Prevents hardware discount on CM31/32 AI dash cameras</description>
+    <errorConditionFormula>AND( 
+NOT($Permission.Validation_Rule_Exemption),
+ISPICKVAL(Opportunity.Type, &quot;Revenue Opportunity&quot;),
+CONTAINS(Product2.ProductCode,&quot;HW-CM3&quot;),
+Opportunity.of_LIC_Products__c = 0,
+Discount &lt;&gt; 0,
+ OpportunityId &lt;&gt; &apos;0061P00000SxENa&apos;
+
+)</errorConditionFormula>
+    <errorMessage>Discounts Are Not Permitted on CM31 or CM32 AI Dashboard Camera Upgrades. A License Must Be Added.</errorMessage>
+</ValidationRule>

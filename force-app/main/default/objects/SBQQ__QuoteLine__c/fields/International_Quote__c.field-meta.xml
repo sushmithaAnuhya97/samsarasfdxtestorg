@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>International_Quote__c</fullName>
+    <formula>(ISBLANK(Ship_To__c) &amp;&amp; (ISBLANK(SBQQ__Quote__r.Shipping_Address_NEW__c) || NOT(ISPICKVAL(SBQQ__Quote__r.Shipping_Address_NEW__r.Shipping_Country__c, &quot;United States&quot;)))) ||  (NOT(ISBLANK(Ship_To__c )) &amp;&amp; NOT(ISPICKVAL(Ship_To__r.Shipping_Country__c, &quot;United States&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>International Quote</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

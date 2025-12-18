@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" controller="QuoteOpptyOwnerPnPPilotController" access="global">
+    <aura:attribute name="recordId" type="String" />
+    <!-- invisible component to update data on screen load -->
+<div class="slds-hidden">
+        
+    </div>
+    <!-- Handler to perform the owner ID update on component load -->
+    <aura:handler name="init" value="{!this}" action="{!c.updateOwnerPilot}" />
+</aura:component>

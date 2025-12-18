@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Dependent_Attribute_Filtering__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos; + $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c + &apos;FilterDependencySetting&apos;, &apos;Manage&apos;, &apos;_blank&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Define dependencies between one Filter and another. Dependencies affect the behavior of Attributes and Filters in Ref Search. When a user selects one or more Attributes from a Controlling Filter, the only Attributes that will be shown on the Dependent Filter will be those associated to the Attributes selected in the Controlling Filter.</inlineHelpText>
+    <label>Dependent Attribute Filtering</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

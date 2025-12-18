@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flex_Related_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>GTMS-26501: Flex C&amp;R Related Opportunity (Cancel and Upgrade Opp)</description>
+    <label>Related Opportunity</label>
+    <referenceTo>Related_Opportunity__c</referenceTo>
+    <relationshipLabel>CPQ Quotes</relationshipLabel>
+    <relationshipName>RelatedQuotes</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

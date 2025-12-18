@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Inject FRB filters from external sources</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Filter Identifier String</description>
+        <fieldName>filterId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Filter JSON</description>
+        <fieldName>filterJson</fieldName>
+    </lightningMessageFields>
+    <masterLabel>FRB External Filters Channel</masterLabel>
+</LightningMessageChannel>

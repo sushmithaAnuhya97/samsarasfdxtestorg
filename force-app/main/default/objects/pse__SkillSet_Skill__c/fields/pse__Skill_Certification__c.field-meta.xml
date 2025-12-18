@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Skill_Certification__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Master detail relationship to Skill, Certification and Categories.</description>
+    <label>Skill or Certification</label>
+    <referenceTo>pse__Skill__c</referenceTo>
+    <relationshipName>Skill_Set_Skill_Junction</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

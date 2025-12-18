@@ -1,0 +1,14 @@
+<apex:page id="extensionPage" standardController="Contract" extensions="GS_ContractExtController" lightningStylesheets="true">
+    <apex:form id="form"> 
+        <apex:pageBlock id="pb" title="Grace Period Extension Request">
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection id="pbs">
+               <apex:inputTextarea id="ita" label="Request Reason: " required="true" value="{!RequestReason}" onchange="enableButton()"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons id="pbB" location="bottom">
+            	<apex:commandButton style="float:right" value="Cancel" action="{!onCancel}" immediate="true"/>
+                <apex:commandButton id="showButton" style="float:right" value="Submit" action="{!onSubmit}" onclick="this.onclick=function(){return false;}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

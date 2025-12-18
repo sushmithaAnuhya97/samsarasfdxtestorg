@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Promo_Reason_for_Promo_Oppty</fullName>
+    <active>true</active>
+    <description>Require a Promo Reason when promo oppty is selected</description>
+    <errorConditionFormula>AND(ISPickval( Type ,&apos;Promo Opportunity&apos;),Ispickval( Promo_Reason__c ,&apos;&apos;),IsClosed = FALSE)</errorConditionFormula>
+    <errorMessage>Please select a reason for the promo. (Field: Promo Reason)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_CE_Tech_Stage_Duration__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( CE_Tech_Sale_Stage__c , &quot;Pre-trial phase&quot;) , TODAY() - Went_to_CE_Pre_trial_Phase_Date__c ,
+IF(ISPICKVAL( CE_Tech_Sale_Stage__c , &quot;Tech discovery&quot;) , TODAY() - Went_to_CE_Technical_Discovery_Date__c ,
+IF(ISPICKVAL( CE_Tech_Sale_Stage__c , &quot;Trial management&quot;) , TODAY() - Went_to_CE_Trial_Management_Date__c ,
+IF(ISPICKVAL( CE_Tech_Sale_Stage__c , &quot;Tech proposal&quot;) , TODAY() - Went_to_CE_Technical_Proposal_Date__c ,
+IF(ISPICKVAL( CE_Tech_Sale_Stage__c , &quot;New key account identified&quot;) , TODAY() - Went_to_CE_New_Key_Account_Identified_Da__c ,NULL
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current CE Tech Stage Duration</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

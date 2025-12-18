@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Corp_Scheduled_Total__c</fullName>
+    <deprecated>false</deprecated>
+    <description>In the corporate currency, the total amount of scheduled revenue within the relevant time period.</description>
+    <formula>pse__Corp_Equal_Split_Milestone_S__c +
+		pse__Corp_Equal_Split_Project_S__c +
+		pse__Corp_Eva_S__c +
+		pse__Corp_Milestone_S__c +
+		pse__Corp_Percent_Complete_Milestone_S__c +
+		pse__Corp_Percent_Complete_Milestone_U__c +
+		pse__Corp_Percent_Complete_Project_S__c +
+		pse__Corp_Percent_Complete_Project_U__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>In the corporate currency, the total amount of scheduled revenue within the relevant time period.</inlineHelpText>
+    <label>Corp: Scheduled Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

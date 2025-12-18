@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interaction_before_Assignment_Date__c</fullName>
+    <description>Checks if the campaign interaction date is before the latest account assignment date</description>
+    <formula>IF(ISBLANK(Account__r.Account_Assignment_Date__c),True,IF(Campaign_Interaction_Date__c &lt; Account__r.Account_Assignment_Date__c,True,False))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>True if campaign interaction date is before latest account assignment date</inlineHelpText>
+    <label>Interaction before Assignment Date</label>
+    <type>Checkbox</type>
+</CustomField>

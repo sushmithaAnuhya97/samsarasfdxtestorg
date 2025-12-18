@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Unpaid_Source__c</fullName>
+    <formula>OR(
+ ISPICKVAL(Source__c, &apos;Referral (Unpaid)&apos;),
+ ISPICKVAL(LeadSource, &apos;Referral (Unpaid)&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Referral (Unpaid) Source</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

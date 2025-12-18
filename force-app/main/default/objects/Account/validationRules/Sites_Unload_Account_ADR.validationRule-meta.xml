@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sites_Unload_Account_ADR</fullName>
+    <active>true</active>
+    <description>For a Sites ADR (role contains Sites IS ADR OR Sites ENT ADR), the Sites Account Status must be in an “Offloaded” status in order to drop the account.</description>
+    <errorConditionFormula>AND( ISCHANGED( Sites_Unload_Account__c ),
+Sites_Unload_Account__c,
+NOT( OR(
+ISPICKVAL(Sites_Account_Status__c,&apos;Offloaded - Unable to connect&apos;),
+ISPICKVAL(Sites_Account_Status__c,&apos;Offloaded - Made contact, not interested&apos;),  
+ISPICKVAL(Sites_Account_Status__c,&apos;Offloaded - No sites use case&apos;), 
+ISPICKVAL(Sites_Account_Status__c,&apos;Sites open opportunity&apos;), 
+ISPICKVAL(Sites_Account_Status__c,&apos;Sites closed lost opportunity&apos;),
+ISPICKVAL(Sites_Account_Status__c,&apos;Sites customer&apos;),
+ISPICKVAL(Sites_Account_Status__c,&apos;Offloading - Potential Partner&apos;))),
+OR(CONTAINS($UserRole.Name,&apos;Sites IS ADR&apos;), CONTAINS($UserRole.Name,&apos;Sites ENT ADR&apos;)))</errorConditionFormula>
+    <errorMessage>This account can not be dropped. ADRs, please ensure the “Sites Account Status” is an an Offloaded status.</errorMessage>
+</ValidationRule>

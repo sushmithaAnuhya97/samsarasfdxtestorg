@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lost_Renewal_Reason__c</fullName>
+    <description>Closed Lost Reason required for renewals</description>
+    <label>Risk/Loss Renewal Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Technical Issues</fullName>
+                <default>false</default>
+                <label>Product Technical Issues</label>
+            </value>
+            <value>
+                <fullName>Product Value &amp; Fit</fullName>
+                <default>false</default>
+                <label>Product Value &amp; Fit</label>
+            </value>
+            <value>
+                <fullName>Fleet Downsize &amp; Overpurchase</fullName>
+                <default>false</default>
+                <label>Fleet Downsize &amp; Overpurchase</label>
+            </value>
+            <value>
+                <fullName>Customer Financial Impact</fullName>
+                <default>false</default>
+                <label>Customer Financial Impact</label>
+            </value>
+            <value>
+                <fullName>Competitive Pressure</fullName>
+                <default>false</default>
+                <label>Competitive Pressure</label>
+            </value>
+            <value>
+                <fullName>Relationship &amp; Experience</fullName>
+                <default>false</default>
+                <label>Relationship &amp; Experience</label>
+            </value>
+            <value>
+                <fullName>Unresponsive / No Customer Feedback</fullName>
+                <default>false</default>
+                <label>Unresponsive / No Customer Feedback</label>
+            </value>
+            <value>
+                <fullName>Renewal admin issue</fullName>
+                <default>false</default>
+                <label>Renewal Admin</label>
+            </value>
+            <value>
+                <fullName>Adoption</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adoption</label>
+            </value>
+            <value>
+                <fullName>Business changes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business changes</label>
+            </value>
+            <value>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Commercial terms</label>
+            </value>
+            <value>
+                <fullName>Customer service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer service</label>
+            </value>
+            <value>
+                <fullName>Dashboard / Reporting Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dashboard / Reporting Issues</label>
+            </value>
+            <value>
+                <fullName>Ease of doing business</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ease of doing business</label>
+            </value>
+            <value>
+                <fullName>Missing Product Feature</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Missing Product Feature</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Product Issues (Compatibility)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Issues (Compatibility)</label>
+            </value>
+            <value>
+                <fullName>Product fit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product fit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

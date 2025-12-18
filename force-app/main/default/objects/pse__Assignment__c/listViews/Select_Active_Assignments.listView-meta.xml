@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Select_Active_Assignments</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Role__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Resource__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Role__c</field>
+        <operation>contains</operation>
+        <value>Implementation Consultant- Elite (IC),Implementation Consultant - Premier West (IC),Implementation - Select</value>
+    </filters>
+    <filters>
+        <field>pse__Project__c</field>
+        <operation>notContain</operation>
+        <value>Adoption Support</value>
+    </filters>
+    <filters>
+        <field>pse__Project__c</field>
+        <operation>notEqual</operation>
+        <value>Sites Project (General)</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Scheduled</value>
+    </filters>
+    <filters>
+        <field>pse__End_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>10/1/2024</value>
+    </filters>
+    <filters>
+        <field>pse__Resource__c</field>
+        <operation>notContain</operation>
+        <value>Jack Schulte</value>
+    </filters>
+    <filters>
+        <field>pse__Resource__c</field>
+        <operation>notContain</operation>
+        <value>Jeena</value>
+    </filters>
+    <filters>
+        <field>pse__Resource__c</field>
+        <operation>notContain</operation>
+        <value>Sheetal</value>
+    </filters>
+    <label>Select Active Assignments</label>
+</ListView>

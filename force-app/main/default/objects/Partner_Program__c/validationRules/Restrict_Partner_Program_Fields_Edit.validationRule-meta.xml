@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Partner_Program_Fields_Edit</fullName>
+    <active>true</active>
+    <description>Created as part of Partners project GTMS-28128, Only Users with permission Manage_Partner_Objects_Field_Access able to edit the fields.</description>
+    <errorConditionFormula>(
+    ISCHANGED(Program_Status__c) ||
+    ISCHANGED(Allow_Enrollment__c) ||
+    ISCHANGED(Member_Review_Period__c) ||
+    ISCHANGED(Paid_for_Renewals__c) ||
+    ISCHANGED(Paid_for_new_business__c) ||
+    ISCHANGED(Paid_for_Add_Ons__c)||
+    ISCHANGED(Region_s__c)
+)
+&amp;&amp;
+NOT(
+    $Profile.Name = &quot;System Administrator&quot; ||
+    $Profile.Name = &quot;Sales Ops Profile&quot; ||
+    $Permission.Partner_Object_Fields_Edit_Access 
+)</errorConditionFormula>
+    <errorMessage>You don&apos;t have necessary permission to edit the fields.</errorMessage>
+</ValidationRule>

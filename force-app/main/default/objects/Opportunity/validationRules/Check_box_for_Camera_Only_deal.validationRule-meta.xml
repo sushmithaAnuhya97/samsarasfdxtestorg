@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_box_for_Camera_Only_deal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+CPQ_Opportunity__c = FALSE,
+OR( 
+ISPICKVAL(StageName,&quot;Purchase&quot;), 
+ISPICKVAL(StageName,&quot;Trial&quot;), 
+ISPICKVAL(StageName,&quot;Decision&quot;), 
+ISPICKVAL(StageName,&quot;Closing&quot;),
+ISPICKVAL(StageName,&quot;Incubate&quot;)), 
+
+
+NOT(OR( 
+($Permission.Validation_Rule_Exemption), 
+($Profile.Name=&quot;Order Operations Admin&quot;) 
+)), 
+
+OR( 
+CM2_License_Count__c&gt;0, 
+CM1_License_Count__c&gt;0), 
+
+VG_unit_count__c &gt;0, 
+VG_License_Count__c=0, 
+Camera_Only_Deal__c = false, 
+ISPICKVAL(Type,&quot;Revenue Opportunity&quot;))</errorConditionFormula>
+    <errorMessage>If this is a camera only deal, check the camera only box (on the opportunity). If not, make sure all hardware units have a matching license attached.</errorMessage>
+</ValidationRule>

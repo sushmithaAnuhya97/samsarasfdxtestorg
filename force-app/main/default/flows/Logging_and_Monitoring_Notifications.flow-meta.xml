@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Notify_Group_and_Context_User</name>
+        <label>Notify Group and Context User</label>
+        <locationX>176</locationX>
+        <locationY>429</locationY>
+        <actionName>Log__c.Logging_and_Monitoring_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Log__c.Logging_and_Monitoring_Alert</nameSegment>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <interviewLabel>Logging_and_Monitoring Notifications {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Logging and Monitoring Notifications</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>51</locationY>
+        <connector>
+            <targetReference>Notify_Group_and_Context_User</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2 ) AND 3</filterLogic>
+        <filters>
+            <field>LogLevel__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LogLevel__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Warning</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Context_User__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Automated Process</stringValue>
+            </value>
+        </filters>
+        <object>Log__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

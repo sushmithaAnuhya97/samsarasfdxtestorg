@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LD_USE_DnB_Optimize__c</fullName>
+    <description>This field will mark is an account is qualified for the D&amp;B Optimizer package.
+
+BE WARNED: If this field&apos;s criteria is changed our AccountTests class will need to be altered and the existing tests will fail</description>
+    <formula>AND(
+RecordType.Name = &apos;Fleet&apos;,
+OR(Number_of_Vehicles__c &gt;=20, Number_of_Sites__c &gt;=5),
+Status__c &lt;&gt; &quot;Delete&quot;,
+SLED_Account__c != True,
+Owner.LastName &lt;&gt; &quot;Reservoir&quot;
+)</formula>
+    <inlineHelpText>This field will mark is an account is qualified for the D&amp;B Optimizer package.</inlineHelpText>
+    <label>Allow D&amp;B Optimizer</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,93 @@
+<apex:page controller="ItemsToApproveQuoteController" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock title="Items To Approve (CPQ)" rendered="{!$User.UITheme != 'Theme4u'}">
+            <apex:pageblockTable value="{!approvalLists}" var="approval" rendered="{!IF(ApprovalListSize != 0,TRUE,FALSE)}">
+                <apex:column headerValue="Action">
+                    <apex:outputLink value="/apex/sbaa__Approve?id={!approval.ProcessId}" rendered="{!IF(!approval.isStandard,TRUE,FALSE)}" target="_blank">Approve</apex:outputLink> |
+                    <apex:outputLink value="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!approval.ProcessId}" target="_blank" rendered="{!IF(approval.isStandard,TRUE,FALSE)}">
+                        Approve / Reject</apex:outputLink>
+                    <apex:outputLink value="/apex/sbaa__Reject?id={!approval.ProcessId}" target="_blank" rendered="{!IF(!approval.isStandard,TRUE,FALSE)}">
+                        Reject</apex:outputLink>
+                </apex:column>
+
+                
+                <apex:column headerValue="Related To">
+                    <apex:outputLink value="/{!approval.TargetObjectId}" target="_blank">{!approval.RelatedTo}</apex:outputLink>
+                </apex:column> 
+                <apex:column headerValue="Approval #">
+                    <apex:outputLink value="/{!approval.recordId}" target="_blank">{!approval.approvalName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Approval Rule Name">
+                    <apex:outputText value="{!approval.approvalRuleName}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Reason For Discount">
+                    <apex:outputText value="{!approval.reasonForDiscount}" style="word-wrap: break-word; width: 30%;"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Blended Discount(%)">
+                    <apex:outputText value="{!approval.blendedDiscount}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="License Term">
+                    <apex:outputText value="{!approval.licenseTerm}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Sales Rep">
+                    <apex:outputText value="{!approval.salesRep}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Most Recent Approver">
+                    <apex:outputText value="{!approval.MostRecentApprover}" />
+                </apex:column>
+                <apex:column headerValue="Date Submitted">
+                    <apex:outputText value="{!approval.DateSubmitted}" />
+                </apex:column>
+            </apex:pageblockTable>
+            <apex:pageblockSection rendered="{!IF(ApprovalListSize = 0, TRUE,FALSE)}">
+                <apex:outputLabel >No records to display</apex:outputLabel>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <apex:form >
+        <apex:pageBlock title="" rendered="{!$User.UITheme == 'Theme4u'}">
+            <apex:pageblockTable value="{!approvalLists}" var="approval" rendered="{!IF(ApprovalListSize != 0,TRUE,FALSE)}">
+                <apex:column headerValue="Action">
+                    <apex:outputLink value="/apex/sbaa__Approve?id={!approval.ProcessId}" rendered="{!IF(!approval.isStandard,TRUE,FALSE)}" target="_blank">Approve</apex:outputLink> |
+                    <apex:outputLink value="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!approval.ProcessId}" target="_blank" rendered="{!IF(approval.isStandard,TRUE,FALSE)}">
+                        Approve / Reject</apex:outputLink>
+                    <apex:outputLink value="/apex/sbaa__Reject?id={!approval.ProcessId}" target="_blank" rendered="{!IF(!approval.isStandard,TRUE,FALSE)}">
+                        Reject</apex:outputLink>
+                </apex:column>
+
+                
+                <apex:column headerValue="Related To">
+                    <apex:outputLink value="/{!approval.TargetObjectId}" target="_blank">{!approval.RelatedTo}</apex:outputLink>
+                </apex:column> 
+                <apex:column headerValue="Approval #">
+                    <apex:outputLink value="/{!approval.recordId}" target="_blank">{!approval.approvalName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Approval Rule Name">
+                    <apex:outputText value="{!approval.approvalRuleName}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Reason For Discount">
+                    <apex:outputText value="{!approval.reasonForDiscount}" style="word-wrap: break-word; width: 30%;"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Blended Discount(%)">
+                    <apex:outputText value="{!approval.blendedDiscount}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="License Term">
+                    <apex:outputText value="{!approval.licenseTerm}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Sales Rep">
+                    <apex:outputText value="{!approval.salesRep}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Most Recent Approver">
+                    <apex:outputText value="{!approval.MostRecentApprover}" />
+                </apex:column>
+                <apex:column headerValue="Date Submitted">
+                    <apex:outputText value="{!approval.DateSubmitted}" />
+                </apex:column>
+            </apex:pageblockTable>
+            <apex:pageblockSection rendered="{!IF(ApprovalListSize = 0, TRUE,FALSE)}">
+                <apex:outputLabel >No records to display</apex:outputLabel>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

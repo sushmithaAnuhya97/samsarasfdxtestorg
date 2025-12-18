@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subsidy_Opportunity_Closing_Check</fullName>
+    <active>true</active>
+    <description>add for GTMS-16049</description>
+    <errorConditionFormula>AND(
+$Profile.Name!=&quot;System Administrator&quot;,
+NOT($Permission.Validation_Rule_Exemption),
+Insurance_Partner__c != null,
+Subsidy_Channel_Partner_Count__c&gt;=1,
+Subsidy_SKU_Count__c&gt;=1,
+IF(
+Insurance_Partner__r.DSA_Required__c=true,
+OR(TEXT(LOI_Status__c) != &apos;Signed&apos;),
+TEXT(LOI_Status__c) != &apos;Signed&apos;
+),
+ISCHANGED( StageName ),
+OR(TEXT(StageName)=&apos;Closing&apos;, TEXT(StageName)=&apos;Orders Processing&apos;)
+)</errorConditionFormula>
+    <errorMessage>Cannot move deal to closing without the correct documentation to support an insurance subsidy deal. Please contact the #insurance-partners slack channel if you have any questions</errorMessage>
+</ValidationRule>

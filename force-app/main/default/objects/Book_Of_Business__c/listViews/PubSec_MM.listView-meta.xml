@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PubSec_MM</fullName>
+    <columns>NAME</columns>
+    <columns>Active__c</columns>
+    <columns>ADR__c</columns>
+    <columns>AE__c</columns>
+    <columns>AE_Territory__c</columns>
+    <columns>POD_Name__c</columns>
+    <columns>Sales_Ops_Account_Book_Notes__c</columns>
+    <columns>Public_Sector_State__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>MM_PUB</value>
+    </filters>
+    <label>PubSec MM</label>
+</ListView>

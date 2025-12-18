@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Featured_Content</fullName>
+    <columns>NAME</columns>
+    <columns>refedge__Reference_Content_Type__c</columns>
+    <columns>refedge__Title__c</columns>
+    <columns>refedge__Content_Status__c</columns>
+    <columns>refedge__Content_URL__c</columns>
+    <columns>refedge__Custom_Reference_Content__c</columns>
+    <columns>refedge__Featured_Content__c</columns>
+    <columns>refedge__Internal_Use__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>refedge__Featured_Content__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Featured Content</label>
+    <language>en_US</language>
+</ListView>

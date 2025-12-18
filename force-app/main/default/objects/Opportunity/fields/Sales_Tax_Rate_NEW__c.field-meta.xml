@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Tax_Rate_NEW__c</fullName>
+    <formula>IF(NOT(ISBLANK(Shipping_Address_NEW__c)),IF(Amount &gt; 0, Sales_Tax__c / Amount, 0), 99999)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If field shows an error, ensure all below fields are populated:
+
+Account:
+Billing First Name
+Billing Last Name
+Billing_Phone
+Billing Address
+
+Oppty:
+Related Contact
+Shipping Address - NEW
+Shipping Contact
+Stage: Proposal or greater (&gt;=50%)</inlineHelpText>
+    <label>Sales Tax Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

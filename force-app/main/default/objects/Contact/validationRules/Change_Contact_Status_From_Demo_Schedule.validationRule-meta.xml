@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_Contact_Status_From_Demo_Schedule</fullName>
+    <active>true</active>
+    <description>AEs and ADRs are unable to change Contact Status from Demo Scheduled to New, Attempting, or Contact Established unless they delete their Demo Scheduled Date</description>
+    <errorConditionFormula>AND(ISCHANGED(Status__c), 
+    OR(ISPICKVAL(Status__c, &apos;New&apos;), ISPICKVAL(Status__c, &apos;Attempting&apos;), 
+       ISPICKVAL(Status__c, &apos;Contact Established&apos;)),
+    NOT(ISBLANK(Scheduled_Demo_Date__c)),
+    CONTAINS(Owner.UserRole.Name, &apos;SMB&apos;), 
+    ISBLANK(ADR_Transfer_By__c), 
+    ISBLANK(Hot_Transfer_To__c), 
+    OR(ISPICKVAL(Source__c, &apos;List Import (no prior engagement)&apos;), 
+    ISPICKVAL(Source__c, &apos;Outbound call / email / linkedin&apos;)))</errorConditionFormula>
+    <errorMessage>AEs and ADRs are unable to change Contact Status from Demo Scheduled to New, Attempting, or Contact Established unless they delete their Demo Scheduled Date</errorMessage>
+</ValidationRule>

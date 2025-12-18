@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__MultiPackage</fullName>
+    <active>true</active>
+    <label>Multi Package</label>
+    <picklistValues>
+        <picklist>zkmulti__Outbound_Tracking_Stage__c</picklist>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Transit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out for Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Picked Up</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>zkmulti__Return_Tracking_Stage__c</picklist>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Transit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out for Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Picked Up</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

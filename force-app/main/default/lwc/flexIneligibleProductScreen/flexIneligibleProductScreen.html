@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-p-top_none">
+        <lightning-card variant="base" class="slds-p-around_none slds-m-top_none">
+            <div class="slds-m-bottom_small slds-p-top_none slds-m-top_none"><b>The following product(s) are not eligible for further upgrades, no action is needed</b></div>
+            <div style="max-width: 100%; overflow: auto;">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col" class="slds-text-align_left slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7;"></th> -->
+                            <th scope="col" class="slds-text-align_left slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7;">Not Eligible for Upgrade</th>
+                            <th scope="col" class="slds-text-align_left slds-p-horizontal_small" style="background-color: #e7e7e7;">Total Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={processedIneligibleProductList} for:item="wrapper" for:index="rowIndex">
+                            <tr key={wrapper.productId} class="slds-hint-parent">
+                                <!-- <td>
+                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                        <span class="">{wrapper.rowNumber}</span>
+                                    </div>
+                                </td> -->
+                                <td>
+                                    <a href={wrapper.productLink} class="product-link" target="_blank">
+                                        {wrapper.productName}
+                                    </a>
+                                </td>
+                                <td style="text-align: left;">{wrapper.totalQuantity}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </lightning-card>
+    </div>
+</template>

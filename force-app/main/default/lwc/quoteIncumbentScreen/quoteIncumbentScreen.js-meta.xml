@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Quote Incumbent Screen</masterLabel>
+    <apiVersion>62.0</apiVersion>
+    <description>Screen for selecting incumbent competitors in Quote Approval Flow</description>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="billingCountry" type="String" label="Billing Country" role="inputOnly"/>
+            <property name="billingCountryCode" type="String" label="Billing Country Code" role="inputOnly"/>
+            <property name="whoAreTheMainIncumbentsOnThisDeal" type="String" label="Main Incumbents" role="outputOnly"/>
+            <property name="incumbentOtherText" type="String" label="Other Incumbent Text" role="outputOnly"/>
+            <property name="recordId" type="String" label="Record ID" role="inputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_To_Location__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;), 
+   IF(AND(NOT(ISPICKVAL(CurrencyIsoCode, &quot;USD&quot;)), NOT(ISPICKVAL(CurrencyIsoCode, &quot;CAD&quot;))), 
+     IF(ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c, &quot;MEXICO&quot;), &quot;MX Free Trial&quot;, &quot;Free Trial EU&quot;),&quot;Free Trial&quot;),
+IF(ISPICKVAL(Type, &quot;Work Order&quot;), &quot;Work Order&quot;, &quot;NA&quot;)
+)</formula>
+    <label>Free Trial To Location</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

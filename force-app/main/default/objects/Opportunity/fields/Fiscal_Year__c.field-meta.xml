@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Year__c</fullName>
+    <description>Stamps the fiscal year.</description>
+    <externalId>false</externalId>
+    <formula>IF(CloseDate &gt; DATE(2018,2,1), IF( CloseDate &lt;= DATE(2019,2,2), TEXT(2019), 
+                               IF( CloseDate &lt;= DATE(2020,2,1), TEXT(2020), 
+                               IF( CloseDate &lt;= DATE(2021,1,30), TEXT(2021),
+                               IF( CloseDate &lt;= DATE(2022,1,29), TEXT(2022),
+                               IF( CloseDate &lt;= DATE(2023,1,28), TEXT(2023),
+                               IF( CloseDate &lt;= DATE(2024,2,3), TEXT(2024),
+                               IF( CloseDate &lt;= DATE(2025,2,1), TEXT(2025),
+                               IF( CloseDate &lt;= DATE(2026,1,31), TEXT(2026),
+                               IF( CloseDate &lt;= DATE(2027,1,30), TEXT(2027),
+                               IF( CloseDate &lt;= DATE(2028,1,29), TEXT(2028),
+                               IF( CloseDate &lt;= DATE(2029,1,27), TEXT(2029),
+                               IF( CloseDate &lt;= DATE(2030,2,2), TEXT(2030),TEXT(YEAR(CloseDate)))))))))))))), IF(CloseDate &gt;= DATE(2017,2,1), TEXT(2018), 
+                                                                                                              IF(CloseDate &gt;= DATE(2016,2,1), TEXT(2017),
+                                                                                                              IF(CloseDate &gt;= DATE(2015,2,1), TEXT(2016),TEXT(YEAR(CloseDate))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Stamps the fiscal year.</inlineHelpText>
+    <label>Fiscal Year</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

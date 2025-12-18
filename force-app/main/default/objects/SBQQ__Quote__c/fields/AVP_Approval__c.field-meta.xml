@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVP_Approval__c</fullName>
+    <formula>OR(
+AND(
+Selected_Payment_Type_Group_2__c,
+(Blended_Discount__c * 100) &lt;= 50
+
+),
+AND(
+Selected_Payment_Type_Group_1__c,
+(Blended_Discount__c * 100) &lt;= 50
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AVP_Approval</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

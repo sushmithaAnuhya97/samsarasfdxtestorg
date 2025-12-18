@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Time_Logged_In_Days_Project_Mismatch</fullName>
+    <active>true</active>
+    <description>Timecard Time Logged in Days must match Project Time Logged in Days.</description>
+    <errorConditionFormula>AND(NOT(ISNULL(pse__Project__c)), pse__Time_Logged_In_Days__c &lt;&gt; pse__Project__r.pse__Time_Logged_In_Days__c)</errorConditionFormula>
+    <errorDisplayField>pse__Time_Logged_In_Days__c</errorDisplayField>
+    <errorMessage>Timecard Time Logged in Days must match Project Time Logged in Days.</errorMessage>
+</ValidationRule>

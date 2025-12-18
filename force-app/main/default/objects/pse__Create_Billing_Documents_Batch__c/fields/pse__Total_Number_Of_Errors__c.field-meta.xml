@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Total_Number_Of_Errors__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The number of logs where Log Type is Error.</description>
+    <inlineHelpText>The number of logs where Log Type is Error.</inlineHelpText>
+    <label>Total Number of Errors</label>
+    <summaryFilterItems>
+        <field>pse__Create_Billing_Documents_Batch_Log__c.pse__Log_Type__c</field>
+        <operation>equals</operation>
+        <value>Error</value>
+    </summaryFilterItems>
+    <summaryForeignKey>pse__Create_Billing_Documents_Batch_Log__c.pse__Create_Billing_Documents_Batch__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

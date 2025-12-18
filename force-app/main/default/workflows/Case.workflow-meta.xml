@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approval_Email_Alert</fullName>
+        <description>Approval Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Request_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Request_Log_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>CSAT_Email_Alert_test</fullName>
+        <ccEmails>1sheskuw@robot.zapier.com</ccEmails>
+        <description>CSAT Email Alert test</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Samsara_Email_Templates/Send_CSAT_survey_Email_test</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Assignment_Notification</fullName>
+        <ccEmails>aja.coney@samsara.com</ccEmails>
+        <description>CS Assignment Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CS_Assignment__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CS_Assignment</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Request_Log_Approval_Submission</fullName>
+        <description>CS Request Log Approval Submission</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>anthony.taitingfong@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kavita.joshi@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>narmada.kunamaneni@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CS_Request_Log_Approval_Submission</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Closed_Test</fullName>
+        <description>Case Closed Test</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Closed_Email_Test</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Resolved</fullName>
+        <description>Case Resolved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Samsara_Dashboard_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Support_Closed_Pending_Customer_Email_Case_auto_reply</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_has_been_awaiting_a_Samsara_response_for_48_hours</fullName>
+        <ccEmails>bwaldman@samsara.com</ccEmails>
+        <description>Case has been awaiting a Samsara response for 48 hours!</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Case_Needs_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_has_been_awaiting_a_Samsara_response_for_48_hours2</fullName>
+        <ccEmails>bwaldman@samsara.com</ccEmails>
+        <description>Case has been awaiting a Samsara response for 48 hours!</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Case_Needs_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_is_in_New_Status_for_48_hours</fullName>
+        <description>Case is in New Status for 48 hours</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Case_Needs_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_is_in_Pending_Samsara_Status_for_48_hours</fullName>
+        <description>Case is in Pending Samsara Status for 48 hours</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Case_Needs_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_needs_another_follow_up_from_us</fullName>
+        <description>Case needs another follow up from us</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Case_Needs_a_second_follow_up</template>
+    </alerts>
+    <alerts>
+        <fullName>Delinquency_Moved_to_Finance</fullName>
+        <description>Delinquency Moved to Finance</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Internal_Email_Templates/Delinquency_Moved_to_Finance_new</template>
+    </alerts>
+    <alerts>
+        <fullName>Dissatisfied_Commercial_customers_responses</fullName>
+        <description>Dissatisfied Commercial customers responses</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>lauren.roberts@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Dissatisfied_SMB_customers_responses</template>
+    </alerts>
+    <alerts>
+        <fullName>Early_Access_Request</fullName>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>Early Access Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>alexander.govan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eleanor.horowitz@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eric.shreve@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>saleh.elhattab@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Early_Access_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Conflux_with_details_on_getting_Feedback</fullName>
+        <ccEmails>internalbeta@inc.cnflx.io</ccEmails>
+        <description>Email Conflux with details on getting Feedback</description>
+        <protected>false</protected>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/New_Feedback</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Escalations_team_when_a_new_account_escalation_appears</fullName>
+        <description>Email to Escalations team when a new account escalation appears</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>aidan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>alexander.govan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eric.shreve@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jason.seo@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>joe.lawrence@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jon.clark@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>joseph.rivera@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>michael.balzer@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>neha.vyas@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>patrick.doyle@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>phil.krieg@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Customer_Support_Case_escalation_opened</template>
+    </alerts>
+    <alerts>
+        <fullName>Issue_PM_Talk_Track</fullName>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>Issue PM Talk Track</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Issue_PM_Talk_Track</template>
+    </alerts>
+    <alerts>
+        <fullName>Low_CSAT_established_SMB_customer</fullName>
+        <description>Low CSAT established SMB customer</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>aidan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>neha.vyas@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Dissatisfied_CSAT_customers_responses_NPS_Established</template>
+    </alerts>
+    <alerts>
+        <fullName>Low_CSAT_score_non_SMB</fullName>
+        <description>Low CSAT score non-SMB</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>aidan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>neha.vyas@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Dissatisfied_customers_responses</template>
+    </alerts>
+    <alerts>
+        <fullName>Low_NPS_customers_non_SMB</fullName>
+        <description>Low NPS customers non-SMB</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>aidan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mike.ross@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>neha.vyas@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Dissatisfied_NPS_customers_responses</template>
+    </alerts>
+    <alerts>
+        <fullName>Low_NPS_established_SMB_customer</fullName>
+        <ccEmails>Support-Mgr@samsara.com</ccEmails>
+        <description>Low NPS established SMB customer</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Dissatisfied_SMB_customers_responses_NPS_Established</template>
+    </alerts>
+    <alerts>
+        <fullName>Low_NPS_score_SMB</fullName>
+        <ccEmails>Support-Mgr@samsara.com</ccEmails>
+        <description>Low NPS score SMB</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>lauren.roberts@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Dissatisfied_SMB_customers_responses_NPS</template>
+    </alerts>
+    <alerts>
+        <fullName>Outage_Email</fullName>
+        <description>Outage Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>rushil@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Outage_Closed_Email_Response</template>
+    </alerts>
+    <alerts>
+        <fullName>Payment_Concession_Case_is_Created</fullName>
+        <ccEmails>accountsreceivable@samsara.com</ccEmails>
+        <description>Payment Concession Case is Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dataloadbot@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>finance@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Payment_Concession_Case</template>
+    </alerts>
+    <alerts>
+        <fullName>Pending_Finance_Customer_Email</fullName>
+        <description>Pending-Finance Customer Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Pending_Finance_Customer_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Pending_customer_48_hours</fullName>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>Pending customer 48 hours</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Pending_customer_48_hours</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_Email_Alert</fullName>
+        <description>Rejection Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Request_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CS_Request_Log_Denial_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Related_Issue_has_been_dev_fixed</fullName>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>Related Issue has been dev-fixed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Related_Issue_is_Fixed</template>
+    </alerts>
+    <alerts>
+        <fullName>S0_s1_customer_s_case_status_in_Pending_Customer</fullName>
+        <description>S0-s1 customer&apos;s case status in Pending Customer</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Priority_customer_Pending_Customer</template>
+    </alerts>
+    <alerts>
+        <fullName>SMB_48_hours_pending_customer</fullName>
+        <description>SMB 48 hours pending customer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/SMB_48_hours_pending_customer</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_AE_email_when_Trial_Customer_s_Support_Case_gets_closed</fullName>
+        <description>Send AE email when Trial Customer&apos;s Support Case gets closed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Trial_Customer_Support_Case_got_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_AE_email_when_Trial_Customer_submits_a_Support_Case</fullName>
+        <description>Send AE email when Trial Customer submits a Support Case</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Trial_Customer_Submitted_a_Support_Case</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_CSAT_survey_email</fullName>
+        <ccEmails>1sheskuw@robot.zapier.com</ccEmails>
+        <description>Send CSAT survey email</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Send_CSAT_survey_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Case_Owner</fullName>
+        <ccEmails>support-team@samsara.com</ccEmails>
+        <description>Send Case Owner New Case Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Support_New_Case_Alert_to_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_New_Return_Email_notification</fullName>
+        <description>Send New Express Return Email notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>lauren.roberts@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nirav.patel@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rachel.barnard@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sarah.shoemaker@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Support_New_Case_Alert_to_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_alert_for_CSAT_Dashboard</fullName>
+        <ccEmails>1sheskuw@robot.zapier.com</ccEmails>
+        <description>Send email alert for CSAT Dashboard</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Send_CSAT_survey_Dashboard</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_regarding_case_pending_customer_for_a_week</fullName>
+        <description>Send email regarding case pending customer for a week</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Samsara_Dashboard_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Samsara_Pending_Customer_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_regarding_pending_customer_7_days</fullName>
+        <description>Send email regarding pending customer 7 days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Samsara_Dashboard_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Samsara_Pending_Customer_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_CSM_and_AE_when_a_case_is_created</fullName>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>Send email to CSM and AE when a case is created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Return_Oppty_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Case_related_to_Sales_Order_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_Case_owner_when_related_issue_has_a_dev_update</fullName>
+        <description>Send email to Case owner when related issue has a dev update</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Related_Issue_has_dev_comments_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_s4_customer_after_their_case_has_been_assigned_to_a_Support_Agent</fullName>
+        <description>Send email to s4 customer after their case has been assigned to a Support Agent</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Samsara_Dashboard_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Support_New_Email_Case_assigned_for_s4_customer</template>
+    </alerts>
+    <alerts>
+        <fullName>TEST_Support_Case_Awaiting_Reply</fullName>
+        <description>TEST - Support - Case Awaiting Reply</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Case_Awaiting_Customer_auto_reply</template>
+    </alerts>
+    <alerts>
+        <fullName>TEST_Support_Case_Awaiting_Reply_1</fullName>
+        <description>TEST - Support - Case Awaiting Reply</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Support_Case_Awaiting_Customer_auto_reply</template>
+    </alerts>
+    <alerts>
+        <fullName>Test_for_Case_Closed</fullName>
+        <description>Test for Case Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Support_Closed_Test_Customer_Email_Case_auto_reply</template>
+    </alerts>
+    <alerts>
+        <fullName>Testing_test</fullName>
+        <description>Testing test</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Support_Closed_Pending_Customer_Email_Case_auto_reply</template>
+    </alerts>
+    <alerts>
+        <fullName>Testng</fullName>
+        <description>Testng</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Samsara_Pending_Customer_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Auto_Closed_Date</fullName>
+        <field>Auto_Closure_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Auto Closed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Auto_closed_due_to_no_response</fullName>
+        <field>Auto_Closed_No_Response__c</field>
+        <literalValue>1</literalValue>
+        <name>Auto closed due to no response</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSM_Email</fullName>
+        <field>CSM_Email__c</field>
+        <formula>if( Account.CSM_Owner__c ==&apos;Vince Barisone&apos;, &apos;vince.barisone@samsara.com&apos;,
+if( Account.CSM_Owner__c ==&apos;Abby Wuestenberg&apos;, &apos;abby.wuestenberg@samsara.com&apos;,
+if( Account.CSM_Owner__c ==&apos;Robert Pulford&apos;, &apos;Robert.Pulford@samsara.com&apos;,
+if( Account.CSM_Owner__c ==&apos;Holly Rogers&apos;, &apos;Holly.Rogers@samsara.com&apos;,
+if( Account.CSM_Owner__c ==&apos;Lauren Jacobi&apos;, &apos;Lauren.Jacobi@samsara.com&apos;,&apos;&apos;)))))</formula>
+        <name>CSM Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Reason_for_Returns</fullName>
+        <field>Reason</field>
+        <literalValue>Returns/ Not a support case</literalValue>
+        <name>Case Reason for Returns</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_Change</fullName>
+        <field>Status</field>
+        <literalValue>Pending-Samsara</literalValue>
+        <name>Case Status Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_Closed</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Case Status - Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_change_New</fullName>
+        <field>Status</field>
+        <literalValue>Pending-Samsara</literalValue>
+        <name>Case Status change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_is_Closed</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Case Status is Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_update</fullName>
+        <field>Status</field>
+        <literalValue>Pending-Samsara</literalValue>
+        <name>Case Status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_status_to_closed</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Case status to closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Status_to_Closed</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Change Status to Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Account_Priority_in_Priority_s0</fullName>
+        <field>Priority</field>
+        <literalValue>s0</literalValue>
+        <name>Copy Account Priority in Priority s0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Account_Priority_in_Priority_s1</fullName>
+        <field>Priority</field>
+        <literalValue>s1</literalValue>
+        <name>Copy Account Priority in Priority s1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Account_Priority_in_Priority_s2</fullName>
+        <field>Priority</field>
+        <literalValue>s2</literalValue>
+        <name>Copy Account Priority in Priority s2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Account_Priority_in_Priority_s3</fullName>
+        <field>Priority</field>
+        <literalValue>s3</literalValue>
+        <name>Copy Account Priority in Priority s3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Account_Priority_in_Priority_s4</fullName>
+        <field>Priority</field>
+        <literalValue>s4</literalValue>
+        <name>Copy Account Priority in Priority s4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Case_Cancelled</fullName>
+        <field>Finance_Case_Result__c</field>
+        <literalValue>Cancelled</literalValue>
+        <name>Finance Case Cancelled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Related_issue_got_fixed</fullName>
+        <field>Related_Issue_Fixed__c</field>
+        <formula>&apos;Yes&apos;</formula>
+        <name>Related issue got fixed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Responded</fullName>
+        <field>Responded__c</field>
+        <literalValue>1</literalValue>
+        <name>Responded</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SE_Email</fullName>
+        <description>Populate SE Email on the Case Object for Case Email Alerts</description>
+        <field>SE_Email__c</field>
+        <formula>Account.Owner.SE_Assignment__r.Email</formula>
+        <name>SE Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetFirstContact</fullName>
+        <field>HoursToFirstContact__c</field>
+        <formula>(now()-CreatedDate)*24</formula>
+        <name>SetFirstContact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetFirstResponseDate</fullName>
+        <field>First_Response_Date__c</field>
+        <formula>now()</formula>
+        <name>SetFirstResponseDate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_isDashboardFeedback</fullName>
+        <field>isDashboardFeedback__c</field>
+        <literalValue>1</literalValue>
+        <name>Set isDashboardFeedback</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Delinquency_Resolved_Date</fullName>
+        <field>Delinquency_Resolved_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Stamp Return / Delinquency Status Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_Number_of_Failed_Days</fullName>
+        <field>Days_Failed_at_Closure__c</field>
+        <formula>DATEVALUE(ClosedDate)  - DATEVALUE(Account.Churn_First_Failed_Payment_Date__c)</formula>
+        <name>Stamp Number of Failed Days</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Closed</fullName>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Status Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_changes</fullName>
+        <field>Status</field>
+        <literalValue>Pending-Samsara</literalValue>
+        <name>Status changes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_update</fullName>
+        <field>Status</field>
+        <literalValue>Pending-Samsara</literalValue>
+        <name>Status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Reason_to_IT</fullName>
+        <field>Reason</field>
+        <literalValue>IT-related</literalValue>
+        <name>Update Case Reason to IT</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Is_Approved_Flag</fullName>
+        <field>Is_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Is Approved Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_issue_update</fullName>
+        <field>Related_Issue_comments_update__c</field>
+        <formula>Related_Issue__r.Dev_comments_update_count__c</formula>
+        <name>Update issue update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_last_contact_time_for_new_case</fullName>
+        <field>Last_Customer_Communication__c</field>
+        <formula>now()</formula>
+        <name>Update last contact time for new case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_last_received_email_on_case</fullName>
+        <field>Last_Received_Email__c</field>
+        <formula>now()</formula>
+        <name>Update last received email on case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CS Assignment Notification</fullName>
+        <actions>
+            <name>CS_Assignment_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.CS_Assignment__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Escalation support,Ongoing training,Relationship management,Upgrade CS Tier,Custom reporting,Post-sale concessions,Other</value>
+        </criteriaItems>
+        <description>CS Assignment Notification</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CS Request Log Approval Submission</fullName>
+        <actions>
+            <name>CS_Request_Log_Approval_Submission</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Pre-sale support,Escalation support,Ongoing training,Relationship management,Upgrade CS Tier,Custom reporting,Post-sale concessions,Other</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CS Request Log</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Calculate Days Failed for Finance Case</fullName>
+        <actions>
+            <name>Stamp_Number_of_Failed_Days</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( IsClosed , ISPICKVAL(Status, &quot;Closed&quot;),
+  OR( ISPICKVAL(Origin, &quot;Stripe&quot;), ISPICKVAL(Origin, &quot;Finance&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Account Priority to Case Priority s0</fullName>
+        <actions>
+            <name>Copy_Account_Priority_in_Priority_s0</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Case_Account_Priority__c</field>
+            <operation>equals</operation>
+            <value>s0</value>
+        </criteriaItems>
+        <description>This copies the account&apos;s priority to the case default priority field for consistency.
+NOTE: SFDC only allows to select one picklist value per workflow.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Account Priority to Case Priority s1</fullName>
+        <actions>
+            <name>Copy_Account_Priority_in_Priority_s1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Case_Account_Priority__c</field>
+            <operation>equals</operation>
+            <value>s1</value>
+        </criteriaItems>
+        <description>This copies the account&apos;s priority to the case default priority field for consistency.
+NOTE: SFDC only allows to select one picklist value per workflow.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Account Priority to Case Priority s2</fullName>
+        <actions>
+            <name>Copy_Account_Priority_in_Priority_s2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Case_Account_Priority__c</field>
+            <operation>equals</operation>
+            <value>s2</value>
+        </criteriaItems>
+        <description>This copies the account&apos;s priority to the case default priority field for consistency.
+NOTE: SFDC only allows to select one picklist value per workflow.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Account Priority to Case Priority s3</fullName>
+        <actions>
+            <name>Copy_Account_Priority_in_Priority_s3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Case_Account_Priority__c</field>
+            <operation>equals</operation>
+            <value>s3</value>
+        </criteriaItems>
+        <description>This copies the account&apos;s priority to the case default priority field for consistency.
+NOTE: SFDC only allows to select one picklist value per workflow.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Account Priority to Case Priority s4</fullName>
+        <actions>
+            <name>Copy_Account_Priority_in_Priority_s4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Case_Account_Priority__c</field>
+            <operation>equals</operation>
+            <value>s4</value>
+        </criteriaItems>
+        <description>This copies the account&apos;s priority to the case default priority field for consistency.
+NOTE: SFDC only allows to select one picklist value per workflow.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email Conflux on Feedback</fullName>
+        <actions>
+            <name>Email_Conflux_with_details_on_getting_Feedback</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Reason</field>
+            <operation>equals</operation>
+            <value>Feedback</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>notEqual</operation>
+            <value>NPS,CSAT,DriverApp</value>
+        </criteriaItems>
+        <description>When a new case with case reason &quot;Feedback&quot; is created, email it to Conflux for curation</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Express Returns-Alert Owner of New Case</fullName>
+        <actions>
+            <name>Send_New_Return_Email_notification</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_last_received_email_on_case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>Express Returns</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Identify new cases that are Dashboard Feedback</fullName>
+        <actions>
+            <name>Set_isDashboardFeedback</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Dashboard</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Reason</field>
+            <operation>equals</operation>
+            <value>Feedback</value>
+        </criteriaItems>
+        <description>This workflow checks the field isDashboardFeedback when a Feedback case is submitted through dashboard.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Low NPS Established customers SMB</fullName>
+        <actions>
+            <name>Low_NPS_established_SMB_customer</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This sends an email alert when an established SMB customer (&gt;45 days old) gives us a low NPS score</description>
+        <formula>AND(  ISPICKVAL(Origin, &apos;NPS&apos;),  Delighted_score__c &lt;=6, Account.Segment__c  == &apos;SMB&apos;,  Account.Days_post_first_purchase__c &gt; 45)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Low NPS New customers SMB %28%3C6000%29</fullName>
+        <actions>
+            <name>Low_NPS_score_SMB</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This sends an email alert when a new SMB customer (&lt; 30 days old) gives us a low NPS score</description>
+        <formula>AND(  ISPICKVAL(Origin, &apos;NPS&apos;),  Delighted_score__c &lt;=6, Account.Segment__c  == &apos;SMB&apos;,  Account.Days_post_first_purchase__c &lt;= 45,  Account.Lifetime_Purchases__c &lt; 6000)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Low NPS New customers SMB %28%3E5%2C999%29</fullName>
+        <actions>
+            <name>Low_NPS_score_SMB</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This sends an email alert when a new SMB customer (&lt; 30 days old) gives us a low NPS score</description>
+        <formula>AND(  ISPICKVAL(Origin, &apos;NPS&apos;),  Delighted_score__c &lt;=6, Account.Segment__c  == &apos;SMB&apos;,  Account.Days_post_first_purchase__c &lt;= 45,  Account.Lifetime_Purchases__c &gt; 5999)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Low NPS customers non-SMB</fullName>
+        <actions>
+            <name>Low_NPS_customers_non_SMB</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>This sends an email alert when a non-SMB customer gives us a low NPS score</description>
+        <formula>AND( ISPICKVAL(Origin, &apos;NPS&apos;),  Delighted_score__c &lt;=6,  Account.Segment__c != &apos;SMB&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Payment Concession Case</fullName>
+        <actions>
+            <name>Payment_Concession_Case_is_Created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Reason</field>
+            <operation>equals</operation>
+            <value>Payment Concession Request</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>SMB Customer asked for a return</fullName>
+        <actions>
+            <name>Send_email_to_CSM_and_AE_when_a_case_is_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>contains</operation>
+            <value>Returns</value>
+        </criteriaItems>
+        <description>This alert gets sent out when a customer submits a return</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SetCaseFirstContact</fullName>
+        <actions>
+            <name>SetFirstContact</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SetFirstResponseDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>notEqual</operation>
+            <value>New,Pending-Samsara</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.HoursToFirstContact__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This workflow updates the fields First Response Date and HourstoFirstContact</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Delinquency Status Date</fullName>
+        <actions>
+            <name>Stamp_Delinquency_Resolved_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED(Delinquency_Status__c), NOT(PRIORVALUE(Delinquency_Status__c)= &quot;Resolved&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update CSM Email</fullName>
+        <actions>
+            <name>CSM_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update the email of the CSM on a case if the case is associated with an account with a CSM owner</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

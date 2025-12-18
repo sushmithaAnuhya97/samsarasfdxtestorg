@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Project_Assignee_When_Approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Request_Status__c, &quot;Approved&quot;) &amp;&amp;
+ISBLANK(Project_Assignee__c)</errorConditionFormula>
+    <errorDisplayField>Project_Assignee__c</errorDisplayField>
+    <errorMessage>Please assign a BVS or TSM when the request is approved.</errorMessage>
+</ValidationRule>

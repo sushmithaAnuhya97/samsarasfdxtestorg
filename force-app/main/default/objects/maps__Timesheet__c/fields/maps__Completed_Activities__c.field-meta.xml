@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>maps__Completed_Activities__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Completed Activities</label>
+    <summaryFilterItems>
+        <field>maps__Timesheet_Activity__c.maps__Type__c</field>
+        <operation>equals</operation>
+        <value>Stop</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>maps__Timesheet_Activity__c.maps__Exclude__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>maps__Timesheet_Activity__c.maps__Timesheet__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

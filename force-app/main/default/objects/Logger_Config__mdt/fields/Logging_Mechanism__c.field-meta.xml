@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Logging_Mechanism__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Logging Mechanism</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Future Method</fullName>
+                <default>false</default>
+                <label>Future Method</label>
+            </value>
+            <value>
+                <fullName>Platform Events</fullName>
+                <default>false</default>
+                <label>Platform Events</label>
+            </value>
+            <value>
+                <fullName>Synchronous Apex</fullName>
+                <default>false</default>
+                <label>Synchronous Apex</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

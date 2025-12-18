@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding</fullName>
+    <active>true</active>
+    <description>Customer Success Onboarding Activity</description>
+    <label>Onboarding</label>
+    <picklistValues>
+        <picklist>Action_Status__c</picklist>
+        <values>
+            <fullName>Attempting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unresponsive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Engagement_Type__c</picklist>
+        <values>
+            <fullName>Check-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Close Out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Implementation Workshop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation Set-Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Planning Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kick-off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic On-Site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Future_Sales_Opportunity_Identified__c</picklist>
+        <values>
+            <fullName>Cross sell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Likelihood_to_Renew__c</picklist>
+        <values>
+            <fullName>High %2895%25%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low %28%3C50%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium %2875-85%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium-High %2885-95%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium-Low %2850-75%25%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Category__c</picklist>
+        <values>
+            <fullName>AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sources_of_Value__c</picklist>
+        <values>
+            <fullName>HOLD %233</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Topic_if_Other__c</picklist>
+        <values>
+            <fullName>Bug Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How-To</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Process Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

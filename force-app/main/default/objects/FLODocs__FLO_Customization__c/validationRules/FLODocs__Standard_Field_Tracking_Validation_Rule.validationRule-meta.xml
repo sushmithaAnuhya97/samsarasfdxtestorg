@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Standard_Field_Tracking_Validation_Rule</fullName>
+    <active>true</active>
+    <description>Validation Rule to avoid set to &apos;Tracked&apos; some fields.</description>
+    <errorConditionFormula>IF(
+AND(
+FLODocs__Data_Type__c = &quot;BitVector&quot;,
+OR(
+AND(ISPICKVAL(PRIORVALUE(FLODocs__Data_Change_Tracking__c),&quot;&quot;), ISPICKVAL(FLODocs__Data_Change_Tracking__c,&quot;Tracked, Non-Blocking&quot;)),
+AND(ISPICKVAL(PRIORVALUE(FLODocs__Data_Change_Tracking__c),&quot;&quot;), ISPICKVAL(FLODocs__Data_Change_Tracking__c,&quot;Tracked, Blocking&quot;)),
+AND(ISPICKVAL(PRIORVALUE(FLODocs__Data_Change_Tracking__c),&quot;Not Tracked&quot;), ISPICKVAL(FLODocs__Data_Change_Tracking__c,&quot;Tracked, Non-Blocking&quot;)),
+AND(ISPICKVAL(PRIORVALUE(FLODocs__Data_Change_Tracking__c),&quot;Not Tracked&quot;), ISPICKVAL(FLODocs__Data_Change_Tracking__c,&quot;Tracked, Blocking&quot;))
+)),true,false)</errorConditionFormula>
+    <errorDisplayField>FLODocs__Data_Change_Tracking__c</errorDisplayField>
+    <errorMessage>Fields whose Data Type is BitVector cannot be tracked.</errorMessage>
+</ValidationRule>

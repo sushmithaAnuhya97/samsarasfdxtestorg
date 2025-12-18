@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__MonthlyRecurMode__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Recurs Every Month on a</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fixed Date</fullName>
+                <default>true</default>
+                <label>Fixed Date</label>
+            </value>
+            <value>
+                <fullName>Relative Date</fullName>
+                <default>false</default>
+                <label>Relative Date</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

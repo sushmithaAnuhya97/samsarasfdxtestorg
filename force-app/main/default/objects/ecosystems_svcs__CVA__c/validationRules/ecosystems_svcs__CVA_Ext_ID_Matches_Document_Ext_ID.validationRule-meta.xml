@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ecosystems_svcs__CVA_Ext_ID_Matches_Document_Ext_ID</fullName>
+    <active>true</active>
+    <errorConditionFormula>ecosystems_svcs__extDocId__c  &lt;&gt;  ecosystems_svcs__businessValueDocument__r.ecosystems_svcs__extId__c</errorConditionFormula>
+    <errorMessage>External ID of the CVA must match the External ID of the Document</errorMessage>
+</ValidationRule>

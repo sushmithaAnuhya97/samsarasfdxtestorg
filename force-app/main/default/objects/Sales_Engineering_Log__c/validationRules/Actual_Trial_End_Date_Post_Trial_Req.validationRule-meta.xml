@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Trial_End_Date_Post_Trial_Req</fullName>
+    <active>true</active>
+    <description>Requires Trial Status to be set to Post-trial when Actual Trial End Date is entered. And Requires Actual Trial End Date to be filled when Trial Status is set to Post-trial</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Validation_Rule_Exemption),
+    OR(
+        ISCHANGED(Actual_Trial_End_Date__c),
+        ISCHANGED(Trail__c),
+        ISNEW()
+    ),
+    OR(
+        AND(
+            ISPICKVAL(Trail__c, &quot;Post-trial&quot;),
+            ISBLANK(Actual_Trial_End_Date__c)
+        ),
+        AND(
+            NOT(ISBLANK(Actual_Trial_End_Date__c)),
+            NOT(ISPICKVAL(Trail__c, &quot;Post-trial&quot;))
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>SE Engagement Status is required to be post-trial when updating Tech Win - Please set SE Engagement Status to post-trial and capture actual trial end date.</errorMessage>
+</ValidationRule>

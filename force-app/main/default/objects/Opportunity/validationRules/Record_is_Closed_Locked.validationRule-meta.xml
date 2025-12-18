@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_is_Closed_Locked</fullName>
+    <active>true</active>
+    <description>Locks revenue opportunities completely after &apos;Closed Locked&apos; Date is populated</description>
+    <errorConditionFormula>AND($Profile.Name != &quot;Sales Ops Profile&quot;,
+      NOT(ISCHANGED(Bypass_Validation_Rule_DateTime__c)),
+      NOT($Permission.Validation_Rule_Exemption),
+      NOT($Permission.NetSuite_Service_User_Permission),
+      Pushed_Back_to_NS_for_Contracts__c = FALSE,
+      $Profile.Name != &quot;System Administrator&quot;,
+      ISPICKVAL(Type, &apos;Revenue Opportunity&apos;),
+      IsClosed = true,
+      Went_to_Closed_Won_Date__c + 1 &lt;  DATETIMEVALUE(TODAY()),
+      NOT(
+    OR(
+        AND
+         (
+          ISCHANGED(Exclude_from_Forecast__c),
+          Exclude_from_Forecast__c = true
+        ),
+        Exclude_from_Forecast__c = true
+    )
+      )
+)</errorConditionFormula>
+    <errorMessage>Opportunity is Closed and Locked. Please reach out to Sales Ops to modify this Opportunity.</errorMessage>
+</ValidationRule>

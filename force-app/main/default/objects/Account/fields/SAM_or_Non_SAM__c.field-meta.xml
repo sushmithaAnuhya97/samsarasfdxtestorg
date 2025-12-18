@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAM_or_Non_SAM__c</fullName>
+    <label>SAM or Non-SAM</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SAM</fullName>
+                <default>false</default>
+                <label>SAM</label>
+            </value>
+            <value>
+                <fullName>Non-SAM</fullName>
+                <default>false</default>
+                <label>Non-SAM</label>
+            </value>
+            <value>
+                <fullName>In Review</fullName>
+                <default>true</default>
+                <label>In Review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

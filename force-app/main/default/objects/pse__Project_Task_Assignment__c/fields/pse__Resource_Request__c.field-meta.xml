@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>A reference to the Project Resource Request.</inlineHelpText>
+    <label>Resource Request</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>pse__Resource_Request__c.pse__Staffer_Resource__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.pse__Resource__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>pse__Resource_Request__c</referenceTo>
+    <relationshipLabel>Project Task Assignments</relationshipLabel>
+    <relationshipName>Project_Task_Assignments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

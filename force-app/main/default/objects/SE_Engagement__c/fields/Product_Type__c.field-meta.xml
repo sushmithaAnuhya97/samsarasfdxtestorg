@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <description>Dependent pick list to identify potential technical risks for a given deal</description>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Engagement_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>-</fullName>
+                <default>true</default>
+                <label>-</label>
+            </value>
+            <value>
+                <fullName>CM3x</fullName>
+                <default>false</default>
+                <label>CM3x</label>
+            </value>
+            <value>
+                <fullName>Tacho</fullName>
+                <default>false</default>
+                <label>Tacho</label>
+            </value>
+            <value>
+                <fullName>IG21</fullName>
+                <default>false</default>
+                <label>IG21</label>
+            </value>
+            <value>
+                <fullName>IG61</fullName>
+                <default>false</default>
+                <label>IG61</label>
+            </value>
+            <value>
+                <fullName>VS2</fullName>
+                <default>false</default>
+                <label>VS2</label>
+            </value>
+            <value>
+                <fullName>VS2C</fullName>
+                <default>false</default>
+                <label>VS2C</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Onsite</controllingFieldValue>
+            <controllingFieldValue>Technical Sale Follow-up</controllingFieldValue>
+            <controllingFieldValue>Slack Conversation</controllingFieldValue>
+            <controllingFieldValue>Onsite Trial Set up</controllingFieldValue>
+            <controllingFieldValue>Training (Performing)</controllingFieldValue>
+            <controllingFieldValue>Training (Receiving)</controllingFieldValue>
+            <controllingFieldValue>Troubleshooting/RFE/JIRA</controllingFieldValue>
+            <controllingFieldValue>Post Sales Support</controllingFieldValue>
+            <controllingFieldValue>Demo</controllingFieldValue>
+            <controllingFieldValue>HoS/Regulation advice</controllingFieldValue>
+            <controllingFieldValue>Integration</controllingFieldValue>
+            <controllingFieldValue>Issue Investigation</controllingFieldValue>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <controllingFieldValue>Trial Setup/POC</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Cable Mapping</controllingFieldValue>
+            <controllingFieldValue>New Feature Enablement</controllingFieldValue>
+            <controllingFieldValue>Feature Request</controllingFieldValue>
+            <valueName>-</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onsite</controllingFieldValue>
+            <controllingFieldValue>Technical Sale Follow-up</controllingFieldValue>
+            <controllingFieldValue>Onsite Trial Set up</controllingFieldValue>
+            <controllingFieldValue>Training (Performing)</controllingFieldValue>
+            <controllingFieldValue>Training (Receiving)</controllingFieldValue>
+            <controllingFieldValue>Troubleshooting/RFE/JIRA</controllingFieldValue>
+            <controllingFieldValue>Post Sales Support</controllingFieldValue>
+            <controllingFieldValue>Demo</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Feature Request</controllingFieldValue>
+            <valueName>IG21</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onsite</controllingFieldValue>
+            <controllingFieldValue>Technical Sale Follow-up</controllingFieldValue>
+            <controllingFieldValue>Onsite Trial Set up</controllingFieldValue>
+            <controllingFieldValue>Training (Performing)</controllingFieldValue>
+            <controllingFieldValue>Training (Receiving)</controllingFieldValue>
+            <controllingFieldValue>Troubleshooting/RFE/JIRA</controllingFieldValue>
+            <controllingFieldValue>Post Sales Support</controllingFieldValue>
+            <controllingFieldValue>Demo</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Feature Request</controllingFieldValue>
+            <valueName>IG61</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onsite</controllingFieldValue>
+            <controllingFieldValue>Technical Sale Follow-up</controllingFieldValue>
+            <controllingFieldValue>Onsite Trial Set up</controllingFieldValue>
+            <controllingFieldValue>Training (Performing)</controllingFieldValue>
+            <controllingFieldValue>Training (Receiving)</controllingFieldValue>
+            <controllingFieldValue>Troubleshooting/RFE/JIRA</controllingFieldValue>
+            <controllingFieldValue>Post Sales Support</controllingFieldValue>
+            <controllingFieldValue>Demo</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Feature Request</controllingFieldValue>
+            <valueName>VS2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Onsite</controllingFieldValue>
+            <controllingFieldValue>Technical Sale Follow-up</controllingFieldValue>
+            <controllingFieldValue>Onsite Trial Set up</controllingFieldValue>
+            <controllingFieldValue>Training (Performing)</controllingFieldValue>
+            <controllingFieldValue>Training (Receiving)</controllingFieldValue>
+            <controllingFieldValue>Troubleshooting/RFE/JIRA</controllingFieldValue>
+            <controllingFieldValue>Post Sales Support</controllingFieldValue>
+            <controllingFieldValue>Demo</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Feature Request</controllingFieldValue>
+            <valueName>VS2C</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Issue Investigation</controllingFieldValue>
+            <valueName>CM3x</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Issue Investigation</controllingFieldValue>
+            <valueName>Tacho</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

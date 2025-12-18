@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UG_Organization_Size__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(UserGem__CurrentAccount__r.NumberOfEmployees &lt;=99, &quot;1 - 99&quot;, 
+
+IF(UserGem__CurrentAccount__r.NumberOfEmployees &lt;=499,&quot;100 - 499&quot;,
+
+IF(UserGem__CurrentAccount__r.NumberOfEmployees &lt;=999, &quot;500 - 999&quot;,
+
+IF(UserGem__CurrentAccount__r.NumberOfEmployees &lt;=4999, &quot;1000 - 4999&quot;,
+
+IF(UserGem__CurrentAccount__r.NumberOfEmployees &gt;5000, &quot;5000+&quot;, NULL
+
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>UG Organization Size</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

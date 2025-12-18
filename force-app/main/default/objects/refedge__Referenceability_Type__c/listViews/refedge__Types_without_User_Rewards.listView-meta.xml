@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Types_without_User_Rewards</fullName>
+    <columns>NAME</columns>
+    <columns>refedge__Note__c</columns>
+    <columns>refedge__min_lead_time_per_request_type__c</columns>
+    <columns>refedge__Visible__c</columns>
+    <columns>refedge__Referenceability_Type__c</columns>
+    <columns>refedge__Request_type__c</columns>
+    <columns>refedge__Project_type__c</columns>
+    <columns>refedge__Is_Event_Type__c</columns>
+    <columns>refedge__Managed__c</columns>
+    <columns>refedge__Ref_Limit_to_Acct_or_Cntct__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>refedge__Sales_Reward__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Types without User Rewards</label>
+</ListView>

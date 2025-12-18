@@ -1,0 +1,38 @@
+<template>
+    <div class="slds-grid slds-wrap slds-gutters_small">
+        <div class="slds-col slds-size_1-of-1">
+            <div class="slds-m-bottom_small">
+                <template if:true={introText}>
+                    <div>{introText}</div>
+                </template>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <lightning-input
+                label={fieldLabel}
+                placeholder="Paste Account Id or URL"
+                value={value}
+                type="text"
+                required
+                onchange={handleIdInputChange}
+                onblur={handleIdInputChange}
+            ></lightning-input>
+        </div>
+        <template if:true={value}>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                <div class="slds-box slds-theme_default slds-m-top_small">
+                    <lightning-record-view-form record-id={value} object-api-name="Account">
+                        <div class="slds-grid slds-wrap slds-gutters_small">
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-output-field field-name="Name"></lightning-output-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-output-field field-name="OwnerId"></lightning-output-field>
+                            </div>
+                        </div>
+                    </lightning-record-view-form>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

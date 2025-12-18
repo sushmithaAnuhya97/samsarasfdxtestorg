@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Duration_Custom__c</fullName>
+    <description>GTMS-6167</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(StageName, &apos;Qualified&apos;), TODAY()- DATEVALUE(Went_to_Qualified_Date__c),
+IF(ISPICKVAL(StageName, &apos;Trial&apos;), TODAY()- DATEVALUE(Went_to_Trial_Date__c),
+IF(ISPICKVAL(StageName, &apos;Proposal&apos;), TODAY()- DATEVALUE(Went_to_Proposal_Date__c),
+IF(ISPICKVAL(StageName, &apos;Decision&apos;), TODAY()- DATEVALUE(Went_to_Decision_Date__c),
+IF(ISPICKVAL(StageName, &apos;Purchase&apos;), TODAY()- DATEVALUE(Went_to_Purchase_Date__c),
+IF(ISPICKVAL(StageName, &apos;Closing&apos;), TODAY()- DATEVALUE(Went_to_Closing_Date__c),
+IF(ISPICKVAL(StageName, &apos;Ready to Ship&apos;), TODAY()- DATEVALUE(Went_to_Ready_to_Ship_Date__c),
+IF(ISPICKVAL(StageName, &apos;Orders Processing&apos;), TODAY()- DATEVALUE(Went_to_Orders_Processing_Date__c), null))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stage Duration Custom</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

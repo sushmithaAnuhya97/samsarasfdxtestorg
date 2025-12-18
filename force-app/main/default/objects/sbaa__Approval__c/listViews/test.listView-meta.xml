@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>test</fullName>
+    <columns>NAME</columns>
+    <columns>sbaa__Approver__c</columns>
+    <columns>Quote__c</columns>
+    <columns>sbaa__Actions__c</columns>
+    <columns>sbaa__Status__c</columns>
+    <columns>sbaa__Opportunity__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>4/18/2024 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>sbaa__Status__c</field>
+        <operation>equals</operation>
+        <value>Assigned</value>
+    </filters>
+    <label>Open Approvals 4/19</label>
+</ListView>

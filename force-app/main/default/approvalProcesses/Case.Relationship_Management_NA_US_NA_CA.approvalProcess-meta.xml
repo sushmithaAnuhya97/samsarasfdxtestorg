@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>CreatedDate</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>melanie.johnson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Strategic Basic, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Strategic Basic, NA US</label>
+        <name>Relationship_Management_Strategic_Basic_NA_US</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>megan.combs@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Select Basic, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Select Basic, NA US</label>
+        <name>Relationship_Management_Select_Basic_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>adam.wrobel@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Core Basic, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Basic</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Core Basic, NA US</label>
+        <name>Relationship_Management_Core_Basic_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>robert.stobaugh@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Strategic Standard, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Strategic Standard, NA US</label>
+        <name>Relationship_Management_Strategic_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>katie.aicardi@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>molly.rindos@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Select Standard, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Select Standard, NA US</label>
+        <name>Relationship_Management_Select_Standard_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kathryn.kay@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>patrick.kelly@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core Standard</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Case_Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, NA US</label>
+        <name>Relationship_Management_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>robert.stobaugh@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Strategic High, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Strategic High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Strategic High, NA US</label>
+        <name>Relationship_Management_Strategic_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>katie.aicardi@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>kristine.biscocho@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>molly.rindos@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Select High, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Select High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Select High, NA US</label>
+        <name>Relationship_Management_Select_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>kathryn.kay@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>patrick.kelly@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Core High, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Core High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Core High, NA US</label>
+        <name>Relationship_Management_Core_High_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>elizabeth.weed@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>etienne.regnier@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, (Starter,Plus,Premier,Elite), NA CA</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 7) AND 8</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA CA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, (Starter,Plus,Premier,Elite), NA CA</label>
+        <name>Relationship_Management_Starter_Plus_Premier_Elite_NA_CA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>marcus.walker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>pierre.gross@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, (Starter,Plus,Premier,Elite), SLED</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>,Relationship Management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>SLED</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, (Starter,Plus,Premier,Elite), SLED</label>
+        <name>Relationship_Management_Starter_Plus_Premier_Elite_SLED</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>leah.anderson@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Plus, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Plus, NA US</label>
+        <name>Relationship_Management_Plus_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gillian.kershaw@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>gwen.martin@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>skylar.rasmussen@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Starter, NA US</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland,Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Starter, NA US</label>
+        <name>Relationship_Management_Starter_NA_US</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gillian.kershaw@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ryan.hammer@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>sam.king@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Null</description>
+        <entryCriteria>
+            <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6)</booleanFilter>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>NA CA</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>SLED</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Null</label>
+        <name>Relationship_Management_Null</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>joachim.braun@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Elite, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Elite, EMEA</label>
+        <name>Relationship_Management_Elite_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>joachim.braun@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Premier, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCity</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Premier, EMEA</label>
+        <name>Relationship_Management_Premier_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>fabio.bondini@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Plus, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Plus, EMEA</label>
+        <name>Relationship_Management_Plus_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>fabio.bondini@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Starter, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Starter, EMEA</label>
+        <name>Relationship_Management_Starter_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>fabio.bondini@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Null, EMEA</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>France,Netherlands,Belgium,Germany,Switzerland,Austria,Italy,United Kingdom,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>EMEA</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Null, EMEA</label>
+        <name>Relationship_Management_Null_EMEA</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Elite, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Elite</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Elite, MX</label>
+        <name>Relationship_Management_Elite_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management,Premier, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Premier</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management,Premier, MX</label>
+        <name>Relationship_Management_Premier_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Plus, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Plus</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Plus, MX</label>
+        <name>Relationship_Management_Plus_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management, Starter,MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>notEqual</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+                <value>Starter</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management, Starter,MX</label>
+        <name>Relationship_Management_Starter_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>gabriela.esmeral@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>miguel.torres@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management,Null, MX</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.BillingCountry</field>
+                <operation>equals</operation>
+                <value>Mexico</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.CS_Tier__c</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Owner_Role__c</field>
+                <operation>contains</operation>
+                <value>MX</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Relationship Management,Null, MX</label>
+        <name>Relationship_Management_Null_MX</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>ram.poonian@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>ramon.wiersema@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Relationship Management,Deafult</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Relationship management</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>Relationship Management,Deafult</label>
+        <name>Relationship_Management_Deafult</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Relationship Management, NAUS,NACA,SLED</description>
+    <emailTemplate>unfiled$public/CS_Request_Log_Approval_Submission</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Relationship Management, NAUS,NACA,SLED</label>
+    <processOrder>5</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

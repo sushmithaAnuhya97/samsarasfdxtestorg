@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__One_Running_Timer_Event_Per_Session</fullName>
+    <active>true</active>
+    <description>Ensures there is only one running timer session event per timer session.</description>
+    <errorConditionFormula>pse__Running_Event_Count__c &gt; 1</errorConditionFormula>
+    <errorMessage>Timer session can only have one currently running timer session event.</errorMessage>
+</ValidationRule>

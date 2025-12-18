@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>NotScreened</fullName>
+        <default>true</default>
+        <label>Not Screened</label>
+    </customValue>
+    <customValue>
+        <fullName>Error</fullName>
+        <default>false</default>
+        <label>Error</label>
+    </customValue>
+    <customValue>
+        <fullName>SafeToCall</fullName>
+        <default>false</default>
+        <label>Safe to Call (not listed)</label>
+    </customValue>
+    <customValue>
+        <fullName>Caution</fullName>
+        <default>false</default>
+        <label>Caution (partially listed)</label>
+    </customValue>
+    <customValue>
+        <fullName>DoNotCall</fullName>
+        <default>false</default>
+        <label>Do Not Call (listed)</label>
+    </customValue>
+    <description>The set of possible status values for the telephone numbers on a record.</description>
+    <masterLabel>Phone-Screening Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

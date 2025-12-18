@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inbound_Reason_Faulty__c</fullName>
+    <description>Explain why inbound lead is faulty</description>
+    <label>Inbound Reason Faulty</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Below minimum number of vehicles/assets</fullName>
+                <default>false</default>
+                <label>Below minimum number of vehicles/assets</label>
+            </value>
+            <value>
+                <fullName>Bogus inquiry - competitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bogus inquiry - competitor</label>
+            </value>
+            <value>
+                <fullName>Bogus inquiry - market research</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bogus inquiry - market research</label>
+            </value>
+            <value>
+                <fullName>Bogus inquiry - other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bogus inquiry - other</label>
+            </value>
+            <value>
+                <fullName>Delete Account</fullName>
+                <default>false</default>
+                <label>Delete Account</label>
+            </value>
+            <value>
+                <fullName>Delete Contact Only</fullName>
+                <default>false</default>
+                <label>Delete Contact Only</label>
+            </value>
+            <value>
+                <fullName>Does not fit criteria - e.g. country,  &lt;7 vehicles, ...</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Does not fit criteria - e.g. country,  &lt;7 vehicles, ...</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account</fullName>
+                <default>false</default>
+                <label>Duplicate Account</label>
+            </value>
+            <value>
+                <fullName>Duplicate MVF contact in last 6 months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Duplicate MVF contact in last 6 months</label>
+            </value>
+            <value>
+                <fullName>Inactive - No Longer There</fullName>
+                <default>false</default>
+                <label>Inactive - No Longer There</label>
+            </value>
+            <value>
+                <fullName>International Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>International Lead</label>
+            </value>
+            <value>
+                <fullName>Invalid Contact</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invalid Contact</label>
+            </value>
+            <value>
+                <fullName>Invalid contact details</fullName>
+                <default>false</default>
+                <label>Invalid contact details</label>
+            </value>
+            <value>
+                <fullName>Invalid details - name</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invalid details - name</label>
+            </value>
+            <value>
+                <fullName>Invalid details - phone number</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invalid details - phone number</label>
+            </value>
+            <value>
+                <fullName>Microfleet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Microfleet</label>
+            </value>
+            <value>
+                <fullName>Misc/referrals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Misc/referrals</label>
+            </value>
+            <value>
+                <fullName>--- MVF Faulty Lead Reasons ---</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>--- MVF Faulty Lead Reasons ---</label>
+            </value>
+            <value>
+                <fullName>MX No Biz Opp - Fake lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MX No Biz Opp - Fake lead</label>
+            </value>
+            <value>
+                <fullName>MX No Biz Opp - Personal tracking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MX No Biz Opp - Personal tracking</label>
+            </value>
+            <value>
+                <fullName>No Authority</fullName>
+                <default>false</default>
+                <label>No Authority</label>
+            </value>
+            <value>
+                <fullName>--- Non MVF Faulty Reasons ---</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>--- Non MVF Faulty Reasons ---</label>
+            </value>
+            <value>
+                <fullName>No purchase intent (eg test lead)</fullName>
+                <default>false</default>
+                <label>No purchase intent (eg test lead)</label>
+            </value>
+            <value>
+                <fullName>Not in account owner&apos;s territory</fullName>
+                <default>false</default>
+                <label>Not in account owner&apos;s territory</label>
+            </value>
+            <value>
+                <fullName>Not in a country Samsara operates</fullName>
+                <default>false</default>
+                <label>Not in a country Samsara operates</label>
+            </value>
+            <value>
+                <fullName>Opt out - Do Not Contact</fullName>
+                <default>false</default>
+                <label>Opt out - Do Not Contact</label>
+            </value>
+            <value>
+                <fullName>Test Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Test Lead</label>
+            </value>
+            <value>
+                <fullName>Use case not a fit for Samsara products</fullName>
+                <default>false</default>
+                <label>Use case not a fit for Samsara products</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

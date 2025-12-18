@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_approval_required_check_available__c</fullName>
+    <label>Is approval required check available</label>
+    <summaryFilterItems>
+        <field>sbaa__ApprovalCondition__c.sbaa__TestedVariable__c</field>
+        <operation>notEqual</operation>
+        <value></value>
+    </summaryFilterItems>
+    <summaryForeignKey>sbaa__ApprovalCondition__c.sbaa__ApprovalRule__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

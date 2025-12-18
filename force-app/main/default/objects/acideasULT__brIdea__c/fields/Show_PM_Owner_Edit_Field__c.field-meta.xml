@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_PM_Owner_Edit_Field__c</fullName>
+    <formula>AND(
+OR (ISBLANK( PM_Owner_Id__c  )=false, DATEVALUE(CreatedDate) !=  TODAY()),
+OR (
+CASESAFEID($Profile.Id) == &apos;00e1a000000UoNcAAK&apos;,
+CASESAFEID($Profile.Id) == &apos;00e1a000000i8yfAAA&apos;,
+CASESAFEID($Profile.Id) == &apos;00e5e0000039jMHAAY&apos;
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Show PM Owner Edit Field</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

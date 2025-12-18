@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserGem__All</fullName>
+    <columns>NAME</columns>
+    <columns>UserGem__DateAdded__c</columns>
+    <columns>UserGem__CurrentCompany__c</columns>
+    <columns>UserGem__CurrentTitle__c</columns>
+    <columns>UserGem__PastCompany__c</columns>
+    <columns>UserGem__PastTitle__c</columns>
+    <columns>UserGem__PostProcessing__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>UserGem__CurrentAccountIsCustomerAccount__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Records</label>
+</ListView>

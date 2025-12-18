@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Closed__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines when closed based on the issue&apos;s Status. Defaults to true when the Status is Completed or Closed - No action. Set to false for all other Status values.</description>
+    <formula>if(OR(ISPICKVAL(pse__Status__c,&apos;Closed - No action&apos;),ISPICKVAL(pse__Status__c,&apos;Completed&apos;)) ,true,false)</formula>
+    <label>Closed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

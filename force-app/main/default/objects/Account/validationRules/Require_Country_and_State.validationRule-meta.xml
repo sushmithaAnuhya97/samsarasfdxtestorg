@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Country_and_State</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(( RecordType.DeveloperName !=&apos;Propel_Manufacturer&apos;), OR ( ISBLANK(  BillingCountry  ), 
+AND (BillingCountry = &quot;United States&quot;, ISBLANK( BillingState  ))), OR(ISPICKVAL( Type  , &quot;End Customer&quot;), ISPICKVAL( Type  , &quot;Reseller&quot;)), Bypass_Validation_Rules__c = FALSE, ISNEW())</errorConditionFormula>
+    <errorMessage>Please specify a state and country (state not required outside of US)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Fields_for_Closing</fullName>
+    <active>true</active>
+    <description>Creating for GTMS-24167.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    ISPICKVAL(StageName, &quot;Closing&quot;),
+    ISPICKVAL(Type, &quot;Revenue Opportunity&quot;),
+    Account.BillingCountry = &quot;Mexico&quot;,
+OR(
+    ISBLANK(TEXT(Account.Tipo_de_RFC__c)),
+    AND(ISBLANK(TEXT(Account.Regimen_Capital__c)),
+    NOT(ISPICKVAL(Account.Tipo_de_RFC__c, &quot;Persona Fisica&quot;))),
+    ISBLANK(TEXT(Account.Regimen_Fiscal_Receptor__c)),
+    ISBLANK(Account.Razon_Social_Legal_Company_Name__c)
+)
+   
+)</errorConditionFormula>
+    <errorMessage>Please complete all required fields: Razon Social,  Tipo de RFC, Regimen Capital, and Regimen Fiscal Receptor.</errorMessage>
+</ValidationRule>

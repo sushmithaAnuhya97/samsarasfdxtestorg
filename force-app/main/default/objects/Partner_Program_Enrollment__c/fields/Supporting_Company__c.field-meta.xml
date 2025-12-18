@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supporting_Company__c</fullName>
+    <description>GTMS-26117: Created as part of Partners H1 project</description>
+    <inlineHelpText>Please select whether this subsidy is supported by Samsara or by another third party provider.</inlineHelpText>
+    <label>Supporting Company</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Samsara</fullName>
+                <default>false</default>
+                <label>Samsara</label>
+            </value>
+            <value>
+                <fullName>TruckerCloud</fullName>
+                <default>false</default>
+                <label>TruckerCloud</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

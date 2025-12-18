@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Additional_Milestone_Fields__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Stores additional fields from the Milestone object in the Billings, Project Reporting, and Revenue Forecast datasets in the PS Cloud Core Analytics app. Encrypted and multi-select picklist fields are not supported. Assign read-access permission to the Integration User to add user-generated additional fields to these datasets.</description>
+    <inlineHelpText>Imported packaged additional fields are prefixed with the originating object&apos;s name unless this is already present in the field name. Lookup packaged fields are appended with &quot;Name&quot; and ID fields are appended with &quot;ID&quot; unless already present in the field name.</inlineHelpText>
+    <label>Additional Milestone Fields</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

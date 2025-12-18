@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Discount_WIFI_SKU</fullName>
+    <active>false</active>
+    <description>Prevents AE&apos;s from putting in a discount on any WIFI</description>
+    <errorConditionFormula>AND(
+     Product_Code_Copy__c = &quot;LIC-WIFI-DATA&quot;,
+    Discount &lt;&gt; 0
+)</errorConditionFormula>
+    <errorMessage>Discount on WIFI-DATA must be 0%</errorMessage>
+</ValidationRule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PLSC__All_Changes</fullName>
+    <columns>NAME</columns>
+    <columns>PDLM__Category__c</columns>
+    <columns>PDLM__Title__c</columns>
+    <columns>PDLM__Description_5000__c</columns>
+    <columns>SS_SCOPE__c</columns>
+    <columns>PDLM__Status_lk__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>PDLM__Approved_Date__c</columns>
+    <columns>PDLM__Has_Affected_Items__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Share_With_Change_Field__c</columns>
+    <columns>Stop_Ship_End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2022 12:00 AM</value>
+    </filters>
+    <label>All Changes</label>
+</ListView>

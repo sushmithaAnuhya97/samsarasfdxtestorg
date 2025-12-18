@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IF_Opportunity_Queue</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>Shipping_Method__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Reseller__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Balance_Due__c</columns>
+    <columns>Finance_Notes__c</columns>
+    <columns>Finance_Segment__c</columns>
+    <columns>First_Purchase__c</columns>
+    <columns>Went_to_Closing_Date__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Revenue Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Closing</value>
+    </filters>
+    <filters>
+        <field>Price_Book_Name__c</field>
+        <operation>equals</operation>
+        <value>Samsara Standard</value>
+    </filters>
+    <filters>
+        <field>Price_Book_Name__c</field>
+        <operation>equals</operation>
+        <value>Samsara FY22</value>
+    </filters>
+    <label>IF Opportunity Queue</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__SourceType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>SourceType</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FromContext</fullName>
+                <default>false</default>
+                <label>FromContext</label>
+            </value>
+            <value>
+                <fullName>Literal</fullName>
+                <default>false</default>
+                <label>Literal</label>
+            </value>
+            <value>
+                <fullName>Passthrough</fullName>
+                <default>false</default>
+                <label>Passthrough</label>
+            </value>
+            <value>
+                <fullName>Composite</fullName>
+                <default>false</default>
+                <label>Composite</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

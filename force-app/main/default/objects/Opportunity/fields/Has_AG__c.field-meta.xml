@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_AG__c</fullName>
+    <description>AG units or licenses included in the opportunity</description>
+    <formula>OR( AG2_License_Count__c &gt;0, AG4_License_Count__c &gt;0, AG_unit_count__c &gt;0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Has AG</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

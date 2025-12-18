@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message channel for sending information for display on a contact card.</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>ID of the selected contact.  May be null if no contact is to be displayed.</description>
+        <fieldName>contactId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The display name of the selected contact.  May be null or absent.</description>
+        <fieldName>contactName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Skill IDs associated with the ratings to display for the selected contact. May be null or absent.</description>
+        <fieldName>skillsToShow</fieldName>
+    </lightningMessageFields>
+    <masterLabel>ContactCardMessageChannel</masterLabel>
+</LightningMessageChannel>

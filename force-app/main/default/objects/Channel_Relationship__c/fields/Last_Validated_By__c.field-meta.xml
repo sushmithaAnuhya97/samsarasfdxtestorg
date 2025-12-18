@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Validated_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to store the details about user who took CR renewal action</description>
+    <label>Last Validated By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Channel_Relationships2</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

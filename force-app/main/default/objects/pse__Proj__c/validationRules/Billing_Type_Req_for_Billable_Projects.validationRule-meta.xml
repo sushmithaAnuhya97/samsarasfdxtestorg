@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Type_Req_for_Billable_Projects</fullName>
+    <active>true</active>
+    <description>When a project is marked as billable, the billing type must be identified and cannot be blank.</description>
+    <errorConditionFormula>AND(
+  pse__Is_Billable__c,
+  ISPICKVAL(pse__Billing_Type__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>pse__Billing_Type__c</errorDisplayField>
+    <errorMessage>Billing Type is required when the Project is marked as Billable.</errorMessage>
+</ValidationRule>

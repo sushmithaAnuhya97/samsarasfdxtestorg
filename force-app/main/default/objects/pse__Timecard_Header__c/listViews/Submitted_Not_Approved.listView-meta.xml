@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submitted_Not_Approved</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Assignment__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__Total_Hours__c</columns>
+    <columns>pse__Billable__c</columns>
+    <columns>pse__Milestone__c</columns>
+    <columns>pse__Submitted__c</columns>
+    <columns>pse__Approver__c</columns>
+    <columns>pse__Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Submitted__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Approved__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Submitted Not Approved</label>
+</ListView>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Roll_Up_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specify the rollup operation to perform in this job on parent-to-child records (e.g., SUM, COUNT, MIN, MAX, or CONCAT). This field determines how child record data is aggregated and applied to the parent record. Ensure the chosen operation is compatible with the data types of the target fields. This field is required, and an invalid or missing selection will prevent the job from executing.</description>
+    <inlineHelpText>Specify the rollup operation to perform in this job on parent-to-child records (e.g., SUM, COUNT, MIN, MAX, or CONCAT). This field determines how child record data is aggregated and applied to the parent record. Ensure the chosen operation is compatible with the data types of the target fields. This field is required, and an invalid or missing selection will prevent the job from executing.</inlineHelpText>
+    <label>Roll-Up Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>COUNT</fullName>
+                <default>false</default>
+                <label>COUNT</label>
+            </value>
+            <value>
+                <fullName>SUM</fullName>
+                <default>false</default>
+                <label>SUM</label>
+            </value>
+            <value>
+                <fullName>MIN</fullName>
+                <default>false</default>
+                <label>MIN</label>
+            </value>
+            <value>
+                <fullName>MAX</fullName>
+                <default>false</default>
+                <label>MAX</label>
+            </value>
+            <value>
+                <fullName>AVG</fullName>
+                <default>false</default>
+                <label>AVG</label>
+            </value>
+            <value>
+                <fullName>CONCAT</fullName>
+                <default>false</default>
+                <label>CONCAT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

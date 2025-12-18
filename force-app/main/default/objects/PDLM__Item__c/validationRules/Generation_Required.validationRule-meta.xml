@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generation_Required</fullName>
+    <active>true</active>
+    <description>Generation  is required for  TLAs categories</description>
+    <errorConditionFormula>AND(
+  PDLM__Category__r.PDLM__Parent__r.Name = &quot;TLAs&quot;,
+  ISPICKVAL(Generation__c, &quot;&quot;)
+      
+    
+)</errorConditionFormula>
+    <errorMessage>Generation is required for Finished Goods and TLAs categories</errorMessage>
+</ValidationRule>

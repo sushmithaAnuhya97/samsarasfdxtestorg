@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SORT_LIST</fullName>
+    <columns>Sort__c</columns>
+    <columns>Sub_Type__c</columns>
+    <columns>Order_Management_Processor__c</columns>
+    <columns>Finance_Kickback_Reason__c</columns>
+    <columns>Finance_Notes__c</columns>
+    <columns>Went_to_Closing_Date__c</columns>
+    <columns>Finance_Segment__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Shipping_Method__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Customer_require_PO_for_invoicing__c</columns>
+    <columns>First_Purchase__c</columns>
+    <columns>Finance_Partner__c</columns>
+    <columns>Selected_Payment_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.PROBABILITY</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Closing</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Revenue Opportunity</value>
+    </filters>
+    <filters>
+        <field>Sub_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Auto-Renewal</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Is_Webstore_Upsell_Opportunity__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Order Management Review</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

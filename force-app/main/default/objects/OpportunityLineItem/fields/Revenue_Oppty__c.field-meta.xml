@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Oppty__c</fullName>
+    <formula>IF( TEXT(Opportunity.Type)= &quot;Revenue Opportunity&quot;,TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Revenue Oppty?</label>
+    <type>Checkbox</type>
+</CustomField>

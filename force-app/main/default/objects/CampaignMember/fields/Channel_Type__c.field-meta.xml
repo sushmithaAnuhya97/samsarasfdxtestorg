@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( 
+utm_source__c ,
+&apos;facebook&apos;, &apos;Paid - Social Media&apos;, 
+&apos;linkedin&apos;, &apos;Paid - Social Media&apos;,
+&apos;adwords&apos;, &apos;Paid - Search&apos;,
+&apos;bing&apos;, &apos;Paid - Search&apos;,
+&apos;display&apos;, &apos;Paid - Display&apos;,
+&apos;mvf&apos;, &apos;Paid - 3rd Party Lead Provider&apos;,
+&apos;mvf&apos;, &apos;Paid - 3rd Party Lead Provider&apos;,
+&apos;seo&apos;, &apos;Organic - SEO&apos;,
+&apos;direct&apos;, &apos;Organic - Direct&apos;,
+&apos;branded&apos;, &apos;Organic - Branded&apos;,
+&apos;email_outbound&apos;, &apos;Email - Outbound&apos;,
+&apos;Other&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Channel Type</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project_Task_Assignment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Project Task Assignment</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The project task associated with the project task assignment must match the selected project task.</errorMessage>
+        <filterItems>
+            <field>pse__Project_Task_Assignment__c.pse__Project_Task__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.pse__Project_Task__c</valueField>
+        </filterItems>
+        <infoMessage>Only project task assignments for the selected project task are shown.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>pse__Project_Task_Assignment__c</referenceTo>
+    <relationshipLabel>Task Time</relationshipLabel>
+    <relationshipName>Task_Time</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

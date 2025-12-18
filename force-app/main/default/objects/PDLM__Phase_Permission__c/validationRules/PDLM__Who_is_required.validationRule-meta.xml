@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Who_is_required</fullName>
+    <active>false</active>
+    <description>The permission operates on group or user, one of these must be filled in</description>
+    <errorConditionFormula>AND(ISBLANK(PDLM__Group_Name__c), ISBLANK(PDLM__User__c))</errorConditionFormula>
+    <errorMessage>One of Group Name or User must be filled in</errorMessage>
+</ValidationRule>

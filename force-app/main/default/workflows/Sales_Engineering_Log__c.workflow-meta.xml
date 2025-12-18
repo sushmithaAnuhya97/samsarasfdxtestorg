@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>EMEA_SE_log_update_request_Email_alert</fullName>
+        <description>EMEA SE log update request Email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SE_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>SE_Assignment__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Sales_Engineering_Templates/EMEA_SE_Log_Update_Request_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Sales_Engineering_Log_Created</fullName>
+        <description>New Sales Engineering Log Created [Used in Flow]</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SE_Assignment__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Sales_Engineering_Templates/New_Sales_Engineering_Log_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>SE_Assigned_to_SE_Log</fullName>
+        <description>SE Assigned to SE Log</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Sales_Engineering_Templates/SE_Assigned_to_Log</template>
+    </alerts>
+    <alerts>
+        <fullName>SE_Key_Account_Assigned</fullName>
+        <description>SE - Key Account Assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SE_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>SE_Assignment__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/SE_Key_Account_Assigned_VF</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>se_manager_email</fullName>
+        <field>SE_Manager_Email__c</field>
+        <formula>SE_Assignment__r.Manager.Email</formula>
+        <name>se manager email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>SE Key Account Email</fullName>
+        <actions>
+            <name>SE_Key_Account_Assigned</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>se_manager_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>This workflow rule sends an email to the sales engineer when a new key account has been assigned.</description>
+        <formula>AND(     OR(         CONTAINS(Opportunity__r.Owner_Role_Copy__c, &quot;AE2&quot;),         CONTAINS(Opportunity__r.Owner_Role_Copy__c, &quot;MM&quot;),         AND(             CONTAINS(Opportunity__r.Owner_Role_Copy__c, &quot;AE3&quot;),             CONTAINS(Opportunity__r.Owner_Role_Copy__c, &quot;EMEA&quot;)         )     ),     ISCHANGED(SE_Assignment__c),     NOT(ISBLANK(SE_Assignment__c)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

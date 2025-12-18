@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_to_Round_Robin__c</fullName>
+    <description>Sends a contact into it&apos;s associated round robin</description>
+    <label>Send to Round Robin</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cold call</fullName>
+                <default>false</default>
+                <label>Cold call</label>
+            </value>
+            <value>
+                <fullName>Events</fullName>
+                <default>false</default>
+                <label>Events</label>
+            </value>
+            <value>
+                <fullName>Routed</fullName>
+                <default>false</default>
+                <label>Routed</label>
+            </value>
+            <value>
+                <fullName>Events - Red</fullName>
+                <default>false</default>
+                <label>Events - Red</label>
+            </value>
+            <value>
+                <fullName>Events - Blue</fullName>
+                <default>false</default>
+                <label>Events - Blue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

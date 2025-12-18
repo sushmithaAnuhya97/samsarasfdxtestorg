@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DeclarativeNodeCount__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Number of Declarative Node</label>
+    <summaryForeignKey>fferpcore__DPNodeDeclaration__c.fferpcore__Publication__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

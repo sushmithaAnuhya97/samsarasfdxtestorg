@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>FFX_PSA_Budget_Approved_TRUE</fullName>
+        <field>pse__Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Budget Approved TRUE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Budget_IFF_TRUE</fullName>
+        <field>pse__Include_In_Financials__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Budget IFF TRUE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Budget_Name</fullName>
+        <field>Name</field>
+        <formula>LEFT(pse__Project__r.Name, 73) + &quot;-Budget&quot;</formula>
+        <name>PSA Budget Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Budget_Status_Approved</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>PSA Budget Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Exclude_Budget_From_Billing_True</fullName>
+        <field>pse__Exclude_from_Billing__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Exclude Budget From Billing True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>FFX PSA Approved Budget</fullName>
+        <actions>
+            <name>FFX_PSA_Budget_Approved_TRUE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FFX_PSA_Budget_IFF_TRUE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Budget__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>FFX PSA Budget Defaults on Create</fullName>
+        <actions>
+            <name>FFX_PSA_Budget_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FFX_PSA_Budget_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Budget__c.pse__Type__c</field>
+            <operation>equals</operation>
+            <value>Customer Purchase Order</value>
+        </criteriaItems>
+        <description>Set Budget Defaults</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserGem__IsTargetCompany__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF( UserGem__PastInfos__r.UserGem__CurrentAccountIsTargetAccount__c , TRUE, IF(UserGem__PastInfos__r.UserGem__CurrentCompanyIsICP__c, TRUE, FALSE))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>UG - Is Target Company</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

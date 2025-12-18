@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CA_US_Routing_Rules</fullName>
+    <columns>NAME</columns>
+    <columns>Rule_Description__c</columns>
+    <columns>Next_Assignment__c</columns>
+    <columns>Next_Assignment_Mapping__c</columns>
+    <columns>Last_Run_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>AR-0059,AR-0061,AR-0016,AR-0056,AR-0015,AR-0055,AR-0105,AR-0068</value>
+    </filters>
+    <label>CA/US Round Robin Rules</label>
+</ListView>

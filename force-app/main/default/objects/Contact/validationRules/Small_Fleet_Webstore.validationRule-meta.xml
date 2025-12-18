@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Small_Fleet_Webstore</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISCHANGED(Status__c),
+ISPICKVAL(Status__c, &apos;Send Small Fleet Link&apos;),
+Number_of_Vehicles_from_Account__c &gt;=11)</errorConditionFormula>
+    <errorMessage>Only small fleet accounts are eligible to be sent to the Small Fleets Store (1-11veh). The vehicle count on this account indicates it should be handled by an AE. If this contact is incorrectly associated with this account, please submit a SalesOps ticket.</errorMessage>
+</ValidationRule>

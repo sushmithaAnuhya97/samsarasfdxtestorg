@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Override_Freight_Shipping__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>LTL orders cannot be switched to Next Day Air service due to their size. Also, orders above 250 pounds MUST ship LTL, and cannot be shipped UPS Ground.</inlineHelpText>
+    <label>Override Freight Shipping</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

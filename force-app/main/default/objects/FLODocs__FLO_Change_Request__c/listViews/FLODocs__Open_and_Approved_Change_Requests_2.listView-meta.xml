@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Open_and_Approved_Change_Requests_2</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>FLODocs__Stage__c</columns>
+    <columns>FLODocs__Reason__c</columns>
+    <columns>FLODocs__Developers__c</columns>
+    <columns>FLODocs__Completion_Status__c</columns>
+    <columns>FLODocs__Change_Level_Required__c</columns>
+    <columns>FLODocs__Change_Overview__c</columns>
+    <columns>FLODocs__Change_Policy__c</columns>
+    <columns>FLODocs__Change_Stage__c</columns>
+    <columns>FLODocs__Change_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Completion_Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started,In Progress</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <label>Open and Approved Change Requests (v2)</label>
+</ListView>

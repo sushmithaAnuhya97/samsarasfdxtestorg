@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__InvalidShippingAccount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates that the selected shipping account is not a descendant of the billing document account.</description>
+    <formula>AND(
+        fferpcore__Account__c != null,
+        OR(
+            fferpcore__BillingDocument__r.fferpcore__Account__c = null,
+            AND(
+                fferpcore__Account__r.ParentId != fferpcore__BillingDocument__r.fferpcore__Account__c,
+                fferpcore__Account__r.Parent.ParentId != fferpcore__BillingDocument__r.fferpcore__Account__c,
+                fferpcore__Account__r.Parent.Parent.ParentId != fferpcore__BillingDocument__r.fferpcore__Account__c,
+                fferpcore__Account__r.Parent.Parent.Parent.ParentId != fferpcore__BillingDocument__r.fferpcore__Account__c,
+                fferpcore__Account__r.Parent.Parent.Parent.Parent.ParentId != fferpcore__BillingDocument__r.fferpcore__Account__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates that the selected shipping account is not a descendant of the billing document account.</inlineHelpText>
+    <label>Invalid Shipping Account</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

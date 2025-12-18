@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Persona__c</fullName>
+    <label>Partner Persona</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Reseller/Value Added Reseller</fullName>
+                <default>false</default>
+                <label>Reseller/Value Added Reseller</label>
+            </value>
+            <value>
+                <fullName>Distributor/Value Added Distributor</fullName>
+                <default>false</default>
+                <label>Distributor/Value Added Distributor</label>
+            </value>
+            <value>
+                <fullName>Systems Integrator</fullName>
+                <default>false</default>
+                <label>Systems Integrator</label>
+            </value>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>Insurance Broker</fullName>
+                <default>false</default>
+                <label>Insurance Broker</label>
+            </value>
+            <value>
+                <fullName>Insurance Carrier</fullName>
+                <default>false</default>
+                <label>Insurance Carrier</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

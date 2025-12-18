@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OB_Archiver__All_Offered_Policies</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>OB_Archiver__Active__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>OB_Archiver__policy_type__c</field>
+        <operation>equals</operation>
+        <value>Automatic</value>
+    </filters>
+    <label>All_Offered_Policies</label>
+</ListView>

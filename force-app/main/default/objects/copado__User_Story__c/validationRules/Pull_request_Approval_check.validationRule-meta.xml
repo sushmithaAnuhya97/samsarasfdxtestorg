@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pull_request_Approval_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(copado__Promote_and_Deploy__c =true,
+copado__Promote_Change__c =true,
+ copado__Validate_Only__c =true),
+copado__Pull_Requests_Approved__c=false)</errorConditionFormula>
+    <errorMessage>Pull request must be created and get it approved by one Peer</errorMessage>
+</ValidationRule>

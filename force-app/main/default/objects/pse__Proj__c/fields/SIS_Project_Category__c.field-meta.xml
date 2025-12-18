@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SIS_Project_Category__c</fullName>
+    <description>This field Identifies SIS Project that fall into the category of SIS Project Category 
+Innoscope and Hub Projects</description>
+    <label>SIS Project Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Hub Projects</fullName>
+                <default>false</default>
+                <label>Hub Projects</label>
+            </value>
+            <value>
+                <fullName>Innoscope</fullName>
+                <default>false</default>
+                <label>Innoscope</label>
+            </value>
+            <value>
+                <fullName>Renewal Support</fullName>
+                <default>false</default>
+                <label>Renewal Support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

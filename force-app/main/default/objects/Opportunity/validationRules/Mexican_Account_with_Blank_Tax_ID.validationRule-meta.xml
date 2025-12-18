@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mexican_Account_with_Blank_Tax_ID</fullName>
+    <active>true</active>
+    <description>If associated account is of Mexican and Tax ID on the account is blank and Opportunity Stage is either &apos;Purchase&apos; or past &apos;Purchase&apos; stage then the message is displayed.</description>
+    <errorConditionFormula>AND(
+NOT($Permission.Validation_Rule_Exemption), 
+NOT(ISBLANK( Account.BillingCountry )), 
+Account.BillingCountry =&apos;Mexico&apos;,
+ISBLANK(Account.VATId__c) ,
+Probability &gt;= 0.9,  NOT(ISPICKVAL(MX_Approval_status__c,&quot;Approved&quot; )),
+ISPICKVAL(Type,&quot;Revenue Opportunity&quot;) )</errorConditionFormula>
+    <errorMessage>Please input the entity&apos;s RFC # in the Tax ID field on the account. If you do not enter the entity&apos;s RFC #, opportunities associated with this account will bel blocked from moving to the Purchase stage or later stages</errorMessage>
+</ValidationRule>

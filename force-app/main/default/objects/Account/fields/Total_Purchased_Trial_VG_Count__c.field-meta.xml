@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Purchased_Trial_VG_Count__c</fullName>
+    <label>Total Purchased Trial VG Count</label>
+    <summarizedField>Opportunity.VG_unit_count__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Type</field>
+        <operation>equals</operation>
+        <value>Free Trial Opportunity</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.Trial_Status__c</field>
+        <operation>equals</operation>
+        <value>Purchased</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

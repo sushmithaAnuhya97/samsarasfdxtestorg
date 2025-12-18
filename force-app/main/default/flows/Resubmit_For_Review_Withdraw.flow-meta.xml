@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-16451: Created as part of 3PF phase 2 project</description>
+        <name>Send_Withdrawn_Email</name>
+        <label>Send Withdrawn Email</label>
+        <locationX>1319</locationX>
+        <locationY>509</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_FPQ_Record.Partner_Contact__r.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Withdrawn_Email_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>WithdrawnEmailTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-16419: Created as part of 3PF Phase 2 Project</description>
+        <name>X3PF_Review_Submission_Email_To_Partner_Contact</name>
+        <label>3PF Review Submission Email To Partner Contact</label>
+        <locationX>257</locationX>
+        <locationY>613</locationY>
+        <actionName>Finance_Partner_Quote__c.X3PF_Submit_For_Review_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Get_FPQ_Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Finance_Partner_Quote__c.X3PF_Submit_For_Review_Alert</nameSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <choices>
+        <name>ResubmitForReviewChoice</name>
+        <choiceText>Resubmit For Review</choiceText>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </choices>
+    <choices>
+        <name>WithdrawFinanceRequestChoice</name>
+        <choiceText>Withdraw Finance Request</choiceText>
+        <dataType>Boolean</dataType>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </choices>
+    <decisions>
+        <description>GTMS-16419: created as part of 3PF phase 2 project</description>
+        <name>Entry_Check_of_FPQ</name>
+        <label>Entry Check of FPQ</label>
+        <locationX>540</locationX>
+        <locationY>271</locationY>
+        <defaultConnector>
+            <targetReference>Entry_Error_Screeen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FPQ_Entry_Check</name>
+            <conditionLogic>(1 OR 2 OR 3 OR 5 OR 6 OR 7) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Financing_Decision__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Financing_Decision__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Declined</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Financing_Decision__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Need More Info</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Opportunity__r.Probability</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>90.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Financing_Decision__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Resubmit For Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Financing_Decision__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending - Under Partner Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Financing_Decision__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_FPQ_Record</targetReference>
+            </connector>
+            <label>FPQ Entry Check</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-16451: Created as part of 3PF Phase 2 Project</description>
+        <name>Is_Partner_Contact_Mapped</name>
+        <label>Is Partner Contact Mapped</label>
+        <locationX>1128</locationX>
+        <locationY>418</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Partner_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Withdrawn_Email</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>checking if the Partner Contact field got populated in FPQ record</description>
+        <name>Partner_Contact_Check</name>
+        <label>Partner Contact Check</label>
+        <locationX>415</locationX>
+        <locationY>489</locationY>
+        <defaultConnector>
+            <targetReference>X3PF_Review_Submission_Email_To_Partner_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Partner_Contact_Exist</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Partner_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_FPQ_Record.Partner_Contact__r.Account.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Vartana</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Partner Contact Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>this if element checks what is the request type selected in the first screen and moves the flow in respective paths.</description>
+        <name>Request_Type_Check</name>
+        <label>Request Type Check</label>
+        <locationX>753</locationX>
+        <locationY>167</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Resubmit_For_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ResubmitForReviewChoice</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Entry_Check_of_FPQ</targetReference>
+            </connector>
+            <label>Resubmit For Review</label>
+        </rules>
+        <rules>
+            <name>Withdraw_Financing_Request</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>WithdrawFinanceRequestChoice</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Justification_Screen</targetReference>
+            </connector>
+            <label>Withdraw Financing Request</label>
+        </rules>
+    </decisions>
+    <description>1/2/24: Created as part of 3PF Phase 2 Project - GTMS-16419
+1/26/24: Added Resubmit for Review condition in if element
+2/6/24: Updated to Run as system flow
+2/13/24: Added Pending - Under Partner Review condition in 3PF Entry check if condition.
+2/14/24: Added Pending condition in 3PF Entry check if condition.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NonVartanaEmailSubject</name>
+        <dataType>String</dataType>
+        <expression>&apos;Partner Portal Notification - Changes to Request for &apos;&amp;{!Get_FPQ_Record.Account__r.Name}&amp;&apos;, &apos;&amp;{!Get_FPQ_Record.Opportunity_owner_Email__c}&amp;&apos;, &apos;&amp;{!Get_FPQ_Record.Opportunity__r.Owner.Manager_Name__c}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-16419: Created as part of 3PF phase 2 project</description>
+        <name>URL_Variable</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_560}, FIND(&apos;/services&apos;, {!$Api.Partner_Server_URL_560}))&amp;{!recordId}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-16451: Created as part of 3PF phase 2 project - to store subject for Withdrawn email by sales team</description>
+        <name>Withdrawn_Email_Subject</name>
+        <dataType>String</dataType>
+        <expression>&apos;FPQ Request Withdrawn - &apos;+{!Get_FPQ_Record.Account__r.Name}+&apos;, &apos;+{!Get_FPQ_Record.Opportunity__r.Owner.FirstName}+&apos; &apos;+{!Get_FPQ_Record.Opportunity__r.Owner.LastName}+&apos; - &apos;+{!Get_FPQ_Record.Name}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-16451: Created as part of 3PF Phase 2 project.</description>
+        <name>WithdrawnEmailRecepientEmail</name>
+        <dataType>String</dataType>
+        <expression>IF(
+CONTAINS({!$Profile.Name},&apos;Partner&apos;),
+{!Get_FPQ_Record.Opportunity__r.Owner.Email},
+{!Get_FPQ_Record.Partner_Contact__r.Email}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-16451: Created as part of 3PF Phase 2 project</description>
+        <name>WithdrawnEmailToUserName</name>
+        <dataType>String</dataType>
+        <expression>if(CONTAINS({!$Profile.Name}, &apos;Partner&apos;),
+ {!Get_FPQ_Record.Opportunity__r.Owner.Name}, 
+{!Get_FPQ_Record.Partner_Contact__r.Name})</expression>
+    </formulas>
+    <interviewLabel>Resubmit For Review/Withdraw {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Resubmit For Review/Withdraw</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Fetch FPQ Record based on record id</description>
+        <name>Get_FPQ_Record</name>
+        <label>Get FPQ Record</label>
+        <locationX>942</locationX>
+        <locationY>43</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Select_Action_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Finance_Partner_Quote__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update Financing Decision value to Pending Under Partner Review</description>
+        <name>Update_FPQ_Record</name>
+        <label>Update FPQ Record</label>
+        <locationX>322</locationX>
+        <locationY>360</locationY>
+        <connector>
+            <targetReference>Partner_Contact_Check</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Path</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Financing_Decision__c</field>
+            <value>
+                <stringValue>Pending - Under Partner Review</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Finance_Partner_Quote__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-16451: Created as part of 3PF phase 2 project on 1/15/24</description>
+        <name>Withdraw_FPQ_Update</name>
+        <label>Withdraw FPQ Update</label>
+        <locationX>960</locationX>
+        <locationY>510</locationY>
+        <connector>
+            <targetReference>Is_Partner_Contact_Mapped</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Path</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Financing_Decision__c</field>
+            <value>
+                <stringValue>Withdrawn</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Finance_Partner_Quote__c</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>Entry_Error_Screeen</name>
+        <label>Entry Error Screeen</label>
+        <locationX>308</locationX>
+        <locationY>189</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>EntryError</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(205, 36, 36);&quot;&gt;You Cannot Edit This Record&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Path</name>
+        <label>Error Path</label>
+        <locationX>577</locationX>
+        <locationY>445</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>FaultErrorMessage</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(234, 63, 10); font-size: 14px;&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Justification_Screen</name>
+        <label>Justification Screen</label>
+        <locationX>776</locationX>
+        <locationY>363</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Withdraw_FPQ_Update</targetReference>
+        </connector>
+        <fields>
+            <name>Please_Add_Justification</name>
+            <fieldText>Please Add Justification</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Select_Action_Type</name>
+        <label>Select Request Type</label>
+        <locationX>943</locationX>
+        <locationY>216</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Request_Type_Check</targetReference>
+        </connector>
+        <fields>
+            <name>Select_Request_Type</name>
+            <choiceReferences>ResubmitForReviewChoice</choiceReferences>
+            <choiceReferences>WithdrawFinanceRequestChoice</choiceReferences>
+            <dataType>Boolean</dataType>
+            <defaultSelectedChoiceReference>ResubmitForReviewChoice</defaultSelectedChoiceReference>
+            <fieldText>Select Request Type</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 12px; color: rgb(116, 116, 116);&quot;&gt;select one of the required choices to move forward&lt;/span&gt;&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>449</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_FPQ_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>NonVartanaEmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Hello,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;A change has been made to the application for &lt;/span&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;{!Get_FPQ_Record.Account__r.Name}&lt;/strong&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt; Please access &lt;/span&gt;&lt;a href=&quot;{!URL_Variable}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;this link&lt;/a&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt; to re-review the request and update decision and subsidy information as needed.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Thanks,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;The Samsara Deal Desk Team&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>GTMS-16451: created as part of 3PF Phase 2 project on 1/15/24</description>
+        <name>WithdrawnEmailTemplate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Hello {!Get_FPQ_Record.Partner_Contact__r.FirstName},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt;{!Get_FPQ_Record.Opportunity__r.Owner.FirstName} &lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_FPQ_Record.Opportunity__r.Owner.LastName}&lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;has withdrawn their funding request under &lt;/span&gt;&lt;a href=&quot;{!URL_Variable}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;{!Get_FPQ_Record.Name}&lt;/a&gt;&lt;span style=&quot;font-size: 14px; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt; for {!Get_FPQ_Record.Account__r.Name}.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Justification&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;: {!Please_Add_Justification}.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Thank you for your consideration,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;The Samsara Deal Desk Team.&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>map FPQ recordid</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

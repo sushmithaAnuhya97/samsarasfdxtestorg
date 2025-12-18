@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ob1__Content_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Content Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>application/vnd.ms-excel</fullName>
+                <default>false</default>
+                <label>application/vnd.ms-excel</label>
+            </value>
+            <value>
+                <fullName>text/html</fullName>
+                <default>false</default>
+                <label>text/html</label>
+            </value>
+            <value>
+                <fullName>application/pdf</fullName>
+                <default>false</default>
+                <label>application/pdf</label>
+            </value>
+            <value>
+                <fullName>application/vnd.ms-word</fullName>
+                <default>false</default>
+                <label>application/vnd.ms-word</label>
+            </value>
+            <value>
+                <fullName>text/xml</fullName>
+                <default>false</default>
+                <label>text/xml</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

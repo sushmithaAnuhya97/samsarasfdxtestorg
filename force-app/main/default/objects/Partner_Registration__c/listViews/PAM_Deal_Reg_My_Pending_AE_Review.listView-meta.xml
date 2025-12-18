@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAM_Deal_Reg_My_Pending_AE_Review</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Company__c</columns>
+    <columns>PAM__c</columns>
+    <columns>Partner_Account__c</columns>
+    <columns>PAM_Review_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>PAM Reviewed</value>
+    </filters>
+    <label>All Deal Reg: Pending AE Review</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

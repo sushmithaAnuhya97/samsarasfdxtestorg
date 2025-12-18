@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Autonumber_Length_Rules</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR (
+1 &gt; PDLM__Item_Autonumber_Length__c,
+PDLM__Item_Autonumber_Length__c &gt; 12)</errorConditionFormula>
+    <errorDisplayField>PDLM__Item_Autonumber_Length__c</errorDisplayField>
+    <errorMessage>Item Autonumber Length must be between 0 and 12.</errorMessage>
+</ValidationRule>

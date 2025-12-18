@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AG_Old_Amount__c</fullName>
+    <formula>IF(OR(Product_Code_Copy__c =&apos;LIC-AG-EXPRESS&apos;,Product_Code_Copy__c =&apos;LIC-AG-EXPRESS-12MO&apos;,Product_Code_Copy__c =&apos;LIC-REEFER-EXPRESS&apos;,Product_Code_Copy__c =&apos;LIC-REEFER-EXPRESS-12MO&apos;), TotalPrice , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AG Old Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__All</fullName>
+    <columns>refedge__Details__c</columns>
+    <columns>refedge__Note_Date__c</columns>
+    <columns>refedge__Note__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>refedge__Account_Request__c</columns>
+    <columns>refedge__Reference_Request__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>refedge__Ref_Search__c</columns>
+    <columns>refedge__Unspecified_Request__c</columns>
+    <columns>refedge__Reference_Content__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>refedge__Ref_Search__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All</label>
+</ListView>

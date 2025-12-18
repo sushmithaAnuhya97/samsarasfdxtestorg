@@ -1,0 +1,2661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Campaign</baseObject>
+    <category>campaigns</category>
+    <deployed>true</deployed>
+    <description>Allows campaign activity to be filtered by FPs</description>
+    <join>
+        <join>
+            <outerJoin>false</outerJoin>
+            <relationship>LeanData__TTA_Objects__r</relationship>
+        </join>
+        <outerJoin>false</outerJoin>
+        <relationship>ContactCampaignMembers</relationship>
+    </join>
+    <label>Campaigns with Contacts and T2A</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign ID</displayNameOverride>
+            <field>Id</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Name</displayNameOverride>
+            <field>Name</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Parent Campaign</displayNameOverride>
+            <field>Parent</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type</displayNameOverride>
+            <field>Type</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>Status</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Start Date</displayNameOverride>
+            <field>StartDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End Date</displayNameOverride>
+            <field>EndDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Revenue in Campaign</displayNameOverride>
+            <field>ExpectedRevenue</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Budgeted Cost in Campaign</displayNameOverride>
+            <field>BudgetedCost</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Actual Cost in Campaign</displayNameOverride>
+            <field>ActualCost</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Response (%)</displayNameOverride>
+            <field>ExpectedResponse</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Num Sent in Campaign</displayNameOverride>
+            <field>NumberSent</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Active</displayNameOverride>
+            <field>IsActive</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>Description</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Leads in Campaign</displayNameOverride>
+            <field>NumberOfLeads</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Leads in Campaign</displayNameOverride>
+            <field>NumberOfConvertedLeads</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contacts in Campaign</displayNameOverride>
+            <field>NumberOfContacts</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Responses in Campaign</displayNameOverride>
+            <field>NumberOfResponses</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunities in Campaign</displayNameOverride>
+            <field>NumberOfOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Won Opportunities in Campaign</displayNameOverride>
+            <field>NumberOfWonOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Opportunities in Campaign</displayNameOverride>
+            <field>AmountAllOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Won Opportunities in Campaign</displayNameOverride>
+            <field>AmountWonOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Leads in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfLeads</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Leads in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfConvertedLeads</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contacts in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfContacts</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Responses in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfResponses</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Won Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberOfWonOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyAmountAllOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Value Won Opportunities in Hierarchy</displayNameOverride>
+            <field>HierarchyAmountWonOpportunities</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Num Sent in Hierarchy</displayNameOverride>
+            <field>HierarchyNumberSent</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Revenue in Hierarchy</displayNameOverride>
+            <field>HierarchyExpectedRevenue</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Budgeted Cost in Hierarchy</displayNameOverride>
+            <field>HierarchyBudgetedCost</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Actual Cost in Hierarchy</displayNameOverride>
+            <field>HierarchyActualCost</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Member Type</displayNameOverride>
+            <field>CampaignMemberRecordType</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Masters Campaign</displayNameOverride>
+            <field>Masters_Campaign__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Run Round Robin</displayNameOverride>
+            <field>Run_Round_Robin__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Short Description</displayNameOverride>
+            <field>Short_Description__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Growth/Marketing Campaign</displayNameOverride>
+            <field>Growth_Campaign__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Event Campaign</displayNameOverride>
+            <field>Event_Campaign__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing Campaign</displayNameOverride>
+            <field>Email_Campaign__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Experimental Campaign</displayNameOverride>
+            <field>Experimental_Campaign__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Team</displayNameOverride>
+            <field>Team__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Theme</displayNameOverride>
+            <field>Theme__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sub-Type</displayNameOverride>
+            <field>Sub_Type__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Theme Context</displayNameOverride>
+            <field>Theme_Context__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Content due date</displayNameOverride>
+            <field>Content_due_date__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Targeted Verticals</displayNameOverride>
+            <field>Targeted_Vertical__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Global Region</displayNameOverride>
+            <field>Global_Region__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Targeted Segments</displayNameOverride>
+            <field>Targeted_Segments__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Marketing work start date</displayNameOverride>
+            <field>Marketing_work__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lifecycle Expansion</displayNameOverride>
+            <field>Lifecycle_Expansion__c</field>
+            <table>Campaign</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Route to AE</displayNameOverride>
+            <field>Route_to_AE__c</field>
+            <table>Campaign</table>
+        </columns>
+        <masterLabel>Campaigns</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact ID</displayNameOverride>
+            <field>Id</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>Status</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Responded</displayNameOverride>
+            <field>HasResponded</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Primary</displayNameOverride>
+            <field>IsPrimary</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Score</displayNameOverride>
+            <field>Lead_Score_Seller_View__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Responded Date</displayNameOverride>
+            <field>FirstRespondedDate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Influence Date</displayNameOverride>
+            <field>Campaign_Influence_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Slack Notification to Owner</displayNameOverride>
+            <field>Slack_Notification_to_Owner__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Interaction Date</displayNameOverride>
+            <field>Campaign_Interaction_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Initial Response Time</displayNameOverride>
+            <field>Initial_Response_Time__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner At Interaction</displayNameOverride>
+            <field>Owner_At_Interaction__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time To First Call Business Hours</displayNameOverride>
+            <field>Time_To_First_Call_Business_Hours__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Interaction Type</displayNameOverride>
+            <field>Campaign_Interaction_Type__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR Role Copy</displayNameOverride>
+            <field>ADR_Role_Copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time To First Call Off Hours</displayNameOverride>
+            <field>Time_To_First_Call_Off_Hours__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Id</displayNameOverride>
+            <field>Account_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Parent Campaign Id</displayNameOverride>
+            <field>Parent_Campaign_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Parent Campaign Name</displayNameOverride>
+            <field>Parent_Campaign_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Master Campaign Name</displayNameOverride>
+            <field>Master_Campaign_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Name</displayNameOverride>
+            <field>Campaign_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR Transfer By</displayNameOverride>
+            <field>ADR_Transfer_By__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner Role Copy</displayNameOverride>
+            <field>Owner_Role_Copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account</displayNameOverride>
+            <field>Account__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account SAM number</displayNameOverride>
+            <field>Account_SAM_number__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Run Round Robin</displayNameOverride>
+            <field>Run_Round_Robin__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Round Robin</displayNameOverride>
+            <field>Campaign_Round_Robin__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Review Status (Deprecated)</displayNameOverride>
+            <field>Partner_Review_Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Member Hyperlink</displayNameOverride>
+            <field>Campaign_Member_Hyperlink__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calls below Age</displayNameOverride>
+            <field>Calls_Below_Age__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hour of interaction</displayNameOverride>
+            <field>Hour_of_interaction__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Member Age (Days)</displayNameOverride>
+            <field>Campaign_Member_Age_Days__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Active</displayNameOverride>
+            <field>Active__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Growth Campaign</displayNameOverride>
+            <field>Growth_Campaign__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tabs: Campaign and Events</displayNameOverride>
+            <field>ADR_Campaign_and_Events__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Day of Interaction</displayNameOverride>
+            <field>Day_of_Interaction__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Interaction Time Category</displayNameOverride>
+            <field>Interaction_Time_Category__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Interaction before Oppty Creation</displayNameOverride>
+            <field>Interaction_before_Oppty_Creation__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Inbound ADR Toggle Status</displayNameOverride>
+            <field>Inbound_ADR_Toggle_Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time Category</displayNameOverride>
+            <field>Time_Category__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Id</displayNameOverride>
+            <field>Contact_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_source</displayNameOverride>
+            <field>utm_source__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_campaign</displayNameOverride>
+            <field>utm_campaign__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_medium</displayNameOverride>
+            <field>utm_medium__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_content</displayNameOverride>
+            <field>utm_content__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_term</displayNameOverride>
+            <field>utm_term__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Channel Type</displayNameOverride>
+            <field>Channel_Type__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ext_campaign_id</displayNameOverride>
+            <field>utm_ext_campaign_id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_campaign_first_copy</displayNameOverride>
+            <field>utm_campaign_first_copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ext_adset_id</displayNameOverride>
+            <field>utm_ext_adset_id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ext_ad_id</displayNameOverride>
+            <field>utm_ext_ad_id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_source_first</displayNameOverride>
+            <field>utm_source_first__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm source last</displayNameOverride>
+            <field>utm_source_last__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_campaign_last_copy</displayNameOverride>
+            <field>utm_campaign_last_copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Campaign First</displayNameOverride>
+            <field>UTM_Campaign_First__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UTM Campaign Last</displayNameOverride>
+            <field>UTM_Campaign_Last__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ts</displayNameOverride>
+            <field>utm_ts__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Name</displayNameOverride>
+            <field>Account</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Full Name</displayNameOverride>
+            <field>Name</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Salutation</displayNameOverride>
+            <field>Salutation</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Name</displayNameOverride>
+            <field>FirstName</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Name</displayNameOverride>
+            <field>LastName</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Middle Name</displayNameOverride>
+            <field>MiddleName</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Suffix</displayNameOverride>
+            <field>Suffix</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Record Type</displayNameOverride>
+            <field>RecordType</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Address</displayNameOverride>
+            <field>OtherAddress</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Street</displayNameOverride>
+            <field>OtherStreet</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other City</displayNameOverride>
+            <field>OtherCity</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other State/Province (text only)</displayNameOverride>
+            <field>OtherState</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Zip/Postal Code</displayNameOverride>
+            <field>OtherPostalCode</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Country (text only)</displayNameOverride>
+            <field>OtherCountry</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other State/Province</displayNameOverride>
+            <field>OtherStateCode</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Country</displayNameOverride>
+            <field>OtherCountryCode</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Latitude</displayNameOverride>
+            <field>OtherLatitude</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Longitude</displayNameOverride>
+            <field>OtherLongitude</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Geocode Accuracy</displayNameOverride>
+            <field>OtherGeocodeAccuracy</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Address</displayNameOverride>
+            <field>MailingAddress</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Street</displayNameOverride>
+            <field>MailingStreet</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing City</displayNameOverride>
+            <field>MailingCity</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing State/Province (text only)</displayNameOverride>
+            <field>MailingState</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Zip/Postal Code</displayNameOverride>
+            <field>MailingPostalCode</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Country (text only)</displayNameOverride>
+            <field>MailingCountry</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing State/Province</displayNameOverride>
+            <field>MailingStateCode</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Country</displayNameOverride>
+            <field>MailingCountryCode</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Latitude</displayNameOverride>
+            <field>MailingLatitude</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Longitude</displayNameOverride>
+            <field>MailingLongitude</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Geocode Accuracy</displayNameOverride>
+            <field>MailingGeocodeAccuracy</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone</displayNameOverride>
+            <field>Phone</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fax</displayNameOverride>
+            <field>Fax</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mobile</displayNameOverride>
+            <field>MobilePhone</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Home Phone</displayNameOverride>
+            <field>HomePhone</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Phone</displayNameOverride>
+            <field>OtherPhone</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Asst. Phone</displayNameOverride>
+            <field>AssistantPhone</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reports To</displayNameOverride>
+            <field>ReportsTo</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email</displayNameOverride>
+            <field>Email</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Title</displayNameOverride>
+            <field>Title</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Department</displayNameOverride>
+            <field>Department</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Assistant</displayNameOverride>
+            <field>AssistantName</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Source</displayNameOverride>
+            <field>LeadSource</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Birthdate</displayNameOverride>
+            <field>Birthdate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>Description</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email - Global Opt Out</displayNameOverride>
+            <field>HasOptedOutOfEmail</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Fax Opt Out</displayNameOverride>
+            <field>HasOptedOutOfFax</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Do Not Call</displayNameOverride>
+            <field>DoNotCall</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Stay-in-Touch Request Date</displayNameOverride>
+            <field>LastCURequestDate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Stay-in-Touch Save Date</displayNameOverride>
+            <field>LastCUUpdateDate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Bounced Reason</displayNameOverride>
+            <field>EmailBouncedReason</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Bounced Date</displayNameOverride>
+            <field>EmailBouncedDate</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Email Bounced</displayNameOverride>
+            <field>IsEmailBounced</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data.com Key</displayNameOverride>
+            <field>Jigsaw</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Individual</displayNameOverride>
+            <field>Individual</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Notes</displayNameOverride>
+            <field>Contact_Notes__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Demo Type</displayNameOverride>
+            <field>Demo_Type__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Demo Completed Date</displayNameOverride>
+            <field>Demo_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR Demo Date</displayNameOverride>
+            <field>ADR_Demo_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR Transfer</displayNameOverride>
+            <field>ADR_Transfer__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR Transfer By</displayNameOverride>
+            <field>ADR_Transfer_By__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR Transfer Date</displayNameOverride>
+            <field>ADR_Transfer_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR Transfer Status</displayNameOverride>
+            <field>ADR_Transfer_Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Follow Up Date</displayNameOverride>
+            <field>Follow_Up_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Call</displayNameOverride>
+            <field>Last_Call__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>(Deprecated) Number of Calls</displayNameOverride>
+            <field>Number_of_Calls__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Qualified Date</displayNameOverride>
+            <field>Qualified_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Source</displayNameOverride>
+            <field>Source__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Status</displayNameOverride>
+            <field>Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Validated Contact</displayNameOverride>
+            <field>Validated_Contact__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cookies</displayNameOverride>
+            <field>Cookies__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referring Partner Email</displayNameOverride>
+            <field>Referring_Partner_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referring Partner Name</displayNameOverride>
+            <field>Referring_Partner_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referring Partner Phone</displayNameOverride>
+            <field>Referring_Partner_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referring Partner Account</displayNameOverride>
+            <field>Referring_Partner_Account__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referring Partner Company Name</displayNameOverride>
+            <field>Referring_Partner_Company_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Timezone</displayNameOverride>
+            <field>Timezone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DemoDate WeekStart</displayNameOverride>
+            <field>DemoDate_WeekStart__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Owner Email</displayNameOverride>
+            <field>Contact_Owner_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referred By</displayNameOverride>
+            <field>Referred_By__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Name</displayNameOverride>
+            <field>Customer_Referral_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Email</displayNameOverride>
+            <field>Customer_Referral_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Free Trial Account Creation Datetime</displayNameOverride>
+            <field>Free_Trial_Account_Creation_Datetime__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Free Trial Last Activity Datetime</displayNameOverride>
+            <field>Free_Trial_Last_Activity_Datetime__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Status Changed</displayNameOverride>
+            <field>Contact_Status_Changed__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Import Source Name</displayNameOverride>
+            <field>Import_Source_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Age</displayNameOverride>
+            <field>Age__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Normalized Phone</displayNameOverride>
+            <field>Normalized_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Normalized Phone Text</displayNameOverride>
+            <field>Normalized_Phone_Text__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>isUpdated</displayNameOverride>
+            <field>isUpdated__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MVF Dispute</displayNameOverride>
+            <field>MVF_Dispute__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Hashtag</displayNameOverride>
+            <field>Hashtag__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Email Opt Out</displayNameOverride>
+            <field>Sales_Email_Opt_Out__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Touch Campaign</displayNameOverride>
+            <field>First_Touch_Campaign__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Touch Master</displayNameOverride>
+            <field>First_Touch_Master__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MVF Reference Number</displayNameOverride>
+            <field>MVF_Reference_Number__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Touch Campaign Date/Time</displayNameOverride>
+            <field>First_Touch_Campaign_Date_Time__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deals Map Link</displayNameOverride>
+            <field>Deals_Map_Link__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Next Call</displayNameOverride>
+            <field>Next_Call__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Latitude</displayNameOverride>
+            <field>Latitude__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Longitude</displayNameOverride>
+            <field>Longitude__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case owner CSAT</displayNameOverride>
+            <field>Case_owner_CSAT__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Pipeline</displayNameOverride>
+            <field>Account_Pipeline__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Lifetime Purchases</displayNameOverride>
+            <field>Account_Lifetime_Purchases__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Dashboard Last Activity Datetime</displayNameOverride>
+            <field>Dashboard_Last_Activity_Datetime__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral DQ Reason</displayNameOverride>
+            <field>Customer_Referral_DQ_Reason__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Touch Campaign Status</displayNameOverride>
+            <field>First_Touch_Campaign_Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>IP Address</displayNameOverride>
+            <field>IP_Address__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Delighted Response Comment</displayNameOverride>
+            <field>Last_Delighted_Response_Comment__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Days Inactive</displayNameOverride>
+            <field>Customer_Days_Inactive__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hot Transfer To</displayNameOverride>
+            <field>Hot_Transfer_To__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Received Gift Card</displayNameOverride>
+            <field>Customer_Referral_Received_Gift_Card__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LinkedIn Company Id</displayNameOverride>
+            <field>LID__LinkedIn_Company_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LinkedIn Member Token</displayNameOverride>
+            <field>LID__LinkedIn_Member_Token__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ownership Flag</displayNameOverride>
+            <field>Ownership_Flag__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Date</displayNameOverride>
+            <field>Customer_Referral_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Did Not Qualify</displayNameOverride>
+            <field>Customer_Referral_Did_Not_Qualify__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Email</displayNameOverride>
+            <field>Billing_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Celigo Update</displayNameOverride>
+            <field>netsuite_conn__Celigo_Update__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>DEPRICAT ADR Transfer By Role at Contact</displayNameOverride>
+            <field>ADR_Transfer_By_Role_at_Contact__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Geography</displayNameOverride>
+            <field>Geography__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Inbound Interest Date</displayNameOverride>
+            <field>Last_Marketing_Engagement_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Inbound Form Message</displayNameOverride>
+            <field>Inbound_Form_Message__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days post first purchase</displayNameOverride>
+            <field>Days_post_first_purchase__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cases closed</displayNameOverride>
+            <field>Cases_closed__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>send Csat email</displayNameOverride>
+            <field>send_Csat_email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industrial Prospect</displayNameOverride>
+            <field>Industrial_Customer__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>NetSuite Customer Id</displayNameOverride>
+            <field>netsuite_conn__NetSuite_Customer_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>NetSuite Id</displayNameOverride>
+            <field>netsuite_conn__NetSuite_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>NetSuite Sync Error</displayNameOverride>
+            <field>netsuite_conn__NetSuite_Sync_Err__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Push To NetSuite</displayNameOverride>
+            <field>netsuite_conn__Push_To_NetSuite__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pushed From Opportunity</displayNameOverride>
+            <field>netsuite_conn__Pushed_From_Opportunity__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sync In Progress</displayNameOverride>
+            <field>netsuite_conn__Sync_In_Progress__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Churn Payment Status</displayNameOverride>
+            <field>Churn_Payment_Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Churn First Failed Payment Date</displayNameOverride>
+            <field>Churn_First_Failed_Payment_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Churn Update CC Link</displayNameOverride>
+            <field>Churn_Update_CC_Link__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Affiliation Type</displayNameOverride>
+            <field>Affiliation_Type__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Support Case Related</displayNameOverride>
+            <field>Support_Case_Related__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Email Status</displayNameOverride>
+            <field>CloudingoAgent__CES__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Do Not Apply Duplicate Rules</displayNameOverride>
+            <field>Do_Not_Apply_Duplicate_Rules__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Google Adwords Keyword</displayNameOverride>
+            <field>Google_Adwords_Keyword__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Churn Do Not Email</displayNameOverride>
+            <field>Churn_Do_Not_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Purchase Date</displayNameOverride>
+            <field>First_Purchase_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Express Deals Counter</displayNameOverride>
+            <field>Express_Deals_Counter__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Since Last Call By Current Owner</displayNameOverride>
+            <field>Days_Since_Last_Call_By_Current_Owner__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Priority Level</displayNameOverride>
+            <field>Priority_Level__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Account Name</displayNameOverride>
+            <field>Customer_Referral_Account__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industrial Reason/Interest</displayNameOverride>
+            <field>Industrial_Reason_Interest__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Lead Id</displayNameOverride>
+            <field>Converted_Lead_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Status</displayNameOverride>
+            <field>Customer_Referral_Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Calls Until Qualification</displayNameOverride>
+            <field>Number_of_Calls_Until_Qualification__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>No BANT Reason</displayNameOverride>
+            <field>No_BANT_Reason__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Owner != Account Owner</displayNameOverride>
+            <field>Contact_Owner_Matches_Account_Owner__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Referral Reward Amount</displayNameOverride>
+            <field>Customer_Referral_Reward_Amount__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Segment</displayNameOverride>
+            <field>Segment__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calls Number</displayNameOverride>
+            <field>Calls_Number__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing First Name</displayNameOverride>
+            <field>Billing_First_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Last Name</displayNameOverride>
+            <field>Billing_Last_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Active Growth Campaigns Count</displayNameOverride>
+            <field>Active_Growth_Campaigns_Count__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Calls Last 30 Days</displayNameOverride>
+            <field>Number_of_Calls_Last_30_Days__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unload Account</displayNameOverride>
+            <field>Unload_Account__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zendesk Phone</displayNameOverride>
+            <field>Zendesk_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Normalized Mobile Phone</displayNameOverride>
+            <field>Normalized_Mobile_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Zendesk Mobile Phone</displayNameOverride>
+            <field>Zendesk_Mobile_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Support Priority</displayNameOverride>
+            <field>Support_Priority__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Owner Manager Email</displayNameOverride>
+            <field>Contact_Owner_Manager_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Phone</displayNameOverride>
+            <field>Billing_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_campaign</displayNameOverride>
+            <field>utm_campaign__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_content</displayNameOverride>
+            <field>utm_content__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_medium</displayNameOverride>
+            <field>utm_medium__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_source</displayNameOverride>
+            <field>utm_source__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_term</displayNameOverride>
+            <field>utm_term__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Send to Round Robin</displayNameOverride>
+            <field>Send_to_Round_Robin__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Faulty Lead</displayNameOverride>
+            <field>Is_Faulty_Lead__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SAM Number</displayNameOverride>
+            <field>SAM_Number__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Address Record Type</displayNameOverride>
+            <field>CloudingoAgent__MAR__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Address Status</displayNameOverride>
+            <field>CloudingoAgent__MAS__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Address Vacancy</displayNameOverride>
+            <field>CloudingoAgent__MAV__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Residential Delivery Indicator</displayNameOverride>
+            <field>CloudingoAgent__MRDI__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CSM Owner</displayNameOverride>
+            <field>CSM_Owner__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Demo Reminder Test Group</displayNameOverride>
+            <field>Demo_Reminder_Test_Group__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hubspot Auto Demo Reminder Sent</displayNameOverride>
+            <field>Hubspot_Auto_Demo_Reminder_Sent__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Free Trial AB Test</displayNameOverride>
+            <field>Free_Trial_AB_Test__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CSM Email Formula</displayNameOverride>
+            <field>CSM_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Scheduled Demo Date</displayNameOverride>
+            <field>Scheduled_Demo_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Associated Lawful Basis</displayNameOverride>
+            <field>Associated_Lawful_Basis__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Express Agreement Link Copy</displayNameOverride>
+            <field>Express_Agreement_Link_Copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt Out Request</displayNameOverride>
+            <field>Opt_Out_Request__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Purchase Date</displayNameOverride>
+            <field>Last_Purchase_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Express_Abandoned_Cart_Link__c</displayNameOverride>
+            <field>Express_Abandoned_Cart_Link_c__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Send Demo Reminder</displayNameOverride>
+            <field>Send_Demo_Reminder__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>18 Digit Contact ID</displayNameOverride>
+            <field>X18_digit_Contact_ID__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CSM First Name</displayNameOverride>
+            <field>CSM_First_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mailing Timezone</displayNameOverride>
+            <field>CloudingoAgent__MTZ__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Address Record Type</displayNameOverride>
+            <field>CloudingoAgent__OAR__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Address Status</displayNameOverride>
+            <field>CloudingoAgent__OAS__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Owner</displayNameOverride>
+            <field>Account_Owner__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Demo Scheduled For Past 7 Days?</displayNameOverride>
+            <field>Demo_Scheduled_For_Past_7_Days__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Address Vacancy</displayNameOverride>
+            <field>CloudingoAgent__OAV__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Calls</displayNameOverride>
+            <field>Number_of_Calls_Rollup__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Calls by Current Owner</displayNameOverride>
+            <field>Number_of_Calls_by_Current_Owner_Roll_Up__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Demo Date Text</displayNameOverride>
+            <field>Demo_Date_Text__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CSM Phone</displayNameOverride>
+            <field>CSM_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt Out Email Copy</displayNameOverride>
+            <field>Opt_Out_Email_Copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt Out Mobile Phone Copy</displayNameOverride>
+            <field>Opt_Out_Mobile_Phone_Copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt Out Phone Copy</displayNameOverride>
+            <field>Opt_Out_Phone_Copy__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Phone Opt Out</displayNameOverride>
+            <field>Phone_Opt_Out__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Registered on TPS</displayNameOverride>
+            <field>Registered_on_TPS__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Contacts</displayNameOverride>
+            <field>of_Contacts__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Power of 1</displayNameOverride>
+            <field>Power_of_1__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt Out Mobile Phone</displayNameOverride>
+            <field>Opt_Out_Mobile_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opt Out Phone</displayNameOverride>
+            <field>Opt_Out_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Residential Delivery Indicator</displayNameOverride>
+            <field>CloudingoAgent__ORDI__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Other Timezone</displayNameOverride>
+            <field>CloudingoAgent__OTZ__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enrolled in Hubspot Churn Program</displayNameOverride>
+            <field>Enrolled_in_Hubspot_Churn_Program__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Website</displayNameOverride>
+            <field>Website__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Organization Size</displayNameOverride>
+            <field>Organization_Size__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Powered Assets</displayNameOverride>
+            <field>Number_of_Trailers__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industry</displayNameOverride>
+            <field>Industry__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Vehicles</displayNameOverride>
+            <field>Number_of_Vehicles_from_Account__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CSM survey</displayNameOverride>
+            <field>CSM_survey__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Name Formula</displayNameOverride>
+            <field>Account_Name_Formula__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Missing BANT Criteria</displayNameOverride>
+            <field>Missing_BANT_Criteria__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reached Out for Referral</displayNameOverride>
+            <field>Reached_Out_for_Referral__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Calls This Week</displayNameOverride>
+            <field>Number_of_Calls_This_Week__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>UK Number for TPS or CTPS Screening</displayNameOverride>
+            <field>UK_Number_for_TPS_or_CTPS_Screening__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type Stamp for Dupes</displayNameOverride>
+            <field>Record_Type_Stamp_for_Dupes__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Delighted Response Score</displayNameOverride>
+            <field>DelightedInc__Last_Delighted_Response_Score__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quantcast Id</displayNameOverride>
+            <field>Quantcast_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unique customer referral link</displayNameOverride>
+            <field>Unique_customer_referral_link__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Notes to Append</displayNameOverride>
+            <field>Converted_Notes_to_Append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Hashtag to Append</displayNameOverride>
+            <field>Converted_Hashtags_to_Append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type Matches Account</displayNameOverride>
+            <field>Record_Type_Matches_Account__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Record Type</displayNameOverride>
+            <field>Account_Record_Type__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Record Type Name</displayNameOverride>
+            <field>Account_Record_Type_Name__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Page Visited</displayNameOverride>
+            <field>First_Page_Visited__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign Member Status</displayNameOverride>
+            <field>Campaign_Member_Status__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Campaign to Add</displayNameOverride>
+            <field>Campaign_to_Add__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Concatenated CampaignId</displayNameOverride>
+            <field>Concatenated_CampaignId__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Converted Contact</displayNameOverride>
+            <field>Converted_Contact__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Inbound Form Message to append</displayNameOverride>
+            <field>Inbound_Form_Message_to_append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Include in Merge</displayNameOverride>
+            <field>Include_in_Merge__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>New Inbound Lead</displayNameOverride>
+            <field>New_Inbound_Lead__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm campaign append</displayNameOverride>
+            <field>utm_campaign_append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm content append</displayNameOverride>
+            <field>utm_content_append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm medium append</displayNameOverride>
+            <field>utm_medium_append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm source append</displayNameOverride>
+            <field>utm_source_append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm term append</displayNameOverride>
+            <field>utm_term_append__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ADR/CML Tabs: Follow-Up</displayNameOverride>
+            <field>ADR_Follow_Up__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CML Tabs: Weekly Outbound Focus</displayNameOverride>
+            <field>CML_Weekly_Outbound_Focus__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CML Tabs: Upsells and Referrals</displayNameOverride>
+            <field>CML_Upsells_and_Referrals__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type Id for Conversion2</displayNameOverride>
+            <field>Record_Type_Id_for_Conversion2__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Unpowered Assets</displayNameOverride>
+            <field>Number_of_Assets__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pages Viewed Last Visit</displayNameOverride>
+            <field>Pages_Viewed_Last_Visit__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pages Visited</displayNameOverride>
+            <field>Pages_Visited__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Website Visits</displayNameOverride>
+            <field>Total_Website_Visits__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Seen Date</displayNameOverride>
+            <field>Last_Seen_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Kickfire Lead</displayNameOverride>
+            <field>Is_Kickfire_Lead__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Lead Traffic Source</displayNameOverride>
+            <field>Lead_Traffic_Source__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Original Owner for Recycling Campaign</displayNameOverride>
+            <field>Original_Owner_for_Recycling_Campaign__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Inbound Reason Faulty</displayNameOverride>
+            <field>Inbound_Reason_Faulty__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MVF Faulty Description</displayNameOverride>
+            <field>MVF_Faulty_Description__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>MVF Distribution ID</displayNameOverride>
+            <field>MVF_Distribution_ID__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reps on Phone</displayNameOverride>
+            <field>Reps_on_Phone__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Trial Deactivation Email</displayNameOverride>
+            <field>Trial_Deactivation_Email__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Website Visitor Location</displayNameOverride>
+            <field>Website_Visitor_Location__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Campaign</displayNameOverride>
+            <field>Last_Campaign__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Inbound Lead Conversion</displayNameOverride>
+            <field>Inbound_Lead_Conversion__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>RWV Slack Sent Date</displayNameOverride>
+            <field>RWV_Slack_Sent_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Active Wells</displayNameOverride>
+            <field>Number_of_Active_Wells__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Barrels per Month</displayNameOverride>
+            <field>Number_of_Barrels_per_Month__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>SLA Picklist</displayNameOverride>
+            <field>SLA_Picklist__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Population Served by Water District</displayNameOverride>
+            <field>Population_Served_by_Water_District__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mixmax Hashtag 1</displayNameOverride>
+            <field>Mixmax_Hashtag_1__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Addendum Agreement Date</displayNameOverride>
+            <field>Data_Addendum_Agreement_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Addendum Accepted?</displayNameOverride>
+            <field>Data_Addendum_Accepted__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Addendum Providers</displayNameOverride>
+            <field>Data_Addendum_Insurance_Providers__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Sharing Addendum Link</displayNameOverride>
+            <field>Data_Sharing_Addendum_Link__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mixmax Hashtag 2</displayNameOverride>
+            <field>Mixmax_Hashtag_2__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Influencer?</displayNameOverride>
+            <field>Influencer__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner Role</displayNameOverride>
+            <field>Owner_Role__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Post Last Account Purchase</displayNameOverride>
+            <field>Days_Post_Last_Account_Purchase__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>% Account VG Installs</displayNameOverride>
+            <field>Account_VG_Installs__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>% Account AG Installs</displayNameOverride>
+            <field>Account_AG_Installs__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Send Data Share Agreement to Customer</displayNameOverride>
+            <field>Send_Data_Share_Agreement_to_Customer__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Size Segment</displayNameOverride>
+            <field>Account_Size_Segment__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Mixpanel Id</displayNameOverride>
+            <field>Mixpanel_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ext_campaign_id</displayNameOverride>
+            <field>utm_ext_campaign_id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ext_adset_id</displayNameOverride>
+            <field>utm_ext_adset_id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Create Webstore Opportunity</displayNameOverride>
+            <field>Create_Webstore_Opportunity__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Chatbot Source</displayNameOverride>
+            <field>Chatbot_Source__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Inbound Call/Email Source</displayNameOverride>
+            <field>Inbound_Call_Email_Source__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referral (Unpaid) Source</displayNameOverride>
+            <field>Referral_Unpaid_Source__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ext_ad_id</displayNameOverride>
+            <field>utm_ext_ad_id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referring Customer Id</displayNameOverride>
+            <field>Referring_Customer_Id__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Classic URL</displayNameOverride>
+            <field>Classic_URL__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Experimental Group</displayNameOverride>
+            <field>Experimental_Group__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>utm_ts</displayNameOverride>
+            <field>utm_ts__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>External Customer Auto Gen Number V2</displayNameOverride>
+            <field>External_Customer_Auto_Gen_Number_V2__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>New Customer Referral Link</displayNameOverride>
+            <field>New_Customer_Referral_Link__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CampaignMember-Contact : Account : Owner Manager</displayNameOverride>
+            <field>Account__c.Owner_Manager__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Account__c.Global_Geography__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <masterLabel>Contacts</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calculated Time-to-Action (in minutes)</displayNameOverride>
+            <field>LeanData__Time_To_Action_Minutes__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calculated Time-to-Action (in hours)</displayNameOverride>
+            <field>LeanData__Time_To_Action_Hours__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calculated Time-to-Action (in seconds)</displayNameOverride>
+            <field>LeanData__Time_To_Action_Calculated__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry/Start Time</displayNameOverride>
+            <field>LeanData__Start_Time__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Exit Time</displayNameOverride>
+            <field>LeanData__Exit_Time__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>LeanData__Status__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Node Name</displayNameOverride>
+            <field>LeanData__Node_Name__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>LeanData Time-to-Action Tracker</displayNameOverride>
+            <field>Name</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary ID</displayNameOverride>
+            <field>LeanData__Primary_Id__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <masterLabel>Time-To-Action</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Post Owner</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Post_Owner__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : Exit Log : Post Owner : Manager Name</displayNameOverride>
+            <field>LeanData__Exit_Log__c.LeanData__Post_Owner__c.Manager_Name__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Routed Date</displayNameOverride>
+            <field>Routed_Date__c</field>
+            <table>Campaign.ContactCampaignMembers</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Time-to-Action Tracker : User : Role : Name</displayNameOverride>
+            <field>LeanData__User__c.UserRole.Name</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Log</displayNameOverride>
+            <field>LeanData__Entry_Log__c</field>
+            <table>Campaign.ContactCampaignMembers.LeanData__TTA_Objects__r</table>
+        </columns>
+        <masterLabel>TTA Objects</masterLabel>
+    </sections>
+</ReportType>

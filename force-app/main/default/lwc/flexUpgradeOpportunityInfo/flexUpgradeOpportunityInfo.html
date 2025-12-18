@@ -1,0 +1,248 @@
+<!--
+    @description       : 
+    @autor            : ChangeMeIn@UserSettingsUnder.SFDoc
+    @group             : 
+    @last modified on  : 02-11-2025
+    @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+        <template if:true={isStepTwo}>
+                <div class="slds-card slds-m-bottom_medium">
+                        <div class="slds-card__header">
+                                <div class="slds-media">
+                                        <div class="slds-media__body">
+                                                <div class="slds-grid slds-grid_vertical-align-center" onclick={handleSectionToggle} style="cursor: pointer;">
+                                                    <button 
+                                                        class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                                                        aria-expanded={isExpanded}
+                                                    >
+                                                        <div class="circle-container">
+                                                            <div class="triangle" data-expanded={isExpanded}></div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="slds-truncate">
+                                                        <span class="section-title">Seller Instructions</span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div if:true={isExpanded} class="upper-section">
+                                <ol class="slds-list_ordered">
+                                        <li>
+                                                If needed, adjust the opportunity close date for the new contract to-be-created.
+                                                <ul class="slds-list_dotted">
+                                                        <li>By default, the opportunity close date will be equal to today.</li>
+                                                        <li>The quote start date will be set with a 15 day buffer to execute the new opportunity.</li>
+                                                        <li>The quote end date will be set to the original contract's end date to preserve the remaining contract length.</li>
+                                                </ul>
+                                        </li>
+                                        <li>
+                                                Select the product(s) that need to be replaced (select all that apply)
+                                                <ul class="slds-list_dotted">
+                                                        <li>If all of an existing product needs to be upgraded. Use the "Select All' checkbox for the existing product and select the upgrade product at the product header.</li>
+                                                </ul>
+                                        </li>
+                                        <li>
+                                                Set the quantity to be upgraded
+                                                <ul class="slds-list_dotted">
+                                                        <li>If using "Select All", this will result in all of the existing product total quantity being upgraded.</li>
+                                                        <li>The upgrade quantity cannot exceed the total quantity from the prior contract(s).</li>
+                                                        <li>If the upgrade quantity is less than the total quantity, the remaining quantity of the existing product will automatically be included on the generated quote.</li>
+                                                </ul>
+                                        </li>
+                                        <li>
+                                                Assign the upgrade product
+                                                <ul class="slds-list_dotted">
+                                                        <li>If you need to add more product beyond the total quantity, you can do so after the quote is generated.</li>
+                                                </ul>
+                                        </li>
+                                </ol><br>
+                        </div>
+                </div>
+
+                <div class="slds-box slds-theme_default">
+                        <div class="slds-m-bottom_small"><b>Upgrade Opportunity Details</b></div>
+                        <div class="slds-form" style="width: 500px;">
+                                <!-- Action -->
+                                <div class="slds-form-element slds-m-top_medium">
+                                        <div class="slds-grid slds-grid_vertical-align-start" style="height: 32px;">
+                                                <div class="slds-col" style="width: 180px;">
+                                                        <label class="slds-form-element__label">Action</label>
+                                                        <lightning-helptext class="slds-m-left_xx-small" content="Selecting Rebook will co-term the selected contract(s)"></lightning-helptext>
+                                                </div>
+                                                <div class="slds-col" style="width: 200px;">
+                                                        <template if:false={showBookingToggle}>{bookingType}</template>
+                                                        <template if:true={showBookingToggle}>
+                                                                <lightning-input type="toggle" variant="label-hidden" name="bookingToggle" id="booking-toggle" checked={isRebook} onchange={handleBookingToggle} message-toggle-active="Rebook (Keep Same End Date)" message-toggle-inactive="Book (Set New Term Length)" class="toggle-wide"></lightning-input>
+                                                        </template>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- Opportunity Close Date -->
+                                <div class="slds-form-element slds-m-top_medium">
+                                        <div class="slds-grid slds-grid_vertical-align-start" style="height: 40px;">
+                                                <div class="slds-col" style="width: 180px;">
+                                                        <label class="slds-form-element__label">Opportunity Close Date</label>
+                                                        <lightning-helptext class="slds-m-left_xx-small" content="Quote's StartDate will be the Close Date + 15 days"></lightning-helptext>
+                                                </div>
+                                                <div class="slds-col" style="width: 200px;">
+                                                        <lightning-input type="date" variant="label-hidden" name="startDate" id="start-date" value={startDate} onchange={handleStartDateChange} required></lightning-input>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- License Term -->
+                                <template if:true={showTermFieldProps}>
+                                        <div class="slds-form-element slds-m-top_medium">
+                                                <div class="slds-grid slds-grid_vertical-align-start" style="height: 40px;">
+                                                        <div class="slds-col" style="width: 180px;">
+                                                                <label class="slds-form-element__label">License Term (Months)</label>
+                                                        </div>
+                                                        <div class="slds-col" style="width: 200px;">
+                                                                <lightning-combobox name="term" id="term" value={termMonths} onchange={handleTermChange} options={termOptions} variant="label-hidden"></lightning-combobox>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </template>
+
+                                <!-- Quote Start Date -->
+                                <div class="slds-form-element slds-m-top_medium">
+                                        <div class="slds-grid slds-grid_vertical-align-start" style="height: 40px;">
+                                                <div class="slds-col" style="width: 180px;">
+                                                        <label class="slds-form-element__label">Quote Start Date</label>
+                                                </div>
+                                                <div class="slds-col" style="width: 200px;">
+                                                        <lightning-input type="date" variant="label-hidden" name="quoteStartDate" id="quote-start-date" value={quoteStartDate} disabled></lightning-input>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <!-- End Date -->
+                                <div class="slds-form-element slds-m-top_medium">
+                                        <div class="slds-grid slds-grid_vertical-align-start" style="height: 40px;">
+                                                <div class="slds-col" style="width: 180px;">
+                                                        <label class="slds-form-element__label">End Date</label>
+                                                </div>
+                                                <div class="slds-col" style="width: 200px;">
+                                                        <lightning-input type="date" variant="label-hidden" name="endDate" id="end-date" value={endDate} disabled></lightning-input>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </template>
+
+        <template if:true={isStepFour}>
+               
+                <div class="slds-card slds-m-bottom_medium">
+                    <div class="slds-card__header">
+                        <div class="slds-media">
+                            <div class="slds-media__body">
+                                <div class="slds-grid slds-grid_vertical-align-center" onclick={handleReplacementOppToggle} style="cursor: pointer;">
+                                    <button 
+                                        class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                                        aria-expanded={isReplacementOppExpanded}
+                                    >
+                                        <div class="circle-container">
+                                            <div class="triangle" data-expanded={isReplacementOppExpanded}></div>
+                                        </div>
+                                    </button>
+                                    <div class="slds-truncate">
+                                        <span class="section-title">Replacement Opportunity Info</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <template if:true={isReplacementOppExpanded}>
+                        <div class="slds-card__body slds-card__body_inner">
+                            <div style="border: none;">
+                                <table style="width: 50%; border-collapse: collapse; margin-right: auto;">
+                                    <thead>
+                                        <tr class="header-cells">
+                                            <th>New term Length</th>
+                                            <th>Opportunity Close Date</th>
+                                            <th>License Term</th>
+                                            <th>Quote Start Date</th>
+                                            <th>Quote End Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="record-cells">
+                                            <td>{bookingTypeLabel}</td>
+                                            <td>{formatedStartDate}</td>
+                                            <td>{formatedTermMonths} Months</td>
+                                            <td>{formatedQuoteStartDate}</td>
+                                            <td>{formatedEndDate}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+        </template>
+
+        <template if:true={showOppInfo}>
+            <div class="slds-card slds-m-bottom_medium">
+                <div class="slds-card__header">
+                    <div class="slds-media">
+                        <div class="slds-media__body">
+                            <div class="slds-grid slds-grid_vertical-align-center" onclick={handleOppUpgradeSectionToggle} style="cursor: pointer;">
+                                <button 
+                                    class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                                    aria-expanded={isOppUpgradeExpanded}
+                                >
+                                    <div class="circle-container">
+                                        <div class="triangle" data-expanded={isOppUpgradeExpanded}></div>
+                                    </div>
+                                </button>
+                                <div class="slds-truncate">
+                                    <span class="section-title">Replacement Opportunity Info</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <template if:true={isOppUpgradeExpanded}>
+                    <div class="slds-card__body">
+                        <div style="border: none;">
+                            <table style="width: 50%; border-collapse: collapse; margin-left: 12px;">
+                                <thead>
+                                    <tr class="header-cells">
+                                        <th>New term Length</th>
+                                        <th>Opportunity Close Date</th>
+                                        <th>License Term</th>
+                                        <th>Quote Start Date</th>
+                                        <th>Quote End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="record-cells">
+                                        <td>
+                                            <template if:true={configData.isRebook}>
+                                                Rebook
+                                            </template>
+                                            <template if:false={configData.isRebook}>
+                                                Book
+                                            </template>
+                                        </td>
+                                        <td>{formatedStartDate}</td>
+                                        <td>{formatedTermMonths} Months</td>
+                                        <td>{formatedQuoteStartDate}</td>
+                                        <td>{formatedEndDate}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+</template>

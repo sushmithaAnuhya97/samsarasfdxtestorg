@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__FieldPro_Schedule__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to related schedule job</description>
+    <inlineHelpText>Lookup to related schedule job</inlineHelpText>
+    <label>FieldPro Schedule</label>
+    <referenceTo>fpro__FieldPro_Schedules__c</referenceTo>
+    <relationshipLabel>FieldPro Jobs</relationshipLabel>
+    <relationshipName>FieldPro_Jobs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

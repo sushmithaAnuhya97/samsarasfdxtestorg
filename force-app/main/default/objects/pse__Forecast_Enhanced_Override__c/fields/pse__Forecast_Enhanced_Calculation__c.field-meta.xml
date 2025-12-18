@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Forecast_Enhanced_Calculation__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>A lookup to the billing forecast calculation this override applies to.</description>
+    <inlineHelpText>A lookup to the billing forecast calculation this override applies to.</inlineHelpText>
+    <label>Billing Forecast Calculation</label>
+    <referenceTo>pse__Forecast_Enhanced_Calculation__c</referenceTo>
+    <relationshipLabel>Billing Forecast Overrides</relationshipLabel>
+    <relationshipName>Forecast_Enhanced_Overrides</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

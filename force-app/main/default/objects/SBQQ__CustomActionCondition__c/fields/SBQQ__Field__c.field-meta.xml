@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__Field__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field on Quote Line or Product Option object that is evaluated by this condition.</description>
+    <inlineHelpText>Choose the field that should contain the value you enter in the Value field.</inlineHelpText>
+    <label>Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Code</fullName>
+                <default>false</default>
+                <label>Product Code</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Status__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Status__c</label>
+            </value>
+            <value>
+                <fullName>Opportunity_Record_Type__c</fullName>
+                <default>false</default>
+                <label>Opportunity_Record_Type__c</label>
+            </value>
+            <value>
+                <fullName>Segment_Availability__c</fullName>
+                <default>false</default>
+                <label>Segment_Availability__c</label>
+            </value>
+            <value>
+                <fullName>Geo_Availablity__c</fullName>
+                <default>false</default>
+                <label>Geo_Availablity__c</label>
+            </value>
+            <value>
+                <fullName>Configuration_Segment__c</fullName>
+                <default>false</default>
+                <label>Configuration_Segment__c</label>
+            </value>
+            <value>
+                <fullName>Sales_Segment__c</fullName>
+                <default>false</default>
+                <label>Sales_Segment__c</label>
+            </value>
+            <value>
+                <fullName>CurrencyIsoCode</fullName>
+                <default>false</default>
+                <label>CurrencyIsoCode</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

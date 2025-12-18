@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Likelihood_to_Renew__c</fullName>
+    <inlineHelpText>At the time of customer engagement, the chance of renewal</inlineHelpText>
+    <label>Likelihood to Renew</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High (95%+)</fullName>
+                <default>false</default>
+                <label>High (95%+)</label>
+            </value>
+            <value>
+                <fullName>Medium-High (85-95%)</fullName>
+                <default>false</default>
+                <label>Medium-High (85-95%)</label>
+            </value>
+            <value>
+                <fullName>Medium (75-85%)</fullName>
+                <default>false</default>
+                <label>Medium (75-85%)</label>
+            </value>
+            <value>
+                <fullName>Medium-Low (50-75%)</fullName>
+                <default>false</default>
+                <label>Medium-Low (50-75%)</label>
+            </value>
+            <value>
+                <fullName>Low (&lt;50%)</fullName>
+                <default>false</default>
+                <label>Low (&lt;50%)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

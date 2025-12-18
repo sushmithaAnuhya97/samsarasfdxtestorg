@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__InvalidCompanySite__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates that the selected company site is not a child of the billing document company.</description>
+    <formula>AND(
+        fferpcore__CompanySite__c != null,
+        OR(
+            fferpcore__BillingDocument__r.fferpcore__Company__c = null,
+            fferpcore__CompanySite__r.fferpcore__Company__c != fferpcore__BillingDocument__r.fferpcore__Company__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates that the selected company site is not a child of the billing document company.</inlineHelpText>
+    <label>Invalid Company Site</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

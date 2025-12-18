@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Partner_Notified</name>
+        <label>Partner Notified</label>
+        <locationX>795</locationX>
+        <locationY>394</locationY>
+        <actionName>Channel_Relationship__c.Partner_Notified_of_Deal_Approved</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Channel_Relationship__c.Partner_Notified_of_Deal_Approved</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>SCL_Process_Notify_Partner_Programs_Subsidy</name>
+        <label>SCL Process - Notify Partner Programs Subsidy</label>
+        <locationX>741</locationX>
+        <locationY>590</locationY>
+        <actionName>Channel_Relationship__c.SCL_Process_Notify_Partner_Programs_Subsidy</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Channel_Relationship__c.SCL_Process_Notify_Partner_Programs_Subsidy</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_If_Channel_Partner_Rep_Is_Null</name>
+        <label>Check If Channel Partner Rep Is Null</label>
+        <locationX>511</locationX>
+        <locationY>394</locationY>
+        <defaultConnector>
+            <targetReference>Check_Is_Subsidy_Partner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Partner_Rep_is_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Channel_Partner_User_lr__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Related_Revenue_Oppty_Owner_Role__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>AE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Channel_Partner__r.Partner_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Deactivated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Partner_Notified</targetReference>
+            </connector>
+            <label>Partner Rep is Not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Is_Subsidy_Partner</name>
+        <label>Check Is Subsidy Partner</label>
+        <locationX>521</locationX>
+        <locationY>560</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Subsidy</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Program_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Subsidy</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SCL_Process_Notify_Partner_Programs_Subsidy</targetReference>
+            </connector>
+            <label>Is Subsidy</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26101 - Created as part of partner deactivation process</description>
+    <environments>Default</environments>
+    <interviewLabel>Partner {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Deal Registration Channel Relationship Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>393</locationX>
+        <locationY>51</locationY>
+        <connector>
+            <targetReference>Check_If_Channel_Partner_Rep_Is_Null</targetReference>
+        </connector>
+        <object>Channel_Relationship__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

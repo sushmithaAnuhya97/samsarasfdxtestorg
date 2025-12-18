@@ -1,0 +1,50 @@
+<template>
+		<template if:false={isWarning}>
+			<lightning-modal-body>
+				<div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_error"
+					role="status">
+					<span>
+          <lightning-icon variant="inverse" size="small" aria-hidden="true" class="slds-m-right_x-small" icon-name="utility:error" alternative-text="Warning"></lightning-icon> {submitToClosingErrorLabel}
+        </span>
+				</div>
+				<div class="container">
+					<ul class="slds-m-top_medium slds-list_dotted  myUL">
+						<template for:each={parsedValues} for:item="msgValue">
+
+							<li key={msgValue}>
+								<div><b>{msgValue}</b></div>
+							</li>
+
+						</template>
+					</ul>
+				</div>
+			</lightning-modal-body>
+			<lightning-modal-footer>
+				<lightning-button class="slds-button " variant="brand" label={buttonLabel} onclick={handleBack}>
+				</lightning-button>
+			</lightning-modal-footer>
+		</template>
+		<template if:true={isWarning}>
+			<lightning-modal-body>
+				<div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_warning"
+					role="status">
+					<span>
+          <lightning-icon variant="inverse" size="small" aria-hidden="true" icon-name="utility:warning" alternative-text="Warning"></lightning-icon> {submitToClosingWarningLabel}
+        </span>
+				</div>
+				<ul class="slds-align_absolute-center slds-m-top_medium slds-list_dotted disk-style">
+					<template class=" slds-align_absolute-center" for:each={parsedValues} for:item="msgValue">
+						<li key={msgValue}>
+							<b>{msgValue}</b>
+						</li>
+					</template>
+				</ul>
+			</lightning-modal-body>
+			<lightning-modal-footer>
+				<lightning-button class="slds-button slds-float_left" variant="neutral" label="Back to Opportunity"
+					onclick={handleBack}></lightning-button>
+				<lightning-button class="slds-button " variant="brand" label={buttonLabel} onclick={handleGoNext}>
+				</lightning-button>
+			</lightning-modal-footer>
+		</template>
+</template>

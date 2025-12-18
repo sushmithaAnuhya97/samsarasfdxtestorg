@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_Update_Approved_Quote_Lines</fullName>
+    <active>false</active>
+    <description>Prevents AE from updating amount-affecting fields after quote has been approved</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL(SBQQ__Quote__r.SBQQ__Status__c,&quot;Approved&quot;),
+ OR(
+  ISCHANGED(SBQQ__Quantity__c),
+  ISCHANGED(SBQQ__NetPrice__c),
+  ISCHANGED(SBQQ__AdditionalDiscount__c),
+  ISCHANGED(SBQQ__NetTotal__c)
+ )
+)</errorConditionFormula>
+    <errorMessage>Edits impacting quote amount may not be made after quote is approved. Please create a new quote if you need to make changes.</errorMessage>
+</ValidationRule>

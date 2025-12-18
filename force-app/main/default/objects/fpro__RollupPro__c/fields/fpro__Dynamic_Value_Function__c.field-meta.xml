@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Dynamic_Value_Function__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This optional field allows you to select the type of function to apply to the &quot;Dynamic Value&quot; when stamping it on a record (e.g., Add Days to Today for date fields). Choose a function from the dropdown that aligns with the target field’s data type and the job’s requirements, as listed in the documentation. If left blank, no function is applied, and the raw dynamic value is used.</description>
+    <inlineHelpText>This optional field allows you to select the type of function to apply to the &quot;Dynamic Value&quot; when stamping it on a record (e.g., Add Days to Today for date fields). Choose a function from the dropdown that aligns with the target field’s data type and the job’s requirements, as listed in the documentation. If left blank, no function is applied, and the raw dynamic value is used.</inlineHelpText>
+    <label>Dynamic Value Function</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>addSeconds</fullName>
+                <default>false</default>
+                <label>addSeconds</label>
+            </value>
+            <value>
+                <fullName>addMinutes</fullName>
+                <default>false</default>
+                <label>addMinutes</label>
+            </value>
+            <value>
+                <fullName>addHours</fullName>
+                <default>false</default>
+                <label>addHours</label>
+            </value>
+            <value>
+                <fullName>addDays</fullName>
+                <default>false</default>
+                <label>addDays</label>
+            </value>
+            <value>
+                <fullName>addMonths</fullName>
+                <default>false</default>
+                <label>addMonths</label>
+            </value>
+            <value>
+                <fullName>addYears</fullName>
+                <default>false</default>
+                <label>addYears</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

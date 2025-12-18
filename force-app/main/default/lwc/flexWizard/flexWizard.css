@@ -1,0 +1,87 @@
+.abc{
+    background-color: red;
+}
+
+
+.error-border{
+    border: 2px solid red ;
+}
+/*.slds-path {
+    margin-bottom: 20px;
+}
+
+.slds-path__item.slds-is-active .slds-path__link {
+    background-color: #0070d2;
+    color: white;
+    font-weight: bold;
+}
+
+.slds-path__item.slds-is-complete .slds-path__link {
+    background-color: #d8dde6;
+    color: black;
+}
+
+.slds-path__item .slds-path__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    cursor: default;
+}
+.content-section {
+    min-height: 300px;
+    background: var(--lwc-colorBackground);
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: var(--lwc-borderRadiusMedium);
+}*/
+
+.step-label {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.step-label:hover {
+    background-color: #f3f2f2;
+}
+
+.step-button {
+    display: none;
+}
+
+/* Make progress steps clickable */
+lightning-progress-step {
+    cursor: pointer;
+}
+
+/* Add hover effect to progress steps */
+lightning-progress-step:hover {
+    opacity: 0.8;
+}
+
+/* .slds-icon_container {
+    border-radius: 50%;
+    background-color: #7F8DE1;
+    padding: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.slds-icon-standard-account {
+    background-color: #7F8DE1;
+}
+
+.slds-icon-standard-account lightning-icon {
+    --sds-c-icon-color-foreground-default: white;
+    --sds-c-icon-sizing-medium: 1.25rem;
+} */
+
+
+.slds-progress_shade .slds-progress{
+    max-width: 100vw !important;
+    border: 2px solid red !important;
+}

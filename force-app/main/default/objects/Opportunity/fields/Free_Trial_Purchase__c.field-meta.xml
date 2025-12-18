@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_Purchase__c</fullName>
+    <inlineHelpText>Use this field to indicate whether the customer is purchasing all units in the free trial, partial amounts, or none. Filling this out will help order ops process deals faster as we approach the end of the quarter!</inlineHelpText>
+    <label>Free Trial Purchase</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Buy</fullName>
+                <default>false</default>
+                <label>Full Buy</label>
+            </value>
+            <value>
+                <fullName>Partial Buy</fullName>
+                <default>false</default>
+                <label>Partial Buy</label>
+            </value>
+            <value>
+                <fullName>No Purchase</fullName>
+                <default>false</default>
+                <label>No Purchase</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

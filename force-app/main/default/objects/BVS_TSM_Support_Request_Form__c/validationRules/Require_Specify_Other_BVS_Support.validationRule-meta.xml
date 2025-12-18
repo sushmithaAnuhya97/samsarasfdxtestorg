@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Specify_Other_BVS_Support</fullName>
+    <active>true</active>
+    <description>Ensures that the &quot;Specify Other BVS Support&quot; field is completed when &quot;Other&quot; is selected in the &quot;What pre-sale BVS support do you need?&quot; picklist. This helps collect the necessary context for non-standard support requests.</description>
+    <errorConditionFormula>ISPICKVAL(What_pre_sale_BVS_support_do_you_need__c, &quot;Other&quot;) &amp;&amp;
+ISBLANK(Specify_Other_BVS_Support__c)</errorConditionFormula>
+    <errorDisplayField>Specify_Other_BVS_Support__c</errorDisplayField>
+    <errorMessage>Please provide details in the &quot;Other BVS Support&quot; field when selecting &quot;Other&quot; as the type of pre-sale support needed.</errorMessage>
+</ValidationRule>

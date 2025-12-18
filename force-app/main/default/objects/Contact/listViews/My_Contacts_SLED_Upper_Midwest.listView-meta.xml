@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contacts_SLED_Upper_Midwest</fullName>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Maggie Shea</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Fleet</value>
+    </filters>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>contains</operation>
+        <value>Safety,Compliance</value>
+    </filters>
+    <filters>
+        <field>Account.Sub_Industry__c</field>
+        <operation>equals</operation>
+        <value>Government - Local,Government - Unclassified</value>
+    </filters>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>notContain</operation>
+        <value>environmental,food,health,finance,investigation,property</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>notContain</operation>
+        <value>State of Ohio,State of Michigan</value>
+    </filters>
+    <filters>
+        <field>CONTACT.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>3/16/2021 12:00 AM</value>
+    </filters>
+    <label>My Contacts: SLED Upper Midwest</label>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Need_New__c</fullName>
+    <formula>IF(TEXT(ADR_Transfer_Status__c)=&quot;Rejected&quot;,IF(TEXT(AE_Need__c)=&quot;Not Identified&quot;,TRUE,FALSE),FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Missing Need</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

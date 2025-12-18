@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__TargetRecordBasedOn__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Target Record Created From</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Source Record</fullName>
+                <default>true</default>
+                <label>Source Record</label>
+            </value>
+            <value>
+                <fullName>Source Record Parent</fullName>
+                <default>false</default>
+                <label>Source Record Parent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

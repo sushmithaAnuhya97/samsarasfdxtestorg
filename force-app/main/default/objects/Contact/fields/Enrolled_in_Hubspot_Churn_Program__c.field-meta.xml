@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrolled_in_Hubspot_Churn_Program__c</fullName>
+    <formula>AND( TEXT(Account.Churn_Payment_Status__c) = &quot;Delinquent&quot;, NOT( Churn_Do_Not_Email__c ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Enrolled in Hubspot Churn Program</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

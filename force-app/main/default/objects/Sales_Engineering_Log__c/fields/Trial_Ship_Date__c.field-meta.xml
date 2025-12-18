@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trial_Ship_Date__c</fullName>
+    <description>This field pulls the oldest open trial ship date from the account record</description>
+    <formula>Opportunity__r.Account.Oldest_Open_Trial_Ship_Date__c</formula>
+    <label>Trial Ship Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

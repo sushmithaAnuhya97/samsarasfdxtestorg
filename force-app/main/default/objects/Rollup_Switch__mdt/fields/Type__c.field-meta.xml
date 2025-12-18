@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SUM</fullName>
+                <default>true</default>
+                <label>SUM</label>
+            </value>
+            <value>
+                <fullName>AVG</fullName>
+                <default>false</default>
+                <label>AVG</label>
+            </value>
+            <value>
+                <fullName>MAX</fullName>
+                <default>false</default>
+                <label>MAX</label>
+            </value>
+            <value>
+                <fullName>MIN</fullName>
+                <default>false</default>
+                <label>MIN</label>
+            </value>
+            <value>
+                <fullName>FIRST</fullName>
+                <default>false</default>
+                <label>FIRST</label>
+            </value>
+            <value>
+                <fullName>LAST</fullName>
+                <default>false</default>
+                <label>LAST</label>
+            </value>
+            <value>
+                <fullName>COUNT</fullName>
+                <default>false</default>
+                <label>COUNT</label>
+            </value>
+            <value>
+                <fullName>CONCAT DISTINCT</fullName>
+                <default>false</default>
+                <label>CONCAT DISTINCT</label>
+            </value>
+            <value>
+                <fullName>COUNT DISTINCT</fullName>
+                <default>false</default>
+                <label>COUNT DISTINCT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>India_Full_Time</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Date__c</columns>
+    <columns>pse__Work_Calendar__c</columns>
+    <columns>pse__Work_Hours__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Work_Calendar__c</field>
+        <operation>equals</operation>
+        <value>India Full-Time</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>2/6/2025 12:00 AM</value>
+    </filters>
+    <label>India Full-Time</label>
+</ListView>

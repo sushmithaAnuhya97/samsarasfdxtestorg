@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Role_Changes</fullName>
+    <columns>NAME</columns>
+    <columns>USERHISTORY__Field_Label__c</columns>
+    <columns>USERHISTORY__Previous_Value__c</columns>
+    <columns>USERHISTORY__New_Value__c</columns>
+    <columns>USERHISTORY__Changed_By__c</columns>
+    <columns>USERHISTORY__Date_Time_Changed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>USERHISTORY__Field_Label__c</field>
+        <operation>equals</operation>
+        <value>Role ID</value>
+    </filters>
+    <filters>
+        <field>USERHISTORY__Previous_Value__c</field>
+        <operation>equals</operation>
+        <value>SMB - Team 4 - Manager</value>
+    </filters>
+    <label>User Role Changes</label>
+</ListView>

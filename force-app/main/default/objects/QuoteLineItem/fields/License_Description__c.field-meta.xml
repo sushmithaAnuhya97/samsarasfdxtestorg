@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Description__c</fullName>
+    <description>License Product Name with Term Length Removed</description>
+    <externalId>false</externalId>
+    <formula>if ( LEFT(Product2.ProductCode,3) = &quot;LIC&quot;, RIGHT(Product2.Name, LEN( Product2.Name ) - 9), &quot;&quot;)</formula>
+    <label>License Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

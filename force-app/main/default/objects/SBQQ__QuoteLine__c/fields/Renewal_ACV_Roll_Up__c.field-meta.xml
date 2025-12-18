@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_ACV_Roll_Up__c</fullName>
+    <description>Used to help drive Summary Variables
+Built as part of GTMS-6087</description>
+    <formula>/* ((Renewal_LineItem_Type__c = &apos;Upsell&apos;) &amp;&amp;  NOT(ISBLANK(Upgraded_QL__c))) */
+
+((Renewal_LineItem_Type__c = &apos;Upsell&apos;) &amp;&amp;  NOT(ISBLANK(Upgraded_QL__c))) || SBQQ__UpgradedSubscription__r.Renewal_ACV_Roll_Up__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Renewal ACV Roll Up [Deprecated]</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

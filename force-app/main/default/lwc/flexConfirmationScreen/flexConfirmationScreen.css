@@ -1,0 +1,238 @@
+/* Style for all tab links
+.slds-tabs_default__link {
+    color: #0070d2 !important;
+}
+
+.slds-tabs_default__link:hover {
+    color: #005fb2 !important;
+}
+
+/* Style for tab labels *
+lightning-tabset .slds-tabs_default__item {
+    color: #0070d2 !important;
+}
+
+/* Style for the tab text *
+lightning-tabset .slds-tabs_default__item .slds-tabs_default__link {
+    color: #0070d2 !important;
+    font-weight: bold;
+}
+
+/* Additional specificity for tab labels *
+lightning-tabset lightning-tab .slds-tabs_default__item {
+    color: #0070d2 !important;
+}
+
+lightning-tabset lightning-tab .slds-tabs_default__link {
+    color: #0070d2 !important;
+    font-weight: bold;
+}
+
+/* Style for active tab *
+.slds-tabs_default__item.slds-is-active .slds-tabs_default__link {
+    color: #0070d2 !important;
+    font-weight: bold;
+}
+
+* Style for tab text when active *
+.slds-tabs_default__item.slds-is-active {
+    color: #0070d2 !important;
+}
+
+* Style for tab content *
+.slds-tabs_default__content {
+    color: #0070d2 !important;
+}  */
+
+/* Icon container and positioning */
+.icon-container {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-icon {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+}
+
+.triangle-icon {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    --sds-c-icon-color-foreground-default: #0070d2;
+}
+
+/* Active state for expanded */
+.slds-button.slds-button_icon[aria-expanded="true"] .triangle-icon {
+    --sds-c-icon-color-foreground-default: white;
+}
+
+/* Toggle icon styling */
+.toggle-icon {
+    --sds-c-icon-color-foreground-default: #0070d2;
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+/* Active state for expanded */
+.slds-button.slds-button_icon[aria-expanded="true"] .toggle-icon {
+    --sds-c-icon-color-foreground-default: white;
+}
+
+
+.slds-button.slds-button_icon[aria-expanded="true"] .circle-icon {
+    --sds-c-icon-color-foreground-default: white;
+}
+
+
+/* Custom toggle button with circle and triangle */
+.custom-toggle-button {
+    width: 1rem;
+    height: 1rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #f3f2f2;
+    border: 1px solid #706e6b;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.custom-toggle-button:hover {
+    background-color: #eef1f6;
+    border-color: #0070d2;
+}
+
+.custom-toggle-button:focus {
+    box-shadow: 0 0 2px #0070d2;
+    outline: none;
+}
+
+
+/* Triangle styling */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 5px solid #0070d2;
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Triangle when expanded (pointing down) */
+.triangle[data-expanded="true"] {
+    transform: translate(-50%, -50%) rotate(180deg);
+    border-top: 5px solid #0070d2;
+}
+
+/* Active state for expanded button */
+.custom-toggle-button[aria-expanded="true"] .circle-container {
+    background-color: #0070d2;
+}
+
+/* Hover state */
+.custom-toggle-button:hover .circle-container {
+    background-color: #005fb2;
+}
+
+/* NEW ACCORDION STYLES - SPECIFIC TO FLEXCONFIRMATIONSCREEN */
+/* Custom accordion toggle button with circle and triangle */
+.confirmation-accordion-toggle {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    min-width: 1.25rem !important;
+    min-height: 1.25rem !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-color: #f3f2f2 !important;
+    border: 1px solid #706e6b !important;
+    transition: all 0.2s ease-in-out !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin: 0 0.5rem 0 0 !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+
+.confirmation-accordion-toggle:hover {
+    background-color: #f3f2f2 !important;
+    border-color: #0070d2 !important;
+}
+
+.confirmation-accordion-toggle:focus {
+    box-shadow: 0 0 2px #0070d2 !important;
+    outline: none !important;
+}
+
+/* Circle container for accordion toggle */
+.confirmation-circle-container {
+    position: relative !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    min-width: 1.25rem !important;
+    min-height: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+}
+
+/* Triangle styling for accordion */
+.confirmation-triangle {
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 4px solid transparent !important;
+    border-right: 4px solid transparent !important;
+    border-top: 6px solid #0070d2 !important;
+    transition: transform 0.3s ease-in-out !important;
+    transform: translateY(0) !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Triangle when expanded (pointing down) */
+.confirmation-triangle[data-expanded="true"] {
+    transform: translate(-50%, -50%) rotate(180deg) !important;
+    border-top: 6px solid #0070d2 !important;
+}
+
+/* Active state for expanded button */
+.confirmation-accordion-toggle[aria-expanded="true"] .confirmation-circle-container {
+    background-color: #f3f2f2 !important;
+}
+
+/* Hover state */
+.confirmation-accordion-toggle:hover .confirmation-circle-container {
+    background-color: #f3f2f2 !important;
+}
+
+/* Section title styling for accordion */
+.confirmation-section-title {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    padding: 0.25rem 0 !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+}

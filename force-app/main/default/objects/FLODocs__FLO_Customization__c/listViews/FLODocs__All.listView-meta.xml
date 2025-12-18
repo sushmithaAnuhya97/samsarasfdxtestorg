@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__All</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__Salesforce_Types__c</columns>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>FLODocs__Date_Last_Used__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>FLODocs__XML_Page__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>FLODocs__Internal_Id__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>equals</operation>
+        <value>ApexPage,Layout,ListView,PermissionSet,RecordType</value>
+    </filters>
+    <label>All</label>
+</ListView>

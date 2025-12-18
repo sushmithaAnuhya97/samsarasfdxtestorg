@@ -1,0 +1,138 @@
+<template>
+<template if:true={isLoading}>
+    <div class="slds-is-relative slds-p-around_medium">
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+</template>
+    <template if:false={isLoading}>
+        <template if:true={reasonSubreason}>
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        <span class="slds-text-color_error">*</span>Apart from Sales Execution, why did we lose:<br/>
+        <span>**If duplicate, merged created in error, please select Salesforce Hygiene</span>
+    </label>
+    <lightning-combobox
+        name="type"
+        value={selectedReason}
+        options={lostReason}
+        onchange={handleTypeChange}
+        >
+    </lightning-combobox>
+    <template if:true={showReasonError}>
+        <div class="slds-text-color_error slds-m-top_x-small">
+            Please select a reason for losing the deal.
+        </div>
+    </template>
+</div>
+
+    <template if:true={showSubReason}>
+    <lightning-combobox
+        label="Sub reason for losing the deal"
+        value={selectedSubReason}
+        options={subTypeOptions}
+        onchange={handleSubTypeChange}
+        required={subReasonRequired}
+        >
+        </lightning-combobox>
+    </template>
+    
+    <template if:true={showSubReasonError}>
+        <div class="slds-text-color_error slds-m-top_x-small">
+            Please select a sub reason for losing the deal.
+        </div>
+    </template>
+
+<div class="slds-m-top_medium">
+    <lightning-textarea
+        label="Please provide any relevant context:"
+        value={subReasonTextArea}
+        onchange={handleSubReasonTextAreaChange}
+        required={isSubReasonTextAreaMandatory}
+        rows="4">
+    </lightning-textarea>
+    
+    <template if:true={showSubReasonTextAreaError}>
+        <div class="slds-text-color_error slds-m-top_x-small">
+            Please provide additional details.
+        </div>
+    </template>
+</div>
+</template>
+<template if:true={showCompetitor}>
+<div class="slds-m-top_medium">
+    <label class="slds-form-element__label slds-m-bottom_x-small">
+        <span class="slds-text-color_error">*</span>Which competitor/provider(s) competed in this deal?
+    </label>
+    <template for:each={picklistValuesCompetitor} for:item="opt">
+        <div key={opt.value} class="slds-p-vertical_x-small">
+            <lightning-input
+                type="checkbox"
+                label={opt.label}
+                value={opt.value}
+                checked={opt.checked}
+                onchange={handleCheckboxChange}>
+            </lightning-input>
+        </div>
+    </template>
+</div>
+<template if:true={showErrorParticipated}>
+    <div class="slds-text-color_error slds-m-top_x-small">
+        Please select at least one competitor.
+    </div>
+</template>
+<template if:true={showOtherTextbox}>
+    <div class="slds-m-top_medium">
+        <lightning-input
+            required=true
+            type="text"
+            label="Please specify other"
+            value={otherValue}
+            onchange={handleOtherInputChange}>
+        </lightning-input>
+        <template if:true={showError}>
+            <div class="slds-text-color_error slds-m-top_x-small">
+                Please specify the other competitor.
+            </div>
+        </template>
+    </div>
+</template>
+
+<div class="slds-m-bottom_x-small">
+    <label class="slds-form-element__label slds-m-bottom_x-small">
+        Which competitor won in this deal?
+    </label>
+    <lightning-combobox
+        options={picklistOptions}
+        value={selectedPicklistValue}
+        onchange={handlePicklistChange}>
+    </lightning-combobox>
+</div>
+</template>
+<div class="slds-m-bottom_x-small">
+    <lightning-combobox
+        label="When would be the best time to follow up with this account?"
+        required="true"
+        options={followupOptions}
+        value={followupValue}
+        onchange={handleFollowUpChange}>
+    </lightning-combobox>
+</div>
+</template>
+<!-- Footer with Buttons -->
+    <footer class="slds-card__footer slds-theme_shade animate-slide-in-up">
+        <div class="slds-grid slds-grid_align-spread">
+            <div class="slds-col"></div>
+            <div class="slds-col slds-text-align_right">
+                <lightning-button
+                    label="Next"
+                    variant="brand"
+                    icon-name="utility:forward"
+                    icon-position="right"
+                    onclick={handleNext}
+                    class="custom-button animate-hover">
+                </lightning-button>
+            </div>
+            
+        </div>
+    </footer>
+</template>

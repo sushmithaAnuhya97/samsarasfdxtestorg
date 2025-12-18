@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Normalized_Phone__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone, &apos;-&apos;, &apos;&apos;), &apos;)&apos;, &apos;&apos;), &apos;(&apos;, &apos;&apos;), &apos;Ext&apos;, &apos;&apos;), &apos;.&apos;, &apos;&apos;), &apos; &apos;, &apos;&apos;), &apos;#&apos;, &apos;&apos;), &apos;+&apos;, &apos;&apos;), &apos;x&apos;, &apos;&apos;), &apos;,&apos;, &apos;&apos;))=10, 
+
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone, &apos;-&apos;, &apos;&apos;), &apos;)&apos;, &apos;&apos;), &apos;(&apos;, &apos;&apos;), &apos;Ext&apos;, &apos;&apos;), &apos;.&apos;, &apos;&apos;), &apos; &apos;, &apos;&apos;), &apos;#&apos;, &apos;&apos;), &apos;+&apos;, &apos;&apos;), &apos;x&apos;, &apos;&apos;), &apos;,&apos;, &apos;&apos;), 
+
+IF(LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone, &apos;-&apos;, &apos;&apos;), &apos;)&apos;, &apos;&apos;), &apos;(&apos;, &apos;&apos;), &apos;Ext&apos;, &apos;&apos;), &apos;.&apos;, &apos;&apos;), &apos; &apos;, &apos;&apos;), &apos;#&apos;, &apos;&apos;), &apos;+&apos;, &apos;&apos;), &apos;x&apos;, &apos;&apos;), &apos;,&apos;, &apos;&apos;))=11, 
+
+MID(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone, &apos;-&apos;, &apos;&apos;), &apos;)&apos;, &apos;&apos;), &apos;(&apos;, &apos;&apos;), &apos;Ext&apos;, &apos;&apos;), &apos;.&apos;, &apos;&apos;), &apos; &apos;, &apos;&apos;), &apos;#&apos;, &apos;&apos;), &apos;+&apos;, &apos;&apos;), &apos;x&apos;, &apos;&apos;), &apos;,&apos;, &apos;&apos;),2,10), 
+
+IF(LEN(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone, &apos;-&apos;, &apos;&apos;), &apos;)&apos;, &apos;&apos;), &apos;(&apos;, &apos;&apos;), &apos;Ext&apos;, &apos;&apos;), &apos;.&apos;, &apos;&apos;), &apos; &apos;, &apos;&apos;), &apos;#&apos;, &apos;&apos;), &apos;+&apos;, &apos;&apos;), &apos;x&apos;, &apos;&apos;), &apos;,&apos;, &apos;&apos;))&gt;11, 
+
+MID(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone, &apos;-&apos;, &apos;&apos;), &apos;)&apos;, &apos;&apos;), &apos;(&apos;, &apos;&apos;), &apos;Ext&apos;, &apos;&apos;), &apos;.&apos;, &apos;&apos;), &apos; &apos;, &apos;&apos;), &apos;#&apos;, &apos;&apos;), &apos;+&apos;, &apos;&apos;), &apos;x&apos;, &apos;&apos;), &apos;,&apos;, &apos;&apos;),1,10), 
+
+SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(Phone, &apos;-&apos;, &apos;&apos;), &apos;)&apos;, &apos;&apos;), &apos;(&apos;, &apos;&apos;), &apos;Ext&apos;, &apos;&apos;), &apos;.&apos;, &apos;&apos;), &apos; &apos;, &apos;&apos;), &apos;#&apos;, &apos;&apos;), &apos;+&apos;, &apos;&apos;), &apos;x&apos;, &apos;&apos;), &apos;,&apos;, &apos;&apos;))))</formula>
+    <label>Normalized Phone</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VertexShippingAddressCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( StageName ),
+ISPICKVAL(StageName,&apos;Closing&apos;),
+ISBLANK(SBQQ__PrimaryQuote__r.Shipping_Address_NEW__c),
+ISPICKVAL(Type,&apos;Revenue Opportunity&apos;),
+NOT(OR($Profile.Name=&apos;System Administrator&apos;,$Profile.Name = &apos;System Administrator API&apos;, $Permission.Override_Tax_Error_VRExempt)),
+NOT(AND(Owner.FirstName=&apos;Samsara&apos;, Owner.LastName=&apos;Small Fleets&apos;))
+)</errorConditionFormula>
+    <errorMessage>Shipping Address is BLANK on Primary Quote</errorMessage>
+</ValidationRule>

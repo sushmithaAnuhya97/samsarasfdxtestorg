@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dca_mass_action__All_Parent_Logs</fullName>
+    <columns>NAME</columns>
+    <columns>dca_mass_action__Mass_Action_Configuration__c</columns>
+    <columns>dca_mass_action__Job_ID__c</columns>
+    <columns>dca_mass_action__Message_Type__c</columns>
+    <columns>dca_mass_action__Message__c</columns>
+    <columns>dca_mass_action__Batch_Success_Rate__c</columns>
+    <columns>dca_mass_action__Total_Batches__c</columns>
+    <columns>dca_mass_action__Failed_Batches__c</columns>
+    <columns>dca_mass_action__Processed_Batches__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>dca_mass_action__Mass_Action_Log__c.dca_mass_action__Parent_Log</value>
+    </filters>
+    <label>All Parent Logs</label>
+</ListView>

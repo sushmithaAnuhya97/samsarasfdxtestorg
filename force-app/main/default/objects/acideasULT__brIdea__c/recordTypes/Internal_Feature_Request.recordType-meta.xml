@@ -1,0 +1,2310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Feature_Request</fullName>
+    <active>true</active>
+    <label>Internal Feature Request</label>
+    <picklistValues>
+        <picklist>Business_Unit__c</picklist>
+        <values>
+            <fullName>Hardware Devices %26 Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Apps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform %2F General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailers %26 Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video-Based Safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Estimated_GA_Date__c</picklist>
+        <values>
+            <fullName>Fall %2724 %28Q3FY25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fall %2725 %28Q3FY26%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fall %2726 %28Q3FY27%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring %2724 %28Q1FY25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring %2725 %28Q1FY26%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring %2726 %28Q1FY27%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Summer %2724 %28Q2FY25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Summer %2725 %28Q2FY26%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Summer %2726 %28Q2FY27%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter %2724 %28Q4FY25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter %2725 %28Q4FY26%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter %2726 %28Q4FY27%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>If_Partner__c</picklist>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketplace Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_an_API_coverage_gap__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Monitor_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ok_to_announce__c</picklist>
+        <values>
+            <fullName>Ok to announce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>do not announce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Area__c</picklist>
+        <values>
+            <fullName>Alerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset Profile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV Based Safety Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cables or Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camera Connector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camera Modules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coaching</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration %26 Install Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Workflows %28Forms%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crashes %26 Crash Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Dashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DVIR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Developer Ecosystem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Device Activation%2C Installation %26 Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Device Health %26 Troubleshooting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver Assignment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel %26 Mileage Taxes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel %26 Sustainability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID %2F RFID Card Reader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identity %26 Access Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live Routing %26 Dispatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Location Visibility %26 Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lone Worker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance %2F Predictive Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Map %26 Diagnostic Based Safety Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Experience Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA Compliance %28ELD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operated Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organizational Management %26 Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Hardware Devices %26 Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic %2F Privacy Button</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Powered Equipment %28Un-operated%29 Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualifications Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recognition %26 Rewards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Release Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety APIs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Dashboard and Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Event Detection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Event Detection - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Event Review Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Events - Harsh Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Events - Inward Facing %28Mobile%2C Drowsy%2C Seatbelt%2C Inattentive%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Events - Outward Facing %28Following Distance%2C FCW%2C VRU%2C Lane Departure%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Events - Road Intelligence %28Rolling Stop%2C Sign Detection%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Events - Speeding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Scoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Triage %26 Inbox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samsara Driver App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samsara Fleet App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Visibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Visibility Gateways %26 Cameras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Maps %28Weather Intelligence%2C Construction Overlay%2C etc%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Snow Ops%2F Service Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Cargo %26 Cold Chain Monitoring %28Cargo%2C Door%2C %26 Environmental Monitors%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer OEM Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer Tire Health %28TPMS%2C ATIS%2C WES%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailer and Equipment Gateway Devices and Sensor Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unpowered Asset Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilization Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG Connectivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Gateways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Dashboard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Regional_Availability__c</picklist>
+        <values>
+            <fullName>CAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Regional_Interest__c</picklist>
+        <values>
+            <fullName>BeNeLux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UKI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Closed Beta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Beta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Closed - will not implement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not on Roadmap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Roadmap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Release</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_data_type_does_this_pertain_to__c</picklist>
+        <values>
+            <fullName>API Tokens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alert Contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alert Definitions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alert Incidents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset-Asset Assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attributes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aux Inputs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Battery Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA Hours of Service Clocks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA Hours of Service Violations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cargo Statuses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coachable Items</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coaching Behaviors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coaching Sessions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Report Definitions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEF Levels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Defect Types</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Defects</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document Templates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Door Statuses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver App Workflow Definitions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver App Workflows</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver-Asset Assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver-level Compliance Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU Tachograph Activity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU Tachograph Files</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engine Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engine Hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engine RPM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engine States</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External IDs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fault Codes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel Levels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel Purchases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geofences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Humidity Levels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IFTA Mileage Segments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Idling Segments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immobilizer States</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live Shares</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odometers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Org Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Org-level Compliance Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Org-level Driver App Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Org-level Safety Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Data Type Not In This List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned Maintenance Schedules</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Events %2F Activity Logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reefer Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Route Definitions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safety Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seatbelt Statuses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speeds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spreader Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temperatures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tire Pressures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trip Stills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trips</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US Hours of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US Hours of Service Clocks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US Hours of Service Daily Logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US Hours of Service Unassiged Segments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US Hours of Service Violations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Role Definitions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle-level Safety Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhooks</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Which_endpoint_is_this_for__c</picklist>
+        <values>
+            <fullName>DELETE addresses%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE attributes%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE contacts%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE fleet%2Fcarrier-proposed-assignments%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE fleet%2Fdocuments%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE fleet%2Fdriver-vehicle-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE fleet%2Froutes%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE fleet%2Fsensors%2Fclones%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE fleet%2Ftrailers%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE fleet%2Fvehicles%2Fclones%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE gateways%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE industrial%2Fassets%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE industrial%2Fjobs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE tags%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE users%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Faddresses%2F%2Eaddress_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Fcontacts%2F%2Econtact_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffinops%2Finvoices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffinops%2Finvoices%2F%2Enetsuite_internal_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffinops%2Frma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffinops%2Frma%2F%2Eorder_number</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffleet%2Fdispatch%2Froutes%2F%2Eroute_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffleet%2Fdrivers%2F%2Edriver_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fdocuments%2F%2Edocument_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ffleet%2Fdrivers%2Fcreate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Findustrial%2Fmes%2Fwork_orders%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Ftags%2F%2EtagId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE v1%2Fusers%2F%2EuserId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DELETE webhooks%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endpoint not in this List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET address-events%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET addresses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET addresses%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET aemp%2FFleet%2F%2EpageNumber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET aemp%2Ffleet%2Fequipment%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET attributes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET attributes%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET contacts%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fcarrier-proposed-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fcolocation-summaries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdefects%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdocument-types</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdocuments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdocuments%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdocuments%2Fpdfs%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdriver-vehicle-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdrivers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdrivers%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdrivers%2Fefficiency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdrivers%2Ftachograph-activity%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdrivers%2Ftachograph-files%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdrivers%2Fvehicle-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fdvirs%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment%2F%2EequipmentId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment%2Flocations%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment%2Flocations%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment%2Fstats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment%2Fstats%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fequipment%2Fstats%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fhos%2Fclocks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fhos%2Fdaily-logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fhos%2Fdiagnostic-and-malfunction-events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fhos%2Fdrivers%2Feld-events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fhos%2Flogs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fhos%2Fviolations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Freports%2Fdrivers%2Ffuel-energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Freports%2Fifta%2Fjurisdiction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Freports%2Fifta%2Fvehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Freports%2Fvehicle%2Fidling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Freports%2Fvehicles%2Ffuel-energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Froutes%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Froutes%2Faudit-logs%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fsafety-events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fsafety-events%2Faudit-logs%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fsensors%2Fclones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fsettings%2Fcompliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fsettings%2Fdriver-app</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fsettings%2Fsafety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Ftrailers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Ftrailers%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Ftrailers%2Fstats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Ftrailers%2Fstats%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Ftrailers%2Fstats%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fcameras%2Fmedia%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fclones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fdriver-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Flocations%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Flocations%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Freefers%2Fstats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Freefers%2Fstats%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Freefers%2Fstats%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fsled-stats%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fstats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fstats%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fstats%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Fstats-combined%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET fleet%2Fvehicles%2Ftachograph-files%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET gateways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET ifta-detail%2Fcsv%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET industrial%2Fassets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET industrial%2Fdata-inputs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET industrial%2Fdata-inputs%2Fdata-points</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET industrial%2Fdata-inputs%2Fdata-points%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET industrial%2Fdata-inputs%2Fdata-points%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET industrial%2Fjobs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET integrations%2Fctp%2FGetFleetCustomerData</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET me</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET metafleets%2Fchild-organizations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET oem%2Fnavistar%2Fcustomers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET oem%2Fnavistar%2Fvehiclereports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET oem%2Fnavistar%2Fvehicles%2F%2EorgId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET tags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET tags%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET user-roles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET users%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Faddresses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Faddresses%2F%2Eaddress_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fcontacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fcontacts%2F%2Econtact_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffinops%2Forders%2F%2Eorder_number%2Fshow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffinops%2Fproduct_migration_region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fassets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fassets%2F%2EassetId%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fassets%2F%2EassetId%2Freefer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fassets%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fassets%2Freefers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdispatch%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdispatch%2Froutes%2F%2Eroute_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdispatch%2Froutes%2F%2Eroute_id%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdispatch%2Froutes%2Fjob_updates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fdispatch%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fdocuments%2F%2Edocument_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fhos%2Faudit_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fhos_certified_daily_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fhos_daily_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Flog_edits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fsafety%2Fscore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2Fcreate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2Fdocument_types</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2Fdocuments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2Finactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2Finactive%2F%2Edriver_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fdrivers%2Fsummary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fhos%2Faudit_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fhos%2Flog_edits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fhos_authentication_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fhos_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fhos_logs_summary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Flist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fmaintenance%2Fdvirs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fmaintenance%2Flist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fmessages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Ftrailers%2F%2EtrailerId%2Fassignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Ftrailers%2Fassignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Ftrips</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Funassigned_driving_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Funassigned_driving_segments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Funassigned_driving_segments%2F%2Esegment_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2F%2Evehicle_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2F%2Evehicle_id%2Fdispatch%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2F%2Evehicle_id%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2F%2Evehicle_id%2Fsafety%2Fharsh_event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2F%2Evehicle_id%2Fsafety%2Fscore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2F%2Evehicle_id%2Funassigned_driving_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2Fstats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ffleet%2Fvehicles%2Fstats-expanded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fgraphql</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fdata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fdata%2F%2EdataInputId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmachines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmachines%2F%2EmachineId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmachines%2F%2EmachineId%2Fform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmachines%2F%2EmachineId%2Fforms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmes%2Flines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmes%2Frecipes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmes%2Fruns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmes%2Fruns%2Fline%2F%2Eline_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmes%2Fwork_orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fmes%2Fwork_orders%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fvision%2Fcameras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fvision%2Fcameras%2F%2EcameraId%2Fprograms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fvision%2Frun%2Fcamera%2F%2EcameraId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fvision%2Frun%2Fcamera%2F%2EcameraId%2Fprogram%2F%2EprogramId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fvision%2Fruns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fvision%2Fruns%2F%2EcameraId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Findustrial%2Fvision%2Fruns%2F%2EcameraId%2F%2EprogramId%2F%2EstartedAtMs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fsensors%2Fcargo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fsensors%2Fdoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fsensors%2Fhumidity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fsensors%2Flist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fsensors%2Ftemperature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ftags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Ftags%2F%2EtagId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fuser_roles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fusers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fusers%2F%2EuserId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fversions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET v1%2Fversions%2Fme</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET versions%2Fme</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET webhooks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET webhooks%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET workflows%2Fincidents%2Ffeed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GET workflows%2Fincidents%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA -- Feature Request for Webhooks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH addresses%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH attributes%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH contacts%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fdefects%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fdriver-vehicle-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fdrivers%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fdvirs%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fequipment%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Freefers%2F%2Eid%2Fthermoking-command%2Fclear-alarms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Freefers%2F%2Eid%2Fthermoking-command%2Fdefrost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Freefers%2F%2Eid%2Fthermoking-command%2Finitiate-pretrip</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Freefers%2F%2Eid%2Fthermoking-command%2Foff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Freefers%2F%2Eid%2Fthermoking-command%2Fon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Freefers%2F%2Eid%2Fthermoking-command%2Fupdate-run-mode</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Freefers%2F%2Eid%2Fthermoking-command%2Fupdate-set-point</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Froutes%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fsensors%2Fclones%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fsettings%2Fcompliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fsettings%2Fdriver-app</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Ftrailers%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fvehicles%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fvehicles%2F%2Eid%2Fimmobilizer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH fleet%2Fvehicles%2Fclones%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH industrial%2Fassets%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH industrial%2Fassets%2F%2Eid%2Fdata-outputs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH industrial%2Fjobs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH metafleets%2Fchild-organizations%2Fapi-token</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH tags%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH users%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Faddresses%2F%2Eaddress_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Fcontacts%2F%2Econtact_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Ffleet%2Fdrivers%2F%2Edriver_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fhos_certified_daily_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fhos_daily_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Ffleet%2Fdrivers%2Fcreate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Ffleet%2Funassigned_driving_segments%2F%2Esegment_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Ffleet%2Fvehicles%2F%2Evehicle_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Findustrial%2Fmes%2Fwork_orders%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Ftags%2F%2EtagId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH v1%2Fusers%2F%2EuserId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PATCH webhooks%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST addresses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST attributes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fcarrier-proposed-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fdocuments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fdocuments%2Fpdfs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fdriver-vehicle-assignments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fdrivers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fdvirs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fsensors%2Fclones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Ftrailers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fvehicles%2F%2Eid%2Fvoice-alert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST fleet%2Fvehicles%2Fclones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST gateways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST ifta-detail%2Fcsv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST industrial%2Fassets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST industrial%2Fjobs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST messages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST metafleets%2Fchild-organizations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST oem%2Fgm%2Fstats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST oem%2Fnavistar%2Fcustomers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST oem%2Fnavistar%2Fvehiclereports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST oem%2Fnavistar%2Fvehicles%2F%2EorgId</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST tags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST twilio-callback%2Fsms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST twilio-callback%2Fwhatsapp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Faddresses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fadmin%2Fmobile%2Ffinish_troy_build</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fadmin%2Fmobile%2Fstart_build</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fcontacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffinops%2Finvoices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffinops%2Finvoices%2F%2Enetsuite_internal_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffinops%2Flicense_type_products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffinops%2Fmigrate_products_eu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffinops%2Forders%2Fcreate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffinops%2Frma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffinops%2Frma%2F%2Eorder_number</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fadd_address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdispatch%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers%2F%2Edriver_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fdispatch%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fdocuments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fhos%2Fduty_status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers%2F%2Edriver_id%2Fhos_daily_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers%2Fcreate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fdrivers%2Fsummary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fhos_authentication_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fhos_logs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fhos_logs_summary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Flist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Flocations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fmaintenance%2Fdvirs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fmaintenance%2Flist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fmessages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fset_data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Ftrips</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ffleet%2Fvehicles%2F%2Evehicle_id%2Fdispatch%2Froutes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fgraphql</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fgrowth%2Fcables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Findustrial%2Fcsv_imports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Findustrial%2Fmachines%2F%2EmachineId%2Fform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Findustrial%2Fmachines%2F%2EmachineId%2Fforms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Findustrial%2Fmes%2Fwork_orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fmachines%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fmachines%2Flist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fsensors%2Fcargo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fsensors%2Fdoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fsensors%2Fhistory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fsensors%2Fhumidity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fsensors%2Flist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fsensors%2Ftemperature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Ftags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST v1%2Fusers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POST webhooks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PUT tags%2F%2Eid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PUT v1%2Ffinops%2Fcustomer_offboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PUT v1%2Ffinops%2Fpayment_info_updated_at%2F%2Esam_number</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PUT v1%2Ffleet%2Fdispatch%2Froutes%2F%2Eroute_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PUT v1%2Ffleet%2Fdrivers%2Finactive%2F%2Edriver_id</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PUT v1%2Ftags%2F%2EtagId</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Which_type_of_coverage_gap_is_it__c</picklist>
+        <values>
+            <fullName>API endpoint does not exist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API endpoint exists%2C but functionality mismatches the dashboard%2Fapps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API endpoint exists%2C but missing data points</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhook does not exist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhook exists%2C but functionality mismatches dashboard%2Fapps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webhook exists%2C but missing data points</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>acideasULT__Effort__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>acideasULT__Kanban_Path__c</picklist>
+        <values>
+            <fullName>Default Status</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

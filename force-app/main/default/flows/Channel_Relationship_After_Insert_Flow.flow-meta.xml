@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>GTMS-26112: Created as part of Partners H1 project
+GTMS-26124 &amp; GTMS-26107: Updated flow to add Update CR payout Eligibilites sub flow. Removed the Existing logic of updating the existing CRs</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-26112: Created as part of Partners H1 project to return true if the record is newly created</description>
+        <name>IS_NEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Channel Relationship After Insert Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Channel Relationship After Insert Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_CR_Payout_Eligibilities</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CR_Creation_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>SKU Auto Tagging</stringValue>
+            </value>
+        </filters>
+        <object>Channel_Relationship__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of partners H1 project to update the payout eligibility and Created Source CR if required</description>
+        <name>Update_CR_Payout_Eligibilities</name>
+        <label>Update CR Payout Eligibilities</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <flowName>Check_Source_Cr_or_Influence_Cr_and_Payout_Eligebility</flowName>
+        <inputAssignments>
+            <name>Current_CR_Record</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Partner_Program_Id</name>
+            <value>
+                <elementReference>$Record.Partner_Program__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <description>GTMS-26112: Created as part of Partners H1 project to store changed values to existing cR</description>
+        <name>To_Update_Existing_CR</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Onboarding_Complete__c</fullName>
+    <formula>IF(
+ISPICKVAL(Onboarding_Type__c, &apos;Standard&apos;),
+AND(PAM_Manager_Approval__c, MNDA_Signed__c, Legal_Agreement_Executed__c, Sales_Ops_Validation__c),
+IF(
+ISPICKVAL(Onboarding_Type__c, &apos;Non-Standard&apos;),
+AND(MNDA_Signed__c, Legal_Agreement_Executed__c, Sales_Ops_Validation__c),
+IF(
+ISPICKVAL(Onboarding_Type__c, &apos;Expansion&apos;),
+AND(Legal_Agreement_Executed__c, Sales_Ops_Validation__c, PAM_Manager_Approval__c),
+FALSE
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Partner Onboarding Complete</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

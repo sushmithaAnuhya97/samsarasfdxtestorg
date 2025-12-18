@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_cannot_be_None</fullName>
+    <active>true</active>
+    <description>Add an Engagement Type</description>
+    <errorConditionFormula>ISPICKVAL( Engagement_Type__c , &apos;None&apos;)</errorConditionFormula>
+    <errorMessage>Engagement Type cannot be None. Please add an engagement type</errorMessage>
+</ValidationRule>

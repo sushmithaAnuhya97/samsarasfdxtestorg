@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Type__c</fullName>
+    <label>Request Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Change in Payment Terms</fullName>
+                <default>false</default>
+                <label>Change in Payment Terms</label>
+            </value>
+            <value>
+                <fullName>Change in Payment Type</fullName>
+                <default>false</default>
+                <label>Change in Payment Type</label>
+            </value>
+            <value>
+                <fullName>Credit Limit Increase</fullName>
+                <default>false</default>
+                <label>Credit Limit Increase</label>
+            </value>
+            <value>
+                <fullName>Custom Billing Request</fullName>
+                <default>false</default>
+                <label>Custom Billing Request</label>
+            </value>
+            <value>
+                <fullName>Direct Monthly Financing</fullName>
+                <default>true</default>
+                <label>Direct Monthly Financing</label>
+            </value>
+            <value>
+                <fullName>Direct Quarterly Financing</fullName>
+                <default>false</default>
+                <label>Direct Quarterly Financing</label>
+            </value>
+            <value>
+                <fullName>Direct Semi-Annual Financing</fullName>
+                <default>false</default>
+                <label>Direct Semi-Annual Financing</label>
+            </value>
+            <value>
+                <fullName>Upfront Credit Limit</fullName>
+                <default>false</default>
+                <label>Upfront Credit Limit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

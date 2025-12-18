@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Currency__c</fullName>
+    <description>Created as part of partners H1 project to store the Partner account currency</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Channel_Partner__r.CurrencyIsoCode)</formula>
+    <label>Partner Currency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

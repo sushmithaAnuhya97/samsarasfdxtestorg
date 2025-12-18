@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trial_Price_quote__c</fullName>
+    <formula>IF(CONTAINS(Product_Code_Copy__c ,&quot;HW-VG34&quot;),  Unit_List_Price__c  + 400.00, 
+IF(CONTAINS(Product_Code_Copy__c, &quot;HW-CM11&quot;), Unit_List_Price__c + 500.00, 
+IF(CONTAINS(Product_Code_Copy__c, &quot;HW-CM12&quot;), Unit_List_Price__c + 400.00, 
+IF(CONTAINS(Product_Code_Copy__c, &quot;HW-CM22&quot;),Unit_List_Price__c + 600.00, 
+IF(CONTAINS(Product_Code_Copy__c, &quot;HW-AG24&quot;),Unit_List_Price__c + 180.00, 
+IF(CONTAINS(Product_Code_Copy__c, &quot;HW-AG41&quot;),Unit_List_Price__c + 108.00, 
+IF(CONTAINS(Product_Code_Copy__c, &quot;HW-EM&quot;),Unit_List_Price__c + 60.00, 
+IF(CONTAINS(Product_Code_Copy__c, &quot;HW-HM&quot;), Unit_List_Price__c + 60.00, 
+Unit_List_Price__c))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Trial Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

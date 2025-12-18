@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>days_till_deactivation__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Quarantine_Enabled_At__c), NULL, Quarantine_Enabled_At__c-TODAY())</formula>
+    <label>Days Till Deactivation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Team_Schedule_Template__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The team schedule template associated with this schedule slot.</description>
+    <inlineHelpText>The team schedule template associated with this schedule slot.</inlineHelpText>
+    <label>Team Schedule Template</label>
+    <referenceTo>pse__Team_Schedule_Template__c</referenceTo>
+    <relationshipLabel>Team Schedule Template Slots</relationshipLabel>
+    <relationshipName>Team_Schedule_Template_Slots</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

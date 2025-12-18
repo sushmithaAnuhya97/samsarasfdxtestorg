@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Installation_Vendor__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>created per ticket 16169</description>
+    <label>Project Installation Vendor</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </filterItems>
+        <infoMessage>Search Vendor Name</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Projects (Project Installation Vendor)</relationshipLabel>
+    <relationshipName>Projects</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

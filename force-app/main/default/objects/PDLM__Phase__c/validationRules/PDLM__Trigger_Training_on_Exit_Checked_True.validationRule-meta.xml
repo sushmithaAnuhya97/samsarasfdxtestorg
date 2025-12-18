@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Trigger_Training_on_Exit_Checked_True</fullName>
+    <active>true</active>
+    <description>If the phase field Trigger Training on Exit is set to true for a Lifecycle Type that is not Change, then we will throw a validation error.</description>
+    <errorConditionFormula>AND(TEXT(PDLM__Lifecycle__r.PDLM__Type__c) != &apos;Change&apos;, PDLM__Trigger_Training_on_Exit__c == TRUE)</errorConditionFormula>
+    <errorMessage>Cannot have Trigger Training on Exit set to true when the Lifecycle Type is not Change</errorMessage>
+</ValidationRule>

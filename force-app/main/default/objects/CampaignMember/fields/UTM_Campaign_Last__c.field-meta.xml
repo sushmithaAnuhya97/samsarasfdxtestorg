@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UTM_Campaign_Last__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK( utm_campaign_last_copy__c ) ,NULL , 
+IF( FIND( &quot; &quot; , utm_campaign_last_copy__c) = 0 ,utm_campaign_last_copy__c, 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 1 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 1 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 2 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 2 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 3 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 3 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 4 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 4 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 5 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 5 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 6 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 6 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 7 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 7 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 8 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 8 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 9 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 9 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 10 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 10 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 11 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 11 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 12 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 12 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 13 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 13 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 14 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 14 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 15 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 15 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 16 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 16 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 17 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 17 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 18 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 18 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 19 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 19 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 20 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 20 ) , 
+IF( MID( utm_campaign_last_copy__c, LEN( utm_campaign_last_copy__c ) - 21 , 1 ) = &quot; &quot; , RIGHT( utm_campaign_last_copy__c, 21 ) , 
+RIGHT( utm_campaign_last_copy__c, 21 ) 
+)))))))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>UTM Campaign Last</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Enable CRMA Download permission</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CRMA Additional Permissions</label>
+    <license>RevenueIntelligencePsl</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>UseSubscriptionEmails</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>WaveTabularDownload</name>
+    </userPermissions>
+</PermissionSet>

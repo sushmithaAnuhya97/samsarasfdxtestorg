@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Priority__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* These are the priority buckets that we will be setting up for the support team after our discussion: */
+/* S0: Support Override OR at risk purchases + pipeline (over 10%) &gt;= 200k OR Lifetime Purchases &gt;=200k */
+/* S1: at risk purchases + pipeline (over 10%) &gt;= 100k */
+/* S2: at risk purchases + pipeline (over 10%) &gt;= 30k */
+/* S3: at risk purchases + pipeline (over 10%) &gt;= 5k */
+/* S4: at risk purchases + pipeline (over 10%) &lt; 5k */
+
+
+/* Some Notes:*/
+
+/* S1, S2 and S3 get demoted one level after 60 days since Last Purchase Date */
+/* At risk purchases equals to purchases performed in the last 60 days */
+/*For prospects with no last purchase date, we also provide s0-s4 priority based on $AtRisk*/
+/* SMB deals with 36 months term get 3x’ed */
+
+
+IF(OR(ISPICKVAL(Support_Priority_Override__c,&apos;s0&apos;), Lifetime_Purchases__c&gt;=200000, AtRisk__c&gt;=200000), &apos;s0&apos;, 
+IF(AND(AtRisk__c&gt;=100000, TODAY() - 60 &lt;= Last_Purchase_Date__c), &apos;s1&apos;,
+IF(AND(AtRisk__c&gt;=100000,TODAY() - 60 &gt; Last_Purchase_Date__c), &apos;s2&apos;,
+IF(AND(AtRisk__c&gt;=30000,TODAY() - 60 &lt;= Last_Purchase_Date__c), &apos;s2&apos;,
+IF(AND(AtRisk__c&gt;=30000,TODAY() - 60 &gt; Last_Purchase_Date__c), &apos;s3&apos;,
+IF(AND(AtRisk__c&gt;=5000,TODAY() - 60 &lt;= Last_Purchase_Date__c), &apos;s3&apos;,
+IF(AND(AtRisk__c&gt;=5000,TODAY() - 60 &gt; Last_Purchase_Date__c), &apos;s4&apos;,
+IF(AND(AtRisk__c&gt;=100000, ISNULL(Last_Purchase_Date__c)), &apos;s1&apos;,
+IF(AND(AtRisk__c&gt;=30000, ISNULL(Last_Purchase_Date__c)), &apos;s2&apos;,
+IF(AND(AtRisk__c&gt;=5000, ISNULL(Last_Purchase_Date__c)), &apos;s3&apos;,
+&apos;s4&apos;))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Support Priority</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

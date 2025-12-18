@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Term_Discount__c</fullName>
+    <formula>IF (CONTAINS( Product_Code_Copy__c, &apos;-36MO&apos;),0.20, 
+    IF (CONTAINS( Product_Code_Copy__c, &apos;-60MO&apos;), 0.30, 
+        IF (CONTAINS( Product_Code_Copy__c, &apos;-84MO&apos;), 0.40,
+            IF (Express_Annual_Discount__c != 0, Express_Annual_Discount__c, 0
+            )
+        )
+    )
+)</formula>
+    <inlineHelpText>Applies 20% discount for 3-year, 30% for 5-year, 40% for 7-year license</inlineHelpText>
+    <label>License Term Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Percent</type>
+</CustomField>

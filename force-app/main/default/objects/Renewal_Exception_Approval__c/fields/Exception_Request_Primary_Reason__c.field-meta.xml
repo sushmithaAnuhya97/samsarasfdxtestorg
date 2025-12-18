@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exception_Request_Primary_Reason__c</fullName>
+    <label>Exception Request Primary Reason</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Renewal(s) signed &amp; closed before current account owner received account</fullName>
+                <default>false</default>
+                <label>Renewal(s) signed &amp; closed before current account owner received account</label>
+            </value>
+            <value>
+                <fullName>AE is new to account (within last 60 days) and negotiations already complete before AE assumed account ownership</fullName>
+                <default>false</default>
+                <label>AE is new to account (within last 60 days) and negotiations already complete before AE assumed account ownership</label>
+            </value>
+            <value>
+                <fullName>Customer went bankrupt or out of business</fullName>
+                <default>false</default>
+                <label>Customer went bankrupt or out of business</label>
+            </value>
+            <value>
+                <fullName>Customer was acquired by another business</fullName>
+                <default>false</default>
+                <label>Customer was acquired by another business</label>
+            </value>
+            <value>
+                <fullName>Customer is downsizing fleet</fullName>
+                <default>false</default>
+                <label>Customer is downsizing fleet</label>
+            </value>
+            <value>
+                <fullName>Customer service issues</fullName>
+                <default>false</default>
+                <label>Customer service issues</label>
+            </value>
+            <value>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <label>Commercial terms</label>
+            </value>
+            <value>
+                <fullName>Product technical issues</fullName>
+                <default>false</default>
+                <label>Product technical issues</label>
+            </value>
+            <value>
+                <fullName>Other (include more detail below)</fullName>
+                <default>false</default>
+                <label>Other (include more detail below)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

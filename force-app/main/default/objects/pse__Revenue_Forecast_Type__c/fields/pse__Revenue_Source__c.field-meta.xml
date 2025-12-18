@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Revenue_Source__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates the source of the revenue for this record.</description>
+    <inlineHelpText>Indicates the source of the revenue for this record.</inlineHelpText>
+    <label>Revenue Source</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Deliverable: Milestone</fullName>
+                <default>false</default>
+                <label>Deliverable: Milestone</label>
+            </value>
+            <value>
+                <fullName>Deliverable: Expense</fullName>
+                <default>false</default>
+                <label>Deliverable: Expense</label>
+            </value>
+            <value>
+                <fullName>Deliverable: Timecard</fullName>
+                <default>false</default>
+                <label>Deliverable: Timecard</label>
+            </value>
+            <value>
+                <fullName>Deliverable: Miscellaneous Adjustment</fullName>
+                <default>false</default>
+                <label>Deliverable: Miscellaneous Adjustment</label>
+            </value>
+            <value>
+                <fullName>Deliverable: EVA</fullName>
+                <default>false</default>
+                <label>Deliverable: EVA</label>
+            </value>
+            <value>
+                <fullName>% Complete: Project</fullName>
+                <default>false</default>
+                <label>% Complete: Project</label>
+            </value>
+            <value>
+                <fullName>% Complete: Milestone</fullName>
+                <default>false</default>
+                <label>% Complete: Milestone</label>
+            </value>
+            <value>
+                <fullName>Equal Split: Project</fullName>
+                <default>false</default>
+                <label>Equal Split: Project</label>
+            </value>
+            <value>
+                <fullName>Equal Split: Milestone</fullName>
+                <default>false</default>
+                <label>Equal Split: Milestone</label>
+            </value>
+            <value>
+                <fullName>Opportunity</fullName>
+                <default>false</default>
+                <label>Opportunity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

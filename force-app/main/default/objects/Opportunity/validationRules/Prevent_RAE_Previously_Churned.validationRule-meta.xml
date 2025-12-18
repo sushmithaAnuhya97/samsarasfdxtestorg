@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_RAE_Previously_Churned</fullName>
+    <active>true</active>
+    <description>Prevents RAE users (Samsara Sales - Renewal profiles) from selecting &apos;Non-Renewable Contract&apos; as a closed lost renewal sub-reason</description>
+    <errorConditionFormula>AND(
+        CONTAINS($Profile.Name, &apos;Samsara Sales - Renewal&apos;),
+        ISPICKVAL(Closed_Lost_Renewal_Sub_reason__c, &apos;Previously churned&apos;),
+        NOT($Permission.Validation_Rule_Exemption)
+    )</errorConditionFormula>
+    <errorMessage>RAE users cannot select &apos;Non-Renewable Contract&apos; as a closed lost renewal sub-reason currently.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Health_Trend__c</fullName>
+    <description>Customer Success</description>
+    <inlineHelpText>The Field Label has been changed form &quot;CS Health Trend&quot; to &quot;CS Sentiment Trend&quot; as per the request of Cs team Jira- GTMS-2302</inlineHelpText>
+    <label>CS Sentiment Trend</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Declining</fullName>
+                <default>false</default>
+                <label>Declining</label>
+            </value>
+            <value>
+                <fullName>Improving</fullName>
+                <default>false</default>
+                <label>Improving</label>
+            </value>
+            <value>
+                <fullName>Steady</fullName>
+                <default>false</default>
+                <label>Steady</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

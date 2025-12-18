@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TEST_Q2GrillDM</fullName>
+    <booleanFilter>1 AND (2 OR 3) AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ADR_Assignment__c</columns>
+    <columns>Buyer_Persona__c</columns>
+    <columns>CONTACT.ADDRESS2_CITY</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY_CODE</columns>
+    <columns>CONTACT.ADDRESS2_STATE_CODE</columns>
+    <columns>CONTACT.ADDRESS2_STREET</columns>
+    <columns>CONTACT.ADDRESS2_ZIP</columns>
+    <columns>Level__c</columns>
+    <columns>LinkedIn_URL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Global_Geography__c</field>
+        <operation>contains</operation>
+        <value>United States</value>
+    </filters>
+    <filters>
+        <field>Account.Lifetime_ACV_to_USD__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Account.Lifetime_ACV_to_USD__c</field>
+        <operation>equals</operation>
+        <value>USD 0</value>
+    </filters>
+    <filters>
+        <field>Account.Open_Opportunity__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL_OPT_OUT</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CONTACT.EMAIL</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Level__c</field>
+        <operation>equals</operation>
+        <value>Director,VP-Level,VP</value>
+    </filters>
+    <filters>
+        <field>Account.Prospecting_Status__c</field>
+        <operation>equals</operation>
+        <value>ADR Prospecting</value>
+    </filters>
+    <filters>
+        <field>LinkedIn_URL__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Account.Propensity_to_First_Purchase_Score__c</field>
+        <operation>equals</operation>
+        <value>4 - Likely,5 - Very Likely</value>
+    </filters>
+    <label>TEST_Q2GrillDM</label>
+</ListView>

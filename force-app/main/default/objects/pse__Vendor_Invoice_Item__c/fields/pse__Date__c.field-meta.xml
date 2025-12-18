@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Date__c</fullName>
+    <defaultValue>Today()</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The date of the invoice item. The value is populated by the New Invoice Items page from the respective field on the related record: Expense Date on Expense, Actual Date on Milestone, Effective Date on Misc. Adjustment, End Date on Timecard Split.</description>
+    <label>Date</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Annual_Payment__c</fullName>
+    <formula>(Opportunity.Total_License_Due__c / (  Opportunity.License_Term__c  / 12)) +  Opportunity.Total_Hardware_Due__c  + 
+
+Opportunity.Shipping_and_Handling__c +  
+
+Opportunity.Hardware_Sales_Tax__c + (Opportunity.License_Sales_Tax__c/ (  Opportunity.License_Term__c  / 12))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>First Annual Payment consists of the following:
+- Full hardware cost
+- hardware sales tax
+- shipping and handling
+- First year of license cost
+- Annual license sales tax</inlineHelpText>
+    <label>First Annual Payment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

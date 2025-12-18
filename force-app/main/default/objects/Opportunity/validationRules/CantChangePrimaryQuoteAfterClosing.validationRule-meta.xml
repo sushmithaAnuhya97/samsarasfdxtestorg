@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CantChangePrimaryQuoteAfterClosing</fullName>
+    <active>true</active>
+    <description>Prevents AEs from changing the primary quote on an opportunity after it is moved into Closing.</description>
+    <errorConditionFormula>AND(
+ CPQ_Opportunity__c = TRUE,
+ Probability &gt;= 0.95,
+ ISCHANGED(SBQQ__PrimaryQuote__c),
+ !$Permission.Validation_Rule_Exemption 
+)</errorConditionFormula>
+    <errorMessage>The primary quote may not be changed after the opportunity has been moved into Closing.</errorMessage>
+</ValidationRule>

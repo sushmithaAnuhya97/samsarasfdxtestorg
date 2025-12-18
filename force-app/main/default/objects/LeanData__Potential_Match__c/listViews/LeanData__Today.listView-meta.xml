@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Today</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>LeanData__Account_1_Name__c</columns>
+    <columns>LeanData__Account_2_Name__c</columns>
+    <columns>LeanData__Job_Id__c</columns>
+    <columns>LeanData__Match_Type__c</columns>
+    <columns>LeanData__Object_1_Id__c</columns>
+    <columns>LeanData__Object_1_Type__c</columns>
+    <columns>LeanData__Object_2_Id__c</columns>
+    <columns>LeanData__Object_2_Type__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Today</label>
+</ListView>

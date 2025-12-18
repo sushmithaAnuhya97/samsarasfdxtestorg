@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Reference_Project_link__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( refedge__Community_Invite__r.refedge__Org_Instance_URl__c +&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;RefRequestProject?Id=&apos;+refedge__Community_Invite__r.refedge__Reference_Request__c,&apos;Reference Request Link&apos;, &quot;_blank&quot;)</formula>
+    <label>Reference Project link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

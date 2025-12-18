@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Scorecard__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(D_B_Data_Available__c = False, null, 
+
+(0.25* 
+IF(Commercial_Credit_Percentile__c&gt;0.90,10, 
+IF(Commercial_Credit_Percentile__c&gt;0.70,8, 
+IF(Commercial_Credit_Percentile__c&gt;0.50,6, 
+IF(Commercial_Credit_Percentile__c&gt;0.30,4, 
+IF(Commercial_Credit_Percentile__c&gt;0.10,2,0)))))) + 
+(0.2* 
+IF(Slow_Negative__c&lt;=0.05,10, 
+IF(Slow_Negative__c&lt;=0.10,7, 
+IF(Slow_Negative__c&lt;=0.15,5, 
+IF(Slow_Negative__c&lt;=0.20,3,0))))) + 
+
+(0.3* 
+IF(Financial_Stress_Score_Percentile__c&gt;=0.95,10, 
+IF(Financial_Stress_Score_Percentile__c&gt;=0.69,9, 
+IF(Financial_Stress_Score_Percentile__c&gt;=0.34,7, 
+IF(Financial_Stress_Score_Percentile__c&gt;=0.2,3,0))))) + 
+
+(0.25* 
+IF(PAYDEX__c&gt;=80,10, 
+IF(PAYDEX__c&gt;=75,8, 
+IF(PAYDEX__c&gt;=70,6, 
+IF(PAYDEX__c&gt;=65,4, 
+IF(PAYDEX__c&gt;=60,2,IF(PAYDEX__c&gt;=55,1,0))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Credit Scorecard Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

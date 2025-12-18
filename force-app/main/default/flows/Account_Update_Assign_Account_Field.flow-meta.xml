@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Assign_Account_to_False</name>
+        <label>Set Assign Account to False</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Initiate_Round_Robin__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_AVP_Team</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>314</locationX>
+        <locationY>1103</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Owner_AVP_Team__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AVPvalue</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <customErrors>
+        <description>Sales Ops are not allowed to update DUNS when the credit report latest record is in Approved status</description>
+        <name>Custom_Error_Message_1</name>
+        <label>Sales Ops not allowed to update DUNS</label>
+        <locationX>314</locationX>
+        <locationY>611</locationY>
+        <customErrorMessages>
+            <errorMessage>Sales Ops are not allowed to update DUNS Number when the Credit Pre Approval status (Credit Report) is in Approved.</errorMessage>
+            <fieldSelection>DUNS_Number__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_Credit_Pre_Approval_status</name>
+        <label>Check Credit Pre -Approval status</label>
+        <locationX>446</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_IFR_Records.Credit_Pre_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Custom_Error_Message_1</targetReference>
+            </connector>
+            <label>Approved?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_AVP_Team</name>
+        <label>Update AVP Team</label>
+        <locationX>446</locationX>
+        <locationY>995</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Owner_Changes_o_New</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>isnew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account</targetReference>
+            </connector>
+            <label>Is Owner Changes o New</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Field</name>
+        <label>Update Field</label>
+        <locationX>446</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Update_AVP_Team</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Account_Fields</name>
+            <conditionLogic>(1 OR 2 OR 3 ) AND 4 AND 5 AND 6</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner.UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>AE1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>AE2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>AE3</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Is_Deal_Reg_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Initiate_Round_Robin__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Initiate_Round_Robin__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Assign_Account_to_False</targetReference>
+            </connector>
+            <label>Update Account Fields</label>
+        </rules>
+        <rules>
+            <name>DUNS_Number_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.DUNS_Number__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Ops</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_IFR_Records</targetReference>
+            </connector>
+            <label>DUNS Number Update</label>
+        </rules>
+    </decisions>
+    <description>GTMS-27534, Added validation for Sales Ops profile when they Update DUNS Number,Credit Report-Credit Pre Approval Status should not be in Approved.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AVPvalue</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK(TEXT({!$Record.Owner.Manager.Sales_User_Type__c}))),  TEXT({!$Record.Owner.Manager.Sales_User_Type__c}) , 
+IF(NOT(ISBLANK(TEXT({!$Record.Owner.Manager.Manager.Sales_User_Type__c}))),  TEXT({!$Record.Owner.Manager.Manager.Sales_User_Type__c}) , 
+IF(NOT(ISBLANK(TEXT({!$Record.Owner.Manager.Manager.Manager.Sales_User_Type__c}))),  TEXT({!$Record.Owner.Manager.Manager.Manager.Sales_User_Type__c}) , &apos;&apos;)))</expression>
+    </formulas>
+    <formulas>
+        <name>isnew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Account : Update Assign Account Field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account : Update Assign Account Field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Get the latest IFR records</description>
+        <name>Get_IFR_Records</name>
+        <label>Get IFR Records</label>
+        <locationX>446</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Credit_Pre_Approval_status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Credit_Report__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Field</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

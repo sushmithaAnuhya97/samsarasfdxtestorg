@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Default_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Default status for new compliance statuses relate to this specification</description>
+    <inlineHelpText>Default status for new compliance statuses relate to this specification</inlineHelpText>
+    <label>Default Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Compliant</fullName>
+                <default>false</default>
+                <label>Compliant</label>
+            </value>
+            <value>
+                <fullName>Exempt</fullName>
+                <default>false</default>
+                <label>Exempt</label>
+            </value>
+            <value>
+                <fullName>Waiting for Response</fullName>
+                <default>false</default>
+                <label>Waiting for Response</label>
+            </value>
+            <value>
+                <fullName>Missing Data</fullName>
+                <default>false</default>
+                <label>Missing Data</label>
+            </value>
+            <value>
+                <fullName>No Data</fullName>
+                <default>true</default>
+                <label>No Data</label>
+            </value>
+            <value>
+                <fullName>Not Compliant</fullName>
+                <default>false</default>
+                <label>Not Compliant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

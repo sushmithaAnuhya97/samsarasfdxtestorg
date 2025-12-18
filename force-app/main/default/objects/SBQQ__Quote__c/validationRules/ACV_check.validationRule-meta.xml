@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_check</fullName>
+    <active>true</active>
+    <description>The checkbox MX MSA can only be checked when ACV &gt;30k USD</description>
+    <errorConditionFormula>AND(
+    NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+    MX_MSA__c = TRUE,
+    SBQQ__Primary__c = TRUE,
+    SBQQ__Opportunity2__r.ACV_Bookings_SOT__c / SBQQ__Opportunity2__r.Currency_Exchange_Rate__c &lt; 30000
+)</errorConditionFormula>
+    <errorMessage>Please make sure ACV value is greater than 30,000 USD when marking MX MSA as true</errorMessage>
+</ValidationRule>

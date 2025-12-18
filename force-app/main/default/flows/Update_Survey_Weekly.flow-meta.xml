@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Update_BVS_Survey_Status</name>
+        <label>Update BVS Survey Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>For_Each_Project.BVS_Survey__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Survey Sent</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ProjectsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_Each_Project</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Services</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Services_Survey_Status</name>
+        <label>Update Services Survey Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>For_Each_Project.Services_Survey__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Survey Sent</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ProjectsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_Each_Project</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_TSM</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_TSM_Survey</name>
+        <label>Update TSM Survey</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>For_Each_Project.TSM_survey__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Survey Sent</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ProjectsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>For_Each_Project</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>For_Each_Project</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_BVS</name>
+        <label>Check BVS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_Services</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_BVS_Ready_To_Send</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_Each_Project.BVS_Survey__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Send</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_BVS_Survey_Status</targetReference>
+            </connector>
+            <label>If BVS Ready To Send</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Services</name>
+        <label>Check Services</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_TSM</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Services_Ready_To_Send</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_Each_Project.Services_Survey__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Send</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Services_Survey_Status</targetReference>
+            </connector>
+            <label>If Services Ready To Send</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_TSM</name>
+        <label>Check TSM</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>For_Each_Project</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_TSM_Ready_To_Send</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>For_Each_Project.TSM_survey__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready to Send</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_TSM_Survey</targetReference>
+            </connector>
+            <label>If TSM Ready To Send</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Last_10_Days</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() - 10</expression>
+    </formulas>
+    <interviewLabel>Update Survey Weekly {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Survey Weekly</label>
+    <loops>
+        <name>For_Each_Project</name>
+        <label>For Each Project</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Projects</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_BVS</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Projects</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Projects</name>
+        <label>Get Projects</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>For_Each_Project</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>BVS_Survey__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Ready to Send</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Services_Survey__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Ready to Send</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TSM_survey__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Ready to Send</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>pse__Proj__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>BVS_Survey__c</queriedFields>
+        <queriedFields>Services_Survey__c</queriedFields>
+        <queriedFields>TSM_survey__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Projects</name>
+        <label>Update Projects</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>ProjectsToUpdate</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Projects</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Weekly</frequency>
+            <startDate>2025-08-04</startDate>
+            <startTime>09:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>ProjectsToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>pse__Proj__c</objectType>
+    </variables>
+</Flow>

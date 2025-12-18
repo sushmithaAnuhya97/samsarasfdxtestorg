@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Field_Action__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Field Action</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Field Cloning</fullName>
+                <default>false</default>
+                <label>Field Cloning</label>
+            </value>
+            <value>
+                <fullName>Field Edits</fullName>
+                <default>false</default>
+                <label>Field Edits</label>
+            </value>
+            <value>
+                <fullName>Field Remove Perms</fullName>
+                <default>false</default>
+                <label>Field Remove Perms</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

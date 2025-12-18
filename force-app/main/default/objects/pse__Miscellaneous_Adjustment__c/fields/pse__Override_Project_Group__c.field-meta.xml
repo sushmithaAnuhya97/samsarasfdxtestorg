@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Project_Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If this field is set, it overrides the Group to which a Misc Adjustment&apos;s Transactions will roll up for Group Actuals, even if its Project is in a different Group.  Typically a Misc Adjustment&apos;s Transactions roll up to its Project&apos;s Group.  Note that either way, the Transactions will continue to roll up to the same Project&apos;s Project Actuals.</description>
+    <inlineHelpText>If this field is set, it overrides the Group to which a Misc Adjustment&apos;s Transactions will roll up for Group Actuals, even if its Project is in a different Group.  Typically a Misc Adjustment&apos;s Transactions roll up to its Project&apos;s Group.</inlineHelpText>
+    <label>Override Project Group</label>
+    <referenceTo>pse__Grp__c</referenceTo>
+    <relationshipLabel>Override Group For Miscellaneous Adjustments</relationshipLabel>
+    <relationshipName>Override_Group_For_Misc_Adjustments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

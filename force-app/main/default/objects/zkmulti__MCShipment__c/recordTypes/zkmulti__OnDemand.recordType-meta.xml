@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__OnDemand</fullName>
+    <active>true</active>
+    <label>OnDemand</label>
+    <picklistValues>
+        <picklist>zkmulti__Dimension_Units__c</picklist>
+        <values>
+            <fullName>IN</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>zkmulti__Label_Image_Type__c</picklist>
+        <values>
+            <fullName>PDF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PNG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZPL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>zkmulti__Tracking_Stage__c</picklist>
+        <values>
+            <fullName>Awaiting Packing</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver En Route</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver on Pickup Site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready For Pickup</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>zkmulti__Weight_Units__c</picklist>
+        <values>
+            <fullName>LB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

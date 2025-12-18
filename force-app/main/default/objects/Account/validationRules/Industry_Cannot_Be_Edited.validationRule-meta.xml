@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Cannot_Be_Edited</fullName>
+    <active>true</active>
+    <description>GTMS-14863 - When Naics code is present, AEs &amp; ADRs cannot edit Industry</description>
+    <errorConditionFormula>AND(
+   NOT(ISBLANK(NAICS_Code__c)),
+   LEN(NAICS_Code__c)=6,
+   OR(CONTAINS($Profile.Name,&quot;AE&quot;),CONTAINS($Profile.Name,&quot;ADR&quot;)),
+			$UserRole.Name &lt;&gt; &apos;Fleet ADR GS NA MX Team 26&apos;,
+   ISCHANGED(Industry)
+ )</errorConditionFormula>
+    <errorMessage>The Industry field cannot be edited when the NAICS code is present. To submit feedback, please go here: https://forms.gle/pVyLwizGmXWgXV6a7</errorMessage>
+</ValidationRule>

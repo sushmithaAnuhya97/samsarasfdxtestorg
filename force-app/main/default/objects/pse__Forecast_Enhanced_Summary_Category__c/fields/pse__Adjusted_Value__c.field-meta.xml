@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Adjusted_Value__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Formula field representing the value displayed on the Billing Forecast page for this billing forecast summary category.</description>
+    <formula>IF(NOT(ISNULL(pse__Override_Value__c)),pse__Override_Value__c,IF(NOT(ISNULL(pse__Override_Rollup_Variance__c)),pse__Override_Rollup_Variance__c+pse__Forecast_Value__c,pse__Forecast_Value__c))</formula>
+    <inlineHelpText>Formula field representing the value displayed on the Billing Forecast page for this billing forecast summary category.</inlineHelpText>
+    <label>Adjusted Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

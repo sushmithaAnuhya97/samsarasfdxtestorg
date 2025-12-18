@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Test__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is a test report associated with this issue.  Used to track open issues relating to a test.</description>
+    <inlineHelpText>This is a test report associated with this issue.  Used to track open issues relating to a test.</inlineHelpText>
+    <label>Test</label>
+    <referenceTo>FLODocs__FLO_Test_Record__c</referenceTo>
+    <relationshipName>FLO_Process_Issues1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

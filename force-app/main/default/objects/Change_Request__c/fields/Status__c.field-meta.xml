@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Workflow status</description>
+    <label>Status</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Architect Review</fullName>
+                <default>false</default>
+                <label>Architect Review</label>
+            </value>
+            <value>
+                <fullName>PM Review</fullName>
+                <default>false</default>
+                <label>PM Review</label>
+            </value>
+            <value>
+                <fullName>QA/UAT Review</fullName>
+                <default>false</default>
+                <label>QA/UAT Review</label>
+            </value>
+            <value>
+                <fullName>Support Review</fullName>
+                <default>false</default>
+                <label>Support Review</label>
+            </value>
+            <value>
+                <fullName>CAB Ready</fullName>
+                <default>false</default>
+                <label>CAB Ready</label>
+            </value>
+            <value>
+                <fullName>CAB Approved</fullName>
+                <default>false</default>
+                <label>CAB Approved</label>
+            </value>
+            <value>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+                <label>Scheduled</label>
+            </value>
+            <value>
+                <fullName>Deployed</fullName>
+                <default>false</default>
+                <label>Deployed</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

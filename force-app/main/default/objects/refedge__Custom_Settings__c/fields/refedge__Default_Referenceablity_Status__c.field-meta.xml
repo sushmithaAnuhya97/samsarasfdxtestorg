@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Default_Referenceablity_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>This is the default status of a newly added Reference Program Member when triggered by the addition of a Referenceability or Attribute.</inlineHelpText>
+    <label>Default Program Membership Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Caution</fullName>
+                <default>false</default>
+                <label>Caution</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>true</default>
+                <label>Inactive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

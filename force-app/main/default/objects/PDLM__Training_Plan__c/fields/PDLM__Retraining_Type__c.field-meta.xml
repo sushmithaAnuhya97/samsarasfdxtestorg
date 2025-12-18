@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Retraining_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Retraining Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Calendar</fullName>
+                <default>true</default>
+                <label>Calendar</label>
+            </value>
+            <value>
+                <fullName>Rolling</fullName>
+                <default>false</default>
+                <label>Rolling</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enterprise_Accounts_James_Allman</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>Last_Contacted__c</columns>
+    <columns>Status__c</columns>
+    <columns>Closed_Lost_Opportunities__c</columns>
+    <columns>Last_Call__c</columns>
+    <columns>Number_of_Calls__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Total_ACV_Pipeline__c</columns>
+    <columns>Account_Assignment_Date__c</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>First_Demo_Date__c</columns>
+    <columns>First_Opportunity_Closed_With_Partner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Stephenson Swan</value>
+    </filters>
+    <label>Enterprise Accounts - Oliver (D&amp;G)</label>
+</ListView>

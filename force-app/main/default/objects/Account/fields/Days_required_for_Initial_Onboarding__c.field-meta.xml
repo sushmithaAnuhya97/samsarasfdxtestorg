@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_required_for_Initial_Onboarding__c</fullName>
+    <description>Time from first account purchase until initial onboarding complete; if initial onboarding is not yet complete, the time = 0 days</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(CSM_Initial_onboarding_completed_Time__c),0,
+ DATEVALUE( CSM_Initial_onboarding_completed_Time__c )- First_Purchase_Date__c )</formula>
+    <label>Days required for Initial Onboarding</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

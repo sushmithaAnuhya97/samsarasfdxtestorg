@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Update_Verified_VAT</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(OR(ISPICKVAL(VAT_Validation_Status__c, &apos;Verified&apos;), ISPICKVAL(VAT_Validation_Status__c, &apos;Pending&apos;)), ISCHANGED( VAT_Number__c), !$Permission.Validation_Rule_Exemption)</errorConditionFormula>
+    <errorMessage>You can not change the VAT Number while its status is in Pending or Verified. Please reach out to the sales ops team if you still prefer to change it.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mail_Merge4</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Billing_Email__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>X18_Digit_Account_Id__c</field>
+        <operation>equals</operation>
+        <value>0011a00000gSdR1AAK,0011a00000geQNZAA2,0011a00000geQNtAAM,0011a00000rcTTBAA2</value>
+    </filters>
+    <label>Mail Merge</label>
+</ListView>

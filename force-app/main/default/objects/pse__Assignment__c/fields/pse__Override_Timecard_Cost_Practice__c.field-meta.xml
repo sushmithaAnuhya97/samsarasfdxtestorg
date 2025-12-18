@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Timecard_Cost_Practice__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If set, overrides the default Practice to which this Assignment&apos;s Timecard Cost Transactions will roll up for Practice Actuals, even if the Project or Resource are in a different Practice.  Note that either way, the Timecard Cost Transactions will continue to roll up to the same Project&apos;s Project Actuals and same Resource&apos;s Resource Actuals.</description>
+    <inlineHelpText>If set, overrides the default Practice to which this Assignment&apos;s Timecard Cost Transactions will roll up for Practice Actuals, even if the Project or Resource are in a different Practice.</inlineHelpText>
+    <label>Override Timecard Cost Practice</label>
+    <referenceTo>pse__Practice__c</referenceTo>
+    <relationshipLabel>Override Timecard Cost Practice For Assignments</relationshipLabel>
+    <relationshipName>Override_TC_CostPractice_For_Assignments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

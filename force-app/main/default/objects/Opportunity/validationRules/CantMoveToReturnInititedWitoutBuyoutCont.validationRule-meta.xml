@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CantMoveToReturnInititedWitoutBuyoutCont</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISBLANK(Finance_Partner_Contact__c),
+ISCHANGED(StageName),
+ISPICKVAL(StageName,&quot;Return Initiated&quot;),
+ISPICKVAL(Type,&quot;Rebate&quot;),
+ISPICKVAL(Rebate_Type__c,&quot;Buyout&quot;),
+OR(CONTAINS($Profile.Name, &apos;Sales&apos;),  CONTAINS($Profile.Name, &apos;Samsara Channel Account Managers&apos;) ),
+!$Permission.Validation_Rule_Exemption  
+)</errorConditionFormula>
+    <errorDisplayField>Finance_Partner_Contact__c</errorDisplayField>
+    <errorMessage>Please fill in related finance partner contact,. Thanks!</errorMessage>
+</ValidationRule>

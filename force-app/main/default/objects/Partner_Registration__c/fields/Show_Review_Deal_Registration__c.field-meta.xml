@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Review_Deal_Registration__c</fullName>
+    <description>Created as part of partner Alignment project. This field used to hide the Review Deal Registration button.</description>
+    <formula>OR(
+	AND(
+		ISPICKVAL(Status__c, &apos;New&apos;),
+		OR(
+			CASESAFEID($User.Id) == CASESAFEID(Partner_Account__r.OwnerId),
+			CASESAFEID($Profile.Id) == &apos;00e1P000000xVGuQAM&apos;,
+			CASESAFEID($Profile.Id) == &apos;00e1a000000UoNcAAK&apos;,
+			CASESAFEID($Profile.Id) == &apos;00e1P000000FBBDQA4&apos;	
+		)
+	),
+	AND(
+		OR(
+			ISPICKVAL(Status__c, &apos;PAM Reviewed&apos;),
+			ISPICKVAL(Status__c, &apos;AE Accepted&apos;),
+			ISPICKVAL(Status__c, &apos;AE Ignored&apos;)
+		),
+		OR(
+			CASESAFEID($User.Id) == CASESAFEID(OwnerId),
+			CASESAFEID($Profile.Id) == &apos;00e1a000000UoNcAAK&apos;,
+			CASESAFEID($Profile.Id) == &apos;00e1P000000FBBDQA4&apos;	
+		)
+	)
+	
+)</formula>
+    <label>Show Review Deal Registration</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

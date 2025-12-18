@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Type of change that triggered the event</description>
+    <label>Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Insert</fullName>
+                <default>false</default>
+                <label>Insert</label>
+            </value>
+            <value>
+                <fullName>Update</fullName>
+                <default>false</default>
+                <label>Update</label>
+            </value>
+            <value>
+                <fullName>Delete</fullName>
+                <default>false</default>
+                <label>Delete</label>
+            </value>
+            <value>
+                <fullName>Category Update</fullName>
+                <default>false</default>
+                <label>Category Update</label>
+            </value>
+            <value>
+                <fullName>Item Update</fullName>
+                <default>false</default>
+                <label>Item Update</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

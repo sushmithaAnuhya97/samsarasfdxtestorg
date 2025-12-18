@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Completed_Stage_End_Date</fullName>
+    <active>true</active>
+    <description>This validation rule ensures that a project stage cannot be set to &apos;Completed&apos; unless the associated End Date is within the last seven days OR today</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(pse__Stage__c, &apos;Completed&apos;),
+  NOT(ISPICKVAL(PRIORVALUE(pse__Stage__c), &apos;Completed&apos;)),
+  NOT(
+    OR(
+      pse__End_Date__c &gt;= (TODAY() - 7),
+      ISBLANK(pse__End_Date__c)
+    )
+  ),
+  NOT(
+    OR(
+      $Profile.Name = &apos;Samsara Management&apos;,
+      $User.Email = &apos;kayla.eugene@samsara.com&apos;,
+      $User.Email = &apos;brennan.smith@samsara.com&apos;
+    )
+  )
+)</errorConditionFormula>
+    <errorDisplayField>pse__End_Date__c</errorDisplayField>
+    <errorMessage>The project &quot;Stage&quot; can only be set to &apos;Completed &apos;If the end date is within the last seven days or today. If you don&apos;t meet these criteria, Contact your System Administrator.</errorMessage>
+</ValidationRule>

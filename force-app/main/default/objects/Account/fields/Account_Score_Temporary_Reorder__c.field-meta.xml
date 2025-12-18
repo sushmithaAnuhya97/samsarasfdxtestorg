@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Score_Temporary_Reorder__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If enabled, this temporarily removes the Account from the scoring report.  The Account will be automatically added back to the report after 45 days or if the Account Score increases significantly, whichever occurs first.</description>
+    <inlineHelpText>If checked, the Account Score will be temporarily lowered to 0 the following day. The Account Score will be automatically re-adjusted after 45 days or if the underlying Account Score changes, whichever occurs first</inlineHelpText>
+    <label>[Depr.] Account Score Temporary Reorder</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

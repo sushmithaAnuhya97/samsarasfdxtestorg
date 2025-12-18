@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Initiated</fullName>
+                <default>true</default>
+                <label>Product Initiated</label>
+            </value>
+            <value>
+                <fullName>Back Office Processing</fullName>
+                <default>false</default>
+                <label>Back Office Processing</label>
+            </value>
+            <value>
+                <fullName>Ready to Approve</fullName>
+                <default>false</default>
+                <label>Ready to Approve</label>
+            </value>
+            <value>
+                <fullName>Pending Product Ops Review</fullName>
+                <default>false</default>
+                <label>Pending Product Ops Review</label>
+            </value>
+            <value>
+                <fullName>Pending Finance Approval</fullName>
+                <default>false</default>
+                <label>Pending Biz Systems - Finance Approval</label>
+            </value>
+            <value>
+                <fullName>Pending NPI Approval</fullName>
+                <default>false</default>
+                <label>Pending NPI Approval</label>
+            </value>
+            <value>
+                <fullName>Pending Supply Chain Approval</fullName>
+                <default>false</default>
+                <label>Pending Supply Chain Approval</label>
+            </value>
+            <value>
+                <fullName>Pending Product Approval</fullName>
+                <default>false</default>
+                <label>Pending Product Approval</label>
+            </value>
+            <value>
+                <fullName>Product Creation</fullName>
+                <default>false</default>
+                <label>Product Creation</label>
+            </value>
+            <value>
+                <fullName>Ready to Launch</fullName>
+                <default>false</default>
+                <label>Ready to Launch</label>
+            </value>
+            <value>
+                <fullName>Launched EA</fullName>
+                <default>false</default>
+                <label>Launched EA</label>
+            </value>
+            <value>
+                <fullName>Launched GA</fullName>
+                <default>false</default>
+                <label>Launched GA</label>
+            </value>
+            <value>
+                <fullName>Archived</fullName>
+                <default>false</default>
+                <label>Archived</label>
+            </value>
+            <value>
+                <fullName>Pending Sales Ops Approval</fullName>
+                <default>false</default>
+                <label>Pending Sales Ops Approval</label>
+            </value>
+            <value>
+                <fullName>Finance Processing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Finance Processing</label>
+            </value>
+            <value>
+                <fullName>NPI Processing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NPI Processing</label>
+            </value>
+            <value>
+                <fullName>Supply Chain Processing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Supply Chain Processing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

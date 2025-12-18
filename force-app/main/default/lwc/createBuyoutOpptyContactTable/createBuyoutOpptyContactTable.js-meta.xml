@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <!-- <property name="recordId" type="String" label="[Deprecated]Record Id" description="The record Id passed from the Flow"/> -->
+            <property name="accountId" type="String" label="Account Id" description="The account Id of the source Opportunity passed from the Flow"/>
+            <property name="relatedContactId" type="String" label="Related Contact Id" description="The relatedContact Id of the source Opportunity from the Flow"/>
+            <property name="selectedContactId" label="selected Contact Id" type="String" role="outputOnly" />
+            <property name="createContactInvoked" label="Creating a New Contact" type="boolean" role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

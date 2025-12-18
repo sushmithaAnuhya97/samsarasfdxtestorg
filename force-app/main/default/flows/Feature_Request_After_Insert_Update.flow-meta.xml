@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>FR_Creation_Notification</name>
+        <label>FR Creation Notification</label>
+        <locationX>1058</locationX>
+        <locationY>432</locationY>
+        <actionName>acideasULT__brIdea__c.FR_Creation_Notification</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Check_if_Sub_Category</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Record_Id__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>acideasULT__brIdea__c.FR_Creation_Notification</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_FR_Category_Junction</name>
+        <label>Check FR Category Junction</label>
+        <locationX>374</locationX>
+        <locationY>695</locationY>
+        <defaultConnector>
+            <targetReference>Create_FR_Sub_Category_record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FR_Category_Junction_has_record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_FR_Category_Junction</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_FR_Category_Junction</targetReference>
+            </connector>
+            <label>FR Category Junction has record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_New_Record</name>
+        <label>Check if New Record</label>
+        <locationX>873</locationX>
+        <locationY>379</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_Sub_Category</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_New_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FR_Creation_Notification</targetReference>
+            </connector>
+            <label>Is New Record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_Sub_Category</name>
+        <label>Check if Sub-Category</label>
+        <locationX>802</locationX>
+        <locationY>536</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Sub_Category_has_value</name>
+            <conditionLogic>(1 AND 2) OR (2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Product_Area__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_Area__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Sub-Category has value</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Estimated_GA_Date_PreviousValue</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!$Record__Prior.Estimated_GA_Date__c})=&apos;&apos;, &apos;BLANK&apos;, UPPER(TEXT({!$Record__Prior.Estimated_GA_Date__c})))</expression>
+    </formulas>
+    <formulas>
+        <name>Estimated_GA_Date_Text</name>
+        <dataType>String</dataType>
+        <expression>IF(ISCHANGED({!$Record.Estimated_GA_Date__c}),
+&apos;Estimated GA Date was changed from &apos;&amp;{!Estimated_GA_Date_PreviousValue}&amp;&apos; to &apos;&amp;UPPER(TEXT({!$Record.Estimated_GA_Date__c})),
+&apos;&apos;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>link to feature request record</description>
+        <name>RecordDetailLink</name>
+        <dataType>String</dataType>
+        <expression>LEFT($Api.Partner_Server_URL_140,FIND(&apos;.com&apos;,$Api.Partner_Server_URL_140)+4)&amp;{!$Record.Id}</expression>
+    </formulas>
+    <formulas>
+        <name>Satus_Body_Text</name>
+        <dataType>String</dataType>
+        <expression>IF(ISCHANGED({!$Record.Status__c}),
+&apos;Status was changed from &apos;&amp;UPPER(TEXT({!$Record__Prior.Status__c}))&amp;&apos; to &apos;&amp;UPPER(TEXT({!$Record.Status__c})),
+&apos;&apos;
+)</expression>
+    </formulas>
+    <interviewLabel>Feature Request After Insert/Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Feature Request After Insert/Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_FR_Sub_Category_record</name>
+        <label>Create FR Sub-Category record</label>
+        <locationX>197</locationX>
+        <locationY>898</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>acideasULT__brIdeaCategory__c</field>
+            <value>
+                <elementReference>Get_Category_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>acideasULT__brIdea__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>acideasULT__brIdeaCategoryJunction__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Category_Record</name>
+        <label>Get Category Record</label>
+        <locationX>374</locationX>
+        <locationY>479</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_FR_Category_Junction</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>acideasULT__ParentCategory__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Product_Area__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>acideasULT__brIdeaCategory__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_FR_Category_Junction</name>
+        <label>Get FR Category Junction</label>
+        <locationX>374</locationX>
+        <locationY>587</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_FR_Category_Junction</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>acideasULT__brIdea__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>acideasULT__brIdeaCategoryJunction__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_FR_Category_Junction</name>
+        <label>Update FR Category Junction</label>
+        <locationX>527</locationX>
+        <locationY>788</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_FR_Category_Junction.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>acideasULT__brIdeaCategory__c</field>
+            <value>
+                <elementReference>Get_Category_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>acideasULT__brIdea__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>acideasULT__brIdeaCategoryJunction__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_if_New_Record</targetReference>
+        </connector>
+        <object>acideasULT__brIdea__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Email body for internal subscribers</description>
+        <name>SubscriberEmailTemplateBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Hello Subscriber,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;You have subscribed to the feature request {!$Record.Name} on Samsara’s Feature Request Portal. There has been a recent update:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!Satus_Body_Text}&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!Estimated_GA_Date_Text}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;For more information, please click on the link below to see the changes:&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;{!RecordDetailLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;{!RecordDetailLink}&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;LEGAL DISCLAIMER&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Please note that our Samsara roadmap is subject to change due to various factors including changing market conditions, company strategy, and team priorities. All information on product roadmap timelines you see here are estimates.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Thanks,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 14px;&quot;&gt;Samsara&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>to store user Id list form apex action</description>
+        <name>User_Email_List</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

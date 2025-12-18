@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Scripted_Objects_Changes__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the change request level defined for any changes to scripts, workflows or any object referred to in a script or workflow.</description>
+    <inlineHelpText>This field sets the level of change control required for any changes to scripts, workflows or any object referred to in a script or workflow.</inlineHelpText>
+    <label>Scripted Objects Changes</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>FLODocs__FLO_Change_Control_Levels</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Utilization_Run__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the utilization run this utilization run batch relates to.</description>
+    <inlineHelpText>Lookup to the utilization run this utilization run batch relates to.</inlineHelpText>
+    <label>Utilization Run</label>
+    <referenceTo>pse__Utilization_Run__c</referenceTo>
+    <relationshipLabel>Utilization Run Batches</relationshipLabel>
+    <relationshipName>Utilization_Run_Batches</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

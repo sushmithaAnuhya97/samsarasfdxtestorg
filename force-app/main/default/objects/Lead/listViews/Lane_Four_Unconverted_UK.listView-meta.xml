@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lane_Four_Unconverted_UK</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.URL</columns>
+    <columns>Non_Free_Domain_Stamp__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.COUNTRY_CODE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.CONVERTED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.Standard_Lead</value>
+    </filters>
+    <filters>
+        <field>LEAD.COUNTRY_CODE</field>
+        <operation>equals</operation>
+        <value>,GB,IE</value>
+    </filters>
+    <label>Lane Four Unconverted - UK</label>
+    <sharedTo>
+        <role>Management</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAT_Validation_Status_Finance</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISCHANGED(VAT_Validation_Status__c),
+ISPICKVAL( VAT_Validation_Status__c ,&quot;Confirmed&quot;),
+ISPICKVAL(Owner.Region__c ,&quot;EMEA&quot;),
+NOT(OR(
+($Profile.Name=&quot;Samsara - Finance&quot;),
+($Profile.Name=&quot;Samsara - Finance Admin&quot;),
+($Profile.Name=&quot;Samsara Finance Partner Profile&quot;),
+($Profile.Name=&quot;Sales Ops Profile&quot;)
+)))</errorConditionFormula>
+    <errorMessage>Please contact Finance team to update VAT status.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Work_Event__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The work event that this work event invite is associated with.</description>
+    <inlineHelpText>The work event that this work event invite is associated with.</inlineHelpText>
+    <label>Work Event</label>
+    <referenceTo>pse__Work_Event__c</referenceTo>
+    <relationshipLabel>Work Event Invites</relationshipLabel>
+    <relationshipName>Work_Event_Invites</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVL_Onboarding_Report_View</fullName>
+    <columns>Record_Type__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Propel_Service_Type__c</columns>
+    <columns>Propel_item_categories__c</columns>
+    <columns>Propel_onboard_date__c</columns>
+    <columns>Status__c</columns>
+    <columns>Propel_Vendor_position__c</columns>
+    <columns>Onboarding_Status__c</columns>
+    <columns>Owner_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Record_Type__c</field>
+        <operation>equals</operation>
+        <value>Propel Manufacturer</value>
+    </filters>
+    <label>AVL Onboarding Report View</label>
+</ListView>

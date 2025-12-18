@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Cannot_Contain_Ampersand</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+CONTAINS(Shipping_Address_Line_1__c, &quot;&amp;&quot;),
+CONTAINS(Shipping_Address_Line_2__c, &quot;&amp;&quot; )
+)</errorConditionFormula>
+    <errorMessage>For tax calculation purposes, the address cannot contain an ampersand (&amp;)</errorMessage>
+</ValidationRule>

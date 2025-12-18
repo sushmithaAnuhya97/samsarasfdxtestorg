@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Partner__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Insurance partner associated with an opportunity.</description>
+    <label>Insurance Partner</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Insurance Partner</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Record_Type__c</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Insurance Partner End-Customer Opportunities</relationshipLabel>
+    <relationshipName>Insurance_Partner_Customer_Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

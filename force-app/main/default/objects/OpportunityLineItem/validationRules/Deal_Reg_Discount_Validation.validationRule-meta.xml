@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Reg_Discount_Validation</fullName>
+    <active>false</active>
+    <description>(Deprecated)</description>
+    <errorConditionFormula>AND(NOT( ISPICKVAL(Opportunity.LeadSource , &quot;Deal Reg form&quot;)),  Deal_Reg_Discount__c = True)</errorConditionFormula>
+    <errorMessage>Deal Reg Discount can only be checked for partner-registered opportunities</errorMessage>
+</ValidationRule>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment_VBs</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>User_Role__c</columns>
+    <columns>Email_Template_Id__c</columns>
+    <columns>Lower_Bound__c</columns>
+    <columns>Upper_Bound__c</columns>
+    <columns>To_Email_1__c</columns>
+    <columns>To_Email_2__c</columns>
+    <columns>Global_Thank_You__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>MasterLabel</field>
+        <operation>contains</operation>
+        <value>Segment</value>
+    </filters>
+    <label>Segment VBs</label>
+    <language>en_US</language>
+</ListView>

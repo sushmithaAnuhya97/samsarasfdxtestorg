@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>To assign PSA related permissions that are not available through OOTB permission sets</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PSA gap fix</label>
+    <permissionSets>FFX_FF_PSA_CRM_View_Only</permissionSets>
+    <permissionSets>PSA_Custom_field_permissions</permissionSets>
+    <permissionSets>fferpcore__exp_FF_Configurable_Components</permissionSets>
+    <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

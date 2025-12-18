@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__VisibleFields__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Controls visibility of sets of fields on the schedule component.</description>
+    <label>Visible Fields</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hourly</fullName>
+                <default>false</default>
+                <label>Hourly</label>
+            </value>
+            <value>
+                <fullName>Daily</fullName>
+                <default>false</default>
+                <label>Daily</label>
+            </value>
+            <value>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+                <label>Weekly</label>
+            </value>
+            <value>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+                <label>Monthly</label>
+            </value>
+            <value>
+                <fullName>Start Date</fullName>
+                <default>false</default>
+                <label>Start Date</label>
+            </value>
+            <value>
+                <fullName>End Date</fullName>
+                <default>false</default>
+                <label>End Date</label>
+            </value>
+            <value>
+                <fullName>End After X</fullName>
+                <default>false</default>
+                <label>End After X</label>
+            </value>
+            <value>
+                <fullName>Preferred Start Time</fullName>
+                <default>false</default>
+                <label>Preferred Start Time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

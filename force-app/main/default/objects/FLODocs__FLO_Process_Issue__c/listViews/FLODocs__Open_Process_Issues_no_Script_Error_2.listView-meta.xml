@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Open_Process_Issues_no_Script_Error_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__Process__c</columns>
+    <columns>FLODocs__Issue_Description__c</columns>
+    <columns>FLODocs__Type__c</columns>
+    <columns>FLODocs__Status__c</columns>
+    <columns>FLODocs__Parent_Change_Request__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>FLODocs__Assigned__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Completed As Process Issue</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Type__c</field>
+        <operation>notEqual</operation>
+        <value>Script Error</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>all</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Assigned__c</field>
+        <operation>equals</operation>
+        <value>all</value>
+    </filters>
+    <label>Open Process Issues-No Script Error (v2)</label>
+</ListView>

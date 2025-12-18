@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Update_Selected_Payment_Type</fullName>
+    <active>false</active>
+    <description>Users Cannot Make Changes to Opportunity.Selected Payment Type</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(Selected_Payment_Type__c),
+    NOT(ISNEW()),
+    PRIORVALUE(Selected_Payment_Type__c) &lt;&gt; NULL,
+    $Profile.Name &lt;&gt; &apos;System Administrator&apos;
+)</errorConditionFormula>
+    <errorMessage>Users cannot make changes to the Opportunity.Selected Payment Type field. Changes can only be made on the CPQ Quote and propagated up onto the Opportunity</errorMessage>
+</ValidationRule>

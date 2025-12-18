@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Experience__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the related experience.</description>
+    <inlineHelpText>Lookup to the related experience.</inlineHelpText>
+    <label>Experience</label>
+    <referenceTo>pse__Experience__c</referenceTo>
+    <relationshipLabel>Experience Skills</relationshipLabel>
+    <relationshipName>Experience_Skills</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

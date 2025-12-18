@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Book_of_Business__c</fullName>
+    <formula>IF(TEXT(Account.Book_of_Business__c) == TEXT(Owner.Book_of_Business_Assignment__c)  , TRUE, FALSE)</formula>
+    <label>Primary Book of Business</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Object_Api_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Enter the API name of the object to construct the filter query (e.g., Account or CustomObject__c). The API name must match a valid object as listed in the documentation. Invalid or missing API names will prevent query execution.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the API name of the object to construct the filter query (e.g., Account or CustomObject__c). The API name must match a valid object as listed in the documentation. Invalid or missing API names will prevent query execution.</inlineHelpText>
+    <label>Object Api Name</label>
+    <length>255</length>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

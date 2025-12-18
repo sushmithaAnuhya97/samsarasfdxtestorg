@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deals_Map_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;https://sales-ops.samsara.com/closed-deals-map?address=&quot;+ SUBSTITUTE(MailingState, &quot; &quot;, &quot;_&quot;) + &quot;_&quot; + SUBSTITUTE(MailingCity, &quot; &quot;, &quot;_&quot;) + &quot;_&quot; +  SUBSTITUTE(MailingPostalCode, &quot; &quot;, &quot;_&quot;) + &quot;_&quot; + SUBSTITUTE(MailingStreet, &quot; &quot;, &quot;_&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Deals Map Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

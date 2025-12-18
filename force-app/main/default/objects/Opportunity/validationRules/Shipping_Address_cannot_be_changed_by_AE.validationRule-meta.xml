@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Address_cannot_be_changed_by_AE</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  OR(
+    $Profile.Name = &quot;Samsara Sales - NA US AE2&quot;,
+    $Profile.Name = &quot;Samsara Sales - NA US AE3&quot;,
+    $Profile.Name = &quot;Samsara Sales - EMEA IS&quot;,
+    $Profile.Name = &quot;Samsara Sales - EMEA ENT&quot;,
+    $Profile.Name = &quot;Samsara Sales - NA ENT&quot;
+  ),
+ Shipping_Address_NEW__c &lt;&gt;  SBQQ__PrimaryQuote__r.Shipping_Address_NEW__c,
+    OR(
+        ISPICKVAL(Type,&quot;Revenue Opportunity&quot;),
+        ISPICKVAL(Type,&quot;Free Trial Opportunity&quot;)
+    ),
+    ISCHANGED(Shipping_Address_NEW__c),
+NOT(
+OR(
+$Permission.Validation_Rule_Exemption,
+$Permission.Validation_Exemption_Opportunity,
+$Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c,
+            $Permission.NetSuite_Service_User_Permission
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Sales users are not allowed to update the Shipping Address directly on the Opportunity. Please update the address through the CPQ Quote.</errorMessage>
+</ValidationRule>

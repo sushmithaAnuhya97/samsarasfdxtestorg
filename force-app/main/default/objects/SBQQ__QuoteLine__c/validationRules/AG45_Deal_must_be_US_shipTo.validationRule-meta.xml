@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AG45_Deal_must_be_US_shipTo</fullName>
+    <active>false</active>
+    <errorConditionFormula>SBQQ__ProductCode__c  = &quot;HW-AG45&quot; &amp;&amp;  (NOT(ISBLANK(Ship_To__c)) &amp;&amp; NOT(ISPICKVAL(Ship_To__r.Shipping_Country__c, &quot;United States&quot;)))</errorConditionFormula>
+    <errorMessage>HW-AG45 can only ship to US. Please adjust shipping location</errorMessage>
+</ValidationRule>

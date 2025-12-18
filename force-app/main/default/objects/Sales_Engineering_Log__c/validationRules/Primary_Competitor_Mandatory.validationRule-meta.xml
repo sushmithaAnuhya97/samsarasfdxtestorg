@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Competitor_Mandatory</fullName>
+    <active>true</active>
+    <description>Primary competitor is mandatory whenever Tech win set to Tech win or Tech loss.</description>
+    <errorConditionFormula>AND(NOT($Permission.Validation_Rule_Exemption),
+RecordType.DeveloperName  = &quot;EMEA_SE_Log&quot;,
+ OR(ISPICKVAL(Tech_Win__c, &quot;Tech Win&quot;),
+ISPICKVAL(Tech_Win__c, &quot;Tech Loss&quot;)),
+ ISBLANK(TEXT(Primary_Competitor__c))
+)</errorConditionFormula>
+    <errorDisplayField>Primary_Competitor__c</errorDisplayField>
+    <errorMessage>Please select the Primary competitor.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,399 @@
+<template>
+	<div class={getFormElementClass}>
+		<label if:true={label} class={getLabelClass} for="combobox">
+			<abbr if:true={required} title="required" class="slds-required">*</abbr>
+			{label}
+		</label>
+		<div class="slds-form-element__control">
+			<div class={getContainerClass}>
+				<div
+					class={getDropdownClass}
+					aria-expanded={isListboxOpen}
+					aria-haspopup="listbox"
+					aria-owns="listbox"
+					role="combobox"
+				>
+					<!-- Search input start -->
+					<div class={getComboboxClass} role="none">
+						<lightning-icon
+							icon-name={getSelectIconName}
+							size="small"
+							alternative-text="Selected item icon"
+							class={getSelectIconClass}
+						></lightning-icon>
+						<div
+							if:false={uiInputRendered}
+							class="slds-form-element slds-lookup lookup-field__lookup"
+							data-select="single"
+							>
+							<div class="slds-form-element__control lookup-field__lookup-control" if:true={hasValue}>
+								<div class="slds-pill_container lookup-field__pill-container">
+									<span class="slds-pill slds-size--1-of-1 lookup-field__pill" style="min-width: 150px">
+										<span class="slds-icon_container slds-pill__icon_container slds-m-right--x-small slds-icon-standard-account lookup-field__icon-pill-container">
+											<lightning-icon
+												icon-name={iconName}
+												size="small"
+											></lightning-icon>
+										</span>
+
+										<span class="slds-pill__label">{getLookupValue}</span>
+										<div class="slds-icon_container" style="margin-top: -2px;">
+											<button
+												if:true={hasValue}
+												title="Close"
+												type="button"
+												onclick={handleClearSelection}
+												class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+												disabled={disabled}
+											>
+												<lightning-icon
+													icon-name="utility:close"
+													size="x-small"
+													alternative-text="Close"
+													class="slds-button__icon"
+												></lightning-icon>
+											</button>
+										</div>
+									</span>
+								</div>
+							</div>
+						</div>
+						<!-- Text input -->
+						<input
+							if:true={uiInputRendered}
+							type="text"
+							class={getInputClass}
+							style="min-width: 150px;"
+							aria-autocomplete="list"
+							aria-controls="listbox"
+							aria-activedescendant={_focusedResultIndex}
+							autocomplete="off"
+							role="textbox"
+							id="combobox"
+							placeholder={placeholder}
+							value={getLookupValue}
+							title={getLookupValue}
+							readonly={isInputReadonly}
+							disabled={disabled}
+							onfocus={handleFocus}
+							onblur={handleBlur}
+							oninput={handleInputDebounced}
+						/>
+						<!-- onkeydown={handleKeyDown} -->
+
+						<!-- <lightning-button-icon
+							icon-name="utility:search"
+							variant="bare"
+							alternative-text="search"
+							onclick={handleOpenModal}
+							class="slds-input__icon slds-input__icon_right"
+							style="right: 35px;"
+						>
+						</lightning-button-icon>
+
+						<lightning-button-icon
+							icon-name="utility:refresh"
+							variant="bare"
+							alternative-text="refresh"
+							onclick={handleRefreshSelection}
+							class="slds-input__icon slds-input__icon_right"
+						>
+						</lightning-button-icon> -->
+
+						<button
+							if:true={uiInputRendered}
+							title="Search"
+							type="button"
+							onclick={handleOpenModal}
+							class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+							style="right: 35px;"
+							disabled={disabled}
+						>
+							<lightning-icon
+								icon-name="utility:search"
+								size="x-small"
+								alternative-text="Search"
+								class="slds-button__icon"
+							></lightning-icon>
+						</button>
+
+						<button
+							if:true={uiInputRendered}
+							title="Clear"
+							type="button"
+							onclick={handleClearSelection}
+							class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+							disabled={disabled}
+						>
+							<lightning-icon
+								icon-name="utility:refresh"
+								size="x-small"
+								alternative-text="Clear"
+								class="slds-button__icon"
+							></lightning-icon>
+						</button>
+
+						<!-- <button
+							if:true={hasValue}
+							title="Close"
+							type="button"
+							onclick={handleClearSelection}
+							class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+							disabled={disabled}
+						>
+							<lightning-icon
+								icon-name="utility:close"
+								size="x-small"
+								alternative-text="Close"
+								class="slds-button__icon"
+							></lightning-icon>
+						</button> -->
+
+						<!-- TODO: show 'close' button  -->
+
+						<!-- Search icon -->
+						<!-- <lightning-icon
+							icon-name="utility:search"
+							size="x-small"
+							alternative-text="Search icon"
+							class="slds-input__icon slds-input__icon_right"
+						></lightning-icon> -->
+
+						<!-- Clear selection button icon for single entry lookups -->
+						<!-- <button
+							title="Remove selected option"
+							type="button"
+							onclick={handleClearSelection}
+							class={getClearSelectionButtonClass}
+							disabled={disabled}
+						>
+							<lightning-icon
+								icon-name="utility:close"
+								size="x-small"
+								alternative-text="Remove selected option"
+								class="slds-button__icon"
+							></lightning-icon>
+						</button> -->
+					</div>
+					<!-- Search input end -->
+
+					<!-- Result list box start -->
+					<div
+						id="listbox"
+						role="listbox"
+						aria-label={label}
+						onmousedown={handleComboboxMouseDown}
+						onmouseup={handleComboboxMouseUp}
+						class={getListboxClass}
+					>
+					<!-- <div
+						id="listbox"
+						role="listbox"
+						aria-label={label}
+						onmousedown={handleComboboxMouseDown}
+						onmouseup={handleComboboxMouseUp}
+						class={getDropdownRecordsClass}
+					> -->
+						<ul class="slds-listbox slds-listbox_vertical" role="presentation">
+						<!-- <ul class="dropdown__list" role="menu"> -->
+							<!-- Spinner to display when waiting for results of search -->
+							<div if:true={loading}>
+								<lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+							</div>
+							<template if:true={hasRecords}>
+								<table class="slds-table slds-table--bordered slds-table--cell-buffer">
+									<thead>
+										<tr>
+											<template for:each={columns} for:item="col">
+												<th key={col.value}>
+													<span>
+														{col.label}
+													</span>
+												</th>
+											</template>
+										</tr>
+									</thead>
+									<tbody>
+										<template for:each={_records} for:item="rec">
+											<tr key={rec.Id} class="utility--cursor-pointer" data-key={rec.Id} onclick={handleLineClick}>
+												<template for:each={columns} for:item="col">
+													<td key={col.value}>
+														<c-bringg-output-text record={rec} dynamic-field={col.value}></c-bringg-output-text>
+													</td>
+												</template>
+											</tr>
+										</template>
+									</tbody>
+								</table>
+							</template>
+
+							<!-- No results start -->
+							<template if:false={hasRecords}>
+								<li role="presentation">
+									<div class="slds-text-align--center slds-p-top--small slds-p-bottom--small" role="option">
+										<span if:false={loading} class="slds-media__body">No results.</span>
+										<span if:true={loading} class="slds-media__body">Loading...</span>
+									</div>
+									<!-- <span class="slds-media slds-listbox__option_entity " role="option">
+										<span if:false={loading} class="slds-media__body">No results.</span>
+										<span if:true={loading} class="slds-media__body">Loading...</span>
+									</span> -->
+								</li>
+							</template>
+							<!-- No results end -->
+
+							<!-- Create new records -->
+							<!-- <template for:each={newRecordOptions} for:item="newRecord">
+								<li key={newRecord.value} role="presentation" class="slds-listbox__item">
+									<div
+										class="slds-media slds-media_center slds-listbox__option slds-listbox__option_entity"
+										onclick={handleNewRecordClick}
+										data-sobject={newRecord.value}
+										role="option"
+									>
+										<span class="slds-media__figure slds-listbox__option-icon">
+											<lightning-icon
+												icon-name="utility:add"
+												size="small"
+												alternative-text={newRecord.label}
+											></lightning-icon>
+										</span>
+										<span class="slds-media__body">
+											<span class="slds-listbox__option-text">{newRecord.label}</span>
+										</span>
+									</div>
+								</li>
+							</template> -->
+							<!-- Create new records end -->
+						</ul>
+					</div>
+					<!-- Result list box end -->
+				</div>
+			</div>
+
+			<!-- Errors start -->
+			<template for:each={_errors} for:item="error">
+				<div key={error.id} role="alert" class="slds-form-element__label slds-var-m-top_xx-small form-error">
+					{error.message}
+				</div>
+			</template>
+			<!-- Errors end -->
+		</div>
+	</div>
+	<template if:true={isModalOpen}>
+		<section aria-modal="true" class="slds-modal slds-modal_medium slds-fade-in-open">
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<h2 class="slds-text-heading_small">{modalLabel}</h2>
+					<lightning-icon
+						class="slds-modal__close"
+						icon-name="utility:close"
+						size="small"
+						variant="inverse"
+						onclick={handleCloseModal}
+					></lightning-icon>
+				</header>
+				<div class="slds-modal__content slds-p-around--medium slds-is-relative">
+					<div class="slds-grid">
+						<div class="slds-form-element">
+							<input
+								tabindex="0"
+								type="text"
+								class="slds-input slds-combobox__input has-custom-height slds-combobox__input-value modalSearch"
+								style="min-width: 150px;"
+								aria-autocomplete="list"
+								aria-controls="listbox"
+								autocomplete="off"
+								role="textbox"
+								placeholder="Search"
+								value={_modalSearch}
+								oninput={handleModalInput}
+							/>
+							<!-- oninput={handleInputDebounced} -->
+						</div>
+						<div class="slds-grid slds-m-left--x-small">
+							<div>
+								<button
+									title="Search"
+									type="button"
+									onclick={handleModalSearch}
+									class="slds-button slds-button--icon-border-filled slds-button_icon slds-input__icon slds-input__icon_right"
+								>
+									<lightning-icon
+										icon-name="utility:search"
+										size="x-small"
+										alternative-text="Search"
+										class="slds-button__icon"
+									></lightning-icon>
+								</button>
+							</div>
+							<div class="slds-m-left--x-small">
+								<button
+									title="Clear"
+									type="button"
+									onclick={handleModalClear}
+									class="slds-button slds-button--icon-border-filled slds-button_icon slds-input__icon slds-input__icon_right"
+								>
+									<lightning-icon
+										icon-name="utility:refresh"
+										size="x-small"
+										alternative-text="Clear"
+										class="slds-button__icon"
+									></lightning-icon>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div if:true={loading}>
+						<lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+					</div>
+					<template if:true={hasRecords}>
+						<table
+							class="
+								slds-m-top--small
+								slds-table
+								slds-table--bordered"
+							>
+							<thead>
+								<tr>
+									<template for:each={columns} for:item="col">
+										<th key={col.value}>
+											<span>
+												{col.label}
+											</span>
+										</th>
+									</template>
+								</tr>
+							</thead>
+							<tbody>
+								<template for:each={_records} for:item="rec">
+									<tr key={rec.Id} class="utility--cursor-pointer" data-key={rec.Id} onclick={handleLineClick}>
+										<template for:each={columns} for:item="col">
+											<td key={col.value}>
+												<c-bringg-output-text record={rec} dynamic-field={col.value}></c-bringg-output-text>
+											</td>
+										</template>
+									</tr>
+								</template>
+							</tbody>
+						</table>
+					</template>
+					<template if:false={hasRecords}>
+						<div class="slds-text-align--center slds-p-top--small slds-p-bottom--small" role="option">
+							<span if:false={loading} class="slds-media__body">No results.</span>
+							<span if:true={loading} class="slds-media__body">Loading...</span>
+						</div>
+					</template>
+				</div>
+				<footer class="slds-modal__footer">
+					<lightning-button
+						label="Cancel"
+						onclick={handleCloseModal}
+						class="slds-p-around_x-small"
+					></lightning-button>
+				</footer>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</template>
+</template>

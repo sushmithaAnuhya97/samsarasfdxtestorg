@@ -1,0 +1,38 @@
+<template>
+    <template if:true={errorDetails}>
+        <div>
+            <div>
+                <p><b>This is a Pre-closing screen, please review any data validation before proceeding to the next steps.</b></p>
+            </div>
+            <br />
+            <header class="custom-background">
+                {validationHeadline} 
+            </header>
+            <lightning-layout class="error-container">
+                <lightning-layout-item size="6">
+                    <div class="error-header">
+                        <h3><b>Error</b></h3>
+                    </div>
+                    <template for:each={errorDetails} for:item="errorItem">
+                        <div key={errorItem.errorMessage} class="error-item">
+                            <span>{errorItem.errorMessage}</span>
+                        </div>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <div class="nextsteps-header"> 
+                        <h3><b>Next Steps</b></h3>
+                    </div>
+                    <template for:each={errorDetails} for:item="errorItem">
+                        <div key={errorItem.nextStep} class="next-step-item">
+                            <span>{errorItem.nextStep}</span>
+                        </div>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </template>
+    <div class="button-wrapper">
+                <lightning-button class="slds-float_left" variant="neutral" label="Back" onclick={handleBack}></lightning-button>
+    </div>
+</template>

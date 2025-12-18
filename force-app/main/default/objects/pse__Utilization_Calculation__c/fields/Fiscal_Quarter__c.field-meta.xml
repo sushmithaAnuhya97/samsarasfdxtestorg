@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Quarter__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(pse__Historical_Utilization_End_Date__c &gt; DATE(2023,2,4), pse__Historical_Utilization_End_Date__c &lt;= DATE(2023,4,29)),&quot;1&quot;,
+IF(AND(pse__Historical_Utilization_End_Date__c &gt; DATE(2023,4,29), pse__Historical_Utilization_End_Date__c &lt;= DATE(2023,7,29)),&quot;2&quot;,
+IF(AND(pse__Historical_Utilization_End_Date__c &gt; DATE(2023,7,29), pse__Historical_Utilization_End_Date__c &lt;= DATE(2023,10,28)),&quot;3&quot;,
+IF(AND(pse__Historical_Utilization_End_Date__c &gt; DATE(2023,10,28), pse__Historical_Utilization_End_Date__c &lt;= DATE(2024,2,3)),&quot;4&quot;,&apos;&apos;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fiscal Quarter</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

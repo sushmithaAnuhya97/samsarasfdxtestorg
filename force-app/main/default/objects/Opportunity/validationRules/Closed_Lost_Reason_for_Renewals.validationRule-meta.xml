@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lost_Reason_for_Renewals</fullName>
+    <active>true</active>
+    <description>Require closed lost reason for renewals
+GTMS-29063 - Made Risk/Loss Renewal Reason, Risk/Loss Renewal Sub-Reason &amp; Closed Lost Renewal Reason Detail mandatory</description>
+    <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT($Permission.Validation_Rule_Exemption),
+TEXT(StageName) = &quot;Closed Lost&quot;,
+OR(Renewal__c = True, SBQQ__RenewedContract__c!=NULL),
+ISCHANGED(StageName),
+OR(
+ISBLANK(TEXT(Closed_Lost_Renewal_Reason__c)),
+ISBLANK(TEXT(Closed_Lost_Renewal_Sub_reason__c)),
+ISBLANK(Closed_Lost_Reason_Detail__c)
+)
+)</errorConditionFormula>
+    <errorMessage>When moving a Renewal Opportunity to Closed Lost, all three fields are required: Risk/Loss Renewal Reason, Risk/Loss Renewal Sub-Reason, and Closed Lost Renewal Reason Detail.</errorMessage>
+</ValidationRule>

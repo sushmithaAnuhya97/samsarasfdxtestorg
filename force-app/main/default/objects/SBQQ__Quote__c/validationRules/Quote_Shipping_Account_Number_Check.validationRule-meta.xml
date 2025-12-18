@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Shipping_Account_Number_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+NOT($Permission.Validation_Rule_Exemption),
+OR (
+AND(
+ISCHANGED(Shipping_Account_Type__c),
+OR (
+ISPICKVAL(Shipping_Account_Type__c , &quot;Cust/Partner Account - FedEx&quot;),
+ISPICKVAL(Shipping_Account_Type__c , &quot;Cust/Partner Account - UPS&quot;),
+ISPICKVAL(Shipping_Account_Type__c , &quot;Cust/Partner Account - DHL&quot;)
+),
+ISBLANK( SBQQ__Opportunity2__r.Cust_Partner_Shipping_Account_Number__c)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Please specify a Customer / Partner shipping account number, or change Shipping Account Type to Samsara.</errorMessage>
+</ValidationRule>

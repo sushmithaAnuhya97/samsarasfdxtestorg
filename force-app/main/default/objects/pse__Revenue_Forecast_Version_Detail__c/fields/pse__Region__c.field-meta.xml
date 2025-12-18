@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Region__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the region this revenue forecast version detail relates to.</description>
+    <inlineHelpText>Lookup to the region this revenue forecast version detail relates to.</inlineHelpText>
+    <label>Region</label>
+    <referenceTo>pse__Region__c</referenceTo>
+    <relationshipLabel>Revenue Forecast Version Details</relationshipLabel>
+    <relationshipName>Revenue_Forecast_Version_Details</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

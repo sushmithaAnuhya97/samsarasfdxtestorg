@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Updated_Account_Size_Segment__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(BillingCountry = &quot;United States&quot;,NOT(SLED_Account__c)),
+IF(
+OR(
+Number_of_Vehicles__c &gt;= 175,
+Number_of_Powered_Assets__c &gt;= 351,
+Number_of_Unpowered_Assets__c &gt;= 1000),&quot;ENT - COR&quot;,
+IF(
+OR(
+Number_of_Vehicles__c &gt;= 31,
+Number_of_Powered_Assets__c &gt;= 51,
+Number_of_Unpowered_Assets__c &gt;= 150),&quot;MM&quot;,
+IF(
+OR(
+Number_of_Vehicles__c &gt;= 11,
+Number_of_Powered_Assets__c &gt;= 31,
+Number_of_Unpowered_Assets__c &gt;= 31),&quot;CML&quot;,
+IF(
+OR(
+Number_of_Vehicles__c &gt; 0, Number_of_Vehicles__c &lt;= 10,
+Number_of_Powered_Assets__c &gt; 0, Number_of_Powered_Assets__c &lt;= 30,
+Number_of_Unpowered_Assets__c &gt; 0, Number_of_Unpowered_Assets__c &lt;= 30),&quot;SMB&quot;,NULL)))),
+IF(
+AND(
+BillingCountry = &quot;United States&quot;,SLED_Account__c),
+IF(
+ISPICKVAL(Sub_Industry__c, &quot;Federal&quot;),&quot;ENT - COR&quot;,
+IF(OR(
+Number_of_Students__c &gt;= 13000,
+Number_of_Citizens__c &gt;= 100000),&quot;ENT - COR&quot;,
+IF(OR(
+AND(
+Number_of_Students__c &gt; 0,
+Number_of_Students__c &lt; 13000),
+AND(
+Number_of_Citizens__c &gt; 0,
+Number_of_Citizens__c &lt; 100000)),&quot;MM&quot;,NULL))),
+IF(
+BillingCountry = &quot;Canada&quot;,
+IF(
+OR(AND(
+Number_of_Vehicles__c &gt; 10,
+Number_of_Vehicles__c &lt;= 30),
+AND(
+Number_of_Powered_Assets__c &gt; 30,
+Number_of_Powered_Assets__c &lt;= 50),
+AND(
+Number_of_Unpowered_Assets__c &gt; 30,
+Number_of_Unpowered_Assets__c &lt;= 50)),&quot;CML&quot;,
+IF(OR(AND(
+Number_of_Vehicles__c &gt; 30,
+Number_of_Vehicles__c &lt;= 449),
+AND(
+Number_of_Powered_Assets__c &gt; 50,
+Number_of_Powered_Assets__c &lt;= 899),
+AND(
+Number_of_Unpowered_Assets__c &gt; 150,
+Number_of_Unpowered_Assets__c &lt;= 2499)),&quot;MM&quot;,
+IF(OR(
+Number_of_Vehicles__c &gt; 449,
+Number_of_Powered_Assets__c &gt; 899,
+Number_of_Unpowered_Assets__c &gt; 2499),&quot;ENT - COR&quot;,
+IF(OR(
+AND(
+Number_of_Vehicles__c &gt; 0,
+Number_of_Vehicles__c &lt;= 10),
+AND(
+Number_of_Powered_Assets__c &gt; 0,
+Number_of_Powered_Assets__c &lt;= 30),
+AND(
+Number_of_Unpowered_Assets__c &gt; 0,
+Number_of_Unpowered_Assets__c &lt;= 30)),&quot;SMB&quot;,NULL)))),
+IF(
+BillingCountry = &quot;Mexico&quot;,
+IF(OR(
+AND(
+Number_of_Vehicles__c &gt; 20,
+Number_of_Vehicles__c &lt;= 299),
+AND(
+Number_of_Powered_Assets__c &gt; 40,
+Number_of_Powered_Assets__c &lt;= 599),
+AND(
+Number_of_Unpowered_Assets__c &gt; 120,
+Number_of_Unpowered_Assets__c &lt;= 1799)),&quot;MM&quot;,
+IF(OR(
+Number_of_Vehicles__c &gt; 299,
+Number_of_Powered_Assets__c &gt; 599,
+Number_of_Unpowered_Assets__c &gt; 1799),&quot;ENT - SEL&quot;,
+IF(OR(
+AND(
+Number_of_Vehicles__c &gt; 0,
+Number_of_Vehicles__c &lt;= 19),
+AND(
+Number_of_Powered_Assets__c &gt; 0,
+Number_of_Powered_Assets__c &lt;= 39),
+AND(
+Number_of_Unpowered_Assets__c &gt; 0,
+Number_of_Unpowered_Assets__c &lt;= 119)),&quot;SMB&quot;,NULL))),
+IF(OR(
+BillingCountry = &quot;France&quot;,BillingCountry = &quot;Germany&quot;,BillingCountry = &quot;Belgium&quot;,BillingCountry = &quot;United Kingdom&quot;
+,BillingCountry = &quot;Luxembourg&quot;,BillingCountry = &quot;Spain&quot;,BillingCountry = &quot;Hungary&quot;,BillingCountry = &quot;Italy&quot;
+,BillingCountry = &quot;Austria&quot;,BillingCountry = &quot;Netherlands&quot;,BillingCountry = &quot;Ireland&quot;,BillingCountry = &quot;Switzerland&quot;
+,BillingCountry = &quot;Bulgaria&quot;,BillingCountry = &quot;Czech Republic&quot;,BillingCountry = &quot;Poland&quot;
+,BillingCountry = &quot;Portugal&quot;,BillingCountry = &quot;Isle of Man&quot;),
+IF(
+AND(
+Number_of_Vehicles__c &gt; 0,
+Number_of_Vehicles__c &lt;= 20),&quot;SMB&quot;,
+IF(
+AND(
+Number_of_Vehicles__c &gt;= 21,
+Number_of_Vehicles__c &lt;= 175),&quot;MM&quot;,
+IF(
+AND(
+Number_of_Vehicles__c &gt;= 176,
+Number_of_Vehicles__c &lt;= 550),&quot;ENT - COR&quot;,
+IF(
+Number_of_Vehicles__c &gt; 550,&quot;ENT - SEL&quot;,NULL)))),NULL)))))</formula>
+    <label>Updated Account Size Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

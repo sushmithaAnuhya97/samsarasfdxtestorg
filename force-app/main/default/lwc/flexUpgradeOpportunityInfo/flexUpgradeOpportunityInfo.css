@@ -1,0 +1,119 @@
+/* @import "cosmos/cosmos.hooks.custom-props.css";
+@import "cosmos/cosmos.shared.hooks.custom-props.css";
+@import "cosmos/cosmos.component.hooks.custom-props.css"; */
+
+
+.header-cells{
+    color: #4f5d71;
+}
+
+.header-cells th{
+   
+    border-right: 2px solid #dddbda;
+    padding-left: 4px; 
+    padding-right: 4px; 
+    
+    margin : 4px; 
+    font-weight: normal;
+}
+
+.record-cells{
+    font-size: medium;
+}
+
+.record-cells td{
+    border-right: 1px solid #dddbda; 
+    padding-left: 4px; 
+    padding-right: 4px; 
+    font-weight: bold; 
+    margin : 4px; 
+    
+    padding-left: 4px; 
+    padding-right: 4px; 
+
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    padding: 0.25rem 0 !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+}
+
+/* Custom toggle button with circle and triangle */
+.custom-toggle-button {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    min-width: 1.25rem !important;
+    min-height: 1.25rem !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-color: #f3f2f2 !important;
+    border: 1px solid #706e6b !important;
+    transition: all 0.2s ease-in-out !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin: 0 0.5rem 0 0 !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+
+.custom-toggle-button:hover {
+    background-color: #f3f2f2 !important;
+    border-color: #0070d2 !important;
+}
+
+.custom-toggle-button:focus {
+    box-shadow: 0 0 2px #0070d2 !important;
+    outline: none !important;
+}
+
+/* Circle container for toggle */
+.circle-container {
+    position: relative !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    min-width: 1.25rem !important;
+    min-height: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+}
+
+/* Triangle styling */
+.triangle {
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 4px solid transparent !important;
+    border-right: 4px solid transparent !important;
+    border-top: 6px solid #0070d2 !important;
+    transition: transform 0.3s ease-in-out !important;
+    transform: translateY(0) !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Triangle when expanded (pointing down) */
+.triangle[data-expanded="true"] {
+    transform: translate(-50%, -50%) rotate(180deg) !important;
+    border-top: 6px solid #0070d2 !important;
+}
+
+/* Active state for expanded button */
+.custom-toggle-button[aria-expanded="true"] .circle-container {
+    background-color: #f3f2f2 !important;
+}
+
+/* Hover state */
+.custom-toggle-button:hover .circle-container {
+    background-color: #f3f2f2 !important;
+}

@@ -1,0 +1,463 @@
+<template>
+    <div class="slds-is-relative">
+        <!-- Custom Toast Notifications -->
+        <div class="custom-notification-container">
+            <template if:true={showNotification}>
+                <div class={notificationClass} role="alert">
+                    <lightning-icon 
+                        icon-name={notificationIcon}
+                        size="small" 
+                        class="notification-icon"
+                        variant={notificationIconVariant}>
+                    </lightning-icon>
+                    <div class="notification-content">
+                        <p class="notification-message">{notificationMessage}</p>
+                    </div>
+                    <button class="notification-close" onclick={closeNotification}>
+                        <lightning-icon
+                            icon-name="utility:close"
+                            size="xx-small"
+                            class="close-icon">
+                        </lightning-icon>
+                    </button>
+                    <div class="notification-progress-bar"></div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Loading Spinner - Main spinner for the component -->
+        <template if:true={isLoading}>
+            <div class="slds-spinner_container">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+
+        <div class="main-container">
+            <!-- Header Section -->
+            <div class="header-section">
+                <header class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:opportunity" size="small" class="header-icon"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-text-heading_medium">Submit to Closing - Required Fields</h2>
+                    </div>
+                </header>
+            </div>
+            
+            <div class="content-section">
+                <template if:true={showForm}>
+                    <!-- Error Messages -->
+                    <template if:true={hasErrors}>
+                        <div class="error-container">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="utility:error" size="small"></lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h2 class="slds-text-heading_small">{errorMessage}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div class="slds-text-heading_small slds-m-bottom_medium slds-p-around_medium">
+                        Please complete the following required fields:
+                    </div>
+                   
+                    <!-- Main Form -->
+                    <!-- Account Information -->
+                    <template if:true={missingFields.accountFields.length}>
+                        <div class="section-container">
+                            <div class="section-card">
+                                <div class="slds-p-around_medium">
+                                    <lightning-record-edit-form
+                                        data-id="accountForm"
+                                        record-id={account.Id}
+                                        object-api-name="Account"
+                                        onsuccess={handleAccountSuccess}
+                                        onerror={handleAccountError}
+                                        hide-spinner="true">
+                                        
+                                        <!-- Billing Information -->
+                                        <template if:true={showBillingSection}>
+                                            <div class="section-container">
+                                                <div class="section-header">
+                                                    <div class="slds-media slds-media_center">
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon icon-name="standard:address" size="small" class="section-icon"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <h3 class="slds-text-heading_small">Billing Information</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="section-card">
+                                                    <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
+                                                        <template if:true={isMissingField.BillingStreet}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="BillingStreet" field-name="BillingStreet" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <template if:true={isMissingField.BillingCity}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="BillingCity" field-name="BillingCity" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <template if:true={isMissingField.BillingCountry}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="BillingCountry" field-name="BillingCountry" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <template if:true={isMissingField.BillingPostalCode}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="BillingPostalCode" field-name="BillingPostalCode" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <template if:true={isMissingField.Billing_Email__c}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="Billing_Email__c" field-name="Billing_Email__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+
+                                        <!-- First Purchase Details -->
+                                        <template if:true={showFirstPurchaseSection}>
+                                            <div class="section-container">
+                                                <div class="section-header">
+                                                    <div class="slds-media slds-media_center">
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon icon-name="standard:orders" size="small" class="section-icon"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <h3 class="slds-text-heading_small">First Purchase Details</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="section-card">
+                                                    <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
+                                                        <template if:true={isMissingField.CS_POC_First_Name__c}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="CS_POC_First_Name__c" field-name="CS_POC_First_Name__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <template if:true={isMissingField.CS_POC_Email_Address__c}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="CS_POC_Email_Address__c" field-name="CS_POC_Email_Address__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <template if:true={isMissingField.CS_POC_Phone__c}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="CS_POC_Phone__c" field-name="CS_POC_Phone__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <template if:true={isMissingField.Key_Value_Points__c}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="Key_Value_Points__c" field-name="Key_Value_Points__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+
+                                        <!-- Mexico Invoice Certification -->
+                                        <template if:true={showMexicoSection}>
+                                            <div class="section-container">
+                                                <div class="section-header">
+                                                    <div class="slds-media slds-media_center">
+                                                        <div class="slds-media__figure">
+                                                            <lightning-icon icon-name="standard:document" size="small" class="section-icon"></lightning-icon>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <h3 class="slds-text-heading_small">Mexico Invoice Certification</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="section-card">
+                                                    <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
+                                                        <template if:true={isMissingField.Razon_Social_Legal_Company_Name__c}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="Razon_Social_Legal_Company_Name__c" field-name="Razon_Social_Legal_Company_Name__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                            <lightning-input-field data-field="Tipo_de_RFC__c" field-name="Tipo_de_RFC__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                        </div>
+                                                        <template if:true={isMissingField.Regimen_Fiscal_Receptor__c}>
+                                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                                <lightning-input-field data-field="Regimen_Fiscal_Receptor__c" field-name="Regimen_Fiscal_Receptor__c" required="true" onchange={handleFieldChange}></lightning-input-field>
+                                                            </div>
+                                                        </template>
+                                                        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                            <lightning-input-field data-field="Regimen_Capital__c" field-name="Regimen_Capital__c" required={isRegimenCapitalRequired} onchange={handleFieldChange}></lightning-input-field>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </lightning-record-edit-form>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Cable Selection Section -->
+                    <template if:true={showCableSelectionSection}>
+                        <div class="section-container">
+                            <div class="section-header">
+                                <div class="slds-media slds-media_center">
+                                    <div class="slds-media__figure">
+                                        <lightning-icon icon-name="custom:custom63" size="small" class="section-icon"></lightning-icon>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <h3 class="slds-text-heading_small">Cable Selection</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-card">
+                                <div class="slds-p-around_medium">
+                                    <lightning-record-edit-form
+                                        data-id="opportunityForm"
+                                        record-id={opportunity.Id}
+                                        object-api-name="Opportunity"
+                                        onsuccess={handleOpportunitySuccess}
+                                        onerror={handleOpportunityError}
+                                        hide-spinner="true">
+                                        <div class="slds-grid slds-gutters slds-wrap">
+                                            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                <lightning-input-field 
+                                                    data-field="Alternative_Cable_Selection__c" 
+                                                    field-name="Alternative_Cable_Selection__c" 
+                                                    required={requireCableSelection}
+                                                    onchange={handleFieldChange}>
+                                                </lightning-input-field>
+                                            </div>
+                                            <template if:true={isMissingField.Cable_Selection_Method__c}>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                                    <lightning-input-field 
+                                                        data-field="Cable_Selection_Method__c" 
+                                                        field-name="Cable_Selection_Method__c" 
+                                                        required={requireCableSelection}
+                                                        onchange={handleFieldChange}>
+                                                    </lightning-input-field>
+                                                </div>
+                                            </template>
+                                            <template if:true={showAlternativeCableReason}>
+                                                <div class="slds-col slds-size_1-of-1 slds-p-around_x-small">
+                                                    <lightning-input-field 
+                                                        data-field="Alternative_Cable_Selection_Reason__c" 
+                                                        field-name="Alternative_Cable_Selection_Reason__c" 
+                                                        required={requireCableSelection}
+                                                        onchange={handleFieldChange}>
+                                                    </lightning-input-field>
+                                                </div>
+                                            </template>
+                                        </div>
+                                        <template if:true={requireCableSelection}>
+                                            <div class="slds-p-around_medium slds-notify slds-notify_alert slds-theme_info">
+                                                <div class="slds-media slds-media_center">
+                                                    <div class="slds-media__figure">
+                                                        <lightning-icon icon-name="utility:info" size="small"></lightning-icon>
+                                                    </div>
+                                                    <div class="slds-media__body">
+                                                        <h2>Cable Selection Required</h2>
+                                                        <p class="slds-m-top_x-small">
+                                                            The cable selection tool must be completed for first purchases. If this is an add-on order, 
+                                                            please use the Cable Selection Link, or check the Alternative Cable Selection box to confirm 
+                                                            that you completed cable selection with another method.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </lightning-record-edit-form>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+                <!-- Free Trial Section -->
+                <template if:true={showFreeTrialSection}>
+                    <div class="section-container">
+                        <div class="section-header">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:promotion_segments" size="small" class="section-icon"></lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h3 class="slds-text-heading_small">Free Trial Purchase</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-card">
+                            <div class="slds-p-around_medium">
+                                <div class="slds-form-element">
+                                    <lightning-combobox
+                                        name="freeTrialPurchase"
+                                        label="Free Trial Purchase"
+                                        value={opportunity.Free_Trial_Purchase__c}
+                                        options={freeTrialOptions}
+                                        required="true"
+                                        class="required-field"
+                                        message-when-value-missing="Please select a free trial purchase type"
+                                        onchange={handleFreeTrialChange}
+                                        placeholder="Select an Option">
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                
+
+                <!-- Partial Buy Component -->
+                <template if:true={showPartialBuyComponent}>
+                    <div class="section-container">
+                        <div class="section-header">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:product" size="small" class="section-icon"></lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h3 class="slds-text-heading_small">Partial Buy Details</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-card">
+                            <div class="slds-p-around_medium">
+                                <c-submit-to-closing-partial-buy-c-m-p
+                                    oppty-id={opportunity.Id}
+                                    all-product-serial-numbers={allSerialNumbers}
+                                    available-actions={availableActions}
+                                    onnodata={handleNoData}
+                                    onserialnumbersupdate={handleSerialNumbersUpdate}>
+                                </c-submit-to-closing-partial-buy-c-m-p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <!-- Partner Involvement Section (styled to match other sections) -->
+                <template if:true={isPartnerInfoPopulated}>
+                    <div class="section-container">
+                        <div class="section-header">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:partner_fund_allocation" size="small" class="section-icon"></lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h3 class="slds-text-heading_small">Partner Involvement</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-card">
+                            <div class="slds-p-around_medium">
+                                <label class="slds-form-element__label">
+                                    Is an Insurance, Referral, or Resale partner involved in this deal? Or is your customer using any integrations?
+                                </label>
+                                <lightning-radio-group
+                                    name="partnerInvolved"
+                                    options={partnerInvolvedOptions}
+                                    value={partnerInvolved}
+                                    type="radio"
+                                    onchange={handlePartnerInvolvedChange}>
+                                </lightning-radio-group>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <!-- Site Details Section -->
+                <template if:true={showSiteDetails}>
+                    <div class="section-container">
+                        <div class="section-header">
+                            <div class="slds-media slds-media_center">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:connected_apps" size="small" class="section-icon"></lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h3 class="slds-text-heading_small">Connected Sites Configuration</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-card">
+                            <div class="slds-p-around_medium">
+                                <div class="slds-text-body_small slds-m-bottom_medium">
+                                    We detected Connected Sites products on this opportunity. Please populate the following fields as they are required for Sites deals:
+                                </div>
+                                <lightning-record-edit-form
+                                    record-id={opportunity.Id}
+                                    object-api-name="Opportunity"
+                                    hide-spinner="true">
+                                    <div class="slds-grid slds-gutters slds-wrap">
+                                        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                            <lightning-input-field
+                                                data-field="Number_of_sites_sold__c"
+                                                field-name="Number_of_sites_sold__c"
+                                                required="true"
+                                                onchange={handleFieldChange}>
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                            <lightning-input-field
+                                                data-field="Product_Version__c"
+                                                field-name="Product_Version__c"
+                                                required="true"
+                                                onchange={handleFieldChange}>
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                            <lightning-input-field
+                                                data-field="Deployment_Type__c"
+                                                field-name="Deployment_Type__c"
+                                                required="true"
+                                                onchange={handleFieldChange}>
+                                            </lightning-input-field>
+                                        </div>
+                                    </div>
+                                </lightning-record-edit-form>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                
+                <!-- No Required Data Message -->
+                <template if:true={showNoDataMessage}>
+                    <div class="slds-illustration slds-illustration_small">
+                        <div class="slds-p-around_medium">
+                            <div class="slds-text-longform">
+                                <h3 class="slds-text-heading_medium">No missing fields found</h3>
+                                <p>This opportunity is ready to be submitted to closing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Navigation Buttons -->
+                <div class="button-container">
+                    <div class="button-left">
+                        <lightning-button
+                            label="Back"
+                            onclick={handlePrevious}
+                            variant="neutral"
+                            class="back-button">
+                        </lightning-button>
+                    </div>
+                    <div class="button-right">
+                        <lightning-button
+                            label="Next"
+                            onclick={handleNext}
+                            variant="brand"
+                            class="next-button"
+                            >
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

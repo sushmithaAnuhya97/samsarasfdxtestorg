@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffirule__ReadyToProcessLinesCount__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Ready To Process Lines Count</label>
+    <summaryFilterItems>
+        <field>ffirule__IntegrationRuleSourceLineItemTest__c.ffirule__Process__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>ffirule__IntegrationRuleSourceLineItemTest__c.ffirule__Processed__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>ffirule__IntegrationRuleSourceLineItemTest__c.ffirule__IntegrationRuleSourceTest__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Is_Invitation_Expired__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>OR( refedge__Is_Expired__c,  refedge__Invitation_Expiration__c &lt;  TODAY())</formula>
+    <label>Is Invitation Expired</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

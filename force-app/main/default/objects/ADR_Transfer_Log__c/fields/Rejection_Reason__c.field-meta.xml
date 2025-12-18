@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rejection_Reason__c</fullName>
+    <label>Rejection Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demo No Show</fullName>
+                <default>false</default>
+                <label>Demo No Show</label>
+            </value>
+            <value>
+                <fullName>Microfleet</fullName>
+                <default>false</default>
+                <label>Microfleet</label>
+            </value>
+            <value>
+                <fullName>Out of Segment</fullName>
+                <default>false</default>
+                <label>Out of Segment</label>
+            </value>
+            <value>
+                <fullName>Out of Geo</fullName>
+                <default>false</default>
+                <label>Out of Geo</label>
+            </value>
+            <value>
+                <fullName>Missing Authority or Need</fullName>
+                <default>false</default>
+                <label>Missing Authority or Need</label>
+            </value>
+            <value>
+                <fullName>Missing Budget and Timeline</fullName>
+                <default>false</default>
+                <label>Missing Budget and Timeline</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account</fullName>
+                <default>false</default>
+                <label>Duplicate Account</label>
+            </value>
+            <value>
+                <fullName>Demo Did Not Take Place - ADR Reschedule</fullName>
+                <default>false</default>
+                <label>Demo Did Not Take Place - ADR Reschedule</label>
+            </value>
+            <value>
+                <fullName>Auto Reject: SLA Non-Adherence</fullName>
+                <default>false</default>
+                <label>Auto Reject: SLA Non-Adherence</label>
+            </value>
+            <value>
+                <fullName>ADR Manager Audit - Does not meet criteria</fullName>
+                <default>false</default>
+                <label>ADR Manager Audit - Does not meet criteria</label>
+            </value>
+            <value>
+                <fullName>Industrial Account</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Industrial Account</label>
+            </value>
+            <value>
+                <fullName>Missing BANT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Missing BANT</label>
+            </value>
+            <value>
+                <fullName>On Site</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>On Site</label>
+            </value>
+            <value>
+                <fullName>Partner/Reseller</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partner/Reseller</label>
+            </value>
+            <value>
+                <fullName>Price Shopping</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Price Shopping</label>
+            </value>
+            <value>
+                <fullName>Product Fit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Product Fit - IND/CW</label>
+            </value>
+            <value>
+                <fullName>X</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>X</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

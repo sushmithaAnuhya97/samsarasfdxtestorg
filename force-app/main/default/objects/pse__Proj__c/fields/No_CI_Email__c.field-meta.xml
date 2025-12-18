@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_CI_Email__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This checkbox field serves as a control mechanism to manage the sending of mid-implementation communications. When checked, it serves as a signal to the system or to users that a mid-implementation communication should be suppressed for the associated project, ensuring that the POC does not receive it.</description>
+    <inlineHelpText>checked, signals to the system that a mid-implementation communication should be suppressed for the associated project, ensuring that the POC does not receive it.</inlineHelpText>
+    <label>No Check In Email</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

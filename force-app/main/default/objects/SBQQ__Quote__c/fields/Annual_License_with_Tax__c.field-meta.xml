@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_License_with_Tax__c</fullName>
+    <description>Annual License payments with annual license sales tax - field for quote doc purposes</description>
+    <formula>ROUND(
+IF(
+AND(
+SBQQ__SubscriptionTerm__c &gt; 12,SBQQ__SubscriptionTerm__c &lt; 24),
+Monthly_License_with_Tax__c * (SBQQ__SubscriptionTerm__c - 12),
+IF(
+ISBLANK(Shipping_Address_NEW__c),
+Estimated_Annual_Payment__c, Estimated_Annual_Payment__c + Annual_License_Sales_Tax__c)) , 2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Recurring annual payment for licenses. Does not include tax if shipping address is blank.</inlineHelpText>
+    <label>Annual License With Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

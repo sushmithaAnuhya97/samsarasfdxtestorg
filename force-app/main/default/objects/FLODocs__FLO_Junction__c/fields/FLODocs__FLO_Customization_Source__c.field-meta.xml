@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__FLO_Customization_Source__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>FLO Customization Source in the relationship between FLO Objects (e.g: Customization to Customization to represent a Join )</description>
+    <inlineHelpText>FLO Customization Source in the relationship between FLO Objects (e.g: Customization to Customization to represent a Join )</inlineHelpText>
+    <label>Customization Source</label>
+    <referenceTo>FLODocs__FLO_Customization__c</referenceTo>
+    <relationshipLabel>Junctions</relationshipLabel>
+    <relationshipName>FLO_Junctions</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

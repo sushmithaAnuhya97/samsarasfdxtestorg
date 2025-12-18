@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Advocate_1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>For associating customer advocates with campaigns for use in Full Circle pipeline reporting.</description>
+    <inlineHelpText>Make sure you are selecting the correct customer account and not a duplicate.</inlineHelpText>
+    <label>Customer Advocate 1</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Campaigns</relationshipLabel>
+    <relationshipName>Campaigns</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

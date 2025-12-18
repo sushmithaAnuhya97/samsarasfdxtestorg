@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Transfer_Status__c</fullName>
+    <label>ADR Transfer Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demo Scheduled</fullName>
+                <default>false</default>
+                <label>Demo Scheduled</label>
+            </value>
+            <value>
+                <fullName>Disqualified - Already Engaged</fullName>
+                <default>false</default>
+                <label>Disqualified - Already Engaged</label>
+            </value>
+            <value>
+                <fullName>Disqualified - No Show</fullName>
+                <default>false</default>
+                <label>Disqualified - No Show</label>
+            </value>
+            <value>
+                <fullName>Disqualified - No Opportunity</fullName>
+                <default>false</default>
+                <label>Disqualified - No Opportunity</label>
+            </value>
+            <value>
+                <fullName>Disqualified - Wrong Profile</fullName>
+                <default>false</default>
+                <label>Disqualified - Wrong Profile</label>
+            </value>
+            <value>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+                <label>Accepted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

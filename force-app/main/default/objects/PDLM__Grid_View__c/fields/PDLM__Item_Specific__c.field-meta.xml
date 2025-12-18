@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Item_Specific__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>When filled in, this custom BOM view is only available on the related item.</inlineHelpText>
+    <label>Item Specific</label>
+    <referenceTo>PDLM__Item__c</referenceTo>
+    <relationshipLabel>Grid Views</relationshipLabel>
+    <relationshipName>Grid_Views</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

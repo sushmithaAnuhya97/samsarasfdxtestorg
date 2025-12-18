@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Pre_Approval_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(D_B_Data_Available__c = False, IF((Common_Value__c == &apos;A&apos; || Common_Value__c = &apos;B&apos;) &amp;&amp; Requested_Credit_Amount__c &lt;= Credit_Limit__c &amp;&amp; Status__c = &apos;Active&apos;,&apos;Approved&apos;,IF(((Common_Value__c == &apos;C&apos; &amp;&amp; Requested_Credit_Amount__c &lt;= Credit_Limit__c) || (Common_Value__c == &apos;A&apos; || Common_Value__c = &apos;B&apos;)) &amp;&amp; Status__c = &apos;Active&apos;,&apos;Pending&apos;,&apos;Declined&apos;)),
+
+
+IF(Credit_Scorecard__c &gt;= 7.0 &amp;&amp; Requested_Credit_Amount__c &lt;= Credit_Limit__c &amp;&amp; Trade_Experiences_Count__c &gt;= 5, &apos;Approved&apos;,IF(Credit_Scorecard__c &gt;= 4.01, &apos;Pending&apos;,&apos;Declined&apos;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Credit Pre-Approval Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

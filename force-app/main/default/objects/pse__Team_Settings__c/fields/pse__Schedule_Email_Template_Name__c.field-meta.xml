@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Schedule_Email_Template_Name__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specifies the Template Unique Name of the email template to use for team schedule notifications.
+		If no template is defined, a system-generated email template for notifications is used that includes the team schedule time slot names, start times, and end times. Note that you can override the template at a team level with the Custom Template Name (Schedule) field on the Team object.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specifies the Template Unique Name of the email template to use for team schedule notifications.</inlineHelpText>
+    <label>Email Template (Schedule)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

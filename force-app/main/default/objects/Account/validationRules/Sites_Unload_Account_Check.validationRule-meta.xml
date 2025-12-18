@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sites_Unload_Account_Check</fullName>
+    <active>true</active>
+    <description>Sites Unload can be selected by ADRs &amp; AEs only</description>
+    <errorConditionFormula>AND(ISCHANGED( Sites_Unload_Account__c ),
+Sites_Unload_Account__c,
+NOT(OR(CONTAINS($UserRole.Name,&apos;Sites IS ADR&apos;), 
+CONTAINS($UserRole.Name,&apos;Sites IS AE2&apos;), 
+CONTAINS($UserRole.Name,&apos;Fleet IS AE3&apos;), CONTAINS($UserRole.Name,&apos;Fleet ENT AE&apos;),
+CONTAINS($UserRole.Name,&apos;Sites ENT AE&apos;),
+CONTAINS($UserRole.Name,&apos;Sites ENT ADR&apos;),
+$Profile.Name = &apos;System Administrator&apos;,
+$Profile.Name = &apos;Sales Ops Profile&apos;)))</errorConditionFormula>
+    <errorMessage>This account can be dropped by ADRs &amp; AEs only.</errorMessage>
+</ValidationRule>

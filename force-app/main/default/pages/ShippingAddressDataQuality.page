@@ -1,0 +1,8 @@
+<apex:page sidebar="false" tabStyle="Shipping_Address__c" showHeader="true"
+controller="EDQ.DataQualityController">
+<apex:form >
+<EDQ:DataQuality DataQualityClient="{!DataQualityClient}"
+ValidateSingleResultAction="{!DataQualityClient.RefineSelectedMatch}"
+ContinueValidationAction="{!DataQualityClient.Next}" />
+<EDQ:DataQualityTriggerAsync ExecuteValidationAction="{!Execute}" />
+</apex:form></apex:page>

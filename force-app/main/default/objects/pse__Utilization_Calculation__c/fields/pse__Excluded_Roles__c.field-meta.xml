@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Excluded_Roles__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Enables you to select the roles that do not require utilization summary records to be created.</description>
+    <inlineHelpText>Select the roles that do not require utilization summary records to be created.</inlineHelpText>
+    <label>Excluded Roles</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Business Value Strategist</fullName>
+                <default>false</default>
+                <label>Business Value Strategist</label>
+            </value>
+            <value>
+                <fullName>Engagement Services Manager</fullName>
+                <default>false</default>
+                <label>Engagement Services Manager</label>
+            </value>
+            <value>
+                <fullName>Implementation Consultant- Elite (IC)</fullName>
+                <default>false</default>
+                <label>Implementation Consultant- Elite (IC)</label>
+            </value>
+            <value>
+                <fullName>Implementation Consultant- Premier East (IC)</fullName>
+                <default>false</default>
+                <label>Implementation Consultant- Premier East (IC)</label>
+            </value>
+            <value>
+                <fullName>Implementation Consultant - Premier West (IC)</fullName>
+                <default>false</default>
+                <label>Implementation Consultant - Premier West (IC)</label>
+            </value>
+            <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+            <value>
+                <fullName>QA Lead</fullName>
+                <default>false</default>
+                <label>QA Lead</label>
+            </value>
+            <value>
+                <fullName>Solutions Architect (TSE)</fullName>
+                <default>false</default>
+                <label>Solutions Architect (TSE)</label>
+            </value>
+            <value>
+                <fullName>Solutions Developer (TSE)</fullName>
+                <default>false</default>
+                <label>Solutions Developer (TSE)</label>
+            </value>
+            <value>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+                <label>System Administrator</label>
+            </value>
+            <value>
+                <fullName>Trainer</fullName>
+                <default>false</default>
+                <label>Trainer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

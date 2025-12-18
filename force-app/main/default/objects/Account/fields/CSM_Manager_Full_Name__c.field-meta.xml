@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Manager_Full_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(SIC__c == NULL,CSM__r.Manager_Name__c, SIC__r.Manager_Name__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Manager of CSM, if CSM not assigned Manager of IC</inlineHelpText>
+    <label>CS Owner Manager</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

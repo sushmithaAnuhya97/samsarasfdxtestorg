@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>sarah.shoemaker@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Finance Partner Return Approval Step</label>
+        <name>Finance_Partner_Return_Approval_Step</name>
+    </approvalStep>
+    <emailTemplate>Operations_Emails/Approval_Needed_Manager</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+  OR(
+    NOT(ISBLANK(Finance_Partner__c)),
+    NOT(ISBLANK(Reseller__c))
+  ),
+  TEXT(Type) = &apos;Remorse Refund&apos;,
+  TEXT(StageName) = &apos;Return Created&apos;,
+  Finance_Approved_Return__c = false
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approval_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Finance_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Finance_Approved_Return</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Approval_Status_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Close_Date_Today</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Finance_Denied_Return</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Return_Cancelled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Approval_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Finance Partner/Reseller Return Approval</label>
+    <processOrder>15</processOrder>
+    <recallActions>
+        <action>
+            <name>Approval_Status_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

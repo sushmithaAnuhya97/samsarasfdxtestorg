@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Is_Late__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>NOT(ISNULL(PDLM__Due_Date__c)) &amp;&amp; TODAY() &gt; PDLM__Due_Date__c &amp;&amp; PDLM__Closed__c = false  &amp;&amp; PDLM__Cancelled__c = false</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Late</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

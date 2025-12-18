@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Enabling certain users to have the ability to edit the sales tax historical field instead of profiles</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Sales_Tax_Historical__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Tax Controller</label>
+</PermissionSet>

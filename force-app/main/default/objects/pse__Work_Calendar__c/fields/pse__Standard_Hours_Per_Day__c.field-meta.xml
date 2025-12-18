@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Standard_Hours_Per_Day__c</fullName>
+    <defaultValue>8.0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This optional value determines the &quot;standard&quot; hours per day figure (e.g. typically 8.0 for many U.S. Work Calendars) to be used to convert between daily and hourly rates on an Assignment.  If left blank or zero, the org-wide default will be used.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This optional value determines the &quot;standard&quot; hours per day figure (e.g. typically 8.0 for many U.S. Work Calendars) to be used to convert between daily and hourly rates on an Assignment.  If left blank or zero, the org-wide default will be used.</inlineHelpText>
+    <label>Standard Hours Per Day</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

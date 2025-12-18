@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Change_Policy__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This field shows the approval path rules determined by the system to be applicable.</description>
+    <inlineHelpText>This field shows the approval path rules determined by the system to be applicable.</inlineHelpText>
+    <label>Policy</label>
+    <referenceTo>FLODocs__FLO_Change_Approval_Policy__c</referenceTo>
+    <relationshipLabel>Change Requests</relationshipLabel>
+    <relationshipName>FLO_Change_Requests</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

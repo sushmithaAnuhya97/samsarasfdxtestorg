@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HW_AG24_Alacarte__c</fullName>
+    <formula>CONTAINS(SBQQ__ProductCode__c, &quot;HW-AG24&quot;) &amp;&amp;  ISBLANK(SBQQ__RequiredBy__c)</formula>
+    <label>HW-AG24 Alacarte</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

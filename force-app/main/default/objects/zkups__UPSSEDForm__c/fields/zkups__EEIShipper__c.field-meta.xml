@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__EEIShipper__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates the EEI Shipper sub option</description>
+    <inlineHelpText>Indicates the EEI Shipper sub option</inlineHelpText>
+    <label>EEI Shipper</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>zkups__EEIFillingType__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Requires the ITN</fullName>
+                <default>false</default>
+                <label>Requires the ITN</label>
+            </value>
+            <value>
+                <fullName>Requires the Exemption Legend</fullName>
+                <default>false</default>
+                <label>Requires the Exemption Legend</label>
+            </value>
+            <value>
+                <fullName>Requires the post departure filing citation</fullName>
+                <default>false</default>
+                <label>Requires the post departure filing citation</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Shipper filed</controllingFieldValue>
+            <valueName>Requires the ITN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipper filed</controllingFieldValue>
+            <valueName>Requires the Exemption Legend</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shipper filed</controllingFieldValue>
+            <valueName>Requires the post departure filing citation</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

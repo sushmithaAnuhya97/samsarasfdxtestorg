@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__ManagedToPeer2Peer</fullName>
+    <active>true</active>
+    <description>The value cannot be negative.</description>
+    <errorConditionFormula>refedge__Managed_to_P2P_Min__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>refedge__Managed_to_P2P_Min__c</errorDisplayField>
+    <errorMessage>The value cannot be negative.</errorMessage>
+</ValidationRule>

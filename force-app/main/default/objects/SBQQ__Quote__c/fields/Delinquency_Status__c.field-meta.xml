@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delinquency_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(SBQQ__Account__r.Delinquency_Status__c, &quot;quotes approved&quot;),&quot;Quotes Approved: You will be able to generate a quote document but will not be able to generate a checkout link until the delinquency is resolved. Please reach out to finance to resolve the delinquency accounts-receivable@samsara.com&quot;,
+
+IF(ISPICKVAL(SBQQ__Account__r.Delinquency_Status__c, &quot;orders blocked&quot;), &quot;Orders Blocked: You will not be able to submit for discount approval or generate a checkout link until the discrepancy is resolved, Please reach out to finance to resolve the delinquency accounts-receivable@samsara.com&quot;,
+
+IF(ISPICKVAL(SBQQ__Account__r.Delinquency_Status__c, &quot;&quot;),&quot;Your account is not delinquent&quot;,&quot;&quot;)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Delinquent Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

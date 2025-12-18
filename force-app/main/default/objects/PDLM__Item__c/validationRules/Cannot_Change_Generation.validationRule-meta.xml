@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Generation</fullName>
+    <active>true</active>
+    <description>For Finished Goods and TLAs categories, can&apos;t change Generation after record was saved</description>
+    <errorConditionFormula>AND(
+    OR (
+        PDLM__Category__r.PDLM__Parent__r.Name = &quot;Finished Goods&quot;,
+        PDLM__Category__r.PDLM__Parent__r.Name = &quot;TLAs&quot;
+    ),
+     ISCHANGED(Generation__c)
+    ,
+     NOT(ISBLANK(CreatedDate))
+)</errorConditionFormula>
+    <errorMessage>For Finished Goods and TLAs Categories the fields Generation can&apos;t be changed after Item was created.</errorMessage>
+</ValidationRule>

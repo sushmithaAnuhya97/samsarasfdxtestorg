@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__End_Time__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The time at which the schedule slot ends.</description>
+    <inlineHelpText>The time at which the schedule slot ends.</inlineHelpText>
+    <label>End Time</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>pse__Start_End_Time</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_Sub_Reason__c</fullName>
+    <label>Closed Won Sub Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Closed_Won_Reason__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Overall better trial/pilot experience</fullName>
+                <default>false</default>
+                <label>Overall better trial/pilot experience</label>
+            </value>
+            <value>
+                <fullName>Better business case and ROI</fullName>
+                <default>false</default>
+                <label>Better business case and ROI</label>
+            </value>
+            <value>
+                <fullName>Better ability to build custom/POC features and/or integrations during trial</fullName>
+                <default>false</default>
+                <label>Better ability to build custom/POC features and/or integrations during trial</label>
+            </value>
+            <value>
+                <fullName>Better onboarding and implementation capabilities</fullName>
+                <default>false</default>
+                <label>Better onboarding and implementation capabilities</label>
+            </value>
+            <value>
+                <fullName>Better post sale support (e.g. CSM)</fullName>
+                <default>false</default>
+                <label>Better post sale support (e.g. CSM)</label>
+            </value>
+            <value>
+                <fullName>Better customer support capabilities (e.g. billing support, technical support, etc.)</fullName>
+                <default>false</default>
+                <label>Better customer support capabilities (e.g. billing support, technical support, etc.)</label>
+            </value>
+            <value>
+                <fullName>Lower price</fullName>
+                <default>false</default>
+                <label>Lower price</label>
+            </value>
+            <value>
+                <fullName>Monthly payment option</fullName>
+                <default>false</default>
+                <label>Monthly payment option</label>
+            </value>
+            <value>
+                <fullName>Simpler pricing / better price transparency</fullName>
+                <default>false</default>
+                <label>Simpler pricing / better price transparency</label>
+            </value>
+            <value>
+                <fullName>More flexible contracting/payment terms (e.g., better net payment terms, monthly pricing, reduced reliance on 3P financing, etc.)</fullName>
+                <default>false</default>
+                <label>More flexible contracting/payment terms (e.g., better net payment terms, monthly pricing, reduced reliance on 3P financing, etc.)</label>
+            </value>
+            <value>
+                <fullName>More flexible license addition/removal/pause terms</fullName>
+                <default>false</default>
+                <label>More flexible license addition/removal/pause terms</label>
+            </value>
+            <value>
+                <fullName>Quicker negotiation cycles</fullName>
+                <default>false</default>
+                <label>Quicker negotiation cycles</label>
+            </value>
+            <value>
+                <fullName>Other monetary reasons (e.g., contract buyouts, free products, corporate gifting, etc.)</fullName>
+                <default>false</default>
+                <label>Other monetary reasons (e.g., contract buyouts, free products, corporate gifting, etc.)</label>
+            </value>
+            <value>
+                <fullName>Product has more features that customers want (e.g., new AI features)</fullName>
+                <default>false</default>
+                <label>Product has more features that customers want (e.g., new AI features)</label>
+            </value>
+            <value>
+                <fullName>Product is a single platform, encompassing all fleet workflows</fullName>
+                <default>false</default>
+                <label>Product is a single platform, encompassing all fleet workflows</label>
+            </value>
+            <value>
+                <fullName>Product is more accurate (e.g., less false positives, more accurate driver behavior detection, etc.)</fullName>
+                <default>false</default>
+                <label>Product is more accurate (e.g., less false positives, more accurate driver behavior detection, etc.)</label>
+            </value>
+            <value>
+                <fullName>Forward-looking roadmap aligns better with customer needs</fullName>
+                <default>false</default>
+                <label>Forward-looking roadmap aligns better with customer needs</label>
+            </value>
+            <value>
+                <fullName>Product is more reliable in terms of availability/uptime, robustness, etc.</fullName>
+                <default>false</default>
+                <label>Product is more reliable in terms of availability/uptime, robustness, etc.</label>
+            </value>
+            <value>
+                <fullName>Better warranty and return policies</fullName>
+                <default>false</default>
+                <label>Better warranty and return policies</label>
+            </value>
+            <value>
+                <fullName>Better partnerships &amp; integration ecosystem (incl. marketplace)</fullName>
+                <default>false</default>
+                <label>Better partnerships &amp; integration ecosystem (incl. marketplace)</label>
+            </value>
+            <value>
+                <fullName>Better UI/UX and ease of use</fullName>
+                <default>false</default>
+                <label>Better UI/UX and ease of use</label>
+            </value>
+            <value>
+                <fullName>Better ability to be on-site more frequently</fullName>
+                <default>false</default>
+                <label>Better ability to be on-site more frequently</label>
+            </value>
+            <value>
+                <fullName>Champion</fullName>
+                <default>false</default>
+                <label>Champion</label>
+            </value>
+            <value>
+                <fullName>Executive Alignment</fullName>
+                <default>false</default>
+                <label>Executive Alignment</label>
+            </value>
+            <value>
+                <fullName>Duplicate opportunity</fullName>
+                <default>false</default>
+                <label>Duplicate opportunity</label>
+            </value>
+            <value>
+                <fullName>Inherited opportunity</fullName>
+                <default>false</default>
+                <label>Inherited opportunity</label>
+            </value>
+            <value>
+                <fullName>Duplicate account</fullName>
+                <default>false</default>
+                <label>Duplicate account</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Trial Capabilities</controllingFieldValue>
+            <valueName>Overall better trial/pilot experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trial Capabilities</controllingFieldValue>
+            <valueName>Better ability to be on-site more frequently</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trial Capabilities</controllingFieldValue>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales Support</controllingFieldValue>
+            <valueName>Better onboarding and implementation capabilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales Support</controllingFieldValue>
+            <valueName>Better post sale support (e.g. CSM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales Support</controllingFieldValue>
+            <valueName>Better customer support capabilities (e.g. billing support, technical support, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Lower price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Monthly payment option</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Simpler pricing / better price transparency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>More flexible contracting/payment terms (e.g., better net payment terms, monthly pricing, reduced reliance on 3P financing, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>More flexible license addition/removal/pause terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Quicker negotiation cycles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Other monetary reasons (e.g., contract buyouts, free products, corporate gifting, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product has more features that customers want (e.g., new AI features)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product is a single platform, encompassing all fleet workflows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product is more accurate (e.g., less false positives, more accurate driver behavior detection, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product is more reliable in terms of availability/uptime, robustness, etc.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Better UI/UX and ease of use</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Champion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Executive Alignment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Duplicate opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Inherited opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Duplicate account</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Billable_Expense_Fee_Percentage__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Fee percentage by which to increase the billable amount of any Expense logged for the Project.  0% means no increase (default), whereas 100% means double.  The calculation will apply the percentage expense fee*before* any flat expense fee.</description>
+    <inlineHelpText>Fee percentage by which to increase the billable amount of any Expense logged for the Project.  0% means no increase (default), whereas 100% means double.  The calculation will apply the percentage expense fee*before* any flat expense fee.</inlineHelpText>
+    <label>Billable Expense Fee Percentage</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

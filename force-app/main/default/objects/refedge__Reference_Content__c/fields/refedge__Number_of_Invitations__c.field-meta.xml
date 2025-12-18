@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Number_of_Invitations__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Number of Invitations this particular content item has been included in.</inlineHelpText>
+    <label>Number of Invitations</label>
+    <summaryForeignKey>refedge__Invitation_ReferenceContent__c.refedge__Reference_Content__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

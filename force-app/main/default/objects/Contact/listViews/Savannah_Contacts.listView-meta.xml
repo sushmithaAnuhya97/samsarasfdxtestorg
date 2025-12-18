@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Savannah_Contacts</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>LinkedIn_URL__c</columns>
+    <columns>X18_Digit_Account_Id__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Owner_Name__c</field>
+        <operation>equals</operation>
+        <value>Savannah Roberts</value>
+    </filters>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>contains</operation>
+        <value>IT,facilities,warehouse,security,facility</value>
+    </filters>
+    <label>Savannah Contacts</label>
+</ListView>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Schedule__c</fullName>
+    <label>Billing Schedule</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In advance</fullName>
+                <default>false</default>
+                <label>In advance</label>
+            </value>
+            <value>
+                <fullName>Net 15</fullName>
+                <default>false</default>
+                <label>Net 15</label>
+            </value>
+            <value>
+                <fullName>Net 30</fullName>
+                <default>false</default>
+                <label>Net 30</label>
+            </value>
+            <value>
+                <fullName>Net 60</fullName>
+                <default>false</default>
+                <label>Net 60</label>
+            </value>
+            <value>
+                <fullName>Monthly Recurring - 12 MO ADV</fullName>
+                <default>false</default>
+                <label>Monthly Recurring - 12 MO ADV</label>
+            </value>
+            <value>
+                <fullName>Monthly Recurring - 12 MO ARR</fullName>
+                <default>false</default>
+                <label>Monthly Recurring - 12 MO ARR</label>
+            </value>
+            <value>
+                <fullName>Monthly  Recurring - 36 MO ADV</fullName>
+                <default>false</default>
+                <label>Monthly  Recurring - 36 MO ADV</label>
+            </value>
+            <value>
+                <fullName>Monthly  Recurring - 36 MO ARR</fullName>
+                <default>false</default>
+                <label>Monthly  Recurring - 36 MO ARR</label>
+            </value>
+            <value>
+                <fullName>Monthly Recurring - 60 MO ADV</fullName>
+                <default>false</default>
+                <label>Monthly Recurring - 60 MO ADV</label>
+            </value>
+            <value>
+                <fullName>Monthly Recurring - 60 MO ARR</fullName>
+                <default>false</default>
+                <label>Monthly Recurring - 60 MO ARR</label>
+            </value>
+            <value>
+                <fullName>50% Upfront, Net 30</fullName>
+                <default>false</default>
+                <label>50% Upfront, Net 30</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

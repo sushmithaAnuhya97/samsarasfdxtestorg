@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Oppty_stages_cannot_be_moved_back</fullName>
+    <active>true</active>
+    <description>Return Opportunities cannot be moved back in stage by sales people, if the opportunity stage is greater than Return Initiated.</description>
+    <errorConditionFormula>AND(
+  (RecordTypeId = &quot;0121a000000ARoK&quot;),
+  ISCHANGED(StageName),
+  (PRIORVALUE(Probability) &gt; 0.25),
+  NOT(
+    OR(
+      ($Permission.Validation_Rule_Exemption),
+      ($Permission.Finance_Contractor),
+      (CONTAINS($Profile.Name, &quot;Finance&quot;)),
+      ($Profile.Name = &quot;Order Operations Admin&quot;),
+      (CONTAINS($Profile.Name, &quot;System Administrator&quot;))
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>You cannot moved stages to a prior stage. Please contact Salesops or Finance.</errorMessage>
+</ValidationRule>

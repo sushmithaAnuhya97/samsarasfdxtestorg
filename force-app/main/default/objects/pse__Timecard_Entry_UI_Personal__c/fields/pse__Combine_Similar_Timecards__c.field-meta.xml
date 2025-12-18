@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Combine_Similar_Timecards__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates whether timecards with exactly the same combination of week, project, assignment, resource, billable, project, methodology, location, travel are combined on the Timecard Entry page. When this occurs, hours and notes fields are combined and other day-based fields are set to the values of the first timecard row included in an aggregated timecard line.</description>
+    <inlineHelpText>Indicates whether timecards with exactly the same combination of week, project, assignment, resource, billable, project, methodology, location, travel are combined on the Timecard Entry page.</inlineHelpText>
+    <label>Combine Similar Timecards</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

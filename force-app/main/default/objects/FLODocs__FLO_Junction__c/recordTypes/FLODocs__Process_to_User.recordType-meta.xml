@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Process_to_User</fullName>
+    <active>true</active>
+    <label>Process to User</label>
+    <picklistValues>
+        <picklist>FLODocs__FLO_Process_Type__c</picklist>
+        <values>
+            <fullName>Affected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FLODocs__Field__c</picklist>
+        <values>
+            <fullName>Additional Approver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process Audience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process Editor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FLODocs__User_Type__c</picklist>
+        <values>
+            <fullName>Additional Approver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved By</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clean up rule owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deployment Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Developer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mandated Approver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected By</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report Owner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

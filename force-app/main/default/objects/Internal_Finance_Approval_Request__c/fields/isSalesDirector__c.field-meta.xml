@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isSalesDirector__c</fullName>
+    <formula>AND(
+    TEXT(Request_Type__c) = &apos;Change in Payment Type&apos;,
+   OR(CONTAINS(UPPER(Approver__r.UserRole.Name), &apos;DIRECTOR&apos;),CONTAINS(UPPER(Approver__r.UserRole.Name), &apos;ISD&apos;))
+)</formula>
+    <label>isSalesDirector</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

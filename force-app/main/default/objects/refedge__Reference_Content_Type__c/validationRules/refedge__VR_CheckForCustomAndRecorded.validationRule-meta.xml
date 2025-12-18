@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__VR_CheckForCustomAndRecorded</fullName>
+    <active>true</active>
+    <description>Reference Content Type cannot be both a Reference Interview Type and a Custom Content Type.</description>
+    <errorConditionFormula>AND( refedge__Custom_Content_Type__c , refedge__Recorded_Reference_Type__c)</errorConditionFormula>
+    <errorMessage>Reference Content Type cannot be both a Reference Interview Type and a Custom Content Type. Please select only one of these choices.</errorMessage>
+</ValidationRule>

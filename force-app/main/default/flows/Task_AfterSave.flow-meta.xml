@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Account_Id</name>
+        <label>Set Account Id</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>AccountInstance.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Activity_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Call_Activity</name>
+        <label>Update Call Activity</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>AccountInstance.Last_Call__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CompletedDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AccountInstance.Last_Sales_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CompletedDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>updateContact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Email_Activity</name>
+        <label>Update Email Activity</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>AccountInstance.Last_Sales_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CompletedDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>updateAccount</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Activity_Type</name>
+        <label>Check Activity Type</label>
+        <locationX>446</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Call_Activity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CallDurationInSeconds</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Call_Activity</targetReference>
+            </connector>
+            <label>Call Activity</label>
+        </rules>
+        <rules>
+            <name>Email_Activity</name>
+            <conditionLogic>(1 OR 2 OR 3) AND (4 OR 5 OR 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Is_Email__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Email</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Is_Email__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gong In</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Is_Email__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gong Out</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Email</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>[Gong In]</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>[Gong Out]</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Email_Activity</targetReference>
+            </connector>
+            <label>Email Activity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_User_Entry_Criteria</name>
+        <label>Check User Entry Criteria</label>
+        <locationX>1271</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Valid_Activity_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EntryCriteriaFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CompletionDateTIme_not_null</targetReference>
+            </connector>
+            <label>Check Valid Activity User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CompletionDateTIme_not_null</name>
+        <label>CompletionDateTIme not null</label>
+        <locationX>908</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>completionDateTime_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CompletedDateTime</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Account_Id</targetReference>
+            </connector>
+            <label>completionDateTime is populated on Create</label>
+        </rules>
+    </decisions>
+    <description>GTMS-27421 - Update flow criteria for Gong User Activities
+GTMS-27321 - Automation fix: Logic update for Last Sales Activity &amp; Last Call
+GTMS-26320 - Fixed Last Call Automation
+GTMS-23804 - Added automation for Last Sales Activity
+ByPass - Marketo User
+GTMS-26719 Added COR, ADR, SEL, STR roles
+Added &apos;Created By User is Gong Bot API&apos; User check</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>EntryCriteriaFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+    AND(
+        {!$Record.CreatedBy.FirstName}&amp; &quot; &quot; &amp;{!$Record.CreatedBy.LastName} = &apos;Gong Bot API User&apos;,
+        OR(
+            CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;CML&apos;),
+            CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;MM&apos;),
+            CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;COR&apos;),
+            CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;SEL&apos;),
+            CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;STR&apos;),
+            CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;ADR&apos;),
+            CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;ENT&apos;),
+	    CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;Renewal&apos;)
+        ),
+        NOT(
+            OR(
+                CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;Director&apos;),
+                CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;Management&apos;),
+                CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;ISD&apos;),
+                CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;AVP&apos;),
+                CONTAINS({!$Record.Owner:User.UserRole.Name}, &apos;VP&apos;)
+            )
+        )
+    ),
+    TRUE,
+    AND(
+		{!$Record.CreatedBy.FirstName}&amp; &quot; &quot; &amp;{!$Record.CreatedBy.LastName} != &apos;Gong Bot API User&apos;,
+        OR(
+            CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;CML&apos;),
+            CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;MM&apos;),
+            CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;COR&apos;),
+            CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;SEL&apos;),
+            CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;STR&apos;),
+            CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;ADR&apos;),
+            CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;ENT&apos;),
+	    CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;Renewal&apos;)
+        ),
+        NOT(
+            OR(
+                CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;Director&apos;),
+                CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;Management&apos;),
+                CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;ISD&apos;),
+                CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;AVP&apos;),
+                CONTAINS({!$Record.CreatedBy.UserRole.Name}, &apos;VP&apos;)
+            )
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Task - AfterSave {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task - AfterSave</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Logs_Records</name>
+        <label>Create Logs Records</label>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
+        <inputAssignments>
+            <field>ClassName__c</field>
+            <value>
+                <stringValue>TaskAfterSave</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ExceptionMessage__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LogLevel__c</field>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Response__c</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Timestamp__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>updateAccount</name>
+        <label>updateAccount</label>
+        <locationX>446</locationX>
+        <locationY>1295</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Create_Logs_Records</targetReference>
+        </faultConnector>
+        <inputReference>AccountInstance</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updating Last Call field with completion date &amp; time</description>
+        <name>updateContact</name>
+        <label>updateContact</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>updateAccount</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Create_Logs_Records</targetReference>
+        </faultConnector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhoId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Related_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Last_Call__c</field>
+            <value>
+                <elementReference>$Record.CompletedDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <start>
+        <locationX>1145</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_User_Entry_Criteria</targetReference>
+        </connector>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>AccountInstance</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>

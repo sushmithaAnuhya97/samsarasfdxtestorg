@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DocumentStatus__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Status of the billing document. The status can be Draft or Complete. When the status is complete, you can only edit the Document Due Date, Customer Reference and Description.</description>
+    <inlineHelpText>Status of the billing document. The status can be Draft or Complete. When the status is complete, you can only edit the Document Due Date, Customer Reference and Description.</inlineHelpText>
+    <label>Document Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>true</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Ready for Review</fullName>
+                <default>false</default>
+                <label>Ready for Review</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Discarded</fullName>
+                <default>false</default>
+                <label>Discarded</label>
+            </value>
+            <value>
+                <fullName>Superseded</fullName>
+                <default>false</default>
+                <label>Superseded</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

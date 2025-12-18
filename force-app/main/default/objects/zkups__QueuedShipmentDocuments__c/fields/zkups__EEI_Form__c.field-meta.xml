@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__EEI_Form__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>UPS EEI Form</label>
+    <referenceTo>zkups__UPSSEDForm__c</referenceTo>
+    <relationshipLabel>UPS Queued Shipment Documents</relationshipLabel>
+    <relationshipName>UPS_Queued_Shipment_Documents</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

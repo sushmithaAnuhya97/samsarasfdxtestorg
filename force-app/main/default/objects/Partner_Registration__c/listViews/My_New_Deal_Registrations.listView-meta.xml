@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_New_Deal_Registrations</fullName>
+    <columns>NAME</columns>
+    <columns>Company__c</columns>
+    <columns>Partner_Account__c</columns>
+    <columns>Partner_Contact__c</columns>
+    <columns>Status__c</columns>
+    <columns>CR__c</columns>
+    <columns>AE_Outcome__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Partner_Registration__c.Deal_Registration</value>
+    </filters>
+    <label>My New Deal Registrations</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

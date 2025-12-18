@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Check_In_email__c</fullName>
+    <description>This formula checks if all required fields are populated and if a mid-implementation communication hasn&apos;t been sent. If the project is &apos;Core&apos; and it&apos;s the 45th day after the start date, or if it&apos;s &apos;Select&apos; or &apos;Strategic&apos; and it&apos;s the 90th day after the start date, it returns &apos;Send Check-In Email&apos;; otherwise, it returns blank</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        NOT(ISBLANK(Project_Point_of_Contact_txt__c)),
+        NOT(ISBLANK(Project_POC_Email_Address__c)),
+        NOT(ISBLANK(IC_Manager_Email__c)),
+        NOT(Mid_Imp_CI_Email_Sent__c),
+        OR(
+            AND(
+                ISPICKVAL(Project_Level__c, &quot;Core&quot;),
+                TODAY() == (pse__Start_Date__c + 45)
+            ),
+            AND(
+                OR(
+                    ISPICKVAL(Project_Level__c, &quot;Select&quot;),
+                    ISPICKVAL(Project_Level__c, &quot;Strategic&quot;)
+                ),
+                TODAY() == (pse__Start_Date__c + 90)
+            )
+        )
+    ),
+    &quot;Send Check-In Email&quot;,
+    &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Send Check-In email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

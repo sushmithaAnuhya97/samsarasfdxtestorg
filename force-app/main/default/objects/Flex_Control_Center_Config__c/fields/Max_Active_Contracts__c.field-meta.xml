@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Active_Contracts__c</fullName>
+    <description>Max allowed active contracts</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maximum number of active Contracts against the Account that can meet the criteria. If the number of active Contracts is greater than this value, the user will not be able to kickstart the C&amp;R process.</inlineHelpText>
+    <label>Max Active Contracts</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

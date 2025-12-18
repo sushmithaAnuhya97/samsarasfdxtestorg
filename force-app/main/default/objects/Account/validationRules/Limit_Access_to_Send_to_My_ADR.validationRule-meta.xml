@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limit_Access_to_Send_to_My_ADR</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(
+  AND(
+    ISCHANGED(Send_to_My_ADR__c),
+    PRIORVALUE(Send_to_My_ADR__c)=FALSE,
+    OR(
+      ISPICKVAL(Owner.Level__c , &quot;AE 3&quot;),
+      ISPICKVAL(Owner.Level__c, &quot;Enterprise AE&quot;),
+      ISPICKVAL(Owner.Level__c, &quot;Major AE&quot;)
+      ) = FALSE
+    ),
+true,
+IF(
+  AND(
+    ISCHANGED(Send_to_My_ADR__c),
+    PRIORVALUE(Send_to_My_ADR__c)=FALSE,
+    ISBLANK(Owner.ADR_Assignment__c)
+  ),
+    true,
+    false
+  )
+)</errorConditionFormula>
+    <errorMessage>This feature is only available to AE3, Enterprise AE, and Major AE users. If you believe this is an error, please reach out to Sales Ops.</errorMessage>
+</ValidationRule>

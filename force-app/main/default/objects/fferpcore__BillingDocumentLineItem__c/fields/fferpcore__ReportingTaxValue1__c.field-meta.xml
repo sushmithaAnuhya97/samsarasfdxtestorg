@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ReportingTaxValue1__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Tax Value 1 of the corresponding Tax Rate based on the Document Type of the billing document. If the billing document is an invoice, the value is the same as Tax Value 1. If the document is a credit note, the value is calculated using the formula: Tax Value 1 * -1.</description>
+    <externalId>false</externalId>
+    <formula>IF (ISPICKVAL(fferpcore__BillingDocument__r.fferpcore__DocumentType__c, &quot;Credit Note&quot;),  fferpcore__TaxValue1__c * -1, fferpcore__TaxValue1__c)</formula>
+    <inlineHelpText>Tax Value 1 of the corresponding Tax Rate based on the Document Type of the billing document.</inlineHelpText>
+    <label>Reporting Tax Value 1</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

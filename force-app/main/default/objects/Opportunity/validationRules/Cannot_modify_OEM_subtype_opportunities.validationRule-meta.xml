@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_modify_OEM_subtype_opportunities</fullName>
+    <active>true</active>
+    <description>Restrict modification of Opportunities with the &apos;3PL to OEM&apos; or &apos;OEM to Customer Delivery&apos; subtypes to users with the &apos;Sales Operations&apos; or &apos;Order Operations&apos; profiles.</description>
+    <errorConditionFormula>AND(
+  NOT(ISNEW()),
+  OR(
+    ISPICKVAL(Sub_Type__c, &quot;3PL to OEM transfer&quot;),
+    ISPICKVAL(Sub_Type__c, &quot;OEM to Customer Delivery&quot;)
+  ),
+  NOT(
+    OR(
+      $Profile.Name = &quot;Sales Ops Profile&quot;,
+      $Profile.Name = &quot;Order Operations Admin&quot;,
+      $Profile.Name = &quot;Samsara - Finance&quot;
+    )
+  ),
+  NOT(
+    OR(
+      $Permission.Validation_Rule_Exemption,
+      $Permission.Validation_Exemption_Opportunity,
+      $Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c,
+      $Permission.NetSuite_Service_User_Permission
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Only users in the &apos;Sales Operations&apos; or &apos;Order Operations&apos; profiles can modify &apos;3PL to OEM transfer&apos; or &apos;OEM to Customer delivery&apos; subtype opportunities.</errorMessage>
+</ValidationRule>

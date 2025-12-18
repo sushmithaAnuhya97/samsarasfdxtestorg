@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CantMoveToClosingIfPrimQuoteNotPresent</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    of_HW_Products__c &gt; 0,
+    OR(
+        ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;),
+        ISPICKVAL(Type, &quot;Free Trial Return&quot;)
+    ),
+    OR(
+        AND(Probability &gt;= 0.95, ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;)),
+        AND(Probability &gt;= 0.25, ISPICKVAL(Type, &quot;Free Trial Return&quot;))
+    ),
+ISBLANK(SBQQ__PrimaryQuote__c),
+DATEVALUE(CreatedDate) &gt;=  DATE(2023,08,12), 
+    NOT($Permission.Validation_Rule_Exemption)
+)</errorConditionFormula>
+    <errorMessage>Primary quote is not present, please mark the quote as primary to move this opportunity into closing.</errorMessage>
+</ValidationRule>

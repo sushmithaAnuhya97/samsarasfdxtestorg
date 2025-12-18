@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__SObjectField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A Salesforce field that relates to the object specified and is used by the configuration item&apos;s processes. Defining the field ensures that it cannot be deleted.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>A Salesforce field that relates to the object specified and is used by the configuration item&apos;s processes. Defining the field ensures that it cannot be deleted.</inlineHelpText>
+    <label>Field</label>
+    <metadataRelationshipControllingField>fferpcore__ConfigurationItem__mdt.fferpcore__SObjectType__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>Certinia_Configuration_Items</relationshipLabel>
+    <relationshipName>FinancialForce_Configuration_Items</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

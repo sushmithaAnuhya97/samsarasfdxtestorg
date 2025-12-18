@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gong__Participant_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(Gong__Contact_Participant__c) , 
+	IF( ISBLANK(Gong__Lead_Participant__c) , 
+		IF( ISBLANK(Gong__User_Participant__c) , &quot;Unknown&quot;, &quot;User&quot;),
+			&quot;Lead&quot;), &quot;Contact&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Participant Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

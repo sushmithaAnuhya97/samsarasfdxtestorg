@@ -1,0 +1,466 @@
+<!-- 2/23/2021 Ron Saavedra (GTMS-3023): Remove GW product from listing in the customer reference map -->
+
+<apex:page standardController="Account" extensions="DealMapControllerExtension,GoogleMapAccQueryExt">
+  <apex:form >
+    <apex:outputLabel value="Min Deal Size: "/>
+    <apex:inputText value="{!minString}" id="minInput"/>
+    <apex:outputLabel value="Max Deal Size: "/>
+    <apex:inputText value="{!maxString}" id="maxInput"/>
+    <apex:commandButton action="{!doSubmit}" value="Submit" id="theButton"/>
+  </apex:form>
+  <apex:form id="userForm">
+    <apex:inputHidden value="{!userId}" id="currUser"/>
+    <apex:commandButton action="{!defaultShow}" value="Show map by default" id="showButton"/>
+    <apex:commandButton action="{!defaultHide}" value="Hide map by default" id="hideButton"/>
+  </apex:form>
+<apex:pageBlock id="dealsMap">
+<head>
+<input id="show-map" type="button" value="Show Map" onclick="loadMap();"/>
+<script>
+    function myMap() {}
+</script> 
+ 
+<script>function setFocusOnLoad() {}</script>
+<script src="../../soap/ajax/40.0/connection.js" type="text/javascript"></script>
+    <script src="../../soap/ajax/52.0/connection.js" type="text/javascript"></script>
+    <script src="../../soap/ajax/52.0/apex.js" type="text/javascript"></script>
+<script async="async" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaIkI5TyCnKCs9RYsRHnBtNbygGolouDI&callback=myMap" type="text/javascript"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+<script aync="aysnc" type="text/javascript"> 
+
+
+// Global vars
+var id_name={}
+var id_amount={}
+var id_vg={}
+var id_em={}
+var id_cm={}
+var id_ag={}
+var id_industry={}
+var id_latitude={}
+var id_longitude={}
+var id_purchase={}
+var map;
+var marker;
+var infoWindows = []; 
+// End global vars
+
+
+function initMap() {
+  // Init geocoder/info window and build address
+  var geocoder = new google.maps.Geocoder();
+  var address = "{!Account.BillingStreet}, " + "{!Account.BillingCity}, " + "{!Account.BillingPostalCode}";
+  var infowindow = new google.maps.InfoWindow({
+  content: "<b>{!Account.Name}</b>"});
+  var myOptions = {
+    zoom: 7,
+    mapTypeId: 'roadmap',
+    mapTypeControl: true,
+    zoomControl: true,
+    zoomControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_CENTER
+    }
+  }
+
+  geocoder.geocode( { address: address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK && results.length && status!= google.maps.GeocoderStatus.ZERO_RESULTS) { 
+      //create map
+      map = new google.maps.Map(document.getElementById("map"), myOptions); 
+      //center map
+      map.setCenter(results[0].geometry.location);   
+      var pinColor = "0000ff";
+      var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+      new google.maps.Size(21, 34),
+      new google.maps.Point(0,0),
+      new google.maps.Point(10, 34));   
+      //create marker
+      marker = new google.maps.Marker({
+          position: results[0].geometry.location,
+          map: map,
+          title: "{!Account.Name}",
+          icon: pinImage,
+          zIndex: 9999 
+      });
+      //infowindow.open(map,marker);
+      //add listeners
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
+      google.maps.event.addListener(infowindow, 'closeclick', function() {
+        map.setCenter(marker.getPosition()); 
+      });
+      
+    } else {
+      $('#map').css({'height' : '15px'});
+      $('#map').html("Oops! {!Account.Name}'s address could not be found, please make sure the address is correct.");
+      resizeIframe();
+    }
+  });
+}
+
+  
+function resizeIframe() {
+  var me = window.name;
+  if (me) {
+    var iframes = parent.document.getElementsByName(me);
+    if (iframes && iframes.length == 1) {
+      height = document.body.offsetHeight;
+      iframes[0].style.height = height + "px";
+    }
+  }
+}
+
+  
+function CallRestService(request) {
+    var script = document.createElement("script");
+    script.setAttribute("type", "text/javascript");
+    script.setAttribute("src", request);
+    document.body.appendChild(script);
+}
+
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+function setMarker(oppty_id, enterpriseTrue)
+{
+
+    var latitude = parseFloat(id_latitude[oppty_id]);
+    var longitude = parseFloat(id_longitude[oppty_id]);
+        
+    if(latitude!=0 && longitude!=0){
+    
+        //var address = result['resourceSets'][0]['resources'][0]['name'];
+
+        str1 = JSON.stringify(id_name);
+        
+        var pinColor1 = "008000";
+        var pinColor3 = "ff6e00";
+        var pinColor2 = "ffff00";
+        
+        var pinImage1 = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor1,
+                        new google.maps.Size(21, 34),
+                        new google.maps.Point(0,0),
+                        new google.maps.Point(10, 34));
+        var pinImage2 = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor2,
+                        new google.maps.Size(21, 34),
+                        new google.maps.Point(0,0),
+                        new google.maps.Point(10, 34));
+        var pinImage3 = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor3,
+                        new google.maps.Size(21, 34),
+                        new google.maps.Point(0,0),
+                        new google.maps.Point(10, 34));
+
+                        
+
+        var marker = null;
+        
+        var account_industry="{!Account.Industry}";
+
+        if(!id_purchase[oppty_id]) {
+            marker = new google.maps.Marker({
+            map: map,
+            position: {lat: latitude, lng: longitude},
+            title: 'Hello World!',
+            icon: pinImage1,
+            zIndex: 3000 
+            });
+        }
+        
+        else if(id_ag[oppty_id]>0) {
+            marker = new google.maps.Marker({
+            map: map,
+            position: {lat: latitude, lng: longitude},
+            title: 'Hello World!',
+            icon: pinImage2,
+            zIndex: 3000 
+            });
+        }
+        
+        else if(id_industry[oppty_id]==account_industry && account_industry!='Unknown' && account_industry!='Other'){
+            marker = new google.maps.Marker({
+            map: map,
+            position: {lat: latitude, lng: longitude},
+            title: 'Hello World!',
+            icon: pinImage3,
+            zIndex: 3000 
+        });
+        }
+        
+        else{
+            marker = new google.maps.Marker({
+            map: map,
+            position: {lat: latitude, lng: longitude},
+            title: 'Hello World!'
+            });
+        }
+
+        var contentString = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<a href="https://samsara.my.salesforce.com/'+oppty_id+'" target="_blank"><h1 id="firstHeading" class="firstHeading">'+id_name[oppty_id]+' (view profile)</h1></a>'+
+                    '</br>'+
+                    '</br>'+
+                    '<div id="bodyContent">'+
+                    '<h2>Total Amount : $'+numberWithCommas(parseInt(id_amount[oppty_id]))+'</h2>'+
+                    '</br>'+
+                    '<h2>Industry: '+id_industry[oppty_id]+'</h2>'+
+                    '</br>';
+                    
+          if(parseInt(id_vg[oppty_id])>0){
+              contentString=contentString+'<h2>VGs purchased: '+parseInt(id_vg[oppty_id])+'</h2>'+'</br>';
+          }
+          if(parseInt(id_em[oppty_id])>0){
+              contentString=contentString+'<h2>EMs purchased: '+parseInt(id_em[oppty_id])+'</h2>'+'</br>';
+          }
+          if(parseInt(id_cm[oppty_id])>0){
+              contentString=contentString+'<h2>CMs purchased: '+parseInt(id_cm[oppty_id])+'</h2>'+'</br>';
+          }
+
+          if(parseInt(id_ag[oppty_id])>0){
+              contentString=contentString+'<h2>AGs purchased: '+parseInt(id_ag[oppty_id])+'</h2>'+'</br>';
+          }
+
+          var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+
+          infoWindows.push(infowindow);
+
+          marker.addListener('mouseover', function() {
+            for (var i=0;i<infoWindows.length;i++) {
+                 infoWindows[i].close();
+            }
+
+            infowindow.open(map, marker);
+          });
+
+          marker.addListener('click', function() {
+                for (var i=0;i<infoWindows.length;i++) {
+                     infoWindows[i].close();
+                }
+            infowindow.open(map, marker);
+          });
+
+          marker.addListener('mouseout', function() {
+            for (var i=0; i<infoWindows.length; i++) {
+              infoWindows[i].close();
+            }
+          });
+      }
+}
+
+
+function loadPins(resultRec, enterpriseTrue) {
+    // Check if result passed in is a single var or array
+    if (!(resultRec instanceof Array)) {
+        var resultRec = [resultRec];
+    }
+    // Update for all accounts
+    console.log("resultRec.length --> "+resultRec.length);
+    for (var i = 0; i < resultRec.length; i++){
+        
+        // Instantiate some vars
+        var currId = resultRec[i]['Id'];
+        var name = resultRec[i]['Name'];
+        // Instantiate variables to fix later
+        var address="";
+        var latitude=0;
+        var longitude=0;
+        var vg=0;
+        var em=0;
+        var cm=0;
+        var ag=0;
+        var industry="Other";
+        var madePurchase = false;
+        
+        if(resultRec[i]['BillingStreet']){
+            address=address+resultRec[i]['BillingStreet']+" "
+        }
+        if(resultRec[i]['BillingCity']){
+            address=address+resultRec[i].BillingCity +" "
+        }
+        if(resultRec[i]['BillingPostalCode']){
+            address=address+resultRec[i]['BillingPostalCode']
+        }
+
+        if(resultRec[i]['Latitude__c']){
+            latitude=resultRec[i]['Latitude__c'];
+        }
+        
+        if(resultRec[i]['Longitude__c']){
+            longitude=resultRec[i]['Longitude__c'];
+        }
+
+        if(resultRec[i]['First_Purchase_Date__c'] != null) {
+            madePurchase = true;
+        }
+
+        // Field updates for only non-enterprise
+        if (!enterpriseTrue) {
+
+            if(resultRec[i]['Total_Purchased_VG_Count__c']){
+                vg=resultRec[i]['Total_Purchased_VG_Count__c'];
+            }
+            
+            if(resultRec[i]['Total_Purchased_EM_Count__c']){
+                em=resultRec[i]['Total_Purchased_EM_Count__c'];
+            }
+            
+            if(resultRec[i]['Total_Purchased_CM_Count__c']){
+                cm=resultRec[i]['Total_Purchased_CM_Count__c'];
+            }
+            
+            if(resultRec[i]['Total_Purchased_AG_Count__c']){
+                ag=resultRec[i]['Total_Purchased_AG_Count__c'];
+            }
+            
+            if(resultRec[i]['Industry']){
+                industry=resultRec[i]['Industry'];
+            }
+        }
+
+        id_name[currId] = name;
+        id_amount[currId] = resultRec[i]['Lifetime_Purchases__c'];
+        id_vg[currId] = vg;
+        id_em[currId] = em;
+        id_cm[currId] = cm;
+        id_ag[currId] = ag;
+        id_industry[currId] = industry;
+        id_latitude[currId] = latitude;
+        id_longitude[currId] = longitude;
+        id_purchase[currId] = madePurchase;
+
+        // Add pin
+        setMarker(currId, enterpriseTrue);
+    }
+}
+
+
+function loadMap() {
+  initMap();
+  sforce.connection.sessionId='{!GETSESSIONID()}';
+  // Find if current user role is enterprise
+  var currUser = sforce.connection.query("SELECT Name, UserRole.Name FROM User WHERE Id = '{!$User.Id}' LIMIT 1");
+  var currName = '\'' + currUser['records']['Name'] + '\'';
+  var currRole = currUser['records']['UserRole']['Name'];
+  var isEnterprise = currRole.includes("Enterprise") && !currRole.includes("ADR");
+  var result;
+  var resultTemp;
+  var maxLat = ({!Account.Latitude__c} + 4).toString();
+  var minLat = ({!Account.Latitude__c} - 4).toString();
+  var maxLong = ({!Account.Longitude__c} + 6).toString();
+  var minLong = ({!Account.Longitude__c} - 6).toString();
+
+  industry_qry = "SELECT Id, Name, Lifetime_Purchases__c, \
+                  BillingStreet, BillingCity, BillingPostalCode, \
+                  First_Purchase_Date__c, Total_Purchased_VG_Count__c, \
+                  Total_Purchased_EM_Count__c, \
+                  Total_Purchased_AG_Count__c, Total_Purchased_CM_Count__c, \
+                  Industry, Latitude__c, Longitude__c \
+                  FROM Account \
+                  WHERE First_Purchase_Date__c<>null \
+                  AND Industry = '{!Account.Industry}' \
+                  AND Lifetime_Purchases__c >= {!minInt} \
+                  AND Lifetime_Purchases__c <= {!maxInt} \
+                  ORDER BY Lifetime_Purchases__c DESC";
+
+  locl_query = "SELECT Id, Name, Lifetime_Purchases__c, \
+                BillingStreet, BillingCity, BillingPostalCode, \
+                First_Purchase_Date__c, Total_Purchased_VG_Count__c, \
+                Total_Purchased_EM_Count__c, \
+                Total_Purchased_AG_Count__c, Total_Purchased_CM_Count__c, \
+                Industry, Latitude__c, Longitude__c \
+                FROM Account \
+                WHERE (First_Purchase_Date__c<>null \
+                OR Owner.Name = "+currName+") \
+                AND Latitude__c <= "+maxLat+" \
+                AND Latitude__c >= "+minLat+" \
+                AND Longitude__c <= "+maxLong+" \
+                AND Longitude__c >= "+minLong+" \
+                AND Lifetime_Purchases__c >= {!minInt} \
+                AND Lifetime_Purchases__c <= {!maxInt}";
+
+  enterprise_query = "SELECT Id, Name, BillingStreet, \
+                      BillingCity, BillingPostalCode, First_Purchase_Date__c, \
+                      Latitude__c, Longitude__c, Lifetime_Purchases__c \
+                      FROM Account \
+                      WHERE (Account.Owner.UserRole.Name LIKE '%Enterprise%' \
+                      OR Organization_Size__c='1000 - 4999' \
+                      OR Organization_Size__c='5000+' ) \
+                      AND (NOT Owner.UserRole.Name LIKE '%Industrial%') \
+                      AND (NOT Owner.UserRole.Name LIKE '%Major Accounts%') \
+                      AND Lifetime_Purchases__c >= {!minInt} \
+                      AND Lifetime_Purchases__c <= {!maxInt}";
+    
+  setTimeout(function(){
+      //debugger;
+      if (isEnterprise) {
+          result = sforce.apex.execute('GoogleMapAccQueryExt','getAccounts',{query:enterprise_query});
+          loadPins(result, true);
+      }
+
+      else {
+          resultTempEA = sforce.apex.execute('GoogleMapAccQueryExt','getAccounts',{query:industry_qry});
+          resultEA = sforce.apex.execute('GoogleMapAccQueryExt','getAccounts',{query:locl_query});
+          resultTempEA.push(resultEA);
+          loadPins(resultTempEA, false);
+      }
+      
+      //if the pins have not loaded yet, set another timeout
+      if(infoWindows.length<2){
+          setTimeout(function(){
+            if (isEnterprise) {
+                result = sforce.apex.execute("GoogleMapAccQueryExt","getAccounts", {query:enterprise_query});
+                loadPins(result, true);
+            }
+
+            else {
+                resultTempEA = sforce.apex.execute('GoogleMapAccQueryExt','getAccounts',{query:industry_qry});
+          		resultEA = sforce.apex.execute('GoogleMapAccQueryExt','getAccounts',{query:locl_query});
+                resultTempEA.push(resultEA);
+                loadPins(resultTempEA, false);
+            }}, 2500);
+      }
+      
+      }, 1500);
+}
+
+
+// Load map if user has default load map selected
+$(document).ready(function() {
+  document.getElementById("{!$Component.userForm.currUser}").value = "{!$User.Id}";
+  sforce.connection.sessionId='{!GETSESSIONID()}';
+  var user = sforce.connection.query("SELECT map_default__c FROM User WHERE Id = '{!$User.Id}' LIMIT 1")['records']
+  if(user.map_default__c == 'true') {
+    loadMap();
+  }
+} );
+
+           
+</script>
+ 
+<style>
+#map {
+  font-family: Arial;
+  font-size:12px;
+  line-height:normal !important;
+  height:500px;
+  background:transparent;
+}
+</style>
+ 
+</head>
+ 
+<body>
+<div id="map">
+
+
+
+</div> 
+</body> 
+
+</apex:pageBlock>
+</apex:page>

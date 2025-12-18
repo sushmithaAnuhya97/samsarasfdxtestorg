@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SHOWPAD_ACTIVITY_CLONE_DON_T_EDIT</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ShowpadForSF__Showpad_Activity_Count__c</columns>
+    <columns>Status__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>Account.Last_Contacted__c</columns>
+    <columns>Last_Call__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>Inbound_Form_Message__c</columns>
+    <columns>First_Touch_Campaign__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>James Allman,Ryan Harrison</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.OWNER.ALIAS</field>
+        <operation>equals</operation>
+        <value>jhack,jallm,rharr</value>
+    </filters>
+    <filters>
+        <field>ShowpadForSF__Showpad_Activity_Count__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Account.Status__c</field>
+        <operation>notEqual</operation>
+        <value>existing customer</value>
+    </filters>
+    <label>SHOWPAD ACTIVITY CLONE (DON&apos;T EDIT)</label>
+</ListView>

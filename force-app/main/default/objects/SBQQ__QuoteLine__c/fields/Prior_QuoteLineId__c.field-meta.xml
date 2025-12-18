@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prior_QuoteLineId__c</fullName>
+    <description>This field will be used by Mulesoft to find the unique quote line for remorse refund process.</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID(SBQQ__UpgradedSubscription__r.SBQQ__QuoteLine__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Prior QuoteLineId</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

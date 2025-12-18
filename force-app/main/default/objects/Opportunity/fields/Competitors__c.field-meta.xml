@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitors__c</fullName>
+    <description>Industrial Competitors</description>
+    <inlineHelpText>Please select a competitor the account is currently using.</inlineHelpText>
+    <label>Competitors</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Allen Bradley</fullName>
+                <default>false</default>
+                <label>Allen Bradley</label>
+            </value>
+            <value>
+                <fullName>General Electric</fullName>
+                <default>false</default>
+                <label>General Electric</label>
+            </value>
+            <value>
+                <fullName>Honeywell</fullName>
+                <default>false</default>
+                <label>Honeywell</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Schneider Electric</fullName>
+                <default>false</default>
+                <label>Schneider Electric</label>
+            </value>
+            <value>
+                <fullName>Siemens</fullName>
+                <default>false</default>
+                <label>Siemens</label>
+            </value>
+            <value>
+                <fullName>Wonderware</fullName>
+                <default>false</default>
+                <label>Wonderware</label>
+            </value>
+            <value>
+                <fullName>Keyence</fullName>
+                <default>false</default>
+                <label>Keyence</label>
+            </value>
+            <value>
+                <fullName>Cognex</fullName>
+                <default>false</default>
+                <label>Cognex</label>
+            </value>
+            <value>
+                <fullName>Banner</fullName>
+                <default>false</default>
+                <label>Banner</label>
+            </value>
+            <value>
+                <fullName>Sick</fullName>
+                <default>false</default>
+                <label>Sick</label>
+            </value>
+            <value>
+                <fullName>MicroScan</fullName>
+                <default>false</default>
+                <label>MicroScan</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

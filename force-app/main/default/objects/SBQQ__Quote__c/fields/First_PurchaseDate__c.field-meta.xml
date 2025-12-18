@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_PurchaseDate__c</fullName>
+    <description>Earlier First Purchase Date was Populated from the Account via Trigger.
+Created part of P&amp;P 0.5 Project (Pilot Release). Now we have moved to the formula field. This field will be used for P&amp;P CPQ configs.</description>
+    <formula>SBQQ__Account__r.First_Purchase_Date__c</formula>
+    <label>First Purchase Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

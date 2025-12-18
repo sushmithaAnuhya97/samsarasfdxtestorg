@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status__c</fullName>
+    <inlineHelpText>Used in the web store to pull products that are available for new and existing customers</inlineHelpText>
+    <label>Product Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Early Access</fullName>
+                <default>false</default>
+                <label>Early Access</label>
+            </value>
+            <value>
+                <fullName>GA</fullName>
+                <default>false</default>
+                <label>GA</label>
+            </value>
+            <value>
+                <fullName>Low Stock</fullName>
+                <default>false</default>
+                <label>Low Stock</label>
+            </value>
+            <value>
+                <fullName>Out of Stock</fullName>
+                <default>false</default>
+                <label>Out of Stock</label>
+            </value>
+            <value>
+                <fullName>EOL</fullName>
+                <default>false</default>
+                <label>EOL</label>
+            </value>
+            <value>
+                <fullName>Beta</fullName>
+                <default>false</default>
+                <label>Beta</label>
+            </value>
+            <value>
+                <fullName>Development</fullName>
+                <default>false</default>
+                <label>Development</label>
+            </value>
+            <value>
+                <fullName>Production</fullName>
+                <default>false</default>
+                <label>Production</label>
+            </value>
+            <value>
+                <fullName>EOP</fullName>
+                <default>false</default>
+                <label>EOP</label>
+            </value>
+            <value>
+                <fullName>End of Sale</fullName>
+                <default>false</default>
+                <label>End of Sale</label>
+            </value>
+            <value>
+                <fullName>Early Access/Beta</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Early Access/Beta</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

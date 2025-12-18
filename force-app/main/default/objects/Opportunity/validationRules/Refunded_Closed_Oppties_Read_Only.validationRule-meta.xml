@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refunded_Closed_Oppties_Read_Only</fullName>
+    <active>true</active>
+    <description>GTMS-16271</description>
+    <errorConditionFormula>AND (
+NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+NOT(CONTAINS($Profile.Name,&quot;Samsara SE&quot;)),
+$Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator API&quot;,
+$User.X18_Digit_User_ID__c &lt;&gt; &quot;0051a000003CHaNAAW&quot;,
+$User.X18_Digit_User_ID__c &lt;&gt; &quot;0051a000002mEcDAAU&quot;,
+$User.X18_Digit_User_ID__c &lt;&gt; &quot;0054p000003nCiuAAE&quot;,
+$User.X18_Digit_User_ID__c &lt;&gt; &quot;0051P000003BleSQAS&quot;,
+$User.X18_Digit_User_ID__c &lt;&gt; &quot;0054p000004VVMwAAO&quot;,
+$User.X18_Digit_User_ID__c &lt;&gt; &quot;0055e000007rb4jAAA&quot;,
+NOT(ISCHANGED(Bypass_Validation_Rule_DateTime__c)),
+OR(AND(Ispickval(Type,&quot;Rebate&quot;), Not(ISCHANGED(Type)) ),Ispickval( PRIORVALUE(Type),&quot;Rebate&quot;)),
+OR(AND(Ispickval(StageName,&quot;Refunded - Closed&quot;), Not(ISCHANGED(StageName)) ),Ispickval( PRIORVALUE(StageName),&quot;Refunded - Closed&quot;))
+
+)</errorConditionFormula>
+    <errorMessage>Only Administrators can modify Refunded - Closed opportunities.</errorMessage>
+</ValidationRule>

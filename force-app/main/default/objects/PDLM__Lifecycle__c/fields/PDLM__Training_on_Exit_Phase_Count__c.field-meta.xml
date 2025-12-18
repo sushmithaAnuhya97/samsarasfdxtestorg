@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Training_on_Exit_Phase_Count__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>count how many phases have &quot;Trigger Training on Exit&quot; set</inlineHelpText>
+    <label>Training on Exit Phase Count</label>
+    <summaryFilterItems>
+        <field>PDLM__Phase__c.PDLM__Trigger_Training_on_Exit__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>PDLM__Phase__c.PDLM__Lifecycle__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

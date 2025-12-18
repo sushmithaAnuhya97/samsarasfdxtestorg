@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-22483: Created as part of Partner Application H2 project.</description>
+        <name>Activate_Existing_Partner_User</name>
+        <label>Activate Existing Partner User</label>
+        <locationX>4182</locationX>
+        <locationY>370</locationY>
+        <actionName>UserProvisioningService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>userIds</name>
+            <value>
+                <elementReference>Get_Partner_User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>UserProvisioningService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Sales_Program_Type</name>
+        <label>Assign Sales Program Type</label>
+        <locationX>2393</locationX>
+        <locationY>398</locationY>
+        <assignmentItems>
+            <assignToReference>PA_Sales_Program_Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Sales_Program_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Sales_Program_Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__r.Program_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>PAM_Approval_Check</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26936: Created as part of partners H1 project</description>
+        <name>Map_Account_Value_When_New_Prospect_and_Deactivated</name>
+        <label>Map Account Value When New Prospect and Deactivated</label>
+        <locationX>433</locationX>
+        <locationY>675</locationY>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Partner_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Authorization</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Partner_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Team_Alignment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Program_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sales_Program_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Partner_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26936: Created as part of partners H1 project</description>
+        <name>Map_Account_Value_When_Other_Partner_Status</name>
+        <label>Map Account Value When Other Partner Status</label>
+        <locationX>1458</locationX>
+        <locationY>931</locationY>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Partner_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Team_Alignment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Program_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sales_Program_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Partner_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26936: Created as part of partners H1 project</description>
+        <name>Map_Account_Value_When_Transacting_partner</name>
+        <label>Map Account Value When Transacting partner</label>
+        <locationX>1000</locationX>
+        <locationY>910</locationY>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Partner_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Team_Alignment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Program_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sales_Program_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Partner_Account</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Phase 2 to check Partner Team Alignment and Sales Program Type fields values on Account and Partner Registration record.</description>
+        <name>Account_Values_Check</name>
+        <label>Account Values Check</label>
+        <locationX>1280</locationX>
+        <locationY>803</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Values_Are_Different</name>
+            <conditionLogic>1 OR NOT(2)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Partner_Team_Alignment__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Program_Type__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.Partner_Program_Enrollment__r.SalesProgramType__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Map_Account_Value_When_Transacting_partner</targetReference>
+            </connector>
+            <label>Values Are Different</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Phase 2 to check Partner Team Alignment and Sales Program Type fields values on Account and Partner Registration record.</description>
+        <name>Account_Values_Check_1</name>
+        <label>Account Values Check</label>
+        <locationX>2029</locationX>
+        <locationY>802</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Values_Are_Different_1</name>
+            <conditionLogic>1 OR NOT(2)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Partner_Team_Alignment__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Program_Type__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.Partner_Program_Enrollment__r.SalesProgramType__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Map_Account_Value_When_Other_Partner_Status</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Values Are Different</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Contact_Check_in_PR</name>
+        <label>Contact Check in PR</label>
+        <locationX>3362</locationX>
+        <locationY>312</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_Contact_Value</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Partner_User</targetReference>
+            </connector>
+            <label>Has Contact Value</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Copy_1_of_New_Partner_Check_1</name>
+        <label>New Partner Check</label>
+        <locationX>2624</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>Get_Other_Contacts</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Prospect_Partner_1</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Lead_And_PR_Date_Check</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prospect</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Application</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Partner_Account_1</targetReference>
+            </connector>
+            <label>New Prospect Partner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Existing_User_Check</name>
+        <label>Existing User Check</label>
+        <locationX>3732</locationX>
+        <locationY>373</locationY>
+        <defaultConnector>
+            <targetReference>Create_Platform_Event</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Partner_User_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_User</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Partner_Active_Check</targetReference>
+            </connector>
+            <label>Partner User Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>New_Partner_Check</name>
+        <label>New Partner Check</label>
+        <locationX>792</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>Partner_Account_Status_Check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Prospect_Partner</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Lead_And_PR_Date_Check</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prospect</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Application</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Map_Account_Value_When_New_Prospect_and_Deactivated</targetReference>
+            </connector>
+            <label>New Prospect Partner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Other_Partner_Contacts_Exists_Check</name>
+        <label>Other Partner Contacts Exists Check</label>
+        <locationX>2822</locationX>
+        <locationY>803</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Other_Contacts_Does_Not_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Other_Contacts</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Partner_Account_1</targetReference>
+            </connector>
+            <label>Other Contacts Does Not Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>PAM_Approval_Check</name>
+        <label>PAM Approval Check</label>
+        <locationX>2137</locationX>
+        <locationY>479</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PAM_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by PAM</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by PAM</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Partner_Check</targetReference>
+            </connector>
+            <label>PAM Approved</label>
+        </rules>
+        <rules>
+            <name>PAM_Denied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_New_Partner_Check_1</targetReference>
+            </connector>
+            <label>PAM Denied</label>
+        </rules>
+        <rules>
+            <name>Approved_by_Leaders</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by Leaders</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by Leaders</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Partner_Account_Status</targetReference>
+            </connector>
+            <label>Approved by Leaders</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-25259: To check if Partner registration record was approved by PAM for all type of Partner Registrations</description>
+        <name>PAM_Approval_Check_1</name>
+        <label>PAM Approval Check</label>
+        <locationX>2496</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Partner_Application_Check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Approved_By_PAM</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR (4 AND 5 AND 6 AND 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by PAM</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved by PAM</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>User_Authorization</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Partner_Contact</targetReference>
+            </connector>
+            <label>Approved By PAM For Partner Contact</label>
+        </rules>
+        <rules>
+            <name>Approved_By_PAM_For_Del_Reg</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deal_Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Channel_Contact</targetReference>
+            </connector>
+            <label>Approved By PAM For Del Reg</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Partner_Account_Status_Check</name>
+        <label>Partner Account Status Check</label>
+        <locationX>1535</locationX>
+        <locationY>698</locationY>
+        <defaultConnector>
+            <targetReference>Account_Values_Check_1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Transacting_Partner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transacting Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Account_Values_Check</targetReference>
+            </connector>
+            <label>Transacting Partner</label>
+        </rules>
+        <rules>
+            <name>Deactivated_Rejected</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deactivated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Map_Account_Value_When_New_Prospect_and_Deactivated</targetReference>
+            </connector>
+            <label>Deactivated/Rejected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Partner_Active_Check</name>
+        <label>Partner Active Check</label>
+        <locationX>3949</locationX>
+        <locationY>370</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_An_Active_Partner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_User.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Activate_Existing_Partner_User</targetReference>
+            </connector>
+            <label>Not An Active Partner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Partner_Application_Check</name>
+        <label>Partner Application Check</label>
+        <locationX>2770</locationX>
+        <locationY>364</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Partner_Application</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner_Application</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Sales_Program_Type</targetReference>
+            </connector>
+            <label>Partner Application</label>
+        </rules>
+        <rules>
+            <name>User_Authorization</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>User_Authorization</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PR_Approved_and_Transacting_Partner_Account_Check</targetReference>
+            </connector>
+            <label>User Authorization</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-25300: Created as part of Partner Application phase 2 project CR changes. To check if PR is approved by PAM and Partner Account is Transacting partner</description>
+        <name>PR_Approved_and_Transacting_Partner_Account_Check</name>
+        <label>PR Approved and Transacting Partner Account Check</label>
+        <locationX>3176</locationX>
+        <locationY>425</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PR_Approved_and_Transacting_Partner_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Partner_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transacting Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Contact_Check_in_PR</targetReference>
+            </connector>
+            <label>PR Approved and Transacting Partner Account</label>
+        </rules>
+    </decisions>
+    <description>GTMS-22483: Created as part of Partner Application Project
+GTMS-25300: Updated flow to add User creation path for User_Authorization recordtype
+GTMS-25259: Added Campaing To Add contact update on PAM approval.
+GTMS-26936: Update partner Program and Enrollment mapping</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Lead_And_PR_Date_Check</name>
+        <dataType>Boolean</dataType>
+        <expression>(DATEVALUE({!$Record.CreatedDate}) - DATEVALUE({!$Record.Partner_Account__r.CreatedDate})) == 0</expression>
+    </formulas>
+    <formulas>
+        <name>Sales_Program_Type</name>
+        <dataType>String</dataType>
+        <expression>IF(
+NOT(ISBLANK(TEXT({!$Record.Partner_Program_Enrollment__r.SalesProgramType__c}))),
+IF(
+CONTAINS({!Partner_Sales_Program_Type},TEXT({!$Record.Partner_Program_Enrollment__r.SalesProgramType__c})),
+{!Partner_Sales_Program_Type},
+{!Partner_Sales_Program_Type}+&apos;;&apos;+TEXT({!$Record.Partner_Program_Enrollment__r.SalesProgramType__c})
+),
+IF(
+NOT(ISBLANK({!$Record.Sales_Program_Type__c})),
+{!PA_Sales_Program_Type},
+{!Partner_Sales_Program_Type}
+)
+)</expression>
+    </formulas>
+    <interviewLabel>Partner Registration After Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Partner Registration After Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Platform_Event</name>
+        <label>Create Platform Event</label>
+        <locationX>3746</locationX>
+        <locationY>159</locationY>
+        <inputAssignments>
+            <field>Contact_Id__c</field>
+            <value>
+                <elementReference>$Record.Partner_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Process_Type__c</field>
+            <value>
+                <elementReference>$Label.Process_Type_For_User_Creation</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SubmitPartnerApplicationEvent__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Get_Other_Contacts</name>
+        <label>Get Other Contacts</label>
+        <locationX>2706</locationX>
+        <locationY>689</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Other_Partner_Contacts_Exists_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Contact__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Contact</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Get_Partner_User</name>
+        <label>Get Partner User</label>
+        <locationX>3572</locationX>
+        <locationY>374</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Existing_User_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Contact__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>IsActive</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-25259: Created to update the campaign Id for channel contact</description>
+        <name>Update_Channel_Contact</name>
+        <label>Update Channel Contact</label>
+        <locationX>2251</locationX>
+        <locationY>288</locationY>
+        <connector>
+            <targetReference>Partner_Application_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Campaign_to_Add__c</field>
+            <value>
+                <elementReference>$Label.Channel_Campaign_Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Update_Partner_Account</name>
+        <label>Update Partner Account</label>
+        <locationX>1116</locationX>
+        <locationY>1040</locationY>
+        <inputReference>Partner_Account_To_Update</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Update_Partner_Account_1</name>
+        <label>Update Partner Account</label>
+        <locationX>2426</locationX>
+        <locationY>696</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Partner_Status__c</field>
+            <value>
+                <stringValue>Rejected</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Update_Partner_Account_Status</name>
+        <label>Update Partner Account Status</label>
+        <locationX>3052</locationX>
+        <locationY>511</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Partner_Status__c</field>
+            <value>
+                <stringValue>Onboarding</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-25259: Created to update the campaign Id for partner contact</description>
+        <name>Update_Partner_Contact</name>
+        <label>Update Partner Contact</label>
+        <locationX>2752</locationX>
+        <locationY>233</locationY>
+        <connector>
+            <targetReference>Partner_Application_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Partner_Contact__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Campaign_to_Add__c</field>
+            <value>
+                <elementReference>$Label.Partner_Campaign_Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <start>
+        <locationX>2815</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>PAM_Approval_Check_1</targetReference>
+        </connector>
+        <object>Partner_Registration__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-22483: Created as part of Partner Application project to add Contact ids to the list</description>
+        <name>Contact_Id_List</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>PA_Sales_Program_Type</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-26936: Created as part of Partners H1 project</description>
+        <name>Partner_Account_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>Partner_Sales_Program_Type</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

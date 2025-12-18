@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Checks</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),NOT(Associated_Opportunity_Type__c == &apos;Promo Opportunity&apos;),
+NOT(Associated_Opportunity_Type__c == &apos;Free Trial Opportunity&apos;),
+NOT(Associated_Opportunity_Type__c == &apos;Free Trial Return&apos;),
+ISBLANK(TEXT(Selected_Payment_Type__c)), SBQQ__Primary__c == true)
+&amp;&amp;
+TEXT(Configuration_Segment__c) != &quot;Express&quot;
+&amp;&amp;
+TEXT (SBQQ__Type__c ) != &quot;Amendment&quot;
+
+&amp;&amp;
+
+TEXT (SBQQ__Type__c ) != &quot;Renewal&quot;
+&amp;&amp;
+!$Permission.Validation_Rule_Exemption</errorConditionFormula>
+    <errorMessage>Pick the &apos;Selected Payment Type&apos; before marking it as primary.</errorMessage>
+</ValidationRule>

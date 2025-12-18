@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Theme__c</fullName>
+    <label>Campaign Theme</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AOBRD to ELD</fullName>
+                <default>false</default>
+                <label>AOBRD to ELD</label>
+            </value>
+            <value>
+                <fullName>Run the Business</fullName>
+                <default>false</default>
+                <label>Run the Business</label>
+            </value>
+            <value>
+                <fullName>Safety</fullName>
+                <default>false</default>
+                <label>Safety</label>
+            </value>
+            <value>
+                <fullName>ELD Compliance</fullName>
+                <default>false</default>
+                <label>ELD Compliance</label>
+            </value>
+            <value>
+                <fullName>Re-engagement</fullName>
+                <default>false</default>
+                <label>Re-engagement</label>
+            </value>
+            <value>
+                <fullName>Asset Tracking</fullName>
+                <default>false</default>
+                <label>Asset Tracking</label>
+            </value>
+            <value>
+                <fullName>ABM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ABM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

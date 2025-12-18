@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_can_not_update_stage_to_closing</fullName>
+    <active>true</active>
+    <description>Sales Team with the following profiles should close the opportunity only by Submit to Closing button</description>
+    <errorConditionFormula>AND
+(
+NOT(SkipValidationRule__c),
+
+ISCHANGED(StageName),
+OR(
+(ISPICKVAL(StageName, &quot;Closing&quot;))
+),
+OR(
+$Profile.Name = &quot;Samsara Sales - NA AE1&quot;,
+$Profile.Name = &quot;Samsara Sales - NA ENT&quot;,
+$Profile.Name = &quot;Samsara Sales - NA US AE2&quot;,
+$Profile.Name = &quot;Samsara Sales - NA US AE3&quot;,
+$Profile.Name = &quot;Samsara Sales - Connected Worker CPQ&quot;,
+$Profile.Name = &quot;Samsara Industrial Sales - Field Services CPQ&quot;,
+$Profile.Name = &quot;Samsara Sales - Industrial Enterprise CPQ&quot;,
+$Profile.Name = &quot;Salesforce Sales - CPQ Mexico&quot;,
+$Profile.Name = &quot;Samsara Sales - Renewals - New System&quot;
+)
+)</errorConditionFormula>
+    <errorMessage>Please use the &quot;Submit to Closing&quot; button to submit this opportunity to closing.</errorMessage>
+</ValidationRule>

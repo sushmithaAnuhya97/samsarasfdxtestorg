@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Non_Billable_Incurred_Subtotal__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This formula adds any Non-Billable Incurred Tax (only if Incurred Tax Non-Billable is checked) to any additional Non-Billable Incurred Amount to get a Non-Billable Incurred Subtotal, with a minimum of 0.00 and a maximum of the Expense Amount.</description>
+    <formula>MIN(MAX((IF(ISNULL(pse__Non_Billable_Incurred_Amount__c),0.00,pse__Non_Billable_Incurred_Amount__c)+IF(OR(NOT(pse__Incurred_Tax_Non_Billable__c),ISNULL(pse__Incurred_Tax__c)),0.00,pse__Incurred_Tax__c)),0.00),MAX(pse__Amount__c,0.00))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This formula adds any Non-Billable Incurred Tax (only if Incurred Tax Non-Billable is checked) to any additional Non-Billable Incurred Amount to get a Non-Billable Incurred Subtotal, with a minimum of 0.00 and a maximum of the Expense Amount.</inlineHelpText>
+    <label>Non-Billable Incurred Subtotal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Deployment_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IMAGE( 
+CASE( FLODocs__Status__c, 
+&quot;Pending&quot;, &quot;/img/samples/flag_yellow.gif&quot;,
+&quot;InProgress&quot;, &quot;/img/samples/flag_yellow.gif&quot;,
+&quot;Succeeded&quot;, &quot;/img/samples/flag_green.gif&quot;,
+&quot;SucceededPartial&quot;, &quot;/img/samples/flag_green.gif&quot;,
+&quot;Failed&quot;, &quot;/img/samples/flag_red.gif&quot;,
+&quot;Canceling&quot;, &quot;/img/samples/flag_yellow.gif&quot;,
+&quot;Canceled&quot;, &quot;/img/samples/flag_red.gif&quot;,
+&quot;/s.gif&quot;), 
+&quot;Not Started&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Deployment Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

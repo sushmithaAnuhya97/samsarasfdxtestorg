@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kind_of_Vehicle__c</fullName>
+    <label>Kind of Vehicle</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tractor Trailer</fullName>
+                <default>false</default>
+                <label>Tractor Trailer</label>
+            </value>
+            <value>
+                <fullName>Box Truck</fullName>
+                <default>false</default>
+                <label>Box Truck</label>
+            </value>
+            <value>
+                <fullName>Flatbed</fullName>
+                <default>false</default>
+                <label>Flatbed</label>
+            </value>
+            <value>
+                <fullName>School Bus</fullName>
+                <default>false</default>
+                <label>School Bus</label>
+            </value>
+            <value>
+                <fullName>Motor Coach</fullName>
+                <default>false</default>
+                <label>Motor Coach</label>
+            </value>
+            <value>
+                <fullName>Shuttle Bus</fullName>
+                <default>false</default>
+                <label>Shuttle Bus</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Bus</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bus</label>
+            </value>
+            <value>
+                <fullName>Plane</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Plane</label>
+            </value>
+            <value>
+                <fullName>Ship</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ship</label>
+            </value>
+            <value>
+                <fullName>Truck</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Truck</label>
+            </value>
+            <value>
+                <fullName>Van</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Van</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

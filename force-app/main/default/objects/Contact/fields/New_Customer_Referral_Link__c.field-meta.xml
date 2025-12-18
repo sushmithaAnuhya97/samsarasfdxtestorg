@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Customer_Referral_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISNULL(Account.Latest_Active_Contract__c)), HYPERLINK(&apos;https://kb.samsara.com/hc/en-us/articles/4410040071309#UUID-1c7fcfc1-ea97-b379-5d7c-ace6326b0272&apos;, &apos;https://kb.samsara.com/hc/en-us/articles/4410040071309#UUID-1c7fcfc1-ea97-b379-5d7c-ace6326b0272&apos;), &apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>New Customer Referral Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

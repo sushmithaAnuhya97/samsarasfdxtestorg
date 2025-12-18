@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Affected_items_required_for_ECR_MCO_SS</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+   AND(
+        PDLM__Status_lk__r.Name  = &quot;In Review&quot;,
+       OR(
+           PDLM__Category__r.Name  = &quot;MCO - General&quot;,
+          PDLM__Category__r.Name  = &quot;MCO - Cost&quot;,
+          PDLM__Category__r.Name  = &quot;MCO - Firmware&quot;,
+          PDLM__Category__r.Name = &quot;Engineering Change Request (ECR)&quot;
+         ),
+       PDLM__Affected_Item_Counter__c =0
+     ),
+
+AND(
+     PDLM__Status_lk__r.Name = &quot;In Approval&quot;,
+     PDLM__Category__r.Name  = &quot;Deviation&quot;,
+     PDLM__Affected_Item_Counter__c =0
+   ),
+AND(
+     PDLM__Status_lk__r.Name = &quot;In Approval&quot;,
+     PDLM__Category__r.Name  = &quot;Stop Ship&quot;,
+     PDLM__Affected_Item_Counter__c =0
+   )
+)</errorConditionFormula>
+    <errorMessage>Please choose at least one Affected Item.</errorMessage>
+</ValidationRule>

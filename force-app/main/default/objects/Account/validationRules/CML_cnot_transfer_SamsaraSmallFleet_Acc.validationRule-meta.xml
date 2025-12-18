@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CML_cnot_transfer_SamsaraSmallFleet_Acc</fullName>
+    <active>false</active>
+    <description>Restrict CML Manager profiles (both CAN &amp; US) from being able to transfer accounts owned by “Samsara Small Fleets” into AE ownership</description>
+    <errorConditionFormula>AND(
+ ISCHANGED(OwnerId),
+ OR(PRIORVALUE(Owner_Name__c)= &quot;Samsara Small Fleets&quot;,
+    PRIORVALUE(Owner_Name__c)= &quot;SFDC Pool&quot;),
+ OR(
+  AND(CONTAINS($UserRole.DeveloperName, &quot;CML&quot;), 
+      CONTAINS($UserRole.DeveloperName, &quot;Manager&quot;)),
+  ($UserRole.DeveloperName = &quot;Fleet_IS_NA_US_Team_28_Manager&quot;)
+ )
+)</errorConditionFormula>
+    <errorMessage>Commercial Managers are not permitted to transfer accounts owned by Samsara Small Fleets or SFDC Pool. Please contact Sales Ops if you have any questions</errorMessage>
+</ValidationRule>

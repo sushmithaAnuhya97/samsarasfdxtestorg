@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Named_List_Requires_Added_by_and_Date</fullName>
+    <active>true</active>
+    <description>Named List Accounts require validation status complete, named list date added, and named list added by values.</description>
+    <errorConditionFormula>AND( 
+Named_List__c = TRUE, 
+ISCHANGED( Named_List__c ), 
+ISBLANK(TEXT(Named_List_Added_By__c)),
+ISBLANK(Named_List_Date__c) 
+)</errorConditionFormula>
+    <errorMessage>In order to check this box, there must be a value for &quot;Named List Added By&quot;, &quot;Named List Date Added&quot; and have a data validation status of &quot;Validation Complete&quot;</errorMessage>
+</ValidationRule>

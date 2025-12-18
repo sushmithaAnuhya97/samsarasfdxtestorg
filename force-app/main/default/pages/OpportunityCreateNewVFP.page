@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-27-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page standardController="Opportunity" recordSetVar="opps" action="{!validateOpportunity}" lightningStylesheets="true" extensions="OpportunityCreateNewVFP">
+ <apex:form >
+ <div style="width:70%;margin: auto;  text-align:center;">
+   <apex:pageblock >    
+    <apex:pageMessages ></apex:pageMessages>    
+    <apex:commandButton value="Back" oncomplete="doRedirect();"/>                
+            <script type="text/javascript">
+                function doRedirect(){
+                    window.history.back();
+                }
+			</script>
+       </apex:pageblock>
+    </div>
+     
+ </apex:form>
+</apex:page>

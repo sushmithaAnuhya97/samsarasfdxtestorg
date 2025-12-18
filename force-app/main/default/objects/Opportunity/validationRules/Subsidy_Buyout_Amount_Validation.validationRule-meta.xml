@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subsidy_Buyout_Amount_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(NOT(CONTAINS(Buyout_Subsidy_Validation__c, &quot;LETS GO&quot;)), OR(TEXT(StageName) == &apos;Decision&apos;,TEXT(StageName) == &apos;Purchase&apos;,TEXT(StageName) == &apos;Closing&apos;),  CPQ_Opportunity__c == true, NOT(ISCHANGED(SBQQ__PrimaryQuote__c)),  NOT(ISBLANK(SBQQ__PrimaryQuote__c)), NOT(ISCHANGED(Quote_Buyout_Amount__c)),NOT(ISCHANGED(Quote_Subsidy_Amount__c)), OR(NOT(ISBLANK(Quote_Subsidy_Amount__c)), NOT(ISBLANK(Quote_Buyout_Amount__c))))</errorConditionFormula>
+    <errorMessage>Please make sure quote buyout and/or quote subsidy values match with buyout/subsidy opportunity amounts</errorMessage>
+</ValidationRule>

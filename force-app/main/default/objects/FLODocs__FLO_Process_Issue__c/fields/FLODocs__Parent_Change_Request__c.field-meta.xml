@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Parent_Change_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is the change request that this issue was created from or is attached to.  It is filled in when a process issue is created to identify something that needs to be resolved or investigated or when a process issue is attached to a change request. Originating process issues (ie those that are converted into change requests) are tracked in the Originating Change Request field.</description>
+    <inlineHelpText>This is the change request associated with the issue.</inlineHelpText>
+    <label>Parent Change Request</label>
+    <referenceTo>FLODocs__FLO_Change_Request__c</referenceTo>
+    <relationshipName>FLO_Process_Issues</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

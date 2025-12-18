@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_UpdateWASD_opptyStage_aboveClosing</fullName>
+    <active>true</active>
+    <description>Users should not be able to update the Weighted Average Start Date on the Contract when the Renewal Opportunity is &gt;= Closing stage (probability &gt;=90%)
+(GTMS-23000)</description>
+    <errorConditionFormula>OR((AND(ISCHANGED(Weighted_Average_Start_Date__c), (SBQQ__RenewalOpportunity__r.Probability &gt; 0.90), NOT( $Permission.Validation_Rule_Exemption ),$Profile.Name &lt;&gt; &quot;System Administrator API&quot;,$Profile.Name &lt;&gt; &quot;System Administrator&quot;)),(AND(ISCHANGED(Weighted_Average_Start_Date__c), ISPICKVAL(SBQQ__RenewalOpportunity__r.StageName, &apos;Closed Won&apos;))))</errorConditionFormula>
+    <errorMessage>You cannot update Weighted Avg. Start Date once the Renewal Opportunity Stage is set to Closing or a future stage.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,214 @@
+.custom-table {
+    line-height: 1.2;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-container {
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 0.25rem;
+}
+.custom-combobox {
+    --sds-c-input-spacing-vertical: 0rem;  /* Minimize vertical padding */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+     /* Completely remove padding if needed */
+}
+
+/* Override padding for combobox dropdown */
+
+.slds-combobox__dropdown {
+    padding: 0 !important;  /* Remove padding from dropdown */
+}
+ 
+/* Adjust table padding (optional, if you're within a table) */
+
+.slds-table__cell {
+    padding: 0rem !important;  /* Reduce padding for table cells */
+}
+ 
+/* Optional: If there's a parent container with padding, remove it */
+
+.slds-card__body, .slds-page-header__row {
+    padding: 0 !important;  /* Remove padding from containers if needed */
+}
+ 
+ 
+.slds-combobox__input {
+    padding-top: 0rem !important;  /* Further minimize the top padding */
+    padding-bottom: 0rem !important;  /* Further minimize the bottom padding */
+}
+ 
+
+.circle-icon {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+}
+
+
+.input-style{
+    border-radius: 5px ;
+    border: 1px solid rgb(145, 145, 145);
+    width: 300px  ;
+    /* margin : 5px ;
+    padding: 2px; */
+    color: rgb(56, 56, 56);
+}
+
+.input-style-quantity{
+    border-radius: 5px ;
+    border: 1px solid rgb(145, 145, 145);
+    width: 100px  ;
+    /* margin : 5px ;
+    padding: 2px; */
+    color: rgb(56, 56, 56);
+}
+
+.error-class{
+    border: 1px solid red;
+    padding: 2px ;
+}
+
+.error-msg{
+    color: red;
+}
+
+.slds-combobox__input{
+    border: 0px solid !important;
+    
+
+}
+.slds-listbox{
+    overflow-y: scroll !important;
+    height: 15vh !important;
+}
+
+.slds-combobox__input{
+    border-radius: 2px !important;
+    border : 1px solid rgb(61, 61, 61)
+}
+
+
+  .custom-combobox .slds-dropdown_length-with-icon-10 {
+    position: relative;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    z-index: 9999 !important; 
+    
+}
+
+/* Custom toggle button with circle and triangle */
+.custom-toggle-button {
+    width: 1rem !important;
+    height: 1rem !important;
+    min-width: 1rem !important;
+    min-height: 1rem !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-color: #f3f2f2 !important;
+    border: 1px solid #706e6b !important;  /* Changed to a darker gray for better visibility */
+    transition: all 0.2s ease-in-out !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin: 0 0.5rem 0 0 !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+
+.custom-toggle-button:hover {
+    background-color: #eef1f6 !important;
+    border-color: #0070d2 !important;
+}
+
+.custom-toggle-button:focus {
+    box-shadow: 0 0 2px #0070d2 !important;
+    outline: none !important;
+}
+
+/* Circle container for toggle */
+.circle-container {
+    position: relative !important;
+    width: 1rem !important;
+    height: 1rem !important;
+    min-width: 1rem !important;
+    min-height: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+}
+
+/* Triangle styling */
+.triangle {
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 3px solid transparent !important;
+    border-right: 3px solid transparent !important;
+    border-top: 5px solid #0070d2 !important;
+    transition: transform 0.3s ease-in-out !important;
+    transform: translateY(0) !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;  /* This will center the triangle perfectly */
+}
+
+/* Triangle when expanded (pointing down) */
+.triangle[data-expanded="true"] {
+    transform: translate(-50%, -50%) rotate(180deg) !important;  /* Maintain centering while rotating */
+    border-top: 5px solid #0070d2 !important;
+}
+
+/* Active state for expanded button */
+.custom-toggle-button[aria-expanded="true"] .circle-container {
+    background-color: #0070d2 !important;
+}
+
+/* Hover state */
+.custom-toggle-button:hover .circle-container {
+    background-color: #005fb2 !important;
+}
+
+/* Make quantity input smaller */
+.input-style-quantity {
+    width: 3rem !important;
+    min-width: 3rem !important;
+    max-width: 3rem !important;
+    /* padding: 0.25rem !important; */
+    text-align: center !important;
+}
+
+/* Ensure row number doesn't collapse */
+.slds-m-right_x-small {
+    min-width: 1.5rem !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
+
+/* Ensure table cells maintain their width */
+.slds-table__cell {
+    min-width: fit-content !important;
+    white-space: nowrap !important;
+}
+
+.custom-info-icon {
+    --sds-c-icon-color-foreground-default: #000;
+    --sds-c-icon-color-background: transparent;
+    --sds-c-icon-radius-border: 50%;
+    --sds-c-icon-size-border: 1px;
+    --sds-c-icon-color-border: #000;
+    --sds-c-icon-sizing-cover: 18px;
+    --sds-c-icon-size: 12px;
+    --sds-c-icon-weight: bold;
+    --sds-c-icon-style: italic;
+}

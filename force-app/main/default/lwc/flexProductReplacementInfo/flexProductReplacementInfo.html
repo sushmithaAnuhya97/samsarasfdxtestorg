@@ -1,0 +1,256 @@
+<template>
+    <template if:true={hasProProduct}>
+        <c-message-banner variation="warning" message="Pro SKU Detected on Selected Contract(s) : One or more selected contracts contain a Pro SKU license. If you are upgrading a software license that is currently associated with a Pro SKU, ensure that you also upgrade the same quantity of Pro SKU licenses to maintain a 1:1 match." ></c-message-banner>
+    </template>
+    <template if:false={accountPilotCustomer}>
+        <div class="slds-truncate">
+            <div class="section-title" style="font-size: 1.25rem; font-weight: 500;">Product & Hardware License Upgrade</div>
+        </div>
+    </template>
+    
+    <lightning-tabset>
+        <template if:true={accountPilotCustomer}>
+            <template lwc:if={isLoadingPnpOne}>
+                <lightning-spinner alternative-text="Loading.." size="medium"></lightning-spinner>
+            </template>
+        </template>
+        <template if:false={accountPilotCustomer}>
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading.." size="medium"></lightning-spinner>
+            </template>
+        </template>
+        
+        <lightning-tab label={hardwareUpgradeTabLabel}>
+            <template if:true={ineligibleToProductSelection}>
+                <div class="slds-p-left_medium">
+                    <c-message-banner variation="warning" message="All Products are ineligible for upgrade." ></c-message-banner>
+                </div>
+            </template>
+            <template if:false={ineligibleToProductSelection}>
+                <div class="slds-p-around_small" >
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer custom-table" style="z-index: 2;" >
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col" class="slds-text-align_center slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7; width: 40px;">
+                                    <div style="text-align: left; padding-left: 2px;">
+                                        <lightning-input type="checkbox" checked={selectAllChecked} onchange={handleSelectAllHeaderCheckbox} variant="label-hidden"> </lightning-input>
+                                    </div>
+                                </th>
+                                <th scope="col" class="slds-text-align_left slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7; width: 200px;">Ready for Upgrade</th>
+                                <th scope="col" class="slds-text-align_left slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7; width: 250px;">Address</th>
+                                <th scope="col" class="slds-text-align_center slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7; width: 80px;">Total Qty</th>
+                                <th scope="col" class="slds-text-align_center slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7; width: 100px;">Upgrade Product?</th>
+                                <th scope="col" class="slds-text-align_center slds-p-horizontal_small slds-border_right" style="background-color: #e7e7e7; width: 80px;">Qty to Upgrade</th>
+                                <th scope="col" class="slds-text-align_left slds-p-horizontal_small slds-border_right" style="width: 350px; background-color: #e7e7e7;" if:true={accountPilotCustomer}>Upgrade Hardware to</th>
+                                <th scope="col" class="slds-text-align_left slds-p-horizontal_small" style="width: 350px; background-color: #e7e7e7;" if:false={accountPilotCustomer}>Upgrade to</th>
+                            </tr> 
+                        </thead>
+                        <tbody>
+                            <template for:each={subscriptionData} for:item="wrapper" for:index="rowIndex">
+                                <tr key={wrapper.productId} class="slds-hint-parent" style="background-color: #f3f3f3;">
+                                    <td style="width: 40px;">
+                                        <div style="text-align: left; padding-left: 2px;">
+                                            <lightning-input type="checkbox" checked={wrapper.replaceProduct} onchange={handleSelectAllCheckbox} data-productid={wrapper.productId} data-index={rowIndex}> </lightning-input>                                     
+                                        </div>
+                                    </td>
+                                    <td if:false={accountPilotCustomer}>
+                                        <div style="display: flex; align-items: center;">
+                                            <div class="circle-container custom-toggle-button" onclick={handleToggleExpand} data-productid={wrapper.productId} aria-expanded={wrapper.isExpanded} style="margin-right: 0.75rem; cursor: pointer;">
+                                                <div class="triangle" data-expanded={wrapper.isExpanded}></div>
+                                            </div>
+                                            <a href={wrapper.productLink} class="product-link" target="_blank" >{wrapper.productName}</a>
+                                        </div>
+                                    </td>
+                                    <td if:true={accountPilotCustomer}>
+                                        <div style="display: flex; align-items: center;">
+                                            <div class="circle-container custom-toggle-button" onclick={handleToggleExpand} data-productid={wrapper.productId} aria-expanded={wrapper.isExpanded} style="margin-right: 0.75rem; cursor: pointer;" >
+                                                <div class="triangle" data-expanded={wrapper.isExpanded}></div>
+                                            </div>
+                                            <a href={wrapper.pnpOneProductDetails.selectedProductUrl} class="product-link" target="_blank" >{wrapper.pnpOneProductDetails.selectedProductName}</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <template if:false={wrapper.isExpanded}>
+                                            <div class="slds-text-color_weak" style="font-style: italic; font-size: 0.8rem;">
+                                                'Expand to view address level details'
+                                            </div>
+                                        </template>
+                                    </td>
+                                    <td style="text-align: center;">{wrapper.totalQuantity}</td>
+                                    <td style="text-align: center;">
+                                        <div if:true={wrapper.replaceProduct} class="">
+                                            <lightning-input type="checkbox" checked disabled> </lightning-input>
+                                        </div>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <div if:true={wrapper.replaceProduct} class="slds-text-color_weak "> {wrapper.totalQuantity} </div>
+                                    </td>
+                                    <td style="padding-top: 0px !important; padding-bottom: 0px !important;">
+                                        <div if:true={wrapper.replaceProduct}>
+                                            <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+                                                <div class="slds-col">
+                                                    <lightning-combobox
+                                                        onchange={handleProductSelectAll}
+                                                        class={wrapper.errorClassForProduct}
+                                                        data-index={rowIndex}
+                                                        data-id={wrapper.subscriptionWrappers.shipTo}
+                                                        data-detail-index={detailIndex}
+                                                        data-productid={wrapper.productId}
+                                                        data-product-code={wrapper.productCode}
+                                                        style="width: 100% !important; min-width: 150px; max-width: 100% !important; padding-left:4px !important;"
+                                                        placeholder="Select Product"
+                                                        value={wrapper.selectedProductId}
+                                                        options={wrapper.availableProductOptions}
+                                                        required={wrapper.replaceProduct}
+                                                        variant="label-hidden"
+                                                        dropdown-alignment="auto"
+                                                    ></lightning-combobox>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-12">
+                                                    <lightning-helptext
+                                                        content={wrapper.selectedProductCodeForProduct}
+                                                        icon-name="utility:info"
+                                                        icon-size="medium"
+                                                        class="custom-info-icon"
+                                                        style="margin-top: 9px;">
+                                                    </lightning-helptext>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                        </tr>
+                                        <!-- Expandable Detail Rows -->
+                                        <template if:true={wrapper.isExpanded}>
+                                            <template for:each={wrapper.subscriptionWrappers} for:item="detail" for:index="detailIndex">
+                                                <tr key={detail.shippingAddressId} class="detail-row slds-hint-parent">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <a href={detail.shippingAddressLink} class="address-link" target="_blank">{detail.shippingAddressName}</a>
+                                                    </td>
+                                                    <td style="text-align: center;">{detail.quantity}</td>
+                                                    <td style="text-align: center;">
+                                                        <lightning-input 
+                                                            type="checkbox"
+                                                            checked={detail.replaceProduct}
+                                                            onchange={handlePartialUpgradeCheckbox}
+                                                            data-id={detail.shipTo}
+                                                            data-productid={wrapper.productId}
+                                                            data-product-code ={wrapper.productCode}
+
+                                                            data-index={rowIndex}
+                                                            data-detail-index={detailIndex}
+                                                            disabled={wrapper.replaceProduct}>
+                                                        </lightning-input>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex-container" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                                                            <template if:true={wrapper.replaceProduct}>
+                                                                <input 
+                                                                    class="input-style-quantity"
+                                                                    type="number"
+                                                                    value=""
+                                                                    onchange={handleQuantityChange}
+                                                                    data-id={detail.shipTo}
+                                                                    data-productid={wrapper.productId}
+                                                                    data-product-code ={wrapper.productCode}
+
+                                                                    data-index={rowIndex}
+                                                                    data-detail-index={detailIndex}
+                                                                    style="width: 4rem;"
+                                                                    disabled />
+                                                            </template>
+                                                            <template if:false={wrapper.replaceProduct}>
+                                                                <input 
+                                                                    class={detail.errorClass}
+                                                                    type="number"
+                                                                    value={detail.quantityToReplace}
+                                                                    onchange={handleQuantityChange}
+                                                                    data-id={detail.shipTo}
+                                                                    min="1"
+                                                                    max={detail.quantity}
+                                                                    data-productid={wrapper.productId}
+                                                                    data-product-code ={wrapper.productCode}
+
+                                                                    data-index={rowIndex}
+                                                                    data-detail-index={detailIndex}
+                                                                    disabled={detail.isProductNotReplaceable}
+                                                                    style="width: 4rem;" />
+
+                                                                <template if:true={detail.validationError}>
+                                                                    <div class="slds-m-top_xx-small">
+                                                                        <template if:true={detail.validationErrorBoolean}>
+                                                                            <p class="error-msg">Quantity should be less than or equal to {detail.quantity}.</p>
+                                                                        </template>
+                                                                        <template if:false={detail.validationErrorBoolean}>
+                                                                            <p class="error-msg">Quantity should be greater than 0.</p>
+                                                                        </template>
+                                                                    </div>
+                                                                </template>
+                                                            </template>
+                                                        </div>
+                                                    </td>
+                                                    <td style="padding-top: 0px !important; padding-bottom: 0px !important;">
+                                                        <div class="slds-text-color_weak" >
+                                                            <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+                                                                <div class="slds-col">
+                                                                    <lightning-combobox lwc:if={detail.isProductNotReplaceable} 
+                                                                                disabled                                                           
+                                                                                onchange={handleShipToProductSelect}
+                                                                                class={detail.errorClassForProduct} 
+                                                                                data-index={rowIndex}
+                                                                                data-available-options={detail.availableProducts} 
+                                                                                data-detail-index={detailIndex}
+                                                                                data-productid={wrapper.productId}
+                                                                                data-product-code ={detail.productCode}
+                                                                                style="width: 100% !important; min-width: 150px; max-width: 100% !important; padding-left:4px !important;"
+                                                                                placeholder="Select Product"
+                                                                                value={detail.selectedProductId}
+                                                                                options={detail.availableProductOptions}
+                                                                                required={detail.replaceProduct}
+                                                                                variant="label-hidden" dropdown-alignment ="auto"       
+                                                                            ></lightning-combobox>
+                                                                    <lightning-combobox lwc:else
+                                                                                
+                                                                                onchange={handleShipToProductSelect}
+                                                                                class={detail.errorClassForProduct} 
+                                                                                data-index={rowIndex}
+                                                                                data-id={detail.shipTo} 
+                                                                                data-detail-index={detailIndex}
+                                                                                data-productid={wrapper.productId}
+                                                                                data-product-code ={detail.productCode}
+                                                                                style="width: 100% !important; min-width: 150px; max-width: 100% !important; padding-left:4px !important;"
+                                                                                placeholder="Select Product"
+                                                                                value={detail.selectedProductId}
+                                                                                options={detail.availableProductOptions}
+                                                                                required={detail.replaceProduct}
+                                                                                variant="label-hidden"                                                        dropdown-alignment ="auto"       
+                                                                            ></lightning-combobox>
+                                                                </div>
+                                                                <div class="slds-col slds-size_1-of-12">
+                                                                    <lightning-helptext 
+                                                                        content={detail.selectedProductCodeForProduct}
+                                                                        icon-name="utility:info"
+                                                                        icon-size="medium"
+                                                                        class="custom-info-icon"
+                                                                        style="margin-top: 9px;">
+                                                                    </lightning-helptext>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </template>
+                                        </template>
+                                    </template>
+                                </tbody>
+                            </table>     
+                        </div>
+            </template>
+        </lightning-tab>
+        
+        <lightning-tab label={ineligibleProductsTabLabel} class="slds-p-around_none">
+            <c-flex-ineligible-product-screen ineligible-product-list={ineligibleProductList} account-pilot-customer={accountPilotCustomer}></c-flex-ineligible-product-screen>
+        </lightning-tab>
+    </lightning-tabset>
+</template>

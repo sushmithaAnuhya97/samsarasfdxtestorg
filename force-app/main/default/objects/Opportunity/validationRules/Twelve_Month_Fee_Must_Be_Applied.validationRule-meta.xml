@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Twelve_Month_Fee_Must_Be_Applied</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+!CPQ_Opportunity__c, 
+NOT( 
+OR( 
+($Profile.Name = &quot;Order Operations Admin&quot;),
+($Profile.Name = &quot;Samsara - Finance&quot;),
+($Permission.Validation_Rule_Exemption),
+ (Overwrite_Validation_Rule__c),
+ISPICKVAL( Sub_Type__c ,&quot;Not For Resale (NFR)&quot;),
+(CONTAINS( $UserRole.Name, &quot;Enterprise - Director&quot;))
+) 
+),  
+ISPICKVAL(Type, &quot;Revenue Opportunity&quot;), 
+License_Term_Formula__c &lt;= 12, 
+First_Purchase__c = True, 
+Probability &gt;= 0.5,  
+OR( 
+AG_unit_count__c &gt; 0,  
+CM_Unit_Count__c &gt; 0, 
+VG_unit_count__c &gt; 0
+) 
+)</errorConditionFormula>
+    <errorMessage>Fee must be added for all hardware units on this 12-month opportunity. Please add the correct activation fee product</errorMessage>
+</ValidationRule>

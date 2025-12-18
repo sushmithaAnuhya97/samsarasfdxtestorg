@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Line__c</fullName>
+    <label>Sub Product Line</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sub_Business_Unit__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VG</fullName>
+                <default>false</default>
+                <label>VG</label>
+            </value>
+            <value>
+                <fullName>VG-LD</fullName>
+                <default>false</default>
+                <label>VG-LD</label>
+            </value>
+            <value>
+                <fullName>VG-PS</fullName>
+                <default>false</default>
+                <label>VG-PS</label>
+            </value>
+            <value>
+                <fullName>EM</fullName>
+                <default>false</default>
+                <label>EM</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>Wifi-Data</fullName>
+                <default>false</default>
+                <label>Wifi-Data</label>
+            </value>
+            <value>
+                <fullName>Engine Immobilizer</fullName>
+                <default>false</default>
+                <label>Engine Immobilizer</label>
+            </value>
+            <value>
+                <fullName>CM1</fullName>
+                <default>false</default>
+                <label>CM1</label>
+            </value>
+            <value>
+                <fullName>CM2</fullName>
+                <default>false</default>
+                <label>CM2</label>
+            </value>
+            <value>
+                <fullName>CM3</fullName>
+                <default>false</default>
+                <label>CM3</label>
+            </value>
+            <value>
+                <fullName>Camera Connector HD1</fullName>
+                <default>false</default>
+                <label>Camera Connector HD1</label>
+            </value>
+            <value>
+                <fullName>SER</fullName>
+                <default>false</default>
+                <label>SER</label>
+            </value>
+            <value>
+                <fullName>Live Stream</fullName>
+                <default>false</default>
+                <label>Live Stream</label>
+            </value>
+            <value>
+                <fullName>Unpowered</fullName>
+                <default>false</default>
+                <label>Unpowered</label>
+            </value>
+            <value>
+                <fullName>Powered</fullName>
+                <default>false</default>
+                <label>Powered</label>
+            </value>
+            <value>
+                <fullName>Powered Plus</fullName>
+                <default>false</default>
+                <label>Powered Plus</label>
+            </value>
+            <value>
+                <fullName>DM</fullName>
+                <default>false</default>
+                <label>DM</label>
+            </value>
+            <value>
+                <fullName>CRGO</fullName>
+                <default>false</default>
+                <label>CRGO</label>
+            </value>
+            <value>
+                <fullName>IG15</fullName>
+                <default>false</default>
+                <label>IG15</label>
+            </value>
+            <value>
+                <fullName>IG41</fullName>
+                <default>false</default>
+                <label>IG41</label>
+            </value>
+            <value>
+                <fullName>Industrial 4.0</fullName>
+                <default>false</default>
+                <label>Industrial 4.0</label>
+            </value>
+            <value>
+                <fullName>Machine Vision</fullName>
+                <default>false</default>
+                <label>Machine Vision</label>
+            </value>
+            <value>
+                <fullName>SC11</fullName>
+                <default>false</default>
+                <label>SC11</label>
+            </value>
+            <value>
+                <fullName>SC21</fullName>
+                <default>false</default>
+                <label>SC21</label>
+            </value>
+            <value>
+                <fullName>SC1</fullName>
+                <default>false</default>
+                <label>SC1</label>
+            </value>
+            <value>
+                <fullName>SG1</fullName>
+                <default>false</default>
+                <label>SG1</label>
+            </value>
+            <value>
+                <fullName>SG1x</fullName>
+                <default>false</default>
+                <label>SG1x</label>
+            </value>
+            <value>
+                <fullName>Cloud Storage</fullName>
+                <default>false</default>
+                <label>Cloud Storage</label>
+            </value>
+            <value>
+                <fullName>INSPECTIONS</fullName>
+                <default>false</default>
+                <label>INSPECTIONS</label>
+            </value>
+            <value>
+                <fullName>Buyout</fullName>
+                <default>false</default>
+                <label>Buyout</label>
+            </value>
+            <value>
+                <fullName>Subsidy</fullName>
+                <default>false</default>
+                <label>Subsidy</label>
+            </value>
+            <value>
+                <fullName>All</fullName>
+                <default>false</default>
+                <label>All</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>VG ESS</fullName>
+                <default>false</default>
+                <label>VG ESS</label>
+            </value>
+            <value>
+                <fullName>VG PREM</fullName>
+                <default>false</default>
+                <label>VG PREM</label>
+            </value>
+            <value>
+                <fullName>VG ENT</fullName>
+                <default>false</default>
+                <label>VG ENT</label>
+            </value>
+            <value>
+                <fullName>VG Legacy</fullName>
+                <default>false</default>
+                <label>VG Legacy</label>
+            </value>
+            <value>
+                <fullName>VG PUBSEC</fullName>
+                <default>false</default>
+                <label>VG PUBSEC</label>
+            </value>
+            <value>
+                <fullName>VG OEM</fullName>
+                <default>false</default>
+                <label>VG OEM</label>
+            </value>
+            <value>
+                <fullName>VG HW</fullName>
+                <default>false</default>
+                <label>VG HW</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG ESS</fullName>
+                <default>false</default>
+                <label>PLTFM VG ESS</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG PREM</fullName>
+                <default>false</default>
+                <label>PLTFM VG PREM</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG ENT</fullName>
+                <default>false</default>
+                <label>PLTFM VG ENT</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG PUBSEC</fullName>
+                <default>false</default>
+                <label>PLTFM VG PUBSEC</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG OEM</fullName>
+                <default>false</default>
+                <label>PLTFM VG OEM</label>
+            </value>
+            <value>
+                <fullName>MEM</fullName>
+                <default>false</default>
+                <label>MEM</label>
+            </value>
+            <value>
+                <fullName>EV</fullName>
+                <default>false</default>
+                <label>EV</label>
+            </value>
+            <value>
+                <fullName>Snow Ops</fullName>
+                <default>false</default>
+                <label>Snow Ops</label>
+            </value>
+            <value>
+                <fullName>Fleet Sec</fullName>
+                <default>false</default>
+                <label>Fleet Sec</label>
+            </value>
+            <value>
+                <fullName>Other Telematics</fullName>
+                <default>false</default>
+                <label>Other Telematics</label>
+            </value>
+            <value>
+                <fullName>Other VG Accessories</fullName>
+                <default>false</default>
+                <label>Other VG Accessories</label>
+            </value>
+            <value>
+                <fullName>Cables</fullName>
+                <default>false</default>
+                <label>Cables</label>
+            </value>
+            <value>
+                <fullName>CM-S (Legacy)</fullName>
+                <default>false</default>
+                <label>CM-S (Legacy)</label>
+            </value>
+            <value>
+                <fullName>CM-S ESS</fullName>
+                <default>false</default>
+                <label>CM-S ESS</label>
+            </value>
+            <value>
+                <fullName>CM-S PREM</fullName>
+                <default>false</default>
+                <label>CM-S PREM</label>
+            </value>
+            <value>
+                <fullName>CM-S ENT</fullName>
+                <default>false</default>
+                <label>CM-S ENT</label>
+            </value>
+            <value>
+                <fullName>CM-S HW</fullName>
+                <default>false</default>
+                <label>CM-S HW</label>
+            </value>
+            <value>
+                <fullName>CM-D (Legacy)</fullName>
+                <default>false</default>
+                <label>CM-D (Legacy)</label>
+            </value>
+            <value>
+                <fullName>CM-D ESS</fullName>
+                <default>false</default>
+                <label>CM-D ESS</label>
+            </value>
+            <value>
+                <fullName>CM-D PREM</fullName>
+                <default>false</default>
+                <label>CM-D PREM</label>
+            </value>
+            <value>
+                <fullName>CM-D ENT</fullName>
+                <default>false</default>
+                <label>CM-D ENT</label>
+            </value>
+            <value>
+                <fullName>CM-D HW</fullName>
+                <default>false</default>
+                <label>CM-D HW</label>
+            </value>
+            <value>
+                <fullName>CM Other (Legacy)</fullName>
+                <default>false</default>
+                <label>CM Other (Legacy)</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-S ESS</fullName>
+                <default>false</default>
+                <label>PLTFM CM-S ESS</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-S PREM</fullName>
+                <default>false</default>
+                <label>PLTFM CM-S PREM</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-S ENT</fullName>
+                <default>false</default>
+                <label>PLTFM CM-S ENT</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-D ESS</fullName>
+                <default>false</default>
+                <label>PLTFM CM-D ESS</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-D PREM</fullName>
+                <default>false</default>
+                <label>PLTFM CM-D PREM</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-D ENT</fullName>
+                <default>false</default>
+                <label>PLTFM CM-D ENT</label>
+            </value>
+            <value>
+                <fullName>Virtual Coach</fullName>
+                <default>false</default>
+                <label>Virtual Coach</label>
+            </value>
+            <value>
+                <fullName>Safety Training</fullName>
+                <default>false</default>
+                <label>Safety Training</label>
+            </value>
+            <value>
+                <fullName>Enhanced Video</fullName>
+                <default>false</default>
+                <label>Enhanced Video</label>
+            </value>
+            <value>
+                <fullName>Other CM Accessories</fullName>
+                <default>false</default>
+                <label>Other CM Accessories</label>
+            </value>
+            <value>
+                <fullName>Other Safety</fullName>
+                <default>false</default>
+                <label>Other Safety</label>
+            </value>
+            <value>
+                <fullName>AG OEM</fullName>
+                <default>false</default>
+                <label>AG OEM</label>
+            </value>
+            <value>
+                <fullName>PLTFM Unpowered</fullName>
+                <default>false</default>
+                <label>PLTFM Unpowered</label>
+            </value>
+            <value>
+                <fullName>PLTFM Powered</fullName>
+                <default>false</default>
+                <label>PLTFM Powered</label>
+            </value>
+            <value>
+                <fullName>PLTFM Powered Plus</fullName>
+                <default>false</default>
+                <label>PLTFM Powered Plus</label>
+            </value>
+            <value>
+                <fullName>Other AG Accessories</fullName>
+                <default>false</default>
+                <label>Other AG Accessories</label>
+            </value>
+            <value>
+                <fullName>Other STCE</fullName>
+                <default>false</default>
+                <label>Other STCE</label>
+            </value>
+            <value>
+                <fullName>PLTFM SC</fullName>
+                <default>false</default>
+                <label>PLTFM SC</label>
+            </value>
+            <value>
+                <fullName>PLTFM SG</fullName>
+                <default>false</default>
+                <label>PLTFM SG</label>
+            </value>
+            <value>
+                <fullName>SC Cell</fullName>
+                <default>false</default>
+                <label>SC Cell</label>
+            </value>
+            <value>
+                <fullName>Other Sites</fullName>
+                <default>false</default>
+                <label>Other Sites</label>
+            </value>
+            <value>
+                <fullName>PLTFM Inspections</fullName>
+                <default>false</default>
+                <label>PLTFM Inspections</label>
+            </value>
+            <value>
+                <fullName>API</fullName>
+                <default>false</default>
+                <label>API</label>
+            </value>
+            <value>
+                <fullName>VG Essential</fullName>
+                <default>false</default>
+                <label>VG Essential</label>
+            </value>
+            <value>
+                <fullName>VG Essential Plus</fullName>
+                <default>false</default>
+                <label>VG Essential Plus</label>
+            </value>
+            <value>
+                <fullName>VG Premier</fullName>
+                <default>false</default>
+                <label>VG Premier</label>
+            </value>
+            <value>
+                <fullName>VG Enterprise</fullName>
+                <default>false</default>
+                <label>VG Enterprise</label>
+            </value>
+            <value>
+                <fullName>VG Public Sector</fullName>
+                <default>false</default>
+                <label>VG Public Sector</label>
+            </value>
+            <value>
+                <fullName>VG Accessories</fullName>
+                <default>false</default>
+                <label>VG Accessories</label>
+            </value>
+            <value>
+                <fullName>VG Cables</fullName>
+                <default>false</default>
+                <label>VG Cables</label>
+            </value>
+            <value>
+                <fullName>VG Hardware</fullName>
+                <default>false</default>
+                <label>VG Hardware</label>
+            </value>
+            <value>
+                <fullName>VG Pro</fullName>
+                <default>false</default>
+                <label>VG Pro</label>
+            </value>
+            <value>
+                <fullName>FirstNet</fullName>
+                <default>false</default>
+                <label>FirstNet</label>
+            </value>
+            <value>
+                <fullName>VG Other</fullName>
+                <default>false</default>
+                <label>VG Other</label>
+            </value>
+            <value>
+                <fullName>CM-S Essential</fullName>
+                <default>false</default>
+                <label>CM-S Essential</label>
+            </value>
+            <value>
+                <fullName>CM-S Premier</fullName>
+                <default>false</default>
+                <label>CM-S Premier</label>
+            </value>
+            <value>
+                <fullName>CM-S Enterprise</fullName>
+                <default>false</default>
+                <label>CM-S Enterprise</label>
+            </value>
+            <value>
+                <fullName>CM-S Hardware</fullName>
+                <default>false</default>
+                <label>CM-S Hardware</label>
+            </value>
+            <value>
+                <fullName>CM-D Essential</fullName>
+                <default>false</default>
+                <label>CM-D Essential</label>
+            </value>
+            <value>
+                <fullName>CM-D Premier</fullName>
+                <default>false</default>
+                <label>CM-D Premier</label>
+            </value>
+            <value>
+                <fullName>CM-D Enterprise</fullName>
+                <default>false</default>
+                <label>CM-D Enterprise</label>
+            </value>
+            <value>
+                <fullName>CM-D Hardware</fullName>
+                <default>false</default>
+                <label>CM-D Hardware</label>
+            </value>
+            <value>
+                <fullName>CM Accessories</fullName>
+                <default>false</default>
+                <label>CM Accessories</label>
+            </value>
+            <value>
+                <fullName>CM Cables</fullName>
+                <default>false</default>
+                <label>CM Cables</label>
+            </value>
+            <value>
+                <fullName>Plus</fullName>
+                <default>false</default>
+                <label>Plus</label>
+            </value>
+            <value>
+                <fullName>CM1 Pro</fullName>
+                <default>false</default>
+                <label>CM1 Pro</label>
+            </value>
+            <value>
+                <fullName>CM2 Pro</fullName>
+                <default>false</default>
+                <label>CM2 Pro</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG Essential</fullName>
+                <default>false</default>
+                <label>PLTFM VG Essential</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG Essential Plus</fullName>
+                <default>false</default>
+                <label>PLTFM VG Essential Plus</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG Premier</fullName>
+                <default>false</default>
+                <label>PLTFM VG Premier</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG Enterprise</fullName>
+                <default>false</default>
+                <label>PLTFM VG Enterprise</label>
+            </value>
+            <value>
+                <fullName>PLTFM VG Public Sector</fullName>
+                <default>false</default>
+                <label>PLTFM VG Public Sector</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-S Essential</fullName>
+                <default>false</default>
+                <label>PLTFM CM-S Essential</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-S Premier</fullName>
+                <default>false</default>
+                <label>PLTFM CM-S Premier</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-S Enterprise</fullName>
+                <default>false</default>
+                <label>PLTFM CM-S Enterprise</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-D Essential</fullName>
+                <default>false</default>
+                <label>PLTFM CM-D Essential</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-D Premier</fullName>
+                <default>false</default>
+                <label>PLTFM CM-D Premier</label>
+            </value>
+            <value>
+                <fullName>PLTFM CM-D Enterprise</fullName>
+                <default>false</default>
+                <label>PLTFM CM-D Enterprise</label>
+            </value>
+            <value>
+                <fullName>PLTFM Smart Trailer Essential</fullName>
+                <default>false</default>
+                <label>PLTFM Smart Trailer Essential</label>
+            </value>
+            <value>
+                <fullName>PLTFM Smart Trailer Premier</fullName>
+                <default>false</default>
+                <label>PLTFM Smart Trailer Premier</label>
+            </value>
+            <value>
+                <fullName>PLTFM Reefer</fullName>
+                <default>false</default>
+                <label>PLTFM Reefer</label>
+            </value>
+            <value>
+                <fullName>PLTFM Connected Training</fullName>
+                <default>false</default>
+                <label>PLTFM Connected Training</label>
+            </value>
+            <value>
+                <fullName>PLTFM Connected Sites</fullName>
+                <default>false</default>
+                <label>PLTFM Connected Sites</label>
+            </value>
+            <value>
+                <fullName>Platform - Pro</fullName>
+                <default>false</default>
+                <label>Platform - Pro</label>
+            </value>
+            <value>
+                <fullName>AG Unpowered</fullName>
+                <default>false</default>
+                <label>AG Unpowered</label>
+            </value>
+            <value>
+                <fullName>Small Asset Tracker</fullName>
+                <default>false</default>
+                <label>Small Asset Tracker</label>
+            </value>
+            <value>
+                <fullName>AG Powered Basic</fullName>
+                <default>false</default>
+                <label>AG Powered Basic</label>
+            </value>
+            <value>
+                <fullName>AG Powered Plus</fullName>
+                <default>false</default>
+                <label>AG Powered Plus</label>
+            </value>
+            <value>
+                <fullName>AG OEM - Equipment</fullName>
+                <default>false</default>
+                <label>AG OEM - Equipment</label>
+            </value>
+            <value>
+                <fullName>AG Cables</fullName>
+                <default>false</default>
+                <label>AG Cables</label>
+            </value>
+            <value>
+                <fullName>AG Accessories</fullName>
+                <default>false</default>
+                <label>AG Accessories</label>
+            </value>
+            <value>
+                <fullName>AG Other</fullName>
+                <default>false</default>
+                <label>AG Other</label>
+            </value>
+            <value>
+                <fullName>Smart Trailer Essential</fullName>
+                <default>false</default>
+                <label>Smart Trailer Essential</label>
+            </value>
+            <value>
+                <fullName>Smart Trailer Premier</fullName>
+                <default>false</default>
+                <label>Smart Trailer Premier</label>
+            </value>
+            <value>
+                <fullName>Reefer</fullName>
+                <default>false</default>
+                <label>Reefer</label>
+            </value>
+            <value>
+                <fullName>AG OEM - Reefer</fullName>
+                <default>false</default>
+                <label>AG OEM - Reefer</label>
+            </value>
+            <value>
+                <fullName>Trailer Essential Upgrade</fullName>
+                <default>false</default>
+                <label>Trailer Essential Upgrade</label>
+            </value>
+            <value>
+                <fullName>Trailer Premier Upgrade</fullName>
+                <default>false</default>
+                <label>Trailer Premier Upgrade</label>
+            </value>
+            <value>
+                <fullName>Smart Trailer Cables</fullName>
+                <default>false</default>
+                <label>Smart Trailer Cables</label>
+            </value>
+            <value>
+                <fullName>Smart Trailer Accessories</fullName>
+                <default>false</default>
+                <label>Smart Trailer Accessories</label>
+            </value>
+            <value>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+                <label>Industrial</label>
+            </value>
+            <value>
+                <fullName>Sites Add-ons</fullName>
+                <default>false</default>
+                <label>Sites Add-ons</label>
+            </value>
+            <value>
+                <fullName>Connected Training</fullName>
+                <default>false</default>
+                <label>Connected Training</label>
+            </value>
+            <value>
+                <fullName>Forms ESS</fullName>
+                <default>false</default>
+                <label>Forms ESS</label>
+            </value>
+            <value>
+                <fullName>Forms PREM</fullName>
+                <default>false</default>
+                <label>Forms PREM</label>
+            </value>
+            <value>
+                <fullName>Other Emerging Products</fullName>
+                <default>false</default>
+                <label>Other Emerging Products</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>Qualifications</fullName>
+                <default>false</default>
+                <label>Qualifications</label>
+            </value>
+            <value>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>VG Enterprise Plus</fullName>
+                <default>false</default>
+                <label>VG Enterprise Plus</label>
+            </value>
+            <value>
+                <fullName>VG Compliance</fullName>
+                <default>false</default>
+                <label>VG Compliance</label>
+            </value>
+            <value>
+                <fullName>CM-S Enterprise Plus</fullName>
+                <default>false</default>
+                <label>CM-S Enterprise Plus</label>
+            </value>
+            <value>
+                <fullName>CM-D Enterprise Plus</fullName>
+                <default>false</default>
+                <label>CM-D Enterprise Plus</label>
+            </value>
+            <value>
+                <fullName>Camera Connector HD4</fullName>
+                <default>false</default>
+                <label>Camera Connector HD4</label>
+            </value>
+            <value>
+                <fullName>Worker Safety</fullName>
+                <default>false</default>
+                <label>Worker Safety</label>
+            </value>
+            <value>
+                <fullName>CW Cable</fullName>
+                <default>false</default>
+                <label>CW Cable</label>
+            </value>
+            <value>
+                <fullName>CW Accessory</fullName>
+                <default>false</default>
+                <label>CW Accessory</label>
+            </value>
+            <value>
+                <fullName>Side Cam</fullName>
+                <default>false</default>
+                <label>Side Cam</label>
+            </value>
+            <value>
+                <fullName>Rear Cam</fullName>
+                <default>false</default>
+                <label>Rear Cam</label>
+            </value>
+            <value>
+                <fullName>Birdseye View Cam</fullName>
+                <default>false</default>
+                <label>Birdseye View Cam</label>
+            </value>
+            <value>
+                <fullName>Monitors</fullName>
+                <default>false</default>
+                <label>Monitors</label>
+            </value>
+            <value>
+                <fullName>LM Accessory</fullName>
+                <default>false</default>
+                <label>LM Accessory</label>
+            </value>
+            <value>
+                <fullName>LM</fullName>
+                <default>false</default>
+                <label>LM</label>
+            </value>
+            <value>
+                <fullName>AG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AG</label>
+            </value>
+            <value>
+                <fullName>CM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CM</label>
+            </value>
+            <value>
+                <fullName>HM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HM</label>
+            </value>
+            <value>
+                <fullName>IG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IG</label>
+            </value>
+            <value>
+                <fullName>PM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PM</label>
+            </value>
+            <value>
+                <fullName>SC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SC</label>
+            </value>
+            <value>
+                <fullName>SG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SG</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Platform - Forms</controllingFieldValue>
+            <valueName>PLTFM Inspections</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform Add-ons</controllingFieldValue>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>API</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Safety</controllingFieldValue>
+            <valueName>PLTFM CM-S ESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Safety</controllingFieldValue>
+            <valueName>PLTFM CM-S PREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Safety</controllingFieldValue>
+            <valueName>PLTFM CM-S ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Safety</controllingFieldValue>
+            <valueName>PLTFM CM-D ESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Safety</controllingFieldValue>
+            <valueName>PLTFM CM-D PREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Safety</controllingFieldValue>
+            <valueName>PLTFM CM-D ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <controllingFieldValue>Telematics Add-ons</controllingFieldValue>
+            <controllingFieldValue>Add-ons</controllingFieldValue>
+            <valueName>Wifi-Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <controllingFieldValue>Accessories/ Sensors</controllingFieldValue>
+            <valueName>Engine Immobilizer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <controllingFieldValue>VG</controllingFieldValue>
+            <valueName>VG Legacy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <controllingFieldValue>VG</controllingFieldValue>
+            <valueName>VG OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <controllingFieldValue>Telematics Add-ons</controllingFieldValue>
+            <valueName>EV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <controllingFieldValue>Telematics Add-ons</controllingFieldValue>
+            <valueName>Snow Ops</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <controllingFieldValue>Telematics Add-ons</controllingFieldValue>
+            <valueName>Fleet Sec</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Essential Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Enterprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Public Sector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Cables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Hardware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Pro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>FirstNet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Enterprise Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telematics</controllingFieldValue>
+            <valueName>VG Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <controllingFieldValue>Camera Connector</controllingFieldValue>
+            <controllingFieldValue>Safety Add-ons</controllingFieldValue>
+            <valueName>Camera Connector HD1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <controllingFieldValue>Safety Add-ons</controllingFieldValue>
+            <controllingFieldValue>Add-ons</controllingFieldValue>
+            <valueName>SER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <controllingFieldValue>Safety Add-ons</controllingFieldValue>
+            <controllingFieldValue>Add-ons</controllingFieldValue>
+            <valueName>Live Stream</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-S (Legacy)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-D (Legacy)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM Other (Legacy)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>Other Safety</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-S Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-S Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-S Enterprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-S Hardware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-D Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-D Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-D Enterprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-D Hardware</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM Cables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM1 Pro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM2 Pro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-S Enterprise Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety</controllingFieldValue>
+            <valueName>CM-D Enterprise Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <controllingFieldValue>Platform - Telematics</controllingFieldValue>
+            <valueName>PLTFM VG OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <controllingFieldValue>Platform - STCE</controllingFieldValue>
+            <valueName>PLTFM Unpowered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <controllingFieldValue>Platform - STCE</controllingFieldValue>
+            <valueName>PLTFM Powered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <controllingFieldValue>Platform - STCE</controllingFieldValue>
+            <valueName>PLTFM Powered Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM VG Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM VG Essential Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM VG Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM VG Enterprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM VG Public Sector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM CM-S Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM CM-S Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM CM-S Enterprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM CM-D Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM CM-D Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM CM-D Enterprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM Smart Trailer Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM Smart Trailer Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM Reefer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM Connected Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>PLTFM Connected Sites</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform</controllingFieldValue>
+            <valueName>Platform - Pro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unpowered Equipment</controllingFieldValue>
+            <valueName>AG Unpowered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Small Asset Tracker</controllingFieldValue>
+            <valueName>Small Asset Tracker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powered Equipment</controllingFieldValue>
+            <valueName>AG Powered Basic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powered Equipment</controllingFieldValue>
+            <valueName>AG Powered Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powered Equipment</controllingFieldValue>
+            <valueName>AG OEM - Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powered Equipment</controllingFieldValue>
+            <valueName>AG Cables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powered Equipment</controllingFieldValue>
+            <valueName>AG Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Powered Equipment</controllingFieldValue>
+            <valueName>AG Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <controllingFieldValue>Accessories/ Sensors</controllingFieldValue>
+            <controllingFieldValue>Sensors</controllingFieldValue>
+            <valueName>EM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <controllingFieldValue>Accessories/ Sensors</controllingFieldValue>
+            <controllingFieldValue>Sensors</controllingFieldValue>
+            <valueName>DM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <controllingFieldValue>Accessories/ Sensors</controllingFieldValue>
+            <controllingFieldValue>Sensors</controllingFieldValue>
+            <valueName>CRGO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>Smart Trailer Essential</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>Smart Trailer Premier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>Reefer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>AG OEM - Reefer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>Trailer Essential Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>Trailer Premier Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>Smart Trailer Cables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Smart Trailers</controllingFieldValue>
+            <valueName>Smart Trailer Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Other Emerging Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Internal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MEM</controllingFieldValue>
+            <controllingFieldValue>Telematics Add-ons</controllingFieldValue>
+            <valueName>MEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Training</controllingFieldValue>
+            <valueName>Connected Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buyout</controllingFieldValue>
+            <valueName>Buyout</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Forms</controllingFieldValue>
+            <valueName>Forms ESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Forms</controllingFieldValue>
+            <valueName>Forms PREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Professional Services</controllingFieldValue>
+            <valueName>Professional Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Subsidy</controllingFieldValue>
+            <valueName>Subsidy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Telematics</controllingFieldValue>
+            <valueName>PLTFM VG ESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Telematics</controllingFieldValue>
+            <valueName>PLTFM VG PREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Telematics</controllingFieldValue>
+            <valueName>PLTFM VG ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Telematics</controllingFieldValue>
+            <valueName>PLTFM VG PUBSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Sites</controllingFieldValue>
+            <controllingFieldValue>SC</controllingFieldValue>
+            <valueName>SC11</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Sites</controllingFieldValue>
+            <controllingFieldValue>SC</controllingFieldValue>
+            <valueName>SC21</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Sites</controllingFieldValue>
+            <controllingFieldValue>SG</controllingFieldValue>
+            <valueName>SG1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Sites</controllingFieldValue>
+            <controllingFieldValue>SG</controllingFieldValue>
+            <valueName>SG1x</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Sites</controllingFieldValue>
+            <valueName>Other Sites</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Connected Sites</controllingFieldValue>
+            <valueName>Sites Add-ons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Qualifications</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>Worker Safety</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>CW Cable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Workforce</controllingFieldValue>
+            <valueName>CW Accessory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cables</controllingFieldValue>
+            <controllingFieldValue>Multicam</controllingFieldValue>
+            <valueName>Cables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Camera Connector</controllingFieldValue>
+            <valueName>Camera Connector HD4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety Add-ons</controllingFieldValue>
+            <valueName>Virtual Coach</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety Add-ons</controllingFieldValue>
+            <valueName>Safety Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safety Add-ons</controllingFieldValue>
+            <valueName>Enhanced Video</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VG</controllingFieldValue>
+            <valueName>VG ESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VG</controllingFieldValue>
+            <valueName>VG PREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VG</controllingFieldValue>
+            <valueName>VG ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VG</controllingFieldValue>
+            <valueName>VG PUBSEC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VG</controllingFieldValue>
+            <valueName>VG HW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-S ESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-S PREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-S ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-S HW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-D ESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-D PREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-D ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CM</controllingFieldValue>
+            <valueName>CM-D HW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AG</controllingFieldValue>
+            <valueName>Unpowered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AG</controllingFieldValue>
+            <valueName>Powered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AG</controllingFieldValue>
+            <valueName>Powered Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AG</controllingFieldValue>
+            <valueName>AG OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SC</controllingFieldValue>
+            <valueName>SC1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories/ Sensors</controllingFieldValue>
+            <valueName>Other VG Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories/ Sensors</controllingFieldValue>
+            <valueName>Other CM Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories/ Sensors</controllingFieldValue>
+            <valueName>Other AG Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Add-ons</controllingFieldValue>
+            <controllingFieldValue>Sites Add-ons</controllingFieldValue>
+            <valueName>Cloud Storage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Industrial</controllingFieldValue>
+            <valueName>Industrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INSPECTIONS</controllingFieldValue>
+            <valueName>INSPECTIONS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Multicam</controllingFieldValue>
+            <valueName>Side Cam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Multicam</controllingFieldValue>
+            <valueName>Rear Cam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Multicam</controllingFieldValue>
+            <valueName>Birdseye View Cam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Multicam</controllingFieldValue>
+            <valueName>Monitors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Sites</controllingFieldValue>
+            <valueName>PLTFM SC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Platform - Sites</controllingFieldValue>
+            <valueName>PLTFM SG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Level Monitoring</controllingFieldValue>
+            <valueName>LM Accessory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Level Monitoring</controllingFieldValue>
+            <valueName>LM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sites Add-ons</controllingFieldValue>
+            <valueName>SC Cell</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

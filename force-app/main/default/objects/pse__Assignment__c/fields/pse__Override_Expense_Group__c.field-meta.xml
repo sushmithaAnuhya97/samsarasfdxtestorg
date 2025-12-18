@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Expense_Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If set, overrides the default Group to which this Assignment&apos;s Expense Transactions will roll up for Group Actuals, even if the Project or Resource are in a different Group.  Note that either way, the Expense Transactions will continue to roll up to the same Project&apos;s Project Actuals and same Resource&apos;s Resource Actuals.</description>
+    <inlineHelpText>If set, overrides the default Group to which this Assignment&apos;s Expense Transactions will roll up for Group Actuals, even if the Project or Resource are in a different Group.</inlineHelpText>
+    <label>Override Expense Group</label>
+    <referenceTo>pse__Grp__c</referenceTo>
+    <relationshipLabel>Override Expense Group For Assignments</relationshipLabel>
+    <relationshipName>Override_ExpGroup_For_Assignments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

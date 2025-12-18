@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Set_a_limited_trial_period_for_each_role</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT( $Permission.Validation_Rule_Exemption),
+NOT(ISPICKVAL(StageName,&apos;Closed Won&apos;)),
+ISBLANK(SBQQ__AmendedContract__c),
+ISPICKVAL(Type, &apos;Free Trial Opportunity&apos;),
+
+OR( 
+
+AND(
+CONTAINS(Owner.UserRole.Name,&apos;MM&apos;),
+CONTAINS(Owner.UserRole.Name,&apos;FR&apos;),
+Trial_Period__c &gt;60
+),
+
+
+AND(
+CONTAINS(Owner.UserRole.Name,&apos;MM&apos;),
+NOT(CONTAINS(Owner.UserRole.Name,&apos;FR&apos;)),
+Trial_Period__c &gt;30
+),
+
+AND(
+CONTAINS(Owner.UserRole.Name,&apos;Major&apos;),
+Trial_Period__c &gt;90
+),
+
+AND(
+CONTAINS(Owner.UserRole.Name,&apos;Enterprise&apos;),
+Trial_Period__c &gt;90
+),
+
+AND(
+CONTAINS(Owner.UserRole.Name,&apos;Industrial&apos;),
+Trial_Period__c &gt;60
+),
+
+AND(
+CONTAINS(Owner.UserRole.Name,&apos;CNWKR&apos;),
+Trial_Period__c &gt;60
+),
+
+AND(
+CONTAINS(Owner.UserRole.Name,&apos;SMB&apos;),
+Trial_Period__c &gt;30
+)
+)
+)</errorConditionFormula>
+    <errorMessage>The initial trial period cannot be greater than 30 days for Inside Sales and 60 days for Major Accounts</errorMessage>
+</ValidationRule>

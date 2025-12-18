@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dev_Accept</fullName>
+    <availability>online</availability>
+    <description>Update issue status from dev-consider to dev-accepted</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Dev-Accept</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/63.0/connection.js&quot;)} 
+ 
+var issueList = {!GETRECORDIDS($ObjectType.Issue__c )}; 
+var SelectedIds = &apos;&apos;;
+
+for(var i in issueList){
+   SelectedIds += &quot;&apos;&quot; + issueList[i] + &quot;&apos;,&quot;;
+}
+SelectedIds = SelectedIds.substring(0,SelectedIds.length - 1); //remove last comma
+
+var updatedList = [];
+
+if (issueList[0] == null){
+   alert(&quot;Please select at least one issue.&quot;);
+} else {
+   var strQuery = &quot;SELECT Issue_Status__c, Id  FROM Issue__c WHERE Id in (&quot; + SelectedIds + &quot;) AND issue_status__c = &apos;dev-consider&apos;&quot;;
+
+   var result = sforce.connection.query(strQuery);
+   var records = result.getArray(&quot;records&quot;);       
+
+   if (records.length == 0){
+      alert(&quot;You can only dev-accept issues that are in dev-consider&quot;);
+   } else {
+
+var answer = confirm(&quot;Do you want to mark &quot; + records.length + &quot; issues as dev-accepted ?&quot;);
+      if (answer == true){      
+      
+
+         for (var n=0; n&lt;records.length; n++){
+
+	         if (records[n].get(&quot;Issue_Status__c&quot;) == &quot;dev-consider&quot;){
+	            var i = new sforce.SObject(&quot;Issue__c&quot;);                                             
+	            i.Id = records[n].Id;
+	            i.Issue_Status__c = &quot;dev-accepted&quot;;                     
+	            updatedList.push(i);
+	         }
+         }
+
+         var upresult = sforce.connection.update(updatedList);
+         if (upresult[0].getBoolean(&quot;success&quot;)){
+            window.location.reload();
+         }
+         else{
+	         alert(&quot;Error occurred in updating Lead :&quot; + upresult[0]);
+         }
+      }
+   }
+}</url>
+</WebLink>

@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Warranty_Exchange_Reason__c</fullName>
+    <description>Detail list of diagnosed failure mode. Only use for Warranty Exchanges.</description>
+    <inlineHelpText>Email eliot.chang@samsara.com with any questions</inlineHelpText>
+    <label>Warranty Exchange Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Accessory/Cable Exchange - Causing Issues with Vehicle/Gateway</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - Causing Issues with Vehicle/Gateway</label>
+            </value>
+            <value>
+                <fullName>Accessory/Cable Exchange - ELD HW Replacement - Compatibility with New Device</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - ELD HW Replacement - Compatibility with New Device</label>
+            </value>
+            <value>
+                <fullName>Accessory/Cable Exchange - Faulty/Does not Work</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - Faulty/Does not Work</label>
+            </value>
+            <value>
+                <fullName>Accessory/Cable Exchange - HW Upgrade - Compatibility with New Device</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - HW Upgrade - Compatibility with New Device</label>
+            </value>
+            <value>
+                <fullName>Accessory/Cable Exchange - Incorrect Cable - Does not Match Vehicle Gateway (VG) Port</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - Incorrect Cable - Does not Match Vehicle Gateway (VG) Port</label>
+            </value>
+            <value>
+                <fullName>Accessory/Cable Exchange - Incorrect Cable - Does not Match Vehicle Port</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - Incorrect Cable - Does not Match Vehicle Port</label>
+            </value>
+            <value>
+                <fullName>Accessory/Cable Exchange - Physically Damaged</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - Physically Damaged</label>
+            </value>
+            <value>
+                <fullName>Accessory/Cable Exchange - Vehicle Swap</fullName>
+                <default>false</default>
+                <label>Accessory/Cable Exchange - Vehicle Swap</label>
+            </value>
+            <value>
+                <fullName>AG46 Cover Campaign</fullName>
+                <default>false</default>
+                <label>AG46 Cover Campaign</label>
+            </value>
+            <value>
+                <fullName>AG46 Firmware Campaign</fullName>
+                <default>false</default>
+                <label>AG46 Firmware Campaign</label>
+            </value>
+            <value>
+                <fullName>AG4x Replacement</fullName>
+                <default>false</default>
+                <label>AG4x Replacement</label>
+            </value>
+            <value>
+                <fullName>AG5x Component Campaign</fullName>
+                <default>false</default>
+                <label>AG5x Component Campaign</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - AG46 Firmware Campaign</fullName>
+                <default>false</default>
+                <label>Asset Gateway - AG46 Firmware Campaign</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - AG5x Low Temperature Component Campaign</fullName>
+                <default>false</default>
+                <label>Asset Gateway - AG5x Low Temperature Component Campaign</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - Low Battery</fullName>
+                <default>false</default>
+                <label>Asset Gateway - Low Battery</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - MCU Error</fullName>
+                <default>false</default>
+                <label>Asset Gateway - MCU Error</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - Missing Device Statistics</fullName>
+                <default>false</default>
+                <label>Asset Gateway - Missing Device Statistics</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - No Boot (Fails to Power Up)</fullName>
+                <default>false</default>
+                <label>Asset Gateway - No Boot (Fails to Power Up)</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - No Cellular (Blinking Orange (AG2x,4x), Red/Yellow AG5x)</fullName>
+                <default>false</default>
+                <label>Asset Gateway - No Cellular (Blinking Orange (AG2x,4x), Red/Yellow AG5x)</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - No Cellular (Blinking Orange)</fullName>
+                <default>false</default>
+                <label>Asset Gateway - No Cellular (Blinking Orange)</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - No GPS</fullName>
+                <default>false</default>
+                <label>Asset Gateway - No GPS</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - Physical Damage</fullName>
+                <default>false</default>
+                <label>Asset Gateway - Physical Damage</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - Stuck on Boot (Steady Orange LED)</fullName>
+                <default>false</default>
+                <label>Asset Gateway - Stuck on Boot (Steady Orange LED)</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - Stuck on Boot (Steady Orange Light)</fullName>
+                <default>false</default>
+                <label>Asset Gateway - Stuck on Boot (Steady Orange Light)</label>
+            </value>
+            <value>
+                <fullName>Asset Gateway - Water Damage</fullName>
+                <default>false</default>
+                <label>Asset Gateway - Water Damage</label>
+            </value>
+            <value>
+                <fullName>Beta RMA</fullName>
+                <default>false</default>
+                <label>Beta RMA</label>
+            </value>
+            <value>
+                <fullName>Cable Swap - Customer Behavior</fullName>
+                <default>false</default>
+                <label>Cable Swap - Customer Behavior</label>
+            </value>
+            <value>
+                <fullName>Cable Swap - Sales Process</fullName>
+                <default>false</default>
+                <label>Cable Swap - Sales Process</label>
+            </value>
+            <value>
+                <fullName>Cable Swap - Vehicle Issue</fullName>
+                <default>false</default>
+                <label>Cable Swap - Vehicle Issue</label>
+            </value>
+            <value>
+                <fullName>Camera - (CM3x): CM not enumerating</fullName>
+                <default>false</default>
+                <label>Camera - (CM3x): CM not enumerating</label>
+            </value>
+            <value>
+                <fullName>Camera - (CM3X): Profile A</fullName>
+                <default>false</default>
+                <label>Camera - (CM3X): Profile A</label>
+            </value>
+            <value>
+                <fullName>Camera - (CM3X): Profile B</fullName>
+                <default>false</default>
+                <label>Camera - (CM3X): Profile B</label>
+            </value>
+            <value>
+                <fullName>Camera - (CM3X): Profile C</fullName>
+                <default>false</default>
+                <label>Camera - (CM3X): Profile C</label>
+            </value>
+            <value>
+                <fullName>Camera - Audio Issues</fullName>
+                <default>false</default>
+                <label>Camera - Audio Issues</label>
+            </value>
+            <value>
+                <fullName>Camera - CM Health Campaign</fullName>
+                <default>false</default>
+                <label>Camera - CM Health Campaign</label>
+            </value>
+            <value>
+                <fullName>Camera - CM not Enumerating</fullName>
+                <default>false</default>
+                <label>Camera - CM not Enumerating</label>
+            </value>
+            <value>
+                <fullName>Camera - Error Mounting SD Card</fullName>
+                <default>false</default>
+                <label>Camera - Error Mounting SD Card</label>
+            </value>
+            <value>
+                <fullName>Camera - Manual Video Retrieval Request</fullName>
+                <default>false</default>
+                <label>Camera - Manual Video Retrieval Request</label>
+            </value>
+            <value>
+                <fullName>Camera - No Image</fullName>
+                <default>false</default>
+                <label>Camera - No Image</label>
+            </value>
+            <value>
+                <fullName>Camera - Physical Damage</fullName>
+                <default>false</default>
+                <label>Camera - Physical Damage</label>
+            </value>
+            <value>
+                <fullName>Camera - Poor Connected Uptime</fullName>
+                <default>false</default>
+                <label>Camera - Poor Connected Uptime</label>
+            </value>
+            <value>
+                <fullName>Camera - Poor Image Quality</fullName>
+                <default>false</default>
+                <label>Camera - Poor Image Quality</label>
+            </value>
+            <value>
+                <fullName>Camera - Poor Recording Uptime</fullName>
+                <default>false</default>
+                <label>Camera - Poor Recording Uptime</label>
+            </value>
+            <value>
+                <fullName>Camera - Poor Uptime</fullName>
+                <default>false</default>
+                <label>Camera - Poor Uptime</label>
+            </value>
+            <value>
+                <fullName>Camera - Water Damage</fullName>
+                <default>false</default>
+                <label>Camera - Water Damage</label>
+            </value>
+            <value>
+                <fullName>Customer Sentiment</fullName>
+                <default>false</default>
+                <label>Customer Sentiment</label>
+            </value>
+            <value>
+                <fullName>Diagnostic Hub Replacement</fullName>
+                <default>false</default>
+                <label>Diagnostic Hub Replacement</label>
+            </value>
+            <value>
+                <fullName>Driver ID Token - Failure to Connect</fullName>
+                <default>false</default>
+                <label>Driver ID Token - Failure to Connect</label>
+            </value>
+            <value>
+                <fullName>ELD HW Replacement</fullName>
+                <default>false</default>
+                <label>ELD HW Replacement</label>
+            </value>
+            <value>
+                <fullName>Exchange Tool Error</fullName>
+                <default>false</default>
+                <label>Exchange Tool Error</label>
+            </value>
+            <value>
+                <fullName>HW Upgrade - CS Escalation</fullName>
+                <default>false</default>
+                <label>HW Upgrade - CS Escalation</label>
+            </value>
+            <value>
+                <fullName>HW Upgrade - End of Support</fullName>
+                <default>false</default>
+                <label>HW Upgrade - End of Support</label>
+            </value>
+            <value>
+                <fullName>HW Upgrade - HW Compatibility</fullName>
+                <default>false</default>
+                <label>HW Upgrade - HW Compatibility</label>
+            </value>
+            <value>
+                <fullName>HW Upgrade - Materially Different</fullName>
+                <default>false</default>
+                <label>HW Upgrade - Materially Different</label>
+            </value>
+            <value>
+                <fullName>HW Upgrade - Out of Stock</fullName>
+                <default>false</default>
+                <label>HW Upgrade - Out of Stock</label>
+            </value>
+            <value>
+                <fullName>HW Upgrade - Reliability</fullName>
+                <default>false</default>
+                <label>HW Upgrade - Reliability</label>
+            </value>
+            <value>
+                <fullName>New cable/accessory</fullName>
+                <default>false</default>
+                <label>New cable/accessory</label>
+            </value>
+            <value>
+                <fullName>Other - Email eliot.chang@samsara.com</fullName>
+                <default>false</default>
+                <label>Other - Email eliot.chang@samsara.com</label>
+            </value>
+            <value>
+                <fullName>Other - New Return Reason</fullName>
+                <default>false</default>
+                <label>Other - New Return Reason</label>
+            </value>
+            <value>
+                <fullName>Sensor - Low Battery</fullName>
+                <default>false</default>
+                <label>Sensor - Low Battery</label>
+            </value>
+            <value>
+                <fullName>Sensor - Physical Damage</fullName>
+                <default>false</default>
+                <label>Sensor - Physical Damage</label>
+            </value>
+            <value>
+                <fullName>Sensor - Sensor has no readings</fullName>
+                <default>false</default>
+                <label>Sensor - Sensor has no Readings</label>
+            </value>
+            <value>
+                <fullName>Sensor - Sensor will not Connect</fullName>
+                <default>false</default>
+                <label>Sensor - Sensor will not Connect</label>
+            </value>
+            <value>
+                <fullName>Sensor - Sensor Won&apos;t Connect</fullName>
+                <default>false</default>
+                <label>Sensor - Sensor Won&apos;t Connect</label>
+            </value>
+            <value>
+                <fullName>Sensor - Water Damage</fullName>
+                <default>false</default>
+                <label>Sensor - Water Damage</label>
+            </value>
+            <value>
+                <fullName>Site Camera - Defect on Arrival (DOA)</fullName>
+                <default>false</default>
+                <label>Site Camera - Defect on Arrival (DOA)</label>
+            </value>
+            <value>
+                <fullName>Site Camera - Moisture Ingress</fullName>
+                <default>false</default>
+                <label>Site Camera - Moisture Ingress</label>
+            </value>
+            <value>
+                <fullName>Site Camera - Not Connecting to Network</fullName>
+                <default>false</default>
+                <label>Site Camera - Not Connecting to Network</label>
+            </value>
+            <value>
+                <fullName>Site Camera - Not Powering On</fullName>
+                <default>false</default>
+                <label>Site Camera - Not Powering On</label>
+            </value>
+            <value>
+                <fullName>Site Camera - No Video Stream/Image</fullName>
+                <default>false</default>
+                <label>Site Camera - No Video Stream/Image</label>
+            </value>
+            <value>
+                <fullName>Site Camera - Physical Damage</fullName>
+                <default>false</default>
+                <label>Site Camera - Physical Damage</label>
+            </value>
+            <value>
+                <fullName>Site Gateway - Defect on Arrival (DOA)</fullName>
+                <default>false</default>
+                <label>Site Gateway - Defect on Arrival (DOA)</label>
+            </value>
+            <value>
+                <fullName>Site Gateway - Not Connecting to Cellular Network</fullName>
+                <default>false</default>
+                <label>Site Gateway - Not Connecting to Cellular Network</label>
+            </value>
+            <value>
+                <fullName>Site Gateway - Not Connecting to LAN/WAN Network</fullName>
+                <default>false</default>
+                <label>Site Gateway - Not Connecting to LAN/WAN Network</label>
+            </value>
+            <value>
+                <fullName>Site Gateway - Not Powering On</fullName>
+                <default>false</default>
+                <label>Site Gateway - Not Powering On</label>
+            </value>
+            <value>
+                <fullName>Site Gateway - Physical Damage</fullName>
+                <default>false</default>
+                <label>Site Gateway - Physical Damage</label>
+            </value>
+            <value>
+                <fullName>Unplanned Return - Exchange/Warranty Exchange</fullName>
+                <default>false</default>
+                <label>Unplanned Return - Exchange/Warranty Exchange</label>
+            </value>
+            <value>
+                <fullName>Unplanned Return - Exchange/ Warranty Exchange</fullName>
+                <default>false</default>
+                <label>Unplanned Return - Exchange/ Warranty Exchange</label>
+            </value>
+            <value>
+                <fullName>Unplanned Return  - Other</fullName>
+                <default>false</default>
+                <label>Unplanned Return  - Other</label>
+            </value>
+            <value>
+                <fullName>Unplanned Return - Other</fullName>
+                <default>false</default>
+                <label>Unplanned Return - Other</label>
+            </value>
+            <value>
+                <fullName>Unplanned Return - Remorse Refund/ETF</fullName>
+                <default>false</default>
+                <label>Unplanned Return - Remorse Refund/ETF</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Fault/Error Codes on the Vehicle</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Fault/Error Codes on the Vehicle</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Low Battery</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Low Battery</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Missing/Incorrect GPS</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Missing/Incorrect GPS</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Missing Diagnostics</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Missing Diagnostics</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - No Cellular (Blinking Orange LED)</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - No Cellular (Blinking Orange LED)</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - No Cellular (Blinking Orange Light)</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - No Cellular (Blinking Orange Light)</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - No GPS</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - No GPS</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - No Power (Fails to Power Up)</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - No Power (Fails to Power Up)</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Not Powering On (No LED)</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Not Powering On (No LED)</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Physical Damage</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Physical Damage</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Stuck on Boot (Solid Orange LED)</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Stuck on Boot (Solid Orange LED)</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Stuck on Boot (Steady Orange Light)</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Stuck on Boot (Steady Orange Light)</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - USB Hub</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - USB Hub</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - USB Ports</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - USB Ports</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Vehicle Battery Drain</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Vehicle Battery Drain</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Vehicle Malfunction or Drivability Issues</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Vehicle Malfunction or Drivability Issues</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Vehicle Swap/Exchange</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Vehicle Swap/Exchange</label>
+            </value>
+            <value>
+                <fullName>Vehicle Gateway - Water Damage</fullName>
+                <default>false</default>
+                <label>Vehicle Gateway - Water Damage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

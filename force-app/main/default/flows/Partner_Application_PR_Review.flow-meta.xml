@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS:22483: Created as part of Partner Application project. To map values to the PR record when PAM approves the PR record.</description>
+        <name>Mapping_PR_Approval_Values</name>
+        <label>Mapping PR Approval Values</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>PR_To_Update.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Approved by PAM</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PR_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PR_To_Update.Partner_Team_Alignment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Partner_Team_Alignment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PR_To_Update.Sales_Program_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sales_Program_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_PR_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Mapping_PR_Denial_Values</name>
+        <label>Mapping PR Denial Values</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>PR_To_Update.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>PAM Denied</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PR_To_Update.DenialReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Denial_Reason</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PR_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_PR_Record</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>PAM_Apporved</name>
+        <choiceText>Approve</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Approved</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>PAM_Denied</name>
+        <choiceText>Deny</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Denied</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>PAM_Approval_Check</name>
+        <label>PAM Approval Check</label>
+        <locationX>182</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Denial_Reason_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>PAM Denied</defaultConnectorLabel>
+        <rules>
+            <name>PAM_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PAM_Decision</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>PAM_Apporved</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mapping_PR_Approval_Values</targetReference>
+            </connector>
+            <label>PAM Approved</label>
+        </rules>
+    </decisions>
+    <description>GTMS:22483: Created as part of Partner Application project 
+8/6/24: AFter creating REcord Triggered Flow</description>
+    <dynamicChoiceSets>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Denial_Reason_Picklist_Set</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>DenialReason__c</picklistField>
+        <picklistObject>Partner_Registration__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>GTMS-22483: Created as part of Partner Applicatoin H2 project</description>
+        <name>Partner_Team_Alignment_Choice</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Partner_Team_Alignment__c</picklistField>
+        <picklistObject>Partner_Registration__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>GTMS-22483: Created as part of Partner Application H2 project</description>
+        <name>Sales_Program_Type_Choice</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Sales_Program_Type__c</picklistField>
+        <picklistObject>Partner_Registration__c</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Lead_And_Date_Check</name>
+        <dataType>Boolean</dataType>
+        <expression>(DATEVALUE({!Get_PR_Record.CreatedDate}) - DATEVALUE({!Get_Partner_Account.CreatedDate})) == 0</expression>
+    </formulas>
+    <interviewLabel>Partner Application PR Review {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Partner Application Review</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Get_Partner_Account</name>
+        <label>Get Partner Account</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Partner_Required_Fields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_PR_Record.Partner_Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Get_PR_Record</name>
+        <label>Get PR Record</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Partner_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Partner_Registration__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Update_PR_Record</name>
+        <label>Update PR Record</label>
+        <locationX>182</locationX>
+        <locationY>974</locationY>
+        <connector>
+            <targetReference>Final_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <inputReference>PR_To_Update</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Approval_Screen</name>
+        <label>Approval Screen</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>PAM_Approval_Check</targetReference>
+        </connector>
+        <fields>
+            <name>PAM_Decision</name>
+            <choiceReferences>PAM_Apporved</choiceReferences>
+            <choiceReferences>PAM_Denied</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Please select on option</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Denial_Reason_Screen</name>
+        <label>Denial Reason Screen</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Mapping_PR_Denial_Values</targetReference>
+        </connector>
+        <fields>
+            <name>Denial_Reason</name>
+            <choiceReferences>Denial_Reason_Picklist_Set</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Denial Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-22483: Created as part of Partner Application project.</description>
+        <name>Error_Screen</name>
+        <label>Error_Screen</label>
+        <locationX>578</locationX>
+        <locationY>1082</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Erro_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(208, 35, 35);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-22483: Created as part of Partner Application Project</description>
+        <name>Final_Screen</name>
+        <label>Final Screen</label>
+        <locationX>182</locationX>
+        <locationY>1082</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Final_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(119, 157, 7);&quot;&gt;Partner Application Review Completed Successfully&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-22483: Created as part of Partner Application H2 project</description>
+        <name>Partner_Required_Fields</name>
+        <label>Partner Required Fields</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Approval_Screen</targetReference>
+        </connector>
+        <fields>
+            <name>Partner_Team_Alignment</name>
+            <choiceReferences>Partner_Team_Alignment_Choice</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_PR_Record.Partner_Team_Alignment__c</elementReference>
+            </defaultValue>
+            <fieldText>Partner Team Alignment</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Sales_Program_Type</name>
+            <choiceReferences>Sales_Program_Type_Choice</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Partner_Account.Program_Type__c</elementReference>
+            </defaultValue>
+            <fieldText>Sales Program Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_PR_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>currentItemFromSourceCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>Partner_Acc_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>PR_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Partner_Registration__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS:22483: Created as part of Partner Application project</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

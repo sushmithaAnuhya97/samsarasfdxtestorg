@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__NotificationType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates whether the batch control was successful. The indication is Successful, Failed or Mixed depending on the total number of errors, aborted batches and number of batches that exceeded limits.</description>
+    <externalId>false</externalId>
+    <formula>IF (
+                fferpcore__TotalNumberOfLogs__c = 0,
+                &apos;Undefined&apos;,
+                IF (
+                    AND (
+                        fferpcore__TotalNumberOfErrors__c = 0,
+                        fferpcore__TotalNumberOfAborts__c = 0,
+                        fferpcore__TotalNumberOfExternal__c = 0
+                    ),
+                    &apos;Successful&apos;,
+                    IF (
+                        fferpcore__TotalNumberOfErrors__c = fferpcore__TotalNumberOfLogs__c,
+                        &apos;Failure&apos;,
+                        IF (
+                            fferpcore__TotalNumberOfAborts__c &gt; 0,
+                            &apos;Failure&apos;,
+                            IF (
+                                fferpcore__TotalNumberOfExternal__c &gt; 0,
+                                &apos;Failure&apos;,
+                                &apos;Mixed&apos;
+                            )
+                        )
+                    )
+                )
+            )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates whether the batch control was successful.</inlineHelpText>
+    <label>Notification</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

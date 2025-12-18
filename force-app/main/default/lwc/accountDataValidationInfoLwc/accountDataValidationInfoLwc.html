@@ -1,0 +1,224 @@
+<template>
+  <template if:false={showEdit}>
+      <lightning-record-view-form
+      record-id={recordId}
+      object-api-name="Account"
+  >
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+    <lightning-output-field field-name="Website" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+        <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+          <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+        </svg>
+        
+      </button>
+    </div>
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+  <lightning-output-field field-name="BillingAddress" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+      <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+        <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+      </svg>
+      
+    </button>
+  </div>
+  
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+      <lightning-output-field field-name="Number_of_Vehicles__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+          <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+          </svg>
+          
+        </button>
+  </div>
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+          <lightning-output-field field-name="Number_of_Powered_Assets__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+              <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+              </svg>
+              
+            </button>
+  </div>
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+              <lightning-output-field field-name="Number_of_Unpowered_Assets__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                  <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                    <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                  </svg>
+                  
+                </button>
+  </div>
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+      <lightning-output-field field-name="Industry" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+          <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+          </svg>
+          
+        </button>
+      </div>
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+          <lightning-output-field field-name="Organization_Size__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+              <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+              </svg>
+              
+            </button>
+          </div>
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+  <lightning-output-field field-name="Current_Telematics_Provider__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+      <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+        <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+      </svg>
+      
+    </button>
+  </div>
+  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+    <lightning-output-field field-name="Other_Telematics_Provider__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+        <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+          <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+        </svg>
+        
+      </button>
+    </div>
+    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+      <lightning-output-field field-name="Telematics_Contract_End_Date__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+          <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+          </svg>
+          
+        </button>
+      </div>
+      <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+        <lightning-output-field field-name="EMEA_Current_Telematics_Provider__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+            <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+              <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+            </svg>
+            
+          </button>
+        </div>
+        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+          <lightning-output-field field-name="Current_Construction_Equip_Telematics__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+              <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+              </svg>
+              
+            </button>
+          </div>
+          <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+            <lightning-output-field field-name="Equipment_Telematics_Contract_End_Date__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                  <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                </svg>
+                
+              </button>
+            </div>
+            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+              <lightning-output-field field-name="Registered_Insurance_Partner__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                  <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                    <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                  </svg>
+                  
+                </button>
+              </div><div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                <lightning-output-field field-name="Current_Site_Visibility_Provider__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                    <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                      <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                    </svg>
+                    
+                  </button>
+                </div><div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                  <lightning-output-field field-name="Current_Camera_Provider__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                      <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                        <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                      </svg>
+                      
+                    </button>
+                  </div><div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                    <lightning-output-field field-name="Other_Camera_Provider__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                        <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                          <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                        </svg>
+                        
+                      </button>
+                    </div><div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                      <lightning-output-field field-name="Camera_Contract_End_Date__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                          <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                            <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                          </svg>
+                          
+                        </button>
+                      </div><div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                        <lightning-output-field field-name="Top_250_Fleets_Status__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                            <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                              <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                            </svg>
+                            
+                          </button>
+                        </div><div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                          <lightning-output-field field-name="Follow_Up_Notes__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                              <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                              </svg>
+                              
+                            </button>
+                          </div>
+                        </div><div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                          <lightning-output-field field-name="Current_Fleet_Management_Company__c" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                              <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                                <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                              </svg>
+                              
+                            </button>
+                          </div>
+                        
+                        
+  
+</lightning-record-view-form>
+  </template>
+
+  <template if:true={showEdit}>
+      <lightning-record-edit-form
+  record-id={recordId}
+  object-api-name="Account" onsuccess={hideEdit}
+>
+  <lightning-messages> </lightning-messages>
+  <lightning-input-field field-name="BillingAddress"> </lightning-input-field>
+  <lightning-input-field field-name="Number_of_Vehicles__c"> </lightning-input-field>
+  <lightning-input-field field-name="Number_of_Powered_Assets__c"> </lightning-input-field>
+  <lightning-input-field field-name="Number_of_Unpowered_Assets__c"> </lightning-input-field>
+  <lightning-input-field field-name="Industry"> </lightning-input-field>
+  <lightning-input-field field-name="Organization_Size__c"> </lightning-input-field>
+  <lightning-input-field field-name="Current_Telematics_Provider__c"> </lightning-input-field>
+  <lightning-input-field field-name="Other_Telematics_Provider__c"> </lightning-input-field>
+  <lightning-input-field field-name="Telematics_Contract_End_Date__c"> </lightning-input-field>
+  <lightning-input-field field-name="EMEA_Current_Telematics_Provider__c"> </lightning-input-field>
+  <lightning-input-field field-name="Current_Construction_Equip_Telematics__c"> </lightning-input-field>
+  <lightning-input-field field-name="Equipment_Telematics_Contract_End_Date__c"> </lightning-input-field>
+  <lightning-input-field field-name="Registered_Insurance_Partner__c"> </lightning-input-field>
+  <lightning-input-field field-name="Current_Site_Visibility_Provider__c"> </lightning-input-field>
+  <lightning-input-field field-name="Current_Camera_Provider__c"> </lightning-input-field>
+  <lightning-input-field field-name="Other_Camera_Provider__c"> </lightning-input-field>
+  <lightning-input-field field-name="Camera_Contract_End_Date__c"> </lightning-input-field>
+  <lightning-input-field field-name="Top_250_Fleets_Status__c"> </lightning-input-field>
+  <lightning-input-field field-name="Follow_Up_Notes__c"> </lightning-input-field>
+  <lightning-input-field field-name="Current_Fleet_Management_Company__c"> </lightning-input-field>
+  <lightning-input-field field-name="Website"> </lightning-input-field>
+  
+  <lightning-button
+      class="slds-m-top_small"
+      variant="brand"
+      type="submit"
+      name="update"
+      label="Update"
+  >
+  </lightning-button>
+  <lightning-button
+      class="slds-m-top_small"
+      variant="brand"
+      type="button"
+      name="Cancel"
+      label="Cancel"
+      onclick={hideEdit}
+  >
+  </lightning-button>
+</lightning-record-edit-form>
+  </template>
+  
+</template>

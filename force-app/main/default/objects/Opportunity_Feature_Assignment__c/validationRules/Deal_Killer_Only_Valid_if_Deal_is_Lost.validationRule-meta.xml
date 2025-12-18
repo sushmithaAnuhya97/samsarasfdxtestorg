@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Killer_Only_Valid_if_Deal_is_Lost</fullName>
+    <active>true</active>
+    <description>Don&apos;t allow a feature to be marked a deal killer if the deal hasn&apos;t been closed lost yet.</description>
+    <errorConditionFormula>Deal_Killer__c &amp;&amp; not(ispickval(Opportunity__r.StageName,&apos;Closed Lost&apos;))</errorConditionFormula>
+    <errorMessage>An oppty must be closed lost before a feature can be marked as a deal killer.</errorMessage>
+</ValidationRule>

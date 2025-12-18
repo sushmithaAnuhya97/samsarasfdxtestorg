@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FRA_Product_Names__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Product2.ProductCode, 
+&quot;ACC-AGPS&quot;,&quot;Antenne GPS externe&quot;,
+&quot;ACC-BJ1708-Y1&quot;, &quot;Câble VG34 - J1708 avec montage à vis&quot;,
+&quot;ACC-BJ1939-VM&quot;,&quot;Câble VG34 - OBDII pour Volvo/Mack&quot;,
+&quot;ACC-BOBDII-Y1&quot;,&quot;Câble VG34 - OBDII J1962 avec montage en L&quot;,
+&quot;ACC-BPC&quot;,&quot;Câble VG34 - Alimentation sans diagnostique&quot;,
+&quot;ACC-CARD&quot;,&quot;CARD ID&quot;,
+&quot;ACC-CIG-LIGHT&quot;, &quot;Câble d&apos;allume-cigare&quot;,
+&quot;ACC-CRGO&quot;,&quot;Capteur de cargaison sans fil&quot;,
+&quot;ACC-CU-BBDC&quot;,&quot;Câble BB&quot;,
+&quot;ACC-DM11&quot;,&quot;Capteur de porte sans fil&quot;,
+&quot;ACC-DRIVERID&quot;,&quot;Clé Identifiant du conducteur&quot;,
+&quot;ACC-IDRDR&quot;,&quot;Lecteur ID Card&quot;,
+&quot;ACC-USBH-A2P&quot;,&quot;Hub USB (2 portes)&quot;,
+&quot;CBL-AG-AEDP&quot;,&quot;Câble AG24 pour avec remorque européene&quot;,
+&quot;CBL-AG-APWR&quot;,&quot;Câble d&apos;alimention AG (non remorques)&quot;,
+&quot;CBL-AG-ARFR&quot;,&quot;Câble AG24 pour remorques frigorifiques&quot;,
+&quot;CBL-VG-AFMS&quot;,&quot;Câble VG34 - FMS&quot;,
+&quot;HW-AG24-AEDP&quot;, &quot;AG24-EU avec câble pour remorque européene&quot;,
+&quot;HW-AG24-AEDP&quot;,&quot;AG24-EU avec câble d&apos;alimentation&quot;,
+&quot;HW-AG24-APWR-EU&quot;, &quot;AG24-EU avec câble de groupe frigorifique&quot;,
+&quot;HW-AG24-ARFR-EU&quot;, &quot;Boîtier télématique AG24-EU&quot;,
+&quot;HW-AG24-EU&quot;, &quot;Boîtier télématique AG24-EU&quot;,
+&quot;HW-AG41-EU&quot;, &quot;Boîtier télématique AG41-EU - Actifs non-motorisés&quot;,
+&quot;HW-CM12&quot;, &quot;Caméra embarquée connectée&quot;,
+&quot;HW-CM22&quot;, &quot;Caméra embarquée connectée avec double objectif&quot;,
+&quot;HW-EM21&quot;, &quot;Capteur environnemental sans fil&quot;,
+&quot;HW-EM22&quot;, &quot;Capteur environnemental avec sonde de température&quot;,
+&quot;HW-VG34-EU&quot;, &quot;Boîtier télématique VG34-EU&quot;,
+&quot;LIC-AG2-ENT&quot;, &quot;License pour boîtier télématique AG24-EU&quot;,
+&quot;LIC-EM-ENT&quot;, &quot;License pour capteurs environnementaux&quot;,
+&quot;LIC-VG-ENT&quot;, &quot;License pour boîtier télématique VG&quot;,
+&quot;LIC-WIFI-DATA&quot;, &quot;Point d&apos;accès WiFi - 500 Mo de données supplémentaires, 12 Mo&quot;,
+&quot;LIC-AG2P-EXPRESS&quot;, &quot;Samsara Express - Actifs motorisés (non-remorques)&quot;,
+&quot;LIC-AG2R-EXPRESS&quot;, &quot;Samsara Express - Groupe frigorifique&quot;,
+&quot;LIC-AG2T-EXPRESS&quot;, &quot;Samsara Express - Remorques&quot;,
+&quot;LIC-AG4-EXPRESS&quot;, &quot;Samsara Express - Actifs non-motorisés&quot;,
+&quot;LIC-CM1-EXPRESS&quot;, &quot;Samsara Express - Caméra embarquée&quot;,
+&quot;LIC-CM2-EXPRESS&quot;, &quot;Samsara Express - Caméras embarquées double objectif&quot;,
+&quot;LIC-CRGO-EXPRESS&quot;, &quot;Capteur de cargaison sans fil&quot;,
+&quot;LIC-DM11-EXPRESS&quot;, &quot;Capteur de porte sans fil&quot;,
+&quot;LIC-EM-EXPRESS&quot;, &quot;Samsara Express - Température&quot;,
+&quot;LIC-VG-EXPRESS&quot;, &quot;Samsara Express - Véhicule&quot;,
+ Product2.Name )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>test FRA Product Names</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

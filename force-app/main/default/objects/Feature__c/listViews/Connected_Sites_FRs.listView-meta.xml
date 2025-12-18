@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connected_Sites_FRs</fullName>
+    <columns>NAME</columns>
+    <columns>PM_Owner__c</columns>
+    <columns>Category__c</columns>
+    <columns>Completed__c</columns>
+    <columns>Status__c</columns>
+    <columns>No_Of_Days__c</columns>
+    <columns>Sum_of_Opportunity_ACV__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>equals</operation>
+        <value>Sites</value>
+    </filters>
+    <label>Connected Sites FRs</label>
+</ListView>

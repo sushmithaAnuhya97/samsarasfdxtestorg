@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Latest_Lifecycle_Phase__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>BLANKVALUE(text(PDLM__Latest_Released_Revision__r.PDLM__Lifecycle_Phase__c), text(PDLM__Latest_Revision__r.PDLM__Lifecycle_Phase__c)+&quot; (Pending)&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lifecycle Phase</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Closed_Lost_Reason_detail</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT( $Permission.Validation_Rule_Exemption ),TEXT(StageName) = &quot;Closed Lost&quot;, TEXT(Type) = &quot;Revenue Opportunity&quot;, ISCHANGED(StageName), ISBLANK( Industrial_Closed_Lost_Reason_Detail__c ), RecordTypeId == &apos;0121a000000VnAB&apos; )</errorConditionFormula>
+    <errorMessage>Please write a closed lost reason detail before moving to closed lost for Industrial Opportunity.</errorMessage>
+</ValidationRule>

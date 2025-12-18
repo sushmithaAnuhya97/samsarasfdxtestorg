@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-24005: Created as part of Feature Request Phase 2 Project to assign values to the record variable</description>
+        <name>Assign_Values_To_Variable</name>
+        <label>Assign Values To Variable</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignmentItems>
+            <assignToReference>Related_Opportunity.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Related_Opportunity.Account_Size_Segment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Account.Account_Size_Segment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Related_Opportunity.Opportunity_Stage_Text__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.StageName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Updated_Triggering_Record</targetReference>
+        </connector>
+    </assignments>
+    <description>GTMS-24005: Created as part of Feature Request Phase 2 project.</description>
+    <environments>Default</environments>
+    <interviewLabel>Feature Request Related Opportunity After Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Feature Request Related Opportunity After Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>GTMS-24005: Used to Updated the record that triggered the Flow</description>
+        <name>Updated_Triggering_Record</name>
+        <label>Updated Triggering Record</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <inputReference>Related_Opportunity</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Values_To_Variable</targetReference>
+        </connector>
+        <object>Opportunity_Idea_Assignment__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-24005: Created as part of Feature Request phase 2 project to assign values to the record variable and use this variable to update</description>
+        <name>Related_Opportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity_Idea_Assignment__c</objectType>
+    </variables>
+</Flow>

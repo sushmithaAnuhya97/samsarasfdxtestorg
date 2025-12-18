@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transferred_By__c</fullName>
+    <description>Displays the transferred by (owner) name from the ADR Transfer log.</description>
+    <externalId>false</externalId>
+    <formula>ADR_Transfer_Log__r.ADR_Transfer_By__r.FirstName + &apos; &apos; + ADR_Transfer_Log__r.ADR_Transfer_By__r.LastName</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Transferred By</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

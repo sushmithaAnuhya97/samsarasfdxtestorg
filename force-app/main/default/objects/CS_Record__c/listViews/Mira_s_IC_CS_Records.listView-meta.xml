@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mira_s_IC_CS_Records</fullName>
+    <columns>Account__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Undecorated_SAM_Number__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CSM_Onboarding_Start_Date__c</columns>
+    <columns>Onboarding_Stage__c</columns>
+    <columns>Onboarding_Sub_Status__c</columns>
+    <columns>CSM_Onboarding_End_Date__c</columns>
+    <columns>CSM_Status__c</columns>
+    <columns>CSM_Health_Rating__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>CS_POC_First_Name__c</columns>
+    <columns>CS_POC_Email_Address__c</columns>
+    <columns>Self_install_or_Vendor__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Implementation_Consultant__c</field>
+        <operation>equals</operation>
+        <value>Mirabella Garrett</value>
+    </filters>
+    <label>Mira&apos;s IC CS Records</label>
+    <language>en_US</language>
+</ListView>

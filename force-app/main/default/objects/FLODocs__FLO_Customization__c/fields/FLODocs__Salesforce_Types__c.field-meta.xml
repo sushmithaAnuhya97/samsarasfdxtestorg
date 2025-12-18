@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Salesforce_Types__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field will hold all Metadata Types from Salesforce.com. This can be used by using ANT, Force.com Migration Tool, Apex, etc.</description>
+    <inlineHelpText>Salesforce Metadata Type</inlineHelpText>
+    <label>Salesforce Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>FLODocs__Salesforce_Types</valueSetName>
+    </valueSet>
+</CustomField>

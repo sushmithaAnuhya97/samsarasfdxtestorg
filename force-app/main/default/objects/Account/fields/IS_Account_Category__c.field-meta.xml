@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IS_Account_Category__c</fullName>
+    <description>This field categorizes inside sales companies depending on who owns them (AE, ADR, Pool).</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(OR(BillingCountry=&apos;United States&apos;, BillingCountry=&apos;Canada&apos;, BillingCountry=&apos;Mexico&apos;), OR(Number_of_Vehicles__c&gt;20,Number_of_Powered_Assets__c&gt;40, AND(Number_of_Students__c&gt;2000,Number_of_Students__c&lt;10000, NOT(ISBLANK(Number_of_Students__c))),AND(Number_of_Citizens__c&gt;10000,Number_of_Citizens__c&lt;100000, NOT(ISBLANK(Number_of_Citizens__c)))),OR(ISPICKVAL(Organization_Size__c,&apos;1 - 99&apos;), ISPICKVAL(Organization_Size__c,&apos;100 - 499&apos;), ISPICKVAL(Organization_Size__c,&apos;500 - 999&apos;))),
+
+IF(Owner.LastName=&apos;Pool&apos;, 
+
+IF(Status__c=&apos;Delete&apos;,&apos;Pool - Not Loadable&apos;, 
+
+IF(OR((TODAY()-DATEVALUE(Last_Contacted__c)&lt;60),(TODAY()-DATEVALUE(Account_Assignment_Date__c)&lt;3)), &quot;Pool - Cooling Down&quot;, &quot;Pool - Ready to Load&quot;)),
+
+IF(AND(CONTAINS(Owner.UserRole.Name,&apos;ADR OB&apos;),ISPICKVAL(Owner.ADR_Segment_Alignment__c,&apos;AE2&apos;)), &apos;IS ADR 2&apos;,
+
+IF(AND(CONTAINS(Owner.UserRole.Name,&apos;ADR OB&apos;),ISPICKVAL(Owner.ADR_Segment_Alignment__c,&apos;AE3&apos;)), &apos;IS ADR 3&apos;,
+
+IF(CONTAINS(Owner.UserRole.Name,&apos;AE1&apos;),&apos;IS AE 1&apos;,
+
+IF(CONTAINS(Owner.UserRole.Name,&apos;AE2&apos;),&apos;IS AE 2&apos;,
+
+IF(CONTAINS(Owner.UserRole.Name,&apos;AE3&apos;),&apos;IS AE 3&apos;,
+
+IF(CONTAINS(Owner.UserRole.Name,&apos;ADR IB&apos;), &apos;Inbound ADR&apos;,
+
+IF(Owner.IsActive=False, &apos;Deactivated User&apos;,
+
+&apos;Owned by Other Role&apos;)))))))), &apos;Not AE2/AE3 Account&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Inside Sales Account Ownership Bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

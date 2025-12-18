@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Picklist_Options__c</fullName>
+    <label>Custom Order Form Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Free Months</fullName>
+                <default>false</default>
+                <label>Free Months</label>
+            </value>
+            <value>
+                <fullName>Passthrough</fullName>
+                <default>false</default>
+                <label>Passthrough</label>
+            </value>
+            <value>
+                <fullName>Redlines</fullName>
+                <default>false</default>
+                <label>Redlines</label>
+            </value>
+            <value>
+                <fullName>Buyouts</fullName>
+                <default>false</default>
+                <label>Buyouts</label>
+            </value>
+            <value>
+                <fullName>Insurance Subsidy</fullName>
+                <default>false</default>
+                <label>Insurance Subsidy</label>
+            </value>
+            <value>
+                <fullName>Multiline</fullName>
+                <default>false</default>
+                <label>Multiline</label>
+            </value>
+            <value>
+                <fullName>Flat Subsidy (&quot;One-Time Credit&quot;)</fullName>
+                <default>false</default>
+                <label>Flat Subsidy (&quot;One-Time Credit&quot;)</label>
+            </value>
+            <value>
+                <fullName>Prorated Billing</fullName>
+                <default>false</default>
+                <label>Prorated Billing</label>
+            </value>
+            <value>
+                <fullName>Phased Shipment</fullName>
+                <default>false</default>
+                <label>Phased Shipment</label>
+            </value>
+            <value>
+                <fullName>Stub Payment</fullName>
+                <default>false</default>
+                <label>Stub Payment</label>
+            </value>
+            <value>
+                <fullName>Custom Payment Terms</fullName>
+                <default>false</default>
+                <label>Custom Payment Terms</label>
+            </value>
+            <value>
+                <fullName>Non-Reimbursable Install</fullName>
+                <default>false</default>
+                <label>Non-Reimbursable Install</label>
+            </value>
+            <value>
+                <fullName>Reimbursable Install</fullName>
+                <default>false</default>
+                <label>Reimbursable Install</label>
+            </value>
+            <value>
+                <fullName>Misc</fullName>
+                <default>false</default>
+                <label>Misc</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

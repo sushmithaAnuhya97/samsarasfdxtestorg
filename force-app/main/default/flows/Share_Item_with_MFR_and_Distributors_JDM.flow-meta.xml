@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Invoke_Sharing_Rule_for_Manufacturer</name>
+        <label>Invoke Sharing Rule for Manufacturer</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <actionName>PDLM__SharingRuleAction</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>reason</name>
+            <value>
+                <stringValue>Share item with MFR and Distributors</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ruleName</name>
+            <value>
+                <stringValue>Share_Items_with_Mfrs_and_Distributors</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>PDLM__SharingRuleAction</nameSegment>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <interviewLabel>Share Item with MFR and Distributors (JDM {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Share Item with MFR and Distributors</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Invoke_Sharing_Rule_for_Manufacturer</targetReference>
+        </connector>
+        <object>PDLM__Item__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

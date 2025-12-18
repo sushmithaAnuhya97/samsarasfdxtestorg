@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Contact__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>GTMS-26117: Created as part of Partners Project H1</description>
+    <inlineHelpText>Please identify the partner contact that is our default/primary contact for this program. Note they will automatically be assigned to any &apos;Add a Partner&apos; workflows unless changed by the AE or PAM.</inlineHelpText>
+    <label>Partner Contact</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Please select only Partner Account related contact</errorMessage>
+        <filterItems>
+            <field>Contact.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.Partner_Account__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Partner Program Enrollments</relationshipLabel>
+    <relationshipName>Partner_Program_Enrollments</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

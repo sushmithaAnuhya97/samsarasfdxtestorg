@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_at_Interaction_Lookup__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Owner at Interaction Lookup</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Campaign_Members1</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

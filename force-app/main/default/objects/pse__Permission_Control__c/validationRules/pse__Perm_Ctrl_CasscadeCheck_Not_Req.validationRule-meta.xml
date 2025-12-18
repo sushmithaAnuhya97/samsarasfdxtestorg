@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Perm_Ctrl_CasscadeCheck_Not_Req</fullName>
+    <active>true</active>
+    <description>Cascading Permission must be deselected when assigning a Team.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(pse__Team__c)), pse__Cascading_Permission__c )</errorConditionFormula>
+    <errorMessage>You must deselect Cascading Permission when assigning a Team.</errorMessage>
+</ValidationRule>

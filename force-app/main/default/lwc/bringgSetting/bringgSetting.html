@@ -1,0 +1,282 @@
+<template>
+  <div if:false={migratePreferences}>
+    <lightning-card
+      variant="New Migration Job"
+      title="New Migration Job"
+      icon-name="custom:custom57"
+      if:true={canCreateJob}
+    >
+      <div class="slds-m-around_medium">
+        <!-- <lightning-layout class="slds-grid" horizontal-align="space"> -->
+        <!-- <lightning-layout-item flexibility="auto" padding="around-small" > -->
+        <lightning-record-edit-form
+          object-api-name="zkmigration__Bringg_Migration_Job__c"
+        >
+          <lightning-messages></lightning-messages>
+
+          <div class="slds-clearfix slds-m-top_small">
+            <div class="slds-form__row">
+              <div class="slds-form__item" role="listitem">
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <div class="slds-m-around_medium">
+                    <lightning-input-field
+                      required="true"
+                      field-name="zkmigration__Carrier__c"
+                      onchange={handleChangeCarrier}
+                    >
+                    </lightning-input-field>
+                  </div>
+                </div>
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <div class="slds-m-around_medium">
+                    <lightning-input-field
+                      required="true"
+                      field-name="zkmigration__Description__c"
+                      onchange={handleChangeDescription}
+                    >
+                    </lightning-input-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slds-clearfix slds-m-top_small">
+            <div class="slds-form__row">
+              <div class="slds-form__item" role="listitem">
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <div class="slds-m-around_medium">
+                    <!-- <lightning-input-field required="true" field-name="To_Preference_Id__c" onchange={handleChangeToPreferenceId}> </lightning-input-field> -->
+                    <c-bringg-lookup
+                      data-id="preference_lookup"
+                      required="true"
+                      initial={migrationJob.toPreferenceId}
+                      errors={errors}
+                      columns={lookupColumns}
+                      onchange={handleChangeToPreferenceId}
+                      label="Multi Carrier Preference"
+                      placeholder="Preferences"
+                      scroll-after-n-items="7"
+                      record-limit="50"
+                      icon-name="standard:account"
+                      object-type="zkmulti__MCShipmate_Preference__c"
+                      field-value-name={fieldValue}
+                      field-label-name={fieldName}
+                    >
+                    </c-bringg-lookup>
+                  </div>
+                </div>
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <div class="slds-m-around_medium">
+                    <!-- <lightning-input-field field-name="From_Preference_Id__c" onchange={handleChangeFromPreferenceId}></lightning-input-field> -->
+                    <c-bringg-lookup
+                      data-id="preference_lookup"
+                      initial={migrationJob.fromPreferenceId}
+                      errors={errors}
+                      columns={lookupColumns2}
+                      onchange={handleChangeFromPreferenceId}
+                      label={preferenceName}
+                      placeholder="Preferences"
+                      scroll-after-n-items="7"
+                      record-limit="50"
+                      icon-name="standard:account"
+                      object-type={preferenceApiName}
+                      field-value-name={fieldValue}
+                      field-label-name={fieldName}
+                    >
+                    </c-bringg-lookup>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <lightning-input-field
+            field-name="zkmigration__Query__c"
+            value={query}
+            onchange={handleChangeQuery}
+          ></lightning-input-field>
+
+          <div class="slds-clearfix slds-m-top_small">
+            <div class="slds-form__row">
+              <div class="slds-form__item" role="listitem">
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <lightning-input-field
+                    field-name="zkmigration__Include_Files__c"
+                    onchange={handleChangeIncludeFiles}
+                  ></lightning-input-field>
+                </div>
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <lightning-input-field
+                    field-name="zkmigration__Include_Packages__c"
+                    onchange={handleChangeIncludePackages}
+                  ></lightning-input-field>
+                </div>
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <lightning-input-field
+                    field-name="zkmigration__Save_Errors__c"
+                    onchange={handleChangeSaveErrors}
+                  ></lightning-input-field>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <lightning-card
+            class="slds-card_boundary"
+            icon-name="custom:custom13"
+          >
+            <h1 slot="title">{title}</h1>
+            <div class="slds-clearfix">
+              <lightning-button
+                class="slds-align_absolute-center"
+                variant="brand"
+                label="Add"
+                onclick={addRow}
+              >
+              </lightning-button>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <table
+                class="slds-table slds-table_bordered slds-table_cell-buffer slds-m-bottom_large"
+              >
+                <thead>
+                  <tr class="slds-text-title_caps">
+                    <template for:each={columns} for:item="column">
+                      <th key={column.apiName}>
+                        <div class="slds-truncate">{column.label}</div>
+                      </th>
+                    </template>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template for:each={rows} for:item="row" for:index="index">
+                    <tr class="inputRows" key={row.uuid}>
+                      <template for:each={columns} for:item="column">
+                        <td key={column.apiName}>
+                          <c-input-table-cell
+                            record={row}
+                            field={column.apiName}
+                            options={column.options}
+                          ></c-input-table-cell>
+                        </td>
+                      </template>
+                      <td>
+                        <lightning-button
+                          value={index}
+                          variant="brand"
+                          label="Remove"
+                          onclick={removeRow}
+                        ></lightning-button>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </lightning-card>
+
+          <div class="slds-clearfix slds-m-top_small">
+            <div class="slds-form__row">
+              <div class="slds-form__item" role="listitem">
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <lightning-button
+                    label="Start Migration"
+                    class="slds-align_absolute-center"
+                    onclick={onStart}
+                  ></lightning-button>
+                </div>
+                <div
+                  class="slds-form-element slds-form-element_horizontal slds-is-editing slds-form-element_1-col"
+                >
+                  <lightning-button
+                    label="Cancel"
+                    class="slds-align_absolute-center"
+                    onclick={onCancel}
+                  ></lightning-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </lightning-record-edit-form>
+        <!-- </lightning-layout-item> -->
+        <!-- </lightning-layout> -->
+      </div>
+    </lightning-card>
+
+    <lightning-card
+      variant="Migration Jobs"
+      title="Migration Jobs"
+      icon-name="custom:custom57"
+      if:false={canCreateJob}
+    >
+      <div class="slds-m-around_medium">
+        <!-- <lightning-layout class="slds-grid" horizontal-align="space"> -->
+        <div class="slds-clearfix slds-m-bottom_small">
+          <lightning-button
+            class="slds-align_absolute-center"
+            label="Migrate Single Carrier Preferences"
+            onclick={onMigratePreferences}
+          ></lightning-button>
+        </div>
+
+        <div class="slds-clearfix slds-m-bottom_small">
+          <lightning-button
+            class="slds-align_absolute-center"
+            label="Create Job"
+            onclick={onCreateJob}
+          ></lightning-button>
+        </div>
+
+        <lightning-datatable
+          data={jobDetails}
+          columns={columnsJobDetails}
+          key-field="id"
+          hide-checkbox-column
+        ></lightning-datatable>
+        <!-- </lightning-layout> -->
+      </div>
+    </lightning-card>
+  </div>
+  <div if:true={migratePreferences}>
+    <lightning-card
+      variant="Migration Jobs"
+      title="Migration Jobs"
+      icon-name="custom:custom57"
+    >
+      <div class="slds-m-around_medium">
+        <div class="slds-clearfix slds-m-bottom_small">
+          <lightning-button
+            class="slds-align_absolute-center"
+            label="Migrate UPS Preferences"
+            onclick={updateSelectedText}
+          ></lightning-button>
+        </div>
+
+        <lightning-datatable
+          data={upsPreferences}
+          columns={columnsPreferences}
+          key-field="Id"
+          data-id="preferenceIds"
+        ></lightning-datatable>
+        <!-- </lightning-layout> -->
+      </div>
+    </lightning-card>
+  </div>
+</template>

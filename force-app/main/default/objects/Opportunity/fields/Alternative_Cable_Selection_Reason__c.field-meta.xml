@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternative_Cable_Selection_Reason__c</fullName>
+    <label>Alternative Cable Selection Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None Selected</fullName>
+                <default>false</default>
+                <label>None Selected</label>
+            </value>
+            <value>
+                <fullName>Incomplete or No Fleet List Provided</fullName>
+                <default>false</default>
+                <label>Incomplete or No Fleet List Provided</label>
+            </value>
+            <value>
+                <fullName>CST - No cable recommendation / incomplete recommendation</fullName>
+                <default>false</default>
+                <label>CST - No cable recommendation / incomplete recommendation</label>
+            </value>
+            <value>
+                <fullName>SE Completed Cable Selection</fullName>
+                <default>false</default>
+                <label>SE Completed Cable Selection</label>
+            </value>
+            <value>
+                <fullName>CST - No cable recommendation provided due to bad VIN</fullName>
+                <default>false</default>
+                <label>CST - No cable recommendation provided due to bad VIN</label>
+            </value>
+            <value>
+                <fullName>CST - No cable recommendation provided for specific MMY</fullName>
+                <default>false</default>
+                <label>CST - No cable recommendation provided for specific MMY</label>
+            </value>
+            <value>
+                <fullName>CST - Issue (Error Message Returned)</fullName>
+                <default>false</default>
+                <label>CST - Issue (Error Message Returned)</label>
+            </value>
+            <value>
+                <fullName>CST - Used multiple times / aggregated outputs to get final recommendations</fullName>
+                <default>false</default>
+                <label>CST - Used multiple times / aggregated outputs to get final recommendations</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

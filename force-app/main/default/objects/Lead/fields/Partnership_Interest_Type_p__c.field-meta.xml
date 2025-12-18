@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partnership_Interest_Type_p__c</fullName>
+    <label>Samsara Partnership Interest</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales Partner</fullName>
+                <default>false</default>
+                <label>Sales Partner: Referral or Reseller</label>
+            </value>
+            <value>
+                <fullName>Insurance Partner</fullName>
+                <default>false</default>
+                <label>Insurance Partner</label>
+            </value>
+            <value>
+                <fullName>Integration or Technology Partner</fullName>
+                <default>false</default>
+                <label>Integration or Technology Partner</label>
+            </value>
+            <value>
+                <fullName>Referral or Reseller</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Referral or Reseller</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

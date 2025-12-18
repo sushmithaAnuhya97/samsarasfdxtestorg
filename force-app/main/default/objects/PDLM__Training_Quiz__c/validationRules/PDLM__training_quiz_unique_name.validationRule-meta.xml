@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__training_quiz_unique_name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(VLOOKUP($ObjectType.PDLM__Training_Quiz__c.Fields.Name, $ObjectType.PDLM__Training_Quiz__c.Fields.Name, Name) = Name, OR(ISNEW(), ISCHANGED(Name)))</errorConditionFormula>
+    <errorMessage>This name already exists as a Training Quiz</errorMessage>
+</ValidationRule>

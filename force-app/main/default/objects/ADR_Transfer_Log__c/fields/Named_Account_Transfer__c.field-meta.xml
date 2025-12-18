@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Named_Account_Transfer__c</fullName>
+    <formula>IF(TEXT(Account__r.Inside_Sales_Assignment__c) &lt;&gt; &quot;&quot;,TRUE, IF( AND(OR(Vehicle_Count_at_Transfer__c &gt; 175,Powered_Asset_Count_at_Transfer__c &gt; 350,
+Unpowered_Asset_Count_at_Transfer__c &gt; 1000 ),Account__r.Account_Size_Segment__c = &apos;AE2/AE3&apos;,Account__r.SLED_Account__c = False), TRUE, FALSE) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Named Account Transfer</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

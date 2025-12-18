@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psaws__Active_Billable_Projects_Without_Budget</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Project_Manager__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__Bookings__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Is_Billable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Is_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Bookings__c</field>
+        <operation>lessOrEqual</operation>
+        <value>0</value>
+    </filters>
+    <label>Missing Budgets</label>
+</ListView>

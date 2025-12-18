@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_New_Lead_Owner</fullName>
+        <description>Email New Lead Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>sfdc-robot@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/New_Lead_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>SMB_NPS_survey</fullName>
+        <ccEmails>0dcqafiq@robot.zapier.com</ccEmails>
+        <description>SMB NPS survey</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_email_for_NPS</template>
+    </alerts>
+    <alerts>
+        <fullName>SMB_NPS_survey_90_days</fullName>
+        <ccEmails>0dcqafiq@robot.zapier.com</ccEmails>
+        <description>SMB NPS survey 90 days</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_email_for_NPS</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Data_Share_Agreement_to_Customer</fullName>
+        <description>Send Data Share Agreement to Customer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>insurance@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Insurance_Data_Share_Agreement_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_for_CSM_curveys</fullName>
+        <ccEmails>1sheskuw@robot.zapier.com</ccEmails>
+        <description>Send Email for CSM curveys</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Email_Templates/Send_CSAT_survey_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_contact_details_to_Delighted</fullName>
+        <ccEmails>0dcqafiq@robot.zapier.com</ccEmails>
+        <ccEmails>neha.vyas@samsara.com</ccEmails>
+        <description>Send contact details to Delighted</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_email_for_NPS</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_alert_for_CSAT</fullName>
+        <ccEmails>1sheskuw@robot.zapier.com</ccEmails>
+        <description>Send email alert for CSAT</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_email_for_CSAT</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Auto_populate_follow_up_date</fullName>
+        <description>auto populate follow up date</description>
+        <field>Follow_Up_Date__c</field>
+        <formula>today() + 30</formula>
+        <name>Auto populate follow up date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Email_Field_to_No_Contact</fullName>
+        <field>Email</field>
+        <formula>&quot;donotcontact@samsara.com&quot;</formula>
+        <name>Change Email Field to No Contact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Opt_Out_Copy_to_Blank</fullName>
+        <field>Opt_Out_Email_Copy__c</field>
+        <name>Change Opt Out Copy to Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Email_Opt_Out</fullName>
+        <field>HasOptedOutOfEmail</field>
+        <literalValue>1</literalValue>
+        <name>Check Email Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Email_to_Opt_Out_Field</fullName>
+        <field>Opt_Out_Email_Copy__c</field>
+        <formula>Email</formula>
+        <name>Copy Email to Opt Out Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Hot_Transfer_to_Blank_when_back_to_Pool</fullName>
+        <description>Move Contact &apos;Hot Transfer To&apos; value back to null if a hot transfer gets unloaded to pool</description>
+        <field>Hot_Transfer_To__c</field>
+        <name>Hot Transfer to Blank when back to Pool</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opt_Out_Mobile_Phone_to_Blank</fullName>
+        <field>Opt_Out_Mobile_Phone__c</field>
+        <name>Opt Out Mobile Phone to Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opt_Out_Phone_Blank</fullName>
+        <field>Opt_Out_Phone__c</field>
+        <name>Opt Out Phone = Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Revert_Copy_Email_to_Opt_Out</fullName>
+        <field>Email</field>
+        <formula>Opt_Out_Email_Copy__c</formula>
+        <name>Revert Copy Email to Opt Out Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Revert_Copy_MobilePhone_to_Opt_out_Field</fullName>
+        <field>MobilePhone</field>
+        <formula>Opt_Out_Mobile_Phone__c</formula>
+        <name>Revert Copy MobilePhone to Opt out Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Revert_Copy_Phone_to_Opt_out_Field</fullName>
+        <field>Phone</field>
+        <formula>Opt_Out_Phone__c</formula>
+        <name>Revert Copy Phone to Opt out Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Hubspot_Auto_Demo_Reminder</fullName>
+        <field>Hubspot_Auto_Demo_Reminder_Sent__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Hubspot Auto Demo Reminder</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_box</fullName>
+        <field>CSM_survey__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_ADR_Transfer_By_On_Contact</fullName>
+        <field>ADR_Transfer_By__c</field>
+        <name>Update ADR Transfer By On Contact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CSM_Survey</fullName>
+        <field>CSM_survey__c</field>
+        <literalValue>1</literalValue>
+        <name>Update CSM Survey</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contact_for_MPhone_Opt_Out_Reques</fullName>
+        <field>Opt_Out_Phone_Copy__c</field>
+        <formula>MobilePhone</formula>
+        <name>Update Contact for MPhone Opt Out Reques</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contact_for_Phone</fullName>
+        <field>Opt_Out_Phone_Copy__c</field>
+        <formula>Phone</formula>
+        <name>Update Contact for Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Mobile_Phone_to_Do_Not_Contact</fullName>
+        <field>MobilePhone</field>
+        <formula>&quot;Do Not Contact&quot;</formula>
+        <name>Update Mobile Phone to Do Not Contact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Phone_to_Do_Not_Contact</fullName>
+        <field>Phone</field>
+        <formula>&quot;Do Not Contact&quot;</formula>
+        <name>Update Phone to Do Not Contact</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Creation_Approve_Update</fullName>
+        <field>User_creation_status__c</field>
+        <formula>&apos;Approved by &apos; + $User.FirstName  +  $User.LastName</formula>
+        <name>User Creation Approve Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Creation_Deny_Update</fullName>
+        <field>User_creation_status__c</field>
+        <formula>&apos;Denied by &apos; + $User.FirstName  +  $User.LastName</formula>
+        <name>User Creation Deny Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>refedge__Joined_Reference_Program_Date</fullName>
+        <description>Update date is written here when &apos;reference program member&apos; flag is first set to checked</description>
+        <field>refedge__Joined_Reference_Program__c</field>
+        <formula>Today()</formula>
+        <name>Joined Reference Program Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Send CSM survey</fullName>
+        <actions>
+            <name>Send_Email_for_CSM_curveys</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Uncheck_box</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(CSM_survey__c = TRUE, Email != null)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Data Share Email</fullName>
+        <actions>
+            <name>Send_Data_Share_Agreement_to_Customer</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Send_Data_Share_Agreement_to_Customer__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Data_Sharing_Addendum_Link__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Data_Addendum_Insurance_Providers__c</field>
+            <operation>equals</operation>
+            <value>Progressive</value>
+        </criteriaItems>
+        <description>Sends data share link from contact to the end customer</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>refedge__WR_InsertJoinedReferenceProgramDate</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.AccountName</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Depricated(Bound 8)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

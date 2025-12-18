@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PM_Owner_Required</fullName>
+    <active>true</active>
+    <description>GTMS-24018</description>
+    <errorConditionFormula>ISBLANK( PM_Owner_Id__c )</errorConditionFormula>
+    <errorMessage>Ensure PM Owner is populated at submission, please verify Category/Sub-Category Owner setup</errorMessage>
+</ValidationRule>

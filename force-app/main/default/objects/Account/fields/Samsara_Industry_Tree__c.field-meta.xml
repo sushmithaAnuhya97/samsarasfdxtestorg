@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Samsara_Industry_Tree__c</fullName>
+    <description>This is a new standard for industry categorization taking into account Samsara&apos;s customer needs.</description>
+    <label>Samsara Industry Tree</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+                <label>Agriculture</label>
+            </value>
+            <value>
+                <fullName>Construction, Utilities and Field Services</fullName>
+                <default>false</default>
+                <label>Construction, Utilities and Field Services</label>
+            </value>
+            <value>
+                <fullName>Education - Higher Ed</fullName>
+                <default>false</default>
+                <label>Education - Higher Ed</label>
+            </value>
+            <value>
+                <fullName>Education - K12</fullName>
+                <default>false</default>
+                <label>Education - K12</label>
+            </value>
+            <value>
+                <fullName>Energy and Mining</fullName>
+                <default>false</default>
+                <label>Energy and Mining</label>
+            </value>
+            <value>
+                <fullName>Food and Beverage</fullName>
+                <default>false</default>
+                <label>Food and Beverage</label>
+            </value>
+            <value>
+                <fullName>Government - Federal, State and Local</fullName>
+                <default>false</default>
+                <label>Government - Federal, State and Local</label>
+            </value>
+            <value>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+                <label>Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Passenger Transportation</fullName>
+                <default>false</default>
+                <label>Passenger Transportation</label>
+            </value>
+            <value>
+                <fullName>Trucking, Distribution and Logistics</fullName>
+                <default>false</default>
+                <label>Trucking, Distribution and Logistics</label>
+            </value>
+            <value>
+                <fullName>Wholesale, Retail and Groceries</fullName>
+                <default>false</default>
+                <label>Wholesale, Retail and Groceries</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

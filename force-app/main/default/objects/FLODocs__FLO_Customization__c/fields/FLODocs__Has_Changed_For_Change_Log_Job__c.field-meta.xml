@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Has_Changed_For_Change_Log_Job__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF(ISNULL(FLODocs__Last_Time_Run_Change_Log_Job__c), true, IF( DATEVALUE(LastModifiedDate ) &gt; DATEVALUE(FLODocs__Last_Time_Run_Change_Log_Job__c), true, false))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Has Changed For Change Log Job</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

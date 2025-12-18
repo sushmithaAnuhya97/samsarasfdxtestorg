@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__RateProvider__c</fullName>
+    <defaultValue>&quot;ecb&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The name of the external rate provider used in the Update Exchange Rates scheduled job. If blank, the scheduled job retrieves rates from the European Central Bank. We recommend that you manage this setting from the Exchange Rate Updates tab.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The name of the external rate provider used in the Update Exchange Rates scheduled job. If blank, the scheduled job retrieves rates from the European Central Bank. We recommend that you manage this setting from the Exchange Rate Updates tab.</inlineHelpText>
+    <label>Rate Provider</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

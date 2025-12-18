@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>maps__Total_Calculated_Miles__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Total Calculated Miles</label>
+    <summarizedField>maps__Timesheet_Travel__c.maps__Calculated_Miles__c</summarizedField>
+    <summaryForeignKey>maps__Timesheet_Travel__c.maps__Timesheet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

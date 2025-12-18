@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_With_Docusign</fullName>
+    <availability>online</availability>
+    <description>Button will take you to Conga --&gt; Docusign</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Send with Docusign</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1 
+&amp;serverUrl={!API.Partner_Server_URL_370} 
+&amp;Id={!Quote.Id} 
+
+&amp;QueryId=[OpportunityLineItems]a1R1a000002B1OR, 
+[Hardware]a1R1P000002e9Ly, 
+[Hardware1]a1R1P000002eAuY, 
+[LicenseMonthly]a1R1P000002e9xE, 
+[LicenseAnnual]a1R1P000002e9xJ, 
+[SubtotalMonthly]a1R1P000002eBI5, 
+[LicenseSubtotalAnnual]a1R1P000002eAs2
+
+
+
+&amp;DefaultPDF=1
+&amp;FP0=1
+&amp;SC0=1
+&amp;docusignvisible=1
+&amp;SC1=attachments
+&amp;_DS0=1
+&amp;DS6=1
+&amp;TemplateGroup={!Quote.Samsara_Finance_Conga__c}
+&amp;docusignr1ID={!Quote.Contract_SignerId__c}
+&amp;docusignr1role=Signer+1
+&amp;docusignr1routingorder=1
+&amp;docusignr1type=signer
+&amp;DocuSignExpireIn=3
+&amp;DocuSignEmailSubject=Samsara Quote</url>
+</WebLink>

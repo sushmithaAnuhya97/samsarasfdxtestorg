@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>refedge__EA_Invitation_contact_recipient</fullName>
+        <description>Invitation contact recipient</description>
+        <protected>false</protected>
+        <recipients>
+            <field>refedge__Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__Invitation_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>refedge__EA_Invitation_user_recipient</fullName>
+        <description>Invitation user recipient</description>
+        <protected>false</protected>
+        <recipients>
+            <field>refedge__User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__Invitation_Email_Template</template>
+    </alerts>
+    <rules>
+        <fullName>refedge__WR _InvitationContactRecipient</fullName>
+        <actions>
+            <name>refedge__EA_Invitation_contact_recipient</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND (NOT(ISNULL(refedge__Contact__c)), NOT(refedge__Block_Workflow_Email__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>refedge__WR _InvitationUserRecipient</fullName>
+        <actions>
+            <name>refedge__EA_Invitation_user_recipient</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND (NOT(ISNULL(refedge__User__c)), NOT(refedge__Block_Workflow_Email__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

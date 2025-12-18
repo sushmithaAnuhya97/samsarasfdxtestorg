@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__TaxCode__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The VAT / GST tax code for this company.</description>
+    <inlineHelpText>The VAT / GST tax code for this company.</inlineHelpText>
+    <label>Tax Code</label>
+    <referenceTo>fferpcore__TaxCode__c</referenceTo>
+    <relationshipLabel>Company Tax Information Records</relationshipLabel>
+    <relationshipName>CompanyTaxInformations</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

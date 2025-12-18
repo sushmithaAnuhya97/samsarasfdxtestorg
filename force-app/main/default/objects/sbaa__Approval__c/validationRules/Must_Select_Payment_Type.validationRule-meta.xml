@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Select_Payment_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(Quote__r.Associated_Opportunity_Type__c == &apos;Promo Opportunity&apos;),
+    ISNEW(),
+    TEXT( Quote__r.Selected_Payment_Type__c )= NULL,
+    OR(
+       Quote__r.Discount_Approval_Needed__c, 
+       Quote__r.ProductApprovalNeeded__c
+    ),
+    TEXT(Quote__r.Configuration_Segment__c) != &apos;Express&apos;
+)</errorConditionFormula>
+    <errorMessage>Please select a payment type prior to submitting for approval.</errorMessage>
+</ValidationRule>

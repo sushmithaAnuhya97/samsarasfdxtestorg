@@ -1,0 +1,82 @@
+.slds-combobox__dropdown {
+    position: fixed !important;
+    z-index: 9999 !important; /* Ensure it is above other components */
+    overflow-y: scroll !important;
+    height: 15vh !important;
+}
+.custom-combobox .slds-combobox__dropdown {
+    position: absolute !important;
+    bottom: 100% !important;
+    top: auto !important;
+    max-height: 80vh !important; /* Limit the height to 80% of the viewport */
+    /* Add vertical scroll if content exceeds max-height */
+    border: 2px solid red;
+    
+}
+
+.slds-listbox{
+    overflow-y: scroll !important;
+    height: 15vh !important;
+}
+
+.slds-combobox__input{
+    border-radius: 2px !important;
+    border : 1px solid rgb(61, 61, 61)
+}
+
+.custom-combobox .slds-dropdown_length-with-icon-10 {
+    max-height: 200px !important; /* Adjust the height as needed */
+    overflow-y: auto !important;
+    z-index: 9999 !important; /* Ensure the dropdown is on top of any parent component */
+}
+
+.custom-info-icon {
+    --sds-c-icon-color-foreground-default: #000;
+    --sds-c-icon-color-background: transparent;
+    --sds-c-icon-radius-border: 50%;
+    --sds-c-icon-size-border: 1px;
+    --sds-c-icon-color-border: #000;
+    --sds-c-icon-sizing-cover: 18px;
+    --sds-c-icon-size: 12px;
+    --sds-c-icon-weight: bold;
+    --sds-c-icon-style: italic;
+}
+
+.combobox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.validation-error-message {
+    color: rgb(194, 57, 52);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    padding: 0.125rem 0.25rem;
+    background-color: rgb(255, 240, 240);
+    border-radius: 0.125rem;
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-combobox {
+    border: 0px solid rgb(61, 61, 61);
+}
+
+.custom-combobox.validation-error {
+    border: 1px solid rgb(194, 57, 52);
+    background-color: rgb(255, 240, 240);
+}
+
+.validation-error-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.validation-error-combobox {
+    border: 1px solid rgb(194, 57, 52) !important;
+    border-radius: 0.25rem;
+}

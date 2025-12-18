@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Will_the_customer_be_requesting__c</fullName>
+    <description>If No non-standard deal terms requested is selected, then none of the other options can be selected</description>
+    <label>Will the customer be requesting</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Termination clause</fullName>
+                <default>false</default>
+                <label>Termination clause</label>
+            </value>
+            <value>
+                <fullName>Permanent downsize</fullName>
+                <default>false</default>
+                <label>Permanent downsize</label>
+            </value>
+            <value>
+                <fullName>Temporary suspension</fullName>
+                <default>false</default>
+                <label>Temporary suspension</label>
+            </value>
+            <value>
+                <fullName>Partial use / seasonal use</fullName>
+                <default>false</default>
+                <label>Partial use / seasonal use</label>
+            </value>
+            <value>
+                <fullName>Price stability for renewal</fullName>
+                <default>false</default>
+                <label>Price stability for renewal</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>No non-standard deal terms requested</fullName>
+                <default>false</default>
+                <label>No non-standard deal terms requested</label>
+            </value>
+            <value>
+                <fullName>Price lock for add-on orders</fullName>
+                <default>false</default>
+                <label>Price lock for add-on orders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

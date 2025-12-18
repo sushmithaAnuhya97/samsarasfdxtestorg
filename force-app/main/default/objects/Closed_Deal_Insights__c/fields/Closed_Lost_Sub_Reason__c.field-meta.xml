@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lost_Sub_Reason__c</fullName>
+    <label>Closed Lost Sub Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Closed_Lost_Reason__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HW reliability - AG</fullName>
+                <default>false</default>
+                <label>HW reliability - AG</label>
+            </value>
+            <value>
+                <fullName>HW reliability - VG</fullName>
+                <default>false</default>
+                <label>HW reliability - VG</label>
+            </value>
+            <value>
+                <fullName>HW reliability - CM</fullName>
+                <default>false</default>
+                <label>HW reliability - CM</label>
+            </value>
+            <value>
+                <fullName>HW reliability - sensors (DM, EM, CRGO)</fullName>
+                <default>false</default>
+                <label>HW reliability - sensors (DM, EM, CRGO)</label>
+            </value>
+            <value>
+                <fullName>HW reliability - multiple (AG, VG, CM)</fullName>
+                <default>false</default>
+                <label>HW reliability - multiple (AG, VG, CM)</label>
+            </value>
+            <value>
+                <fullName>HW reliability - Other</fullName>
+                <default>false</default>
+                <label>HW reliability - Other</label>
+            </value>
+            <value>
+                <fullName>Missing or inaccurate data</fullName>
+                <default>false</default>
+                <label>Missing or inaccurate data</label>
+            </value>
+            <value>
+                <fullName>Dashboard performance</fullName>
+                <default>false</default>
+                <label>Dashboard performance</label>
+            </value>
+            <value>
+                <fullName>Driver app performance</fullName>
+                <default>false</default>
+                <label>Driver app performance</label>
+            </value>
+            <value>
+                <fullName>Integration performance</fullName>
+                <default>false</default>
+                <label>Integration performance</label>
+            </value>
+            <value>
+                <fullName>Connectivity</fullName>
+                <default>false</default>
+                <label>Connectivity</label>
+            </value>
+            <value>
+                <fullName>HW connectivity</fullName>
+                <default>false</default>
+                <label>HW connectivity</label>
+            </value>
+            <value>
+                <fullName>GPS accuracy</fullName>
+                <default>false</default>
+                <label>GPS accuracy</label>
+            </value>
+            <value>
+                <fullName>Other technical issues</fullName>
+                <default>false</default>
+                <label>Other technical issues</label>
+            </value>
+            <value>
+                <fullName>Product does not adequately meet business needs</fullName>
+                <default>false</default>
+                <label>Product does not adequately meet business needs</label>
+            </value>
+            <value>
+                <fullName>Did not meet pre-sales expectations</fullName>
+                <default>false</default>
+                <label>Did not meet pre-sales expectations</label>
+            </value>
+            <value>
+                <fullName>Feature/feedback request not fulfilled</fullName>
+                <default>false</default>
+                <label>Feature/feedback request not fulfilled</label>
+            </value>
+            <value>
+                <fullName>Diagnostics - insufficient device reporting status</fullName>
+                <default>false</default>
+                <label>Diagnostics - insufficient device reporting status</label>
+            </value>
+            <value>
+                <fullName>Diagnostics - insufficient Make Model Year Coverage</fullName>
+                <default>false</default>
+                <label>Diagnostics - insufficient Make Model Year Coverage</label>
+            </value>
+            <value>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+                <label>Compliance</label>
+            </value>
+            <value>
+                <fullName>Better UX with competitor (pls note competitor name)</fullName>
+                <default>false</default>
+                <label>Better UX with competitor (pls note competitor name)</label>
+            </value>
+            <value>
+                <fullName>Unsatisfied with dashboard/app UX</fullName>
+                <default>false</default>
+                <label>Unsatisfied with dashboard/app UX</label>
+            </value>
+            <value>
+                <fullName>Other product fit</fullName>
+                <default>false</default>
+                <label>Other product fit</label>
+            </value>
+            <value>
+                <fullName>Business priority shift</fullName>
+                <default>false</default>
+                <label>Business priority shift</label>
+            </value>
+            <value>
+                <fullName>Customer still under contract with current provider</fullName>
+                <default>false</default>
+                <label>Customer still under contract with current provider</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy/business closure</fullName>
+                <default>false</default>
+                <label>Bankruptcy/business closure</label>
+            </value>
+            <value>
+                <fullName>Customer chose to delay purchase</fullName>
+                <default>false</default>
+                <label>Customer chose to delay purchase</label>
+            </value>
+            <value>
+                <fullName>Sale/Merger</fullName>
+                <default>false</default>
+                <label>Sale/Merger</label>
+            </value>
+            <value>
+                <fullName>Macroeconomic conditions</fullName>
+                <default>false</default>
+                <label>Macroeconomic conditions</label>
+            </value>
+            <value>
+                <fullName>Other business changes</fullName>
+                <default>false</default>
+                <label>Other business changes</label>
+            </value>
+            <value>
+                <fullName>Loss of champion</fullName>
+                <default>false</default>
+                <label>Loss of champion</label>
+            </value>
+            <value>
+                <fullName>Momentum loss or “gone dark”</fullName>
+                <default>false</default>
+                <label>Momentum loss or “gone dark”</label>
+            </value>
+            <value>
+                <fullName>No executive alignment</fullName>
+                <default>false</default>
+                <label>No executive alignment</label>
+            </value>
+            <value>
+                <fullName>Partnership blocker - Insurance carrier</fullName>
+                <default>false</default>
+                <label>Partnership blocker - Insurance carrier</label>
+            </value>
+            <value>
+                <fullName>Partnership blocker - Broker</fullName>
+                <default>false</default>
+                <label>Partnership blocker - Broker</label>
+            </value>
+            <value>
+                <fullName>Partnership blocker - FMC</fullName>
+                <default>false</default>
+                <label>Partnership blocker - FMC</label>
+            </value>
+            <value>
+                <fullName>Partnership blocker - Reseller issues</fullName>
+                <default>false</default>
+                <label>Partnership blocker - Reseller issues</label>
+            </value>
+            <value>
+                <fullName>Partnership blocker - Other</fullName>
+                <default>false</default>
+                <label>Partnership blocker - Other</label>
+            </value>
+            <value>
+                <fullName>Other relationship issue</fullName>
+                <default>false</default>
+                <label>Other relationship issue</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Pricing model (e.g. customer required usage based model)</fullName>
+                <default>false</default>
+                <label>Pricing model (e.g. customer required usage based model)</label>
+            </value>
+            <value>
+                <fullName>Other commercial requirements</fullName>
+                <default>false</default>
+                <label>Other commercial requirements</label>
+            </value>
+            <value>
+                <fullName>Termination option</fullName>
+                <default>false</default>
+                <label>Termination option</label>
+            </value>
+            <value>
+                <fullName>Downsize or suspension</fullName>
+                <default>false</default>
+                <label>Downsize or suspension</label>
+            </value>
+            <value>
+                <fullName>Contract length &lt; 36 months</fullName>
+                <default>false</default>
+                <label>Contract length &lt; 36 months</label>
+            </value>
+            <value>
+                <fullName>Indemnification language</fullName>
+                <default>false</default>
+                <label>Indemnification language</label>
+            </value>
+            <value>
+                <fullName>Liability language</fullName>
+                <default>false</default>
+                <label>Liability language</label>
+            </value>
+            <value>
+                <fullName>IP Ownership rights</fullName>
+                <default>false</default>
+                <label>IP Ownership rights</label>
+            </value>
+            <value>
+                <fullName>Duplicate opportunity</fullName>
+                <default>false</default>
+                <label>Duplicate opportunity</label>
+            </value>
+            <value>
+                <fullName>Inventory Split Opportunity</fullName>
+                <default>false</default>
+                <label>Inventory Split Opportunity</label>
+            </value>
+            <value>
+                <fullName>Inherited opportunity</fullName>
+                <default>false</default>
+                <label>Inherited opportunity</label>
+            </value>
+            <value>
+                <fullName>Duplicate account</fullName>
+                <default>false</default>
+                <label>Duplicate account</label>
+            </value>
+            <value>
+                <fullName>Overall better trial/pilot experience</fullName>
+                <default>false</default>
+                <label>Overall better trial/pilot experience</label>
+            </value>
+            <value>
+                <fullName>Better ability to be on-site more frequently</fullName>
+                <default>false</default>
+                <label>Better ability to be on-site more frequently</label>
+            </value>
+            <value>
+                <fullName>Better onboarding and implementation capabilities</fullName>
+                <default>false</default>
+                <label>Better onboarding and implementation capabilities</label>
+            </value>
+            <value>
+                <fullName>Better post sale support (e.g. CSM)</fullName>
+                <default>false</default>
+                <label>Better post sale support (e.g. CSM)</label>
+            </value>
+            <value>
+                <fullName>Better customer support capabilities (e.g. billing support, technical support, etc.)</fullName>
+                <default>false</default>
+                <label>Better customer support capabilities (e.g. billing support, technical support, etc.)</label>
+            </value>
+            <value>
+                <fullName>Lower Price</fullName>
+                <default>false</default>
+                <label>Lower Price</label>
+            </value>
+            <value>
+                <fullName>Monthly payment option</fullName>
+                <default>false</default>
+                <label>Monthly payment option</label>
+            </value>
+            <value>
+                <fullName>Simpler pricing/better price transparency</fullName>
+                <default>false</default>
+                <label>Simpler pricing/better price transparency</label>
+            </value>
+            <value>
+                <fullName>More flexible contracting/payment terms (e.g., reduced reliance on 3P financing)</fullName>
+                <default>false</default>
+                <label>More flexible contracting/payment terms (e.g., reduced reliance on 3P financing)</label>
+            </value>
+            <value>
+                <fullName>More flexible license addition/removal/pause terms</fullName>
+                <default>false</default>
+                <label>More flexible license addition/removal/pause terms</label>
+            </value>
+            <value>
+                <fullName>Quicker negotiation cycles</fullName>
+                <default>false</default>
+                <label>Quicker negotiation cycles</label>
+            </value>
+            <value>
+                <fullName>Other monetary reasons (e.g., contract buyouts, free products, corporate gifting, etc.)</fullName>
+                <default>false</default>
+                <label>Other monetary reasons (e.g., contract buyouts, free products, corporate gifting, etc.)</label>
+            </value>
+            <value>
+                <fullName>Product has more features that customer want (e.g., new AI features)</fullName>
+                <default>false</default>
+                <label>Product has more features that customer want (e.g., new AI features)</label>
+            </value>
+            <value>
+                <fullName>Product is a single platform, encompassing all fleet workflows</fullName>
+                <default>false</default>
+                <label>Product is a single platform, encompassing all fleet workflows</label>
+            </value>
+            <value>
+                <fullName>Product is more accurate (e.g., less false positives, more accurate driver behavior detection, etc.)</fullName>
+                <default>false</default>
+                <label>Product is more accurate (e.g., less false positives, more accurate driver behavior detection, etc.)</label>
+            </value>
+            <value>
+                <fullName>Product is more reliable in terms of availability/uptime, robustness, etc.</fullName>
+                <default>false</default>
+                <label>Product is more reliable in terms of availability/uptime, robustness, etc.</label>
+            </value>
+            <value>
+                <fullName>Better UI/UX and ease of use</fullName>
+                <default>false</default>
+                <label>Better UI/UX and ease of use</label>
+            </value>
+            <value>
+                <fullName>Champion</fullName>
+                <default>false</default>
+                <label>Champion</label>
+            </value>
+            <value>
+                <fullName>Executive Alignment</fullName>
+                <default>false</default>
+                <label>Executive Alignment</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Duplicate opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Inventory Split Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Inherited opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <valueName>Duplicate account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salesforce Hygiene</controllingFieldValue>
+            <controllingFieldValue>Trial Capabilities</controllingFieldValue>
+            <controllingFieldValue>Business Changes</controllingFieldValue>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trial Capabilities</controllingFieldValue>
+            <valueName>Overall better trial/pilot experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trial Capabilities</controllingFieldValue>
+            <valueName>Better ability to be on-site more frequently</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales Support</controllingFieldValue>
+            <valueName>Better onboarding and implementation capabilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales Support</controllingFieldValue>
+            <valueName>Better post sale support (e.g. CSM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Post-Sales Support</controllingFieldValue>
+            <valueName>Better customer support capabilities (e.g. billing support, technical support, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Lower Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Monthly payment option</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Simpler pricing/better price transparency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>More flexible contracting/payment terms (e.g., reduced reliance on 3P financing)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>More flexible license addition/removal/pause terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Quicker negotiation cycles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pricing &amp; Contracting</controllingFieldValue>
+            <valueName>Other monetary reasons (e.g., contract buyouts, free products, corporate gifting, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product has more features that customer want (e.g., new AI features)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product is a single platform, encompassing all fleet workflows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product is more accurate (e.g., less false positives, more accurate driver behavior detection, etc.)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product is more reliable in terms of availability/uptime, robustness, etc.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Better UI/UX and ease of use</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Changes</controllingFieldValue>
+            <valueName>Business priority shift</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Changes</controllingFieldValue>
+            <valueName>Customer still under contract with current provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Changes</controllingFieldValue>
+            <valueName>Bankruptcy/business closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Changes</controllingFieldValue>
+            <valueName>Customer chose to delay purchase</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Changes</controllingFieldValue>
+            <valueName>Macroeconomic conditions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Champion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship</controllingFieldValue>
+            <valueName>Executive Alignment</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

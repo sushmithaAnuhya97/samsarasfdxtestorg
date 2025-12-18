@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Calls_Until_Qualification__c</fullName>
+    <label>Number of Calls Until Qualification</label>
+    <summaryFilterItems>
+        <field>Call_Log__c.Account_Status_on_Call__c</field>
+        <operation>equals</operation>
+        <value>Before First Revenue Oppty</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Call_Log__c.Contact__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

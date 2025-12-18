@@ -1,0 +1,22 @@
+<apex:page standardController="Shipping_Address__c" tabStyle="Shipping_Address__c" extensions="ShippingAddressDataQualityExt" action="{!PageRenderer.RedirectToStandardPageInCaseOfAnError}" applybodytag="false">
+    <body id="lightningStyle">
+        <apex:stylesheet value="{!URLFOR($Resource.EDQ__DynamicPageCss)}" />
+        <apex:includeScript value="{! URLFOR($Resource.EDQ__EDQAssets, '/scripts/EDQScripts.js')}"/>
+        <script type="text/javascript">
+        if(ForceUI.isSalesforce1()){
+            document.write('<link rel="stylesheet" type="text/css" href="{!urlfor($Resource.EDQ__EDQAssets, 'styles/LightningCss.css')}" />');
+        }
+        </script>
+        <apex:form styleClass="edq-{!PageRenderer.SObjectName}" id="experianForm">
+            <apex:pageMessages id="messages" />
+            <apex:sectionheader title="{!$ObjectType.Shipping_Address__c.label} Edit" subtitle="{!IF(ISNULL(Shipping_Address__c.Name), 'New Shipping Addresses', Shipping_Address__c.Name)}"/>
+            <EDQ:DuplicatesTable duplicates="{!PageRenderer.Duplicates}" pagerenderer="{!PageRenderer}" />
+            <div style="display:none"> <apex:inputField value="{!Shipping_Address__c.Id}" /> </div>
+            <apex:dynamicComponent componentValue="{!PageRenderer.PageBody}" />
+            <apex:outputPanel id="experianDataQuality">
+                <EDQ:DataQualityDynamic PageRenderer="{!PageRenderer}" />
+            </apex:outputPanel>
+            <EDQ:DataQualityDynamicScripts PageRenderer="{!PageRenderer}" />
+        </apex:form>
+    </body>
+</apex:page>

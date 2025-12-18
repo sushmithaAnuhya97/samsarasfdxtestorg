@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Make_or_Buy_Details__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>The selectable values in this field are controlled by the &apos;Make or Buy&apos; attribute value that is chosen</inlineHelpText>
+    <label>Make or Buy Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>PDLM__Make_or_Buy__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internal Manufacturing Site</fullName>
+                <default>false</default>
+                <label>Internal Manufacturing Site</label>
+            </value>
+            <value>
+                <fullName>External Manufacturing Site</fullName>
+                <default>false</default>
+                <label>External Manufacturing Site</label>
+            </value>
+            <value>
+                <fullName>Any Approved Vendor</fullName>
+                <default>false</default>
+                <label>Any Approved Vendor</label>
+            </value>
+            <value>
+                <fullName>Preferred Vendor</fullName>
+                <default>false</default>
+                <label>Preferred Vendor</label>
+            </value>
+            <value>
+                <fullName>Lowest Cost Vendor</fullName>
+                <default>false</default>
+                <label>Lowest Cost Vendor</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Make</controllingFieldValue>
+            <valueName>Internal Manufacturing Site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Make</controllingFieldValue>
+            <valueName>External Manufacturing Site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy</controllingFieldValue>
+            <valueName>Any Approved Vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy</controllingFieldValue>
+            <valueName>Preferred Vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buy</controllingFieldValue>
+            <valueName>Lowest Cost Vendor</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Retraining_Plan_Type_Required</fullName>
+    <active>false</active>
+    <description>When Retraining is on, Retraining Type has to be chosen--either Rolling or Calendar</description>
+    <errorConditionFormula>AND(
+        PDLM__Retraining__c = true,
+        TEXT(PDLM__Retraining_Type__c) = null
+    )</errorConditionFormula>
+    <errorMessage>When Retraining is on, Retraining Type must be selected (Calendar is the default).</errorMessage>
+</ValidationRule>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_Of_Estimated_Cameras_Supported__c</fullName>
+    <label>Number Of Estimated Cameras Supported</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1-10</fullName>
+                <default>false</default>
+                <label>1-10</label>
+            </value>
+            <value>
+                <fullName>11-20</fullName>
+                <default>false</default>
+                <label>11-20</label>
+            </value>
+            <value>
+                <fullName>21-50</fullName>
+                <default>false</default>
+                <label>21-50</label>
+            </value>
+            <value>
+                <fullName>51+</fullName>
+                <default>false</default>
+                <label>51+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

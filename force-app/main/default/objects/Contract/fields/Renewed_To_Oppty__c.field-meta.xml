@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewed_To_Oppty__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Renewal Opportunity associated with this contract</description>
+    <label>Renewed To Oppty</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Revenue Opportunity</value>
+        </filterItems>
+        <filterItems>
+            <field>Opportunity.Renewal__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Contracts (Renewed To Oppty)</relationshipLabel>
+    <relationshipName>Contracts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

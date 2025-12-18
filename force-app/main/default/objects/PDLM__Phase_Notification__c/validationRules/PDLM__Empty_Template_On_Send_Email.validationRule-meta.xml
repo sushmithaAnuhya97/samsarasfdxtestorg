@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Empty_Template_On_Send_Email</fullName>
+    <active>true</active>
+    <errorConditionFormula>INCLUDES(PDLM__Notification_Type__c,&apos;Send Email&apos;)
+&amp;&amp;
+ISBLANK(PDLM__Email_Template__c)</errorConditionFormula>
+    <errorDisplayField>PDLM__Email_Template__c</errorDisplayField>
+    <errorMessage>Email Template cannot be empty, please provide a valid Email Template</errorMessage>
+</ValidationRule>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_for_Aliyah_M_Current_Customers</fullName>
+    <columns>Days_post_first_purchase__c</columns>
+    <columns>Last_Purchase_Date__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Cloud_Dashboard_Link__c</columns>
+    <columns>Billing_Contact__c</columns>
+    <columns>Open_Opportunity__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>NAICS_Code__c</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Total_Purchased_VG_Count__c</columns>
+    <columns>Total_Purchased_CM_Count__c</columns>
+    <columns>Total_Purchased_AG_Count__c</columns>
+    <columns>Delinquent__c</columns>
+    <columns>Delinquent_As_Of__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Total_Purchased_VG_Count__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Copy for Aliyah M — Current Customers</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psaj__Jira_Template__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Label for the Jira Template.</description>
+    <inlineHelpText>Template in Jira used to create a project.</inlineHelpText>
+    <label>Jira Template</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>pse__Jira_Project_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>com.pyxis.greenhopper.jira:basic-software-development-template</fullName>
+                <default>false</default>
+                <label>Basic software development</label>
+            </value>
+            <value>
+                <fullName>com.pyxis.greenhopper.jira:gh-kanban-template</fullName>
+                <default>false</default>
+                <label>Kanban software development</label>
+            </value>
+            <value>
+                <fullName>com.atlassian.jira-core-project-templates:jira-core-process-management</fullName>
+                <default>false</default>
+                <label>Process management</label>
+            </value>
+            <value>
+                <fullName>com.atlassian.jira-core-project-templates:jira-core-project-management</fullName>
+                <default>false</default>
+                <label>Project management</label>
+            </value>
+            <value>
+                <fullName>com.pyxis.greenhopper.jira:gh-scrum-template</fullName>
+                <default>false</default>
+                <label>Scrum software development</label>
+            </value>
+            <value>
+                <fullName>com.atlassian.jira-core-project-templates:jira-core-task-management</fullName>
+                <default>false</default>
+                <label>Task management</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

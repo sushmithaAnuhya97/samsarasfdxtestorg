@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_trial_extension_for_Trail_Period</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    ISCHANGED(Trial_Period__c),
+    $Profile.Name &lt;&gt; &quot;Sales Ops Profile&quot;,
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISPICKVAL(Type, &quot;Free Trial Opportunity&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Trial_Period__c</errorDisplayField>
+    <errorMessage>Please navigate to the free trial contract to request a free trial extension</errorMessage>
+</ValidationRule>

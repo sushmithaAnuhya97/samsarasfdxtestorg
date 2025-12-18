@@ -1,0 +1,26 @@
+<!--
+ - Created by vikasmishra on 2021-06-07.
+ -->
+<template>
+    <br />
+    <div class="recaptchaCheckbox"></div>
+    <br />
+<div class ="custom-btn">
+    <lightning-button
+            label="Previous"
+            title="Finish todos, go back"
+            onclick={handleGoPrevious}>
+    </lightning-button>
+    <lightning-button
+            label="Next"
+            title="Finish todos, go next"
+            variant="brand"
+            onclick={handleGoNext}>
+    </lightning-button>
+</div>
+
+    <div if:true={mandatorySubmit} class="slds-col slds-size_1-of-1 slds-align_absolute-center form-font">
+        <div class="slds-text-body_small slds-text-color_error">{mandatorySubmit}</div>
+    </div>
+
+</template>

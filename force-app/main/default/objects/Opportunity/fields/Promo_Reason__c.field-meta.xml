@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promo_Reason__c</fullName>
+    <description>Reason for the promo</description>
+    <label>Promo Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Exchange</fullName>
+                <default>false</default>
+                <label>Exchange</label>
+            </value>
+            <value>
+                <fullName>Warranty Exchange</fullName>
+                <default>false</default>
+                <label>Warranty Exchange</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Sales Incentive</fullName>
+                <default>false</default>
+                <label>Sales Incentive</label>
+            </value>
+            <value>
+                <fullName>Charitable Donation</fullName>
+                <default>false</default>
+                <label>Charitable Donation</label>
+            </value>
+            <value>
+                <fullName>Free Trial: Exchange</fullName>
+                <default>false</default>
+                <label>Free Trial: Exchange</label>
+            </value>
+            <value>
+                <fullName>Free Trial: Warranty Exchange</fullName>
+                <default>false</default>
+                <label>Free Trial: Warranty Exchange</label>
+            </value>
+            <value>
+                <fullName>Beta Program</fullName>
+                <default>false</default>
+                <label>Beta Program</label>
+            </value>
+            <value>
+                <fullName>Employee - Engineering/Testing</fullName>
+                <default>false</default>
+                <label>Employee - Engineering/Testing</label>
+            </value>
+            <value>
+                <fullName>Employee - Personal Use/New Hire</fullName>
+                <default>false</default>
+                <label>Employee - Personal Use/New Hire</label>
+            </value>
+            <value>
+                <fullName>Employee - On site</fullName>
+                <default>false</default>
+                <label>Employee - On site</label>
+            </value>
+            <value>
+                <fullName>NPI</fullName>
+                <default>false</default>
+                <label>NPI</label>
+            </value>
+            <value>
+                <fullName>Approval HW Upgrade</fullName>
+                <default>false</default>
+                <label>Approval HW Upgrade</label>
+            </value>
+            <value>
+                <fullName>Return to Sender: Exchange</fullName>
+                <default>false</default>
+                <label>Return to Sender: Exchange</label>
+            </value>
+            <value>
+                <fullName>Unplanned Return: Exchange</fullName>
+                <default>false</default>
+                <label>Unplanned Return: Exchange</label>
+            </value>
+            <value>
+                <fullName>Demo/Prototype</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Demo/Prototype</label>
+            </value>
+            <value>
+                <fullName>Employee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employee</label>
+            </value>
+            <value>
+                <fullName>WIP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>WIP</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Beta Program</controllingFieldValue>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Beta Program</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Warranty Exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Marketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Sales Incentive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Charitable Donation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Free Trial: Exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Free Trial: Warranty Exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Employee - Engineering/Testing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Employee - Personal Use/New Hire</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Employee - On site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>NPI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Approval HW Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Return to Sender: Exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promo Opportunity</controllingFieldValue>
+            <valueName>Unplanned Return: Exchange</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

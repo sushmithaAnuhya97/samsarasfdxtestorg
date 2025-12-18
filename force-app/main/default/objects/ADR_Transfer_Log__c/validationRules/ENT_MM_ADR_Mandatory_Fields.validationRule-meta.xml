@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ENT_MM_ADR_Mandatory_Fields</fullName>
+    <active>true</active>
+    <description>Ensures ENT and MM ADR&apos;s fill Meeting Origination &amp; Booking Method fields.</description>
+    <errorConditionFormula>AND(
+    ISNEW(),
+    
+    /* Validation Rule Exceptions */
+    NOT(
+        OR(
+            $UserRole.Name = &quot;Management&quot;,
+            $UserRole.Name = &quot;Operations&quot;,
+            $Profile.Name = &quot;System Administrator&quot;,
+            $Profile.Name = &quot;System Administrator API&quot;,
+            $Permission.Validation_Rule_Exemption,
+            $Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c
+        )
+    ),
+
+    /* Role + ADR + Country check inside Role Name */
+    AND(
+        OR(
+            CONTAINS($UserRole.Name, &quot;COR&quot;),
+            CONTAINS($UserRole.Name, &quot;SEL&quot;),
+            CONTAINS($UserRole.Name, &quot;STR&quot;),
+            CONTAINS($UserRole.Name, &quot;ENT&quot;),
+            CONTAINS($UserRole.Name, &quot;MM&quot;)
+        ),
+        CONTAINS($UserRole.Name, &quot;ADR&quot;),
+        OR(
+            CONTAINS($UserRole.Name, &quot;US&quot;),
+            CONTAINS($UserRole.Name, &quot;CA&quot;)
+        )
+    ),
+
+    /* Required field check */
+    OR(
+        ISPICKVAL(Meeting_Origination__c, &quot;&quot;),
+        ISPICKVAL(Booking_Method__c, &quot;&quot;)
+    )
+)</errorConditionFormula>
+    <errorMessage>Please enter the value for Meeting Origination and Booking Method fields.</errorMessage>
+</ValidationRule>

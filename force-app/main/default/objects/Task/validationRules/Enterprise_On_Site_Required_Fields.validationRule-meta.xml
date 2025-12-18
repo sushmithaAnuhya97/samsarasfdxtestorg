@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enterprise_On_Site_Required_Fields</fullName>
+    <active>true</active>
+    <description>Account, Contact, Description are mandatory</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Type, &quot;Enterprise/Major Account On-Site&quot;),
+OR(
+ISBLANK(  Description ),
+ISBLANK(   WhatId  )
+)
+)</errorConditionFormula>
+    <errorMessage>Related To, Name, and Comments Required</errorMessage>
+</ValidationRule>

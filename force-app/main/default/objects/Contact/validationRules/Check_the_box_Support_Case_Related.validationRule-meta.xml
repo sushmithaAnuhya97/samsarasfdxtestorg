@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_the_box_Support_Case_Related</fullName>
+    <active>true</active>
+    <description>If the contact is being created by Support staff, please check the box &quot;Support Case Related&quot; in order to distinguish if the contact was created by Support or not.</description>
+    <errorConditionFormula>AND( CONTAINS( Owner.Profile.Name , &apos;Support&apos;), Support_Case_Related__c = False, OR(ISCHANGED(OwnerId), ISNEW()))</errorConditionFormula>
+    <errorMessage>Please check the box &quot;Support Case Related&quot; within the contact if you are creating the Contact and belong to the Support Group. &quot;Support Case Related&quot; field cannot stay unchecked before proceeding.</errorMessage>
+</ValidationRule>

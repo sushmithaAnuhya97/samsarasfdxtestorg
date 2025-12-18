@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The current stage of the utilization run in this batch.</description>
+    <inlineHelpText>The current stage of the utilization run in this batch.</inlineHelpText>
+    <label>Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Deleting Utilization Results</fullName>
+                <default>false</default>
+                <label>Deleting Utilization Results</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

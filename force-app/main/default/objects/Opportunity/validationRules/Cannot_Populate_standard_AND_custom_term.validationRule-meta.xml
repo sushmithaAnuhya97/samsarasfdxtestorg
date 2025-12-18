@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Populate_standard_AND_custom_term</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT(ISNEW()),
+ NOT(CONTAINS($Profile.Name , &apos;Sales Ops&apos;)),
+ NOT(ISPICKVAL(SBQQ__PrimaryQuote__r.SBQQ__Type__c , &apos;Renewal&apos;) ),
+ AND(
+NOT(ISBLANK(TEXT(SBQQ__PrimaryQuote__r.License_Term__c ) )),
+ TEXT(SBQQ__PrimaryQuote__r.Custom_License_Term__c) &lt;&gt; TEXT(SBQQ__PrimaryQuote__r.License_Term__c ),
+TEXT(SBQQ__PrimaryQuote__r.SBQQ__Type__c ) != &quot;Amendment&quot;,
+NOT(ISBLANK(SBQQ__PrimaryQuote__r.Custom_License_Term__c )),
+NOT( SBQQ__PrimaryQuote__r.ClonedQuoteAppendName__c ),
+$User.Id &lt;&gt; &quot;0054p000002sSsE&quot;
+)  
+)</errorConditionFormula>
+    <errorMessage>If entered in Custom License Term in Primary Quote, please set the standard License Term picklist to none in Primary Quote.</errorMessage>
+</ValidationRule>

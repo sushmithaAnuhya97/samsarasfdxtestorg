@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LeanData__Parent_Graph__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Parent Graph</label>
+    <referenceTo>LeanData__Routing_Graph__c</referenceTo>
+    <relationshipLabel>Parent Graphs</relationshipLabel>
+    <relationshipName>Parent_Graphs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

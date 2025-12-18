@@ -1,0 +1,12 @@
+<!--
+ - Created by vikasmishra on 2021-06-28.
+ -->
+
+<aura:component description="SubmitLeadForApproval" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,flexipage:availableForAllPageTypes" controller="SubmitLeadForApprovalController" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute access="private" name="errorMessage" type="String" default=""/>
+	Submitting the application to the processing system... This window will close upon successful submission.
+    <aura:if isTrue="{! !empty(v.errorMessage)}">
+        <lightning:textarea name="errorMessage" value="{!v.errorMessage}" label="Error: "/>
+    </aura:if>
+</aura:component>

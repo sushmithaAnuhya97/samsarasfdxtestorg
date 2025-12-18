@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The project that the source project was added to.</description>
+    <label>Project</label>
+    <referenceTo>pse__Proj__c</referenceTo>
+    <relationshipLabel>Project Sources</relationshipLabel>
+    <relationshipName>Project_Sources</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

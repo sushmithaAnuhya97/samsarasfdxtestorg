@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type__c</fullName>
+    <description>This field helps distinguish what the relationship this Account has to the Parent lookup.  It can either denote that it is the Master Parent of some type OR what type of Child it is.</description>
+    <inlineHelpText>This field helps distinguish what the relationship this Account has to the Parent lookup.  It can either denote that it is the Master Parent of some type OR what type of Child it is.</inlineHelpText>
+    <label>Relationship Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Master Parent</fullName>
+                <default>false</default>
+                <label>Master Parent</label>
+            </value>
+            <value>
+                <fullName>Direct Parent</fullName>
+                <default>false</default>
+                <label>Direct Parent</label>
+            </value>
+            <value>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+                <label>Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Franchise Master Parent</fullName>
+                <default>false</default>
+                <label>Franchise Master Parent</label>
+            </value>
+            <value>
+                <fullName>Franchise Subsidiary</fullName>
+                <default>false</default>
+                <label>Franchise Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Business Alliance</fullName>
+                <default>false</default>
+                <label>Business Alliance</label>
+            </value>
+            <value>
+                <fullName>Business Unit</fullName>
+                <default>false</default>
+                <label>Business Unit</label>
+            </value>
+            <value>
+                <fullName>Holding CompanyHolding Company Master Parent</fullName>
+                <default>false</default>
+                <label>Holding Company Master Parent</label>
+            </value>
+            <value>
+                <fullName>Holding Company Subsidiary</fullName>
+                <default>false</default>
+                <label>Holding Company Subsidiary</label>
+            </value>
+            <value>
+                <fullName>SLED Master Parent</fullName>
+                <default>false</default>
+                <label>SLED Master Parent</label>
+            </value>
+            <value>
+                <fullName>SLED Department Subsidiary</fullName>
+                <default>false</default>
+                <label>SLED Department Subsidiary</label>
+            </value>
+            <value>
+                <fullName>Multinational Master Parent</fullName>
+                <default>false</default>
+                <label>Multinational Master Parent</label>
+            </value>
+            <value>
+                <fullName>Multinational Direct Parent</fullName>
+                <default>false</default>
+                <label>Multinational Direct Parent</label>
+            </value>
+            <value>
+                <fullName>Multinational Subsidiary</fullName>
+                <default>false</default>
+                <label>Multinational Subsidiary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__All</fullName>
+    <columns>NAME</columns>
+    <columns>SBQQ__Type__c</columns>
+    <columns>SBQQ__Primary__c</columns>
+    <columns>SBQQ__LineItemsGrouped__c</columns>
+    <columns>SBQQ__NetAmount__c</columns>
+    <columns>SBQQ__Status__c</columns>
+    <columns>SBQQ__ExpirationDate__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Sales_Segment__c</columns>
+    <columns>Segment_Availability__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OWNER.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Messer</value>
+    </filters>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>In Review</value>
+    </filters>
+    <label>All</label>
+</ListView>

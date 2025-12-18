@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>When Assignment is created and the resource owner field is not null an email notifying the resource that an assignment has been assigned should trigger</description>
+        <name>Send_Resource_Owner_Notification</name>
+        <label>Send Resource Owner Notification</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>pse__Assignment__c.FFX_PSA_New_Assignment_Resource_EmailAlert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>pse__Assignment__c.FFX_PSA_New_Assignment_Resource_EmailAlert</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>When an assignment is created and the resource is assigned a notification is triggered</description>
+    <environments>Default</environments>
+    <interviewLabel>FFX PSA New Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FFX PSA New Assignment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Resource_Owner_Notification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>pse__Resource__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Role__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Business Value Strategist</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Role__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Trial Success Manager</stringValue>
+            </value>
+        </filters>
+        <object>pse__Assignment__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

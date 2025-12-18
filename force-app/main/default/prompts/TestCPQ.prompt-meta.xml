@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>CPQ Quote Creation</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;&lt;strong&gt;ACTION: &lt;/strong&gt;Click on New Quote to continue to the next step&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;*Note: do not click on next*&lt;/p&gt;</body>
+        <customApplication>standard__LightningSalesConsole</customApplication>
+        <delayDays>1</delayDays>
+        <description>CPQ Quote Creation</description>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>CPQ Quote Creation Step 1</masterLabel>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;sfdc:CustomButton.Opportunity.New_Quote&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;force_highlightsPanel&quot;}},&quot;version&quot;:2}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2023-08-25</startDate>
+        <stepNumber>1</stepNumber>
+        <targetPageKey1>Opportunity</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>How to Create a CPQ Quote</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body>&lt;p&gt;&lt;a href=&quot;https://samsara.lessonly.com/preview/lesson/1644977-advanced-salesforce-for-mid-market-amp-enterprise&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Link to lessonly video walkthrough.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Action: open lessonly course. Scroll to the bottom to view Send quote documents&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</body>
+        <customApplication>standard__LightningSalesConsole</customApplication>
+        <displayType>DockedComposer</displayType>
+        <header>CPQ PAGE</header>
+        <isPublished>false</isPublished>
+        <masterLabel>CPQ Quote Creation Step 2</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <title>Click to add bundle</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shadow_RSD_List__c</fullName>
+    <label>Shadow RSD List</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>West RSD</fullName>
+                <default>false</default>
+                <label>West RSD</label>
+            </value>
+            <value>
+                <fullName>East RSD</fullName>
+                <default>false</default>
+                <label>East RSD</label>
+            </value>
+            <value>
+                <fullName>Central RSD</fullName>
+                <default>false</default>
+                <label>Central RSD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the Salesforce user to be created or updated with this user information record.</description>
+    <inlineHelpText>Lookup to the Salesforce User to be created or updated with this user information record.</inlineHelpText>
+    <label>Salesforce User</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>User Information</relationshipLabel>
+    <relationshipName>UserInformation</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

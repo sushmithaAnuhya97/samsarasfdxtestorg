@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Managed_Reference_Content__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;ReferenceContentTypeSettingMatrix?customSettingId=&apos;+Id+&apos;&amp;isContentSetting=true&apos;, &apos;Manage&apos;, &apos;_self&apos;)</formula>
+    <inlineHelpText>Determine which fields (configured by the Salesforce administrator) will be Visible and Required for each Custom Reference Content type on Custom Reference Content pages.</inlineHelpText>
+    <label>Manage Reference Content</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

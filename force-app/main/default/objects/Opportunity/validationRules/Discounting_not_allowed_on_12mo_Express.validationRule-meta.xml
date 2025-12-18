@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discounting_not_allowed_on_12mo_Express</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.Id != &apos;0051a000002JKtR&apos;,
+OR(Price_Book_Name__c =&quot;Samsara Express&quot;,Price_Book_Name__c =&quot;UK - Samsara Express&quot;),
+ License_Term__c =12,
+
+NOT(OR( 
+($Permission.Validation_Rule_Exemption),
+(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+($Profile.Name=&quot;Order Operations Admin&quot;),
+($Profile.Name=&quot;System Administrator&quot;)
+)), 
+
+OR(
+
+AND(
+Blended_Discount__c &lt;&gt; 0,
+ISPICKVAL(Selected_Payment_Type__c,&quot;Direct Monthly&quot;)
+),
+
+
+AND(
+Blended_Discount__c &lt;&gt; 0.10,
+ISPICKVAL(Selected_Payment_Type__c ,&quot;Direct Annual&quot;)
+)
+)
+
+)</errorConditionFormula>
+    <errorMessage>Cannot discount a 12 month express contract</errorMessage>
+</ValidationRule>

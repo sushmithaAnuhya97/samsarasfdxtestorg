@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__BsoBrokerType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>BSO Broker Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EXPORT</fullName>
+                <default>false</default>
+                <label>EXPORT</label>
+            </value>
+            <value>
+                <fullName>IMPORT</fullName>
+                <default>false</default>
+                <label>IMPORT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

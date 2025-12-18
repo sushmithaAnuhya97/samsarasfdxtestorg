@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dont_allow_Items_with_Active_Drafts</fullName>
+    <active>true</active>
+    <description>Dont allow adding Affected Items with active drafts on an ECR</description>
+    <errorConditionFormula>AND( PDLM__Item_Revision__r.PDLM__Master_Item__r.PDLM__Has_Pending_Revision__c = True ,
+PDLM__Change_Order_lk__r.PDLM__Category__r.Name = &apos;Engineering Change Request (ECR)&apos;)</errorConditionFormula>
+    <errorMessage>Items with active drafts cannot be added to ECR.</errorMessage>
+</ValidationRule>

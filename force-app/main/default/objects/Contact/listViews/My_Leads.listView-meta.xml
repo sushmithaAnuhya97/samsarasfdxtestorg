@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Leads</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.PHONE3</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>Last_Call__c</columns>
+    <columns>Account.Last_Contacted__c</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>Account.Number_of_Vehicles__c</columns>
+    <columns>Account.Status__c</columns>
+    <columns>Account.LinkedIn_URL__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTACT.TITLE</field>
+        <operation>contains</operation>
+        <value>Fleet,POC</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status_Updated__c</field>
+        <operation>notEqual</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>My Leads</label>
+</ListView>

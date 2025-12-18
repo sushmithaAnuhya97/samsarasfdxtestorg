@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Help_Assistant__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos;+ $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c +&apos;HelpAssistantSetting?customSettingId=&apos;+ Id , &apos;Manage&apos;, &apos;_blank&apos;)</formula>
+    <inlineHelpText>Customize the wording for the contextual help assistant that can be presented to users to familiarize them with the particular area of ReferenceEdge.</inlineHelpText>
+    <label>Help Assistant</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

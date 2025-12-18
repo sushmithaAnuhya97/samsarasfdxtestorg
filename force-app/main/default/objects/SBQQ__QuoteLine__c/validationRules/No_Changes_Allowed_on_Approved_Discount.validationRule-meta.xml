@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Changes_Allowed_on_Approved_Discount</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$Profile.Name != &apos;Sales Ops Profile&apos;,
+$Profile.Name != &apos;Samsara - Finance&apos;,
+$Profile.Name != &apos;Samsara - Finance Admin&apos;,
+$User.Email != &apos;corpweb-sfdc-robot@samsara.com&apos;,
+NOT(CONTAINS( SBQQ__Quote__r.SBQQ__Opportunity2__r.Name ,&apos;Amendment&apos;)),
+ISPICKVAL(SBQQ__Quote__r.ApprovalStatus__c, &apos;Approved&apos;),
+SBQQ__Quote__r.Associated_Opportunity_Type__c = &apos;Revenue Opportunity&apos;,
+NOT(SBQQ__Quote__r.ApprovedRecalculationBypass__c),
+SBQQ__Quote__r.Associated_Opportunity_Probability__c &gt;= 95,
+ISCHANGED(SBQQ__CustomerTotal__c)
+)</errorConditionFormula>
+    <errorMessage>Changes are not allowed on Discount after Quote is Approved</errorMessage>
+</ValidationRule>

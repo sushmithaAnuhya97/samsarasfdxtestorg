@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Approve_Phase_must_not_be_No_Approval</fullName>
+    <active>true</active>
+    <description>The phase which is marked as the Approval phase must not be a No Approval phase</description>
+    <errorConditionFormula>AND(PDLM__Approve_Change_Phase__c, PDLM__No_Approval__c)</errorConditionFormula>
+    <errorMessage>The Approve Change phase must not be a No Approval phase</errorMessage>
+</ValidationRule>

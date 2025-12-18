@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Opp_Closing_Status</fullName>
+    <active>false</active>
+    <description>added for GTMS-6905 - Prevent Opp Closing Status Without Document Validation</description>
+    <errorConditionFormula>AND(ISPICKVAL(StageName, &apos;Closing&apos;),  hasSubsidyPartner__c = true, OR(
+NOT(ISPICKVAL( LOI_Status__c , &apos;Signed&apos;)),
+NOT(ISPICKVAL(  Account.Datashare_Status__c, &apos;Signed&apos;)))
+)</errorConditionFormula>
+    <errorMessage>The appropriate documentation has not yet been validated to allow this Insurance Subsidy Opportunity to move forward into the Closing stage. Please Slack the #insurance-partners channel to confirm SCL and Datashare status.</errorMessage>
+</ValidationRule>

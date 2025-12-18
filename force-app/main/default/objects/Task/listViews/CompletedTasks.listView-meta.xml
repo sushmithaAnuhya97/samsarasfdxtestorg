@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompletedTasks</fullName>
+    <columns>Related_Contact__c</columns>
+    <columns>WHO_NAME</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>SUBJECT</columns>
+    <columns>STATUS</columns>
+    <columns>Activity_Type__c</columns>
+    <columns>Demo_Scheduled_Date_Time__c</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>Related_Account__c</columns>
+    <columns>ShowpadForSF__Showpad_Activity__c</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>IS_CLOSED</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>IS_RECURRENCE</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>equals</operation>
+        <value>TODAY,LAST_N_DAYS:30</value>
+    </filters>
+    <label>Recently Completed Tasks</label>
+</ListView>

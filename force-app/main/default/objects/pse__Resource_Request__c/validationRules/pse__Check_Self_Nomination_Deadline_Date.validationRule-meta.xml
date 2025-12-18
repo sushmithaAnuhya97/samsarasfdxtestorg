@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Check_Self_Nomination_Deadline_Date</fullName>
+    <active>true</active>
+    <description>The date in the Self-Nomination Deadline field must be before the resource request end date.</description>
+    <errorConditionFormula>pse__Self_Nomination_Deadline__c &gt;  pse__End_Date__c</errorConditionFormula>
+    <errorMessage>The date in the Self-Nomination Deadline field must be before the resource request end date.</errorMessage>
+</ValidationRule>

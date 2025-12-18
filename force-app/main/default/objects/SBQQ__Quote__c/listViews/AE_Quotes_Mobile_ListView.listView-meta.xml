@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_Quotes_Mobile_ListView</fullName>
+    <columns>NAME</columns>
+    <columns>SBQQ__Primary__c</columns>
+    <columns>Quote_ACV__c</columns>
+    <columns>SBQQ__Status__c</columns>
+    <columns>SBQQ__CustomerDiscount__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Approved</value>
+    </filters>
+    <label>My Open Quotes</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Rolling_Retraining_Type_Required_Fields</fullName>
+    <active>true</active>
+    <description>When Retraining is on, and Retraining Type is &apos;Rolling&apos;, Retraining Interval and Days To Complete are required and both must be positive integers.</description>
+    <errorConditionFormula>AND(
+        PDLM__Retraining__c = true,
+        TEXT(PDLM__Retraining_Type__c) = &apos;Rolling&apos;,
+        OR (
+            ISNULL( PDLM__Retraining_Interval__c ),
+            PDLM__Retraining_Interval__c &lt; 1
+        )
+    )</errorConditionFormula>
+    <errorMessage>When Retraining is on, and Retraining Type is &apos;Rolling&apos;, Retraining Interval and Days To Complete are required and both must be positive integers.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Unit_Price__c</fullName>
+    <formula>Round(SBQQ__ListPrice__c - (SBQQ__ListPrice__c * Line_Discount_in_Percent__c),2)
+
+/*((SBQQ__ListPrice__c) - (SBQQ__AdditionalDiscountAmount__c) * (VALUE(TEXT(SBQQ__Quote__r.License_Term__c))/12)) */
+
+/* (((SBQQ__ListPrice__c * VALUE(TEXT(SBQQ__Quote__r.License_Term__c))/12) - (SBQQ__AdditionalDiscountAmount__c))/(VALUE(TEXT(SBQQ__Quote__r.License_Term__c))/12)) , */
+
+/*If(NOT(VALUE(TEXT(SBQQ__Quote__r.Custom_License_Term__c)) == 0),
+If(AND(ISPICKVAL(SBQQ__Quote__r.Selected_Payment_Type__c, &apos;Direct Annual&apos;), NOT((SBQQ__AdditionalDiscountAmount__c) == 0)),
+((SBQQ__ListPrice__c) - (((SBQQ__AdditionalDiscountAmount__c) * 12)/(VALUE(TEXT(SBQQ__Quote__r.Custom_License_Term__c))))),
+(SBQQ__ListPrice__c - (SBQQ__ListPrice__c * Line_Discount_in_Percent__c))),
+
+
+
+If(NOT(VALUE(TEXT(SBQQ__Quote__r.License_Term__c)) == 0),
+If(AND(ISPICKVAL(SBQQ__Quote__r.Selected_Payment_Type__c, &apos;Direct Annual&apos;), NOT((SBQQ__AdditionalDiscountAmount__c) == 0)),
+((SBQQ__ListPrice__c) - (((SBQQ__AdditionalDiscountAmount__c) * 12)/(VALUE(TEXT(SBQQ__Quote__r.License_Term__c))))),
+(SBQQ__ListPrice__c - (SBQQ__ListPrice__c * Line_Discount_in_Percent__c))),
+
+SBQQ__ListPrice__c - (SBQQ__ListPrice__c * Line_Discount_in_Percent__c)
+
+))*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Annual Unit Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Limit_Reached</fullName>
+    <active>true</active>
+    <description>Prevents reps from submitting quote for discount approval if monthly payment is beyond credit limit</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+TEXT(SBQQ__Type__c) != &apos;Renewal&apos;,
+ISCHANGED(ApprovalStatus__c),
+NOT($Permission.Validation_Rule_Exemption),
+Associated_Opportunity_Type__c &lt;&gt; &quot;Remorse Refund&quot;,
+OR(
+TEXT(SBQQ__Status__c) = &apos;In Review&apos;,
+TEXT(SBQQ__Status__c) = &apos;Approved&apos;),
+Quote_Amount_Greater_Than_Remain_Credit__c = TRUE,
+OR(
+ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Monthly&quot;),
+ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Quarterly&quot;),
+ISPICKVAL(Selected_Payment_Type__c, &quot;Direct Semi-Annual&quot;)
+),
+CONTAINS($Profile.Name, &quot;Samsara Sales&quot;),
+AND ( OR (
+CONTAINS($Profile.Name, &quot;AE2&quot;),
+CONTAINS($Profile.Name, &quot;AE3&quot;),
+CONTAINS($Profile.Name, &quot;ENT&quot;)))
+)
+&amp;&amp;
+TEXT(Configuration_Segment__c) != &quot;Express&quot;</errorConditionFormula>
+    <errorDisplayField>of_Accessories__c</errorDisplayField>
+    <errorMessage>Estimated monthly payment is greater than remaining monthly credit limit. Please request an increase from Finance on the account before submitting for approval.</errorMessage>
+</ValidationRule>

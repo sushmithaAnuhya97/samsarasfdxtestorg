@@ -1,0 +1,14 @@
+:host { display: block; }
+.slds-card_boundary { border: 1px solid var(--lwc-colorBorder, #dddbda); border-radius: var(--lwc-borderRadiusMedium, .25rem); }
+.rl-header { background: var(--lwc-colorBackgroundAlt, #f3f2f2); border-bottom: 1px solid var(--lwc-colorBorder, #dddbda); }
+.rl-footer { background: var(--lwc-colorBackgroundAlt, #f3f2f2); border-top: 1px solid var(--lwc-colorBorder, #dddbda); }
+
+.rl-table { overflow-x: auto; }          /* shows a horizontal bar under the table */
+.rl-inner { min-width: 1200px; }         /* force width so bar appears; adjust to your columns */
+
+.slds-is-relative { position: relative; }
+.spinner-wrap {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.6); z-index: 1;
+}

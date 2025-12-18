@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uservoice__UserVoice_Feedback</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>UserVoice Feedback</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/41.0/connection.js&apos;)}
+
+var sidebarHost = &apos;{!$Setup.uservoice__Settings__c.uservoice__Hostname__c}&apos;;
+
+if (!document.getElementById(&apos;uv-agent-sidebar-loader&apos;)) {
+  var s = document.createElement(&apos;script&apos;);
+  var t = new Date().getTime();
+  s.id = &apos;uv-agent-sidebar-loader&apos;;
+  s.setAttribute(&apos;data-subdomain&apos;, sidebarHost);
+  s.setAttribute(&apos;data-bookmarklet-version&apos;, 4);
+  s.setAttribute(&apos;type&apos;, &apos;text/javascript&apos;);
+  s.onload = function () { window.uvAgentSidebar.init(); };
+  s.src = &quot;https://&quot; + sidebarHost + &quot;/clients/agent/sidebar_loader.js?t=&quot; + t;
+  document.body.appendChild(s);
+} else {
+  window.uvAgentSidebar.init();
+}</url>
+</WebLink>

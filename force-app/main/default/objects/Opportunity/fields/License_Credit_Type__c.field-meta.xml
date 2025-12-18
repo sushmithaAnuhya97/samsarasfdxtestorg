@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Credit_Type__c</fullName>
+    <description>Definition of Values: License extension (the default), License credit, Opex (which would be paid by check), Install services (which would be paid by check)</description>
+    <inlineHelpText>Definition of Values: License extension (the default), License credit, Opex (which would be paid by check), Install services (which would be paid by check)</inlineHelpText>
+    <label>Concession Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>License extension</fullName>
+                <default>true</default>
+                <label>License extension</label>
+            </value>
+            <value>
+                <fullName>License credit</fullName>
+                <default>false</default>
+                <label>License credit</label>
+            </value>
+            <value>
+                <fullName>Opex</fullName>
+                <default>false</default>
+                <label>Opex</label>
+            </value>
+            <value>
+                <fullName>Install services</fullName>
+                <default>false</default>
+                <label>Install services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

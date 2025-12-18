@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Cannot_erase_document_version</fullName>
+    <active>true</active>
+    <description>document version is used to link this record to the chatter file, it should not be cleared out</description>
+    <errorConditionFormula>AND(
+ ISBLANK(PDLM__Document_Version__c)
+, NOT( ISBLANK(PRIORVALUE( PDLM__Document_Version__c )))
+)</errorConditionFormula>
+    <errorDisplayField>PDLM__Document_Version__c</errorDisplayField>
+    <errorMessage>Cannot clear out the Document Version field</errorMessage>
+</ValidationRule>

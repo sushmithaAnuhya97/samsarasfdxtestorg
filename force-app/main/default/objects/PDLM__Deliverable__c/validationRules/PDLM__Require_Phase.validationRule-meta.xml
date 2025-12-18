@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Require_Phase</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISBLANK( PDLM__Phase__c )</errorConditionFormula>
+    <errorDisplayField>PDLM__Phase__c</errorDisplayField>
+    <errorMessage>Phase is required</errorMessage>
+</ValidationRule>

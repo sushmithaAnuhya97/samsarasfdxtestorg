@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Region__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Overrides the Region to which the child Expense Transactions will roll up for Regional Actuals, even if the Project is in a different Region. Typically an Expense&apos;s Transactions roll up to its Project&apos;s or Resource&apos;s Region based on &apos;follows&apos; rules. Note that either way, the Transactions will continue to roll up to the same Project&apos;s Project Actuals.</description>
+    <inlineHelpText>Overrides the Region to which the child Expense Transactions will roll up for Regional Actuals, even if the Project is in a different Region. Typically an Expense&apos;s Transactions roll up to its Project&apos;s or Resource&apos;s Region based on &apos;follows&apos; rules.</inlineHelpText>
+    <label>Override Region</label>
+    <referenceTo>pse__Region__c</referenceTo>
+    <relationshipLabel>Override Region For Expense Reports</relationshipLabel>
+    <relationshipName>Override_Region_For_Expense_Reports</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

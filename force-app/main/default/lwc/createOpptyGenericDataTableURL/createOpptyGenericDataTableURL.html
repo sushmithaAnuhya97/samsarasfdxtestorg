@@ -1,0 +1,94 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="container slds-m-horizontal_medium">
+        <div class="header">
+            <div class="header-content">
+                <h3 lwc:if={dataToDisplay}>{tableInfoToDisplay}</h3> <!-- Display Object heading or default to 'tableTitle' variable data-->
+                <p class="contact-count">{dataTableRecCountInfo}</p> <!-- Display count information -->
+            </div>
+            <lightning-layout vertical-align="center">
+                <lightning-layout-item>
+                    <lightning-input label="Search Records" 
+                                    type="search" value={searchKey}
+                                    onchange={handleSearchKeyChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <template if:true={showScopedMessage}>
+            <div class="slds-m-vertical_x-small">
+                <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-scoped-notification_light"
+                                                role="status">
+                    <span>
+                            <lightning-icon class="slds-m-right_x-small" size="x-small"
+                                aria-hidden="true" icon-name="utility:info"
+                                alternative-text="info">
+                            </lightning-icon>
+                    </span>
+                    <span class="Margn">{scopedMessage}</span>
+                </div>
+            </div>
+        </template>
+        <div class="slds-m-vertical_x-small">{tableMessage}
+            <template if:true={linkExist}>
+                &nbsp;<a href={hyperLink}><b>link</b>&nbsp;</a>{followupText}
+            </template>
+        </div>
+        <div class="datatable-container">
+            <div class="scrollable-table">
+                <template if:true={recordsRetrieved}>
+                    <lightning-datatable
+                            key-field="Id"
+                            data={dataToDisplay}
+                            max-row-selection="1"
+                            onrowselection={handleRowSelection}
+                            columns={columns}>
+                    </lightning-datatable>
+                </template>
+            </div>
+            <template if:true={noDataAfterFilter}>
+                <div class="no-data-message">
+                    No Match Found!
+                </div>
+            </template>
+            <template if:false={recordsRetrieved}>
+                <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_info"
+                        role="status">
+                    <span>
+                        <lightning-icon variant="inverse" 
+                                class="slds-m-right_x-small" size="small"
+                                aria-hidden="true" 
+                                icon-name="utility:info"
+                                alternative-text="info">
+                        </lightning-icon>
+                    </span>
+                    <span class="Margn">No Records Found!</span>
+                </div>
+            </template>
+        </div>
+        <div>
+            <lightning-layout class="slds-m-around_x-small" vertical-align="center" horizontal-align="spread" >    
+                <lightning-layout-item  padding="horizontal-small"  class="left-align">
+                    <template if:true={hasDataAfterFilter}>                <!-- sldsValidatorIgnoreNextLine -->
+                        <lightning-button-icon icon-name="utility:chevronleft" 
+                                            alternative-text="Previous" 
+                                            onclick={handlePreviouspage} 
+                                            disabled={isPreviousDisabled}>
+                        </lightning-button-icon>
+                        <span class="slds-m-horizontal_xx-small margn">{pagination}</span>
+                        <lightning-button-icon icon-name="utility:chevronright" 
+                                            alternative-text="Next"
+                                            onclick={handleNextpage} 
+                                            disabled={isNextDisabled}>
+                        </lightning-button-icon>
+                    </template>
+                </lightning-layout-item>
+                <lightning-layout-item class="right-align" padding="horizontal-small">
+                    <template if:true={showUtilityButton}>
+                        <lightning-button label={utilityButtonLabel} onclick={handleUtilityClick} class="slds-float_right"></lightning-button>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </div>
+</template>

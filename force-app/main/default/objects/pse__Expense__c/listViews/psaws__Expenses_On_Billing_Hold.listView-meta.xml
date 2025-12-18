@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psaws__Expenses_On_Billing_Hold</fullName>
+    <columns>pse__Expense_Report__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Type__c</columns>
+    <columns>pse__Expense_Date__c</columns>
+    <columns>pse__Billing_Amount__c</columns>
+    <columns>pse__Billing_Currency__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Billable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Billing_Hold__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Billed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Exclude_from_Billing__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>pse__Expense_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>THIS_MONTH</value>
+    </filters>
+    <label>Expenses on Billing Hold</label>
+</ListView>

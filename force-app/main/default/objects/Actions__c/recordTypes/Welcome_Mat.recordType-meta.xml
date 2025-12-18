@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Welcome_Mat</fullName>
+    <active>true</active>
+    <label>Welcome Mat</label>
+    <picklistValues>
+        <picklist>Page_Type__c</picklist>
+        <values>
+            <fullName>Chatter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chatter Group Detail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboards Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record Create</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record Detail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Record Update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Task Detail From List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Task home</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Recurrence__c</picklist>
+        <values>
+            <fullName>Days after certain date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Only once</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Toaster_Alert_Mode__c</picklist>
+        <values>
+            <fullName>dismissible</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>pester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>sticky</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Toaster_Alert_Type__c</picklist>
+        <values>
+            <fullName>error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>other</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>success</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>warning</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>File</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Image Carousel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Object Quick Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Popover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rich Text</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Video_Type__c</picklist>
+        <values>
+            <fullName>Vimeo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youtube</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_Request__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Master detail relationship to Resource Request</description>
+    <inlineHelpText>Master detail relationship to Resource Request</inlineHelpText>
+    <label>Resource Request</label>
+    <referenceTo>pse__Resource_Request__c</referenceTo>
+    <relationshipLabel>Resource Request Milestone Junction</relationshipLabel>
+    <relationshipName>Resource_Request_Milestone_Junction</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

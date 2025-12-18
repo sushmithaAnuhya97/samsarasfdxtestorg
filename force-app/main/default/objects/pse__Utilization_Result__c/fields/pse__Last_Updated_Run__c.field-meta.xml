@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Last_Updated_Run__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the utilization run this utilization result relates to.</description>
+    <inlineHelpText>Lookup to the utilization run this utilization result relates to.</inlineHelpText>
+    <label>Utilization Run</label>
+    <referenceTo>pse__Utilization_Run__c</referenceTo>
+    <relationshipLabel>Utilization Results</relationshipLabel>
+    <relationshipName>Utilization_Results</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>License_Term_Update_Needed__c</fullName>
+    <formula>License_Term__c !=  Returning_Opportunity__r.License_Term__c &amp;&amp; Returning_Opportunity__c != NULL &amp;&amp;  TEXT(Rebate_Type__c ) != NULL &amp;&amp; (TEXT(Rebate_Type__c ) != &quot;Delinquent&quot; || TEXT(Rebate_Type__c ) != &quot;Renewal Credit&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>License Term Update Needed</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

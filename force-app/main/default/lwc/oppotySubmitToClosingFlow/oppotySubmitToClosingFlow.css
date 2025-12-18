@@ -1,0 +1,933 @@
+/* Component Wrapper */
+.component-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+}
+
+/* Spinner Container */
+.spinner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card Styling */
+.slds-card_boundary {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border: none;
+    position: relative;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.slds-card__header {
+    background: #f3f3f3;
+    border-radius: 8px 8px 0 0;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Section Headers */
+.slds-section__title {
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #0070d2;
+}
+
+/* Form Boxes */
+.slds-box {
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+    overflow: visible !important;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.slds-box:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields */
+lightning-input-field {
+    margin-bottom: 0.5rem;
+}
+
+/* Required Field Indicator */
+.slds-form-element__label {
+    font-weight: 500;
+}
+
+.slds-required {
+    color: #ea001e;
+}
+
+/* Info Box */
+.slds-theme_info {
+    background: #f2f7fc;
+    border-color: #0070d2;
+    color: #032d60;
+}
+
+/* Button Group */
+.slds-button-group {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+lightning-button {
+    --sds-c-button-radius-border: 4px;
+}
+
+/* Loading Spinner Overlay */
+.slds-is-relative {
+    min-height: 100px;
+}
+
+/* Error States */
+.slds-has-error .slds-form-element__help {
+    color: #ea001e;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+    .slds-col {
+        padding: 0.5rem;
+    }
+    
+    .slds-grid {
+        margin: 0;
+    }
+    
+    .slds-box {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .child-component-container {
+        padding: 0.5rem;
+    }
+}
+
+/* Section Content Spacing */
+.slds-section__content {
+    padding: 1rem;
+}
+
+/* Header Title */
+.slds-text-heading_medium {
+    font-size: 1.25rem;
+    color: #16325c;
+    font-weight: 600;
+}
+
+/* Field Labels */
+.slds-form-element__label {
+    color: #3e3e3c;
+    font-size: 0.875rem;
+}
+
+/* Success States */
+.slds-has-success {
+    --slds-c-input-color-border: #04844b;
+}
+
+/* Hover States */
+.slds-input:hover {
+    border-color: #0070d2;
+}
+
+/* Focus States */
+.slds-input:focus {
+    border-color: #1589ee;
+    box-shadow: 0 0 3px #0070d2;
+}
+
+/* Section Headers */
+.slds-text-heading_small {
+    color: #16325c;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Info Message */
+.slds-box.slds-theme_info {
+    border-left-width: 4px;
+    padding: 1rem;
+}
+
+/* Button States */
+.slds-button_brand {
+    --sds-c-button-brand-color-background: #0070d2;
+    --sds-c-button-brand-color-background-hover: #005fb2;
+    --sds-c-button-brand-color-border: transparent;
+    --sds-c-button-brand-text-color: #ffffff;
+}
+
+/* Spacing Utilities */
+.slds-p-around_medium {
+    padding: 1rem;
+}
+
+.slds-m-bottom_medium {
+    margin-bottom: 1.5rem;
+}
+
+/* Button Container Layout */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.button-left {
+    flex: 0 0 auto;
+}
+
+.button-right {
+    flex: 0 0 auto;
+}
+
+/* Button Styling */
+lightning-button {
+    --sds-c-button-radius-border: 4px;
+}
+
+lightning-button.slds-button {
+    min-width: 120px;
+    justify-content: center;
+}
+
+/* Responsive Button Layout */
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .button-left,
+    .button-right {
+        width: 100%;
+    }
+    
+    lightning-button {
+        width: 100%;
+    }
+}
+
+/* Child Component Container */
+.child-component-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+
+
+/* Free Trial Section */
+.slds-section.free-trial-section {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.slds-section.free-trial-section .slds-box {
+    margin-bottom: 2rem;
+    min-height: 120px;
+    position: relative;
+}
+
+/* Ensure picklist dropdown is visible */
+.slds-section .slds-combobox_container {
+    position: static;
+}
+
+.slds-section .slds-listbox {
+    position: absolute;
+    z-index: 7000;
+}
+
+.slds-section .slds-dropdown {
+    max-height: none;
+    position: absolute;
+    z-index: 7000;
+}
+
+/* Custom Input Styling */
+.custom-input {
+    position: relative;
+}
+
+.custom-input .slds-combobox {
+    position: static;
+}
+
+.custom-input .slds-listbox {
+    position: absolute;
+    z-index: 7000;
+    max-height: none;
+    overflow: visible;
+}
+
+.custom-input .slds-dropdown {
+    position: absolute;
+    transform: none;
+    max-height: none;
+    overflow: visible;
+}
+
+/* Form Element Spacing */
+.slds-form-element {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.slds-form-element__control {
+    position: relative;
+}
+
+/* Ensure sections have proper z-index */
+.slds-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure dropdowns stay above spinner */
+.slds-dropdown-trigger {
+    position: relative;
+    z-index: 10;
+}
+
+.slds-dropdown {
+    z-index: 10;
+}
+
+.free-trial-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    padding-bottom: 1rem;
+    gap: 1rem;
+}
+
+.free-trial-form-element {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.free-trial-combobox {
+    width: 100%;
+}
+
+.no-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    min-height: 200px;
+    width: 100%;
+}
+
+.info-icon {
+    --sds-c-icon-color-foreground-default: #e98e3c;
+    margin-bottom: 1rem;
+}
+
+.heading {
+    color: #2e844a;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.content-box {
+    width: 100%;
+    background: #f3f3f3;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+}
+
+.reason-list {
+    margin: 1rem 0;
+    list-style-type: none;
+}
+
+.reason-item {
+    color: #444444;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.reason-item:before {
+    content: "•";
+    color: #0176d3;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.verify-text {
+    color: #444444;
+    font-size: 0.9rem;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.required-field {
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.required-field label {
+    font-weight: 500;
+}
+
+.required-field label::after {
+    content: "*";
+    color: rgb(194, 57, 52);
+    padding: 0 0.125rem;
+}
+
+/* Spinner container */
+.spinner-container {
+    position: relative;
+    height: 100%;
+    min-height: 200px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .free-trial-form {
+        padding: 0.5rem;
+    }
+    
+    .content-box {
+        padding: 1rem;
+    }
+}
+
+
+/* Use SLDS spinner container class */
+.slds-spinner_container {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9051;
+    background-color: rgba(255, 255, 255, 0.75);
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Styles */
+.slds-modal__container {
+    max-width: 40rem;
+    width: 90%;
+}
+
+.slds-modal__header {
+    border-bottom: 2px solid #dddbda;
+    padding: 1rem;
+}
+
+.slds-modal__content {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.slds-modal__footer {
+    border-top: 2px solid #dddbda;
+    padding: 0.75rem 1rem;
+}
+
+/* Modal Text Colors */
+.slds-text-color_success {
+    color: #2e844a;
+    font-weight: 500;
+}
+
+.slds-text-color_error {
+    color: #ea001e;
+    font-weight: 500;
+}
+
+.slds-text-color_warning {
+    color: #fe9339;
+    font-weight: 500;
+}
+
+.slds-text-color_default {
+    color: #080707;
+    font-weight: 500;
+}
+
+/* Modal Animation */
+.slds-fade-in-open {
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Modal Title with Icon */
+.slds-modal__title {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.slds-modal__title lightning-icon {
+    margin-right: 0.5rem;
+}
+
+/* Modal Close Button */
+.slds-modal__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+/* Custom Notification Container */
+.custom-notification-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+}
+
+/* Base Notification Styles */
+.custom-notification {
+    position: relative;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    min-width: 320px;
+    max-width: 480px;
+}
+
+/* Notification Variants */
+.notification-success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notification-error {
+    background-color: #f44336;
+    color: white;
+}
+
+.notification-warning {
+    background-color: #ff9800;
+    color: white;
+}
+
+.notification-info {
+    background-color: #2196f3;
+    color: white;
+}
+
+/* Notification Content */
+.notification-content {
+    flex-grow: 1;
+    padding-right: 2rem;
+}
+
+.notification-message {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Notification Icon */
+.notification-icon {
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* Notification Close Button */
+.notification-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.close-icon {
+    --sds-c-icon-color-foreground: white;
+}
+
+/* Progress Bar */
+.notification-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    animation: progress 3s linear;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+/* Animation Classes */
+.notification-exit {
+    animation: slideOut 0.3s ease-in forwards;
+}
+
+/* Main Container */
+.main-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+}
+
+/* Header Section */
+.header-section {
+    padding: 1.75rem 2rem;
+    background: linear-gradient(to right, #0070d2, #1589ee);
+    border-bottom: none;
+}
+
+.header-icon {
+    --sds-c-icon-color-foreground-default: #ffffff;
+}
+
+.header-section .slds-text-heading_medium {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Content Section */
+.content-section {
+    padding: 1.5rem;
+}
+
+/* Section Container */
+.section-container {
+    margin-bottom: 2rem;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid #d8dde6;
+}
+
+.section-icon {
+    margin-right: 0.5rem;
+    color: #0070d2;
+}
+
+.section-card {
+    border: 1px solid #d8dde6;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Buttons */
+.edit-button, .save-button, .cancel-button, .back-button, .next-button {
+    min-width: 100px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #d8dde6;
+}
+
+/* Form Fields */
+.slds-input, .slds-select, .slds-textarea {
+    border-radius: 4px;
+    border: 1px solid #d8dde6;
+    padding: 0.5rem;
+    transition: border-color 0.2s ease;
+}
+
+.slds-input:focus, .slds-select:focus, .slds-textarea:focus {
+    border-color: #0070d2;
+    box-shadow: 0 0 3px #0070d2;
+}
+
+/* Custom Notification */
+.custom-notification-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.custom-notification {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification-success {
+    background: rgb(46, 132, 74);
+    border: 1px solid #4bca81;
+}
+
+.notification-error {
+    background: rgb(186, 5, 23);
+    border: 1px solid #ffb75d;
+}
+
+.notification-warning {
+    background: rgb(221, 122, 1);
+    border: 1px solid #ffb75d;
+}
+
+.notification-info {
+    background: rgb(116, 116, 116);
+    border: 1px solid #0070d2;
+}
+
+.notification-icon {
+    margin-right: 0.5rem;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-message {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.notification-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: progress 3s linear;
+}
+
+/* Error Container */
+.error-container {
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 6px;
+    background: #fdeded;
+    border: 1px solid #ffb75d;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slds-col {
+        width: 100% !important;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .button-left, .button-right {
+        width: 100%;
+    }
+    
+    .back-button, .next-button {
+        width: 100%;
+    }
+}
+
+/* Spinner Container */
+.slds-spinner_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Required Field Indicator */
+.required-field .slds-form-element__label {
+    font-weight: 500;
+}
+
+.required-field .slds-form-element__label::after {
+    content: '*';
+    color: #ea001e;
+    margin-left: 0.125rem;
+}
+
+/* Component Wrapper */
+.component-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+}
+
+/* Free Trial Form */
+.free-trial-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.free-trial-form-element {
+    width: 100%;
+}
+
+/* No Data Message */
+.slds-illustration {
+    text-align: center;
+    padding: 2rem;
+}
+
+.slds-text-longform {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+/* Cable Selection Section */
+.section-card .slds-col.slds-size_1-of-1 {
+    margin-top: 0.5rem;
+}
+
+.section-card .slds-col.slds-size_1-of-1 lightning-input-field {
+    width: 100%;
+}
+
+/* Alternative Cable Selection Reason */
+.section-card .slds-col.slds-size_1-of-1 lightning-input-field[data-field="Alternative_Cable_Selection_Reason__c"] {
+    margin-top: 0.75rem;
+}
+
+.section-card .slds-col.slds-size_1-of-1 lightning-input-field[data-field="Alternative_Cable_Selection_Reason__c"] .slds-form-element__label {
+    font-weight: 500;
+    color: #16325c;
+}

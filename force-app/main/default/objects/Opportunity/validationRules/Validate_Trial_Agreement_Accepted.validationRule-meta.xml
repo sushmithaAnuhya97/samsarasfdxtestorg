@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Trial_Agreement_Accepted</fullName>
+    <active>true</active>
+    <description>For Free Trials, validate that agreement has been accepted by customer before moving to closed, ready to ship, closed won</description>
+    <errorConditionFormula>AND ( $User.Id != &apos;0051a000002JKtR&apos;,
+ ISPICKVAL(Type,&quot;Free Trial Opportunity&quot;), 
+OR ( 
+ISPICKVAL(StageName, &quot;Closing&quot;), 
+ISPICKVAL(StageName, &quot;Orders Processing&quot;),
+ISPICKVAL(StageName, &quot;Ready to Ship&quot;), 
+ISPICKVAL(StageName, &quot;Closed Won&quot;) 
+), 
+AND (
+Trial_Agreement_Accepted__c  = False,
+ NOT($Permission.Validation_Rule_Exemption),
+ NOT(CONTAINS($Profile.Name, &quot;Finance&quot;)),
+ $Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;
+),
+ of_Serialized_Products__c &gt; 0,
+ Cable_Send_Only__c = False
+)</errorConditionFormula>
+    <errorMessage>Please ensure the customer accepts the Free Trial Agreement before moving the opportunity to Closing or Ready to Ship or Closed Won</errorMessage>
+</ValidationRule>

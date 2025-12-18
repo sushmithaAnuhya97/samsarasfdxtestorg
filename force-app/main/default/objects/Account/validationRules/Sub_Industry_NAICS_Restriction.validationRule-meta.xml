@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Industry_NAICS_Restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(
+        $Profile.Name = &quot;Samsara Sales - NA ENT&quot;,
+        $Profile.Name = &quot;Samsara Sales Management - New System&quot;, 
+        $Profile.Name = &quot;Samsara Sales - NA US AE2&quot;,
+        $Profile.Name = &quot;Samsara Account Book ADRs&quot;,
+        $Profile.Name = &quot;Samsara ADRs&quot;,
+        $Profile.Name = &quot;Samsara Inbound ADRs&quot;,
+        $Profile.Name = &quot;Samsara Sales - NA US AE3&quot;,
+        $Profile.Name = &quot;Samsara Sales - NA  AE1&quot;
+    ),
+    ISCHANGED(Sub_Industry__c),
+    NOT(PRIORVALUE(SLED_Account__c))
+)</errorConditionFormula>
+    <errorDisplayField>Sub_Industry__c</errorDisplayField>
+    <errorMessage>The Sub Industry field cannot be edited when SLED = FALSE. To submit feedback, please go here: https://forms.gle/pVyLwizGmXWgXV6a7</errorMessage>
+</ValidationRule>

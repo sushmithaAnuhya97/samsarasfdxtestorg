@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retouch_Recently_Assigned__c</fullName>
+    <description>Companies that can&apos;t be loaded to other people because they were put in retouch and have recently changed owner.</description>
+    <formula>IF(AND(OR(Status__c=&apos;Retouch - Confirmed No Opportunity&apos;,Status__c=&apos;Retouch - Did Not Connect&apos;), TODAY()-DATEVALUE(Account_Assignment_Date__c)&lt;90),True,False)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Retouch Recently Assigned</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

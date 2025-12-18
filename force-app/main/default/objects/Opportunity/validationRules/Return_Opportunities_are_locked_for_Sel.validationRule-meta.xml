@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Opportunities_are_locked_for_Sel</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISCHANGED(Bypass_Validation_Rule_DateTime__c)),
+    NOT($Permission.Validation_Rule_Exemption),
+    NOT($Permission.Finance_Contractor),
+    OR(
+        $Profile.Name = &quot;Samsara Sales - NA US AE2&quot;,
+        $Profile.Name = &quot;Samsara Sales - NA US AE3&quot;,
+        $Profile.Name = &quot;Samsara Sales - NA AE1&quot;,
+        $Profile.Name = &quot;Samsara Sales - NA ENT&quot;,
+        $Profile.Name = &quot;Samsara Sales - CPQ&quot;,
+        $Profile.Name = &quot;Samsara Sales - EMEA IS&quot;,
+        $Profile.Name = &quot;Salesforce Sales - CPQ Mexico&quot;
+    ),
+    NOT(ISCHANGED(License_End_Date__c)),
+    NOT(ISCHANGED(License_Start_Date__c)),
+      Upgraded_Opportunity_ID__c    &lt;&gt; NULL
+)</errorConditionFormula>
+    <errorMessage>Cancellation Opportunities and Quotes are locked for sellers. Please contact Sales Operations for assistance.</errorMessage>
+</ValidationRule>

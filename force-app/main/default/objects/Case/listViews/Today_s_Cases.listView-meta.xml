@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Today_s_Cases</fullName>
+    <columns>CASES.ORIGIN</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>Round_Robined__c</columns>
+    <columns>Roadside_Emergency_or_Inspection__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.REASON</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>CASES.REASON</field>
+        <operation>notContain</operation>
+        <value>Feedback,IT-related</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notContain</operation>
+        <value>EXPRESS,customer</value>
+    </filters>
+    <filters>
+        <field>CASES.ORIGIN</field>
+        <operation>notContain</operation>
+        <value>NPS,CSAT,DriverApp</value>
+    </filters>
+    <label>Today&apos;s Cases</label>
+</ListView>

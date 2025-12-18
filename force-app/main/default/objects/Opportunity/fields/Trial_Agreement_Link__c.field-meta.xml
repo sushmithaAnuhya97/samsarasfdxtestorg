@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trial_Agreement_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( (NOT(ISBLANK( Trial_Period__c ))
+&amp;&amp; Product_Count__c &gt; 0
+&amp;&amp; NOT(ISBLANK( ( Shipping_Address_NEW__r.Shipping_Address_Line_1__c)))
+&amp;&amp; NOT(ISBLANK( Trial_Start_Date_new__c ))
+&amp;&amp; NOT(ISBLANK( Trial_Primary_Contact__c ))
+&amp;&amp; ( NOT(ISBLANK ( Trial_Goal_1__c )) || NOT(ISBLANK ( Trial_Goal_2__c )) || NOT(ISBLANK ( Trial_Goal_3__c )) )
+&amp;&amp; NOT(ISBLANK( Planned_Trial_Installation_Date__c ))
+&amp;&amp; NOT(ISBLANK( Trial_Primary_Contact__r.Email ))), IF(CONTAINS(LEFT($Api.Partner_Server_URL_550, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_550)),&apos;--&apos;),$Label.Free_Trial_Agreement_Sandbox ,&apos;https://www.samsara.com&apos; )
+&amp;
+IF( ISPICKVAL( Shipping_Country__c , &apos;United Kingdom&apos;) , &apos;/uk/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;France&apos;) , &apos;/fr/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Ireland&apos;) , &apos;/uk/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Canada&apos;)  &amp;&amp; NOT ISPICKVAL( Shipping_State__c , &apos;Quebec&apos;)  , &apos;/ca/&apos;,
+
+IF( ISPICKVAL( Shipping_Country__c , &apos;Canada&apos;)  &amp;&amp; ISPICKVAL( Shipping_State__c , &apos;Quebec&apos;)  , &apos;/fr-ca/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Switzerland&apos;) , &apos;/ch/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Germany&apos;) , &apos;/de/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Austria&apos;) , &apos;/at/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Spain&apos;) , &apos;/es/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Belgium&apos;) , &apos;/uk/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Netherlands&apos;) , &apos;/uk/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Mexico&apos;) , &apos;/mx/&apos;,
+IF( ISPICKVAL( Shipping_Country__c , &apos;Italy&apos;) , &apos;/it/&apos;,
+&apos;/&apos;))))))))))))) &amp; IF( CONTAINS(Owner_Role_Copy__c, &apos;SLED&apos;),&apos;trial-agreement/pubsec&apos;,&apos;trial-agreement&apos;)
+&amp; &apos;?id=&apos;+Opportunity_UUID__c, &apos;&apos;
+)</formula>
+    <inlineHelpText>To generate a link, add: 
+-A trial primary contact and email 
+-3 trial goals 
+-A planned trial installation date
+-A trial period 
+-A shipping contact and address 
+-Trial products</inlineHelpText>
+    <label>Trial Agreement Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

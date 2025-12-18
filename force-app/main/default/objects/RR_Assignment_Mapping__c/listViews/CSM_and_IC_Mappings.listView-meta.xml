@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_and_IC_Mappings</fullName>
+    <columns>Assignment_Rule__c</columns>
+    <columns>Order__c</columns>
+    <columns>User__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Field_To_Assign__c</field>
+        <operation>equals</operation>
+        <value>User</value>
+    </filters>
+    <filters>
+        <field>Assignment_Rule__c</field>
+        <operation>contains</operation>
+        <value>0176,0177,0178,0179,0180,0181,0182,0183,0184,0185,0186,0187,0188,0189,0190,0010,0011,0094,0164,0165,0166,0167,0168,0169,0170,0171,0172,0173</value>
+    </filters>
+    <label>CSM and IC Mappings</label>
+</ListView>

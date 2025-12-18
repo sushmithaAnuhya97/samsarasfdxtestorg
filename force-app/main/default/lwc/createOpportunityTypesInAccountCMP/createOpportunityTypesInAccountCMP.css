@@ -1,0 +1,69 @@
+/* .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+   	  border: 1px solid #ccc; 
+    border-radius: 8px;
+} */
+.H-font {
+	font-weight: bolder;
+    font-size: 15px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header-content {
+    flex: 1; /* Takes up remaining space */
+}
+.header-content h3{
+    font-weight: bolder; /* Takes up remaining space */
+}
+.search-container {
+    margin-left: 20px; /* Adjust spacing between header content and search input */
+}
+
+.datatable-container {
+    overflow: auto; /* Enable scrolling for the datatable */
+    border: 1px solid #ccc; /* Optional: add border around the datatable */
+}
+
+.scrollable-table {
+    width: 100%; /* Ensure the table takes full width */
+    overflow: auto; /* Enable scrolling for the datatable */
+}
+
+/* Sticky header styles */
+.scrollable-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scrollable-table thead {
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f0;
+}
+
+.scrollable-table th,
+.scrollable-table td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.contact-count {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+.slds-m-around_medium {
+    margin: 1rem;
+}
+
+.slds-m-top_medium {
+    margin-top: 1rem;
+}

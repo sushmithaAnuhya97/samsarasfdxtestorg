@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Decision_1</name>
+        <label>Decision 1</label>
+        <locationX>710</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>No Project Creations or Updates</defaultConnectorLabel>
+        <rules>
+            <name>Update_Current_Step_Date</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Current_Step__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_3</targetReference>
+            </connector>
+            <label>Update Current Step Date</label>
+        </rules>
+        <rules>
+            <name>Next_Update_Due_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Stage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Next_Update_Due_Date</targetReference>
+            </connector>
+            <label>Next Update Due Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Stage changed to Hold - 60 days OR Deliverables Complete - 60 days</description>
+        <name>Set_Next_Update_Due_Date</name>
+        <label>Set Next Update Due Date</label>
+        <locationX>710</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>No Date Change</defaultConnectorLabel>
+        <rules>
+            <name>X30Days</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In-Discussion</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Start Confirmed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BVS_Update_Project_Creation_Date_30_days</targetReference>
+            </connector>
+            <label>30Days</label>
+        </rules>
+        <rules>
+            <name>X60_Days</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>On Hold</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.pse__Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Deliverables Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BVS_Update_Project_Creation_Date_60_days</targetReference>
+            </connector>
+            <label>60 Days</label>
+        </rules>
+        <rules>
+            <name>X14_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.pse__Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BVS_Update_Project_Creation_Date_14days</targetReference>
+            </connector>
+            <label>14 Days</label>
+        </rules>
+    </decisions>
+    <description>This flow will automatically create update the project create date for the BVS team at the time a project is created.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Stage Changed to In-Discussion OR Start Confirmed Modify Next Update Due Date Today +30 days</description>
+        <name>Get30days</name>
+        <dataType>Date</dataType>
+        <expression>Today()+30</expression>
+    </formulas>
+    <formulas>
+        <description>Todays date</description>
+        <name>GetDatetoday</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <description>Project Stage equals On Hold  OR Deliverables Complete - 60 days</description>
+        <name>Nextupdateduedate60</name>
+        <dataType>Date</dataType>
+        <expression>Today()+60</expression>
+    </formulas>
+    <formulas>
+        <description>Project stage changed to in progress update update next due date 14 days from today</description>
+        <name>UpdateNextDueDate14days</name>
+        <dataType>Date</dataType>
+        <expression>Today()+14</expression>
+    </formulas>
+    <interviewLabel>BVS- Update BVS Project {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BVS- Update BVS Project Create Date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Update the BVS Project Created Date automatically</description>
+        <name>BVS_Update_Project_Creation_Date_14days</name>
+        <label>BVS Update Project Creation Date 14days</label>
+        <locationX>842</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Next_Update_Due_Date__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the BVS Project Created Date automatically</description>
+        <name>BVS_Update_Project_Creation_Date_30_days</name>
+        <label>BVS Update Project Creation Date 30 days</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Next_Update_Due_Date__c</field>
+            <value>
+                <elementReference>Get30days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the BVS Project Created Date automatically</description>
+        <name>BVS_Update_Project_Creation_Date_60_days</name>
+        <label>BVS Update Project Creation Date 60 days</label>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
+        <inputAssignments>
+            <field>Next_Update_Due_Date__c</field>
+            <value>
+                <elementReference>Nextupdateduedate60</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Records_3</name>
+        <label>Update Records 3</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>Current_Step_Date__c</field>
+            <value>
+                <elementReference>GetDatetoday</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_1</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Engagement_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BVS Engagement</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>pse__Stage__c</field>
+            <operator>IsChanged</operator>
+        </filters>
+        <filters>
+            <field>Current_Step__c</field>
+            <operator>IsChanged</operator>
+        </filters>
+        <object>pse__Proj__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

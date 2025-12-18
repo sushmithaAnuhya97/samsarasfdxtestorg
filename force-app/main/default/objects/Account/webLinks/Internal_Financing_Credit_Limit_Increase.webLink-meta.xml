@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Financing_Credit_Limit_Increase</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Internal Financing/Credit Limit Increase</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Internal_Finance_Request_Account?inputAccountId={!Account.Id}&amp;inputUserId={!$User.Id}&amp;inputApprover={!$Permission.Finance_Approver}&amp;retURL=/{!Account.Id}</url>
+</WebLink>

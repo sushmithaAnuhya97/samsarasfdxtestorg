@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Remaining_Amount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The bookings amount minus ready-to-bill records and any pre-billed amount.</description>
+    <formula>IF( OR( pse__Bookings__c = 0.00, pse__Apply_Billing_Cap__c = false) , NULL , pse__Bookings__c - (pse__Billings__c + pse__Pre_Billed__c ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The bookings amount minus ready-to-bill records and any pre-billed amount.</inlineHelpText>
+    <label>Remaining Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

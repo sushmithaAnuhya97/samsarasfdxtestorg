@@ -1,0 +1,240 @@
+<apex:page standardController="Contact" extensions="MassEditExtension" recordSetVar="unused" sidebar="true" showHeader="true">
+
+    <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d' || contains($CurrentPage.URL, 'lightning.force.com')}">
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS221, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+        <apex:stylesheet value="{!$Resource.MassEditCSS}" />
+    </apex:outputPanel>
+    <apex:includeScript value="{!$Resource.UtilJS}" />
+    <apex:includeScript value="{!$Resource.LightningMassEditJS}" />
+    <apex:includeScript value="support/api/42.0/interaction.js"/>
+    <apex:includeScript value="support/console/42.0/integration.js"/>
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
+    <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.8/js/jquery.tablesorter.min.js" />
+    <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.8/css/theme.blue.css" />
+
+    <!-- Bootstrap v4.x stylesheet -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+    <!-- bootstrap css theme -->
+    <link rel="stylesheet" href="css/theme.bootstrap_4.css"></link>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.tablesorter.js"></script>
+    <script src="js/jquery.tablesorter.widgets.js"></script>
+
+    <!-- pager plugin -->
+    <link rel="stylesheet" href="css/jquery.tablesorter.pager.css"></link>
+    <script src="js/jquery.
+    
+    sorter.pager.js"></script>
+    <style>
+    .tablesorter-pager .btn-group-sm .btn {
+  font-size: 1.2em; /* make pager arrows more visible */
+    }
+    </style>
+    <div class="mass-update-mass-edit" id="mass-update-mass-edit">
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" id="cancel-modal">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="closeCancelModal();">
+                        <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS221, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="header43" class="slds-text-heading--medium">Return</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p>Are you sure you wish to return?</p>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--neutral" onclick="closeCancelModal();">No</button>
+                    <button class="slds-button slds-button--brand" onclick="goBack();">Yes</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open" id="cancel-modal-backdrop"></div>
+        <apex:form >
+            <apex:pageBlock >
+                <apex:pageMessages />
+                <apex:pageBlock >
+                    Note: All modifications made on the page will be lost if Return button is clicked without clicking the 
+                     button first. 
+                </apex:pageBlock>
+                <apex:pageBlockButtons >
+                    <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d' || contains($CurrentPage.URL, 'lightning.force.com')}">
+                        <apex:commandButton value="Quick Save" action="{!save}" status="lightningSavingStatus" reRender="table" styleClass="slds-button slds-button--neutral slds-button--brand" />
+                        <apex:commandButton value="Return" onclick="openCancelModal();" styleClass="slds-button slds-button--neutral" reRender="table" />
+                        <apex:actionStatus id="lightningSavingStatus" >
+                            <apex:facet name="start" >
+                                <div id="spinning" class="slds-spinner_container">
+                                    <div class="slds-spinner--brand slds-spinner slds-spinner--medium" role="alert">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>               
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d' && !contains($CurrentPage.URL, 'lightning.force.com')}">
+                        <apex:commandButton value="Quick Save" action="{!save}" status="savingStatus" reRender="table" />
+                        <apex:commandButton value="Return" action="{!cancel}" onclick="return confirmCancel()" />
+                        
+                        <apex:actionStatus id="savingStatus" >
+                            <apex:facet name="start" >
+                                <img src="/img/loading.gif" />                    
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                </apex:pageBlockButtons>
+                <table class="table table-bordered table-striped">
+                
+               <!--   <apex:pageBlock >
+ <apex:pageblocksection title="Accounts" showheader="true" collapsible="true" columns="1">
+
+    <apex:pageBlockTable value="{!selected}" var="a">
+
+      <apex:column headerValue="Account Name">
+    <apex:outputlink value="/{!a.Account.Id}">{!a.Account.Name}</apex:outputlink>
+       </apex:column>
+
+        <apex:column breakBefore="true" colspan="2">
+            <apex:pageblocksection title="Contacts" showheader="true" collapsible="true" columns="1">
+                <apex:pageBlockTable value="{!a}" var="c">
+                    <apex:column value="{!c.Id}"/>
+                     <apex:column headerValue="Name">
+                    <apex:outputlink value="/{!c.id}">{!c.Name}</apex:outputlink>
+                </apex:column>
+                 <apex:column headerValue="Phone">
+                    <apex:outputField value="{!c.Phone}"/>
+                </apex:column>
+                <apex:column headerValue="Description">
+                   <apex:inputTextArea value="{!a.Description}" label="Email Content" richText="false" rows="10" style="width:500px"/>
+                </apex:column>
+                <apex:column headerValue="Title">
+                    <apex:outputField value="{!c.Title}"/>
+                </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageblockSection>
+        </apex:column>
+    </apex:pageBlockTable>
+
+</apex:pageblockSection>
+</apex:pageBlock> -->
+                
+                
+              
+            <apex:pageBlockTable value="{!selected}" var="a" id="table">
+               <apex:column headerValue="Account">
+                    <apex:outputField value="{!a.AccountId}"/>
+                </apex:column>
+                 <apex:column headerValue="Name">
+                    <apex:outputlink value="/{!a.id}">{!a.Name}</apex:outputlink>
+                </apex:column>
+                <apex:column headerValue="Phone">
+                    <support:clickToDial number="{!a.Phone}" entityId="{!a.Id}"/>
+                </apex:column>                  
+                <apex:column headerValue="Mobile Phone">
+                    <support:clickToDial number="{!a.MobilePhone}" entityId="{!a.Id}"/>
+                </apex:column>
+                <apex:column headerValue="Last Call on Account">
+                    <apex:outputField value="{!a.Account.Last_Call__c}"/>
+                </apex:column>
+                <apex:column headerValue="Follow up Date">
+                    <apex:inputField value="{!a.Follow_Up_Date__c}"/>
+                </apex:column>
+                <apex:column headerValue="Title">
+                    <apex:outputField value="{!a.Title}"/>
+                </apex:column>
+                
+                      
+                  <apex:column headerValue="Description">
+                    <apex:inputTextArea value="{!a.Description}" label="Email Content" richText="false" rows="10" style="width:500px"/>
+                </apex:column> 
+                
+                      <!-- Save starts -->
+                
+             <apex:column headerValue="Save">
+               <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d' || contains($CurrentPage.URL, 'lightning.force.com')}">
+                        <apex:commandButton value="Quick Save" action="{!save}" status="lightningSavingStatus" reRender="table" styleClass="slds-button slds-button--neutral slds-button--brand" />
+                        
+                        <apex:actionStatus id="lightningSavingStatus" >
+                            <apex:facet name="start" >
+                                <div id="spinning" class="slds-spinner_container">
+                                    <div class="slds-spinner--brand slds-spinner slds-spinner--medium" role="alert">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>               
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d' && !contains($CurrentPage.URL, 'lightning.force.com')}">
+                        <apex:commandButton value="Save Record" action="{!save}" status="savingStatus" reRender="table" />
+                        
+                        
+                        <apex:actionStatus id="savingStatus" >
+                            <apex:facet name="start" >
+                                <img src="/img/loading.gif" />                    
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                </apex:column>
+                
+                <!-- Save ends -->
+              <apex:column headerValue="Status">
+                    <apex:inputField value="{!a.Status__c}"/>
+                </apex:column>
+                
+               
+                
+                  <apex:column headerValue="Inbound Form Message">
+                    <apex:outputField value="{!a.Inbound_Form_Message__c}"/>
+                </apex:column>
+                
+                 
+                <apex:column headerValue="Email">
+                    <apex:outputField value="{!a.Email}"/>
+                </apex:column>
+             
+               
+                 <apex:column headerValue="Number of Vehicles">
+                    <apex:outputField value="{!a.Account.Number_of_Vehicles__c}"/>
+                </apex:column>
+                  <apex:column headerValue="Organisation Size">
+                    <apex:outputField value="{!a.Account.Organization_Size__c}"/>
+                </apex:column>
+                 
+                 <apex:column headerValue="Hot Transfer To">
+                    <apex:inputField value="{!a.Hot_Transfer_To__c}"/>
+                </apex:column> 
+                
+                
+               
+                
+                
+                
+                <!-- Salesloft import might release later 
+                <apex:column headerValue="Salesloft Import">
+                <button style="width: 100px" onclick="window.open('https://app.salesloft.com/app/import/crm?contact={!a.Id}')">SalesLoft Import</button>
+              </apex:column> -->
+              
+          
+        </apex:pageBlockTable>
+         
+         
+            </table>
+        </apex:pageBlock>
+    </apex:form>
+    </div>
+    
+    <script>
+  $(document).ready(function()
+  {
+    $("[id$='table']").tablesorter({theme: 'blue', dateFormat : "ddmmyyyy"});
+  });
+</script>
+
+    
+</apex:page>

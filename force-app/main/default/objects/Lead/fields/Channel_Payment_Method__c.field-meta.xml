@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Payment_Method__c</fullName>
+    <label>Channel Payment Method</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rebate (% MSRP)</fullName>
+                <default>false</default>
+                <label>Rebate (% MSRP)</label>
+            </value>
+            <value>
+                <fullName>Deal Registration Margin</fullName>
+                <default>false</default>
+                <label>Deal Registration Margin</label>
+            </value>
+            <value>
+                <fullName>End Customer Discount</fullName>
+                <default>false</default>
+                <label>End Customer Discount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

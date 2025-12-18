@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <description>Used by Finance for Netsuite and financial reporting.</description>
+    <externalId>false</externalId>
+    <formula>if( CONTAINS(Pricebook2.Name,&quot;Samsara Express&quot;),&quot;SMB&quot;,
+
+if( AND(OR(CONTAINS(Owner_Role_Copy__c,&quot;MM&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Mid Market&quot;)),Industrial_Oppty__c =FALSE),&quot;Mid Market&quot;,
+
+if( AND(OR(CONTAINS(Owner_Role_Copy__c,&quot;MM&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Mid Market&quot;)),Industrial_Oppty__c =TRUE),&quot;Industrial&quot;,
+
+if( AND(OR(CONTAINS(Owner_Role_Copy__c,&quot;Major Accounts&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Major&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Field&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Enterprise&quot;)),Industrial_Oppty__c =FALSE),&quot;Enterprise&quot;,
+
+if( AND(OR(CONTAINS(Owner_Role_Copy__c,&quot;Major Accounts&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Major&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Field&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Enterprise&quot;)),Industrial_Oppty__c =TRUE),&quot;Industrial&quot;,
+
+if(AND(CONTAINS(Owner_Role_Copy__c,&quot;SMB&quot;),CONTAINS(Pricebook2.Name,&quot;Samsara Standard&quot;)),&quot;Mid Market&quot;,
+
+if(CONTAINS(Owner_Role_Copy__c,&quot;Industrial&quot;),&quot;Industrial&quot;,
+
+if(OR(CONTAINS(Owner_Role_Copy__c,&quot;Management&quot;),CONTAINS(Owner_Role_Copy__c, &quot;Operations&quot;)), Account.Segment_Text_stamped__c , Account.Segment_Text_stamped__c))))))))</formula>
+    <inlineHelpText>Deprecated--use Finance Segment instead.</inlineHelpText>
+    <label>[DON&apos;T USE] Segment (Price Book)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

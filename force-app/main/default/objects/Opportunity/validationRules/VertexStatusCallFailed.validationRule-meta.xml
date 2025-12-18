@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VertexStatusCallFailed</fullName>
+    <active>true</active>
+    <description>Tax status = Aborted</description>
+    <errorConditionFormula>AND(
+ISCHANGED(StageName),
+ISPICKVAL(StageName,&quot;Closing&quot;),
+ISPICKVAL(SBQQ__PrimaryQuote__r.Tax_Calculation_Status__c,&quot;Aborted&quot;),
+ISPICKVAL(Type,&quot;Revenue Opportunity&quot;),
+NOT(OR($Profile.Name=&quot;System Administrator&quot;,$Profile.Name = &quot;System Administrator API&quot;, $Permission.Override_Tax_Error_VRExempt)),
+NOT(AND(Owner.FirstName=&quot;Samsara&quot;, Owner.LastName=&quot;Small Fleets&quot;))
+)</errorConditionFormula>
+    <errorMessage>There was an issue with Tax calculation on the Quote. Please work with the Tax team (tax@samsara.com) to resolve this issue before moving forward.</errorMessage>
+</ValidationRule>

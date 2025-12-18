@@ -1,0 +1,124 @@
+/*.custom-container{
+	color : black;
+}*/
+.centered-bold-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem; /* Adjust the font size if needed */
+}
+.slds-m-horizontal_small {
+    margin: 0 1rem;
+}
+ 
+.slds-m-top_medium {
+    margin-top: 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    margin-top: 1rem;
+}
+.cancel-container {
+    display: flex;
+    align-items: center;
+}
+/* CSS for text truncation with ellipsis */
+lightning-datatable .slds-cell {
+    max-width: 200px;  /* Adjust the max-width as needed */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis for truncated text */
+}
+
+/* Allow full text to show on hover */
+lightning-datatable .slds-cell:hover {
+    overflow: visible; /* Allow full text to be visible */
+    text-overflow: unset; /* Remove ellipsis when hovering */
+}
+
+/* Custom Toggle Button Styles */
+.custom-toggle-button {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    min-width: 1.25rem !important;
+    min-height: 1.25rem !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-color: #f3f2f2 !important;
+    border: 1px solid #706e6b !important;
+    transition: all 0.2s ease-in-out !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin: 0 0.5rem 0 0 !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+
+.custom-toggle-button:hover {
+    background-color: #f3f2f2 !important;
+    border-color: #0070d2 !important;
+}
+
+.custom-toggle-button:focus {
+    box-shadow: 0 0 2px #0070d2 !important;
+    outline: none !important;
+}
+
+/* Circle container for toggle */
+.circle-container {
+    position: relative !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    min-width: 1.25rem !important;
+    min-height: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+}
+
+/* Triangle styling */
+.triangle {
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 4px solid transparent !important;
+    border-right: 4px solid transparent !important;
+    border-top: 6px solid #0070d2 !important;
+    transition: transform 0.3s ease-in-out !important;
+    transform: translateY(0) !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Triangle when expanded (pointing down) */
+.triangle[data-expanded="true"] {
+    transform: translate(-50%, -50%) rotate(180deg) !important;
+    border-top: 6px solid #0070d2 !important;
+}
+
+/* Active state for expanded button */
+.custom-toggle-button[aria-expanded="true"] .circle-container {
+    background-color: #f3f2f2 !important;
+}
+
+/* Hover state */
+.custom-toggle-button:hover .circle-container {
+    background-color: #f3f2f2 !important;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    padding: 0.25rem 0 !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+}

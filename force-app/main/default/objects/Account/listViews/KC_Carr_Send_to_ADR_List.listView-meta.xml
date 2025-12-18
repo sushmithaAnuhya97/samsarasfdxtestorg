@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KC_Carr_Send_to_ADR_List</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>Send_to_My_ADR__c</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Open_Opportunity__c</columns>
+    <columns>Account_Status_Updated__c</columns>
+    <columns>Inside_Sales_Assignment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>PARENT_NAME</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Inside_Sales_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Gabrielle Kambur</value>
+    </filters>
+    <label>KC Carr - Send to ADR List</label>
+</ListView>

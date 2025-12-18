@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TSM_Project_Type__c</fullName>
+    <label>TSM Project Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trial Desk Consultation</fullName>
+                <default>false</default>
+                <label>Trial Desk Consultation</label>
+            </value>
+            <value>
+                <fullName>Full TSM Engagement</fullName>
+                <default>false</default>
+                <label>Full TSM Engagement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

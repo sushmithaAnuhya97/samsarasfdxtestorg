@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contacts_Transportation</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>X18_digit_Contact_ID__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Account.Status__c</field>
+        <operation>equals</operation>
+        <value>attempting,demo scheduled,assigned</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Assignment_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>6/13/2024 12:00 AM</value>
+    </filters>
+    <label>My Contacts: Transportation</label>
+</ListView>

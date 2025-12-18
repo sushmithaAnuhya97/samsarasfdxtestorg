@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__CompanySite__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Company site representing the location the product is shipped from. The site must be a child of the related billing document company and contain complete address details.</description>
+    <inlineHelpText>Company site representing the location the product is shipped from. The site must be a child of the related billing document company and contain complete address details.</inlineHelpText>
+    <label>Company Site</label>
+    <referenceTo>fferpcore__CompanySite__c</referenceTo>
+    <relationshipLabel>Billing Document Line Items</relationshipLabel>
+    <relationshipName>BillingDocumentLineItems</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

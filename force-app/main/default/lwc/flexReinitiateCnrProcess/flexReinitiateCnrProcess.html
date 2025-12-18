@@ -1,0 +1,60 @@
+<template>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <h2 class="slds-modal__title">Select a Contract Group</h2>
+                <p class="slds-text-body_regular slds-m-top_x-small">
+                    Please select one contract group to reinitiate the Cancel & Replace (CnR) process.
+                    After clicking <strong>Submit</strong>, you'll be redirected to the confirmation screen to proceed with the selected group.
+                </p>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium">
+                <template for:each={groupedContracts} for:item="group">
+                    <div key={group.groupId} class="group-box slds-box slds-m-bottom_medium">
+                        <lightning-input 
+                            type="checkbox" 
+                            label="Select this group" 
+                            checked={group.isSelected} 
+                            data-group-id={group.groupId} 
+                            onchange={handleGroupCheckboxChange}>
+                        </lightning-input>
+
+                        <div style="overflow-x: auto;">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small">
+                                <thead>
+                                    <tr>
+                                        <th>Contract Number</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Log Name</th>
+                                        <th>Status</th>
+                                        <th>Last Initiated Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={group.contracts} for:item="contract">
+                                        <tr key={contract.Id}>
+                                            <td>{contract.ContractNumber}</td>
+                                            <td>{contract.StartDate}</td>
+                                            <td>{contract.EndDate}</td>
+                                            <td>{contract.LogName}</td>
+                                            <td>{contract.Status}</td>
+                                            <td>{contract.LastInitiatedDate}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <footer class="slds-modal__footer">
+                <lightning-button variant="neutral" label="Cancel" onclick={handleCancel}></lightning-button>
+                <lightning-button class="slds-m-left_small" variant="brand" label="Submit" onclick={handleSubmit}></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CM1_License_Count__c</fullName>
+    <description>Counts the amount of CM1 licenses. 
+Necessary to validate that reps do not mix up CMs hardware and licenses.</description>
+    <label>CM1 License Count</label>
+    <summarizedField>OpportunityLineItem.Quantity</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Product_Code_Copy__c</field>
+        <operation>equals</operation>
+        <value>LIC-CM1-ENT,LIC-CM1-EXPRESS,LIC-CM1-EXPRESS-12MO,LIC-CM-STRM</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,70 @@
+.error-item,
+.next-step-item {
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding-left: 20px; 
+    padding-bottom: 10px;
+    word-wrap: break-word; 
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start; 
+    width: 100%;
+    min-height: 65px;
+}
+
+.error-item span,
+.next-step-item span {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center; 
+}
+
+.error-item {
+    color: #FF0000;
+}
+
+.next-step-item {
+    color: green;
+}
+
+.error-header,
+.nextsteps-header {
+    padding-left: 20px;  
+    margin-bottom: 15px; 
+}
+
+.error-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap; 
+    align-items: flex-start; 
+}
+
+.custom-background {
+    background-color: #F0F0F0;
+    color: black;
+    font-weight: bold;
+    padding: 10px 30px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem; 
+}
+
+.custom-Stagebackground {
+    background-color: #FFBABA;
+    color: #D8000C;
+    font-weight: bold;
+    padding: 10px 30px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border-bottom: 1px solid #CCCCCC;
+}

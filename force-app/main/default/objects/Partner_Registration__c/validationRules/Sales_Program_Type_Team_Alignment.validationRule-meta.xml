@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Program_Type_Team_Alignment</fullName>
+    <active>true</active>
+    <description>GTMS-25748: Added &quot;Approved by Leader&quot; to the condition.
+GTMS-26936: Updated as part of partners H1 project
+GTMS-29032: Updated validation condition to throw error when PAM Reviewed deal registration and sales program type value is empty</description>
+    <errorConditionFormula>AND(
+	RecordType.DeveloperName == &apos;Deal_Registration&apos;,
+	AND(
+		ISBLANK(Sales_Program_Type__c),
+ 	OR(
+						ISBLANK(TEXT(Partner_Program__r.SalesProgramType__c)),
+						ISBLANK(TEXT(Partner_Program_Enrollment__r.SalesProgramType__c))
+	),
+ ISCHANGED( Status__c ),
+    ISPICKVAL(Status__c,&apos;PAM Reviewed&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>Please update &quot;Sales Program Type&quot; value at respective &quot;Partner Program&quot; and &quot;Partner Program Enrollment&quot; before approving.</errorMessage>
+</ValidationRule>

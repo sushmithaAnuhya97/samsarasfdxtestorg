@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Director_or_Manager_Approval_FY_26_P_P__c</fullName>
+    <formula>OR(
+AND(
+Selected_Payment_Type_Group_2__c,
+(Blended_Discount__c * 100) &lt;= 35
+
+),
+AND(
+Selected_Payment_Type_Group_1__c,
+(Blended_Discount__c * 100) &lt;= 40
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Director_or_Manager_Approval_FY_26_P_P</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

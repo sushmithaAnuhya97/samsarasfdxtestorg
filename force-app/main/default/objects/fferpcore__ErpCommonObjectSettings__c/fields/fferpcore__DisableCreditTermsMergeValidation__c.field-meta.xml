@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DisableCreditTermsMergeValidation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates whether Foundations should prevent accounts from being merged if more than one of them has an account credit terms record.</description>
+    <inlineHelpText>Indicates that you do not want to prevent accounts from being merged when more than one of them has an account credit terms record. This might result in accounts with more than one account credit terms record.</inlineHelpText>
+    <label>Disable Credit Terms Merge Validation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

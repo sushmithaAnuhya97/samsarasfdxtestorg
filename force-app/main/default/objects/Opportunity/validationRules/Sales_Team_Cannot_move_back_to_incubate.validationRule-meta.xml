@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Team_Cannot_move_back_to_incubate</fullName>
+    <active>false</active>
+    <description>You cannot move the opportunity backwards from Ready to Ship or Closed Won. Only Finance, Operations and Admins can move orders past the stage of Closing.</description>
+    <errorConditionFormula>AND(
+( ISPICKVAL(Type,&quot;Revenue Opportunity&quot;)),
+( NOT(PRIORVALUE(Probability)=0)),
+ISPICKVAL(StageName, &quot;Incubate&quot;),
+NOT(OR(
+         ($Permission.Validation_Rule_Exemption),
+         ($Profile.Name=&quot;Order Operations Admin&quot;),
+CONTAINS($Profile.Name,&quot;Industrial&quot;),
+CONTAINS(  Owner.Title  ,&quot;Renewal&quot;)
+)
+))</errorConditionFormula>
+    <errorMessage>You cannot move the opportunity backwards to Incubate.</errorMessage>
+</ValidationRule>

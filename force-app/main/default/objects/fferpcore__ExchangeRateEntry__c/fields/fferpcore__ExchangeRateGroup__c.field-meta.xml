@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ExchangeRateGroup__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The group that the exchange rate entry relates to.</description>
+    <inlineHelpText>The group that the exchange rate entry relates to.</inlineHelpText>
+    <label>Exchange Rate Group</label>
+    <referenceTo>fferpcore__ExchangeRateGroup__c</referenceTo>
+    <relationshipLabel>Exchange Rate Entries</relationshipLabel>
+    <relationshipName>ExchangeRateEntries</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

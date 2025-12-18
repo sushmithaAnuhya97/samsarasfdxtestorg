@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Open_Assignments__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Open Assignments</label>
+    <summaryFilterItems>
+        <field>PDLM__Training_Assignment__c.PDLM__Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </summaryFilterItems>
+    <summaryForeignKey>PDLM__Training_Assignment__c.PDLM__Training_Plan__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

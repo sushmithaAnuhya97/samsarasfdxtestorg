@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>employee_level__c</fullName>
+    <label>Role Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IC</fullName>
+                <default>false</default>
+                <label>IC</label>
+            </value>
+            <value>
+                <fullName>Team Lead</fullName>
+                <default>false</default>
+                <label>Team Lead</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <label>Manager</label>
+            </value>
+            <value>
+                <fullName>Senior Manager</fullName>
+                <default>false</default>
+                <label>Senior Manager</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Senior Director</fullName>
+                <default>false</default>
+                <label>Senior Director</label>
+            </value>
+            <value>
+                <fullName>AVP</fullName>
+                <default>false</default>
+                <label>AVP</label>
+            </value>
+            <value>
+                <fullName>VP</fullName>
+                <default>false</default>
+                <label>VP</label>
+            </value>
+            <value>
+                <fullName>SVP</fullName>
+                <default>false</default>
+                <label>SVP</label>
+            </value>
+            <value>
+                <fullName>EVP</fullName>
+                <default>false</default>
+                <label>EVP</label>
+            </value>
+            <value>
+                <fullName>Intern</fullName>
+                <default>false</default>
+                <label>Intern</label>
+            </value>
+            <value>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+                <label>Contractor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

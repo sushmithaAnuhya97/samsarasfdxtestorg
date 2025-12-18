@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSM_Health_Status__c</fullName>
+    <description>Stop light to show CSM health rating on the account
+
+The Field Label has been changed form &quot;CS Health Status&quot; to &quot;CS Sentiment Status&quot; as per the request of Cs team Jira- GTMS-2302</description>
+    <externalId>false</externalId>
+    <formula>IMAGE( 
+CASE( CSM_Health_Rating__c , 
+&quot;Green&quot;, &quot;/img/samples/light_green.gif&quot;,
+&quot;Yellow&quot;, &quot;/img/samples/light_yellow.gif&quot;,
+&quot;Red&quot;, &quot;/img/samples/light_red.gif&quot;, 
+&quot;/s.gif&quot;), 
+&quot;status color&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>CSM Health of Onboarding = High (Green), Moderate (Yellow), Poor (Red)</inlineHelpText>
+    <label>CS Sentiment Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

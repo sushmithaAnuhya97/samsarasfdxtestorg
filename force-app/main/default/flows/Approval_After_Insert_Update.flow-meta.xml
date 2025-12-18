@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Bypass_Activation_SKU_is_Approval</name>
+        <label>Bypass Activation SKU is Approval</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>FALSE_Bypass Activation SKU is Approval</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_Bypass_Activation_SKU_is_Approval</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Rule__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Bypass Activation Fee Approval - Director</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Bypass_Activation_SKU_on_Quote</targetReference>
+            </connector>
+            <label>TRUE_Bypass Activation SKU is Approval</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Co_Term_is_Approved</name>
+        <label>Co-Term is Approved</label>
+        <locationX>248</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Bypass_Activation_SKU_is_Approval</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Co-Term is Approved</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_Co_Term_is_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.sbaa__Rule__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Co-Term/License End Date Change Credit Analyst Group</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_License_Change_Approval_Status</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>TRUE_Co-Term is Approved</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Approval After Insert/Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Approval After Insert/Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Quote_From_Approval</name>
+        <label>Get Quote From Approval</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Launch_Bypass_Activation_SKU_Flow</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Quote__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SBQQ__Quote__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Check_Bypass_Activation_SKU_on_Quote</name>
+        <label>Check &apos;Bypass Activation SKU&apos; on Quote</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Get_Quote_From_Approval</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>BypassActivationSKUrules__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Quote__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_License_Change_Approval_Status</name>
+        <label>Update License Change Approval Status</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>License_Term_Approval_Status__c</field>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.sbaa__Opportunity__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Co_Term_is_Approved</targetReference>
+        </connector>
+        <object>sbaa__Approval__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Launch_Bypass_Activation_SKU_Flow</name>
+        <label>Launch Bypass Activation SKU Flow</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <flowName>Bypass_Activation_SKUs</flowName>
+        <inputAssignments>
+            <name>Quote</name>
+            <value>
+                <elementReference>Get_Quote_From_Approval</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

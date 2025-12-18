@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Revenue_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates whether the values in this record apply to actual or forecast revenue.</description>
+    <inlineHelpText>Indicates whether the values in this record apply to actual or forecast revenue.</inlineHelpText>
+    <label>Revenue Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Actuals</fullName>
+                <default>false</default>
+                <label>Actuals</label>
+            </value>
+            <value>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+                <label>Forecast</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

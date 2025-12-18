@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Record_Type__c</fullName>
+    <formula>IF(RecordType.Name = &apos;Channel Registration&apos;, True, False)</formula>
+    <inlineHelpText>Field Checked if the record type is Channel Registration. Used for Channel Lead Conversion and Account Assignment</inlineHelpText>
+    <label>Channel Record Type</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

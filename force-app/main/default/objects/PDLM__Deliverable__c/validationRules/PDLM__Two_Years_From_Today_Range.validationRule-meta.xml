@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Two_Years_From_Today_Range</fullName>
+    <active>true</active>
+    <errorConditionFormula>( PDLM__Start_Date__c - TODAY() &gt; 728 || PDLM__Start_Date__c - TODAY() &lt; -728 ) || ( PDLM__Due_Date__c - TODAY() &gt; 728 || PDLM__Due_Date__c - TODAY() &lt; -728 )</errorConditionFormula>
+    <errorMessage>Start / Finish Date allowed time frame is 2 years</errorMessage>
+</ValidationRule>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Private_Sector_from_Adding</fullName>
+    <active>true</active>
+    <description>Private sector products are available for the users with SEL/COR/STR role or Sales Ops Profile only.</description>
+    <errorConditionFormula>AND(
+SBQQ__ProductCode__c = &apos;SB-PRIVATE1&apos;,
+$Profile.Name &lt;&gt; &apos;Sales Ops Profile&apos;,
+NOT(CONTAINS($UserRole.Name, &quot;COR&quot;)),
+NOT(CONTAINS($UserRole.Name, &quot;SEL&quot;)),
+NOT(CONTAINS($UserRole.Name, &quot;STR&quot;)),
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$Profile.Name &lt;&gt; &apos;System Administrator API&apos;,
+$Profile.Name &lt;&gt; &apos;Samsara - Finance&apos;,
+$Profile.Name &lt;&gt; &apos;Samsara - Finance Admin&apos;,
+NOT($Permission.Validation_Rule_Exemption)
+)</errorConditionFormula>
+    <errorMessage>Private sector products are available for the users with SEL/COR/STR role or Sales Ops Profile only.</errorMessage>
+</ValidationRule>

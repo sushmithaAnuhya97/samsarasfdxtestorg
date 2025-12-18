@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Partner_Registration__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Partner User Application Status</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Once saved in this status, the contact below will receive a confirmation email to join the Partner Portal. Future changes in security or access should be managed on the related Contact. &lt;/p&gt;</info>
+        <picklistValueName>Approved</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Once saved in this status, no further activity will happen. The user can submit new requests that can be separately reviewed or they can be activated directly on the related Contact record. &lt;/p&gt;</info>
+        <picklistValueName>Denied</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;This is a new User Registration for the Samsara Partner Portal. Please review the information below and determine if this user should have access to the Portal and make the appropriate selection. &lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Approved: &lt;/strong&gt;Will generate a user and notify the partner contact to initiate access to the Partner Portal &lt;/li&gt;&lt;li&gt;&lt;strong&gt;Denied:&lt;/strong&gt; Will close this User Registration without action. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>New User Registration</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>User_Authorization</recordTypeName>
+</PathAssistant>

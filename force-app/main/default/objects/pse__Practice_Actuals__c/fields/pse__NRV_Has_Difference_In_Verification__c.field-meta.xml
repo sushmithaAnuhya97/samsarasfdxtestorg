@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__NRV_Has_Difference_In_Verification__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Formula to identify the differences between actuals and verification actuals for individual fields. This formula is used in Has_Difference_In_Verification__c.</description>
+    <formula>AND(
+		NOT(ISBLANK(pse__Verified_By__c)),
+		OR(
+			(ROUND(pse__NRV_Bookings__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Bookings__c, 2)),
+			(ROUND(pse__NRV_Pre_Billed__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Pre_Billed__c, 2)),
+			(ROUND(pse__NRV_Billings__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Billings__c, 2)),
+			(ROUND(pse__NRV_Billings__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Billings__c, 2)),
+			(ROUND(pse__NRV_Billable_External_Hours__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Billable_External_Hours__c, 2)),
+			(ROUND(pse__NRV_Billable_Internal_Hours__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Billable_Internal_Hours__c, 2)),
+			(ROUND(pse__NRV_Billed__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Billed__c, 2)),
+			(ROUND(pse__NRV_Credited_Non_Billable_Internal_Hours__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Credited_Non_Billable_Internal_Hours__c, 2)),
+			(ROUND(pse__NRV_Excluded_Hours__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Excluded_Hours__c, 2)),
+			(ROUND(pse__NRV_Internal_Budget__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Internal_Budget__c, 2)),
+			(ROUND(pse__NRV_Expense_Budget__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Expense_Budget__c, 2)),
+			(ROUND(pse__NRV_Expense_Costs__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Expense_Costs__c, 2)),
+			(ROUND(pse__NRV_External_Costs__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_External_Costs__c, 2)),
+			(ROUND(pse__NRV_Internal_Costs__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Internal_Costs__c, 2)),
+			(ROUND(pse__NRV_Invoiced__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Invoiced__c, 2)),
+			(ROUND(pse__NRV_Non_Billable_External_Hours__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Non_Billable_External_Hours__c, 2)),
+			(ROUND(pse__NRV_Non_Billable_Internal_Hours__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Non_Billable_Internal_Hours__c, 2)), 
+			(ROUND(pse__NRV_Other_Costs__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Other_Costs__c, 2)),
+			(ROUND(pse__NRV_Pass_Through_Billings__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Pass_Through_Billings__c, 2)),
+			(ROUND(pse__NRV_Revenue__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Revenue__c, 2)),
+			(ROUND(pse__NRV_Total_Costs__c, 2) != ROUND(pse__Verified_By__r.pse__NRV_Total_Costs__c, 2))
+		)
+	)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Individual Difference in Verification</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

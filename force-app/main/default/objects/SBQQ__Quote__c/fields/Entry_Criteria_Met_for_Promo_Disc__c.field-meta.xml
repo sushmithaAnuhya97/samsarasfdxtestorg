@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Criteria_Met_for_Promo_Disc__c</fullName>
+    <formula>AND( 
+  Associated_Opportunity_Type__c = &apos;Promo Opportunity&apos;,
+  SBQQ__SalesRep__r.ProfileId  &lt;&gt; &apos;00e1a000000UoNc&apos;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Entry Criteria Met for Promo Disc.</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

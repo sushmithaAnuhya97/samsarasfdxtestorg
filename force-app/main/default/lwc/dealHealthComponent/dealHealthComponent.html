@@ -1,0 +1,78 @@
+<template>
+    <template lwc:if={showComp}>
+        <div class="slds-card">
+            <!-- Below heading is used in the record page, to apply salesforce related list look and feel  -->
+            <template if:false={hostedFromFlow}>
+                <div class="slds-card__header slds-grid slds-grid_align-spread related-list-container">
+                    <header class="slds-media slds-media_center">
+                        <lightning-icon icon-name="standard:workforce_engagement" size="small" title="Deal Health" class="slds-m-right_small"></lightning-icon>
+                        <div class="slds-media__body">
+                            <h2 class="slds-text-heading_small">
+                                <span><b>Deal Health</b></span>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+            </template>
+            
+            <!-- <template if:false={hasErrorInFlow}> -->
+            <!-- Below heading is used only in the Quote Approval flow, and both the heading's are conditional -->
+            <template if:true={hostedFromFlow}>
+                <div class="slds-card__header slds-grid slds-grid_vertical-align-center centered-header no-border">
+                    <header class="slds-media slds-media_center slds-align_absolute-center icon-heading-container">
+                        <lightning-icon icon-name="standard:workforce_engagement" size="small" title="Deal Health" class="slds-m-right_small"></lightning-icon>
+                        <div class="slds-media__body">
+                            <h2 class="slds-text-heading_small slds-align_absolute-center">
+                                <span><b>Deal Health</b></span>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+            </template>
+            <div class="slds-card__body">
+                <!-- Spinner to show loading state -->
+                <template if:true={isLoading}>
+                    <div class="spinner-container">
+                        <lightning-spinner alternative-text="Loading" class="spins" size="medium"></lightning-spinner>
+                    </div>
+                </template>
+
+                <template if:false={isLoading}>
+                    <div class="matrix-container">
+                        <div class="row">
+                            <div class="discount-label">
+                                Discount Health:
+                            </div>
+                            <div class="discount-value">
+                                <div class={dealHealthBarClass}>{dealHealthText}</div>
+                            </div>
+                        </div>
+                
+                        <template lwc:if={showRecommendedDiscount}>
+                            <div class={discountRowClass}>
+                                <div class="discount-label">
+                                    <b>Recommended Discount:</b>
+                                </div>
+                                <div class="Recommended-value">
+                                    <b>{_recommendedDiscount}</b>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>   
+            </div>
+            <!-- </template> -->
+
+            <!-- Below Footer is used in the Quote Approval flow, only visable in Flow not in record page-->
+            <template if:true={hostedFromFlow}>
+                <div>
+                    &nbsp;&nbsp;
+                </div>
+                <lightning-modal-footer>
+                    <lightning-button class="slds-float_left" variant="neutral" label="Back" onclick={handleBack}></lightning-button>
+                    <lightning-button variant="brand" label="Next" onclick={handleNext}></lightning-button>
+                </lightning-modal-footer>
+            </template>
+        </div>
+    </template>
+</template>

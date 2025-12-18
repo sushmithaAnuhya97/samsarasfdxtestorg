@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upper_Delinquency_Status__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Upper Delinquency Status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quotes Approved</fullName>
+                <default>true</default>
+                <label>Quotes Approved</label>
+            </value>
+            <value>
+                <fullName>Orders Blocked</fullName>
+                <default>false</default>
+                <label>Orders Blocked</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

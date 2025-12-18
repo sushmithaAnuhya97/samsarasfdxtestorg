@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__User_Field_Is_Constant</fullName>
+    <active>true</active>
+    <description>You cannot change the User associated with a Timer Session.</description>
+    <errorConditionFormula>ISCHANGED(pse__User__c)</errorConditionFormula>
+    <errorMessage>You cannot change the User associated with a Timer Session.</errorMessage>
+</ValidationRule>

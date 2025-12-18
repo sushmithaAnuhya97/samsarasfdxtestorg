@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DCA_Validation__c</fullName>
+    <description>GTMS-16585
+GTMS-25987</description>
+    <externalId>false</externalId>
+    <formula>/*IF( AND(OR(SBQQ__Opportunity2__r.Owner_AVP_Name_Copy__c = &quot;Jason Finney&quot;, BEGINS(TRIM(SBQQ__Opportunity2__r.Owner_Director_Name_Copy__c), &quot;0054p000003E18e&quot;) ), DATEVALUE( SBQQ__Opportunity2__r.CreatedDate )&gt;=DATEVALUE( $Label.DCA_Cutoff_Date ) ), &quot;DCA&quot;, &quot;Non DCA&quot;)*/
+/*0054p000003E18eAAC=Martin Bain*/
+IF(
+OR(
+DCA_Enabled__c,
+AND(
+OR(
+AND(
+SBQQ__Opportunity2__r.DCA_Enabled__c = &quot;DCA&quot;,
+DATEVALUE(CreatedDate )&gt;=DATEVALUE( $Label.DCA_Cutoff_Date )
+),
+AND(
+SBQQ__Opportunity2__r.DCA_Enabled__c = &quot;DCA Phase Two&quot;,
+DATEVALUE(CreatedDate )&gt;=DATEVALUE( $Label.DCA_Phase_Two_Launch_Cut_Off_Date )
+),
+AND(
+SBQQ__Opportunity2__r.DCA_Enabled__c = &quot;DCA Phase Three&quot;,
+DATEVALUE(CreatedDate )&gt;=DATEVALUE( $Label.DCA_Phase_Three_Launch_Cut_Off_Date )
+)
+),
+ISPICKVAL(SBQQ__Opportunity2__r.Type,&apos;Revenue Opportunity&apos;),
+SBQQ__Opportunity2__r.Is_Webstore_Upsell_Opportunity__c = false,
+SBQQ__Opportunity2__r.Small_Fleet_Opportunity__c = false,
+TEXT(SBQQ__Opportunity2__r.Sub_Type__c) &lt;&gt;&apos;Clickpath&apos;,
+TEXT(SBQQ__Opportunity2__r.Sub_Type__c) &lt;&gt;&apos;Auto-Renewal&apos;
+)
+),
+&quot;DCA&quot;,
+&quot;Non DCA&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>DCA Validation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

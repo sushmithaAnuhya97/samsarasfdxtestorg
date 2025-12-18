@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preventing_Sales_From_Name_Change</fullName>
+    <active>true</active>
+    <description>This is created as part of GTMS-26187 to prevent Sales Users updating the Account Name field.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Type, &quot;End Customer&quot;),
+    NOT(ISBLANK(First_Purchase_Date__c)),
+    ISCHANGED(Name),
+    NOT(OR(
+        $Profile.Name = &quot;Samsara - Finance&quot;,
+        $Profile.Name = &quot;Samsara - Finance Admin&quot;,
+        $Profile.Name = &quot;Sales Ops Profile&quot;,
+        $Profile.Name = &quot;System Administrator&quot;,
+        $Profile.Name = &quot;System Administrator API&quot;
+    ))
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Account name change for an existing customer requires additional steps. Please reach out to Billing Support for assistance.</errorMessage>
+</ValidationRule>

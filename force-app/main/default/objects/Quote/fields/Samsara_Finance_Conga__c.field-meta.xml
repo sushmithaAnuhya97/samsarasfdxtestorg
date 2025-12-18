@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Samsara_Finance_Conga__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+OR(CONTAINS($UserRole.Name, &quot;UK &quot;),CONTAINS($UserRole.Name, &quot;FR&quot;), CONTAINS($UserRole.Name, &quot;NL&quot;),CONTAINS($UserRole.Name, &quot;DE&quot;)), Opportunity.Camera_Only_Deal__c = true, 
+OR(
+ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;), ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;)
+)),&quot;UK,KD,KC&quot;, 
+
+IF(
+AND(Opportunity.Camera_Only_Deal__c = true, 
+OR(
+ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;), ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;)
+)),&quot;US,AD,AC,DM&quot;, 
+
+IF(
+AND(Opportunity.Camera_Only_Deal__c = true, 
+OR(
+ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;),ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;)
+)),&quot;US,AD,AC&quot;, 
+
+IF(
+AND(
+OR(CONTAINS($UserRole.Name, &quot;UK &quot;),CONTAINS($UserRole.Name, &quot;FR&quot;), CONTAINS($UserRole.Name, &quot;NL&quot;),CONTAINS($UserRole.Name, &quot;DE&quot;)), Opportunity.Camera_Only_Deal__c = false, 
+OR(
+ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;),  ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;)
+)),&quot;UK,KD,KC&quot;, 
+
+
+IF( 
+AND(Opportunity.Camera_Only_Deal__c = false, 
+OR( 
+ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;),  ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;) 
+)),&quot;US,AD,AC,DM&quot;,
+
+
+IF(
+AND(OR(CONTAINS($UserRole.Name, &quot;UK&quot;),CONTAINS($UserRole.Name, &quot;FR&quot;),CONTAINS($UserRole.Name, &quot;NL&quot;), CONTAINS($UserRole.Name, &quot;DE&quot;)), Opportunity.Camera_Only_Deal__c = false, 
+OR(
+ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;),ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;)
+)),&quot;UK,KD&quot;, 
+
+IF(
+AND(Opportunity.Camera_Only_Deal__c = false, 
+OR(
+ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;), ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;)
+)),&quot;US,AD&quot;, 
+
+
+IF(
+AND(OR(CONTAINS($UserRole.Name, &quot;UK&quot;),CONTAINS($UserRole.Name, &quot;FR&quot;), CONTAINS($UserRole.Name, &quot;NL&quot;), CONTAINS($UserRole.Name, &quot;DE&quot;)), Opportunity.Camera_Only_Deal__c = true, 
+OR(
+NOT(ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;)), NOT(ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;))
+)),&quot;UK,KC&quot;,
+
+
+IF(
+AND(
+Opportunity.Camera_Only_Deal__c = true, 
+OR(
+NOT(ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c, &quot;Direct Monthly&quot;)),  NOT(ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;))
+)),&quot;US,AC&quot;, 
+
+IF( 
+AND(OR(CONTAINS($UserRole.Name, &quot;UK&quot;), CONTAINS($UserRole.Name, &quot;FR&quot;), CONTAINS($UserRole.Name, &quot;NL&quot;),CONTAINS($UserRole.Name, &quot;DE&quot;)), Opportunity.Camera_Only_Deal__c = false, 
+OR( 
+NOT(ISPICKVAL(Opportunity.Internal_Finance_Payment_Type__c , &quot;Approved&quot;)), NOT(ISPICKVAL(Opportunity.Account.Samsara_PreApproval_Status__c, &quot;Approved&quot;)) 
+)),&quot;UK&quot;, 
+
+
+&quot;US&quot;))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>[Depreacte] Samsara Finance-conga</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

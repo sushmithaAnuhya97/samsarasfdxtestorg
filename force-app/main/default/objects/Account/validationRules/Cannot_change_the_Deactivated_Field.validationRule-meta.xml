@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_the_Deactivated_Field</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Quarantine_Enabled__c = FALSE, ISCHANGED(Quarantine_Enabled__c),  
+
+NOT(
+OR
+(AND($User.FirstName= &apos;Sarah&apos;, $User.LastName = &apos;Shoemaker&apos; ),AND($User.FirstName= &apos;Mulesoft&apos;, $User.LastName = &apos;Bot&apos; ), AND($User.FirstName= &apos;Gigi&apos;, $User.LastName = &apos;Isoni&apos; ), 
+AND($User.FirstName= &apos;Sarah&apos;,$User.LastName = &apos;Bray&apos;),AND($User.FirstName= &apos;Phyllis&apos;, $User.LastName = &apos;Saavedra&apos; ),AND($User.FirstName= &apos;Allan&apos;, $User.LastName = &apos;Carvajal&apos; ), AND($User.FirstName= &apos;Jose&apos;, $User.LastName = &apos;Meza&apos;),AND($User.FirstName= &apos;Karina&apos;, $User.LastName = &apos;Rosas Becerra&apos;),AND( $Profile.Name = &apos;System Administrator&apos;),AND( $Profile.Name = &apos;Sales Ops Profile&apos;)
+)
+)
+
+)</errorConditionFormula>
+    <errorMessage>You are not allowed to uncheck the &quot;Deactivated&quot; check box field.</errorMessage>
+</ValidationRule>

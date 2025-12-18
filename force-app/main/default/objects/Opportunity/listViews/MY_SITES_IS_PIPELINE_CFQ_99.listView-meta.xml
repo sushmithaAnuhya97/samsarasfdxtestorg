@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MY_SITES_IS_PIPELINE_CFQ_99</fullName>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Sites_ACV_Bookings__c</columns>
+    <columns>Number_of_sites_sold__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>ENT_Forecast_Level__c</columns>
+    <columns>OPPORTUNITY.PUSH_COUNT</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Stage_Duration_Custom__c</columns>
+    <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <columns>Deployment_Type__c</columns>
+    <columns>Selected_Payment_Type__c</columns>
+    <columns>Sites_First_Purchase__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Sites_ACV_Bookings__c</field>
+        <operation>greaterThan</operation>
+        <value>USD 0</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Incubate,Qualified,Trial,Proposal,Decision,Purchase,Closing,Orders Processing,Ready to Ship,Closed Won</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>Revenue Opportunity,Remorse Refund,Revenue Opportunity - Bill Only,Rebate</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Standard_Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_FISCAL_QUARTER</value>
+    </filters>
+    <filters>
+        <field>Owner_Role_Copy__c</field>
+        <operation>notContain</operation>
+        <value>ENT</value>
+    </filters>
+    <filters>
+        <field>Owner_Role_Copy__c</field>
+        <operation>contains</operation>
+        <value>Sites IS</value>
+    </filters>
+    <label>MY SITES: IS PIPELINE CFQ (&lt;99%)</label>
+    <sharedTo>
+        <group>Sites_Specialist</group>
+    </sharedTo>
+</ListView>

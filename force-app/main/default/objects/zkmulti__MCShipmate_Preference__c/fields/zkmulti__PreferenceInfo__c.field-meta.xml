@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__PreferenceInfo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Shipping Preference Info</label>
+    <referenceTo>zkmulti__Shipmate_Preference_Info__c</referenceTo>
+    <relationshipLabel>Shipping Preferences</relationshipLabel>
+    <relationshipName>Shipmate_Preferences</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Level__c</fullName>
+    <label>Risk Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - None</fullName>
+                <default>false</default>
+                <label>1 - None</label>
+            </value>
+            <value>
+                <fullName>2 - Low</fullName>
+                <default>false</default>
+                <label>2 - Low</label>
+            </value>
+            <value>
+                <fullName>3 - Mid</fullName>
+                <default>false</default>
+                <label>3 - Mid</label>
+            </value>
+            <value>
+                <fullName>4 - High</fullName>
+                <default>false</default>
+                <label>4 - High</label>
+            </value>
+            <value>
+                <fullName>5 - Highest</fullName>
+                <default>false</default>
+                <label>5 - Highest</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

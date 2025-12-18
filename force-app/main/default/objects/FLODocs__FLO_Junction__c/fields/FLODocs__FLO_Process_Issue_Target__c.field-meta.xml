@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__FLO_Process_Issue_Target__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>FLO Process issue as target in the relationship between Process Issues and other objects in this FLO Junction (e.g: Change Request with Process Issue)</description>
+    <inlineHelpText>FLO Process issue as target in the relationship between Process Issues and other objects in this FLO Junction (e.g: Change Request with Process Issue)</inlineHelpText>
+    <label>Process Issue Target</label>
+    <referenceTo>FLODocs__FLO_Process_Issue__c</referenceTo>
+    <relationshipLabel>Junctions (FLO Process Issue Target)</relationshipLabel>
+    <relationshipName>FLO_Junctions1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

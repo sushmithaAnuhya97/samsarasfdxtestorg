@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Milestone__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The milestone relating to the risk.</description>
+    <label>Milestone</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>pse__Milestone__c.pse__Project__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.pse__Project__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>pse__Milestone__c</referenceTo>
+    <relationshipLabel>Risks</relationshipLabel>
+    <relationshipName>Risks</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

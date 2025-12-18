@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>refedge__POR_Nomination_Accepted_for_Account</fullName>
+        <description>POR Nomination Accepted for Account</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__POR_Nomination_Accepted_for_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>refedge__POR_Nomination_Accepted_for_Contact</fullName>
+        <description>POR Nomination Accepted for Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__POR_Nomination_Accepted_for_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>refedge__POR_Nomination_Rejected_for_Account</fullName>
+        <description>POR Nomination Rejected for Account</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__POR_Nomination_Rejected_for_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>refedge__POR_Nomination_Rejected_for_Contact</fullName>
+        <description>POR Nomination Rejected for Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__POR_Nomination_Rejected_for_Contact</template>
+    </alerts>
+    <alerts>
+        <fullName>refedge__POR_Nomination_for_Account</fullName>
+        <description>POR Nomination for Account</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__POR_Nomination_for_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>refedge__POR_Nomination_for_Contact</fullName>
+        <description>POR Nomination for Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>refedge__POR_Email_Templates/refedge__POR_Nomination_for_Contact</template>
+    </alerts>
+    <rules>
+        <fullName>refedge__Nominate Account</fullName>
+        <actions>
+            <name>refedge__POR_Nomination_for_Account</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>refedge__Email_Enabled__c = true &amp;&amp; refedge__Account__c &lt;&gt; null &amp;&amp; refedge__Contact__c = null &amp;&amp;  ISPICKVAL( refedge__Status__c , &apos;Not Started&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>refedge__Nominate Contact</fullName>
+        <actions>
+            <name>refedge__POR_Nomination_for_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>refedge__Email_Enabled__c = true &amp;&amp; refedge__Account__c &lt;&gt; null &amp;&amp; refedge__Contact__c &lt;&gt; null &amp;&amp; ISPICKVAL( refedge__Status__c , &apos;Not Started&apos;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>refedge__POR Nomination Accepted for Account</fullName>
+        <actions>
+            <name>refedge__POR_Nomination_Accepted_for_Account</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>refedge__Email_Enabled__c = true &amp;&amp; refedge__Account__c &lt;&gt; null &amp;&amp; refedge__Contact__c = null &amp;&amp; ISPICKVAL( refedge__Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL(  refedge__Disposition__c , &apos;Approved&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>refedge__POR Nomination Accepted for Contact</fullName>
+        <actions>
+            <name>refedge__POR_Nomination_Accepted_for_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>refedge__Email_Enabled__c = true &amp;&amp; refedge__Account__c &lt;&gt; null &amp;&amp; refedge__Contact__c &lt;&gt; null &amp;&amp; ISPICKVAL( refedge__Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL( refedge__Disposition__c , &apos;Approved&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>refedge__POR Nomination Rejected for Account</fullName>
+        <actions>
+            <name>refedge__POR_Nomination_Rejected_for_Account</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>refedge__Email_Enabled__c = true &amp;&amp; refedge__Account__c &lt;&gt; null &amp;&amp; refedge__Contact__c = null &amp;&amp; ISPICKVAL( refedge__Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL( refedge__Disposition__c , &apos;Declined&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>refedge__POR Nomination Rejected for Contact</fullName>
+        <actions>
+            <name>refedge__POR_Nomination_Rejected_for_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>refedge__Email_Enabled__c = true &amp;&amp; refedge__Account__c &lt;&gt; null &amp;&amp; refedge__Contact__c &lt;&gt; null &amp;&amp; ISPICKVAL( refedge__Status__c , &apos;Completed&apos;) &amp;&amp; ISPICKVAL( refedge__Disposition__c , &apos;Declined&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operation_Type__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Operation Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Create Quote</fullName>
+                <default>true</default>
+                <label>Create Quote</label>
+            </value>
+            <value>
+                <fullName>Recalculate Quote</fullName>
+                <default>false</default>
+                <label>Recalculate Quote</label>
+            </value>
+            <value>
+                <fullName>Primary Quote</fullName>
+                <default>false</default>
+                <label>Primary Quote</label>
+            </value>
+            <value>
+                <fullName>Reset Contract</fullName>
+                <default>false</default>
+                <label>Reset Contract</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

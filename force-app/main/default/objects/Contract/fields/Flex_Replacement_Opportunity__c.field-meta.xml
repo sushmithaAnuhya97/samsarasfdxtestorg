@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flex_Replacement_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>GTMS-26418: The upgraded opportunity created out of this contract from C&amp;R process</description>
+    <inlineHelpText>The upgraded opportunity created out of this contract from C&amp;R process</inlineHelpText>
+    <label>Replacement Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Contracts (Replacement Opportunity)</relationshipLabel>
+    <relationshipName>ReplacementContracts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

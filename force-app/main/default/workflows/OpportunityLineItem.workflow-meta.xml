@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ENT_Oppty_with_Non_Commisionable_SKU_Pushed_to_Closing</fullName>
+        <ccEmails>salesops-enterprise@samsara.com</ccEmails>
+        <description>ENT Oppty with Non-Commisionable SKU Pushed to Closing</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>catherine.wallace@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>madison.williams@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Oppty_Closing</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_for_CM22_Deal_being_closed</fullName>
+        <description>Email Alert for CM22 Deal being closed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ches@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>daniel.shem@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>darren@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>estrella@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rushil@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>scottknight@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tomas@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SUPPORT_Ready_to_ship_CM22</template>
+    </alerts>
+    <alerts>
+        <fullName>Industrial_Services_Alert_Non_commissionable_SKU</fullName>
+        <ccEmails>salesops@samsara.com</ccEmails>
+        <description>Industrial Services Alert: Non-commissionable SKU</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>catherine.nguyen@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lawrence.wall@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>madison.miller@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Industrial_Services_Alert_Non_commissionable_SKU</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Check_HW</fullName>
+        <field>Is_Hardware__c</field>
+        <literalValue>1</literalValue>
+        <name>Check HW</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FFX_PSA_Set_IsServices_Flag_Opp_Products</fullName>
+        <field>pse__IsServicesProductLine__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Set IsServices Flag On Opp Products</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Express_Selected_Discount</fullName>
+        <field>Express_Selected_Discount__c</field>
+        <formula>IF(CONTAINS(Product_Code_Copy__c, &apos;LIC&apos;), Express_Selected_Discount__c, Opportunity.Express_Selected_Discount__c)</formula>
+        <name>Update Express Selected Discount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Alert to Support when CM22 deal gets closed</fullName>
+        <actions>
+            <name>Email_Alert_for_CM22_Deal_being_closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Ready to Ship</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.ProductCode</field>
+            <operation>contains</operation>
+            <value>CM2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OpportunityLineItem.ProductCode</field>
+            <operation>contains</operation>
+            <value>LIC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Revenue Opportunity,Free Trial Opportunity</value>
+        </criteriaItems>
+        <description>Send an email alert to the Customer Support team when a cm22 deal is shipped.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ENT Oppty with Non-Commisionable SKU Pushed to Closing</fullName>
+        <actions>
+            <name>ENT_Oppty_with_Non_Commisionable_SKU_Pushed_to_Closing</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.ProductCode</field>
+            <operation>contains</operation>
+            <value>LIC-SVC-CM-Review-ENT,ACT-VG-12MO,ACT-CM-12MO,ACT-AG-12MO</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Owner_Role_Copy__c</field>
+            <operation>contains</operation>
+            <value>ENT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Revenue Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closing</value>
+        </criteriaItems>
+        <description>To alert stakeholders of any opportunity owned by an Enterprise Fleet rep pushed to closing that contains a Non-Commisionable SKU.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>FFX PSA Set Opportunity Product IsServicesProductLine</fullName>
+        <actions>
+            <name>FFX_PSA_Set_IsServices_Flag_Opp_Products</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Mark as Services Opp Product, if product is a Services Product</description>
+        <formula>Product2.pse__IsServicesProduct__c = TRUE</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Industrial Technical Services Alert</fullName>
+        <actions>
+            <name>Industrial_Services_Alert_Non_commissionable_SKU</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.ProductCode</field>
+            <operation>equals</operation>
+            <value>SVC-VAL-ENG,Samsara-Pass-Through</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Owner_Role_Copy__c</field>
+            <operation>contains</operation>
+            <value>Industrial</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Type</field>
+            <operation>equals</operation>
+            <value>Revenue Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closing</value>
+        </criteriaItems>
+        <description>Run if an Industrial or Mahine Vision opportunity closes with a Samsara Pass-Through or SVC-VAL-ENG SKU attached</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

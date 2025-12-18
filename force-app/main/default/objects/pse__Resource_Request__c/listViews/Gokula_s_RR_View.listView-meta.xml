@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gokula_s_RR_View</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Account__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Staffer_Resource__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Group__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Group__c</field>
+        <operation>startsWith</operation>
+        <value>integration</value>
+    </filters>
+    <label>SIS Leadership RR View</label>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chatbot_Source__c</fullName>
+    <formula>OR(
+ ISPICKVAL(Source__c, &apos;Chatbot&apos;),
+ ISPICKVAL(LeadSource, &apos;Chatbot&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Chatbot Source</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

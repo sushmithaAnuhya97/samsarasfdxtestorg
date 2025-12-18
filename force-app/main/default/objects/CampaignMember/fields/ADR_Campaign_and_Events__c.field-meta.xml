@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Campaign_and_Events__c</fullName>
+    <description>For ADR Tabs report: Campaign and Events</description>
+    <formula>(
+    Contact.Account.Status__c = &quot;New&quot; ||
+    Contact.Account.Status__c = &quot;Attempting&quot; ||
+    Contact.Account.Status__c = &quot;Assigned&quot; ||
+    Contact.Account.Status__c = &quot;Contact Established&quot;
+) &amp;&amp;
+NOT(CONTAINS(TEXT(Contact.Status__c), &quot;Delete&quot;)) &amp;&amp;
+NOT(CONTAINS(TEXT(Contact.Status__c), &quot;No Authority&quot;)) &amp;&amp;
+(
+    CONTAINS(Contact.Owner.UserRole.Name, &quot;SMB&quot;) &amp;&amp;
+    (
+        Campaign.Event_Campaign__c = TRUE &amp;&amp;
+        Campaign.IsActive = TRUE
+    ) ||
+    (
+        Campaign.Email_Campaign__c = TRUE &amp;&amp;
+        TEXT(Status) = &quot;Responded&quot; &amp;&amp;
+        Campaign.IsActive = TRUE
+    ) ||
+    Contact.Account.Active_Growth_Campaigns_on_Account__c &gt; 0
+)
+ ||   
+(
+    CONTAINS(Contact.Owner.UserRole.Name, &quot;ADR&quot;) &amp;&amp;
+    Campaign.Event_Campaign__c = TRUE &amp;&amp;
+    Campaign.IsActive = TRUE &amp;&amp;
+    ABS(Contact.Follow_Up_Date__c - TODAY()) &lt; 0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tabs: Campaign and Events</label>
+    <type>Checkbox</type>
+</CustomField>

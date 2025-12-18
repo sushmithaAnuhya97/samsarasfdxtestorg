@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Flag_CoE__c</fullName>
+    <description>Created as part of Deal Health Project</description>
+    <label>Renewal Flag CoE</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First Purchase</fullName>
+                <default>false</default>
+                <label>First Purchase</label>
+            </value>
+            <value>
+                <fullName>Expansion/Renewal</fullName>
+                <default>false</default>
+                <label>Expansion/Renewal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

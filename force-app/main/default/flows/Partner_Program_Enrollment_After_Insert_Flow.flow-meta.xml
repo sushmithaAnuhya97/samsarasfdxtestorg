@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-26936: Created as part of partners of H1 project to map account field values</description>
+        <name>Add_Sales_Program_Type_To_Account</name>
+        <label>Add Sales Program Type To Account</label>
+        <locationX>506</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Partner_Account_To_Update.Program_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sales_Program_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Partner_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26936: Crated as part of partners h1 project</description>
+        <name>Assign_Account_Sales_Program</name>
+        <label>Assign Account Sales Program</label>
+        <locationX>374</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>Partner_Account_Sales_Program_Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Partner_Account__r.Program_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Sales_Program_Type_Contains</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Sales_Program_Type_Contains</name>
+        <label>Check if Partner Account Contains Sales Program Type</label>
+        <locationX>374</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Add_Sales_Program_Type_To_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Does Not Contain</defaultConnectorLabel>
+        <rules>
+            <name>Contains_Value</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Partner_Account__r.Program_Type__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.SalesProgramType__c</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Contains Value</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Sales_Program_Type_Empty</name>
+        <label>Check Sales Program Type Empty</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Account_Sales_Program</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Empty</defaultConnectorLabel>
+        <rules>
+            <name>Is_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SalesProgramType__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Empty</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26936: Created as part of Partners H1 project</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-26936: Created as part of partners H1 project to map sales progrm type value</description>
+        <name>Sales_Program_Type</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+NOT(ISBLANK({!$Record.Partner_Account__r.Program_Type__c}))
+),
+{!Partner_Account_Sales_Program_Type}+&apos;;&apos;+TEXT({!$Record.SalesProgramType__c}),
+TEXT({!$Record.SalesProgramType__c})
+)</expression>
+    </formulas>
+    <interviewLabel>Partner Program Enrollment After Insert Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Partner Program Enrollment After Insert Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Partner_Account</name>
+        <label>Update Partner Account</label>
+        <locationX>506</locationX>
+        <locationY>755</locationY>
+        <inputReference>Partner_Account_To_Update</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Sales_Program_Type_Empty</targetReference>
+        </connector>
+        <object>Partner_Program_Enrollment__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Partner_Account_Sales_Program_Type</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-26936: Created as part of Partners H1 project to update account record</description>
+        <name>Partner_Account_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>

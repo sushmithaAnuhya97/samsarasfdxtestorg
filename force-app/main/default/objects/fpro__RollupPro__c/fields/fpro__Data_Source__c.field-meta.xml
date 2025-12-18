@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Data_Source__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specify the data source for updating master records in this job, choosing from options such as Rollup (to Child Records), Static Value, or Dynamic Value as defined in the documentation. This field determines the source of data used to update the master records (e.g., aggregating child record data, a fixed static value, or a value from a pre-defined list). Ensure the selected data source aligns with the job’s requirements and field data types.</description>
+    <inlineHelpText>Specify the data source for updating master records in this job, choosing from options such as Rollup (to Child Records), Static Value, or Dynamic Value as defined in the documentation. This field determines the source of data used to update the master records (e.g., aggregating child record data, a fixed static value, or a value from a pre-defined list). Ensure the selected data source aligns with the job’s requirements and field data types.</inlineHelpText>
+    <label>Data Source</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Roll-Up</fullName>
+                <default>false</default>
+                <label>Roll-Up</label>
+            </value>
+            <value>
+                <fullName>Static Value</fullName>
+                <default>false</default>
+                <label>Static Value</label>
+            </value>
+            <value>
+                <fullName>Dynamic Value</fullName>
+                <default>false</default>
+                <label>Dynamic Value</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

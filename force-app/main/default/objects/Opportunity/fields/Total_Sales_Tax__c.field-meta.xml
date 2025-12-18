@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Sales_Tax__c</fullName>
+    <description>Roll up of Sales Tax Amount(vertex) on Opportunity Lines. Used in Vertex Config.</description>
+    <label>Total Sales Tax</label>
+    <summarizedField>OpportunityLineItem.Sales_Tax_Amount_Vertex__c</summarizedField>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

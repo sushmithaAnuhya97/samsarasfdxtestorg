@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opt_out_reason_is_required</fullName>
+    <active>true</active>
+    <description>&apos;Opt out reason&apos; is required when Inbound Reason Faulty is &apos;Opt out - Do not contact&apos;</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(Inbound_Reason_Faulty__c, &apos;Opt out - Do not contact&apos;), ISBLANK(Opt_Out_Reason__c)
+)</errorConditionFormula>
+    <errorMessage>Opt out reason is required when Inbound Reason Faulty is Opt out - Do not contact</errorMessage>
+</ValidationRule>

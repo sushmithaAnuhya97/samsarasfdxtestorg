@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Open_Process_Issues_2</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>FLODocs__Customizations__c</columns>
+    <columns>FLODocs__Change_Level__c</columns>
+    <columns>FLODocs__Effort_Required__c</columns>
+    <columns>FLODocs__Status__c</columns>
+    <columns>FLODocs__Issue_Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Open Process Issues (v2)</label>
+</ListView>

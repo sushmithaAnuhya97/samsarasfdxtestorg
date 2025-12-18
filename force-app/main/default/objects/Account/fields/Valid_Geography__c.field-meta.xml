@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valid_Geography__c</fullName>
+    <description>If Global_Geography__c has a valid global geography, this checkbox will be true.</description>
+    <formula>Global_Geography__c = &quot;Canada East&quot;||
+ Global_Geography__c = &quot;Canada West&quot;||
+ Global_Geography__c = &quot;France&quot;||
+ Global_Geography__c = &quot;Iberia&quot;||
+ Global_Geography__c = &quot;Mexico&quot;||
+ Global_Geography__c = &quot;DACH&quot;||
+ Global_Geography__c = &quot;BENELUX&quot;||
+ Global_Geography__c = &quot;East&quot;||
+ Global_Geography__c = &quot;Other&quot;||
+ Global_Geography__c = &quot;Central&quot;||
+ Global_Geography__c = &quot;UK&quot;||
+ Global_Geography__c = &quot;West&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Valid Geography</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

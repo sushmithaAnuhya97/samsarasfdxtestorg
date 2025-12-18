@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Parent_Title__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(PDLM__Change_lk__c), IF (ISBLANK(PDLM__Quality_lk__c), IF(ISBLANK(PDLM__Project_Stage_lk__c), PDLM__Declaration_lk__r.PDLM__Title__c, PDLM__Project_Stage_lk__r.Name), PDLM__Quality_lk__r.PDLM__Title__c), PDLM__Change_lk__r.PDLM__Title__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Parent Title</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

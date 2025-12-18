@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Expire_Now</fullName>
+    <availability>online</availability>
+    <description>Clicking this button would:
+-Set the response on all Community Invite Participants that had not responded to “No Response”
+-Remove the Invite from the Community
+-If needed, set the Community invite deadline to today</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Expire Now</masterLabel>
+    <openType>sidebar</openType>
+    <page>refedge__ExpireCommunityInvite</page>
+    <protected>false</protected>
+</WebLink>

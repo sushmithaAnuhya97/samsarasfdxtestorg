@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_Closed_Account__c</fullName>
+    <formula>AND( NOT(ISNULL(Free_Trial_Kit_Sent_Date__c)),  OR(Open_Opportunity__c = FALSE,  First_Purchase_Date__c &gt; Free_Trial_Kit_Sent_Date__c ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Free Trial, Closed Account</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__CorrelationStrategy__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The creation method that defines how to create and maintain linked records.</description>
+    <label>Record Creation Method</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Append</fullName>
+                <default>false</default>
+                <label>Append</label>
+            </value>
+            <value>
+                <fullName>Replace</fullName>
+                <default>false</default>
+                <label>Replace</label>
+            </value>
+            <value>
+                <fullName>Update</fullName>
+                <default>false</default>
+                <label>Update</label>
+            </value>
+            <value>
+                <fullName>UpdateTotal</fullName>
+                <default>false</default>
+                <label>UpdateTotal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

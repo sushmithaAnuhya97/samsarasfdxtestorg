@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message Channel to pass Connection selection updates</description>
+    <isExposed>false</isExposed>
+    <lightningMessageFields>
+        <description>The selected connection name for the component</description>
+        <fieldName>SelectedConnectionName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>From Jira Issue/Jira Comment Component</description>
+        <fieldName>From</fieldName>
+    </lightningMessageFields>
+    <masterLabel>ConnectionSelection</masterLabel>
+</LightningMessageChannel>

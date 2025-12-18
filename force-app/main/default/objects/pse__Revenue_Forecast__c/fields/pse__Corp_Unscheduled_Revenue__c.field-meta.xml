@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Corp_Unscheduled_Revenue__c</fullName>
+    <deprecated>false</deprecated>
+    <description>In the corporate currency, revenue that is currently unscheduled. If there are months that do not contain any scheduled or actual revenue, the unscheduled revenue is spread evenly across those months, except for empty months that fall between months containing scheduled or actual revenue.</description>
+    <inlineHelpText>In the corporate currency, revenue that is currently unscheduled.</inlineHelpText>
+    <label>Corp: Unscheduled Revenue</label>
+    <summarizedField>pse__Revenue_Forecast_Type__c.pse__Corp_Unscheduled_Revenue__c</summarizedField>
+    <summaryForeignKey>pse__Revenue_Forecast_Type__c.pse__Revenue_Forecast__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

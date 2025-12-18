@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Items_for_Approval_Mobile</fullName>
+    <columns>Opportunity_Link__c</columns>
+    <columns>Quote_Owner__c</columns>
+    <columns>ACV_Bookings__c</columns>
+    <columns>Blended_Discount__c</columns>
+    <columns>Actions_Icons__c</columns>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Quote__c</columns>
+    <columns>sbaa__Approver__c</columns>
+    <columns>sbaa__Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>sbaa__Status__c</field>
+        <operation>contains</operation>
+        <value>Requested</value>
+    </filters>
+    <label>Items for Approval</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Staffed_Related_Resource_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the related resource request, which is staffed.</description>
+    <inlineHelpText>Lookup to the related resource request, which is staffed.</inlineHelpText>
+    <label>Staffed Related Resource Request</label>
+    <referenceTo>pse__Resource_Request__c</referenceTo>
+    <relationshipLabel>Resource Requests (Staffed Related Resource Request)</relationshipLabel>
+    <relationshipName>Resource_Requests1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

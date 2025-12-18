@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Decision_5</name>
+        <label>Check docusign subject</label>
+        <locationX>314</locationX>
+        <locationY>1223</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_order_form</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.dsfs__Subject__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Documents for your DocuSign Signature</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_other_order_form_status_records</targetReference>
+            </connector>
+            <label>Is order form</label>
+        </rules>
+        <rules>
+            <name>is_buyout_document</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.dsfs__Subject__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Request Buyout Document</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_other_buyout_document_status_records</targetReference>
+            </connector>
+            <label>is buyout document</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>checking if the record is created or updated and if the opportunity got changed</description>
+        <name>Docusign_Field_Mapping_Check</name>
+        <label>Docusign Field Mapping Check</label>
+        <locationX>578</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Stauts_Update_Entry_check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Criteria_Matched</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>NewRecordCheck</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.dsfs__Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.dsfs__Opportunity__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Is_Webstore_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_Primary_Quote_Check</targetReference>
+            </connector>
+            <label>Criteria Matched</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-18053: created to check if primary quote was mapped to opportunity during docusign field mapping - 3/27/24</description>
+        <name>Opportunity_Primary_Quote_Check</name>
+        <label>Opportunity Primary Quote Check</label>
+        <locationX>325</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Get_Primary_Quote</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Primary Quote Not Mapped</defaultConnectorLabel>
+        <rules>
+            <name>Is_Primary_Quote_Mapped</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_fields_for_OVA</targetReference>
+            </connector>
+            <label>Is Primary Quote Mapped</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-18053: null pointer check for primary Quote - 3/27/24</description>
+        <name>Primary_Quote_Check</name>
+        <label>Primary Quote Check</label>
+        <locationX>523</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Stauts_Update_Entry_check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Primary Quote Doesnt exist</defaultConnectorLabel>
+        <rules>
+            <name>Primary_Quote_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Primary_Quote</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Docusign_Fields_Update_for_OVA_From_Quote_Query</targetReference>
+            </connector>
+            <label>Primary Quote Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>to check the entry criteria to udpate the status of Older docusign records.</description>
+        <name>Stauts_Update_Entry_check</name>
+        <label>Stauts Update Entry check</label>
+        <locationX>578</locationX>
+        <locationY>1115</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Criteria_Met</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OVAEntryCriteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.dsfs__Envelope_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.dsfs__Envelope_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_5</targetReference>
+            </connector>
+            <label>If Criteria Met</label>
+        </rules>
+    </decisions>
+    <description>11/23/23: Added docusign update element to map values to docusign if opportunity got changed -GTMS-15866
+GTMS-16314: Added Docusign Status Opp_Currency__c field mapping as part of OVA phase 2
+GTMS-17662: Created a scheduled flow to populates field on docusign record related to webstore oppty
+GTMS-17662: Removed Async path. on 12/21/23
+GTMS-16121 : Added Shipping And Handling Mapping - 1/2/24
+GTMS-16637: Added new field mappingof docusign record as part of DCA Project(based on flow version 6) - 1/4/24
+GTMS-19277: Updated BIllling Email mapping on docusign with consolidated billing email field on quote - 3/7/24
+GTMS-18053: updated docusign field mapping if opportunity dont have a primary quote - 3/27/24
+GTMS-19973:  added Total License Due and Total Hardware Due added new fields
+GTMS-20357: removed OVA entry check for field mapping.
+GTMS-29409 As part of this story added Number of months of free service, Fututre free Months amount and &amp; Temp FFM tax
+GTMS-31221: As part of this story mapping 4 new fields Annual,Month,Quarter and semi annual on docusign</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>to store bill to contact full Name - GTMS-16637</description>
+        <name>Bill_To_Contact_Name</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Contact__r.FirstName}+&apos; &apos;+{!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Contact__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-16637: Created as part of DCA Project</description>
+        <name>BillingEmail</name>
+        <dataType>String</dataType>
+        <expression>IF(
+NOT(ISBLANK({!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.Billing_Email__c})),
+{!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.Billing_Email__c},
+{!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Contact__r.Email}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>checking if the triggered record is new or old record</description>
+        <name>NewRecordCheck</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <description>to check if triggered records satisfies entry cirteria</description>
+        <name>OVAEntryCriteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+NOT(
+{!$Record.dsfs__Opportunity__r.Custom_Schedule__c} = true
+|| NOT(ISPICKVAL({!$Record.dsfs__Opportunity__r.Type}, &apos;Revenue Opportunity&apos;))
+|| CONTAINS({!$Record.dsfs__Opportunity__r.Owner_Role_Copy__c}, &apos;SLED&apos;)
+|| CONTAINS({!$Record.dsfs__Opportunity__r.Owner_Manager_Role_Copy__c}, &apos;SLED&apos;)
+|| NOT(({!$Record.dsfs__Opportunity__r.Finance_Segment__c} = &apos;Enterprise&apos; &amp;&amp; {!$Record.dsfs__Opportunity__r.Is_Webstore_Upsell_Opportunity__c} = true) || {!$Record.dsfs__Opportunity__r.Finance_Segment__c} == &apos;Mid Market&apos;)
+|| {!$Record.dsfs__Opportunity__r.Payment_Type__c} = &apos;Reseller&apos;
+|| {!$Record.dsfs__Opportunity__r.Owner_Segment__c} = &apos;AE1&apos;
+|| {!$Record.dsfs__Opportunity__r.Payment_Type__c} = &apos;Finance Partner&apos;
+|| {!$Record.dsfs__Opportunity__r.SBQQ__Renewal__c} = true
+|| CONTAINS({!$Record.dsfs__Opportunity__r.Name},&apos;INVENTORYSPLIT&apos;)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-18053: to created bill contact name value from queried quote record. - 3/27/24</description>
+        <name>Quote_BillToContact_Name</name>
+        <dataType>String</dataType>
+        <expression>{!Get_Primary_Quote.Bill_to_Contact__r.FirstName}+&apos; &apos;+{!Get_Primary_Quote.Bill_to_Contact__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <description>to store quote license term value</description>
+        <name>Quote_License_Term</name>
+        <dataType>Number</dataType>
+        <expression>IF(AND(NOT(ISNULL({!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__c})), NOT(ISBLANK({!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__c}))), VALUE(TEXT({!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.License_Term__c})),VALUE(TEXT({!Get_Primary_Quote.License_Term__c})))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>GTMS-19973: To map Total Hardware Due from Get Primary Quote Element</description>
+        <name>Total_Hardware_Due_From_Get_Quote_Element</name>
+        <dataType>Currency</dataType>
+        <expression>IF(TEXT({!$Record.dsfs__Opportunity__r.Selected_Payment_Type__c}) == {!$Label.Upfront_Payment_Type},
+{!Get_Primary_Quote.Estimated_Upfront_Amount__c},
+{!Get_Primary_Quote.Total_Hardware_Due__c}
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>GTMS-19973: to map total hardware due from primary quote form associated opportunity</description>
+        <name>Total_Hardware_Due_From_Primary_Quote</name>
+        <dataType>Currency</dataType>
+        <expression>IF(TEXT({!$Record.dsfs__Opportunity__r.Selected_Payment_Type__c}) == {!$Label.Upfront_Payment_Type},
+{!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Estimated_Upfront_Amount__c},
+{!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Total_Hardware_Due__c}
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>GTMS-19973: to map total license due from get primary quote element.</description>
+        <name>Total_License_Due_From_Get_Quote_Element</name>
+        <dataType>Currency</dataType>
+        <expression>IF(TEXT({!$Record.dsfs__Opportunity__r.Selected_Payment_Type__c}) == {!$Label.Upfront_Payment_Type},
+{!Get_Primary_Quote.Total_License_Price__c},
+{!Get_Primary_Quote.Total_License_Due__c}
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>GTMS-19973: to get create total license Due from Primary Quote of the Associated Opportunity</description>
+        <name>Total_License_Due_Primary_Quote</name>
+        <dataType>Currency</dataType>
+        <expression>IF(TEXT({!$Record.dsfs__Opportunity__r.Selected_Payment_Type__c}) == {!$Label.Upfront_Payment_Type}, {!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Total_License_Price__c}, {!$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Total_License_Due__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Docusign Status - On Update (Order Validation) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Docusign Status - On Update (Order Validation)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>GTMS-18053: to get primary quote related to opportunity - 3/27/24</description>
+        <name>Get_Primary_Quote</name>
+        <label>Get Primary Quote</label>
+        <locationX>523</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Primary_Quote_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SBQQ__Opportunity2__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__Primary__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SBQQ__Quote__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Bill_to_Contact__c</queriedFields>
+        <queriedFields>Bill_to_Account__c</queriedFields>
+        <queriedFields>Consolidated_Billing_Email__c</queriedFields>
+        <queriedFields>Customer_Preferred_Payment_Method__c</queriedFields>
+        <queriedFields>CurrencyIsoCode</queriedFields>
+        <queriedFields>License_Term__c</queriedFields>
+        <queriedFields>Payment_Terms__c</queriedFields>
+        <queriedFields>Sales_Tax__c</queriedFields>
+        <queriedFields>Selected_Payment_Type__c</queriedFields>
+        <queriedFields>Shipping_and_Handling__c</queriedFields>
+        <queriedFields>of_HW_Products__c</queriedFields>
+        <queriedFields>Of_LIC_Products__c</queriedFields>
+        <queriedFields>Total_License_Due__c</queriedFields>
+        <queriedFields>Total_Hardware_Due__c</queriedFields>
+        <queriedFields>Total_License_Price__c</queriedFields>
+        <queriedFields>Estimated_Upfront_Amount__c</queriedFields>
+        <queriedFields>Next_Recurring_Bill_Date__c</queriedFields>
+        <queriedFields>Number_of_months_of_Free_service__c</queriedFields>
+        <queriedFields>Future_Free_Months_Amount__c</queriedFields>
+        <queriedFields>First_Annual_Payment__c</queriedFields>
+        <queriedFields>First_Months_Payment__c</queriedFields>
+        <queriedFields>First_Quarter_Payment__c</queriedFields>
+        <queriedFields>First_Semi_Annual_Payment__c</queriedFields>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-18350: to map DocuSign fields data from Quote query - 3/27/24</description>
+        <name>Docusign_Fields_Update_for_OVA_From_Quote_Query</name>
+        <label>Docusign Fields Update for OVA From Quote Query</label>
+        <locationX>391</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Stauts_Update_Entry_check</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Name__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.Account.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Balance_Due__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.Balance_Due__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Email__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Contact__r.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Name__c</field>
+            <value>
+                <elementReference>Quote_BillToContact_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Phone__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Contact__r.Phone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Title__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Contact__r.Title</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_City__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Account__r.BillingCity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Company_Name__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Country__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Account__r.BillingCountry</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Email__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Consolidated_Billing_Email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Postal_Code__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Account__r.BillingPostalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_State__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Bill_to_Account__r.BillingState</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Street__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.BillingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Customer_Preferred_Payment_Method__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Customer_Preferred_Payment_Method__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Annual_Payment__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.First_Annual_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Month_Payment__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.First_Months_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Quarter_Payment__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.First_Quarter_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Semi_Annual_Payment__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.First_Semi_Annual_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Future_Free_Months_Amount__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Future_Free_Months_Amount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>License_Term__c</field>
+            <value>
+                <elementReference>Quote_License_Term</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Next_Recurring_Bill_Date__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Next_Recurring_Bill_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Number_of_Months_of_Free_Service__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Number_of_months_of_Free_service__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opp_Currency__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.CurrencyIsoCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Payment_Terms__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Payment_Terms__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary_Quote_Status__c</field>
+            <value>
+                <elementReference>$Label.Primary_Quote_Not_Mapped_Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary_Quote__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Tax_Amount__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Sales_Tax__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Selected_Payment_Type__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Selected_Payment_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Shipping_And_Handling__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Shipping_and_Handling__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Temp_FFM_Tax__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.Temp_FFM_Tax__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Hardware_Due__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Estimated_Upfront_Amount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_License_Cost__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Total_License_Price__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_License_Due__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Total_License_Price__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>dsfs__Company__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>of_HW_Products__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.of_HW_Products__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>of_LIC_Products__c</field>
+            <value>
+                <elementReference>Get_Primary_Quote.Of_LIC_Products__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>this element is used to map fields in docusign with Opportunity and Quote Data
+GTMS-19277: Updated BIllling Email mapping on docusign with consolidated billing email field on quote - 3/7/24</description>
+        <name>Update_fields_for_OVA</name>
+        <label>Update fields for OVA</label>
+        <locationX>127</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Stauts_Update_Entry_check</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Name__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.Account.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Balance_Due__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.Balance_Due__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Email__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Contact__r.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Name__c</field>
+            <value>
+                <elementReference>Bill_To_Contact_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Phone__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Contact__r.Phone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_To_Contact_Title__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Contact__r.Title</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_City__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.BillingCity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Company_Name__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Country__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.BillingCountry</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Email__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Consolidated_Billing_Email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Postal_Code__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.BillingPostalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_State__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.BillingState</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Billing_Street__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__r.BillingStreet</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Customer_Preferred_Payment_Method__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Customer_Preferred_Payment_Method__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Annual_Payment__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.First_Annual_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Month_Payment__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.First_Months_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Quarter_Payment__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.First_Quarter_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Semi_Annual_Payment__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.First_Semi_Annual_Payment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Future_Free_Months_Amount__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Future_Free_Months_Amount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>License_Term__c</field>
+            <value>
+                <elementReference>Quote_License_Term</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Next_Recurring_Bill_Date__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Next_Recurring_Bill_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Number_of_Months_of_Free_Service__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Number_of_months_of_Free_service__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opp_Currency__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.CurrencyIsoCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Payment_Terms__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Payment_Terms__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary_Quote_Status__c</field>
+            <value>
+                <elementReference>$Label.Primary_Quote_Mapped_Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary_Quote__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sales_Tax_Amount__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Sales_Tax__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Selected_Payment_Type__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Selected_Payment_Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Shipping_And_Handling__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Shipping_and_Handling__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Temp_FFM_Tax__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.Temp_FFM_Tax__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Hardware_Due__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Estimated_Upfront_Amount__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_License_Cost__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Total_License_Price__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_License_Due__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Total_License_Price__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>dsfs__Company__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>of_HW_Products__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.of_HW_Products__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>of_LIC_Products__c</field>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Of_LIC_Products__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_other_buyout_document_status_records</name>
+        <label>Update other buyout document status records</label>
+        <locationX>314</locationX>
+        <locationY>1331</locationY>
+        <filterLogic>1 AND 2 AND 3</filterLogic>
+        <filters>
+            <field>dsfs__Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Envelope_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Rebate Document</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>dsfs__Envelope_Status__c</field>
+            <value>
+                <stringValue>Voided</stringValue>
+            </value>
+        </inputAssignments>
+        <object>dsfs__DocuSign_Status__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_other_order_form_status_records</name>
+        <label>Update other order form status records</label>
+        <locationX>50</locationX>
+        <locationY>1331</locationY>
+        <filterLogic>1 AND 2 AND 3</filterLogic>
+        <filters>
+            <field>dsfs__Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.dsfs__Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Envelope_Type__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Rebate Document</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>dsfs__Envelope_Status__c</field>
+            <value>
+                <stringValue>Voided</stringValue>
+            </value>
+        </inputAssignments>
+        <object>dsfs__DocuSign_Status__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Docusign_Field_Mapping_Check</targetReference>
+        </connector>
+        <object>dsfs__DocuSign_Status__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

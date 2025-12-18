@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>https_samsara_showpad_biz_webapp2_resu</fullName>
+    <columns>Ultimate_Parent__c</columns>
+    <columns>Golden_Ticket__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Global_Geography__c</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>Account_Lifetime_ACV__c</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Number_of_Powered_Assets__c</columns>
+    <columns>Number_of_Unpowered_Assets__c</columns>
+    <columns>Record_Type__c</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Number_of_Vehicles__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>35</value>
+    </filters>
+    <filters>
+        <field>Number_of_Vehicles__c</field>
+        <operation>lessOrEqual</operation>
+        <value>175</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <label>FY27 Golden Ticket [MM]</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Publisher__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>It is possible to set up a Test Mode Subscription that forwards messages after it has completed its work. In order to set up the messages that the Subscription forwards, we need to link a Test Mode Publication to it. The relationship exists on the Test Mode Publication so that multiple Publications can be linked to a single Test Mode Subscription.</description>
+    <inlineHelpText>It is possible to set up a Test Mode Subscription that forwards messages after it has completed its work. In order to set up the messages that the Subscription forwards, we need to link a Test Mode Publication to it.</inlineHelpText>
+    <label>Test Mode Subscription</label>
+    <referenceTo>fferpcore__TestSubscription__c</referenceTo>
+    <relationshipLabel>Response Publications</relationshipLabel>
+    <relationshipName>ForwardMessages</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

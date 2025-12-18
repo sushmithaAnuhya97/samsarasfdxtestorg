@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>AccountFieldSetProvider</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccountFieldSetProviderTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>Account_Segment_Owner_Mapping__mdt</name>
+    </customMetadataTypeAccesses>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Mark_Account_As_Unworkable</name>
+    </customPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Mark Account As Unworkable</label>
+    <recordTypeVisibilities>
+        <recordType>Case.Unworkable_Case</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

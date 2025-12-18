@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gong__Economic_Pulse_Occurence__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Dedicated to pre-defined Tracker named &apos;Economic Pulse (by Gong)&apos;. This field is valuable for creating some reports that show the percentage of Conversations where this Tracker occurred</description>
+    <label>Economic Pulse Occurence</label>
+    <summaryFilterItems>
+        <field>Gong__Tracker__c.Name</field>
+        <operation>equals</operation>
+        <value>Economic pulse (by Gong)</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Gong__Tracker__c.Gong__Gong_Interaction__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Internal_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Group__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Is_Active__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>pse__Time_Credited__c</columns>
+    <columns>pse__Time_Excluded__c</columns>
+    <columns>pse__Is_Billable__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Project_Type__c</field>
+        <operation>equals</operation>
+        <value>Internal</value>
+    </filters>
+    <filters>
+        <field>pse__Is_Template__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Internal Projects</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Field_Action_Remove_Perms_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+fpro__Service_Name__c = &apos;Field Actions&apos;,
+TEXT(fpro__Field_Action__c) = &apos;Field Remove Perms&apos;,
+ISBLANK(fpro__Select_Perms_to_remove__c)
+)</errorConditionFormula>
+    <errorMessage>Please select atleast one option</errorMessage>
+</ValidationRule>

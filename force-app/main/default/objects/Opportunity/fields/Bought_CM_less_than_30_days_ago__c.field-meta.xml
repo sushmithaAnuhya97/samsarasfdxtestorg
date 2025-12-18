@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bought_CM_less_than_30_days_ago__c</fullName>
+    <description>To help Order Ops determine if CM 22 or CM 12 was bought less than 30 days ago</description>
+    <formula>ISPICKVAL( Account.Bought_CM22_and_CM_12_in_last_30_days__c, &quot;Yes&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>To help Order Ops determine if CM 22 or CM 12 was bought less than 30 days ago</inlineHelpText>
+    <label>Bought CM less than 30 days ago</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

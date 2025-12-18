@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidateReasonForDiscount</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+				NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+				PICKLISTCOUNT( Reason_for_Discount_PickList__c ) &gt; 3,
+				NOT(
+								OR(
+												CONTAINS(Owner_Role__c, &apos;AE3 NA US&apos;),
+												CONTAINS(Owner_Role__c, &apos;ENT AE NA&apos;),
+												CONTAINS(Owner_Role__c, &apos;ENT AE SR NA&apos;),
+												CONTAINS(Owner_Role__c, &apos;ENT AE CD NA&apos;),
+												CONTAINS(Owner_Role__c, &apos;ENT AE NA MX&apos;)
+								)
+				)
+)</errorConditionFormula>
+    <errorDisplayField>Reason_for_Discount_PickList__c</errorDisplayField>
+    <errorMessage>Please select up to 3 options only.</errorMessage>
+</ValidationRule>

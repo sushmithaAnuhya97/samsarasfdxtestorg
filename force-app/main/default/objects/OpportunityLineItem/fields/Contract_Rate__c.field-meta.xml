@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Rate__c</fullName>
+    <description>)Based on opportunity Selected Payment Type, this will be calculated. This field is used in Order sync in Netsuite as part of Billing 360 Project.</description>
+    <formula>IF(
+    AND(
+        NOT(ISBLANK(SBQQ__QuoteLine__r.Subsidy_Quantity__c)), 
+        SBQQ__QuoteLine__r.SBQQ__ProductCode__c = &apos;INS-SUBSIDY&apos;
+    ),
+    /* For Subsidy Products - use Subsidy_Quantity__c as divisor */
+    CASE(
+        Opportunity.Selected_Payment_Type__c,
+        &apos;Direct Annual&apos;, ((Total_Price__c / Opportunity.License_Term__c) / SBQQ__QuoteLine__r.Subsidy_Quantity__c) * 12,
+        &apos;Direct Quarterly&apos;, ((Total_Price__c / Opportunity.License_Term__c) / SBQQ__QuoteLine__r.Subsidy_Quantity__c) * 3,
+        &apos;Direct Monthly&apos;, ((Total_Price__c / Opportunity.License_Term__c) / SBQQ__QuoteLine__r.Subsidy_Quantity__c),
+        &apos;Direct Semi-Annual&apos;, ((Total_Price__c / Opportunity.License_Term__c) / SBQQ__QuoteLine__r.Subsidy_Quantity__c) * 6,
+        &apos;Upfront Payments&apos;, NS_Unit_Rate__c,
+        0
+    ),
+    /* For Non-Subsidy Products - use Quantity as divisor */
+    CASE(
+        Opportunity.Selected_Payment_Type__c,
+        &apos;Direct Annual&apos;, ((Total_Price__c / Opportunity.License_Term__c) / Quantity) * 12,
+        &apos;Direct Quarterly&apos;, ((Total_Price__c / Opportunity.License_Term__c) / Quantity) * 3,
+        &apos;Direct Monthly&apos;, ((Total_Price__c / Opportunity.License_Term__c) / Quantity),
+        &apos;Direct Semi-Annual&apos;, ((Total_Price__c / Opportunity.License_Term__c) / Quantity) * 6,
+        &apos;Upfront Payments&apos;, NS_Unit_Rate__c,
+        0
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contract Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

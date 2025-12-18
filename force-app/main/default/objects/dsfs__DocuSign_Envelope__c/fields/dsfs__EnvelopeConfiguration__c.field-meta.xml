@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dsfs__EnvelopeConfiguration__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>The configuration used to generate this envelope.</inlineHelpText>
+    <label>DocuSign Envelope Configuration</label>
+    <referenceTo>dsfs__EnvelopeConfiguration__c</referenceTo>
+    <relationshipLabel>DocuSign Envelopes</relationshipLabel>
+    <relationshipName>DocuSign_Envelopes</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

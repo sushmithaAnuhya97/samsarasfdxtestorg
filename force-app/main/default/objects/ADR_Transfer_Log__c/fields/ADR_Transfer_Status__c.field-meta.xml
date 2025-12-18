@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADR_Transfer_Status__c</fullName>
+    <description>Effective 1/1/19</description>
+    <inlineHelpText>Effective 1/1/19</inlineHelpText>
+    <label>ADR Transfer Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demo Scheduled</fullName>
+                <default>false</default>
+                <label>Demo Scheduled</label>
+            </value>
+            <value>
+                <fullName>Second Pass Requested</fullName>
+                <default>false</default>
+                <label>Second Pass Requested</label>
+            </value>
+            <value>
+                <fullName>Second Pass Complete</fullName>
+                <default>false</default>
+                <label>Second Pass Complete</label>
+            </value>
+            <value>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+                <label>Accepted</label>
+            </value>
+            <value>
+                <fullName>Accepted and Qualified</fullName>
+                <default>false</default>
+                <label>Accepted and Qualified</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Accepted - No Credit</fullName>
+                <default>false</default>
+                <label>Accepted - No Credit</label>
+            </value>
+            <value>
+                <fullName>Auto Reject - SLA</fullName>
+                <default>false</default>
+                <label>Auto Reject - SLA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

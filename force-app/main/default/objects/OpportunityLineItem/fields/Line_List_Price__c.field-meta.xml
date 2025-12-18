@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_List_Price__c</fullName>
+    <description>List Price*License Term for software and List Price for hardware.</description>
+    <formula>IF(LEFT(Product_Code_Copy__c,3)=&quot;LIC&quot;,IF(Opportunity.Express_Flag__c=1, ListPrice, ListPrice*License_Term_Copy__c/12),ListPrice)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Unit List Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Phase__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Phase</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>PDLM__Phase__c.PDLM__Lifecycle__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.PDLM__Lifecycle__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>PDLM__Phase__c</referenceTo>
+    <relationshipLabel>Approver Definitions</relationshipLabel>
+    <relationshipName>Approver_Definitions</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

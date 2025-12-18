@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Scheduled_Revenue__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The revenue that is scheduled for recognition on this revenue forecast.</description>
+    <inlineHelpText>The revenue that is scheduled for recognition on this revenue forecast.</inlineHelpText>
+    <label>Scheduled Revenue</label>
+    <summarizedField>pse__Revenue_Forecast_Type__c.pse__Scheduled_Revenue__c</summarizedField>
+    <summaryForeignKey>pse__Revenue_Forecast_Type__c.pse__Revenue_Forecast__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

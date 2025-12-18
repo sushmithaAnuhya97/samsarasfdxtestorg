@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Value_Strategist_Required</fullName>
+    <active>true</active>
+    <description>Business Value Strategist REQUIRED for BVS Engagement Types at the time of project creation</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Engagement_Type__c, &quot;BVS Engagement&quot;),
+    ISBLANK(Business_Value_Consultant__c),
+    $Profile.Name = &quot;Sales Ops&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Business_Value_Consultant__c</errorDisplayField>
+    <errorMessage>Business Value Strategist must be assigned when Engagement Type is BVS Engagement.</errorMessage>
+</ValidationRule>

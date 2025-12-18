@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Expire_Affected_Items__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Upon entry into this phase, expire the Affected Items, regardless of if it is an approval phase. This is used for Deviations: when a Deviation expires, the Affected Items expire and revert to their previously-released revision.</description>
+    <inlineHelpText>Upon entry into this phase, expire the Affected Items, regardless of if it is an approval phase. This is used for Deviations: when a Deviation expires, the Affected Items expire and revert to their previously-released revision.</inlineHelpText>
+    <label>Expire Affected Items</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

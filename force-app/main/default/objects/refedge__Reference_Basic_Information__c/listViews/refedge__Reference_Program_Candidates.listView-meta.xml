@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Reference_Program_Candidates</fullName>
+    <columns>NAME</columns>
+    <columns>refedge__Account__c</columns>
+    <columns>refedge__Contact__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>refedge__Reference_Program_Candidate__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Reference Program Candidates</label>
+</ListView>

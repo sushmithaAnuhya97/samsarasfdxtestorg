@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__VR_Checkfor_UsesPerTimePeriod</fullName>
+    <active>true</active>
+    <description>If &apos;Uses Per Time Period&apos; is set then &apos;Time Period&apos; MUST also be set.</description>
+    <errorConditionFormula>AND(NOT(ISNULL(refedge__RUL_Activities_will_do__c)),
+ISNULL(refedge__RUL_Period__c))</errorConditionFormula>
+    <errorMessage>If &apos;Uses Per Time Period&apos; is set then &apos;Time Period&apos; MUST also be set.</errorMessage>
+</ValidationRule>

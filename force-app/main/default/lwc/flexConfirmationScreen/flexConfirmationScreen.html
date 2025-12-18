@@ -1,0 +1,205 @@
+<template>
+    <div class="slds-card slds-m-bottom_medium">
+        <div class="slds-card__header">
+            <div class="slds-media">
+                <div class="slds-media__body">
+                    <div class="slds-grid slds-grid_vertical-align-center" onclick={handleProductChangeRequestToggle} style="cursor: pointer;">
+                        <button 
+                            class="slds-button slds-button_icon slds-m-right_x-small confirmation-accordion-toggle"
+                            aria-expanded={isProductChangeRequestExpanded}
+                        >
+                            <div class="confirmation-circle-container">
+                                <div class="confirmation-triangle" data-expanded={isProductChangeRequestExpanded}></div>
+                            </div>
+                        </button>
+                        <div class="slds-truncate">
+                            <span class="confirmation-section-title">Product Change Request</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <template if:true={isProductChangeRequestExpanded}>
+            <div class="slds-card__body">
+                <lightning-tabset>
+                    <lightning-tab label={changeTabLabel}>
+                        <div class="slds-p-around_medium">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_column-bordered slds-table_fixed-layout">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="slds-p-horizontal_small" style="width: 60px;">
+                                            <button 
+                                                class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                                                onclick={handleToggleAllChangedProducts}
+                                                aria-expanded={allChangedProductsExpanded}
+                                                title="Toggle All"
+                                                >
+                                                <div class="circle-container">
+                                                    <div class="triangle" data-expanded={allChangedProductsExpanded}></div>
+                                                </div>
+                                            </button>
+                                        </th>
+                                        <th class="slds-text-align_left slds-p-horizontal_small slds-border_left slds-border_right" scope="col">
+                                            Selected for Upgrade
+                                        </th>
+                                        <th class="slds-text-align_left slds-p-horizontal_small slds-border_right" scope="col">
+                                            Address
+                                        </th>
+                                        <th class="slds-text-align_center slds-p-horizontal_small slds-border_right" scope="col" style="width: 100px;">
+                                            Total Qty
+                                        </th>
+                                        <th class="slds-text-align_center slds-p-horizontal_small slds-border_right" scope="col" style="width: 100px;">
+                                            Upgrade Qty
+                                        </th>
+                                        <th class="slds-text-align_left slds-p-horizontal_small slds-border_right" scope="col">
+                                            Upgrade to
+                                        </th>
+                                        <th class="slds-text-align_left slds-p-horizontal_small" scope="col" style="width: 150px; text-align: right;">
+                                            Default Hardware
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={changedProductsData} for:item="productSummary" for:index="index">
+                                        <tr key={productSummary.productId} class="slds-hint-parent">
+                                                                               <!-- Product Header -->
+                                         <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 40px;">
+                                            <button 
+                                            class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                                            data-productid={productSummary.productId}
+                                            onclick={handleToggleExpand}
+                                            aria-expanded={productSummary.isExpanded}
+                                            >
+                                                <div class="circle-container">
+                                                    <div class="triangle" data-expanded={productSummary.isExpanded}></div>
+                                                </div>
+                                            </button>
+                                        </td>
+                                        <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left">
+                                            <a href={productSummary.productLink} target="_blank" >{productSummary.productName}</a>  
+                                        </td>
+                                        <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left">
+                                            <template if:false={productSummary.isExpanded}>
+                                                <span class="slds-text-color_weak" style="font-style: italic;">'Expand to view address level details'</span>
+                                            </template>
+                                        </td>
+                                        <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">{productSummary.totalQuantity}</td>
+                                        <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">
+                                            <template if:false={productSummary.isExpanded}>
+                                                {productSummary.totalUpgradeQuantity}
+                                            </template>
+                                        </td>
+                                        <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left"></td>
+                                        <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left"></td>
+                                    </tr>
+                                    <template for:each={productSummary.shippingAddressSummaries} for:item="shipTo" for:index="shipIndex">
+                                            <tr key={shipTo.uniqueId} class="slds-hint-parent" if:true={productSummary.isExpanded}>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center"></td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center"></td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left"> <a href={shipTo.addressLink} target="_blank" >{shipTo.address} </a> </td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">{shipTo.totalQuantity}</td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">{shipTo.upgradeQuantity}</td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left">
+                                                    <a href={shipTo.upgradeToLink} target="_blank" class="slds-text-color_success">{shipTo.upgradeTo}</a>    
+                                                </td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left" if:true={shipTo.toggleLink}>
+                                                    <a href={shipTo.defaultHardwareCodeURL} target="_blank" >{shipTo.defaultHardware}</a>   
+                                                    
+                                                </td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left" if:false={shipTo.toggleLink}>
+                                                    None    
+                                                     
+                                                </td>
+                                            </tr>
+                                    </template>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning-tab>
+                    <lightning-tab label={noChangeTabLabel}>
+                        <div class="slds-p-around_medium">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_column-bordered slds-table_fixed-layout">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="slds-p-horizontal_small" style="width: 60px;">
+                                            <button 
+                                                class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                                                onclick={handleToggleAllNoChangeProducts}
+                                                aria-expanded={allNoChangeProductsExpanded}
+                                                title="Toggle All"
+                                                >
+                                                <div class="circle-container">
+                                                    <div class="triangle" data-expanded={allNoChangeProductsExpanded}></div>
+                                                </div>
+                                            </button>
+                                        </th>
+                                        <th class="slds-p-horizontal_small slds-border_left slds-border_right" style="width: auto;">
+                                            Not Selected for Upgrade
+                                        </th>
+                                        <th class="slds-text-align_left slds-p-horizontal_small slds-border_right" scope="col">
+                                            Address
+                                        </th>
+                                        <th class="slds-text-align_center slds-p-horizontal_small slds-border_right" scope="col" style="width: 100px;">
+                                            Total Qty
+                                        </th>
+                                        <th class="slds-text-align_center slds-p-horizontal_small" scope="col" style="width: 150px;">
+                                            Not Upgraded Qty
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={noChangeProductData} for:item="productSummary" for:index="index">
+                                        <tr key={productSummary.productId} class="slds-hint-parent">
+                                            <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 40px;">
+                                                <button 
+                                                class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                                                data-productid={productSummary.productId}
+                                                onclick={handleNoChangeToggleExpand}
+                                                aria-expanded={productSummary.isExpanded}
+                                                >
+                                                    <div class="circle-container">
+                                                        <div class="triangle" data-expanded={productSummary.isExpanded}></div>
+                                                    </div>
+                                                </button>
+                                            </td>
+                                            <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left">
+                                                <a href={productSummary.productLink} target="_blank" >{productSummary.productName}</a>
+                                            </td>
+                                            <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left">
+                                                <template if:false={productSummary.isExpanded}>
+                                                    <span class="slds-text-color_weak" style="font-style: italic;">'Expand to view address level details'</span>
+                                                </template>
+                                            </td>
+                                            <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">{productSummary.totalQuantity}</td>
+                                            <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">
+                                                <template if:false={productSummary.isExpanded}>
+                                                    {productSummary.totalRemainingQuantityText}
+                                                </template>
+                                                <template if:true={productSummary.isExpanded}>
+                                                    
+                                                </template>
+                                            </td>
+                                        </tr>
+                                        <template for:each={productSummary.shippingAddressSummaries} for:item="shipTo" for:index="shipIndex">
+                                            <tr key={shipTo.addressId} class="slds-hint-parent" if:true={productSummary.isExpanded}>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center"></td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center"></td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_left">       
+                                                    <a href={shipTo.addressLink} target="_blank" >{shipTo.addressName}</a>
+                                                </td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">{shipTo.totalQuantity}</td>
+                                                <td class="slds-cell-wrap slds-p-horizontal_small slds-text-align_center" style="width: 60px;">{shipTo.remainingQuantityText}</td>
+                                            </tr>
+                                        </template>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </lightning-tab>
+                </lightning-tabset>
+            </div>
+        </template>
+    </div>
+</template>

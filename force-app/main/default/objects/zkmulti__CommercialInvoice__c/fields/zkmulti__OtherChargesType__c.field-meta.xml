@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__OtherChargesType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Other Charges Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Commissions</fullName>
+                <default>false</default>
+                <label>Commissions</label>
+            </value>
+            <value>
+                <fullName>Discounts</fullName>
+                <default>false</default>
+                <label>Discounts</label>
+            </value>
+            <value>
+                <fullName>Handling Fees</fullName>
+                <default>false</default>
+                <label>Handling Fees</label>
+            </value>
+            <value>
+                <fullName>Royalties and License Fees</fullName>
+                <default>false</default>
+                <label>Royalties and License Fees</label>
+            </value>
+            <value>
+                <fullName>Taxes</fullName>
+                <default>false</default>
+                <label>Taxes</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

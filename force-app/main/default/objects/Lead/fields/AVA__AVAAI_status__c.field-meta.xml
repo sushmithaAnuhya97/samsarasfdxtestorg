@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA__AVAAI_status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Status of an Conversica lead in the Conversica system</description>
+    <label>Deprecated Conversica Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Queue</fullName>
+                <default>false</default>
+                <label>In Queue</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Excluded</fullName>
+                <default>false</default>
+                <label>Excluded</label>
+            </value>
+            <value>
+                <fullName>Undeliverable</fullName>
+                <default>false</default>
+                <label>Undeliverable</label>
+            </value>
+            <value>
+                <fullName>AVA Stopped</fullName>
+                <default>false</default>
+                <label>AVA Stopped</label>
+            </value>
+            <value>
+                <fullName>Client Stopped</fullName>
+                <default>false</default>
+                <label>Client Stopped</label>
+            </value>
+            <value>
+                <fullName>Messaging</fullName>
+                <default>false</default>
+                <label>Messaging</label>
+            </value>
+            <value>
+                <fullName>No Response</fullName>
+                <default>false</default>
+                <label>No Response</label>
+            </value>
+            <value>
+                <fullName>Awaiting Response</fullName>
+                <default>false</default>
+                <label>Awaiting Response</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Conversica Stopped</fullName>
+                <default>false</default>
+                <label>Conversica Stopped</label>
+            </value>
+            <value>
+                <fullName>Preparing Lead</fullName>
+                <default>false</default>
+                <label>Preparing Lead</label>
+            </value>
+            <value>
+                <fullName>Sent Engagement</fullName>
+                <default>false</default>
+                <label>Sent Engagement</label>
+            </value>
+            <value>
+                <fullName>Sent Appt.</fullName>
+                <default>false</default>
+                <label>Sent Appt.</label>
+            </value>
+            <value>
+                <fullName>Sent Feedback</fullName>
+                <default>false</default>
+                <label>Sent Feedback</label>
+            </value>
+            <value>
+                <fullName>Sent Social</fullName>
+                <default>false</default>
+                <label>Sent Social</label>
+            </value>
+            <value>
+                <fullName>Received Engagement</fullName>
+                <default>false</default>
+                <label>Received Engagement</label>
+            </value>
+            <value>
+                <fullName>Received Appt.</fullName>
+                <default>false</default>
+                <label>Received Appt.</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Received Social</fullName>
+                <default>false</default>
+                <label>Received Social</label>
+            </value>
+            <value>
+                <fullName>Messaging Complete</fullName>
+                <default>false</default>
+                <label>Messaging Complete</label>
+            </value>
+            <value>
+                <fullName>Unsubscribed</fullName>
+                <default>false</default>
+                <label>Unsubscribed</label>
+            </value>
+            <value>
+                <fullName>Opt Out</fullName>
+                <default>false</default>
+                <label>Opt Out</label>
+            </value>
+            <value>
+                <fullName>Rep Stopped</fullName>
+                <default>false</default>
+                <label>Rep Stopped</label>
+            </value>
+            <value>
+                <fullName>CRM Stopped</fullName>
+                <default>false</default>
+                <label>CRM Stopped</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

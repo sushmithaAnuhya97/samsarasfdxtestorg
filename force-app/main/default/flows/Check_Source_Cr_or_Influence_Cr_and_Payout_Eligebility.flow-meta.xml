@@ -1,0 +1,1305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-26124 &amp; GTMS-26107; Created as part of Partner H1 project to  assign output variables</description>
+        <name>Assign_Output_Variables_1</name>
+        <label>Assign Output Variables</label>
+        <locationX>578</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Paid_Influence_CR_Payout</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Influence_Payout_Reason_For_Scnd_Oppty_First_CR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_The_Current_CR_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26124 &amp; GTMS-26107; Created as part of Partner H1 project to  assign output variables</description>
+        <name>Assign_Output_Variables_For_Auto_Source_CR</name>
+        <label>Assign Output Variables For Auto Source CR</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_Payout_For_Closed_Won</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Source_CR_Reason_For_Scnd_Oppty</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Partner_has_active_enrollment_on_autotag__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Partner_has_active_enrollment_upon_autotag_creation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_The_Current_CR_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26124 &amp; GTMS-26107; Created as part of Partner H1 project to  assign output variables</description>
+        <name>Assign_Output_Variables_For_Paid_Influence_CR_For_First_Oppty</name>
+        <label>Assign Output Variables For Paid Influence CR For First Oppty</label>
+        <locationX>842</locationX>
+        <locationY>890</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_Business_Payout_Eligibility</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Partner_Interaction_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Partner_Influenced_Interaction_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Current_CR_Record.Categorization_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>First_Oppty_First_Influence_CR_Reason</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_The_Current_CR_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26112: Created as part of Partners H1 project to assign output variables for second influence CRs</description>
+        <name>Assign_Output_Variables_For_Second_Influence_CR</name>
+        <label>Assign Output Variables For Second Influence CR</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>CR is the second Paid Influence CR of the Oppty. Hence Acting as a unpaid Influence Partner</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_The_Current_CR_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26124 &amp; GTMS-26107; Created as part of Partner H1 project to  assign output variables</description>
+        <name>Assign_Output_Variables_For_Source_CR</name>
+        <label>Assign Output Variables For Sourced CR</label>
+        <locationX>1370</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_Business_Payout_Eligibility</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Partner_Interaction_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CR_Interaction_For_Existing_Oppty</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_Business_Catergorization_Reason_For_Frist_Source_CR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_The_Current_CR_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26124 &amp; GTMS-26107; Created as part of Partner H1 project to  assign output variables</description>
+        <name>Assign_Output_Variables_For_Sourced_CR</name>
+        <label>Assign Output Variables For Influence CR</label>
+        <locationX>1106</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_Business_Payout_Eligibility</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Partner_Interaction_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.Partner_Influenced_Interaction_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>First_Oppty_First_Influence_CR_Reason</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Categorization_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_The_Current_CR_Record</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>GTMS-26739: Created as part of Partners H1 project to check if the Opportunity has CR records</description>
+        <name>Does_Oppty_Has_CR_Records</name>
+        <label>Does Oppty Has CR Records</label>
+        <locationX>1040</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>Is_Oppty_is_a_Deal_Registration_Oppty</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Dont Have CR Records</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Has_CR_REcords</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_CR_with_Selected_Opportunity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Current_CR_Record.Is_Deal_Registration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Output_Variables_For_Paid_Influence_CR_For_First_Oppty</targetReference>
+            </connector>
+            <label>Yes, Has CR REcords</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26108: Created as part of partners H1 Project to check If the Oppty is a Deal Registration Oppty</description>
+        <name>Is_Oppty_is_a_Deal_Registration_Oppty</name>
+        <label>Is Oppty is a Deal Registration Oppty</label>
+        <locationX>1238</locationX>
+        <locationY>890</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Output_Variables_For_Source_CR</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Deal Registration Oppty</defaultConnectorLabel>
+        <rules>
+            <name>Not_a_Deal_Registration_Oppty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Current_CR_Record.Opportunity__r.Is_Deal_Registration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Output_Variables_For_Sourced_CR</targetReference>
+            </connector>
+            <label>Not a Deal Registration Oppty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26112: Created as part of partners H1 project to check if paid influence CR is exist for the Opportunity</description>
+        <name>Is_Paid_Influence_CR_already_Exist</name>
+        <label>Is Paid Influence CR already Exist</label>
+        <locationX>561</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Get_First_Closed_Won_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Paid Influence CRs Does not exist</defaultConnectorLabel>
+        <rules>
+            <name>Yes_paid_Influence_CR_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Eligible_for_Payout_Influence_CRs</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Output_Variables_For_Second_Influence_CR</targetReference>
+            </connector>
+            <label>Yes, paid Influence CR Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26739: Created as part of Partners H1 project to check if the CR is Source CR</description>
+        <name>Is_Source_CR</name>
+        <label>Is Source CR</label>
+        <locationX>305</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Get_Eligible_for_Payout_Influence_CRs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Not a source CR</defaultConnectorLabel>
+        <rules>
+            <name>Yes_It_is_Source_CR</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Current_CR_Record.Partner_Interaction_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.Partner_Sourced_Interaction_Type</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_All_Source_CR_records_For_that_Customer</targetReference>
+            </connector>
+            <label>Yes, It is Source CR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of partners h1 project</description>
+        <name>Is_Source_Opportunity_Exist</name>
+        <label>Is Source Opportunity Exist</label>
+        <locationX>809</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Get_Existing_CR_with_Selected_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, Source Opportunity Does Not Exist</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Source_Opportunity_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_First_Closed_Won_Opportunity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_All_Influence_CRs</targetReference>
+            </connector>
+            <label>Yes, Source Opportunity Exists</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to check the eligebility of payouts
+GTMS-26730: Updated logic as per requirement of the ticket
+GTMS-26018: Updated logic to make cr as influenced if Deal registration is matching with existing oppty
+Added ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;) to make the eligibility for payout as yes
+GTMS-28127: Updated logic to map interaction type to if the oppty is existing or contract
+GTMS-28243: Updated logic to update eligible for payout value for source CR auto tagging.
+GTMS-28680: Added &quot;Partner Expansion&quot; engagement type to the payout logic</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-28127: Created as part of Partners H1 project Hyper care</description>
+        <name>CR_Interaction_For_Existing_Oppty</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+NOT(ISNULL({!Current_CR_Record.Partner_Registration__c})),
+NOT(ISBLANK({!Current_CR_Record.Partner_Registration__c}))
+),
+IF(
+OR(
+ISPICKVAL({!Current_CR_Record.Partner_Registration__r.AE_Outcome__c},&apos;Matched Opportunity&apos;)
+),
+{!$Label.Partner_Influenced_Interaction_Type},
+{!$Label.Partner_Sourced_Interaction_Type}
+),
+{!$Label.Partner_Sourced_Interaction_Type}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>First_Oppty_First_Influence_CR_Reason</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	{!$Label.NOT_A_TRANSCTING_PARTNER},
+	CASE(
+		{!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},
+		&apos;Yes&apos;,
+		{!$Label.First_Influence_With_Payout},
+		&apos;No&apos;,
+		{!$Label.Influence_Without_Payout},
+		{!$Label.NO_PARTNER_INTERACTION_TYPE}
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Influence_Payout_Reason_For_Scnd_Oppty_First_CR</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	{!$Label.NOT_A_TRANSCTING_PARTNER},
+	IF(
+		AND(
+			NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+			{!Current_CR_Record.Customer_Account__r.Latest_Active_Contract_End_Date__c} &lt; {!$Flow.CurrentDate}
+		),
+		{!$Label.INACTIVE_CONTRACT_REASON},
+		IF(
+			OR(
+				ISBLANK({!Current_CR_Record.Partner_Enrollment__r.Influence_Payout_Cap__c}),
+				{!Total_Influence_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Influence_Payout_Cap__c}
+			),
+			IF(
+				OR(
+					AND(
+					NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Add_Ons__c},&apos;Yes&apos;)
+					),
+					AND(
+					{!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c},
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Renewals__c},&apos;Yes&apos;)
+					),
+					AND(
+					ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c}),
+					NOT({!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c}),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},&apos;Yes&apos;)
+					)
+				),
+				{!$Label.First_Influence_With_Payout},
+				{!$Label.Influence_Without_Payout}
+			),
+			{!$Label.Influence_Outside_Payout_Cap}
+		)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partner H1 project to return Categorization reason based on payout eligibility for new business.</description>
+        <name>New_Business_Catergorization_Reason_For_Frist_Source_CR</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	{!$Label.NOT_A_TRANSCTING_PARTNER},
+	CASE(
+		{!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},
+		&apos;Yes&apos;,
+		{!$Label.Referral_With_Payout},
+		&apos;No&apos;,
+		{!$Label.Referral_Without_Payout},
+		{!$Label.NO_PARTNER_INTERACTION_TYPE}
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Created to set the payout eligibility for new business.</description>
+        <name>New_Business_Payout_Eligibility</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;),
+ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},&apos;Yes&apos;)
+),
+&apos;Yes&apos;,
+&apos;No&apos;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Paid_Influence_CR_Payout</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	&apos;No&apos;,
+	IF(
+		AND(
+			NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+			{!Current_CR_Record.Customer_Account__r.Latest_Active_Contract_End_Date__c} &lt; {!$Flow.CurrentDate}
+		),
+		&apos;No&apos;,
+		IF(
+			OR(
+				AND(
+					NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Add_Ons__c},&apos;Yes&apos;),
+					{!Total_Influence_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Influence_Payout_Cap__c}
+				),
+				AND(
+					{!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c},
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Renewals__c},&apos;Yes&apos;),
+					{!Total_Influence_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Influence_Payout_Cap__c}
+				),
+
+				AND(
+					ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c}),
+					NOT({!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c}),
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},&apos;Yes&apos;),
+					{!Total_Influence_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Influence_Payout_Cap__c}
+				)
+			),
+		&apos;Yes&apos;,
+		&apos;No&apos;
+		)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Paid_Referral_CR_Payout</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	&apos;No&apos;,
+	IF(
+		AND(
+			NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+			{!Current_CR_Record.Customer_Account__r.Latest_Active_Contract_End_Date__c} &lt; {!$Flow.CurrentDate}
+		),
+		&apos;No&apos;,
+		IF(
+			OR(
+				AND(
+				NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+				ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Add_Ons__c},&apos;Yes&apos;),
+				{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}
+				),
+				AND(
+				{!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c},
+				ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Renewals__c},&apos;Yes&apos;),
+				{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}
+				),
+
+				AND(
+				ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c}),
+				NOT({!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c}),
+				ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},&apos;Yes&apos;),
+				{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}
+				)
+			),
+		&apos;Yes&apos;,
+		&apos;No&apos;
+		)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-28243: created as part of partners H1 project to check if the enrollment is active and paid referral at the time of auto CR creation</description>
+        <name>Partner_has_active_enrollment_upon_autotag_creation</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;),
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26124: Created as part of Partners H1 project to check if the Payout period is completed</description>
+        <name>Payout_Period_Completed</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+ISNULL({!Get_First_Closed_Won_Opportunity.Id}),
+False,
+(TODAY() - {!Get_First_Closed_Won_Opportunity.CloseDate}) &gt; 365
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Scnd_Influence_Reason</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	{!$Label.NOT_A_TRANSCTING_PARTNER},
+	CASE(
+		{!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},
+		&apos;Yes&apos;,
+		{!$Label.Scnd_Influence_With_Payout},
+		&apos;No&apos;,
+		{!$Label.Influence_Without_Payout},
+		{!$Label.NO_PARTNER_INTERACTION_TYPE}
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Source_CR_Reason_For_Scnd_Oppty</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	{!$Label.NOT_A_TRANSCTING_PARTNER},
+	IF(
+		AND(
+			NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+			{!Current_CR_Record.Customer_Account__r.Latest_Active_Contract_End_Date__c} &lt; {!$Flow.CurrentDate}
+		),
+		{!$Label.INACTIVE_CONTRACT_REASON},
+		IF(
+			OR(
+				ISBLANK({!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}),
+				{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}
+			),
+			IF(
+				OR(
+				AND(
+					NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Add_Ons__c},&apos;Yes&apos;)
+				),
+				AND(
+					{!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c},
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Renewals__c},&apos;Yes&apos;)
+				),
+				AND(
+					ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c}),
+					NOT({!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c}),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},&apos;Yes&apos;)
+				)
+				),
+				{!$Label.Referral_With_Payout},
+				{!$Label.Referral_Without_Payout}
+			),
+			{!$Label.Referral_Outside_Payoutcap}
+		)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Source_Payout_For_Closed_Won</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	&apos;No&apos;,
+	IF(
+		AND(
+			NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+			{!Current_CR_Record.Customer_Account__r.Latest_Active_Contract_End_Date__c} &lt; {!$Flow.CurrentDate}
+		),
+		&apos;No&apos;,
+		IF(
+			OR(
+				AND(
+					NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Add_Ons__c},&apos;Yes&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;),
+					{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}
+				),
+				AND(
+					{!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c},
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Renewals__c},&apos;Yes&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;),
+					{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}
+				),
+
+				AND(
+					ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c}),
+					NOT({!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c}),
+ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Program_Compensation_Model__c}, &apos;Paid&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},&apos;Yes&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;),
+					ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;),
+					{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}
+				)
+			),
+		&apos;Yes&apos;,
+		&apos;No&apos;
+		)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Source_Payout_Reason_For_Scnd_Oppty_First_CR</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	NOT(ISPICKVAL({!Current_CR_Record.Channel_Partner__r.Partner_Status__c},&apos;Transacting Partner&apos;)),
+	{!$Label.NOT_A_TRANSCTING_PARTNER},
+	IF(
+		AND(
+			NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+			{!Current_CR_Record.Customer_Account__r.Latest_Active_Contract_End_Date__c} &lt; {!$Flow.CurrentDate}
+		),
+		{!$Label.INACTIVE_CONTRACT_REASON},
+		IF(
+			OR(
+				ISBLANK({!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c}),
+				{!Total_Source_Payout_Amount} &lt; {!Current_CR_Record.Partner_Enrollment__r.Sourced_Payout_Cap__c},
+				ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;),
+				ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;)
+			),
+			IF(
+				OR(
+					AND(
+						NOT(ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c})),
+						ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Add_Ons__c},&apos;Yes&apos;),
+						ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;),
+						ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;)
+					),
+					AND(
+						{!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c},
+						ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_Renewals__c},&apos;Yes&apos;),
+						ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;),
+						ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;)
+					),
+					AND(
+						ISBLANK({!Current_CR_Record.Opportunity__r.SBQQ__AmendedContract__c}),
+						NOT({!Current_CR_Record.Opportunity__r.SBQQ__Renewal__c}),
+						ISPICKVAL({!Current_CR_Record.Partner_Program__r.Paid_for_new_business__c},&apos;Yes&apos;),
+						ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.SalesProgramType__c},&apos;Paid Referral&apos;),
+						ISPICKVAL({!Current_CR_Record.Partner_Enrollment__r.Member_Status__c},&apos;Active&apos;)
+					)
+				),
+				{!$Label.Referral_With_Payout},
+				{!$Label.Referral_Without_Payout}
+			),
+			{!$Label.Referral_Outside_Payoutcap}
+		)
+	)
+)</expression>
+    </formulas>
+    <interviewLabel>Check Source Cr or Influence Cr and Payout Eligebility {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Check Source Cr or Influence Cr and Payout Eligebility</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>GTMS-26739: Created as part of Partners H1 project to fetch all Paid influence CRs for the partner and Customer combination</description>
+        <name>Fetch_All_Influence_CRs</name>
+        <label>Fetch All Influence CRs</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Total_Influence_Payout_Amount</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND (7 OR 8)</filterLogic>
+        <filters>
+            <field>Channel_Partner__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Channel_Partner__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Customer_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Opportunity__r.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Eligible_For_Payout__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Payout__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Payout__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Interaction_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Partner_Influenced_Interaction_Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Interaction_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Partner_Expansion_Interaction_Type</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Partner_Payout__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26739: Created as part of Partners H1 project to fetch all source CR records with Eligible For Payout</description>
+        <name>Fetch_All_Source_CR_records_For_that_Customer</name>
+        <label>Fetch All Source CR records For that Customer</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Total_Source_Payout_Amount</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Channel_Partner__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Channel_Partner__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Customer_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Opportunity__r.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Interaction_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Partner_Sourced_Interaction_Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Eligible_For_Payout__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Payout__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Payout__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Partner_Payout__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26112: Created as part of partners H1 project to fetch Eligible For Payout Influce CRs for the Same Oppty
+GTMS-28680: Added &quot;Partner Expansion&quot; type to the where conditions</description>
+        <name>Get_Eligible_for_Payout_Influence_CRs</name>
+        <label>Get Eligible for Payout Influence CRs</label>
+        <locationX>561</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Paid_Influence_CR_already_Exist</targetReference>
+        </connector>
+        <filterLogic>(1 OR 5) AND 2 AND 3 AND 4</filterLogic>
+        <filters>
+            <field>Partner_Interaction_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Partner_Influenced_Interaction_Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Eligible_For_Payout__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Partner_Interaction_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.Partner_Expansion_Interaction_Type</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partner H1 project to fetch CR with Same partner and Opportunity</description>
+        <name>Get_Existing_CR_with_Selected_Opportunity</name>
+        <label>Get Existing CR with selected Opportunity</label>
+        <locationX>1040</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Oppty_Has_CR_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26124: Created as part of Partners H1 Project to fetch the F</description>
+        <name>Get_First_Closed_Won_Opportunity</name>
+        <label>Get First Closed Won Opportunity</label>
+        <locationX>809</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_Source_Opportunity_Exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Current_CR_Record.Customer_Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Revenue Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__Renewal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBQQ__AmendedContract__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>CloseDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to update the Current CR record</description>
+        <name>Update_The_Current_CR_Record</name>
+        <label>Update The Current CR Record</label>
+        <locationX>305</locationX>
+        <locationY>1526</locationY>
+        <inputReference>CR_Record_To_Update</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>179</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Source_CR</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <transforms>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to sum the partner payout amount value</description>
+        <name>Total_Influence_Payout_Amount</name>
+        <label>Total Influence Payout Amount</label>
+        <locationX>578</locationX>
+        <locationY>782</locationY>
+        <connector>
+            <targetReference>Assign_Output_Variables_1</targetReference>
+        </connector>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <transformValues>
+            <transformValueActions>
+                <inputParameters>
+                    <name>aggregationValues</name>
+                    <value>
+                        <elementReference>Fetch_All_Influence_CRs</elementReference>
+                    </value>
+                </inputParameters>
+                <inputParameters>
+                    <name>aggregationField</name>
+                    <value>
+                        <stringValue>Partner_Payout__c</stringValue>
+                    </value>
+                </inputParameters>
+                <transformType>Sum</transformType>
+            </transformValueActions>
+        </transformValues>
+    </transforms>
+    <transforms>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of partners H1 project to sum up all the source payout amounts</description>
+        <name>Total_Source_Payout_Amount</name>
+        <label>Total Source Payout Amount</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <connector>
+            <targetReference>Assign_Output_Variables_For_Auto_Source_CR</targetReference>
+        </connector>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <transformValues>
+            <transformValueActions>
+                <inputParameters>
+                    <name>aggregationValues</name>
+                    <value>
+                        <elementReference>Fetch_All_Source_CR_records_For_that_Customer</elementReference>
+                    </value>
+                </inputParameters>
+                <inputParameters>
+                    <name>aggregationField</name>
+                    <value>
+                        <stringValue>Partner_Payout__c</stringValue>
+                    </value>
+                </inputParameters>
+                <transformType>Sum</transformType>
+            </transformValueActions>
+        </transformValues>
+    </transforms>
+    <variables>
+        <description>GTMS-26108: Created to store the payout categorization reason for CR</description>
+        <name>Categorization_Reason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to map fields for Source CR creation</description>
+        <name>CR_Record_Insert</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to update the triggering CR record</description>
+        <name>CR_Record_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to use as flag for Source CR creation</description>
+        <name>Create_Source_CR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of partners H1 project to map true or false values if we need to create Source CR record</description>
+        <name>Create_Source_CR_Record</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to store the triggering CR record</description>
+        <name>Current_CR_Record</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_CR_With_Same_Partner</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Influence_CR_Collection</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Influence_CR_With_Eligeble_for_Payout</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Source_CR_Collection</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Source_CR_For_First_Closed_Won_Opportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_Source_CR_for_the_Selected_Opportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 Project to return true or false about payout eligibility</description>
+        <name>Eligeble_For_Payout</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to End Customer Account Details</description>
+        <name>End_Customer_Account</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partner H1 projec to store the partner account details</description>
+        <name>Partner_Account</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to out put partner interaction type</description>
+        <name>Partner_Interaction_Type</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to map Partner Program Id</description>
+        <name>Partner_Program_Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to store the revenue opportunity record</description>
+        <name>Revenue_Opportunity_Record</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of partners H1 project to add source CR insert record to list and insert the source CRS</description>
+        <name>Source_CR_Creation_List</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-26124 &amp; GTMS-26107: Created as part of Partners H1 project to map Source Partner account Id from Frist Closed oppty Source CR</description>
+        <name>Source_Partner_Account_Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

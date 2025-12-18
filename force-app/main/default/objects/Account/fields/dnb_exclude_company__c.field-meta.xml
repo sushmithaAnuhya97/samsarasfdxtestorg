@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dnb_exclude_company__c</fullName>
+    <formula>OR(
+AND(Number_of_Sites__c &lt; 5, Number_of_Vehicles__c &lt; 20),
+RecordTypeId &lt;&gt; &apos;0121a000000VeLe&apos;,
+Status__c = &apos;Delete&apos;,
+OwnerId = &apos;0054p000002s4iA&apos;,
+SLED_Account_Copy__c = True
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Exclude From D&amp;B Connect</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

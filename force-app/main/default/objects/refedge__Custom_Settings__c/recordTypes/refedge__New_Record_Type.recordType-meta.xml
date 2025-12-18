@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__New_Record_Type</fullName>
+    <active>true</active>
+    <label>New Record Type</label>
+    <picklistValues>
+        <picklist>refedge__ACV_Basis__c</picklist>
+        <values>
+            <fullName>Calendar Year</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Fiscal Year</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__ACV_Oppty_Closed_Won_Stage__c</picklist>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Id%2E Decision Makers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation%2FReview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perception Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal%2FPrice Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Proposition</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Adv_Routing_Default__c</picklist>
+        <values>
+            <fullName>Send to CRP Team</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Send to Owner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Days_of_Week__c</picklist>
+        <values>
+            <fullName>Friday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saturday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sunday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thursday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tuesday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wednesday</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Default_Referenceablity_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Expiration_Timeframe__c</picklist>
+        <values>
+            <fullName>%27x%27 days from award date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of NEXT CY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of NEXT FY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of current CY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of current FY</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Export_Objects__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Import_Objects__c</picklist>
+        <values>
+            <fullName>Reference_Basic_Information%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reference_Content%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Launch_Frequency__c</picklist>
+        <values>
+            <fullName>Bimonthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-Annually</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Manual_Automatic_Launch__c</picklist>
+        <values>
+            <fullName>Automatic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Minimum_Sales_Stage__c</picklist>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incubate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orders Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Products Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to Ship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refunded - Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Initiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Label Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Opportunity_Closed_Stages__c</picklist>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incubate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orders Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Products Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to Ship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refunded - Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Initiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Label Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Opportunity_Closed_Won_Stage_For_Att__c</picklist>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Id%2E Decision Makers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation%2FReview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perception Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal%2FPrice Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Proposition</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Opportunity_Closed_Won_Stage__c</picklist>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Id%2E Decision Makers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation%2FReview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perception Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal%2FPrice Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Proposition</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Reference_Assistant_Options__c</picklist>
+        <values>
+            <fullName>Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounts And Content</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Content</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Sales_Expiration_Timeframe__c</picklist>
+        <values>
+            <fullName>%27x%27 days from award date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of NEXT CY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of NEXT FY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of current CY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>end of current FY</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Sales_Rewards_Notification_Frequency__c</picklist>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>refedge__Teams_Assistant_Options__c</picklist>
+        <values>
+            <fullName>Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounts And Content</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Content</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

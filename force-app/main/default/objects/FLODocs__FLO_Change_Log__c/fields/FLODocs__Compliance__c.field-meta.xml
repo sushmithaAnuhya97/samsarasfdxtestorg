@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Compliance__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Text that reflect is the FLO Change logs is compliant or not: Examples: Complaint - Non-Compliant</description>
+    <externalId>false</externalId>
+    <formula>IF(FLODocs__Noncompliance__c = True, &apos;Non-Compliant&apos;, &apos;Compliant&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Text that reflect is the FLO Change logs is compliant or not: Examples: Complaint - Non-Compliant</inlineHelpText>
+    <label>Compliance</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

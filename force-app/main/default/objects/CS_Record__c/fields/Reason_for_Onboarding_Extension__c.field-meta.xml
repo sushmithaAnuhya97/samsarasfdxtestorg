@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Onboarding_Extension__c</fullName>
+    <label>Reason for Onboarding Extension</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internal installation timeline</fullName>
+                <default>false</default>
+                <label>Internal installation timeline</label>
+            </value>
+            <value>
+                <fullName>Vehicle availability</fullName>
+                <default>false</default>
+                <label>Vehicle availability</label>
+            </value>
+            <value>
+                <fullName>Lack of FMS experience</fullName>
+                <default>false</default>
+                <label>Lack of FMS experience</label>
+            </value>
+            <value>
+                <fullName>Additional training required</fullName>
+                <default>false</default>
+                <label>Additional training required</label>
+            </value>
+            <value>
+                <fullName>Shipping delays / RMAs</fullName>
+                <default>false</default>
+                <label>Shipping delays / RMAs</label>
+            </value>
+            <value>
+                <fullName>Installation issues</fullName>
+                <default>false</default>
+                <label>Installation issues</label>
+            </value>
+            <value>
+                <fullName>Escalation management required</fullName>
+                <default>false</default>
+                <label>Escalation management required</label>
+            </value>
+            <value>
+                <fullName>Extensive API / Product requirements</fullName>
+                <default>false</default>
+                <label>Extensive API / Product requirements</label>
+            </value>
+            <value>
+                <fullName>COVID19</fullName>
+                <default>false</default>
+                <label>COVID19</label>
+            </value>
+            <value>
+                <fullName>Upsell/expansion</fullName>
+                <default>false</default>
+                <label>Upsell/expansion</label>
+            </value>
+            <value>
+                <fullName>Change in PoC</fullName>
+                <default>false</default>
+                <label>Change in PoC</label>
+            </value>
+            <value>
+                <fullName>Tier Upgrade</fullName>
+                <default>false</default>
+                <label>Tier Upgrade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

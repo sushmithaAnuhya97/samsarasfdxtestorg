@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>XactlyCorp__Assign_Business</fullName>
+    <availability>online</availability>
+    <description>For Assigning Business to the User.</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>250</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Assign Business</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/XactlyCorp__ChooseBusiness?editUserId={!User.Id}</url>
+    <width>500</width>
+</WebLink>

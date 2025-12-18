@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Manufacturer_Part__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Manufacturer Part</label>
+    <referenceTo>PDLM__Manufacturer_Part__c</referenceTo>
+    <relationshipLabel>Part Costs</relationshipLabel>
+    <relationshipName>Part_Costs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

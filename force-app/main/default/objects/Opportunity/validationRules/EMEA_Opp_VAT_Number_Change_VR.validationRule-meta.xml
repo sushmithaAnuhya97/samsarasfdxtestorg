@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Opp_VAT_Number_Change_VR</fullName>
+    <active>true</active>
+    <description>to throw error if VAT Number is changed by a use other than finance for opps where VAT status = Confirmed
+Initial Creation : GTMS-16029
+GTMS-28416: Added a condition CurrencyIsoCode = &apos;MXN&apos; to include Mexico</description>
+    <errorConditionFormula>AND(
+OR(
+ISPICKVAL(CurrencyIsoCode,&apos;EUR&apos;),
+ISPICKVAL(CurrencyIsoCode,&apos;GBP&apos;),
+ISPICKVAL(CurrencyIsoCode,&apos;MXN&apos;)
+),
+ISPICKVAL(VAT_Validation_Status__c,&apos;Confirmed&apos;),
+ISCHANGED(VAT_Number__c),
+CASESAFEID($Profile.Id) != &apos;00e1a000000dxEqAAI&apos;,/*System Admin API*/
+CASESAFEID($Profile.Id) != &apos;00e1a000000UoNcAAK&apos;,/*System Admin*/
+CASESAFEID($Profile.Id) != &apos;00e1a000000i8JHAAY&apos;,/*Samsara Finance*/
+CASESAFEID($Profile.Id) != &apos;00e4p000001FKPaAAO&apos;/*Samsara Finance Admin*/
+)</errorConditionFormula>
+    <errorDisplayField>VAT_Number__c</errorDisplayField>
+    <errorMessage>VAT Number can only be updated by Finance</errorMessage>
+</ValidationRule>

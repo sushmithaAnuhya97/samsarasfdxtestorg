@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Calls_Last_30_Days__c</fullName>
+    <description>(Needs to be adjusted every time you need to use this for reporting)
+Calculates the calls made in the last 30 days</description>
+    <label>Number of Calls Last 30 Days</label>
+    <summaryFilterItems>
+        <field>Call_Log__c.Account_Status_on_Call__c</field>
+        <operation>equals</operation>
+        <value>Before First Revenue Oppty</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Call_Log__c.CreatedDate</field>
+        <operation>greaterThan</operation>
+        <value>4/1/2018, 12:30 PM</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Call_Log__c.Contact__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

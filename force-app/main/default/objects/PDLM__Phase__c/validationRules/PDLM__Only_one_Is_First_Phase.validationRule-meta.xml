@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Only_one_Is_First_Phase</fullName>
+    <active>true</active>
+    <description>Only one phase may be marked as Is First Phase</description>
+    <errorConditionFormula>AND( NOT(PRIORVALUE( PDLM__Is_First_Phase__c )),
+PDLM__Is_First_Phase__c,
+PDLM__Lifecycle__r.PDLM__First_Phase_Count__c&gt;=1
+)</errorConditionFormula>
+    <errorDisplayField>PDLM__Is_First_Phase__c</errorDisplayField>
+    <errorMessage>Only one phase may be marked as Is First Phase</errorMessage>
+</ValidationRule>

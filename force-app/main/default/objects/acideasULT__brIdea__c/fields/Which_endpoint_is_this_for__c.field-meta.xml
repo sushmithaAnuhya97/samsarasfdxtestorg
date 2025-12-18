@@ -1,0 +1,1723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_endpoint_is_this_for__c</fullName>
+    <inlineHelpText>Select from all available APIs on samsara.com/api</inlineHelpText>
+    <label>Which endpoint is this for?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id/safety/score</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id/safety/score</label>
+            </value>
+            <value>
+                <fullName>POST v1/industrial/csv_imports</fullName>
+                <default>false</default>
+                <label>POST v1/industrial/csv_imports</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/machines/.machineId</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/machines/.machineId</label>
+            </value>
+            <value>
+                <fullName>GET me</fullName>
+                <default>false</default>
+                <label>GET me</label>
+            </value>
+            <value>
+                <fullName>GET fleet/safety-events/audit-logs/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/safety-events/audit-logs/feed</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment</label>
+            </value>
+            <value>
+                <fullName>GET fleet/document-types</fullName>
+                <default>false</default>
+                <label>GET fleet/document-types</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers/.driver_id</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers/.driver_id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/driver-vehicle-assignments</fullName>
+                <default>false</default>
+                <label>PATCH fleet/driver-vehicle-assignments</label>
+            </value>
+            <value>
+                <fullName>POST users</fullName>
+                <default>false</default>
+                <label>POST users</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/stats-expanded</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/stats-expanded</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/stats/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/stats/feed</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers/.driver_id/documents</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers/.driver_id/documents</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/maintenance/dvirs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/maintenance/dvirs</label>
+            </value>
+            <value>
+                <fullName>GET fleet/reports/ifta/vehicle</fullName>
+                <default>false</default>
+                <label>GET fleet/reports/ifta/vehicle</label>
+            </value>
+            <value>
+                <fullName>GET fleet/dvirs/history</fullName>
+                <default>false</default>
+                <label>GET fleet/dvirs/history</label>
+            </value>
+            <value>
+                <fullName>GET v1/user_roles</fullName>
+                <default>false</default>
+                <label>GET v1/user_roles</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/machines/.machineId/form</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/machines/.machineId/form</label>
+            </value>
+            <value>
+                <fullName>POST oem/gm/stats</fullName>
+                <default>false</default>
+                <label>POST oem/gm/stats</label>
+            </value>
+            <value>
+                <fullName>GET v1/users</fullName>
+                <default>false</default>
+                <label>GET v1/users</label>
+            </value>
+            <value>
+                <fullName>POST v1/admin/mobile/start_build</fullName>
+                <default>false</default>
+                <label>POST v1/admin/mobile/start_build</label>
+            </value>
+            <value>
+                <fullName>GET fleet/hos/clocks</fullName>
+                <default>false</default>
+                <label>GET fleet/hos/clocks</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/driver-assignments</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/driver-assignments</label>
+            </value>
+            <value>
+                <fullName>GET v1/versions</fullName>
+                <default>false</default>
+                <label>GET v1/versions</label>
+            </value>
+            <value>
+                <fullName>GET v1/sensors/cargo</fullName>
+                <default>false</default>
+                <label>GET v1/sensors/cargo</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/.vehicle_id</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/.vehicle_id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/documents</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/documents</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/locations</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/locations</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/hos/audit_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/hos/audit_logs</label>
+            </value>
+            <value>
+                <fullName>GET fleet/routes/.id</fullName>
+                <default>false</default>
+                <label>GET fleet/routes/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id/hos/audit_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id/hos/audit_logs</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id/log_edits</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id/log_edits</label>
+            </value>
+            <value>
+                <fullName>POST v1/machines/history</fullName>
+                <default>false</default>
+                <label>POST v1/machines/history</label>
+            </value>
+            <value>
+                <fullName>GET attributes</fullName>
+                <default>false</default>
+                <label>GET attributes</label>
+            </value>
+            <value>
+                <fullName>POST v1/industrial/mes/work_orders</fullName>
+                <default>false</default>
+                <label>POST v1/industrial/mes/work_orders</label>
+            </value>
+            <value>
+                <fullName>GET industrial/data-inputs/data-points/feed</fullName>
+                <default>false</default>
+                <label>GET industrial/data-inputs/data-points/feed</label>
+            </value>
+            <value>
+                <fullName>POST v1/finops/invoices/.netsuite_internal_id</fullName>
+                <default>false</default>
+                <label>POST v1/finops/invoices/.netsuite_internal_id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/hos/violations</fullName>
+                <default>false</default>
+                <label>GET fleet/hos/violations</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/users/.userId</fullName>
+                <default>false</default>
+                <label>DELETE v1/users/.userId</label>
+            </value>
+            <value>
+                <fullName>GET fleet/drivers</fullName>
+                <default>false</default>
+                <label>GET fleet/drivers</label>
+            </value>
+            <value>
+                <fullName>DELETE webhooks/.id</fullName>
+                <default>false</default>
+                <label>DELETE webhooks/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/.vehicle_id/safety/score</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/.vehicle_id/safety/score</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/stats</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/stats</label>
+            </value>
+            <value>
+                <fullName>GET users</fullName>
+                <default>false</default>
+                <label>GET users</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/inactive</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/inactive</label>
+            </value>
+            <value>
+                <fullName>GET v1/sensors/door</fullName>
+                <default>false</default>
+                <label>GET v1/sensors/door</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/mes/runs</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/mes/runs</label>
+            </value>
+            <value>
+                <fullName>GET v1/addresses</fullName>
+                <default>false</default>
+                <label>GET v1/addresses</label>
+            </value>
+            <value>
+                <fullName>GET v1/users/.userId</fullName>
+                <default>false</default>
+                <label>GET v1/users/.userId</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/machines</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/machines</label>
+            </value>
+            <value>
+                <fullName>DELETE attributes/.id</fullName>
+                <default>false</default>
+                <label>DELETE attributes/.id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/reefers/.id/thermoking-command/clear-alarms</fullName>
+                <default>false</default>
+                <label>PATCH fleet/reefers/.id/thermoking-command/clear-alarms</label>
+            </value>
+            <value>
+                <fullName>GET industrial/assets</fullName>
+                <default>false</default>
+                <label>GET industrial/assets</label>
+            </value>
+            <value>
+                <fullName>GET v1/tags/.tagId</fullName>
+                <default>false</default>
+                <label>GET v1/tags/.tagId</label>
+            </value>
+            <value>
+                <fullName>PUT v1/tags/.tagId</fullName>
+                <default>false</default>
+                <label>PUT v1/tags/.tagId</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/reefers/stats/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/reefers/stats/feed</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/dispatch/routes</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/dispatch/routes</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/reefers/stats</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/reefers/stats</label>
+            </value>
+            <value>
+                <fullName>GET fleet/routes</fullName>
+                <default>false</default>
+                <label>GET fleet/routes</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/routes/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/routes/.id</label>
+            </value>
+            <value>
+                <fullName>GET aemp/fleet/equipment/.id</fullName>
+                <default>false</default>
+                <label>GET aemp/fleet/equipment/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/finops/product_migration_region</fullName>
+                <default>false</default>
+                <label>GET v1/finops/product_migration_region</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/vehicles/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/vehicles/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/stats/history</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/stats/history</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/messages</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/messages</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers/.driver_id/hos/duty_status</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers/.driver_id/hos/duty_status</label>
+            </value>
+            <value>
+                <fullName>PATCH addresses/.id</fullName>
+                <default>false</default>
+                <label>PATCH addresses/.id</label>
+            </value>
+            <value>
+                <fullName>POST fleet/sensors/clones</fullName>
+                <default>false</default>
+                <label>POST fleet/sensors/clones</label>
+            </value>
+            <value>
+                <fullName>POST v1/graphql</fullName>
+                <default>false</default>
+                <label>POST v1/graphql</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/unassigned_driving_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/unassigned_driving_logs</label>
+            </value>
+            <value>
+                <fullName>PATCH metafleets/child-organizations/api-token</fullName>
+                <default>false</default>
+                <label>PATCH metafleets/child-organizations/api-token</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/dispatch/routes/.route_id</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/dispatch/routes/.route_id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/reports/vehicles/fuel-energy</fullName>
+                <default>false</default>
+                <label>GET fleet/reports/vehicles/fuel-energy</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/assets/.assetId/reefer</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/assets/.assetId/reefer</label>
+            </value>
+            <value>
+                <fullName>PATCH webhooks/.id</fullName>
+                <default>false</default>
+                <label>PATCH webhooks/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/vision/cameras</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/vision/cameras</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/tachograph-files/history</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/tachograph-files/history</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/mes/lines</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/mes/lines</label>
+            </value>
+            <value>
+                <fullName>GET fleet/safety-events</fullName>
+                <default>false</default>
+                <label>GET fleet/safety-events</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/inactive/.driver_id</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/inactive/.driver_id</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/industrial/mes/work_orders/.id</fullName>
+                <default>false</default>
+                <label>PATCH v1/industrial/mes/work_orders/.id</label>
+            </value>
+            <value>
+                <fullName>POST v1/sensors/cargo</fullName>
+                <default>false</default>
+                <label>POST v1/sensors/cargo</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/add_address</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/add_address</label>
+            </value>
+            <value>
+                <fullName>PATCH users/.id</fullName>
+                <default>false</default>
+                <label>PATCH users/.id</label>
+            </value>
+            <value>
+                <fullName>POST v1/sensors/humidity</fullName>
+                <default>false</default>
+                <label>POST v1/sensors/humidity</label>
+            </value>
+            <value>
+                <fullName>GET industrial/data-inputs/data-points/history</fullName>
+                <default>false</default>
+                <label>GET industrial/data-inputs/data-points/history</label>
+            </value>
+            <value>
+                <fullName>DELETE fleet/carrier-proposed-assignments/.id</fullName>
+                <default>false</default>
+                <label>DELETE fleet/carrier-proposed-assignments/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/carrier-proposed-assignments</fullName>
+                <default>false</default>
+                <label>GET fleet/carrier-proposed-assignments</label>
+            </value>
+            <value>
+                <fullName>POST v1/machines/list</fullName>
+                <default>false</default>
+                <label>POST v1/machines/list</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers/create</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers/create</label>
+            </value>
+            <value>
+                <fullName>PATCH contacts/.id</fullName>
+                <default>false</default>
+                <label>PATCH contacts/.id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/reefers/.id/thermoking-command/off</fullName>
+                <default>false</default>
+                <label>PATCH fleet/reefers/.id/thermoking-command/off</label>
+            </value>
+            <value>
+                <fullName>GET integrations/ctp/GetFleetCustomerData</fullName>
+                <default>false</default>
+                <label>GET integrations/ctp/GetFleetCustomerData</label>
+            </value>
+            <value>
+                <fullName>POST v1/growth/cables</fullName>
+                <default>false</default>
+                <label>POST v1/growth/cables</label>
+            </value>
+            <value>
+                <fullName>POST webhooks</fullName>
+                <default>false</default>
+                <label>POST webhooks</label>
+            </value>
+            <value>
+                <fullName>POST v1/contacts</fullName>
+                <default>false</default>
+                <label>POST v1/contacts</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers</label>
+            </value>
+            <value>
+                <fullName>GET v1/graphql</fullName>
+                <default>false</default>
+                <label>GET v1/graphql</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/vision/runs/.cameraId</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/vision/runs/.cameraId</label>
+            </value>
+            <value>
+                <fullName>GET fleet/trailers/stats/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/trailers/stats/feed</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/create</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/create</label>
+            </value>
+            <value>
+                <fullName>POST v1/finops/invoices</fullName>
+                <default>false</default>
+                <label>POST v1/finops/invoices</label>
+            </value>
+            <value>
+                <fullName>POST fleet/vehicles/.id/voice-alert</fullName>
+                <default>false</default>
+                <label>POST fleet/vehicles/.id/voice-alert</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id/hos_daily_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id/hos_daily_logs</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/fleet/drivers/.driver_id/hos_certified_daily_logs</fullName>
+                <default>false</default>
+                <label>PATCH v1/fleet/drivers/.driver_id/hos_certified_daily_logs</label>
+            </value>
+            <value>
+                <fullName>GET oem/navistar/customers</fullName>
+                <default>false</default>
+                <label>GET oem/navistar/customers</label>
+            </value>
+            <value>
+                <fullName>GET oem/navistar/vehicles/.orgId</fullName>
+                <default>false</default>
+                <label>GET oem/navistar/vehicles/.orgId</label>
+            </value>
+            <value>
+                <fullName>POST attributes</fullName>
+                <default>false</default>
+                <label>POST attributes</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/hos_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/hos_logs</label>
+            </value>
+            <value>
+                <fullName>PUT v1/fleet/drivers/inactive/.driver_id</fullName>
+                <default>false</default>
+                <label>PUT v1/fleet/drivers/inactive/.driver_id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/assets</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/assets</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/vehicles/.vehicle_id/dispatch/routes</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/vehicles/.vehicle_id/dispatch/routes</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/equipment/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/equipment/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/sensors/temperature</fullName>
+                <default>false</default>
+                <label>GET v1/sensors/temperature</label>
+            </value>
+            <value>
+                <fullName>DELETE contacts/.id</fullName>
+                <default>false</default>
+                <label>DELETE contacts/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/hos/log_edits</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/hos/log_edits</label>
+            </value>
+            <value>
+                <fullName>POST v1/finops/rma</fullName>
+                <default>false</default>
+                <label>POST v1/finops/rma</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/vision/cameras/.cameraId/programs</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/vision/cameras/.cameraId/programs</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/vision/runs/.cameraId/.programId/.startedAtMs</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/vision/runs/.cameraId/.programId/.startedAtMs</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/maintenance/list</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/maintenance/list</label>
+            </value>
+            <value>
+                <fullName>GET ifta-detail/csv/.id</fullName>
+                <default>false</default>
+                <label>GET ifta-detail/csv/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/.vehicle_id/locations</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/.vehicle_id/locations</label>
+            </value>
+            <value>
+                <fullName>POST fleet/trailers</fullName>
+                <default>false</default>
+                <label>POST fleet/trailers</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/mes/work_orders/.id</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/mes/work_orders/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/hos/drivers/eld-events</fullName>
+                <default>false</default>
+                <label>GET fleet/hos/drivers/eld-events</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/drivers/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/drivers/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/hos/logs</fullName>
+                <default>false</default>
+                <label>GET fleet/hos/logs</label>
+            </value>
+            <value>
+                <fullName>POST oem/navistar/vehicles/.orgId</fullName>
+                <default>false</default>
+                <label>POST oem/navistar/vehicles/.orgId</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/fleet/drivers/.driver_id/hos_daily_logs</fullName>
+                <default>false</default>
+                <label>PATCH v1/fleet/drivers/.driver_id/hos_daily_logs</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/addresses/.address_id</fullName>
+                <default>false</default>
+                <label>PATCH v1/addresses/.address_id</label>
+            </value>
+            <value>
+                <fullName>PATCH industrial/assets/.id</fullName>
+                <default>false</default>
+                <label>PATCH industrial/assets/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/document_types</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/document_types</label>
+            </value>
+            <value>
+                <fullName>GET webhooks</fullName>
+                <default>false</default>
+                <label>GET webhooks</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment/locations</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment/locations</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/fleet/drivers/create</fullName>
+                <default>false</default>
+                <label>PATCH v1/fleet/drivers/create</label>
+            </value>
+            <value>
+                <fullName>POST v1/industrial/machines/.machineId/forms</fullName>
+                <default>false</default>
+                <label>POST v1/industrial/machines/.machineId/forms</label>
+            </value>
+            <value>
+                <fullName>DELETE industrial/assets/.id</fullName>
+                <default>false</default>
+                <label>DELETE industrial/assets/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/data</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/data</label>
+            </value>
+            <value>
+                <fullName>GET fleet/drivers/tachograph-activity/history</fullName>
+                <default>false</default>
+                <label>GET fleet/drivers/tachograph-activity/history</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/.vehicle_id/safety/harsh_event</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/.vehicle_id/safety/harsh_event</label>
+            </value>
+            <value>
+                <fullName>POST metafleets/child-organizations</fullName>
+                <default>false</default>
+                <label>POST metafleets/child-organizations</label>
+            </value>
+            <value>
+                <fullName>POST fleet/documents/pdfs</fullName>
+                <default>false</default>
+                <label>POST fleet/documents/pdfs</label>
+            </value>
+            <value>
+                <fullName>POST messages</fullName>
+                <default>false</default>
+                <label>POST messages</label>
+            </value>
+            <value>
+                <fullName>GET fleet/documents</fullName>
+                <default>false</default>
+                <label>GET fleet/documents</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/list</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/list</label>
+            </value>
+            <value>
+                <fullName>GET fleet/trailers/stats/history</fullName>
+                <default>false</default>
+                <label>GET fleet/trailers/stats/history</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/reefers/stats/history</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/reefers/stats/history</label>
+            </value>
+            <value>
+                <fullName>POST tags</fullName>
+                <default>false</default>
+                <label>POST tags</label>
+            </value>
+            <value>
+                <fullName>GET v1/contacts/.contact_id</fullName>
+                <default>false</default>
+                <label>GET v1/contacts/.contact_id</label>
+            </value>
+            <value>
+                <fullName>PUT v1/fleet/dispatch/routes/.route_id</fullName>
+                <default>false</default>
+                <label>PUT v1/fleet/dispatch/routes/.route_id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/unassigned_driving_segments/.segment_id</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/unassigned_driving_segments/.segment_id</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers/.driver_id/dispatch/routes</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers/.driver_id/dispatch/routes</label>
+            </value>
+            <value>
+                <fullName>DELETE fleet/vehicles/clones/.id</fullName>
+                <default>false</default>
+                <label>DELETE fleet/vehicles/clones/.id</label>
+            </value>
+            <value>
+                <fullName>PUT tags/.id</fullName>
+                <default>false</default>
+                <label>PUT tags/.id</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/finops/invoices/.netsuite_internal_id</fullName>
+                <default>false</default>
+                <label>DELETE v1/finops/invoices/.netsuite_internal_id</label>
+            </value>
+            <value>
+                <fullName>GET webhooks/.id</fullName>
+                <default>false</default>
+                <label>GET webhooks/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/contacts</fullName>
+                <default>false</default>
+                <label>GET v1/contacts</label>
+            </value>
+            <value>
+                <fullName>POST v1/tags</fullName>
+                <default>false</default>
+                <label>POST v1/tags</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/reefers/.id/thermoking-command/initiate-pretrip</fullName>
+                <default>false</default>
+                <label>PATCH fleet/reefers/.id/thermoking-command/initiate-pretrip</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/mes/work_orders</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/mes/work_orders</label>
+            </value>
+            <value>
+                <fullName>POST v1/finops/rma/.order_number</fullName>
+                <default>false</default>
+                <label>POST v1/finops/rma/.order_number</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id/documents/.document_id</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id/documents/.document_id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/reefers/.id/thermoking-command/update-set-point</fullName>
+                <default>false</default>
+                <label>PATCH fleet/reefers/.id/thermoking-command/update-set-point</label>
+            </value>
+            <value>
+                <fullName>PUT v1/finops/customer_offboarding</fullName>
+                <default>false</default>
+                <label>PUT v1/finops/customer_offboarding</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/vehicles/clones/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/vehicles/clones/.id</label>
+            </value>
+            <value>
+                <fullName>POST fleet/carrier-proposed-assignments</fullName>
+                <default>false</default>
+                <label>POST fleet/carrier-proposed-assignments</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/dispatch/routes/.route_id/history</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/dispatch/routes/.route_id/history</label>
+            </value>
+            <value>
+                <fullName>GET attributes/.id</fullName>
+                <default>false</default>
+                <label>GET attributes/.id</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/tags/.tagId</fullName>
+                <default>false</default>
+                <label>DELETE v1/tags/.tagId</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/cameras/media/history</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/cameras/media/history</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers/.driver_id/hos_daily_logs</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers/.driver_id/hos_daily_logs</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/trips</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/trips</label>
+            </value>
+            <value>
+                <fullName>GET fleet/drivers/tachograph-files/history</fullName>
+                <default>false</default>
+                <label>GET fleet/drivers/tachograph-files/history</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/locations/history</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/locations/history</label>
+            </value>
+            <value>
+                <fullName>GET versions/me</fullName>
+                <default>false</default>
+                <label>GET versions/me</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/assets/locations</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/assets/locations</label>
+            </value>
+            <value>
+                <fullName>PATCH industrial/jobs</fullName>
+                <default>false</default>
+                <label>PATCH industrial/jobs</label>
+            </value>
+            <value>
+                <fullName>GET fleet/sensors/clones</fullName>
+                <default>false</default>
+                <label>GET fleet/sensors/clones</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/vehicles/.id/immobilizer</fullName>
+                <default>false</default>
+                <label>PATCH fleet/vehicles/.id/immobilizer</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment/locations/history</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment/locations/history</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id/dispatch/routes</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id/dispatch/routes</label>
+            </value>
+            <value>
+                <fullName>POST v1/addresses</fullName>
+                <default>false</default>
+                <label>POST v1/addresses</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/mes/recipes</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/mes/recipes</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/users/.userId</fullName>
+                <default>false</default>
+                <label>PATCH v1/users/.userId</label>
+            </value>
+            <value>
+                <fullName>DELETE industrial/jobs</fullName>
+                <default>false</default>
+                <label>DELETE industrial/jobs</label>
+            </value>
+            <value>
+                <fullName>GET v1/sensors/humidity</fullName>
+                <default>false</default>
+                <label>GET v1/sensors/humidity</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment/stats/history</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment/stats/history</label>
+            </value>
+            <value>
+                <fullName>GET addresses/.id</fullName>
+                <default>false</default>
+                <label>GET addresses/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/defects/history</fullName>
+                <default>false</default>
+                <label>GET fleet/defects/history</label>
+            </value>
+            <value>
+                <fullName>DELETE gateways/.id</fullName>
+                <default>false</default>
+                <label>DELETE gateways/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/locations</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/locations</label>
+            </value>
+            <value>
+                <fullName>PATCH attributes/.id</fullName>
+                <default>false</default>
+                <label>PATCH attributes/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/assets/reefers</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/assets/reefers</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/vision/run/camera/.cameraId</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/vision/run/camera/.cameraId</label>
+            </value>
+            <value>
+                <fullName>POST v1/admin/mobile/finish_troy_build</fullName>
+                <default>false</default>
+                <label>POST v1/admin/mobile/finish_troy_build</label>
+            </value>
+            <value>
+                <fullName>GET fleet/routes/audit-logs/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/routes/audit-logs/feed</label>
+            </value>
+            <value>
+                <fullName>GET fleet/trailers/stats</fullName>
+                <default>false</default>
+                <label>GET fleet/trailers/stats</label>
+            </value>
+            <value>
+                <fullName>GET fleet/driver-vehicle-assignments</fullName>
+                <default>false</default>
+                <label>GET fleet/driver-vehicle-assignments</label>
+            </value>
+            <value>
+                <fullName>POST v1/sensors/temperature</fullName>
+                <default>false</default>
+                <label>POST v1/sensors/temperature</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/messages</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/messages</label>
+            </value>
+            <value>
+                <fullName>POST addresses</fullName>
+                <default>false</default>
+                <label>POST addresses</label>
+            </value>
+            <value>
+                <fullName>GET address-events/history</fullName>
+                <default>false</default>
+                <label>GET address-events/history</label>
+            </value>
+            <value>
+                <fullName>GET fleet/settings/safety</fullName>
+                <default>false</default>
+                <label>GET fleet/settings/safety</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/.id</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/.id</label>
+            </value>
+            <value>
+                <fullName>POST fleet/drivers</fullName>
+                <default>false</default>
+                <label>POST fleet/drivers</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/fleet/drivers/create</fullName>
+                <default>false</default>
+                <label>DELETE v1/fleet/drivers/create</label>
+            </value>
+            <value>
+                <fullName>GET industrial/data-inputs/data-points</fullName>
+                <default>false</default>
+                <label>GET industrial/data-inputs/data-points</label>
+            </value>
+            <value>
+                <fullName>GET user-roles</fullName>
+                <default>false</default>
+                <label>GET user-roles</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/finops/rma</fullName>
+                <default>false</default>
+                <label>DELETE v1/finops/rma</label>
+            </value>
+            <value>
+                <fullName>POST oem/navistar/vehiclereports</fullName>
+                <default>false</default>
+                <label>POST oem/navistar/vehiclereports</label>
+            </value>
+            <value>
+                <fullName>GET fleet/reports/vehicle/idling</fullName>
+                <default>false</default>
+                <label>GET fleet/reports/vehicle/idling</label>
+            </value>
+            <value>
+                <fullName>DELETE fleet/routes/.id</fullName>
+                <default>false</default>
+                <label>DELETE fleet/routes/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/hos_authentication_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/hos_authentication_logs</label>
+            </value>
+            <value>
+                <fullName>GET contacts</fullName>
+                <default>false</default>
+                <label>GET contacts</label>
+            </value>
+            <value>
+                <fullName>POST fleet/documents</fullName>
+                <default>false</default>
+                <label>POST fleet/documents</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/assets/.assetId/locations</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/assets/.assetId/locations</label>
+            </value>
+            <value>
+                <fullName>GET gateways</fullName>
+                <default>false</default>
+                <label>GET gateways</label>
+            </value>
+            <value>
+                <fullName>POST fleet/driver-vehicle-assignments</fullName>
+                <default>false</default>
+                <label>POST fleet/driver-vehicle-assignments</label>
+            </value>
+            <value>
+                <fullName>GET tags</fullName>
+                <default>false</default>
+                <label>GET tags</label>
+            </value>
+            <value>
+                <fullName>DELETE fleet/trailers/.id</fullName>
+                <default>false</default>
+                <label>DELETE fleet/trailers/.id</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/set_data</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/set_data</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/fleet/drivers/.driver_id</fullName>
+                <default>false</default>
+                <label>PATCH v1/fleet/drivers/.driver_id</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/drivers/summary</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/drivers/summary</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/machines/.machineId/forms</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/machines/.machineId/forms</label>
+            </value>
+            <value>
+                <fullName>PUT v1/finops/payment_info_updated_at/.sam_number</fullName>
+                <default>false</default>
+                <label>PUT v1/finops/payment_info_updated_at/.sam_number</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/.driver_id/hos_certified_daily_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/.driver_id/hos_certified_daily_logs</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/.vehicle_id/unassigned_driving_logs</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/.vehicle_id/unassigned_driving_logs</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/vision/run/camera/.cameraId/program/.programId</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/vision/run/camera/.cameraId/program/.programId</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/stats-combined/history</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/stats-combined/history</label>
+            </value>
+            <value>
+                <fullName>GET fleet/settings/driver-app</fullName>
+                <default>false</default>
+                <label>GET fleet/settings/driver-app</label>
+            </value>
+            <value>
+                <fullName>GET tags/.id</fullName>
+                <default>false</default>
+                <label>GET tags/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/reports/ifta/jurisdiction</fullName>
+                <default>false</default>
+                <label>GET fleet/reports/ifta/jurisdiction</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/trailers/.trailerId/assignments</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/trailers/.trailerId/assignments</label>
+            </value>
+            <value>
+                <fullName>GET fleet/drivers/efficiency</fullName>
+                <default>false</default>
+                <label>GET fleet/drivers/efficiency</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/.vehicle_id/dispatch/routes</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/.vehicle_id/dispatch/routes</label>
+            </value>
+            <value>
+                <fullName>GET fleet/drivers/vehicle-assignments</fullName>
+                <default>false</default>
+                <label>GET fleet/drivers/vehicle-assignments</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/sled-stats/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/sled-stats/feed</label>
+            </value>
+            <value>
+                <fullName>POST oem/navistar/customers</fullName>
+                <default>false</default>
+                <label>POST oem/navistar/customers</label>
+            </value>
+            <value>
+                <fullName>POST fleet/vehicles/clones</fullName>
+                <default>false</default>
+                <label>POST fleet/vehicles/clones</label>
+            </value>
+            <value>
+                <fullName>GET fleet/hos/daily-logs</fullName>
+                <default>false</default>
+                <label>GET fleet/hos/daily-logs</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/trips</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/trips</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment/locations/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment/locations/feed</label>
+            </value>
+            <value>
+                <fullName>GET contacts/.id</fullName>
+                <default>false</default>
+                <label>GET contacts/.id</label>
+            </value>
+            <value>
+                <fullName>POST gateways</fullName>
+                <default>false</default>
+                <label>POST gateways</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/vision/runs</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/vision/runs</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/fleet/unassigned_driving_segments/.segment_id</fullName>
+                <default>false</default>
+                <label>PATCH v1/fleet/unassigned_driving_segments/.segment_id</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/fleet/dispatch/routes/.route_id</fullName>
+                <default>false</default>
+                <label>DELETE v1/fleet/dispatch/routes/.route_id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/reefers/.id/thermoking-command/on</fullName>
+                <default>false</default>
+                <label>PATCH fleet/reefers/.id/thermoking-command/on</label>
+            </value>
+            <value>
+                <fullName>POST v1/users</fullName>
+                <default>false</default>
+                <label>POST v1/users</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/locations</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/locations</label>
+            </value>
+            <value>
+                <fullName>GET v1/tags</fullName>
+                <default>false</default>
+                <label>GET v1/tags</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/reefers/.id/thermoking-command/update-run-mode</fullName>
+                <default>false</default>
+                <label>PATCH fleet/reefers/.id/thermoking-command/update-run-mode</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/maintenance/list</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/maintenance/list</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment/stats/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment/stats/feed</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/unassigned_driving_segments</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/unassigned_driving_segments</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/maintenance/dvirs</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/maintenance/dvirs</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/locations</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/locations</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/hos_logs_summary</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/hos_logs_summary</label>
+            </value>
+            <value>
+                <fullName>POST v1/finops/migrate_products_eu</fullName>
+                <default>false</default>
+                <label>POST v1/finops/migrate_products_eu</label>
+            </value>
+            <value>
+                <fullName>POST v1/industrial/machines/.machineId/form</fullName>
+                <default>false</default>
+                <label>POST v1/industrial/machines/.machineId/form</label>
+            </value>
+            <value>
+                <fullName>GET fleet/trailers</fullName>
+                <default>false</default>
+                <label>GET fleet/trailers</label>
+            </value>
+            <value>
+                <fullName>GET oem/navistar/vehiclereports</fullName>
+                <default>false</default>
+                <label>GET oem/navistar/vehiclereports</label>
+            </value>
+            <value>
+                <fullName>GET fleet/reports/drivers/fuel-energy</fullName>
+                <default>false</default>
+                <label>GET fleet/reports/drivers/fuel-energy</label>
+            </value>
+            <value>
+                <fullName>GET fleet/documents/.id</fullName>
+                <default>false</default>
+                <label>GET fleet/documents/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles</label>
+            </value>
+            <value>
+                <fullName>GET workflows/incidents/feed</fullName>
+                <default>false</default>
+                <label>GET workflows/incidents/feed</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/addresses/.address_id</fullName>
+                <default>false</default>
+                <label>DELETE v1/addresses/.address_id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/settings/compliance</fullName>
+                <default>false</default>
+                <label>PATCH fleet/settings/compliance</label>
+            </value>
+            <value>
+                <fullName>DELETE tags/.id</fullName>
+                <default>false</default>
+                <label>DELETE tags/.id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/sensors/clones/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/sensors/clones/.id</label>
+            </value>
+            <value>
+                <fullName>POST v1/sensors/list</fullName>
+                <default>false</default>
+                <label>POST v1/sensors/list</label>
+            </value>
+            <value>
+                <fullName>POST twilio-callback/sms</fullName>
+                <default>false</default>
+                <label>POST twilio-callback/sms</label>
+            </value>
+            <value>
+                <fullName>POST v1/sensors/door</fullName>
+                <default>false</default>
+                <label>POST v1/sensors/door</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/vehicles/stats</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/vehicles/stats</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/data/.dataInputId</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/data/.dataInputId</label>
+            </value>
+            <value>
+                <fullName>POST v1/sensors/history</fullName>
+                <default>false</default>
+                <label>POST v1/sensors/history</label>
+            </value>
+            <value>
+                <fullName>GET v1/sensors/list</fullName>
+                <default>false</default>
+                <label>GET v1/sensors/list</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/trailers/assignments</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/trailers/assignments</label>
+            </value>
+            <value>
+                <fullName>GET fleet/hos/diagnostic-and-malfunction-events</fullName>
+                <default>false</default>
+                <label>GET fleet/hos/diagnostic-and-malfunction-events</label>
+            </value>
+            <value>
+                <fullName>GET fleet/documents/pdfs/.id</fullName>
+                <default>false</default>
+                <label>GET fleet/documents/pdfs/.id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/dvirs/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/dvirs/.id</label>
+            </value>
+            <value>
+                <fullName>GET industrial/jobs</fullName>
+                <default>false</default>
+                <label>GET industrial/jobs</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/finops/invoices</fullName>
+                <default>false</default>
+                <label>DELETE v1/finops/invoices</label>
+            </value>
+            <value>
+                <fullName>GET aemp/Fleet/.pageNumber</fullName>
+                <default>false</default>
+                <label>GET aemp/Fleet/.pageNumber</label>
+            </value>
+            <value>
+                <fullName>GET addresses</fullName>
+                <default>false</default>
+                <label>GET addresses</label>
+            </value>
+            <value>
+                <fullName>GET fleet/colocation-summaries</fullName>
+                <default>false</default>
+                <label>GET fleet/colocation-summaries</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/contacts/.contact_id</fullName>
+                <default>false</default>
+                <label>PATCH v1/contacts/.contact_id</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/dispatch/routes/job_updates</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/dispatch/routes/job_updates</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/locations/feed</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/locations/feed</label>
+            </value>
+            <value>
+                <fullName>GET v1/versions/me</fullName>
+                <default>false</default>
+                <label>GET v1/versions/me</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/hos_logs_summary</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/hos_logs_summary</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/hos_authentication_logs</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/hos_authentication_logs</label>
+            </value>
+            <value>
+                <fullName>GET fleet/trailers/.id</fullName>
+                <default>false</default>
+                <label>GET fleet/trailers/.id</label>
+            </value>
+            <value>
+                <fullName>POST fleet/routes</fullName>
+                <default>false</default>
+                <label>POST fleet/routes</label>
+            </value>
+            <value>
+                <fullName>PATCH tags/.id</fullName>
+                <default>false</default>
+                <label>PATCH tags/.id</label>
+            </value>
+            <value>
+                <fullName>POST twilio-callback/whatsapp</fullName>
+                <default>false</default>
+                <label>POST twilio-callback/whatsapp</label>
+            </value>
+            <value>
+                <fullName>POST v1/finops/orders/create</fullName>
+                <default>false</default>
+                <label>POST v1/finops/orders/create</label>
+            </value>
+            <value>
+                <fullName>GET v1/industrial/mes/runs/line/.line_id</fullName>
+                <default>false</default>
+                <label>GET v1/industrial/mes/runs/line/.line_id</label>
+            </value>
+            <value>
+                <fullName>DELETE fleet/documents/.id</fullName>
+                <default>false</default>
+                <label>DELETE fleet/documents/.id</label>
+            </value>
+            <value>
+                <fullName>GET industrial/data-inputs</fullName>
+                <default>false</default>
+                <label>GET industrial/data-inputs</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/contacts/.contact_id</fullName>
+                <default>false</default>
+                <label>DELETE v1/contacts/.contact_id</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/tags/.tagId</fullName>
+                <default>false</default>
+                <label>PATCH v1/tags/.tagId</label>
+            </value>
+            <value>
+                <fullName>GET v1/fleet/drivers/summary</fullName>
+                <default>false</default>
+                <label>GET v1/fleet/drivers/summary</label>
+            </value>
+            <value>
+                <fullName>DELETE fleet/sensors/clones/.id</fullName>
+                <default>false</default>
+                <label>DELETE fleet/sensors/clones/.id</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/fleet/drivers/.driver_id</fullName>
+                <default>false</default>
+                <label>DELETE v1/fleet/drivers/.driver_id</label>
+            </value>
+            <value>
+                <fullName>POST ifta-detail/csv</fullName>
+                <default>false</default>
+                <label>POST ifta-detail/csv</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment/stats</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment/stats</label>
+            </value>
+            <value>
+                <fullName>PATCH v1/fleet/vehicles/.vehicle_id</fullName>
+                <default>false</default>
+                <label>PATCH v1/fleet/vehicles/.vehicle_id</label>
+            </value>
+            <value>
+                <fullName>GET metafleets/child-organizations</fullName>
+                <default>false</default>
+                <label>GET metafleets/child-organizations</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/list</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/list</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/fleet/drivers/.driver_id/documents/.document_id</fullName>
+                <default>false</default>
+                <label>DELETE v1/fleet/drivers/.driver_id/documents/.document_id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/settings/compliance</fullName>
+                <default>false</default>
+                <label>GET fleet/settings/compliance</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/defects/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/defects/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/addresses/.address_id</fullName>
+                <default>false</default>
+                <label>GET v1/addresses/.address_id</label>
+            </value>
+            <value>
+                <fullName>POST industrial/assets</fullName>
+                <default>false</default>
+                <label>POST industrial/assets</label>
+            </value>
+            <value>
+                <fullName>POST v1/finops/license_type_products</fullName>
+                <default>false</default>
+                <label>POST v1/finops/license_type_products</label>
+            </value>
+            <value>
+                <fullName>PATCH industrial/assets/.id/data-outputs</fullName>
+                <default>false</default>
+                <label>PATCH industrial/assets/.id/data-outputs</label>
+            </value>
+            <value>
+                <fullName>GET fleet/equipment/.equipmentId</fullName>
+                <default>false</default>
+                <label>GET fleet/equipment/.equipmentId</label>
+            </value>
+            <value>
+                <fullName>POST contacts</fullName>
+                <default>false</default>
+                <label>POST contacts</label>
+            </value>
+            <value>
+                <fullName>POST fleet/dvirs</fullName>
+                <default>false</default>
+                <label>POST fleet/dvirs</label>
+            </value>
+            <value>
+                <fullName>DELETE addresses/.id</fullName>
+                <default>false</default>
+                <label>DELETE addresses/.id</label>
+            </value>
+            <value>
+                <fullName>POST industrial/jobs</fullName>
+                <default>false</default>
+                <label>POST industrial/jobs</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/industrial/mes/work_orders/.id</fullName>
+                <default>false</default>
+                <label>DELETE v1/industrial/mes/work_orders/.id</label>
+            </value>
+            <value>
+                <fullName>GET workflows/incidents/history</fullName>
+                <default>false</default>
+                <label>GET workflows/incidents/history</label>
+            </value>
+            <value>
+                <fullName>GET users/.id</fullName>
+                <default>false</default>
+                <label>GET users/.id</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/reefers/.id/thermoking-command/defrost</fullName>
+                <default>false</default>
+                <label>PATCH fleet/reefers/.id/thermoking-command/defrost</label>
+            </value>
+            <value>
+                <fullName>GET fleet/drivers/.id</fullName>
+                <default>false</default>
+                <label>GET fleet/drivers/.id</label>
+            </value>
+            <value>
+                <fullName>GET fleet/vehicles/clones</fullName>
+                <default>false</default>
+                <label>GET fleet/vehicles/clones</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/trailers/.id</fullName>
+                <default>false</default>
+                <label>PATCH fleet/trailers/.id</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/hos_logs</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/hos_logs</label>
+            </value>
+            <value>
+                <fullName>POST v1/fleet/dispatch/routes</fullName>
+                <default>false</default>
+                <label>POST v1/fleet/dispatch/routes</label>
+            </value>
+            <value>
+                <fullName>PATCH fleet/settings/driver-app</fullName>
+                <default>false</default>
+                <label>PATCH fleet/settings/driver-app</label>
+            </value>
+            <value>
+                <fullName>DELETE fleet/driver-vehicle-assignments</fullName>
+                <default>false</default>
+                <label>DELETE fleet/driver-vehicle-assignments</label>
+            </value>
+            <value>
+                <fullName>DELETE users/.id</fullName>
+                <default>false</default>
+                <label>DELETE users/.id</label>
+            </value>
+            <value>
+                <fullName>GET v1/finops/orders/.order_number/show</fullName>
+                <default>false</default>
+                <label>GET v1/finops/orders/.order_number/show</label>
+            </value>
+            <value>
+                <fullName>DELETE v1/finops/rma/.order_number</fullName>
+                <default>false</default>
+                <label>DELETE v1/finops/rma/.order_number</label>
+            </value>
+            <value>
+                <fullName>Endpoint not in this List</fullName>
+                <default>false</default>
+                <label>Endpoint not in this List</label>
+            </value>
+            <value>
+                <fullName>N/A -- Feature Request for Webhooks</fullName>
+                <default>false</default>
+                <label>N/A -- Feature Request for Webhooks</label>
+            </value>
+            <value>
+                <fullName>Location</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Location</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

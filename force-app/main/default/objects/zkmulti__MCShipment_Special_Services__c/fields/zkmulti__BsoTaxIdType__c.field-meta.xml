@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__BsoTaxIdType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>BSO Tax ID Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EIN</fullName>
+                <default>false</default>
+                <label>EIN</label>
+            </value>
+            <value>
+                <fullName>Business National</fullName>
+                <default>false</default>
+                <label>Business National</label>
+            </value>
+            <value>
+                <fullName>Business State</fullName>
+                <default>false</default>
+                <label>Business State</label>
+            </value>
+            <value>
+                <fullName>Business Union</fullName>
+                <default>false</default>
+                <label>Business Union</label>
+            </value>
+            <value>
+                <fullName>Personal National</fullName>
+                <default>false</default>
+                <label>Personal National</label>
+            </value>
+            <value>
+                <fullName>Personal State</fullName>
+                <default>false</default>
+                <label>Personal State</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Third_Party_Application__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Third Party Application for which transformation needs to be created in Integration Hub Connector.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Third Party Application for which transformation needs to be created in Integration Hub Connector.</inlineHelpText>
+    <label>Third Party Application</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Concur</fullName>
+                <default>false</default>
+                <label>Concur</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delinquency_Subreason__c</fullName>
+    <label>Return / Delinquency Subreason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Delinquency_Reason__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Change in decision maker/ownership</fullName>
+                <default>false</default>
+                <label>Change in decision maker/ownership</label>
+            </value>
+            <value>
+                <fullName>Contract length</fullName>
+                <default>false</default>
+                <label>Contract length</label>
+            </value>
+            <value>
+                <fullName>COVID-19 Impact</fullName>
+                <default>false</default>
+                <label>COVID-19 Impact</label>
+            </value>
+            <value>
+                <fullName>Customer no longer likes pricing</fullName>
+                <default>false</default>
+                <label>Customer no longer likes pricing</label>
+            </value>
+            <value>
+                <fullName>Customer treated 30 day period as a trial</fullName>
+                <default>false</default>
+                <label>Customer treated 30 day period as a trial</label>
+            </value>
+            <value>
+                <fullName>Customer wanted features that do not exist yet</fullName>
+                <default>false</default>
+                <label>Customer wanted features that do not exist yet</label>
+            </value>
+            <value>
+                <fullName>Customer was unsatisfied with onboarding process</fullName>
+                <default>false</default>
+                <label>Customer was unsatisfied with onboarding process</label>
+            </value>
+            <value>
+                <fullName>Customer was unsatisfied with response time</fullName>
+                <default>false</default>
+                <label>Customer was unsatisfied with response time</label>
+            </value>
+            <value>
+                <fullName>Customer was unsatisfied with warranty terms</fullName>
+                <default>false</default>
+                <label>Customer was unsatisfied with warranty terms</label>
+            </value>
+            <value>
+                <fullName>Customer went with another vendor</fullName>
+                <default>false</default>
+                <label>Customer went with another vendor</label>
+            </value>
+            <value>
+                <fullName>Downsizing / Partial Return</fullName>
+                <default>false</default>
+                <label>Downsizing / Partial Return</label>
+            </value>
+            <value>
+                <fullName>Early Termination of Full Contract</fullName>
+                <default>false</default>
+                <label>Early Termination of Full Contract</label>
+            </value>
+            <value>
+                <fullName>Exchanging product / not a real return</fullName>
+                <default>false</default>
+                <label>Exchanging product / not a real return</label>
+            </value>
+            <value>
+                <fullName>Hardware failed in some manner</fullName>
+                <default>false</default>
+                <label>Hardware failed in some manner</label>
+            </value>
+            <value>
+                <fullName>Installation complexity</fullName>
+                <default>false</default>
+                <label>Installation complexity</label>
+            </value>
+            <value>
+                <fullName>Lack of financing / denied financing</fullName>
+                <default>false</default>
+                <label>Lack of financing / denied financing</label>
+            </value>
+            <value>
+                <fullName>Other (Please explain in notes)</fullName>
+                <default>false</default>
+                <label>Other (Please explain in notes)</label>
+            </value>
+            <value>
+                <fullName>Product did not meet customer&apos;s expectations</fullName>
+                <default>false</default>
+                <label>Product did not meet customer&apos;s expectations</label>
+            </value>
+            <value>
+                <fullName>Product is incompatiable with company&apos;s fleet</fullName>
+                <default>false</default>
+                <label>Product is incompatiable with company&apos;s fleet</label>
+            </value>
+            <value>
+                <fullName>Sales Rep misrepresented the product</fullName>
+                <default>false</default>
+                <label>Sales Rep misrepresented the product</label>
+            </value>
+            <value>
+                <fullName>Software underperformed.</fullName>
+                <default>false</default>
+                <label>Software underperformed.</label>
+            </value>
+            <value>
+                <fullName>Unable to cancel previous contract with another vendor</fullName>
+                <default>false</default>
+                <label>Unable to cancel previous contract with another vendor</label>
+            </value>
+            <value>
+                <fullName>Customer Reached, Became Unresponsive</fullName>
+                <default>false</default>
+                <label>Customer Reached, Became Unresponsive</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Credit Card Requires Update</fullName>
+                <default>false</default>
+                <label>Credit card requires update</label>
+            </value>
+            <value>
+                <fullName>Contesting payment</fullName>
+                <default>false</default>
+                <label>Contesting payment</label>
+            </value>
+            <value>
+                <fullName>Retry Original Payment Method</fullName>
+                <default>false</default>
+                <label>Retry Original Payment Method</label>
+            </value>
+            <value>
+                <fullName>Contract Terms Dispute</fullName>
+                <default>false</default>
+                <label>Contract Terms Dispute</label>
+            </value>
+            <value>
+                <fullName>Customer requested reprocessing</fullName>
+                <default>false</default>
+                <label>Customer requested reprocessing</label>
+            </value>
+            <value>
+                <fullName>Invoice Request</fullName>
+                <default>false</default>
+                <label>Invoice Request</label>
+            </value>
+            <value>
+                <fullName>Customer went with a different vendor</fullName>
+                <default>false</default>
+                <label>Customer went with a different vendor</label>
+            </value>
+            <value>
+                <fullName>Incorrect products sent out</fullName>
+                <default>false</default>
+                <label>Incorrect products sent out</label>
+            </value>
+            <value>
+                <fullName>Contract renewed after 30-day window</fullName>
+                <default>false</default>
+                <label>Contract renewed after 30-day window</label>
+            </value>
+            <value>
+                <fullName>Not eligible for a payment plan</fullName>
+                <default>false</default>
+                <label>Not eligible for a payment plan</label>
+            </value>
+            <value>
+                <fullName>Unable to make full payment</fullName>
+                <default>false</default>
+                <label>Unable to make full payment</label>
+            </value>
+            <value>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+                <label>Voicemail</label>
+            </value>
+            <value>
+                <fullName>Left message with other</fullName>
+                <default>false</default>
+                <label>Left message with other</label>
+            </value>
+            <value>
+                <fullName>Explanation in Notes</fullName>
+                <default>false</default>
+                <label>Explanation in Notes</label>
+            </value>
+            <value>
+                <fullName>Unable to Reach Customer</fullName>
+                <default>false</default>
+                <label>Unable to Reach Customer</label>
+            </value>
+            <value>
+                <fullName>Business Closure</fullName>
+                <default>false</default>
+                <label>Business Closure</label>
+            </value>
+            <value>
+                <fullName>Downsizing/Partial Return</fullName>
+                <default>false</default>
+                <label>Downsizing/Partial Return</label>
+            </value>
+            <value>
+                <fullName>Change in decision maker</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Change in decision maker</label>
+            </value>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unresponsive</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Customer was unsatisfied with onboarding process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Customer was unsatisfied with response time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Service</controllingFieldValue>
+            <valueName>Customer was unsatisfied with warranty terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Bankruptcy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Change in decision maker/ownership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>COVID-19 Impact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Downsizing / Partial Return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Early Termination of Full Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Lack of financing / denied financing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Contract renewed after 30-day window</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Not eligible for a payment plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Unable to make full payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Business Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Reasons</controllingFieldValue>
+            <valueName>Downsizing/Partial Return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Customer wanted features that do not exist yet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Hardware failed in some manner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Installation complexity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product did not meet customer&apos;s expectations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product is incompatiable with company&apos;s fleet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Software underperformed.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Incorrect products sent out</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Contract length</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Customer no longer likes pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Customer treated 30 day period as a trial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Contract Terms Dispute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Customer went with a different vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other/Unknown</controllingFieldValue>
+            <valueName>Customer went with another vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other/Unknown</controllingFieldValue>
+            <valueName>Exchanging product / not a real return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other/Unknown</controllingFieldValue>
+            <valueName>Other (Please explain in notes)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other/Unknown</controllingFieldValue>
+            <valueName>Unable to cancel previous contract with another vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other/Unknown</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other/Unknown</controllingFieldValue>
+            <valueName>Explanation in Notes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing issue</controllingFieldValue>
+            <valueName>Credit Card Requires Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing issue</controllingFieldValue>
+            <valueName>Contesting payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing issue</controllingFieldValue>
+            <valueName>Retry Original Payment Method</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing issue</controllingFieldValue>
+            <valueName>Customer requested reprocessing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing issue</controllingFieldValue>
+            <valueName>Invoice Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unreachable</controllingFieldValue>
+            <valueName>Customer Reached, Became Unresponsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unreachable</controllingFieldValue>
+            <valueName>Voicemail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unreachable</controllingFieldValue>
+            <valueName>Left message with other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unreachable</controllingFieldValue>
+            <valueName>Unable to Reach Customer</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Sharing_Addendum_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( ( NOT(ISBLANK( Data_Addendum_Insurance_Providers__c )) &amp;&amp; NOT(ISBLANK( Email ))), &apos;https://www.samsara.com/data-sharing-addendum?id=&apos;+AccountId+&apos;&amp;selectedContactId=&apos;+Id, &apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>In order to generate link, contact must have &quot;Data Addendum Insurance Provider&quot; selected and a valid email address.</inlineHelpText>
+    <label>Data Sharing Addendum Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

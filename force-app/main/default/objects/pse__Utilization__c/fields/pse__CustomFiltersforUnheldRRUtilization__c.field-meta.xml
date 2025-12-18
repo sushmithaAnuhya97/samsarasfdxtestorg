@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__CustomFiltersforUnheldRRUtilization__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Controls the fields on the Resource Request object to include for utilization calculations of unheld resource requests. This setting accepts field values in SOQL queries. You can add custom Resource Request fields as valid values to this setting. For example, Staffer_Approval_Required__c = true AND Update_Related_Resource_Requests__c = true AND Custom_Approval__c = true. If not defined, unheld resource request utilization calculations use default criteria.</description>
+    <inlineHelpText>Controls the fields on the Resource Request object to include for utilization calculations of unheld resource requests. This setting accepts custom and standard field values in SOQL queries. If not defined, calculations use default criteria.</inlineHelpText>
+    <label>Custom Filters for Unheld RR Utilization</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

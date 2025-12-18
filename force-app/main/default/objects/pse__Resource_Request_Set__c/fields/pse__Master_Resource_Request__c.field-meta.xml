@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Master_Resource_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the resource request to be copied when creating a resource request set.</description>
+    <inlineHelpText>Lookup to the resource request to be copied when creating a resource request set.</inlineHelpText>
+    <label>Master Resource Request</label>
+    <referenceTo>pse__Resource_Request__c</referenceTo>
+    <relationshipLabel>Resource Request Sets (Master Resource Request)</relationshipLabel>
+    <relationshipName>Resource_Request_Sets1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

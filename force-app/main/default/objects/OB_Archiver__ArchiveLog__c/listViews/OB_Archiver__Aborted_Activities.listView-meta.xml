@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OB_Archiver__Aborted_Activities</fullName>
+    <columns>NAME</columns>
+    <columns>OB_Archiver__Type__c</columns>
+    <columns>OB_Archiver__StartedAt__c</columns>
+    <columns>OB_Archiver__EndedAt__c</columns>
+    <columns>OB_Archiver__Triggered_By__c</columns>
+    <columns>OB_Archiver__Triggered_On__c</columns>
+    <columns>OB_Archiver__Abort_Reason__c</columns>
+    <columns>OB_Archiver__ParentDetail__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OB_Archiver__Status__c</field>
+        <operation>equals</operation>
+        <value>Aborted</value>
+    </filters>
+    <label>Aborted Activities</label>
+</ListView>

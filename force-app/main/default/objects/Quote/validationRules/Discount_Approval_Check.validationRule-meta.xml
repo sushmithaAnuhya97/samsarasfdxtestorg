@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Approval_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   Opportunity.RecordTypeId != &apos;0121a000000VnAB&apos;,
+   Opportunity.RecordTypeId != &apos;0121a000000VnUx&apos;,
+
+ NOT(
+  OR(
+  ($Permission.Validation_Rule_Exemption),
+  (CONTAINS($Profile.Name,&quot;Finance&quot;)),
+  ($Profile.Name=&quot;Order Operations Admin&quot;)
+  )
+ ),
+ 
+  Opportunity.Blended_Discount__c &gt; Opportunity.Approved_Discount__c
+  
+
+)</errorConditionFormula>
+    <errorMessage>Discount approval is required for this opportunity before creating a quote. Please lower discretionary discount in the Opportunity, or request approval from a manager.</errorMessage>
+</ValidationRule>

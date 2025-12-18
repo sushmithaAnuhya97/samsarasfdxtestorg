@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UK_region_by_postcode__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK( BillingPostalCode ), &quot;None&quot;,
+IF(CONTAINS(&quot;:AL:CB::CM::CO:EN:IG:IP:LU:MK:NR:PE:RM:SG:SS:WD&quot;, left(BillingPostalCode ,2)), &quot;East Anglia&quot;,
+IF(CONTAINS(&quot;CV:DE:DY:LE:NG:NN:ST:WS:WV&quot;, left(BillingPostalCode ,2)), &quot;Midlands&quot;,
+IF(CONTAINS(&quot;BD:DH:DL:DN:HD:HG:HU:HX:LN:LS:NE:SR:TS:WF:YO&quot;, left(BillingPostalCode ,2)), &quot;North East&quot;,
+IF(CONTAINS(&quot;BB:BL:CA:CW:FY:LA:OL:PR:SK:TF:WA:WN:CH&quot;, left(BillingPostalCode ,2)), &quot;North West&quot;,
+IF(CONTAINS(&quot;EC:NW:SE:SW:WC&quot;, left(BillingPostalCode ,2)), &quot;London&quot;,
+IF(CONTAINS(&quot;GU:HA:HP:OX:PO:RG:SL:SN:SO:SP:UB&quot;, left(BillingPostalCode ,2)), &quot;South Central&quot;,
+IF(CONTAINS(&quot;BN:BR:CR:CT:DA:KT:ME:RH:SM:TN:TW:BA&quot;, left(BillingPostalCode ,2)), &quot;South East&quot;,
+IF(CONTAINS(&quot;BH:BS:DT:EX:GL:HR:PL:TA:TQ:TR:WR&quot;, left(BillingPostalCode ,2)), &quot;South West&quot;,
+IF(CONTAINS(&quot;CF:LD:LL:NP:SY:SA&quot;, left(BillingPostalCode ,2)), &quot;Wales&quot;,
+IF(CONTAINS(&quot;BT&quot;, left(BillingPostalCode, 2)), &quot;Northern Ireland&quot;,
+IF(CONTAINS(&quot;AB:DD:DG:EH:FK:HS:IV:KA:KW:KY:ML:PA:PH:TD:ZE&quot;, left(BillingPostalCode ,2)), &quot;Scotland&quot;,
+IF(CONTAINS(&quot;GY:JE:IM&quot;, left(BillingPostalCode ,2)), &quot;Islands&quot;,
+IF(CONTAINS(&quot;B&quot;, left(BillingPostalCode ,1)), &quot;Midlands&quot;,
+IF(CONTAINS(&quot;S&quot;, left(BillingPostalCode ,1)), &quot;North East&quot;,
+IF(CONTAINS(&quot;M:L&quot;, left(BillingPostalCode ,1)), &quot;North West&quot;,
+IF(CONTAINS(&quot;E:N:W&quot;, left(BillingPostalCode ,1)), &quot;London&quot;,
+IF(CONTAINS(&quot;G&quot;, left(BillingPostalCode ,1)), &quot;Scotland&quot;,
+&quot;Other&quot;))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>UK region by postcode</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

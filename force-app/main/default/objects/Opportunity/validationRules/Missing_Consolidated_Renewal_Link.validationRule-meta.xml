@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Consolidated_Renewal_Link</fullName>
+    <active>false</active>
+    <description>When an Opportunity has a Closed Lost Reason as &quot;Renewal admin issue&quot; and sub reason as &quot;Consolidated Renewal&quot;, it is required to have an Id on the Consolidated Renewal Opportunity Id field.</description>
+    <errorConditionFormula>OR(
+					AND(
+									ISPICKVAL(Closed_Lost_Renewal_Reason__c, &apos;Renewal admin issue&apos;),
+									ISPICKVAL(Closed_Lost_Renewal_Sub_reason__c, &apos;Consolidated Renewal&apos;),
+									ISBLANK(Consolidated_Renewal_Opportunity_Id__c),
+									NOT(
+													OR(
+									        $Profile.Name = &apos;System Administrator&apos;,
+									        $Profile.Name = &apos;System Administrator API&apos;,
+									        $Permission.Validation_Rule_Exemption
+					        )
+									)
+					)
+)</errorConditionFormula>
+    <errorMessage>Missing Consolidated Renewal Opportunity link. Please click on &quot;Create Related Opportunity&quot; and select &quot;Consolidated Renewal&quot; before trying again.</errorMessage>
+</ValidationRule>

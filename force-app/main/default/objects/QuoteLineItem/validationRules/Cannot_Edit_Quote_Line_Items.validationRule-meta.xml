@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Quote_Line_Items</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (NOT($Permission.Validation_Rule_Exemption), NOT(IsNull(CreatedDate)))</errorConditionFormula>
+    <errorMessage>Line items cannot be edited in Quote. Please edit products in Opportunity and create a new quote.</errorMessage>
+</ValidationRule>

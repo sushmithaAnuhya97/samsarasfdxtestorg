@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__User_Role_Profile_Changes__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Changes of the user profile - When the user has changed the profile FLODocs will create a Change Log</description>
+    <inlineHelpText>Changes of the user profile - When the user has changed the profile FLODocs will create a Change Log</inlineHelpText>
+    <label>User Role and Profile Changes</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>FLODocs__FLO_Change_Control_Levels</valueSetName>
+    </valueSet>
+</CustomField>

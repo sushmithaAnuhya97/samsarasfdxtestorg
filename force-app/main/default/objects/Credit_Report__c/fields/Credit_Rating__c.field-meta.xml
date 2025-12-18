@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Rating__c</fullName>
+    <description>Color Code for Credit score. Created as part of GTMS-9963</description>
+    <externalId>false</externalId>
+    <formula>IF(Credit_Scorecard__c&gt;=7.0,IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;No:&quot;, 20, 20),IF(Credit_Scorecard__c&lt;=6.9 &amp;&amp; Credit_Scorecard__c&gt;=3.0, IMAGE(&quot;/img/samples/flag_yellow.gif&quot;, &quot;No:&quot;, 20, 20),IF(Credit_Scorecard__c&lt;=2.9,IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;No:&quot;, 20, 20),null)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Credit Rating</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

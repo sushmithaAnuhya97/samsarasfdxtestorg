@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-24026: Created as part of Feature Request Phase 2 project to assign opportunity stage value and add each row to list</description>
+        <name>Assign_Stage_Value_and_Add_To_List</name>
+        <label>Assign Stage Value and Add to List</label>
+        <locationX>402</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>Related_Opportunity_Rec.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_Over_Related_Opportunities.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Related_Opportunity_Rec.Opportunity_Stage_Text__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_Over_Related_Opportunities.Opportunity__r.StageName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Related_Opportunity_Rec.ACV__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_Over_Related_Opportunities.Opportunity__r.ACV_Bookings_SOT__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RelatedOpportunityList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Related_Opportunity_Rec</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_Over_Related_Opportunities</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>GTMS-24026: Created as part of Feature Request phase 2 project to check if the Related Opportunity records exists or not</description>
+        <name>Is_Related_Opportunities_Exists</name>
+        <label>Is Related Opportunities Exists</label>
+        <locationX>314</locationX>
+        <locationY>542</locationY>
+        <defaultConnector>
+            <targetReference>Recalculation_Failure_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Related Opps Dont Exist</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Related_Opps_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RelatedOpportunityList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Related_Opps_Stage</targetReference>
+            </connector>
+            <label>Yes Related Opps Exists</label>
+        </rules>
+    </decisions>
+    <description>GTMS-24026: Created as part of Feature Request Phase 2 project to update Opportunity_Stage_Text__c field on Feature Request&apos;s Related Opportunity records.
+GTMS-25823: Updated the flow to map ACV value from opportunity</description>
+    <environments>Default</environments>
+    <interviewLabel>Feature Request Related Opportunity Stage Update Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Feature Request Related Opportunity Stage Update Screen Flow</label>
+    <loops>
+        <description>GTMS-24026: Created as part of Feature Request Phase 2 project to iterate over Related Opportunities</description>
+        <name>Iterate_Over_Related_Opportunities</name>
+        <label>Iterate Over Related Opportunities</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Fetched_Related_Opportunity_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Stage_Value_and_Add_To_List</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Is_Related_Opportunities_Exists</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>GTMS-24026: Created as part of Feature Request phase 2 project to fetch Feature Request related related Opportunity records.</description>
+        <name>Fetched_Related_Opportunity_Records</name>
+        <label>Fetched Related Opportunity Records</label>
+        <locationX>314</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iterate_Over_Related_Opportunities</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AC_Idea__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity_Idea_Assignment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-24026: Created as part of Feature Request Phase 2 project to update Opportunity_Stage_Text__c field value with Opportunity record stage</description>
+        <name>Update_Related_Opps_Stage</name>
+        <label>Update Related Opps Stage</label>
+        <locationX>50</locationX>
+        <locationY>650</locationY>
+        <connector>
+            <targetReference>Recalculation_Success_Screen</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Recalculation_Update_Failure_Screen</targetReference>
+        </faultConnector>
+        <inputReference>RelatedOpportunityList</inputReference>
+    </recordUpdates>
+    <runInMode>DefaultMode</runInMode>
+    <screens>
+        <description>GTMS-24026: Created as part of Feature Request Phase 2 project to show the message if no related opportunity exists</description>
+        <name>Recalculation_Failure_Screen</name>
+        <label>Recalculation Failure Screen</label>
+        <locationX>578</locationX>
+        <locationY>650</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_1_of_Total_ACV_Calculation_Success_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(208, 118, 39);&quot;&gt;Please add opportunities to calculate Total ACV values.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-24026: Created as part of Feature Request Phase 2 project to show the total ACV recalculation success message</description>
+        <name>Recalculation_Success_Screen</name>
+        <label>Recalculation Success Screen</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Total_ACV_Calculation_Success_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(110, 157, 30);&quot;&gt;Total ACV Recalculation completed Successfully&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>GTMS-24026: Created as part of Feature Request Phase 2 project to show the message if stage value update failed</description>
+        <name>Recalculation_Update_Failure_Screen</name>
+        <label>Recalculation Failure Screen</label>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Total_ACV_Calculation_Update_Failure_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(195, 39, 39);&quot;&gt;Recalculation of Total ACV is failed due to below reason. &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Reason: &lt;/strong&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Fetched_Related_Opportunity_Records</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-24026: Created as part of Feature request phase 2 project to fetch the Feature Request recordId from url</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>GTMS-25823: Created to map update values to the variable</description>
+        <name>Related_Opportunity_Rec</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity_Idea_Assignment__c</objectType>
+    </variables>
+    <variables>
+        <description>GTMS-24026: Created as part of Feature Request Phase 2 project to update Opportunity_Stage_Text__c field on Feature Request&apos;s Related Opportunity records. To add Related Opportunity records</description>
+        <name>RelatedOpportunityList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity_Idea_Assignment__c</objectType>
+    </variables>
+</Flow>

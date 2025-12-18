@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_New_SE_Log_If_Opportunity_Closed</fullName>
+    <active>true</active>
+    <description>User cannot create a New SE Log if the Opportunity is Closed.</description>
+    <errorConditionFormula>AND(NOT($Permission.Validation_Rule_Exemption), ISNEW() , Opportunity__r.IsClosed  = true)</errorConditionFormula>
+    <errorMessage>You cannot create an SE Log when the Opportunity is Closed.</errorMessage>
+</ValidationRule>

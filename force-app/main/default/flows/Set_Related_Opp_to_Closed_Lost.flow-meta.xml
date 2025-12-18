@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Source_of_Data</name>
+        <label>Source of Data</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Set_Related_Opportunity_to_Closed_Lost</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Submit_To_close</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Source_of_Data_Creation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Submit to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Submit To close</label>
+        </rules>
+    </decisions>
+    <description>GTMS-GTMS-28229, Competitive Intel: Update Submit to Close Flow</description>
+    <environments>Default</environments>
+    <interviewLabel>Set Related Opp to Closed Lost {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Set Related Opp to Closed Lost</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Related_Opportunity_to_Closed_Lost</name>
+        <label>Set Related Opportunity to Closed Lost</label>
+        <locationX>264</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Closed_Lost_Reason__c</field>
+            <value>
+                <elementReference>$Record.Closed_Lost_Reason__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Opportunity__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Source_of_Data</targetReference>
+        </connector>
+        <object>Closed_Deal_Insights__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

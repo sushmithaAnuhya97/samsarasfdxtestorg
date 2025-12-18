@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__ReferenceProfile__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>The Reference Profile associated to this Member.</inlineHelpText>
+    <label>Reference Profile</label>
+    <referenceTo>refedge__Reference_Basic_Information__c</referenceTo>
+    <relationshipLabel>Engagement Members</relationshipLabel>
+    <relationshipName>EngagementMembers</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

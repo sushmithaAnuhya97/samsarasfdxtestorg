@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Big_Deal_Alert__c</fullName>
+    <description>Determines the Virtual Bell Alert that is sent</description>
+    <formula>IF(
+  AND(
+    ISPICKVAL(Type ,&apos;Revenue Opportunity&apos;),
+    OR(
+      AND(TEXT(Owner.Business_Unit__c)=&apos;Industrial&apos;,Amount_Number__c &gt; 7500),
+      AND(TEXT(Owner.Business_Unit__c)=&apos;Fleet&apos;,
+        OR(
+          AND(TEXT(Owner.Segment__c)=&apos;Enterprise&apos;,
+            OR(
+              AND(TEXT(Owner.Region__c)=&apos;North America&apos;,
+                OR(
+AND(Owner.Territory__c=&apos;Canada&apos;,ACV_Bookings_SOT__c &gt; 226000),
+AND(Owner.Territory__c=&apos;Mexico&apos;,ACV_Bookings_SOT__c &gt; 1562593),
+ACV_Bookings_SOT__c &gt; 200000
+                )),
+              AND(TEXT(Owner.Region__c)=&apos;EMEA&apos;,
+                OR(
+AND(Owner.Territory__c=&apos;UK&amp;I&apos;,ACV_Bookings_SOT__c &gt; 81600),
+AND(Owner.Territory__c&lt;&gt;&apos;UK&amp;I&apos;,ACV_Bookings_SOT__c &gt; 81600)
+                ))
+              )
+            ),
+          AND(TEXT(Owner.Segment__c)=&apos;Inside Sales&apos;,
+            OR(
+              AND(TEXT(Owner.Region__c)=&apos;North America&apos;,
+                OR(
+                  AND(TEXT(Owner.Level__c)=&apos;AE 1&apos;,
+                    OR(
+AND(CONTAINS(Owner.Territory__c,&apos;Canada&apos;),ACV_Bookings_SOT__c &gt; 5000),
+AND(CONTAINS( Owner.UserRole.Name ,&apos;US&apos;),ACV_Bookings_SOT__c &gt; 5000)
+                    )
+                  ),
+AND(TEXT(Owner.Level__c)=&apos;AE 2&apos;,
+                    OR(
+                      AND(CONTAINS(Owner.Territory__c,&apos;Canada&apos;),ACV_Bookings_SOT__c &gt; 58560),
+AND(CONTAINS(Owner.UserRole.Name,&apos;US&apos;),ACV_Bookings_SOT__c &gt; 60000),
+AND(Owner.Territory__c=&apos;Mexico&apos;,ACV_Bookings_SOT__c &gt; 765000)
+)
+),
+AND(TEXT(Owner.Level__c)=&apos;AE 3&apos;,
+OR(
+AND(CONTAINS(Owner.Territory__c,&apos;Canada&apos;),ACV_Bookings_SOT__c &gt; 150579),
+AND(CONTAINS(Owner.UserRole.Name,&apos;US&apos;),ACV_Bookings_SOT__c &gt; 110000),
+AND(Owner.Territory__c=&apos;Mexico&apos;,ACV_Bookings_SOT__c &gt; 2094653)
+                    )
+                  )
+                )
+              ),
+              AND(TEXT(Owner.Region__c)=&apos;EMEA&apos;,
+                OR(
+AND(Owner.Territory__c=&apos;UK&amp;I&apos;,ACV_Bookings_SOT__c &gt; 40000),
+AND(Owner.Territory__c&lt;&gt;&apos;UK&amp;I&apos;,ACV_Bookings_SOT__c &gt; 40000)
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  ),
+  true,false)</formula>
+    <label>Qualifies for Big Deal Alert</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

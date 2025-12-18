@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flex_Prevent_Group_Name_Edit</fullName>
+    <active>true</active>
+    <description>Prevent changing name of group</description>
+    <errorConditionFormula>AND(
+NOT($Setup.FlexCnRTriggerBypass__c.Bypass_Sync_and_Flag_Reset_Logic__c),
+NOT($Permission.FlexAccessQuoteLine),
+ISCHANGED(Name),
+NOT(
+OR(
+$Profile.Name = &apos;System Administrator&apos;,
+$Profile.Name = &apos;System Administrator API&apos;
+)
+),
+OR(
+PRIORVALUE(Name) = &apos;Carryover Products&apos;,
+PRIORVALUE(Name) = &apos;Upgraded Products&apos;,
+PRIORVALUE(Name) = &apos;Net New Products&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>You are not authorized to change the group name.</errorMessage>
+</ValidationRule>

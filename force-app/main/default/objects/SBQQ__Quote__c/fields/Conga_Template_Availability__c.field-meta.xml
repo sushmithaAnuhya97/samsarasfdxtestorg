@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Template_Availability__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+   NOT(ISBLANK(Reseller_Account__c)),
+   &quot;Reseller&quot;,
+   IF(
+     Public_Sector_VG_Count__c &gt; 0,
+     CASE(
+       Selected_Payment_Type__c,
+       &quot;Direct Quarterly&quot;, &quot;PS Quarterly&quot;,
+       &quot;Direct Monthly&quot;, &quot;PS Monthly&quot;,
+       &quot;Direct Annual&quot;, &quot;PS Annual&quot;,
+       &quot;Upfront Payments&quot;, &quot;PS Upfront&quot;,
+       &quot;Direct Semi-Annual&quot;, &quot;PS Semi Annual&quot;,
+       &quot;&quot;
+     ),
+     IF(
+       Show_All_Order_Forms__c = TRUE,
+       CASE(
+         Selected_Payment_Type__c,
+         &quot;Direct Quarterly&quot;, &quot;NA, MX, EMEA Quarterly&quot;,
+         &quot;Direct Monthly&quot;, &quot;NA, MX, EMEA Monthly&quot;,
+         &quot;Direct Annual&quot;, &quot;NA, MX, EMEA Annual&quot;,
+         &quot;Upfront Payments&quot;, &quot;NA, MX, EMEA Upfront&quot;,
+         &quot;Direct Semi-Annual&quot;, &quot;NA, MX, EMEA Semi Annual&quot;,
+         &quot;&quot;
+       ),
+       IF(
+         Region_US_Canada__c = TRUE,
+         CASE(
+           Selected_Payment_Type__c,
+           &quot;Direct Quarterly&quot;, &quot;NA&quot;,
+           &quot;Direct Monthly&quot;, &quot;NA&quot;,
+           &quot;Direct Annual&quot;, &quot;NA&quot;,
+           &quot;Upfront Payments&quot;, &quot;NA&quot;,
+           &quot;Direct Semi-Annual&quot;, &quot;NA&quot;,
+           &quot;&quot;
+         ),
+         IF(
+           Region_Mexico__c = TRUE,
+           CASE(
+             Selected_Payment_Type__c,
+             &quot;Direct Quarterly&quot;, &quot;MX&quot;,
+             &quot;Direct Monthly&quot;, &quot;MX&quot;,
+             &quot;Direct Annual&quot;, &quot;MX&quot;,
+             &quot;Upfront Payments&quot;, &quot;MX&quot;,
+             &quot;Direct Semi-Annual&quot;, &quot;MX&quot;,
+             &quot;&quot;
+           ),
+           IF(
+             Region_EMEA__c = TRUE,
+             CASE(
+               Selected_Payment_Type__c,
+               &quot;Direct Quarterly&quot;, &quot;EMEA Quarterly&quot;,
+               &quot;Direct Monthly&quot;, &quot;EMEA Monthly&quot;,
+               &quot;Direct Annual&quot;, &quot;EMEA Annual&quot;,
+               &quot;Upfront Payments&quot;, &quot;EMEA Upfront&quot;,
+               &quot;Direct Semi-Annual&quot;, &quot;EMEA Semi Annual&quot;,
+               &quot;&quot;
+             ),
+             CASE(
+               Selected_Payment_Type__c,
+               &quot;Direct Quarterly&quot;, &quot;CPQ Quarterly&quot;,
+               &quot;Direct Monthly&quot;, &quot;CPQ Monthly&quot;,
+               &quot;Direct Annual&quot;, &quot;CPQ Annual&quot;,
+               &quot;Upfront Payments&quot;, &quot;CPQ Upfront&quot;,
+               &quot;Direct Semi-Annual&quot;, &quot;CPQ Semi Annual&quot;,
+               &quot;&quot;
+             )
+           )
+         )
+       )
+     )
+   )
+ )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Conga Template Availability</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

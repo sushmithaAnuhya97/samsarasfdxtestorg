@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Resource_lookup_columns__c</fullName>
+    <defaultValue>&apos;Name,Region__r.Name,Practice__r.Name,Group__r.Name&apos;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>List of Resource fields (fully-qualified API names/paths) to display on columns for Resource lookup pop-up in new Timecard UI. Recommend at most 4 fields/columns. Default value: Name, Region__r.Name, Practice__r.Name, Group__r.Name</description>
+    <externalId>false</externalId>
+    <inlineHelpText>List of Resource fields (fully-qualified API names/paths) to display on columns for Resource lookup pop-up in new Timecard UI. Recommend at most 4 fields/columns. Default value: Name, Region__r.Name, Practice__r.Name, Group__r.Name</inlineHelpText>
+    <label>Resource lookup columns</label>
+    <length>200</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

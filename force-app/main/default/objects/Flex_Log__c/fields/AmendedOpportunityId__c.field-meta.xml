@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AmendedOpportunityId__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Link to the amended Opportunity.</description>
+    <label>Amended Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Flex Logs</relationshipLabel>
+    <relationshipName>Flex_Logs</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

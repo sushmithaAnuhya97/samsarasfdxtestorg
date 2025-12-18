@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__ImporterAccount__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Sold-To / Importer of Records Account (if not same as consignee)</description>
+    <inlineHelpText>Sold-To / Importer of Records Account (if not same as consignee)</inlineHelpText>
+    <label>Sold-To/Importer Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipName>FedEx2_Requested_Shipment_Documents</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Packaging_Level__c</fullName>
+    <label>Packaging Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>01 - Packaging as Product</fullName>
+                <default>false</default>
+                <label>01 - Packaging as Product</label>
+            </value>
+            <value>
+                <fullName>10 - Primary</fullName>
+                <default>false</default>
+                <label>10 - Primary</label>
+            </value>
+            <value>
+                <fullName>11 - Sub-primary Service</fullName>
+                <default>false</default>
+                <label>11 - Sub-primary Service</label>
+            </value>
+            <value>
+                <fullName>20 - Secondary</fullName>
+                <default>false</default>
+                <label>20 - Secondary</label>
+            </value>
+            <value>
+                <fullName>30 - Tertiary</fullName>
+                <default>false</default>
+                <label>30 - Tertiary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

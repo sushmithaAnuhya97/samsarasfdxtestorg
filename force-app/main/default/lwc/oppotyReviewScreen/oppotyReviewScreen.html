@@ -1,0 +1,385 @@
+<template>
+    <div class="slds-is-relative">
+        <!-- Custom Toast Notifications -->
+        <div class="custom-notification-container">
+            <template if:true={showNotification}>
+                <div class={notificationClass} role="alert">
+                    <lightning-icon 
+                        icon-name={notificationIcon}
+                        size="small" 
+                        class="notification-icon"
+                        variant={notificationIconVariant}>
+                    </lightning-icon>
+                    <div class="notification-content">
+                        <p class="notification-message">{notificationMessage}</p>
+                    </div>
+                    <button class="notification-close" onclick={closeNotification}>
+                        <lightning-icon
+                            icon-name="utility:close"
+                            size="xx-small"
+                            class="close-icon">
+                        </lightning-icon>
+                    </button>
+                    <div class="notification-progress-bar"></div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Loading Spinner -->
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={hasRequiredData}>
+            <div class="slds-card main-container">
+                <!-- Header Section -->
+                <div class="header-section">
+                    <header class="slds-media slds-media_center">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:opportunity" size="small" class="header-icon"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-text-heading_medium">Submit to Closing - Review and Confirm</h2>
+                        </div>
+                    </header>
+                </div>
+                
+                <div class="content-section">
+                    <!-- Account Billing Information -->
+                    <div class="section-container">
+                        <div class="section-header">
+                            <lightning-icon icon-name="standard:account" size="small" class="section-icon"></lightning-icon>
+                            <h3 class="slds-text-heading_small">Account Billing Information</h3>
+                        </div>
+                        <template if:true={account}>
+                            <div class="section-card">
+                                <div class="slds-p-around_medium">
+                                    <template if:true={isEditing}>
+                                        <lightning-record-edit-form 
+                                            record-id={account.Id} 
+                                            object-api-name="Account" 
+                                            onsubmit={handleSubmit}
+                                            onsuccess={handleSuccess}
+                                            onerror={handleError}>
+                                            <lightning-messages></lightning-messages>
+                                            <div class="slds-grid slds-wrap slds-gutters_small">
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="BillingStreet" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="BillingCity" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="BillingCountry" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="BillingPostalCode" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="Billing_Email__c" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                            </div>
+                                        </lightning-record-edit-form>
+                                    </template>
+                                    <template if:false={isEditing}>
+                                        <lightning-record-view-form 
+                                            record-id={account.Id} 
+                                            object-api-name="Account">
+                                            <lightning-messages></lightning-messages>
+                                            <div class="slds-grid slds-wrap slds-gutters_small">
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="BillingStreet"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="BillingCity"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="BillingCountry"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="BillingPostalCode"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="Billing_Email__c"></lightning-output-field>
+                                                </div>
+                                            </div>
+                                        </lightning-record-view-form>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Mexico Invoice Certification -->
+                    <template if:true={showMexicoFields}>
+                        <div class="section-container">
+                            <div class="section-header">
+                                <lightning-icon icon-name="standard:address" size="small" class="section-icon"></lightning-icon>
+                                <h3 class="slds-text-heading_small">MX Invoice Certification</h3>
+                            </div>
+                            <template if:true={account}>
+                                <div class="section-card">
+                                    <div class="slds-p-around_medium">
+                                        <template if:true={isEditing}>
+                                            <lightning-record-edit-form 
+                                                record-id={account.Id} 
+                                                object-api-name="Account" 
+                                                onsubmit={handleSubmit}
+                                                onsuccess={handleSuccess}
+                                                onerror={handleError}>
+                                                <lightning-messages></lightning-messages>
+                                                <div class="slds-grid slds-wrap slds-gutters_small">
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="Razon_Social_Legal_Company_Name__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="Tipo_de_RFC__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="Regimen_Fiscal_Receptor__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="Regimen_Capital__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                </div>
+                                            </lightning-record-edit-form>
+                                        </template>
+                                        <template if:false={isEditing}>
+                                            <lightning-record-view-form 
+                                                record-id={account.Id} 
+                                                object-api-name="Account">
+                                                <lightning-messages></lightning-messages>
+                                                <div class="slds-grid slds-wrap slds-gutters_small">
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="Razon_Social_Legal_Company_Name__c"></lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="Tipo_de_RFC__c"></lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="Regimen_Fiscal_Receptor__c"></lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="Regimen_Capital__c"></lightning-output-field>
+                                                    </div>
+                                                </div>
+                                            </lightning-record-view-form>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- First Purchase Details -->
+                    <template if:true={showFirstPurchaseSection}>
+                        <div class="section-container">
+                            <div class="section-header">
+                                <lightning-icon icon-name="standard:customer_portal_users" size="small" class="section-icon"></lightning-icon>
+                                <h3 class="slds-text-heading_small">First Purchase Details</h3>
+                            </div>
+                            <template if:true={account}>
+                                <div class="section-card">
+                                    <div class="slds-p-around_medium">
+                                        <template if:true={isEditing}>
+                                            <lightning-record-edit-form 
+                                                record-id={account.Id} 
+                                                object-api-name="Account" 
+                                                onsubmit={handleSubmit}
+                                                onsuccess={handleSuccess}
+                                                onerror={handleError}>
+                                                <lightning-messages></lightning-messages>
+                                                <div class="slds-grid slds-wrap slds-gutters_small">
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="CS_POC_First_Name__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="CS_POC_Email_Address__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="CS_POC_Phone__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-input-field field-name="Key_Value_Points__c" onchange={handleFieldChange}></lightning-input-field>
+                                                    </div>
+                                                </div>
+                                            </lightning-record-edit-form>
+                                        </template>
+                                        <template if:false={isEditing}>
+                                            <lightning-record-view-form 
+                                                record-id={account.Id} 
+                                                object-api-name="Account">
+                                                <lightning-messages></lightning-messages>
+                                                <div class="slds-grid slds-wrap slds-gutters_small">
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="CS_POC_First_Name__c"></lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="CS_POC_Email_Address__c"></lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="CS_POC_Phone__c"></lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                        <lightning-output-field field-name="Key_Value_Points__c"></lightning-output-field>
+                                                    </div>
+                                                </div>
+                                            </lightning-record-view-form>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Free Trial Purchase Details -->
+                     <template if:true={showFreeTrialSection}>
+                    <div class="section-container">
+                        <div class="section-header">
+                            <lightning-icon icon-name="standard:promotion_segments" size="small" class="section-icon"></lightning-icon>
+                            <h3 class="slds-text-heading_small">Free Trial Purchase Details</h3>
+                        </div>
+                        <template if:true={opportunity}>
+                            <div class="section-card">
+                                <div class="slds-p-around_medium">
+                                    <template if:true={isEditing}>
+                                        <lightning-record-edit-form 
+                                            record-id={opportunity.Id} 
+                                            object-api-name="Opportunity" 
+                                            onsubmit={handleSubmit}
+                                            onsuccess={handleSuccess}
+                                            onerror={handleError}>
+                                            <lightning-messages></lightning-messages>
+                                            <div class="slds-grid slds-wrap slds-gutters_small">
+                                                <div class="slds-col slds-p-bottom_small">
+                                                    <lightning-input-field field-name="Free_Trial_Purchase__c" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                            </div>
+                                        </lightning-record-edit-form>
+                                    </template>
+                                    <template if:false={isEditing}>
+                                        <lightning-record-view-form 
+                                            record-id={opportunity.Id} 
+                                            object-api-name="Opportunity">
+                                            <lightning-messages></lightning-messages>
+                                            <div class="slds-grid slds-wrap slds-gutters_small">
+                                                <div class="slds-col slds-p-bottom_small">
+                                                    <lightning-output-field field-name="Free_Trial_Purchase__c"></lightning-output-field>
+                                                </div>
+                                            </div>
+                                        </lightning-record-view-form>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    </template>
+                    <!-- Site Deals -->
+                    <template if:true={showSiteDetails}>
+                        <div class="section-container">
+                            <div class="section-header">
+                                <lightning-icon icon-name="standard:product_required" size="small" class="section-icon"></lightning-icon>
+                                <h3 class="slds-text-heading_small">Site Deals</h3>
+                            </div>
+                            <div class="section-card">
+                                <div class="slds-p-around_medium">
+                                    <template if:true={isEditing}>
+                                        <lightning-record-edit-form 
+                                            record-id={opportunity.Id} 
+                                            object-api-name="Opportunity" 
+                                            onsubmit={handleSubmit}
+                                            onsuccess={handleSuccess}
+                                            onerror={handleError}>
+                                            <lightning-messages></lightning-messages>
+                                            <div class="slds-grid slds-wrap slds-gutters_small">
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="Number_of_sites_sold__c" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="Product_Version__c" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-input-field field-name="Deployment_Type__c" onchange={handleFieldChange}></lightning-input-field>
+                                                </div>
+                                            </div>
+                                        </lightning-record-edit-form>
+                                    </template>
+                                    <template if:false={isEditing}>
+                                        <lightning-record-view-form 
+                                            record-id={opportunity.Id} 
+                                            object-api-name="Opportunity">
+                                            <lightning-messages></lightning-messages>
+                                            <div class="slds-grid slds-wrap slds-gutters_small">
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="Number_of_sites_sold__c"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="Product_Version__c"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-p-bottom_small">
+                                                    <lightning-output-field field-name="Deployment_Type__c"></lightning-output-field>
+                                                </div>
+                                            </div>
+                                        </lightning-record-view-form>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Navigation Buttons -->
+                    <div class="button-container">
+                        <div class="button-left">
+                            <lightning-button
+                                label="Back"
+                                onclick={handleBack}
+                                class="back-button">
+                            </lightning-button>
+                            <template if:false={isEditing}>
+                                <lightning-button
+                                    label="Edit"
+                                    variant="neutral"
+                                    onclick={handleEdit}
+                                    class="slds-m-left_small edit-button">
+                                </lightning-button>
+                            </template>
+                        </div>
+                        <div class="button-right">
+                            <template if:true={isEditing}>
+                                <lightning-button 
+                                    label="Cancel" 
+                                    variant="neutral" 
+                                    onclick={handleCancel}
+                                    class="slds-m-right_small cancel-button">
+                                </lightning-button>
+                                <lightning-button 
+                                    label="Save" 
+                                    variant="brand" 
+                                    onclick={handleSave} 
+                                    class="save-button">
+                                </lightning-button>
+                            </template>
+                            <template if:false={isEditing}>
+                                <lightning-button
+                                    label="Next"
+                                    variant="brand"
+                                    onclick={handleNext}
+                                    disabled={isEditing}
+                                    class="next-button">
+                                </lightning-button>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template if:false={hasRequiredData}>
+            <div class="error-container">
+                <div class="slds-text-heading_small slds-m-bottom_medium">Missing Required Data</div>
+                <p>Please complete the previous step to provide all required information before proceeding to the review screen.</p>
+            </div>
+        </template>
+    </div>
+</template>

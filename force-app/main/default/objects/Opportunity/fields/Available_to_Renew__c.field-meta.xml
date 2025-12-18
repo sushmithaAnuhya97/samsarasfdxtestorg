@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_to_Renew__c</fullName>
+    <description>Created as part of GTMS-29264</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If contracts are consolidated, this field will show the sum of all the contracts &quot;Contract Renewable ACV.&quot; If not consolidated, it will display the &quot;Contract Renewable ACV&quot; of the renewed contract only.(Always in USD)</inlineHelpText>
+    <label>Available to Renew</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

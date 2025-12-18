@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checkout_Agreement_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+NOT(ISBLANK(SBQQ__RenewedContract__c)),
+CloseDate &gt;= DATEVALUE($Label.Checkout_Link_For_Renewal_Go_Live_Date)
+),
+Renewal_Checkout_Agreement_Link__c,
+IF(
+AND(
+Probability &gt;= 0.50,
+ISBLANK(Reseller__c),
+Amount &gt; 0,
+ISBLANK(Deal_Components__c),
+OR(AND(
+Renewal__c = true,
+OR(ISPICKVAL(Sub_Type__c, &apos;Clickpath&apos;),SBQQ__RenewedContract__r.Auto_Renewal__c = true),
+OR(Gainsight_Audit_Status__c = &apos;Success&apos;,Gainsight_Audit_Override__c = true)
+),
+Renewal__c = false,!ISPICKVAL(Sub_Type__c,&apos;Clickpath&apos;)
+),
+!AND(ISPICKVAL(Selected_Payment_Type__c,&apos;Direct Semi-Annual&apos;),Owner_Segment__c = &apos;AE1&apos;),
+!AND(ISPICKVAL(Selected_Payment_Type__c,&apos;Direct Quarterly&apos;),Owner_Segment__c = &apos;AE1&apos;)
+),
+IF(
+AND(OR(AND(SBQQ__PrimaryQuote__c != NULL,ISPICKVAL(SBQQ__PrimaryQuote__r.SBQQ__Status__c,&quot;Approved&quot;),
+Sales_Tax_Amount__c &gt;= 0),
+AND(CONTAINS(Owner_Role_Copy__c, &quot;AE1&quot;),
+Total_Sales_Tax__c &gt;= 0
+)
+),
+            !ISBLANK(TEXT(Selected_Payment_Type__c)),
+            !ISBLANK(Shipping_Address_NEW__c),
+            TEXT(CurrencyIsoCode)=TEXT(Account.CurrencyIsoCode),
+            ISPICKVAL(Payment_Terms__c, &apos;Due in advance&apos;),
+            !ISBLANK(Account.Billing_First_Name__c),
+            !ISBLANK(Account.Billing_Last_Name__c),
+            !ISBLANK(Account.Billing_Email__c),
+            !ISBLANK(Account.Billing_Phone__c),
+            !ISBLANK(Account.BillingStreet),
+            !ISBLANK(Account.BillingCity),
+            !ISBLANK(Account.BillingPostalCode),
+            ISPICKVAL(Configuration_Segment__c,&apos;Non Express&apos;),
+            OR(
+                !ISBLANK(Shipping_and_Handling_Amount__c),
+                Freight_Cost__c != 99999.99,
+                !ISBLANK(Shipping_and_Handling_Manual__c)
+            ),
+            OR(
+                AND(
+                    !ISBLANK(Account.BillingState),
+                    OR(
+                        Account.BillingCountry=&apos;United States&apos;,
+                        Account.BillingCountry=&apos;Canada&apos;,
+                        Account.BillingCountry=&apos;Mexico&apos;
+                    )
+                ),
+                AND(
+                    ISBLANK(Account.BillingState),
+                    OR(
+                        ISPICKVAL(Account.CurrencyIsoCode,&apos;GBP&apos;),
+                        ISPICKVAL(Account.CurrencyIsoCode,&apos;EUR&apos;)
+                    ),
+                    IF(
+                        CASE(
+                            Account.BillingCountry,
+                            &apos;United Kingdom&apos;, 1,
+                            &apos;France&apos;, 1,
+                            &apos;Belgium&apos;, 1,
+                            &apos;Germany&apos;, 1,
+                            &apos;Netherlands&apos;, 1,
+                            &apos;Ireland&apos;, 1,
+                            &apos;Austria&apos;, 1,
+                            &apos;Italy&apos;, 1,
+                            &apos;Luxembourg&apos;, 1,
+                            &apos;Switzerland&apos;,1,
+                            0
+                        ) = 1,
+                        true,
+                        false
+                    )
+                )
+            )
+        ),
+&apos;https://www.samsara.com/checkout/opportunity?id=&apos;+Opportunity_UUID__c,
+        IF(
+            AND(
+                !ISPICKVAL(Shipping_Address_NEW__r.Shipping_Country__c, &quot;Switzerland&quot;),
+                Total_License_Due__c &gt; 0,
+                !ISBLANK(Shipping_Contact__c),
+                
+                OR(
+                    AND(SBQQ__PrimaryQuote__c != NULL,
+                        ISPICKVAL(SBQQ__PrimaryQuote__r.SBQQ__Status__c,&quot;Approved&quot;)
+                    ),
+                    AND(SBQQ__PrimaryQuote__c == NULL,
+                         Renewal__c == true
+                    )
+                )
+            ),
+&apos;https://www.samsara.com/checkout/opportunity?id=&apos;+Opportunity_UUID__c,
+            &apos;&apos;
+        )   
+    ),
+    &apos;&apos;
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Checkout Agreement Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

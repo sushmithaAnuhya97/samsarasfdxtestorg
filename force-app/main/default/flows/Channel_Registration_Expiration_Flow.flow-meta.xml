@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project</description>
+        <name>X180_Days_Email_Alert</name>
+        <label>180 Days Email Alert</label>
+        <locationX>842</locationX>
+        <locationY>1619</locationY>
+        <actionName>Channel_Relationship__c.CR_Nearing_Expiration_Alert_to_AE_and_PAM</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Fetch_Channel_Relationship_Record_on_180th_day.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Channel_Relationship__c.CR_Nearing_Expiration_Alert_to_AE_and_PAM</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project</description>
+        <name>X181_Days_Email_Alert</name>
+        <label>181 Days Email Alert</label>
+        <locationX>578</locationX>
+        <locationY>600</locationY>
+        <actionName>Channel_Relationship__c.CR_Nearing_Expiration_Alert_to_AE_and_PAM</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Fetch_Channel_Relationship_Record_on_181th_day.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Channel_Relationship__c.CR_Nearing_Expiration_Alert_to_AE_and_PAM</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project</description>
+        <name>X182_Days_Email_Alert</name>
+        <label>182 Days Email Alert</label>
+        <locationX>1370</locationX>
+        <locationY>600</locationY>
+        <actionName>Channel_Relationship__c.CR_Nearing_Expiration_Alert_to_AE_and_PAM</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Fetch_Channel_Relationship_Record_on_182nd_day.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Channel_Relationship__c.CR_Nearing_Expiration_Alert_to_AE_and_PAM</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to assign CR values</description>
+        <name>Assign_CR_Values</name>
+        <label>Assign CR Values</label>
+        <locationX>974</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Fetch_Channel_Relationship_Record_on_180th_day.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.CR_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pending AE Renewal</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_CR_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to assign CR values for expiration</description>
+        <name>Assign_CR_Values_to_Expire</name>
+        <label>Assign CR Values to Expire</label>
+        <locationX>2162</locationX>
+        <locationY>492</locationY>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Fetch_Channel_Relationship_Record_on_183rd_day.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.CR_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Expired</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CR_Record_To_Update.Eligible_For_Payout__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_CR_Record_To_Expire</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS - 26120: Created as part of Partners H1 project to check if the related are not empty</description>
+        <name>Copy_1_of_Email_Fields_Check</name>
+        <label>Email Fields Check</label>
+        <locationX>710</locationX>
+        <locationY>492</locationY>
+        <defaultConnectorLabel>No field is filled out</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Atleast_one_field_is_filled</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_181th_day.CAM_Owner__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_181th_day.AE_Email__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X181_Days_Email_Alert</targetReference>
+            </connector>
+            <label>Atleast one field is filled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS - 26120: Created as part of Partners H1 project to check if the related are not empty</description>
+        <name>Email_Fields_Check</name>
+        <label>Email Fields Check</label>
+        <locationX>974</locationX>
+        <locationY>1511</locationY>
+        <defaultConnectorLabel>No field is filled out</defaultConnectorLabel>
+        <rules>
+            <name>Atleast_one_field_is_filled</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.CAM_Owner__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.AE_Email__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X180_Days_Email_Alert</targetReference>
+            </connector>
+            <label>Atleast one field is filled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Registration_Expiration_Date_Check</name>
+        <label>Registration Expiration Date Check</label>
+        <locationX>50</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Expired_Date_Today</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Registration_Expiration_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Registration_Expiration_Date__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_Channel_Relationship_Record_on_180th_day</targetReference>
+            </connector>
+            <label>Is Expired Date Today</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS - 26120: Created as part of Partners H1 project to check if the related are not empty</description>
+        <name>X152_Email_Fields_Check</name>
+        <label>Email Fields Check</label>
+        <locationX>1502</locationX>
+        <locationY>492</locationY>
+        <defaultConnectorLabel>No field is filled out</defaultConnectorLabel>
+        <rules>
+            <name>X152_Atleast_one_field_is_filled</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_182nd_day.CAM_Owner__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_182nd_day.AE_Email__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X182_Days_Email_Alert</targetReference>
+            </connector>
+            <label>Atleast one field is filled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to check the 180 dyas criteria for each CR</description>
+        <name>X180_Days_Criteria_Check</name>
+        <label>180 Days Criteria Check</label>
+        <locationX>1172</locationX>
+        <locationY>1187</locationY>
+        <defaultConnectorLabel>180 Days Criteria Not Satisfied</defaultConnectorLabel>
+        <rules>
+            <name>X180_Days_Criteria_Satisfied</name>
+            <conditionLogic>1 AND (2 AND 3 AND 4 AND 12) AND 5 AND ((6 AND 7) OR (8 AND 9)) AND (10 OR 11)</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Registration_Expiration_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.CR_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending AE Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.CR_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Denied at Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.CR_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Opportunity__r.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Partner_Interaction_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner Sourced</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Partner_Enrollment__r.Sourced_Payout_Model__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Partner_Interaction_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner Influenced</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Partner_Enrollment__r.Influence_Payout_Model__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Partner_Enrollment__r.Member_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Active</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.Partner_Enrollment__r.Member_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pilot</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_180th_day.CR_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>AE Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_CR_Values</targetReference>
+            </connector>
+            <label>180 Days Criteria Satisfied</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to check the 181 dyas criteria for each CR</description>
+        <name>X181_Days_Criteria_Check</name>
+        <label>181 Days Criteria Check</label>
+        <locationX>908</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>181 Days Criteria Not Satisfied</defaultConnectorLabel>
+        <rules>
+            <name>X181_Days_Criteria_Satisfied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>X181_Expiration_Date</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_181th_day.CR_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending AE Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_181th_day.Opportunity__r.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Email_Fields_Check</targetReference>
+            </connector>
+            <label>181 Days Criteria Satisfied</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to check the 182 dyas criteria for each CR</description>
+        <name>X182_Days_Criteria_Check</name>
+        <label>182 Days Criteria Check</label>
+        <locationX>1700</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>182 Days Criteria Not Satisfied</defaultConnectorLabel>
+        <rules>
+            <name>X182_Days_Criteria_Satisfied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>X182_Expiration_Date</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_182nd_day.CR_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending AE Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_182nd_day.Opportunity__r.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X152_Email_Fields_Check</targetReference>
+            </connector>
+            <label>182 Days Criteria Satisfied</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to check the 183 dyas criteria for each CR</description>
+        <name>X183_Days_Criteria_Check</name>
+        <label>183 Days Criteria Check</label>
+        <locationX>2294</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>183 Days Criteria Not Satisfied</defaultConnectorLabel>
+        <rules>
+            <name>X183_Days_Criteria_Satisfied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>X183_Expiration_Date</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_183rd_day.CR_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending AE Renewal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Fetch_Channel_Relationship_Record_on_183rd_day.Opportunity__r.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_CR_Values_to_Expire</targetReference>
+            </connector>
+            <label>183 Days Criteria Satisfied</label>
+        </rules>
+    </decisions>
+    <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to schedule CR expiration logic</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to calculate the 181 Expiration Date</description>
+        <name>X181_Expiration_Date</name>
+        <dataType>Date</dataType>
+        <expression>IF(NOT(ISNULL({!Fetch_Channel_Relationship_Record_on_181th_day.Registration_Expiration_Date__c})),
+{!Fetch_Channel_Relationship_Record_on_181th_day.Registration_Expiration_Date__c}+1,
+null
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to calculate the 182 Expiration Date</description>
+        <name>X182_Expiration_Date</name>
+        <dataType>Date</dataType>
+        <expression>IF(NOT(ISNULL({!Fetch_Channel_Relationship_Record_on_182nd_day.Registration_Expiration_Date__c})),
+{!Fetch_Channel_Relationship_Record_on_182nd_day.Registration_Expiration_Date__c}+2,
+null
+)</expression>
+    </formulas>
+    <formulas>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to calculate the 183 Expiration Date</description>
+        <name>X183_Expiration_Date</name>
+        <dataType>Date</dataType>
+        <expression>IF(NOT(ISNULL({!Fetch_Channel_Relationship_Record_on_183rd_day.Registration_Expiration_Date__c})),
+{!Fetch_Channel_Relationship_Record_on_183rd_day.Registration_Expiration_Date__c}+3,
+null
+)</expression>
+    </formulas>
+    <interviewLabel>Channel Registration Expiration Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Channel Registration Expiration Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>GTMS-26118 &amp; GTMS-26120: To fetch updated CR record</description>
+        <name>Fetch_Channel_Relationship_Record_on_180th_day</name>
+        <label>Fetch Channel Relationship Record on 180th day</label>
+        <locationX>1172</locationX>
+        <locationY>1079</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>X180_Days_Criteria_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26118 &amp; GTMS-26120: To fetch updated CR record</description>
+        <name>Fetch_Channel_Relationship_Record_on_181th_day</name>
+        <label>Fetch Channel Relationship Record on 181th day</label>
+        <locationX>908</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>X181_Days_Criteria_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26118 &amp; GTMS-26120: To fetch updated CR record</description>
+        <name>Fetch_Channel_Relationship_Record_on_182nd_day</name>
+        <label>Fetch Channel Relationship Record on 182nd day</label>
+        <locationX>1700</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>X182_Days_Criteria_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>GTMS-26118 &amp; GTMS-26120: To fetch updated CR record</description>
+        <name>Fetch_Channel_Relationship_Record_on_183rd_day</name>
+        <label>Fetch Channel Relationship Record on 183rd day</label>
+        <locationX>2294</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>X183_Days_Criteria_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Channel_Relationship__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to update the CR record</description>
+        <name>Update_CR_Record</name>
+        <label>Update CR Record</label>
+        <locationX>974</locationX>
+        <locationY>1403</locationY>
+        <connector>
+            <targetReference>Email_Fields_Check</targetReference>
+        </connector>
+        <inputReference>CR_Record_To_Update</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of Partners H1 project to update the CR record to expire</description>
+        <name>Update_CR_Record_To_Expire</name>
+        <label>Update CR Record To Expire</label>
+        <locationX>2162</locationX>
+        <locationY>600</locationY>
+        <inputReference>CR_Record_To_Update</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1046</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Registration_Expiration_Date_Check</targetReference>
+        </connector>
+        <filterFormula>AND(
+    {!$Record.Is_Deal_Registration__c},
+    OR(
+        AND(
+            ISNEW(),
+            NOT(ISNULL({!$Record.Registration_Expiration_Date__c})),
+            NOT(ISBLANK({!$Record.Registration_Expiration_Date__c})),
+            NOT({!$Record.Opportunity__r.IsClosed})
+        ),
+        AND(
+            NOT(ISNEW()),
+            NOT(ISNULL({!$Record.Registration_Expiration_Date__c})),
+            NOT(ISBLANK({!$Record.Registration_Expiration_Date__c})),
+            ISCHANGED({!$Record.Registration_Expiration_Date__c}),
+            NOT({!$Record.Opportunity__r.IsClosed})
+        )
+    ),
+    OR(
+        AND(
+            ISPICKVAL({!$Record.Partner_Interaction_Type__c}, &apos;Partner Sourced&apos;),
+            NOT(ISBLANK(TEXT({!$Record.Partner_Enrollment__r.Sourced_Payout_Model__c})))
+        ),
+        AND(
+            ISPICKVAL({!$Record.Partner_Interaction_Type__c}, &apos;Partner Influenced&apos;),
+            NOT(ISBLANK(TEXT({!$Record.Partner_Enrollment__r.Influence_Payout_Model__c})))
+        )
+    )
+)</filterFormula>
+        <object>Channel_Relationship__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>X180_Day_Path</name>
+            <connector>
+                <targetReference>Fetch_Channel_Relationship_Record_on_180th_day</targetReference>
+            </connector>
+            <label>180 Day Path</label>
+            <offsetNumber>0</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>Registration_Expiration_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X181_Day_Path</name>
+            <connector>
+                <targetReference>Fetch_Channel_Relationship_Record_on_181th_day</targetReference>
+            </connector>
+            <label>181 Day Path</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Registration_Expiration_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X182_Day_Path</name>
+            <connector>
+                <targetReference>Fetch_Channel_Relationship_Record_on_182nd_day</targetReference>
+            </connector>
+            <label>182 Day Path</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Registration_Expiration_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X183_Days_Path</name>
+            <connector>
+                <targetReference>Fetch_Channel_Relationship_Record_on_183rd_day</targetReference>
+            </connector>
+            <label>183 Days Path</label>
+            <offsetNumber>3</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <recordField>Registration_Expiration_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>GTMS-26118 &amp; GTMS-26120: Created as part of partners H1 project to update CR record</description>
+        <name>CR_Record_To_Update</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Channel_Relationship__c</objectType>
+    </variables>
+</Flow>

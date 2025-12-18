@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VG_Amount__c</fullName>
+    <description>VG amount (including HW, cables &amp; licenses)</description>
+    <formula>IF(OR(CONTAINS( Product_Code_Copy__c , &apos;VG&apos;),CONTAINS( Product_Code_Copy__c , &apos;J1708&apos;),CONTAINS( Product_Code_Copy__c , &apos;J1939&apos;),CONTAINS( Product_Code_Copy__c , &apos;OBD&apos;)), TotalPrice , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>VG Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

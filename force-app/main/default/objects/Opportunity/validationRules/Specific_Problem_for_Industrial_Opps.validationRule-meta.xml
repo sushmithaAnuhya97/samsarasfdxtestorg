@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specific_Problem_for_Industrial_Opps</fullName>
+    <active>false</active>
+    <description>Requested by Billy Waldman.</description>
+    <errorConditionFormula>AND(RecordTypeId = &quot;0121a000000VnAB&quot; ,Probability&gt;= 0.10, Specific_Customer_Problem_We_Help_With__c = NULL, ISCHANGED(Probability) )</errorConditionFormula>
+    <errorDisplayField>Specific_Customer_Problem_We_Help_With__c</errorDisplayField>
+    <errorMessage>You must enter the &quot;Specific Customer Problem We Help With&quot; for Industrial opportunities.</errorMessage>
+</ValidationRule>

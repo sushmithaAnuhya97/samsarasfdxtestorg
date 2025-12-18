@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_are_we_going_against__c</fullName>
+    <label>Who are we going against?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Motive</fullName>
+                <default>false</default>
+                <label>Motive</label>
+            </value>
+            <value>
+                <fullName>Lytx</fullName>
+                <default>false</default>
+                <label>Lytx</label>
+            </value>
+            <value>
+                <fullName>Geotab</fullName>
+                <default>false</default>
+                <label>Geotab</label>
+            </value>
+            <value>
+                <fullName>Omnitracs</fullName>
+                <default>false</default>
+                <label>Omnitracs</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

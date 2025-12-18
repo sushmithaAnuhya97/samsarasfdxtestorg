@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_Partner_Admin_of_User_Access_Capabilities</fullName>
+        <description>Notify Partner Admin of User Access Capabilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Registration/Notify_Partner_Admin_of_User_Access_Capabilities</template>
+    </alerts>
+    <alerts>
+        <fullName>modigie__Modigie_Support_Mail_on_Inactive_Modigie_Admin</fullName>
+        <ccEmails>support@modigie.com</ccEmails>
+        <ccEmails>support-salesforce@modigie.com</ccEmails>
+        <description>Modigie Support Mail on Inactive Modigie Admin</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>modigie__Modigie_Templates/modigie__Modigie_Support_Mail_on_Inactive_Modigie_Admin</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_Load_Credits</fullName>
+        <description>Add x Load Credits after the EOQ</description>
+        <field>Load_Credits__c</field>
+        <formula>Load_Credits__c + 50</formula>
+        <name>Add Load Credits</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_Starting_Load_Credits_to_new_MM_rep</fullName>
+        <field>Load_Credits__c</field>
+        <formula>150</formula>
+        <name>Add Starting Load Credits to new MM rep</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Turn_Auto_Sign_Out_True</fullName>
+        <field>Auto_Sign_Out__c</field>
+        <literalValue>0</literalValue>
+        <name>Turn Auto Sign-Out True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Add Load Credits At Beginning of Quarter</fullName>
+        <actions>
+            <name>Add_Load_Credits</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>At the beginning of a quarter, mm reps should get extra x credits to load more accounts.</description>
+        <formula>IF(
+OR(
+AND(MONTH(TODAY())=2,MONTH(TODAY()-1)=1),
+AND(MONTH(TODAY())=5,MONTH(TODAY()-1)=4),
+AND(MONTH(TODAY())=8,MONTH(TODAY()-1)=7),
+AND(MONTH(TODAY())=11,MONTH(TODAY()-1)=10)
+),
+True,False)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Add Load Credits to new MM reps</fullName>
+        <actions>
+            <name>Add_Starting_Load_Credits_to_new_MM_rep</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.UserRoleId</field>
+            <operation>contains</operation>
+            <value>MM</value>
+        </criteriaItems>
+        <description>Every time a rep&apos;s role changes to Mid Market, he or she should get an initial amount of credits.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>User Toggled On</fullName>
+        <actions>
+            <name>Turn_Auto_Sign_Out_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Signed_In__c = True</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

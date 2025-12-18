@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psaws__My_Time_Variance_For_Last_Week</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Work_Calendar_Hours__c</columns>
+    <columns>pse__Total_Hours__c</columns>
+    <columns>pse__Variance__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>psaws__Is_Resource_Current_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Time Variance for Last Week</label>
+</ListView>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+<masterLabel>submitToClosingDealInsights</masterLabel>
+<apiVersion>62.0</apiVersion>
+<isExposed>true</isExposed>
+<targets>
+	<target>lightning__FlowScreen</target>
+	<target>lightning__AppPage</target>
+	<target>lightning__RecordPage</target>
+	<target>lightning__HomePage</target>
+</targets>
+<targetConfigs>
+<targetConfig targets="lightning__FlowScreen">
+    <property name="billingCountry" type="string" label="billingCountry" />
+    <property name="competitorsParticipated" type="string" label="competitorsParticipated" />
+    <property name="selectedPicklistValue" type="string" label="selectedPicklistValue" />
+    <property name="competitorReplaced" type="string" label="competitorReplaced" />
+    <property name="AmendedContract" type="Boolean" label="AmendedContract" />
+    <property name="Upsell" type="Boolean" label="Upsell" />
+    <property name="reason" type="string" label="reason" />
+	<property name="subReason" type="string" label="subReason" />
+    <property name="Notes" type="string" label="Notes" />
+</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

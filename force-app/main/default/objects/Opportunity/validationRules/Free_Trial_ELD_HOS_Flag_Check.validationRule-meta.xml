@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Free_Trial_ELD_HOS_Flag_Check</fullName>
+    <active>false</active>
+    <description>Only allow trial opportunities to advance to Closing or beyond if the Active ELD/HOS Project flag is marked as yes or no (not unknown).</description>
+    <errorConditionFormula>AND (NOT($Permission.Validation_Rule_Exemption), 
+$Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;, 
+ISPICKVAL(Type,&quot;Free Trial Opportunity&quot;), 
+ISCHANGED(StageName), 
+OR( 
+ISPICKVAL(StageName, &quot;Closing&quot;), 
+ISPICKVAL(StageName, &quot;Ready to Ship&quot;), 
+ISPICKVAL(StageName, &quot;Closed Won&quot;) 
+), 
+TEXT(Hours_of_Service_flag__c)=&apos;Unknown&apos; , 
+Express_Flag__c =0
+)</errorConditionFormula>
+    <errorMessage>Cannot allow the trial opportunity to advance to Closing or beyond if the Active ELD/HOS Project flag is unknown (not yet marked as yes or no).</errorMessage>
+</ValidationRule>

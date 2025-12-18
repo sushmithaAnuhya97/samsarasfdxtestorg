@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Xactly_Segment_Sales_Role__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Owner.FirstName &amp;&quot; &quot;&amp; Owner.LastName = &quot;Andy McCall&quot;,&quot;Management&quot;,
+IF( CONTAINS(Owner_Role_Copy__c,&quot;CAE&quot;),&quot;Partner&quot;,
+IF(OR(CONTAINS(Owner_Role_Copy__c,&quot;SMB&quot;),CONTAINS(Owner_Role_Copy__c,&quot;SB&quot;),AND(CONTAINS(Owner_Role_Copy__c,&quot;AE1&quot;),NOT(OR(CONTAINS(Owner_Role_Copy__c,&quot;IND&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Equip&quot;))),NOT(OR(CONTAINS(Owner_Role_Copy__c,&quot;CNW&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Site&quot;))) )),&quot;SMB&quot;&amp;&quot; &quot;&amp;Xactly_Segment_Region__c,
+IF(AND(OR(CONTAINS(Owner_Role_Copy__c,&quot;Fleet IS&quot;),CONTAINS(Owner_Role_Copy__c,&quot;MM&quot;)),NOT(OR(CONTAINS(Owner_Role_Copy__c,&quot;IND&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Equip&quot;))),NOT(OR(CONTAINS(Owner_Role_Copy__c,&quot;CNW&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Site&quot;)))),&quot;IS&quot;&amp;&quot; &quot;&amp;Xactly_Segment_Region__c,
+IF(AND(OR(CONTAINS(Owner_Role_Copy__c,&quot;Fleet ENT&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Ent&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Major&quot;)),NOT(OR(CONTAINS(Owner_Role_Copy__c,&quot;IND&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Equip&quot;))),NOT(OR(CONTAINS(Owner_Role_Copy__c,&quot;CNW&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Site&quot;)))), &quot;ENT&quot;&amp;&quot; &quot;&amp;Xactly_Segment_Region__c,
+IF(OR(CONTAINS(Owner_Role_Copy__c,&quot;Equip&quot;),CONTAINS(Owner_Role_Copy__c,&quot;IND&quot;)),&quot;Industrial&quot;,
+IF(CONTAINS(Owner_Role_Copy__c,&quot;Experimental&quot;),&quot;Experimental&quot;,
+IF(OR(CONTAINS(Owner_Role_Copy__c,&quot;CNW&quot;),CONTAINS(Owner_Role_Copy__c,&quot;Site&quot;)),&quot;Connected Worker&quot;,
+IF(CONTAINS(Owner_Role_Copy__c,&quot;Partner&quot;),&quot;Partner&quot;,
+IF(CONTAINS(Owner_Role_Copy__c,&quot;Renewal&quot;),&quot;Renewal&quot;,
+IF(OR(CONTAINS(Owner_Role_Copy__c,&quot;Management&quot;),CONTAINS(Owner_Role_Copy__c,&quot;VP&quot;),CONTAINS(Owner_Role_Copy__c,&quot;CS&quot;)),&quot;Management&quot;,&quot;&quot;)))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used for Xactly only. Do not use for SFDC reporting. If opportunity owner is Andy McCall, segment defaults to Management.</inlineHelpText>
+    <label>Xactly Segment (Sales Role)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__Tracking_Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Tracking Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Picked Up</fullName>
+                <default>false</default>
+                <label>Picked Up</label>
+            </value>
+            <value>
+                <fullName>In Transit</fullName>
+                <default>false</default>
+                <label>In Transit</label>
+            </value>
+            <value>
+                <fullName>Out for Delivery</fullName>
+                <default>false</default>
+                <label>Out for Delivery</label>
+            </value>
+            <value>
+                <fullName>Awaiting Packing</fullName>
+                <default>false</default>
+                <label>Awaiting Packing</label>
+            </value>
+            <value>
+                <fullName>Ready For Pickup</fullName>
+                <default>false</default>
+                <label>Ready For Pickup</label>
+            </value>
+            <value>
+                <fullName>Driver on Pickup Site</fullName>
+                <default>false</default>
+                <label>Driver on Pickup Site</label>
+            </value>
+            <value>
+                <fullName>Driver En Route</fullName>
+                <default>false</default>
+                <label>Driver En Route</label>
+            </value>
+            <value>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+                <label>Delivered</label>
+            </value>
+            <value>
+                <fullName>Exception</fullName>
+                <default>false</default>
+                <label>Exception</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

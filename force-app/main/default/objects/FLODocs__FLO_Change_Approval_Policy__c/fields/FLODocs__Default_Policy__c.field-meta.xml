@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Default_Policy__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This field flags the default rule set for a company.  If populated, it overrides, the standard default of only requiring approval  and communication to the affected process owners</description>
+    <inlineHelpText>Set this field to mark this set of rules as the default rule set.  There can be only one for each account.</inlineHelpText>
+    <label>Default Policy</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

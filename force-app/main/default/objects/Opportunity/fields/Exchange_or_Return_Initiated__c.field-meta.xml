@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exchange_or_Return_Initiated__c</fullName>
+    <description>Satisfies the criteria for the node &apos;Exchange - Return Initiated?&apos; on the Consolidated Returns Process Builder. Checks for Opportunity Record Type of Return Opportunity in Return Initiated Stage. Then checks true on all Return types except Remorse Refunds, which must be older than 30 days and belong to the SMB Finance Segment.</description>
+    <formula>AND(
+ RecordTypeId = &apos;0121a000000ARoK&apos;,
+ OR(
+  ISPICKVAL(Type,&quot;Exchange&quot;),
+  ISPICKVAL(Type,&quot;Warranty Exchange&quot;),
+  ISPICKVAL(Type,&quot;Free Trial Return&quot;),
+   ISPICKVAL(Type,&quot;Remorse Refund&quot;)
+ )
+)</formula>
+    <label>Exchange or Return Initiated?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

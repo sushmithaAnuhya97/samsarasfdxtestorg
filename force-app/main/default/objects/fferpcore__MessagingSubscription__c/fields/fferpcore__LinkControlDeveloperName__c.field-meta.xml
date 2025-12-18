@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__LinkControlDeveloperName__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <deprecated>false</deprecated>
+    <description>Custom identifier used when enabling return data. Return data fields are identified by their API names, which include this developer name. We recommend that you do not update the developer name after enabling return data.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field must be populated to enable object linking. Publication source objects that wish to link to this subscription target object should have specifically named fields that include this Link Control Developer Name.</inlineHelpText>
+    <label>Return Data Developer Name</label>
+    <length>20</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

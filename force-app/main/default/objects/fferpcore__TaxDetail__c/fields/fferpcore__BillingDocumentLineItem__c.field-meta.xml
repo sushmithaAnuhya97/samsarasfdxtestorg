@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__BillingDocumentLineItem__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Billing document line item to which this tax breakdown relates.</description>
+    <label>Billing Document Line Item</label>
+    <referenceTo>fferpcore__BillingDocumentLineItem__c</referenceTo>
+    <relationshipLabel>Tax Jurisdiction Breakdown</relationshipLabel>
+    <relationshipName>TaxDetails</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

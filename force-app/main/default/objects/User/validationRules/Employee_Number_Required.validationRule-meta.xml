@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Number_Required</fullName>
+    <active>true</active>
+    <description>Bamboo Id is required for new users.</description>
+    <errorConditionFormula>AND( IsBlank(ContactId) , IsActive, EmployeeNumber = NULL ,
+OR(ISNEW(), ISCHANGED( EmployeeNumber ) ) )</errorConditionFormula>
+    <errorDisplayField>EmployeeNumber</errorDisplayField>
+    <errorMessage>This user requires a Bamboo HR Id.</errorMessage>
+</ValidationRule>

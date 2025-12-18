@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+<masterLabel>closedLostCompetitorScreen</masterLabel>
+<apiVersion>62.0</apiVersion>
+<description>closed lost competitor detail screen</description>
+<isExposed>true</isExposed>
+<targets>
+	<target>lightning__FlowScreen</target>
+	<target>lightning__AppPage</target>
+	<target>lightning__RecordPage</target>
+	<target>lightning__HomePage</target>
+</targets>
+<targetConfigs>
+<targetConfig targets="lightning__FlowScreen">
+	<property name="billingCountry" type="string" label="billingCountry" />
+	<property name="competitorsParticipated" type="string" label="competitorsParticipated" />
+    <property name="selectedPicklistValue" type="string" label="selectedPicklistValue" />
+	<property name="Reason" type="string" label="Reason" />
+	<property name="SubReason" type="string" label="SubReason" />
+	<property name="Notes" type="string" label="Notes" />
+	<property name="FollowUpTimeFrame" type="string" label="FollowUpTimeFrame" />
+    <property name="isWebstore" type="string" label="isWebstore" />
+	<property name="OpportunityType" type="string" label="OpportunityType" />
+	<property name="RenewalContract" type="string" label="RenewalContract" />
+	<property name="autoRenewal" type="string" label="autoRenewal" />
+
+
+</targetConfig>
+</targetConfigs>
+
+</LightningComponentBundle>

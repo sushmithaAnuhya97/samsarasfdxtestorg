@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Assignments_load_date_restriction__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Assignment start and end date restriction while loading the Assignments in the Timecard UI.  If true, only Assignments whose start/end dates either contain or overlap with the Timecard date range are loaded.  This affects the UI only, not Admin edit or manual/native Timecard creation.</description>
+    <inlineHelpText>Assignment start and end date restriction while loading the Assignments in the Timecard UI.  If true, only Assignments whose start/end dates either contain or overlap with the Timecard date range are loaded.  This affects the UI only, not Admin edit.</inlineHelpText>
+    <label>Assignments load date restriction</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

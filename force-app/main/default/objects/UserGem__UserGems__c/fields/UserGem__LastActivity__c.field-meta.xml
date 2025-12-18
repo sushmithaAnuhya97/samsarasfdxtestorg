@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserGem__LastActivity__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF(
+AND(
+ISBLANK( UserGem__CurrentContact__r.LastActivityDate ),
+ISBLANK( UserGem__CurrentLead__r.LastActivityDate )
+),
+NULL,
+DATE(1900, 01, 01) +
+MAX(
+BLANKVALUE(UserGem__CurrentContact__r.LastActivityDate, DATE(1900, 01, 01)) - DATE(1900, 01, 01),
+BLANKVALUE(UserGem__CurrentContact__r.LastActivityDate, DATE(1900, 01, 01)) - DATE(1900, 01, 01)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>LastActivity</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

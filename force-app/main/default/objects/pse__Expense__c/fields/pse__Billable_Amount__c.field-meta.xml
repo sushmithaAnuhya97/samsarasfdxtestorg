@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Billable_Amount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This formula equals Amount (minus Non-Billable Incurred Amount and Tax if any) for billable Expenses and zero for non-billable Expenses:  all in the incurred currency.</description>
+    <formula>IF(ISNULL(pse__Amount__c),0.00,IF((pse__Billable__c),(pse__Amount__c-pse__Non_Billable_Incurred_Subtotal__c),0.00))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This formula equals Amount (minus Non-Billable Incurred Amount and Tax if any) for billable Expenses and zero for non-billable Expenses:  all in the incurred currency.</inlineHelpText>
+    <label>Billable Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

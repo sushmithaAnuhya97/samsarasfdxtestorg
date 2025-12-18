@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Pipeline_EG_Count__c</fullName>
+    <label>Total Pipeline-EG Count</label>
+    <summarizedField>Opportunity.EM_Unit_Count__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>notEqual</operation>
+        <value>Closing, Ready to Ship, Closed Won, Closed Lost, Return Created, Return Initiated, Return Label Sent, Products Returned, Return Processing, Return Cancelled, Refunded - Closed</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

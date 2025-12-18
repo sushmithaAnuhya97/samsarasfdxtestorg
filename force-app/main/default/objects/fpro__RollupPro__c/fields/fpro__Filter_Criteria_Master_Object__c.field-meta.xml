@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Filter_Criteria_Master_Object__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Select a pre-defined SOQL filter from the dropdown to specify which records will be processed by this job. Choosing a well-defined filter (e.g., targeting specific fields, dates or conditions) optimizes the job’s performance and reduces execution time. Ensure the selected filter aligns with the job’s requirements.</description>
+    <inlineHelpText>Select a pre-defined SOQL filter from the dropdown to specify which records will be processed by this job. Choosing a well-defined filter (e.g., targeting specific fields, dates or conditions) optimizes the job’s performance and reduces execution time. Ensure the selected filter aligns with the job’s requirements.</inlineHelpText>
+    <label>Filter Criteria (Master Object)</label>
+    <referenceTo>fpro__RollUpPro_Filter__c</referenceTo>
+    <relationshipLabel>References (Master Object)</relationshipLabel>
+    <relationshipName>RollupPro</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

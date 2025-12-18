@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>AE1_Sales_Alert</fullName>
+        <description>AE1 Sales Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Alert_for_AE1_Sales</template>
+    </alerts>
+    <alerts>
+        <fullName>Account_Transferred_Account_Wizard</fullName>
+        <description>Account Transferred - Account Wizard</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Internal_Email_Templates/Account_Reassignment</template>
+    </alerts>
+    <alerts>
+        <fullName>Approval_Email_Alert</fullName>
+        <description>Approval Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>agamani.parida@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>alexander.simaan@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>chloe@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gissell.isoni@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Tier_2_Approval_Status_Change_Notification_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Billing_Address_Change_Email_Alert</fullName>
+        <description>DCA Email alert on Billing Address change</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Manager_Email_Copy__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Billing_Address_change_Order_Form</template>
+    </alerts>
+    <alerts>
+        <fullName>CSM_Account_At_Risk_for_Churn</fullName>
+        <ccEmails>ijeoma.emeagwali@samsara.com</ccEmails>
+        <description>CSM Account At Risk for Churn</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Manager_Email_Copy__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SE_Assignment__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CSM_Account_Churn_at_Risk</template>
+    </alerts>
+    <alerts>
+        <fullName>CSM_Account_Initial_Onboarding_Complete</fullName>
+        <ccEmails>cml-csm@samsara.com, elan.bernstein@samsara.com</ccEmails>
+        <description>CSM Account Initial Onboarding Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CSM_Initial_Onboarding_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>CSM_Account_With_Upsell_Opportunity</fullName>
+        <description>CSM Account With Upsell Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Manager_Email_Copy__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CSM_Account_With_Upsell_Oppty</template>
+    </alerts>
+    <alerts>
+        <fullName>Customer_Health_Downgrade_Alert</fullName>
+        <ccEmails>Enterprisehealthalerts@samsara.com</ccEmails>
+        <ccEmails>lauren.gardenswartz@samsara.com</ccEmails>
+        <ccEmails>katie.failinger@samsara.com</ccEmails>
+        <description>Customer Health Downgrade Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CSM_Director_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Manager_Email_Copy__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>elan.bernstein@samsara.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>BVS__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SE_Assignment__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>SIC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>TSE__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Samsara_Internal_Email_Templates/CS_Sentiment_Downgrade</template>
+    </alerts>
+    <alerts>
+        <fullName>Delinquency_Case_Created</fullName>
+        <description>Delinquency Case Created</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Manager_Email_Copy__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Internal_Email_Templates/Delinquency_Case_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_for_Previous_and_Current_Owner_of_an_account</fullName>
+        <description>Email Alert for Previous and Current Owner of an account</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Current_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Previous_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Samsara_Internal_Email_Templates/Change_of_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Netsuite_Delinquent_Status</fullName>
+        <description>Netsuite Delinquent Status</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Owner_Manager_Email_Copy__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Netsuite_Delinquent_Status</template>
+    </alerts>
+    <alerts>
+        <fullName>New_License_Term_Reject_Alert</fullName>
+        <description>New  License Term Reject Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>no-reply@samsara.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Custom_License_Term_Reject_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_Email_alert</fullName>
+        <description>Rejection Email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Tier_1_Approval_Status_Change_Notification_Denied</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Assignment_Date_Update</fullName>
+        <field>Account_Assignment_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Assignment Date Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSM_Initial_onboarding_completed_check</fullName>
+        <field>CSM_Initial_onboarding_completed_check__c</field>
+        <literalValue>1</literalValue>
+        <name>CSM_Initial_onboarding_completed_check__</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSM_Scheduled_1st_session_TimeStamp</fullName>
+        <field>CSM_Scheduled_1st_session_TimeStamp__c</field>
+        <formula>NOW()</formula>
+        <name>CSM Scheduled 1st session TimeStamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Deactivation_Status</fullName>
+        <field>Deactivation_Approval_Status__c</field>
+        <name>Clear Deactivation Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Enable_Deactivation_Process</fullName>
+        <field>Enable_Delinquency_Process__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear Enable Deactivation Process</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deactivation_Approval_Status</fullName>
+        <field>Deactivation_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Deactivation Approval Status for approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deactivation_Approval_Status_for_Rejecti</fullName>
+        <field>Deactivation_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Deactivation Approval Status for Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deactivation_Approval_Status_for_approve</fullName>
+        <field>Deactivation_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Deactivation Approval Status for approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deactivation_Approval_Status_pending</fullName>
+        <field>Deactivation_Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Deactivation Approval Status pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_Segment_Text_stamped</fullName>
+        <field>Segment_Text_stamped__c</field>
+        <formula>Segment__c</formula>
+        <name>Field:Segment Text stamped</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Geo_Update_on_State</fullName>
+        <description>Update Global Geography field</description>
+        <field>Global_Geography__c</field>
+        <formula>CASE( 
+BillingCountry, 
+&apos;Germany&apos;, &apos;DACH&apos;, 
+&apos;Austria&apos;,&apos;DACH&apos;, 
+&apos;Switzerland&apos;,&apos;DACH&apos;, 
+&apos;Lichtenstein&apos;, &apos;DACH&apos;, 
+&apos;Luxembourg&apos;,&apos;BENELUX&apos;, 
+&apos;Belgium&apos;,&apos;BENELUX&apos;, 
+&apos;Netherlands&apos;,&apos;BENELUX&apos;, 
+&apos;United Kingdom&apos;, &apos;UK &amp; I&apos;, 
+&apos;Scotland&apos;, &apos;UK &amp; I&apos;,
+&apos;Wales&apos;, &apos;UK &amp; I&apos;,
+&apos;Ireland&apos;, &apos;UK &amp; I&apos;, 
+&apos;France&apos;, &apos;France&apos;, 
+&apos;Monaco&apos;, &apos;France&apos;, 
+&apos;Spain&apos;, &apos;Iberia&apos;, 
+&apos;Portugal&apos;, &apos;Iberia&apos;, 
+&apos;Andorra&apos;, &apos;Iberia&apos;,
+&apos;Italy&apos;, &apos;Italy&apos;, 
+&apos;Mexico&apos;, &apos;Mexico&apos;, 
+CASE( 
+BillingState, 
+&apos;Alberta&apos;,&apos;Canada West&apos;, 
+&apos;British Columbia&apos;,&apos;Canada West&apos;, 
+&apos;Manitoba&apos;,&apos;Canada West&apos;, 
+&apos;New Brunswick&apos;,&apos;Canada East&apos;, 
+&apos;Newfoundland and Labrador&apos;,&apos;Canada East&apos;, 
+&apos;Northwest Territories&apos;,&apos;Canada West&apos;, 
+&apos;Nova Scotia&apos;,&apos;Canada East&apos;, 
+&apos;Nunavut&apos;,&apos;Canada West&apos;, 
+&apos;Prince Edward Island&apos;,&apos;Canada East&apos;, 
+&apos;Quebec&apos;,&apos;Canada East&apos;, 
+&apos;Saskatchewan&apos;,&apos;Canada West&apos;, 
+&apos;Yukon&apos;,&apos;Canada West&apos;, 
+&apos;Yukon Territories&apos;,&apos;Canada West&apos;, 
+&apos;Ontario&apos;,&apos;Canada East&apos;, 
+&apos;Alabama&apos;,&apos;United States Central&apos;,
+&apos;Alaska&apos;,&apos;United States West&apos;,
+&apos;Arizona&apos;,&apos;United States West&apos;,
+&apos;Arkansas&apos;,&apos;United States Central&apos;,
+&apos;California&apos;,&apos;United States West&apos;,
+&apos;Colorado&apos;,&apos;United States West&apos;,
+&apos;Connecticut&apos;,&apos;United States East&apos;,
+&apos;Delaware&apos;,&apos;United States East&apos;,
+&apos;District of Columbia&apos;,&apos;United States East&apos;,
+&apos;Florida&apos;,&apos;United States East&apos;,
+&apos;Georgia&apos;,&apos;United States East&apos;,
+&apos;Hawaii&apos;,&apos;United States West&apos;,
+&apos;Idaho&apos;,&apos;United States West&apos;,
+&apos;Illinois&apos;,&apos;United States Central&apos;,
+&apos;Indiana&apos;,&apos;United States Central&apos;,
+&apos;Iowa&apos;,&apos;United States Central&apos;,
+&apos;Kansas&apos;,&apos;United States Central&apos;,
+&apos;Kentucky&apos;,&apos;United States Central&apos;,
+&apos;Louisiana&apos;,&apos;United States Central&apos;,
+&apos;Maine&apos;,&apos;United States East&apos;,
+&apos;Maryland&apos;,&apos;United States East&apos;,
+&apos;Massachusetts&apos;,&apos;United States East&apos;,
+&apos;Michigan&apos;,&apos;United States East&apos;,
+&apos;Minnesota&apos;,&apos;United States Central&apos;,
+&apos;Mississippi&apos;,&apos;United States Central&apos;,
+&apos;Missouri&apos;,&apos;United States Central&apos;,
+&apos;Montana&apos;,&apos;United States West&apos;,
+&apos;Nebraska&apos;,&apos;United States Central&apos;,
+&apos;Nevada&apos;,&apos;United States West&apos;,
+&apos;New Hampshire&apos;,&apos;United States East&apos;,
+&apos;New Jersey&apos;,&apos;United States East&apos;,
+&apos;New Mexico&apos;,&apos;United States West&apos;,
+&apos;New York&apos;,&apos;United States East&apos;,
+&apos;North Carolina&apos;,&apos;United States East&apos;,
+&apos;North Dakota&apos;,&apos;United States Central&apos;,
+&apos;Ohio&apos;,&apos;United States East&apos;,
+&apos;Oklahoma&apos;,&apos;United States Central&apos;,
+&apos;Oregon&apos;,&apos;United States West&apos;,
+&apos;Pennsylvania&apos;,&apos;United States East&apos;,
+&apos;Rhode Island&apos;,&apos;United States East&apos;,
+&apos;South Carolina&apos;,&apos;United States East&apos;,
+&apos;South Dakota&apos;,&apos;United States Central&apos;,
+&apos;Tennessee&apos;,&apos;United States Central&apos;,
+&apos;Texas&apos;,&apos;United States Central&apos;,
+&apos;Utah&apos;,&apos;United States West&apos;,
+&apos;Vermont&apos;,&apos;United States East&apos;,
+&apos;Virginia&apos;,&apos;United States East&apos;,
+&apos;Washington&apos;,&apos;United States West&apos;,
+&apos;West Virginia&apos;,&apos;United States East&apos;,
+&apos;Wisconsin&apos;,&apos;United States Central&apos;,
+&apos;Wyoming&apos;,&apos;United States West&apos;,
+&apos;Other&apos; 
+) 
+)</formula>
+        <name>Geo Update on State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Grace_Period_Reset</fullName>
+        <field>Suspension_Grace_Days__c</field>
+        <name>Grace Period Reset</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Renewal_Grace_Period_Final</fullName>
+        <field>Renewal_Grace_Period__c</field>
+        <formula>TEXT(VALUE(Renewal_Grace_Period__c) + 15)</formula>
+        <name>Renewal Grace Period Final</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Scheduled_1st_session_Check</fullName>
+        <field>Scheduled_1st_session_Checkbox__c</field>
+        <literalValue>1</literalValue>
+        <name>Scheduled 1st session Check</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stamp_CSM_Manager_Email</fullName>
+        <field>CSM_Manager_Email__c</field>
+        <formula>CSM__r.Manager.Email</formula>
+        <name>Stamp CSM Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Suspension_Date_Clear</fullName>
+        <field>Quarantine_Enabled_At__c</field>
+        <name>Suspension Date Clear</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_Status_Change_Date</fullName>
+        <field>Account_Status_Changed__c</field>
+        <formula>now()</formula>
+        <name>Update Account Status Change Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Approval Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Pending</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Update Approval Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_to_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Approval Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Deactivated_field</fullName>
+        <field>Quarantine_Enabled__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Deactivated field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Micro_Fleet_Support_Tier</fullName>
+        <description>Check or uncheck micro fleet support tier checkbox</description>
+        <field>Micro_Fleet_Support_Tier__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Micro Fleet Support Tier</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>ConnectAccountTrigger</fullName>
+        <apiVersion>37.0</apiVersion>
+        <endpointUrl>https://998fa4c7-d68f-4410-9981-678b7586a1b1.trayapp.io</endpointUrl>
+        <fields>BillingCity</fields>
+        <fields>BillingCountryCode</fields>
+        <fields>BillingPostalCode</fields>
+        <fields>BillingState</fields>
+        <fields>BillingStreet</fields>
+        <fields>DNBConnect__D_B_Match_Confidence_Code__c</fields>
+        <fields>DNBConnect__D_B_Match_Data_Profile__c</fields>
+        <fields>DNBConnect__D_B_Match_Grade__c</fields>
+        <fields>DNBConnect__D_B_Match_Type__c</fields>
+        <fields>DNBConnect__D_B_Name_Match_Score__c</fields>
+        <fields>DUNS_Number__c</fields>
+        <fields>Id</fields>
+        <fields>NAICS_Code__c</fields>
+        <fields>Name</fields>
+        <fields>Phone</fields>
+        <fields>Website</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>d&amp;bconnect@samsara.com</integrationUser>
+        <name>ConnectAccountTrigger</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>AE1 Sales Notification</fullName>
+        <actions>
+            <name>AE1_Sales_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>Account_Size_Segment__c  = &apos;AE1&apos; &amp;&amp;  Customer_ARR__c &gt; 5000 &amp;&amp; ((Today() - First_Purchase_Date__c) &lt; 365) &amp;&amp; ((TODAY()-DATEVALUE(Delinquent_As_Of__c )) &lt; 30)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account Churn Risk Reason Email Send</fullName>
+        <actions>
+            <name>CSM_Account_At_Risk_for_Churn</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Churn_Risk_Reason__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account%3A Segment</fullName>
+        <actions>
+            <name>Field_Segment_Text_stamped</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>This text field brings in the Segment value from the formula field: Segment (by Current owner) field on the account.</description>
+        <formula>OR( 
+(ISCHANGED( OwnerId )), 
+ISBLANK( Segment_Text_stamped__c ) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Owner Change</fullName>
+        <actions>
+            <name>Email_Alert_for_Previous_and_Current_Owner_of_an_account</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(Current_Owner_Email__c != null, Previous_Owner_Email__c != null, ISCHANGED(OwnerId),  OR(AND( NOT(Owner.RR_Is_Pool_User__c),  NOT(PRIORVALUE(Is_Owner_Pool_User__c))), AND(Owner.RR_Is_Pool_User__c, NOT(PRIORVALUE(Is_Owner_Pool_User__c)), $User.FirstName=&quot;Low Engagement&quot; )))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp CSM Manager Email</fullName>
+        <actions>
+            <name>Stamp_CSM_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( CSM__c ),NOT(ISBLANK(CSM__c)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Global Geography</fullName>
+        <actions>
+            <name>Geo_Update_on_State</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update Global Geography field based on states / province and billing country</description>
+        <formula>OR( AND(ISCHANGED( BillingCountry ), BillingCountry != &quot;United States&quot;),   AND(ISCHANGED(BillingState), BillingState != NULL ),ISBLANK( Global_Geography__c )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Upsell email to AE</fullName>
+        <actions>
+            <name>CSM_Account_With_Upsell_Opportunity</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Potential_Upsell_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Sends email to AE based on CSM&apos;s assessment of a potential upsell opportunity</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DIA_Billing_Term</fullName>
+    <active>true</active>
+    <description>this will only allow the DIA billing term if &quot;new billing process&quot; is also approved at the account level in SFDC and there is a Stripe ID : GTMS-13555
+11/29/23 - Added Selected payment type and Balance Due logic : GTMS-17158</description>
+    <errorConditionFormula>AND(
+				OR($User.ProfileId == &apos;00e1P000000FBBD&apos;,/*Sales Ops*/
+							$User.ProfileId == &apos;00e1a000000i8JH&apos;,/*Samsara Finance*/
+							$User.ProfileId == &apos;00e4p000001FKPa&apos;/*Samsara Finance Admin*/
+				),
+    OR(
+        ISPICKVAL(Payment_Terms__c, &apos;Due in advance&apos;),
+        ISPICKVAL(Initial_Payment_Terms__c, &apos;Due in advance&apos;)
+    ),
+				AND(
+								ISCHANGED(StageName), 
+								NOT(ISPICKVAL(PRIORVALUE(StageName), &apos;Orders Processing&apos;)), 
+        ISPICKVAL(StageName, &apos;Orders Processing&apos;)
+				),
+    Amount &gt; 0,
+    ISPICKVAL(Type, &apos;Revenue Opportunity&apos;),
+    RecordTypeId = &quot;0121a000000ARoF&quot;,
+    OR(
+								NOT(Account.New_Billing_Process_Approved__c),
+        ISNULL(Account.Billing_Stripe_Customer_Id__c),
+        ISBLANK(Account.Billing_Stripe_Customer_Id__c)
+    ),
+				OR(
+				    NOT(ISPICKVAL(Selected_Payment_Type__c,&apos;Upfront Payments&apos;)),
+								Balance_Due__c &gt; 0
+    )
+)</errorConditionFormula>
+    <errorMessage>The Payment Terms of this Opportunity is set to ‘Due In Advance’ which requires that the New Billing Process Approved field on the Account is checked and that the Billing Stripe Customer ID is populated.  Please update.</errorMessage>
+</ValidationRule>

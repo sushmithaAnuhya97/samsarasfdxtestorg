@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The group for the billing forecast summary.</description>
+    <inlineHelpText>The group for the billing forecast summary.</inlineHelpText>
+    <label>Group</label>
+    <referenceTo>pse__Grp__c</referenceTo>
+    <relationshipName>Forecast_Enhanced_Summaries</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

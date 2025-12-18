@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hold_Reason__c</fullName>
+    <description>GTMS -38 Update the Sales Error drop down button</description>
+    <label>Hold Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Incorrect Quantities</fullName>
+                <default>false</default>
+                <label>Incorrect Quantities</label>
+            </value>
+            <value>
+                <fullName>Missing / Wrong Shipping Address</fullName>
+                <default>false</default>
+                <label>Missing / Wrong Shipping Address</label>
+            </value>
+            <value>
+                <fullName>No PM approval</fullName>
+                <default>false</default>
+                <label>No PM approval</label>
+            </value>
+            <value>
+                <fullName>Out of stock</fullName>
+                <default>false</default>
+                <label>Out of stock</label>
+            </value>
+            <value>
+                <fullName>Confirming FT</fullName>
+                <default>false</default>
+                <label>Confirming FT</label>
+            </value>
+            <value>
+                <fullName>Inventory Hold</fullName>
+                <default>false</default>
+                <label>Inventory Hold</label>
+            </value>
+            <value>
+                <fullName>Clarification Hold</fullName>
+                <default>false</default>
+                <label>Clarification Hold</label>
+            </value>
+            <value>
+                <fullName>Requested Later Ship Date</fullName>
+                <default>false</default>
+                <label>Requested Later Ship Date</label>
+            </value>
+            <value>
+                <fullName>Special Shipping Request Hold</fullName>
+                <default>false</default>
+                <label>Special Shipping Request Hold</label>
+            </value>
+            <value>
+                <fullName>Partial Shipment</fullName>
+                <default>false</default>
+                <label>Partial Shipment</label>
+            </value>
+            <value>
+                <fullName>RFO Notes</fullName>
+                <default>false</default>
+                <label>RFO Notes</label>
+            </value>
+            <value>
+                <fullName>Return Kickback: Promo - RTS</fullName>
+                <default>false</default>
+                <label>Return Kickback: Promo - RTS</label>
+            </value>
+            <value>
+                <fullName>Free Trial - RTS</fullName>
+                <default>false</default>
+                <label>Free Trial - RTS</label>
+            </value>
+            <value>
+                <fullName>Revenue - RTS</fullName>
+                <default>false</default>
+                <label>Revenue - RTS</label>
+            </value>
+            <value>
+                <fullName>Partial Remorse Refund</fullName>
+                <default>false</default>
+                <label>Partial Remorse Refund</label>
+            </value>
+            <value>
+                <fullName>Unplanned Return</fullName>
+                <default>false</default>
+                <label>Unplanned Return</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Advanced_Routing_Settings__c</fullName>
+    <deprecated>false</deprecated>
+    <description>View all Advanced Routing Settings, manage the Advanced Routing Table, and edit Advanced Routing Filters.</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&apos;/apex/&apos; + $Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c + &apos;AdvancedRoutingChecker&apos;, &apos;Manage&apos;, &apos;_blank&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>View all Advanced Routing Settings, manage the Advanced Routing Table, and edit Advanced Routing Filters.</inlineHelpText>
+    <label>Advanced Routing Settings</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

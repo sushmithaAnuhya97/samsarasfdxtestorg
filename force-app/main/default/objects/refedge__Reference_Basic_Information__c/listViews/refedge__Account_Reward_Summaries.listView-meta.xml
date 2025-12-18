@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Account_Reward_Summaries</fullName>
+    <columns>NAME</columns>
+    <columns>refedge__Account__c</columns>
+    <columns>refedge__Current_Available_Balance_Points__c</columns>
+    <columns>refedge__Lifetime_Points__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>refedge__Is_Referenceable__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>refedge__Contact__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Account Reward Summaries</label>
+</ListView>

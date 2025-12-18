@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Phase_Acknowledged__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Phase during which the user acknowledged the object</description>
+    <label>Phase Acknowledged</label>
+    <referenceTo>PDLM__Phase__c</referenceTo>
+    <relationshipLabel>Acknowledgers</relationshipLabel>
+    <relationshipName>Acknowledgers</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

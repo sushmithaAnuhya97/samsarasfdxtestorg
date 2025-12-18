@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regimen_Capital__c</fullName>
+    <description>Used for the MX Invoice Certification process going live in Jan 2023.  This field will be synced w/ NetSuite.  Contact Christian Riel for more information.</description>
+    <label>Regimen Capital</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Tipo_de_RFC__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>S.A.</fullName>
+                <default>false</default>
+                <label>S.A.</label>
+            </value>
+            <value>
+                <fullName>S.A. de C.V.</fullName>
+                <default>false</default>
+                <label>S.A. de C.V.</label>
+            </value>
+            <value>
+                <fullName>S.A.P.I.</fullName>
+                <default>false</default>
+                <label>S.A.P.I.</label>
+            </value>
+            <value>
+                <fullName>S.A.P.I. de C.V.</fullName>
+                <default>false</default>
+                <label>S.A.P.I. de C.V.</label>
+            </value>
+            <value>
+                <fullName>S.C.</fullName>
+                <default>false</default>
+                <label>S.C.</label>
+            </value>
+            <value>
+                <fullName>S. de R.L.</fullName>
+                <default>false</default>
+                <label>S. de R.L.</label>
+            </value>
+            <value>
+                <fullName>S. de R.L. de C.V.</fullName>
+                <default>false</default>
+                <label>S. de R.L. de C.V.</label>
+            </value>
+            <value>
+                <fullName>S.C.A.</fullName>
+                <default>false</default>
+                <label>S.C.A.</label>
+            </value>
+            <value>
+                <fullName>S.C.S</fullName>
+                <default>false</default>
+                <label>S.C.S</label>
+            </value>
+            <value>
+                <fullName>S.N.C.</fullName>
+                <default>false</default>
+                <label>S.N.C.</label>
+            </value>
+            <value>
+                <fullName>S.N.C. de C.V.</fullName>
+                <default>false</default>
+                <label>S.N.C. de C.V.</label>
+            </value>
+            <value>
+                <fullName>S.A.S.</fullName>
+                <default>false</default>
+                <label>S.A.S.</label>
+            </value>
+            <value>
+                <fullName>S.A.B. de C.V.</fullName>
+                <default>false</default>
+                <label>S.A.B. de C.V.</label>
+            </value>
+            <value>
+                <fullName>S.C. de R.L. de C.V.</fullName>
+                <default>false</default>
+                <label>S.C. de R.L. de C.V.</label>
+            </value>
+            <value>
+                <fullName>I.A.P. stands for (Institucion de Asistencia Privada)</fullName>
+                <default>false</default>
+                <label>I.A.P. stands for (Institucion de Asistencia Privada)</label>
+            </value>
+            <value>
+                <fullName>A.C. stands for (Asociacion Civil)</fullName>
+                <default>false</default>
+                <label>A.C. stands for (Asociacion Civil)</label>
+            </value>
+            <value>
+                <fullName>S.P.R de R.L. de C.V.</fullName>
+                <default>false</default>
+                <label>S.P.R de R.L. de C.V.</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.A.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.A. de C.V.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.A.P.I.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.A.P.I. de C.V.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.C.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S. de R.L.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S. de R.L. de C.V.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.C.A.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.C.S</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.N.C.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.N.C. de C.V.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.A.S.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.C. de R.L. de C.V.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>I.A.P. stands for (Institucion de Asistencia Privada)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>A.C. stands for (Asociacion Civil)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Persona Moral</controllingFieldValue>
+            <valueName>S.P.R de R.L. de C.V.</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

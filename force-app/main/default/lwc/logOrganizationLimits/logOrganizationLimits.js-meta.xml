@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Logger: Log Organization Limits</masterLabel>
+    <targets><target>lightning__RecordPage</target></targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>SamsaraLog__c</object>
+                <object>SamsaraLogEntries__c</object>
+            </objects>
+            <property name="fieldName" type="String" label="Field Name" description="API name of the field to display limits from" />
+            <property name="objectType" type="String" label="Object Type" description="API name of the object to display limits from" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Date_VR_for_Closing_Stage</fullName>
+    <active>true</active>
+    <description>to restrict from closing a revenue opportunity if closedate != today
+GTMS-16054 :</description>
+    <errorConditionFormula>AND(
+				CloseDate != TODAY(),
+				NOT(ISPICKVAL(CurrencyIsoCode,&apos;EUR&apos;)),
+				NOT(ISPICKVAL(CurrencyIsoCode,&apos;GBP&apos;)),
+				ISPICKVAL(Type,&apos;Revenue Opportunity&apos;),
+				ISCHANGED(StageName),
+				ISPICKVAL(StageName,&apos;Closing&apos;),
+				NOT(ISPICKVAL(PRIORVALUE(StageName),&apos;Closing&apos;)),
+				NOT(ISBLANK(SBQQ__AmendedContract__c)),
+				NOT(Adjust_License_Start_Date__c),
+				CASESAFEID($Profile.Id) != &apos;00e1a000000UoNcAAK&apos;,
+				CASESAFEID($Profile.Id) != &apos;00e1a000000dxEqAAI&apos;			
+)</errorConditionFormula>
+    <errorMessage>Since this is a co-termed opportunity, the close date must equal today’s date</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DisableEditWhenStatusCompleteOrDiscarded</fullName>
+    <active>true</active>
+    <description>Message when the record cannot be edited as the status is complete or discarded.</description>
+    <errorConditionFormula>OR(
+        ISPICKVAL(PRIORVALUE(fferpcore__Status__c), &apos;Complete&apos;),
+        ISPICKVAL(PRIORVALUE(fferpcore__Status__c), &apos;Discarded&apos;)
+        )</errorConditionFormula>
+    <errorMessage>The record could not be edited because the status is set to complete or discarded.</errorMessage>
+</ValidationRule>

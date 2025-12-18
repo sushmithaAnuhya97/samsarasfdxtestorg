@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Change_Behavior__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Controls behavior of the change.</description>
+    <inlineHelpText>Optionally specify the category behavior, or &quot;None&quot; for default behavior.  Applicable only for categories of type &quot;Change&quot;.</inlineHelpText>
+    <label>Change Behavior</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>PDLM__Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>PDLM__Change_Behavior</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <valueName>MCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <valueName>ACO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change</controllingFieldValue>
+            <valueName>DCO</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

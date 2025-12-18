@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lifetime_Purchases_Enterprise_Check__c</fullName>
+    <formula>If( Lifetime_Purchases__c &gt; 10000 , True,false)</formula>
+    <inlineHelpText>This field is Checked when that value is greater than 10,000$</inlineHelpText>
+    <label>Lifetime Purchases # Enterprise Check</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

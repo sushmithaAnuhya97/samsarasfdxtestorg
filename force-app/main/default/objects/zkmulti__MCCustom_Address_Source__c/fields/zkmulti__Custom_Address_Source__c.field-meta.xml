@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__Custom_Address_Source__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Custom Address Source (Return Shipment)</label>
+    <referenceTo>zkmulti__MCCustom_Address_Source__c</referenceTo>
+    <relationshipLabel>Custom Address Sources</relationshipLabel>
+    <relationshipName>Custom_Address_Sources</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Filtered_Data_Records__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The tracked Object&apos;s data records that this Report filters.</description>
+    <inlineHelpText>The tracked Object&apos;s data records that this Report filters.</inlineHelpText>
+    <label>Filtered Data Records</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>FLODocs__FLO_Customization__c.FLODocs__Salesforce_Types__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </filterItems>
+        <filterItems>
+            <field>FLODocs__FLO_Customization__c.FLODocs__SObject_Type_Label__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </filterItems>
+        <infoMessage>Select the Data Records for which this Customization acts as a filter.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>FLODocs__FLO_Customization__c</referenceTo>
+    <relationshipLabel>Change Log Filters</relationshipLabel>
+    <relationshipName>Change_Log_Filter_Reports</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

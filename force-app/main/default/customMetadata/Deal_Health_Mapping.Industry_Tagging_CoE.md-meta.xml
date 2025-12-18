@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Industry Tagging CoE</label>
+    <protected>false</protected>
+    <values>
+        <field>Logic_Type__c</field>
+        <value xsi:type="xsd:string">Formula</value>
+    </values>
+    <values>
+        <field>Logic__c</field>
+        <value xsi:type="xsd:string">Case(Industry,&apos;Construction&apos;,&apos;Construction + Utilities&apos;,
+&apos;Utilities&apos;,&apos;Construction + Utilities&apos;,
+&apos;Consumer Products&apos;,&apos;Consumer products and unknown&apos;,
+&apos;Unknown&apos;,&apos;Consumer products and unknown&apos;,
+&apos;&apos;,&apos;Consumer products and unknown&apos;,
+&apos;Field Services&apos;,&apos;Field services + mining, quarrying, and oil &amp; gas&apos;,
+&apos;Mining, Quarrying, Oil &amp; Gas&apos;,&apos;Field services + mining, quarrying, and oil &amp; gas&apos;,
+&apos;Remote Infrastructure&apos;,&apos;Field services + mining, quarrying, and oil &amp; gas&apos;,
+&apos;Health Care &amp; Social Assistance&apos;,&apos;Passenger transit + healthcare &amp; social assistance&apos;,
+&apos;Passenger Transit&apos;,&apos;Passenger transit + healthcare &amp; social assistance&apos;,
+&apos;Educational Services&apos;,&apos;Public sector (government, education)&apos;,
+&apos;Government&apos;,&apos;Public sector (government, education)&apos;,
+&apos;Food &amp; Beverage&apos;,&apos;Transportation&apos;,
+&apos;Manufacturing&apos;,&apos;Transportation&apos;,
+&apos;Retail Trade&apos;,&apos;Transportation&apos;,
+&apos;Transportation &amp; Warehousing&apos;,&apos;Transportation&apos;,
+&apos;Wholesale Trade&apos;,&apos;Transportation&apos;,&apos;&apos;)</value>
+    </values>
+    <values>
+        <field>Object__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+    <values>
+        <field>Source_Field__c</field>
+        <value xsi:type="xsd:string">Industry_Tagging_CoE__c</value>
+    </values>
+    <values>
+        <field>Target_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

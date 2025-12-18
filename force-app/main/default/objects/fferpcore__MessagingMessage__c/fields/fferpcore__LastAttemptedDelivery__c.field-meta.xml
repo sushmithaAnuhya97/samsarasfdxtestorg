@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__LastAttemptedDelivery__c</fullName>
+    <defaultValue>null</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This is the date when the message was lat attempted to be delivered. This date is used by the message reaper to determine if the message can be deleted.</description>
+    <label>Last Attempted Delivery</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

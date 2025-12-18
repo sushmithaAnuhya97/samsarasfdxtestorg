@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Quantity_Increased__c</fullName>
+    <formula>AND(
+NOT(ISBLANK(SBQQ__RenewedSubscription__c)),
+NOT(ISNULL(SBQQ__RenewedSubscription__c)),
+Is_Renewed_Line__c=true,
+SBQQ__Quantity__c&gt;Previous_Quantity__c 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Renewal Quantity Increased</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Preferred_Payment_Method__c</fullName>
+    <inlineHelpText>For Partner or Reseller transactions, choose Check or Wire as the payment method.
+For direct customer transactions with Due in Advance terms, use Credit Card or ACH (EMEA: SEPA or BACS) only.
+If the payment method selected is Credit Card or ACH Debit (EMEA: SEPA or BACS), the checkout link must be completed to finalize the payment.</inlineHelpText>
+    <label>Payment Method</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Credit Card/ACH Debit</fullName>
+                <default>false</default>
+                <label>Credit Card/ACH Debit</label>
+            </value>
+            <value>
+                <fullName>Check/Wire</fullName>
+                <default>false</default>
+                <label>Check/Wire</label>
+            </value>
+            <value>
+                <fullName>BACS</fullName>
+                <default>false</default>
+                <label>BACS</label>
+            </value>
+            <value>
+                <fullName>SEPA</fullName>
+                <default>false</default>
+                <label>SEPA</label>
+            </value>
+            <value>
+                <fullName>ACH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>ACH</label>
+            </value>
+            <value>
+                <fullName>Check</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Check</label>
+            </value>
+            <value>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Credit Card</label>
+            </value>
+            <value>
+                <fullName>Wire</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wire</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

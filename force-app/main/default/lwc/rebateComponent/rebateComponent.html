@@ -1,0 +1,210 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-14-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="">
+        <template lwc:if={showSpinner}>
+            <div class="spinnerHolder">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        
+        <div class="slds-p-left_medium ">
+
+            <template lwc:if={showRebateSyncError}>
+                <p class="slds-text-color_error">{showRebateSyncErrorText}</p>
+            </template>
+
+            <div class="slds-grid slds-gutters" style="padding-bottom: 5px; margin-right: 10px;">
+
+                <div class="slds-col slds-size_1-of-3">
+                    <h3 style="font-size: larger; font-weight: bold;">Deal Component Calculator</h3>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                </div>
+
+                <div class="slds-col slds-size_1-of-3">
+
+                    <div class="slds-grid slds-gutters">
+
+                        <div class="slds-col slds-size_7-of-12" style="padding-left: 8px;padding-right: 0px;">
+                            <template lwc:if={showMultiline}>
+                                <lightning-input type="checkbox" label="Bypass Multiline?" checked={isMultiline}
+                                onchange={handleIsMultilineChange}
+                                disabled={disabled}></lightning-input>
+                            </template>
+                        </div>
+
+                        <div class="slds-col slds-size_5-of-12" style="text-align: right;">
+                            <lightning-button label="Get Help" variant="base" title="Help" style="vertical-align: top;" onclick={handleClickHelp}>
+                            </lightning-button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-gutters" style="padding-bottom: 1px; margin-right: 0px;">
+
+                <div class="slds-col slds-size_1-of-3">
+                    <template lwc:if={showOneTimeDiscount}>
+                        <lightning-input type="number" label="One Time Discount"
+                            value={oneTimeDiscount} onchange={handleOneTimeDiscountChange} variant="label-stacked"
+                            disabled={disabled}></lightning-input>
+                    </template>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                </div>
+
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                </div>
+            </div>
+
+            <div class="slds-grid slds-gutters" style="padding-bottom:1px; margin-left:0px; margin-right:15px">
+                <div class="slds-col slds-border_bottom" ></div>
+            </div>
+
+            <div class="slds-grid slds-gutters" style="margin-right: 0px; padding-bottom:1px;">
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 16px;">
+                     <label style="font-size: 12px; color: #444444;">Calculation Method</label>
+                    <lightning-radio-group name="radioGroup"
+                          label="Calculation Method"
+                          options={options}
+                          value={radioGroupValue}
+                          type="button"
+                          onchange={handleChange}
+                          variant="label-hidden"
+                          disabled={disabled}></lightning-radio-group>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                    
+                    <lightning-input type="number" label="Free Months" value={freeMonths}
+                        onchange={handleFreeMonthsChange} variant="label-stacked" step="0.01"
+                        disabled={isMonth}></lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                    <lightning-input type="number" label="Free Service Amount" value={freeMonthsValue}
+                        onchange={handleFreeMonthsValueChange} step="0.01" 
+                        variant="label-stacked" disabled={isMonthValue}></lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-gutters" style="padding-bottom:1px; margin-left:0px; margin-right:15px">
+                <div class="slds-col slds-border_bottom" ></div>
+            </div>
+
+            <div class="slds-grid slds-gutters" style="padding-bottom:1px; margin-right: 0px;">
+                
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input type="number" label="Total Estimated Installation Costs"
+                        value={installationCosts} onchange={handleInstallationCostsChange} variant="label-stacked"
+                        disabled={disabled}></lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                    <lightning-combobox label="Is Installation Reimbursable?"
+                        options={isInstallationReimbursableOptions} value={isInstallationReimbursable}
+                        onchange={handleInstallationReimbursableChange} variant="label-stacked"
+                        disabled={disabledInstallationReimbursable}></lightning-combobox>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                </div>
+            </div>
+
+            <div class="slds-grid slds-gutters" style="padding-bottom:1px; margin-left:0px; margin-right:15px">
+                <div class="slds-col slds-border_bottom" ></div>
+            </div>
+            
+            <div class="slds-grid slds-gutters" style="padding-bottom:1px; margin-right: 0px;" >
+
+                <div class="slds-col slds-size_1-of-3">
+                    
+                    <lightning-input type="number" label="Competitor Buyout Amount" value={competitorBuyout}
+                        onchange={handleCompetitorBuyoutChange} variant="label-stacked"
+                        disabled={disabled}></lightning-input>
+                </div>
+
+                <template if:false={showDual}>
+                    <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_10-of-12" style="padding-right: 0px;">
+                                <lightning-input type="text" label="Buyout Incumbent Provider" 
+                                    field-level-help={dualValue} value={dualValue} disabled="true">
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_2-of-12" style="padding-left: 2px; padding-top: 10px;">
+
+                                <lightning-button-icon icon-name="utility:edit" variant="bare" 
+                                    onclick={editDualhandler} disabled={disabledDual}></lightning-button-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3" style="padding-left: 0px;">
+                    </div>
+                </template>
+
+                <template if:true={showDual}>
+                    <div class="slds-col slds-size_2-of-3" style="padding-left: 0px;">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_11-of-12" >
+                                <label style="font-size: 12px; color: #444444;">Buyout Incumbent Provider</label>
+                                <lightning-dual-listbox
+                                    name="BuyoutIncumbentProvider"
+                                    label="Buyout Incumbent Provider"
+                                    source-label="Available"
+                                    selected-label="Selected"
+                                    options={multiSelectOptions}
+                                    value={multiSelectedValues}
+                                    onchange={multiSelecthandleChange}
+                                    variant="label-hidden"
+                                    size="4"
+                                    class="my-custom-class">
+                                </lightning-dual-listbox>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-12">
+                                <lightning-button-icon icon-name="utility:close" alternative-text="Close" 
+                                    onclick={closeDual} size="x-small" variant="brand">
+                                </lightning-button-icon>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+           
+            <div class="slds-m-top_medium slds-m-left_xx-small" style="margin-right: 10px;text-align: right; margin-top: 5px;">
+                <lightning-button class="slds-m-right_x-small" variant="brand" label={saveButtonLabel}
+                    onclick={handleSave} disabled={disableComponent}></lightning-button>
+            </div>
+        </div>
+        
+
+    </lightning-card>
+
+    <template lwc:if={doNotShowLDS}>
+        <div class="slds-p-around_medium">
+            <lightning-record-edit-form
+                object-api-name="SBQQ__Quote__c"
+                record-id={recordId}
+            >
+                <div class="slds-box">
+                    <lightning-input-field field-name="Future_Free_Months_Amount__c"> </lightning-input-field>
+                    
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </template>
+    
+
+</template>

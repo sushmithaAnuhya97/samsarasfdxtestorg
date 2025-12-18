@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Initiated</fullName>
+    <active>true</active>
+    <description>Sales team cannot pass the stage &quot;Closing&quot;. Order can move only via admin, finance or operations team.</description>
+    <errorConditionFormula>AND(
+  (RecordTypeId = &quot;0121a000000ARoK&quot;),
+  (Probability &gt; 0.25),
+  NOT(
+    OR(
+      ($Permission.Validation_Rule_Exemption),
+      ($Permission.Finance_Contractor),
+      (CONTAINS($Profile.Name, &quot;Finance&quot;)),
+      ($Profile.Name = &quot;Order Operations Admin&quot;),
+      CONTAINS($Profile.Name, &quot;System Administrator&quot;),
+      (CONTAINS($Profile.Name,&quot;Management&quot;)),
+(CONTAINS($Profile.Name,&quot;Samsara Sales - CPQ&quot;)),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - Renewals - New System&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - New System Returns Pilot&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - Connected Worker CPQ&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - Industrial Enterprise CPQ&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - New System&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales Management - New System&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales Management&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - New System Pilot&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - Renewal Manager - New System&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - NA  AE1&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - NA US AE2&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - NA US AE3&quot;),
+	  CONTAINS($Profile.Name,&quot;zzzSamsara Sales - NA AE2&quot;),
+	  CONTAINS($Profile.Name,&quot;zzzSamsara Sales - NA AE3&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - EMEA IS&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - EMEA ENT&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - EMEA ADR&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - NA ENT&quot;),
+	  CONTAINS($Profile.Name,&quot;Samsara Sales - Renewals - Specialist&quot;)
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>You cannot pass the stage of Return Initiated. Only Operations, Finance, and Admins can move returns past the stage of Return Initiated</errorMessage>
+</ValidationRule>

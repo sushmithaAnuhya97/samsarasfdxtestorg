@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrichment_Complete__c</fullName>
+    <description>Checks if Account Has: Over 100 Vehicles, a Current Telematics Provider Populated, and a Contract End Date Populated</description>
+    <formula>AND( Number_of_Vehicles__c &gt; 100, NOT(ISBLANK(TEXT( Current_Telematics_Provider__c ))) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Checks if Account Has: Over 100 Vehicles, a Current Telematics Provider Populated, and a Contract End Date Populated</inlineHelpText>
+    <label>Enrichment Complete</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

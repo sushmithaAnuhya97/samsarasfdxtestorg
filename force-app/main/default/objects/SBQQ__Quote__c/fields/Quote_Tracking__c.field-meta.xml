@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Tracking__c</fullName>
+    <label>Quote Tracking</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Warning: Net Amount</fullName>
+                <default>false</default>
+                <label>Warning: Net Amount</label>
+            </value>
+            <value>
+                <fullName>Warning: Shipping Address - NEW</fullName>
+                <default>false</default>
+                <label>Warning: Shipping Address - NEW</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

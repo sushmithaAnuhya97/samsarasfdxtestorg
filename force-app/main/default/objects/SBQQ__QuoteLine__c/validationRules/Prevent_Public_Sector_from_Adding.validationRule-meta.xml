@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Public_Sector_from_Adding</fullName>
+    <active>true</active>
+    <description>Prevent Public Sector from Adding if the User role is not SEL Fleet ENT AE SLED NA &amp; SalesOps</description>
+    <errorConditionFormula>AND(
+SBQQ__ProductCode__c = &apos;SB-PBLC1&apos;,
+NOT(CONTAINS($UserRole.Name, &apos;SEL Fleet ENT AE SLED NA&apos;)),
+$Profile.Name &lt;&gt; &apos;Sales Ops Profile&apos;,
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+$Profile.Name &lt;&gt; &apos;System Administrator API&apos;,
+$Profile.Name &lt;&gt; &apos;Samsara - Finance&apos;,
+$Profile.Name &lt;&gt; &apos;Samsara - Finance Admin&apos;,
+NOT($Permission.Validation_Rule_Exemption)
+)</errorConditionFormula>
+    <errorMessage>Public sector products are available for the users with &quot;SEL Fleet ENT AE SLED NA&quot; role or Sales Ops Profile only.</errorMessage>
+</ValidationRule>

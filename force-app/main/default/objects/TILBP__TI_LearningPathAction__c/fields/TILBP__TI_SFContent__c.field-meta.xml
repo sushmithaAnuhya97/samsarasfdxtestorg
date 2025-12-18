@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TILBP__TI_SFContent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>TI Content</label>
+    <referenceTo>TILBP__TI_Content__c</referenceTo>
+    <relationshipLabel>TI Learning Path Actions</relationshipLabel>
+    <relationshipName>TI_Learning_Path_Actions</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

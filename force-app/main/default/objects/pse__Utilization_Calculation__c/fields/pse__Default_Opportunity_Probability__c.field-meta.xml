@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Default_Opportunity_Probability__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Where resource requests (on the region, practice or group on which the utilization calculation is run) do not have a value for Probability (%) on the linked opportunity, determines the default percentage value to use to weight held and unheld hours. The default value is 100.</description>
+    <inlineHelpText>Where resource requests on the RPG on which the utilization calculation is run do not have a Probability (%) value on the opportunity, determines the default percentage value to use to weight held and unheld hours.</inlineHelpText>
+    <label>Default Opportunity Probability</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

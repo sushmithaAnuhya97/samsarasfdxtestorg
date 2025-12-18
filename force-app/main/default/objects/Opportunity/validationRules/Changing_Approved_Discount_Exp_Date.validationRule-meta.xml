@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Changing_Approved_Discount_Exp_Date</fullName>
+    <active>false</active>
+    <description>Do not allow an AE to change discount expiration date once the discount has been approved.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Validation_Rule_Exemption),
+    ISPICKVAL(Discount_Approval_Status__c, &apos;Approved&apos;),
+    ISCHANGED(Checkout_Discount_Expiration_Date_Time__c),
+    CreatedDate &gt; DATETIMEVALUE(&quot;2018-09-12 00:00:00&quot;), 
+    OR(CONTAINS($UserRole.Name, &apos;AE&apos;), CONTAINS($UserRole.Name, 
+    &apos;ADR&apos;)))</errorConditionFormula>
+    <errorMessage>Your express discount and its expiration date has been approved, and therefore you cannot change it. Contact your manager and resubmit your discount for approval.</errorMessage>
+</ValidationRule>

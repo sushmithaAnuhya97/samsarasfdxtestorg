@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Linked to the project manager for the project. This allows for easier workflow alerts to be sent</description>
+    <label>Project Manager</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Est Vs Actuals (Project Manager)</relationshipLabel>
+    <relationshipName>Est_Vs_Actuals_Project_Manager</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

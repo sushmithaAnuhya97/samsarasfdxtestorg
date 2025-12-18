@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Sentiment_Sub_reason__c</fullName>
+    <description>Label has been changed as per the request of the Christine from Cs team.</description>
+    <label>Churn Risk Sub-reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sentiment_Root_Cause__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HW reliability - AG</fullName>
+                <default>false</default>
+                <label>HW reliability - AG</label>
+            </value>
+            <value>
+                <fullName>HW reliability - VG</fullName>
+                <default>false</default>
+                <label>HW reliability - VG</label>
+            </value>
+            <value>
+                <fullName>HW reliability - CM</fullName>
+                <default>false</default>
+                <label>HW reliability - CM</label>
+            </value>
+            <value>
+                <fullName>HW reliability - Other</fullName>
+                <default>false</default>
+                <label>HW reliability - Other</label>
+            </value>
+            <value>
+                <fullName>Missing or inaccurate data</fullName>
+                <default>false</default>
+                <label>Missing or inaccurate data</label>
+            </value>
+            <value>
+                <fullName>Dashboard performance</fullName>
+                <default>false</default>
+                <label>Dashboard performance</label>
+            </value>
+            <value>
+                <fullName>Driver app performance</fullName>
+                <default>false</default>
+                <label>Driver app performance</label>
+            </value>
+            <value>
+                <fullName>Integration performance</fullName>
+                <default>false</default>
+                <label>Integration performance</label>
+            </value>
+            <value>
+                <fullName>Connectivity</fullName>
+                <default>false</default>
+                <label>Connectivity</label>
+            </value>
+            <value>
+                <fullName>Core use case not supported</fullName>
+                <default>false</default>
+                <label>Core use case not supported</label>
+            </value>
+            <value>
+                <fullName>Did not meet pre-sales expectations</fullName>
+                <default>false</default>
+                <label>Did not meet pre-sales expectations</label>
+            </value>
+            <value>
+                <fullName>Diagnostics</fullName>
+                <default>false</default>
+                <label>Diagnostics</label>
+            </value>
+            <value>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+                <label>Compliance</label>
+            </value>
+            <value>
+                <fullName>Outstanding feature/feedback request</fullName>
+                <default>false</default>
+                <label>Outstanding feature/feedback request</label>
+            </value>
+            <value>
+                <fullName>Other Product Fit</fullName>
+                <default>false</default>
+                <label>Other Product Fit</label>
+            </value>
+            <value>
+                <fullName>Onboarding experience</fullName>
+                <default>false</default>
+                <label>Onboarding experience</label>
+            </value>
+            <value>
+                <fullName>Technical Support experience</fullName>
+                <default>false</default>
+                <label>Technical Support experience</label>
+            </value>
+            <value>
+                <fullName>Ongoing engagement experience</fullName>
+                <default>false</default>
+                <label>Ongoing engagement experience</label>
+            </value>
+            <value>
+                <fullName>Account Executive experience</fullName>
+                <default>false</default>
+                <label>Account Executive experience</label>
+            </value>
+            <value>
+                <fullName>Renewal Account Executive experience</fullName>
+                <default>false</default>
+                <label>Renewal Account Executive experience</label>
+            </value>
+            <value>
+                <fullName>Finance experience</fullName>
+                <default>false</default>
+                <label>Finance experience</label>
+            </value>
+            <value>
+                <fullName>Feature release experience</fullName>
+                <default>false</default>
+                <label>Feature release experience</label>
+            </value>
+            <value>
+                <fullName>Reseller partner experience</fullName>
+                <default>false</default>
+                <label>Reseller partner experience</label>
+            </value>
+            <value>
+                <fullName>Insufficient training</fullName>
+                <default>false</default>
+                <label>Insufficient training</label>
+            </value>
+            <value>
+                <fullName>Insufficient change mgmt</fullName>
+                <default>false</default>
+                <label>Insufficient change mgmt</label>
+            </value>
+            <value>
+                <fullName>Installation friction</fullName>
+                <default>false</default>
+                <label>Installation friction</label>
+            </value>
+            <value>
+                <fullName>Customer availability</fullName>
+                <default>false</default>
+                <label>Customer availability</label>
+            </value>
+            <value>
+                <fullName>Loss of champion</fullName>
+                <default>false</default>
+                <label>Loss of champion</label>
+            </value>
+            <value>
+                <fullName>Business priority shift</fullName>
+                <default>false</default>
+                <label>Business priority shift</label>
+            </value>
+            <value>
+                <fullName>Fleet downsizing or low vehicle usage</fullName>
+                <default>false</default>
+                <label>Fleet downsizing or low vehicle usage</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy / business closure</fullName>
+                <default>false</default>
+                <label>Bankruptcy / business closure</label>
+            </value>
+            <value>
+                <fullName>Merger vendor consolidation</fullName>
+                <default>false</default>
+                <label>Merger vendor consolidation</label>
+            </value>
+            <value>
+                <fullName>COVID-19</fullName>
+                <default>false</default>
+                <label>COVID-19</label>
+            </value>
+            <value>
+                <fullName>Seasonal purchase</fullName>
+                <default>false</default>
+                <label>Seasonal purchase</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Monthly payment option</fullName>
+                <default>false</default>
+                <label>Monthly payment option</label>
+            </value>
+            <value>
+                <fullName>Contract term length</fullName>
+                <default>false</default>
+                <label>Contract term length</label>
+            </value>
+            <value>
+                <fullName>Terms and conditions</fullName>
+                <default>false</default>
+                <label>Terms and conditions</label>
+            </value>
+            <value>
+                <fullName>Buyout</fullName>
+                <default>false</default>
+                <label>Buyout</label>
+            </value>
+            <value>
+                <fullName>Order process (e.g. fulfillment, shipping)</fullName>
+                <default>false</default>
+                <label>Order process (e.g. fulfillment, shipping)</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <default>false</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>RMA</fullName>
+                <default>false</default>
+                <label>RMA</label>
+            </value>
+            <value>
+                <fullName>Consolidated renewal</fullName>
+                <default>false</default>
+                <label>Consolidated renewal</label>
+            </value>
+            <value>
+                <fullName>Previously churned</fullName>
+                <default>false</default>
+                <label>Previously churned</label>
+            </value>
+            <value>
+                <fullName>Moved devices to another org</fullName>
+                <default>false</default>
+                <label>Moved devices to another org</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>Consolidated renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>Previously churned</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>Moved devices to another org</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>HW reliability - AG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>HW reliability - VG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>HW reliability - CM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>HW reliability - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>Missing or inaccurate data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>Dashboard performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>Driver app performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>Integration performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Fit</controllingFieldValue>
+            <valueName>Connectivity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <valueName>Insufficient training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <valueName>Insufficient change mgmt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <valueName>Installation friction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Training</controllingFieldValue>
+            <valueName>Customer availability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product fit</controllingFieldValue>
+            <valueName>Core use case not supported</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product fit</controllingFieldValue>
+            <valueName>Did not meet pre-sales expectations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product fit</controllingFieldValue>
+            <valueName>Diagnostics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product fit</controllingFieldValue>
+            <valueName>Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product fit</controllingFieldValue>
+            <valueName>Outstanding feature/feedback request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product fit</controllingFieldValue>
+            <valueName>Other Product Fit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Onboarding experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Technical Support experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Ongoing engagement experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Account Executive experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Renewal Account Executive experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Finance experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Feature release experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer service</controllingFieldValue>
+            <valueName>Reseller partner experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business changes</controllingFieldValue>
+            <valueName>Loss of champion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business changes</controllingFieldValue>
+            <valueName>Business priority shift</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business changes</controllingFieldValue>
+            <valueName>Fleet downsizing or low vehicle usage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business changes</controllingFieldValue>
+            <valueName>Bankruptcy / business closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business changes</controllingFieldValue>
+            <valueName>Merger vendor consolidation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business changes</controllingFieldValue>
+            <valueName>COVID-19</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business changes</controllingFieldValue>
+            <valueName>Seasonal purchase</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial terms</controllingFieldValue>
+            <valueName>Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial terms</controllingFieldValue>
+            <valueName>Monthly payment option</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial terms</controllingFieldValue>
+            <valueName>Contract term length</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial terms</controllingFieldValue>
+            <valueName>Terms and conditions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ease of doing business</controllingFieldValue>
+            <valueName>Buyout</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ease of doing business</controllingFieldValue>
+            <valueName>Order process (e.g. fulfillment, shipping)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ease of doing business</controllingFieldValue>
+            <valueName>Billing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ease of doing business</controllingFieldValue>
+            <valueName>RMA</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

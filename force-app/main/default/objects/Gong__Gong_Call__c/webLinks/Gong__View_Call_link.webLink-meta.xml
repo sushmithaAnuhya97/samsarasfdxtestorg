@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gong__View_Call_link</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>View in Gong</masterLabel>
+    <openType>noSidebar</openType>
+    <protected>false</protected>
+    <url>https://app.gong.io/call?id={!Gong__Gong_Call__c.Gong__Call_ID__c}&amp;G4SF={!$Setup.Gong__Gong_Settings__c.Gong__Version__c}</url>
+</WebLink>

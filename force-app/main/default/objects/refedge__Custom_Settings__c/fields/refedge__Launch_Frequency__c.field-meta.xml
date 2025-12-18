@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Launch_Frequency__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines the frequency with which requests for Profile Updates are sent using the Automatic Launch.</description>
+    <inlineHelpText>Determines the frequency with which requests for Profile Updates are sent using the Automatic Launch.</inlineHelpText>
+    <label>Launch Frequency</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+                <label>Monthly</label>
+            </value>
+            <value>
+                <fullName>Bimonthly</fullName>
+                <default>false</default>
+                <label>Bimonthly</label>
+            </value>
+            <value>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+                <label>Quarterly</label>
+            </value>
+            <value>
+                <fullName>Semi-Annually</fullName>
+                <default>false</default>
+                <label>Semi-Annually</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

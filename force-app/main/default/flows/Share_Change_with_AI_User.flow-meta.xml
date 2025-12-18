@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Share_Change_with_AI_User</name>
+        <label>Share Change with AI User</label>
+        <locationX>50</locationX>
+        <locationY>554</locationY>
+        <actionName>PDLM__SharingRuleAction</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>Get_Change_Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>reason</name>
+            <value>
+                <stringValue>Share Change with AI user</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ruleName</name>
+            <value>
+                <stringValue>Share_Change_with_Users_of_AI</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>PDLM__SharingRuleAction</nameSegment>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Affected_Items_0</name>
+        <label>Affected Items &gt; 0</label>
+        <locationX>182</locationX>
+        <locationY>434</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Count_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Change_Record.PDLM__Affected_Item_Counter__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Share_Change_with_AI_User</targetReference>
+            </connector>
+            <label>Count &gt; 0</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Change_Event_Type</name>
+        <label>Change Event Type</label>
+        <locationX>336</locationX>
+        <locationY>194</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Change_Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PDLM__Is_Update__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Change_Record</targetReference>
+            </connector>
+            <label>Change Updated</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Share Change with AI User {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Share Change with AI User</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Change_Record</name>
+        <label>Get Change Record</label>
+        <locationX>182</locationX>
+        <locationY>314</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Affected_Items_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.PDLM__Record_Id__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PDLM__Change__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Change_Event_Type</targetReference>
+        </connector>
+        <object>PDLM__Change_Event__e</object>
+        <triggerType>PlatformEvent</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

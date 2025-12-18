@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grant_Gerberding_Contacts</fullName>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>Account.Account_Status_Updated__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.ADR_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Grant Fischer</value>
+    </filters>
+    <filters>
+        <field>Account.Account_Status_Updated__c</field>
+        <operation>notEqual</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>CONTACT.FIRST_NAME</field>
+        <operation>notEqual</operation>
+        <value>Unknown</value>
+    </filters>
+    <filters>
+        <field>Account.Account_DBA_Name__c</field>
+        <operation>contains</operation>
+        <value>Lycon,Southwind,Eagle Materials,Hiller,TruBlu,Nu-Way,Maintainco,Fresenius,Braunfels</value>
+    </filters>
+    <label>Grant Fischer - Contacts</label>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CantMoveToClosingIfPrimQuoteNotApproved</fullName>
+    <active>true</active>
+    <description>Prevents AEs from moving CPQ opportunities past closing if the primary quote is not approved.</description>
+    <errorConditionFormula>AND( 
+CPQ_Opportunity__c = TRUE, 
+Probability &gt;= 0.95, 
+NOT(ISPICKVAL(SBQQ__PrimaryQuote__r.SBQQ__Status__c, &quot;Approved&quot;)), !$Permission.Validation_Rule_Exemption)</errorConditionFormula>
+    <errorDisplayField>Express_Agreement_Accepted__c</errorDisplayField>
+    <errorMessage>Primary quote is not approved, please get the quote approved to move this opportunity into closing.</errorMessage>
+</ValidationRule>

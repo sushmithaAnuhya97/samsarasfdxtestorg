@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Hierarchy_Key_Path__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Path field for auto-generated concatenated ancestor IDs of the skill in the hierarchy.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+	        	pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+        		pse__Parent_Category__r.pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(
+        		pse__Parent_Category__r.pse__Parent_Category__c), &quot;&quot;,
+        		pse__Parent_Category__r.pse__Parent_Category__c &amp; &quot;,&quot;)
+        	&amp;
+        	IF(ISBLANK(pse__Parent_Category__c), &quot;&quot;, pse__Parent_Category__c)</formula>
+    <label>Hierarchy Key Path</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

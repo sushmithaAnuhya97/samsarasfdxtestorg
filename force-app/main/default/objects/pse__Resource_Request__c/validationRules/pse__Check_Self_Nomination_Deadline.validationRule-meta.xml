@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Check_Self_Nomination_Deadline</fullName>
+    <active>true</active>
+    <description>The Self-Nomination Deadline field cannot be blank if Allow Candidates to Self-Nominate is selected.</description>
+    <errorConditionFormula>AND( pse__Allow_Candidates_to_Self_Nominate__c = True, ISBLANK( pse__Self_Nomination_Deadline__c ))</errorConditionFormula>
+    <errorMessage>You must complete the Self-Nomination Deadline field when Allow Candidates to Self-Nominate is selected.</errorMessage>
+</ValidationRule>

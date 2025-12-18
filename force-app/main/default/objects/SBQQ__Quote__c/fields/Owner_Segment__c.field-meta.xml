@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Segment__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+ OR( 
+  CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c ,&quot;SMB&quot;), 
+  CONTAINS(SBQQ__Opportunity2__r.Price_Book_Name__c  , &quot;Express&quot; ), 
+  SBQQ__Opportunity2__r.Small_Fleet_Opportunity__c  
+ ), 
+ &quot;SMB&quot;, 
+ IF( 
+  OR( 
+   CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;Industrial&quot;), 
+    SBQQ__Opportunity2__r.Industrial_Oppty__c  = TRUE 
+  ), 
+  &quot;Industrial&quot;,
+IF(
+CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;Connected Worker&quot;),
+&quot;Connected Worker&quot;, 
+  IF( 
+   OR( 
+    CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;Experimental&quot;), 
+    CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;MM&quot;), 
+    CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;Mid Market&quot;) 
+   ), 
+   &quot;Mid Market&quot;, 
+   IF( 
+    OR( 
+     CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;Major&quot;), 
+     CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;Enterprise&quot;), 
+     CONTAINS(SBQQ__Opportunity2__r.Owner_Role_Copy__c,&quot;Field&quot;) 
+    ), 
+   &quot;Enterprise&quot;, 
+  &quot;Other&quot; 
+  ) 
+ ) 
+ ) 
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Owner Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

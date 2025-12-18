@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Time_Period_Start__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Start date of the time period this record relates to.</description>
+    <formula>pse__Time_Period__r.pse__Start_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Start date of the time period this record relates to.</inlineHelpText>
+    <label>Time Period Start</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

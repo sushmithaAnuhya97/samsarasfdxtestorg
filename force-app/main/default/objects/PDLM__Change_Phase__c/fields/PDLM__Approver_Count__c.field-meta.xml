@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Approver_Count__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(LEN(PDLM__Approver_1__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_2__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_3__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_4__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_5__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_6__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_7__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_8__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_9__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_10__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_11__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_12__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_13__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_14__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_15__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_16__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_17__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_18__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_19__c) = 0,0,1) +
+IF(LEN(PDLM__Approver_20__c) = 0,0,1)</formula>
+    <label>Approver Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

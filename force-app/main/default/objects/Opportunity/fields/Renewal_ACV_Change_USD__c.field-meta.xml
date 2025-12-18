@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_ACV_Change_USD__c</fullName>
+    <description>Created as part of GTMS-29365
+GTMS-32594 Update ATR Change field for Closed Lost deals</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(StageName, &quot;Closed Lost&quot;),0-Available_to_Renew__c, ACV_Bookings_USD__c-Available_to_Renew__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Calculates the difference between the current Renewal Opportunity ACV and the renewed contract’s Contract Renewable ACV in USD. For Closed Lost, it is negative ATR</inlineHelpText>
+    <label>Renewal ACV Change</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

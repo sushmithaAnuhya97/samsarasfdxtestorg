@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_approval_required_for_RTS</fullName>
+    <active>false</active>
+    <description>Check to determine if finance approved the oppty to move from closing to ready to ship. I.e customer has paid or has provided a PO (if on terms)</description>
+    <errorConditionFormula>AND(
+
+NOT(
+    OR($Permission.Validation_Rule_Exemption, 
+       $User.Id = $Label.Automated_Process_UserId
+       )
+    ), 
+ ISCHANGED(StageName),
+ ISPICKVAL(StageName,&quot;Ready to Ship&quot;),
+OR(
+ISPICKVAL(Type,&quot;Revenue Opportunity&quot;),
+ISPICKVAL(Type,&quot;Revenue Opportunity - Bill Only&quot;)),
+ ISBLANK(Amount_Received__c), 
+  OR(ISBLANK(PO_Number__c),PO_Number__c = &quot;-&quot;),
+ Amount &gt; 0
+
+)</errorConditionFormula>
+    <errorMessage>Please get finance approval to move oppty to Ready to Ship.</errorMessage>
+</ValidationRule>

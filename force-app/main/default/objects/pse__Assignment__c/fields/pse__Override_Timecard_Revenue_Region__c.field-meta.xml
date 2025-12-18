@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Override_Timecard_Revenue_Region__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If set, overrides the default Region to which this Assignment&apos;s Timecard Revenue Transactions will roll up for Regional Actuals, even if the Project or Resource are in a different Region.  Note that either way, the Timecard Revenue Transactions will continue to roll up to the same Project&apos;s Project Actuals and same Resource&apos;s Resource Actuals.</description>
+    <inlineHelpText>If set, overrides the default Region to which this Assignment&apos;s Timecard Revenue Transactions will roll up for Regional Actuals, even if the Project or Resource are in a different Region.</inlineHelpText>
+    <label>Override Timecard Revenue Region</label>
+    <referenceTo>pse__Region__c</referenceTo>
+    <relationshipLabel>Override Timecard Revenue Region For Assignments</relationshipLabel>
+    <relationshipName>Override_TC_RevRegion_For_Assignments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

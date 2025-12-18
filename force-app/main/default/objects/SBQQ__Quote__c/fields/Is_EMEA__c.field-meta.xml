@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_EMEA__c</fullName>
+    <description>This field is created for the product rule &quot;ACT-CM&amp;VG-36MO Must Be Applied&quot; to exclude fee for upsells in EMEA</description>
+    <formula>AND(
+OR(
+CONTAINS( SBQQ__Opportunity2__r.Owner_Role_Copy__c , &apos;EMEA&apos;),
+CONTAINS(Owner_Profile__c , &apos;EMEA&apos;),
+CONTAINS(Owner_Role__c, &apos;EMEA&apos;)
+), ISPICKVAL( SBQQ__Type__c , &apos;Amendment&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>GTMS-17074</inlineHelpText>
+    <label>Is EMEA?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

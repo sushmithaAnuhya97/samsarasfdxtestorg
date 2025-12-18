@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+    !$Permission.Validation_Rule_Exemption,
+    NOT(ISBLANK( Original_Owner_for_Recycling_Campaign__c )),
+    Owner.FirstName  = &apos;SFDC&apos;,  
+    Owner.LastName  = &apos;Pool&apos;
+)</errorConditionFormula>
+    <errorMessage>When the &quot;Original Owner for Recycling Campaign&quot; contains a User look up, then you cannot move the owner to &quot;SFDC POOL&quot;</errorMessage>
+</ValidationRule>

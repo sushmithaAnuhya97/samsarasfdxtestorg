@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Oppties_are_Read_Only</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+NOT( $Permission.Validation_Rule_Exemption ),
+NOT( $Permission.Finance_Contractor ),
+NOT(CONTAINS($Profile.Name,&quot;Finance&quot;)),
+NOT(CONTAINS($Profile.Name,&quot;Samsara SE&quot;)),
+$Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;,
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+NOT(ISPICKVAL(Type,&quot;Free Trial Opportunity&quot;)),
+NOT(ISCHANGED(Trial_Status__c)),
+NOT(ISCHANGED(TrialResolutionOppty__c)),
+NOT(ISCHANGED(FT_Return__c )),
+NOT(ISCHANGED(Approved_Discount__c)),
+NOT(ISCHANGED(License_End_Date__c)),
+NOT(ISCHANGED(License_Start_Date__c)),
+NOT(ISCHANGED(Pushed_Back_to_NS_for_Contracts__c)),
+NOT(ISCHANGED(All_Serial_Numbers__c)),
+NOT(
+OR(
+   AND
+   (ISCHANGED(Exclude_from_Forecast__c),
+    Exclude_from_Forecast__c = true
+    ),
+    Exclude_from_Forecast__c = true
+   )
+),
+PRIORVALUE(IsWon) =TRUE,
+IF(NOT(ISBLANK(Went_to_Closed_Won_Date__c)) , DATEVALUE(Went_to_Closed_Won_Date__c) + 1 &lt; TODAY(), FALSE)
+)</errorConditionFormula>
+    <errorMessage>Only Administrators can modify closed won opportunities.</errorMessage>
+</ValidationRule>

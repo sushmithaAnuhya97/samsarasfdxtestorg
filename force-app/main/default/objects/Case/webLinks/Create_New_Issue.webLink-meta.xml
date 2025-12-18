@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_New_Issue</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create New Issue</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/63.0/connection.js&quot;)}
+var issue = new sforce.SObject(&quot;Issue__c&quot;);
+
+//alert(&quot;Issue ID: &quot; + issue.Name);
+
+issue.Issue_Subject__c = &quot;{!Case.Subject}&quot;;
+issue.Support_Notes__c = &quot;(Related case: {!Case.CaseNumber} - {!Case.Subject}) &lt;br/&gt;&lt;br/&gt; Expected Behavior: &lt;br/&gt;&lt;br/&gt; Observed Behavior: &lt;br/&gt;&lt;br/&gt; Steps to Replicate:&quot;;
+var result = sforce.connection.create([issue]);
+
+if(result[0].getBoolean(&quot;success&quot;))
+{
+  window.location = &quot;/&quot; + result[0].id + &quot;/e&quot;;
+}
+  else
+{
+  alert(&apos;Could not create record &apos;+result);
+}</url>
+</WebLink>

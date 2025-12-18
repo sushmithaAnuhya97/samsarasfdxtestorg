@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__MessageType2__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Message type that this message relates to.</description>
+    <label>Message Type</label>
+    <referenceTo>fferpcore__MessageType__c</referenceTo>
+    <relationshipLabel>Messages</relationshipLabel>
+    <relationshipName>Messages2</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

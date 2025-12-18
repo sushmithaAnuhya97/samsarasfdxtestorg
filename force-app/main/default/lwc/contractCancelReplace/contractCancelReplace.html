@@ -1,0 +1,79 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-07-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <template if:false={isChildComponentVisible}>
+    <lightning-card>
+        <div class="slds-card__header slds-p-horizontal_medium">
+            <div class="slds-media">
+                <div class="slds-media__body">
+                    <div class="slds-grid slds-grid_vertical-align-center" onclick={handleWarningToggle} style="cursor: pointer;">
+                        <button 
+                            class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                            aria-expanded={isWarningExpanded}
+                        >
+                            <div class="circle-container">
+                                <div class="triangle" data-expanded={isWarningExpanded}></div>
+                            </div>
+                        </button>
+                        <div class="slds-truncate">
+                            <span class="section-title">Important Information</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template if:true={isWarningExpanded}>
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                <p>
+                    Continuing with the C&R process may restrict related in-flight opportunities from quote approval or submission to Closing.
+                </p>
+
+                <p> Select a Contract to Cancel and Replace (C&R) </p>
+                <p> Please make sure to complete the C&R process before proceeding with other opportunities </p>
+            </div>
+        </template>
+
+        <lightning-tabset>
+            <lightning-tab label={eligibleContractLabel}>
+            <div class="slds-p-around_medium">
+                <lightning-datatable
+                key-field="Id"
+                data={contracts}
+                columns={columns}
+                onrowselection={handleRowSelection}
+                selected-rows={selectedContracts}
+                hide-checkbox-column={greaterThanMaxEligibleContract}>
+                </lightning-datatable>
+            </div>
+            </lightning-tab>
+
+            <lightning-tab label={ineligibleContractLabel}>
+            <div class="slds-p-around_medium">
+                <div class="slds-m-bottom_medium">
+                <b>The following contracts are not eligible for C&R. See reason for more details.</b>
+                </div>      
+                <lightning-datatable
+                key-field="id"
+                data={nonEligibleContracts}
+                columns={ineligibleContractColumns}
+                hide-checkbox-column="true">
+                </lightning-datatable>
+            </div>
+            </lightning-tab>
+        </lightning-tabset>
+
+    </lightning-card>
+    </template>
+    <template if:true={isChildComponentVisible001}> 
+        <c-flex_-open-amendment-opportunity selected-contracts={selectedContracts}></c-flex_-open-amendment-opportunity>
+    </template>
+    <template if:true={isChildComponentVisible}>
+         <!--<c-flex_-product-selection selected-contracts={selectedContracts}></c-flex_-product-selection>-->
+    </template>
+</template>

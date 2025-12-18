@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-p-around_medium">
+        <template if:true={errorMessage}>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                <span class="slds-assistive-text">error</span>
+                <h2>{errorMessage}</h2>
+            </div>
+        </template>
+        
+        <template if:true={isProcessing}>
+            <div class="slds-is-relative slds-p-top_medium">
+                <lightning-spinner alternative-text="Processing" size="medium"></lightning-spinner>
+            </div>
+        </template>
+    </div>
+</template>

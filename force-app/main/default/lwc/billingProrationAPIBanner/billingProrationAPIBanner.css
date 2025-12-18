@@ -1,0 +1,30 @@
+.custom-error {
+  font-size: 0.875rem; /* Matches Salesforce standard */
+  padding: 1rem;
+  font-family: 'Salesforce Sans', Arial, sans-serif;
+}
+ 
+.error-label {
+  font-weight: bold;
+  color: #c23934; /* Salesforce red */
+  margin-right: 4px;
+}
+ 
+.error-body a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.disabled-link {
+    pointer-events: none;
+    color: gray; /* Optional: Make it visually appear disabled */
+}
+
+.error-icon {
+    position: relative;
+    right: 20px;
+}
+svg {
+    fill: #fff;
+    height: 18px;
+}

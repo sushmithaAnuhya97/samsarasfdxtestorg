@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Final_Approver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The final approver has the final approval right for any affected process. In the event of multiple rules applying, the final approver from the directly affected process will govern.</description>
+    <inlineHelpText>This specific approver must approve all changes affected by this rule. This should only be used for highly critical changes since it can create bottlenecks</inlineHelpText>
+    <label>Final Approver</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>FLO_Changes_Approval_Policies1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

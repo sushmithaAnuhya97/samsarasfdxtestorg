@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(SBQQ__RenewedContract__r.Weighted_Average_Start_Date__c)),
+IF(
+        DATEVALUE(Went_to_Ready_to_Ship_Date__c) &lt; SBQQ__RenewedContract__r.Weighted_Average_Start_Date__c,
+&apos;Closed Before Expiration&apos;,
+IF(
+            DATEVALUE(Went_to_Ready_to_Ship_Date__c) = SBQQ__RenewedContract__r.Weighted_Average_Start_Date__c,
+            &apos;Closed On Expiration&apos;,
+            IF(
+                DATEVALUE(Went_to_Ready_to_Ship_Date__c) &gt; 
+                SBQQ__RenewedContract__r.Weighted_Average_Start_Date__c,
+                &apos;Closed After Expiration With Back Billing&apos;,
+                &apos;&apos;
+            )
+        )
+    ),
+    IF(
+        NOT(ISBLANK(License_Start_Date__c)) &amp;&amp;
+        NOT(ISBLANK(SBQQ__RenewedContract__c)) &amp;&amp;
+        NOT(ISBLANK(Went_to_Ready_to_Ship_Date__c)) &amp;&amp;
+        NOT(ISBLANK(SBQQ__RenewedContract__r.EndDate)),
+        IF(
+            (License_Start_Date__c = DATEVALUE(Went_to_Ready_to_Ship_Date__c)) &amp;&amp;
+            (DATEVALUE(Went_to_Ready_to_Ship_Date__c) = SBQQ__RenewedContract__r.EndDate + 1),
+            &apos;Closed On Expiration&apos;,
+            IF(
+                (License_Start_Date__c = SBQQ__RenewedContract__r.EndDate + 1) &amp;&amp;
+                (SBQQ__RenewedContract__r.EndDate + 1 &gt; DATEVALUE(Went_to_Ready_to_Ship_Date__c)),
+                &apos;Closed Before Expiration&apos;,
+                IF(
+                    (License_Start_Date__c = SBQQ__RenewedContract__r.EndDate + 1) &amp;&amp;
+                    (SBQQ__RenewedContract__r.EndDate + 1 &lt; DATEVALUE(Went_to_Ready_to_Ship_Date__c)),
+&apos;Closed After Expiration With Back Billing&apos;,
+IF(
+                        (License_Start_Date__c = DATEVALUE(Went_to_Ready_to_Ship_Date__c)) &amp;&amp;
+                        (DATEVALUE(Went_to_Ready_to_Ship_Date__c) &gt; SBQQ__RenewedContract__r.EndDate + 1),
+                        &apos;Closed After Expiration Without Back Billing&apos;,
+                        &apos;&apos;
+)
+)
+            )
+        ),
+        &apos;&apos;
+    )
+)</formula>
+    <label>Renewal Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Not_Required_for_Templates</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(pse__Is_Template__c),
+    ISBLANK(pse__Opportunity__c)
+)</errorConditionFormula>
+    <errorMessage>Opportunity required for all non templates projects.</errorMessage>
+</ValidationRule>

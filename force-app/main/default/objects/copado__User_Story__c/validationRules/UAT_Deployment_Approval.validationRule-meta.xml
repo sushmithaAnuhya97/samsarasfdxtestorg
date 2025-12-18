@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UAT_Deployment_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(copado__Promote_and_Deploy__c =true,
+copado__Promote_Change__c =true,
+copado__Validate_Only__c =true),
+UAT_Deployment__c = false,
+copado__Org_Credential__r.Name =&apos;INT&apos;)</errorConditionFormula>
+    <errorMessage>Flex Project UAT Testing is currently in progress (Nov.20th, 2025). Additional approval is required. — Navees Ahmed (US) / Chaitra Padashetty (India).</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hot_Transfer_To__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Hot Transfer functionality. inbound lead comes in, ADR transfers the call directly to a rep so they can see a demo right away.</description>
+    <label>Hot Transfer To</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Contacts1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

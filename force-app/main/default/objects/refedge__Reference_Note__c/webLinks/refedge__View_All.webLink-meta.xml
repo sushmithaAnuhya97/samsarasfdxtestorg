@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__View_All</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>View All</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/apex/{!$Setup.refedge__POR_App_Configuration__c.refedge__Namespace__c}ViewAllReferenceNotes?AccountId={!Account.Id}&amp;&amp;ContactId={!Contact.Id}&amp;&amp;ContentId={!refedge__Reference_Content__c.Id}&amp;&amp;AccountReqId={!refedge__Reference_Request_Account__c.Id}&amp;&amp;RefReqId={!refedge__Reference_Request__c.Id}&amp;&amp;UnspecId={!refedge__Unspecified_Request__c.Id}&amp;&amp;NomiId={!refedge__Nomination__c.Id}</url>
+</WebLink>

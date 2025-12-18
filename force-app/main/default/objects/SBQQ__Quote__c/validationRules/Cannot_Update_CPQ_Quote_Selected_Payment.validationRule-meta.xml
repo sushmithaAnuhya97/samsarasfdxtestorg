@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Update_CPQ_Quote_Selected_Payment</fullName>
+    <active>true</active>
+    <description>GTMS-26158 - Added Renewal Quote check | GTMS-27433 - Added Primary Quote check for Renewals | GTMS-29594 - Skipped this Validation for Samsara Sales - Renewals - Specialist Profile</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+$Profile.Name &lt;&gt; &quot;System Administrator API&quot;,
+NOT($Permission.Validation_Rule_Exemption),
+NOT(ISCLONE()),
+OR(
+AND(
+ISPICKVAL(Configuration_Segment__c, &apos;Non Express&apos;),
+Associated_Opportunity_Type__c &lt;&gt; &quot;Remorse Refund&quot;,
+SBQQ__Opportunity2__r.SBQQ__RenewedContract__c = null
+),
+AND($Profile.Name &lt;&gt; &quot;Samsara Sales - Renewals - Specialist&quot;,
+OR(SBQQ__Opportunity2__r.SBQQ__RenewedContract__c!=null, Renewal__c),
+OR(
+SBQQ__Opportunity2__r.SBQQ__PrimaryQuote__c = Id,
+AND(ISCHANGED(SBQQ__Primary__c), SBQQ__Primary__c)
+)
+)
+),
+OR(
+AND(
+ISPICKVAL( SBQQ__Opportunity2__r.Internal_Finance_Payment_Type__c, &apos;&apos;),
+ISCHANGED( Selected_Payment_Type__c )
+),
+AND(
+NOT(ISPICKVAL(SBQQ__Opportunity2__r.Internal_Finance_Payment_Type__c, &apos;&apos;)),
+OR(
+AND(
+ISPICKVAL(SBQQ__Opportunity2__r.Internal_Finance_Payment_Type__c, &apos;Direct Quarterly&apos;),
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Monthly&apos;)
+),
+AND(
+ISPICKVAL(SBQQ__Opportunity2__r.Internal_Finance_Payment_Type__c, &apos;Direct Semi-Annual&apos;),
+OR(
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Monthly&apos;),
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Quarterly&apos;)
+)
+),
+AND(
+ISPICKVAL(SBQQ__Opportunity2__r.Internal_Finance_Payment_Type__c, &apos;Direct Annual&apos;),
+OR(
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Monthly&apos;),
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Quarterly&apos;),
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Semi-Annual&apos;)
+)
+),
+AND(
+ISPICKVAL(SBQQ__Opportunity2__r.Internal_Finance_Payment_Type__c, &apos;Upfront Payments&apos;),
+OR(
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Monthly&apos;),
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Quarterly&apos;),
+ISPICKVAL(Selected_Payment_Type__c, &apos;Direct Semi-Annual&apos;)
+)
+)
+)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>Please use the CPQ Quote’s ‘Request for Payment Frequency or Terms’ button to request this Payment Frequency</errorMessage>
+</ValidationRule>

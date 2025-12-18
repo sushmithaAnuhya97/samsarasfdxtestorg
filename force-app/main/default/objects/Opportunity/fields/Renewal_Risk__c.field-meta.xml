@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Risk__c</fullName>
+    <description>This is a flag for whenever the risk of a renewal drops below 90% likelihood to close</description>
+    <label>Renewal Forecast</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100%</fullName>
+                <default>false</default>
+                <label>100%</label>
+            </value>
+            <value>
+                <fullName>95%</fullName>
+                <default>false</default>
+                <label>95%</label>
+            </value>
+            <value>
+                <fullName>75%</fullName>
+                <default>false</default>
+                <label>75%</label>
+            </value>
+            <value>
+                <fullName>50%</fullName>
+                <default>false</default>
+                <label>50%</label>
+            </value>
+            <value>
+                <fullName>25%</fullName>
+                <default>false</default>
+                <label>25%</label>
+            </value>
+            <value>
+                <fullName>0%</fullName>
+                <default>false</default>
+                <label>0%</label>
+            </value>
+            <value>
+                <fullName>High (&lt;50% renewal likelihood)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>High (&lt;50% renewal likelihood)</label>
+            </value>
+            <value>
+                <fullName>Low (76-90% renewal likelihood)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low (76-90% renewal likelihood)</label>
+            </value>
+            <value>
+                <fullName>Medium (50-75% renewal likelihood)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Medium (50-75% renewal likelihood)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

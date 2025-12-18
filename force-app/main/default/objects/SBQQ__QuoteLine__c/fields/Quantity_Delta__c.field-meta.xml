@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Delta__c</fullName>
+    <description>Captures the quantity change of a quote line.
+Created as part of GTMS-6113</description>
+    <externalId>false</externalId>
+    <formula>IF(SBQQ__RenewedSubscription__c &lt;&gt; null, SBQQ__Quantity__c - Previous_Quantity__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quantity Delta</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

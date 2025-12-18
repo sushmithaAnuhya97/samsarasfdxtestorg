@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referred_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>If the contact was referred by another customer / prospect, note it here. (Do not use for partner referrals)</description>
+    <label>Referred By</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Referred By field must be set to end-customer accounts (do not use for resellers)</errorMessage>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>End Customer</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Contacts (Referred By)</relationshipLabel>
+    <relationshipName>Customer_Referrals</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

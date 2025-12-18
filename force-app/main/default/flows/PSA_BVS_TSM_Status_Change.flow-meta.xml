@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>When a BVS &amp; TSM Request is approved a project is automatically created and related to request</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>EndDate</name>
+        <dataType>Date</dataType>
+        <expression>Today()</expression>
+    </formulas>
+    <formulas>
+        <description>End date based on service 
+BVS Consultation	30
+BVS Value Realization	90
+Full business case (Trial analysis + ROI)	180
+Industry ROI only (outside-in data w no customer data)	30
+Other	30
+ROI only	30
+BVS Custom Business Case	90</description>
+        <name>ProjectEndDate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 
+CASE(
+    TEXT({!$Record.What_pre_sale_BVS_support_do_you_need__c}),
+    &quot;BVS Consultation&quot;, 30,
+    &quot;BVS Value Realization&quot;, 90,
+    &quot;Full business case (Trial analysis + ROI)&quot;, 180,
+    &quot;Industry ROI only (outside-in data w no customer data)&quot;, 30,
+    &quot;Other&quot;, 30,
+    &quot;ROI only&quot;, 30,
+    &quot;BVS Custom Business Case&quot;, 90,
+    0
+)</expression>
+    </formulas>
+    <formulas>
+        <name>ProjectName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Opportunity__r.Account.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>StartDate</name>
+        <dataType>Date</dataType>
+        <expression>Today()</expression>
+    </formulas>
+    <interviewLabel>PSA BVS &amp; TSM Status Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PSA BVS &amp; TSM Status Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_BVS_Project</name>
+        <label>Create BVS Project</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Request_with_Project_Link</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>BVS_Service_Package__c</field>
+            <value>
+                <elementReference>$Record.What_pre_sale_BVS_support_do_you_need__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Business_Value_Consultant__c</field>
+            <value>
+                <elementReference>$Record.Project_Assignee__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Engagement_Type__c</field>
+            <value>
+                <stringValue>BVS Engagement</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Expected_End_Date__c</field>
+            <value>
+                <elementReference>ProjectEndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Account.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Account__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__End_Date__c</field>
+            <value>
+                <elementReference>ProjectEndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Group__c</field>
+            <value>
+                <elementReference>Get_Group.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Is_Active__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Practice__c</field>
+            <value>
+                <elementReference>Get_Practice_BVS.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Project_Type__c</field>
+            <value>
+                <stringValue>Internal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Region__c</field>
+            <value>
+                <elementReference>Get_Region.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Start_Date__c</field>
+            <value>
+                <elementReference>StartDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>pse__Time_Credited__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>pse__Proj__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Group</name>
+        <label>Get Group</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_BVS_Project</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Business Value Strategy</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Grp__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Practice_BVS</name>
+        <label>Get Practice BVS</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Group</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Business Value Strategy</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Practice__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Region</name>
+        <label>Get Region</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Practice_BVS</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Americas</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Region__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Request_with_Project_Link</name>
+        <label>Update Request with Project Link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Project__c</field>
+            <value>
+                <elementReference>Create_BVS_Project</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Region</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Request_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </filters>
+        <object>BVS_TSM_Support_Request_Form__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Case_Queue_rule</fullName>
+    <active>true</active>
+    <description>New Case queue cannot proceed to status other than New unless you assign the case to a support agent</description>
+    <errorConditionFormula>AND( Owner:Queue.QueueName == &apos;New Case Queue&apos;, !ISPICKVAL(Status, &apos;New&apos;) )</errorConditionFormula>
+    <errorMessage>New Case queue cannot proceed to status other than New unless the case in the queue is assigned to a support agent or case owner (user)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Partner Logo</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property label="Query Parameter for Contact Email" name="contactEmailQueryParameter" type="String"  required="true"  />
+            <property label="Max Width (px)"                    name="maxWidth"                   type="Integer" required="false" />
+            <property label="Max Height (px)"                   name="maxHeight"                  type="Integer" required="false" />
+            <property label="Align Center"                      name="alignCenter"                type="Boolean" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

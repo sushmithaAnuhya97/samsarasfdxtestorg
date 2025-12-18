@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Remove_Oppty_From_Primary_Quote</fullName>
+    <active>true</active>
+    <description>Opportunity cannot be removed from primary quote</description>
+    <errorConditionFormula>IF(
+AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+SBQQ__Primary__c,
+ISCHANGED(SBQQ__Opportunity2__c),
+ISBLANK(SBQQ__Opportunity2__c),
+NOT(
+OR(
+$Profile.Name = &quot;System Administrator&quot;,
+$Permission.Validation_Rule_Exemption
+)
+)
+),
+true,
+false
+)</errorConditionFormula>
+    <errorMessage>The Opportunity field cannot be blank when the quote is set as the Primary Quote.</errorMessage>
+</ValidationRule>

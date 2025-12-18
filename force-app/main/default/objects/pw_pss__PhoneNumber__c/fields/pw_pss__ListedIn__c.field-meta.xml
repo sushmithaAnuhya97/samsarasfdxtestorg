@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pw_pss__ListedIn__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Lists the databases which this number is present in (if any).  Note only databases that the administrator has chosen to screen against will be listed.</inlineHelpText>
+    <label>Listed in</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UK-TPS</fullName>
+                <default>false</default>
+                <label>UK-TPS</label>
+            </value>
+            <value>
+                <fullName>UK-CTPS</fullName>
+                <default>false</default>
+                <label>UK-CTPS</label>
+            </value>
+            <value>
+                <fullName>UK-FPS</fullName>
+                <default>false</default>
+                <label>UK-FPS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

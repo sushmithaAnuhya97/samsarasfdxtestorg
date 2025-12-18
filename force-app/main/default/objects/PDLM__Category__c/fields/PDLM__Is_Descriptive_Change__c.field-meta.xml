@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Is_Descriptive_Change__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Makes a change record into a description change.  This makes the affected items readonly and no record are made.</description>
+    <inlineHelpText>For changes that do not initiate a new draft of the affected item, and do not expire. Examples are ECRs, CAPAs, Corrective Actions, SCARs, Non-Conformance Reports, Incident Reports, and Audits.</inlineHelpText>
+    <label>Is Descriptive Change</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

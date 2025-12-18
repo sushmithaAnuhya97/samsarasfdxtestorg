@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CantSelectAnnualOrMonthlyWhileDelinquent</fullName>
+    <active>false</active>
+    <description>Prevents customers whose account is marked as delinquent from selecting annual or monthly payments</description>
+    <errorConditionFormula>AND(
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+ !( $Permission.Validation_Rule_Exemption),
+ SBQQ__Account__r.MM_Delinquent__c = TRUE,
+ Associated_Opportunity_Type__c = &apos;Revenue Opportunity&apos;,
+ OR(
+  TEXT(Selected_Payment_Type__c) = &apos;Direct Annual&apos;,
+  TEXT(Selected_Payment_Type__c) = &apos;Direct Monthly&apos;
+ )
+)
+&amp;&amp;
+TEXT(Configuration_Segment__c) != &quot;Express&quot;</errorConditionFormula>
+    <errorMessage>Delinquent accounts are not eligible for Direct Annual or Direct Monthly payments.</errorMessage>
+</ValidationRule>

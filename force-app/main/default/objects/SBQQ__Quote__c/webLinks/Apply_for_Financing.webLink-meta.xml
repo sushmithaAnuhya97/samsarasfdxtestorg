@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apply_for_Financing</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Apply for Financing</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Create_Credit_Report_Flow?recordId={!SBQQ__Quote__c.Id}&amp;inputUserId={!$User.Id}&amp;inputApprover={!$Permission.Finance_Approver}&amp;retURL=/{!SBQQ__Quote__c.Id}</url>
+</WebLink>

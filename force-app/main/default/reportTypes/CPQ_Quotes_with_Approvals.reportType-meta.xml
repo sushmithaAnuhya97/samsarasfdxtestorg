@@ -1,0 +1,1896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>SBQQ__Quote__c</baseObject>
+    <category>quotes</category>
+    <deployed>true</deployed>
+    <description>CPQ Quotes with Approvals</description>
+    <join>
+        <outerJoin>false</outerJoin>
+        <relationship>AAE_Approvals__r</relationship>
+    </join>
+    <label>CPQ Quotes with Approvals</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote ID</displayNameOverride>
+            <field>Id</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Quote Number</displayNameOverride>
+            <field>Name</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Type</displayNameOverride>
+            <field>RecordType</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Number_of_months_of_Free_service__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Activity Date</displayNameOverride>
+            <field>LastActivityDate</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account</displayNameOverride>
+            <field>SBQQ__Account__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Addl. Disc. Amount</displayNameOverride>
+            <field>SBQQ__AdditionalDiscountAmount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Avg. Customer Disc. (%)</displayNameOverride>
+            <field>SBQQ__AverageCustomerDiscount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Avg. Partner Disc. (%)</displayNameOverride>
+            <field>SBQQ__AveragePartnerDiscount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bill To City</displayNameOverride>
+            <field>SBQQ__BillingCity__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bill To Country</displayNameOverride>
+            <field>SBQQ__BillingCountry__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Billing Frequency</displayNameOverride>
+            <field>SBQQ__BillingFrequency__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bill To Name</displayNameOverride>
+            <field>SBQQ__BillingName__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bill To Postal Code</displayNameOverride>
+            <field>SBQQ__BillingPostalCode__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bill To State</displayNameOverride>
+            <field>SBQQ__BillingState__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Bill To Street</displayNameOverride>
+            <field>SBQQ__BillingStreet__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contracting Method</displayNameOverride>
+            <field>SBQQ__ContractingMethod__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Additional Disc. (%)</displayNameOverride>
+            <field>SBQQ__CustomerDiscount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Quote Open</displayNameOverride>
+            <field>SBQQ__DaysQuoteOpen__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Default Template</displayNameOverride>
+            <field>SBQQ__DefaultTemplate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Delivery Method</displayNameOverride>
+            <field>SBQQ__DeliveryMethod__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is Promo?</displayNameOverride>
+            <field>Is_Promo__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Distributor Discount</displayNameOverride>
+            <field>SBQQ__DistributorDiscount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Distributor</displayNameOverride>
+            <field>SBQQ__Distributor__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Document Status</displayNameOverride>
+            <field>SBQQ__DocumentStatus__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Email Template Id</displayNameOverride>
+            <field>SBQQ__EmailTemplateId__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Original Selected Payment Type</displayNameOverride>
+            <field>Original_Selected_Payment_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Original Blended Discount</displayNameOverride>
+            <field>Original_Blended_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End Date</displayNameOverride>
+            <field>SBQQ__EndDate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Renewal Discount Decrease</displayNameOverride>
+            <field>Renewal_Discount_Decrease__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expires On</displayNameOverride>
+            <field>SBQQ__ExpirationDate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Segment Term End Date</displayNameOverride>
+            <field>SBQQ__FirstSegmentTermEndDate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Original License Term</displayNameOverride>
+            <field>Original_License_Term__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Generate Contracted Price</displayNameOverride>
+            <field>SBQQ__GenerateContractedPrice__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Introduction</displayNameOverride>
+            <field>SBQQ__Introduction__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Key</displayNameOverride>
+            <field>SBQQ__Key__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Calculated On</displayNameOverride>
+            <field>SBQQ__LastCalculatedOn__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Saved On</displayNameOverride>
+            <field>SBQQ__LastSavedOn__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Renewal Discount Increase</displayNameOverride>
+            <field>Renewal_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Purchase</displayNameOverride>
+            <field>First_Purchase__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Group Line Items</displayNameOverride>
+            <field>SBQQ__LineItemsGrouped__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Print Line Items</displayNameOverride>
+            <field>SBQQ__LineItemsPrinted__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Markup (%)</displayNameOverride>
+            <field>SBQQ__MarkupRate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Master Contract</displayNameOverride>
+            <field>SBQQ__MasterContract__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Master Evergreen Contract</displayNameOverride>
+            <field>SBQQ__MasterEvergreenContract__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Notes</displayNameOverride>
+            <field>SBQQ__Notes__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity</displayNameOverride>
+            <field>SBQQ__Opportunity2__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order By Quote Line Group</displayNameOverride>
+            <field>SBQQ__OrderByQuoteLineGroup__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order By</displayNameOverride>
+            <field>SBQQ__OrderBy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order Group ID</displayNameOverride>
+            <field>SBQQ__OrderGroupID__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ordered</displayNameOverride>
+            <field>SBQQ__Ordered__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Original Quote</displayNameOverride>
+            <field>SBQQ__OriginalQuote__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Paper Size</displayNameOverride>
+            <field>SBQQ__PaperSize__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Discount</displayNameOverride>
+            <field>SBQQ__PartnerDiscount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner</displayNameOverride>
+            <field>SBQQ__Partner__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Payment Terms</displayNameOverride>
+            <field>SBQQ__PaymentTerms__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Price Book</displayNameOverride>
+            <field>SBQQ__PriceBook__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pricebook ID</displayNameOverride>
+            <field>SBQQ__PricebookId__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary Contact</displayNameOverride>
+            <field>SBQQ__PrimaryContact__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary</displayNameOverride>
+            <field>SBQQ__Primary__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote Language</displayNameOverride>
+            <field>SBQQ__QuoteLanguage__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote Process Id</displayNameOverride>
+            <field>SBQQ__QuoteProcessId__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote Template Id</displayNameOverride>
+            <field>SBQQ__QuoteTemplateId__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Renewal Term</displayNameOverride>
+            <field>SBQQ__RenewalTerm__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Renewal Uplift (%)</displayNameOverride>
+            <field>SBQQ__RenewalUpliftRate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Rep</displayNameOverride>
+            <field>SBQQ__SalesRep__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ship To City</displayNameOverride>
+            <field>SBQQ__ShippingCity__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ship To Country</displayNameOverride>
+            <field>SBQQ__ShippingCountry__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ship To Name</displayNameOverride>
+            <field>SBQQ__ShippingName__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ship To Postal Code</displayNameOverride>
+            <field>SBQQ__ShippingPostalCode__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ship To State</displayNameOverride>
+            <field>SBQQ__ShippingState__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ship To Street</displayNameOverride>
+            <field>SBQQ__ShippingStreet__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Source</displayNameOverride>
+            <field>SBQQ__Source__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Start Date</displayNameOverride>
+            <field>SBQQ__StartDate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>SBQQ__Status__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Subscription Term</displayNameOverride>
+            <field>SBQQ__SubscriptionTerm__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Target Customer Amount</displayNameOverride>
+            <field>SBQQ__TargetCustomerAmount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tiered SKUs</displayNameOverride>
+            <field>Tiered_SKUs__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Customer Disc. Amount</displayNameOverride>
+            <field>SBQQ__TotalCustomerDiscountAmount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Type</displayNameOverride>
+            <field>SBQQ__Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Uncalculated</displayNameOverride>
+            <field>SBQQ__Uncalculated__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unopened</displayNameOverride>
+            <field>SBQQ__Unopened__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Watermark Shown</displayNameOverride>
+            <field>SBQQ__WatermarkShown__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>P&amp;P/Legacy</displayNameOverride>
+            <field>P_P_Legacy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Amount</displayNameOverride>
+            <field>SBQQ__CustomerAmount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Line Item Count</displayNameOverride>
+            <field>SBQQ__LineItemCount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>P&amp;P Pilot Customer</displayNameOverride>
+            <field>P_P_Pilot_Customer__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>List Amount</displayNameOverride>
+            <field>SBQQ__ListAmount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Net Amount</displayNameOverride>
+            <field>SBQQ__NetAmount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Regular Amount</displayNameOverride>
+            <field>SBQQ__RegularAmount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Additional Discount (%)</displayNameOverride>
+            <field>Additional_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Annual License Sales Tax</displayNameOverride>
+            <field>Annual_License_Sales_Tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Annual License With Tax</displayNameOverride>
+            <field>Annual_License_with_Tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval Status</displayNameOverride>
+            <field>ApprovalStatus__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ApprovalsArchived</displayNameOverride>
+            <field>ApprovalsArchived__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approved Discount</displayNameOverride>
+            <field>Approved_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approved Discretionary Discount</displayNameOverride>
+            <field>Approved_Discretionary_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approved Payment Type</displayNameOverride>
+            <field>Approved_Payment_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approver</displayNameOverride>
+            <field>Approver__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Associated Opportunity Probability (%)</displayNameOverride>
+            <field>Associated_Opportunity_Probability__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Owner AVP Team</displayNameOverride>
+            <field>Opportunity_Owner_AVP_Team__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Associated Opportunity Type</displayNameOverride>
+            <field>Associated_Opportunity_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Balance Due</displayNameOverride>
+            <field>Balance_Due__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Blended Discount</displayNameOverride>
+            <field>Blended_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Buyout Amount</displayNameOverride>
+            <field>Buyout_Amount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Buyout Authorized check</displayNameOverride>
+            <field>Buyout_Authorized__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Buyout/Subsidy Authorized?</displayNameOverride>
+            <field>Buyout_Authorized_symbol__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>BypassActivationSKUrules</displayNameOverride>
+            <field>BypassActivationSKUrules__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CalculatedSubscriptionTerm</displayNameOverride>
+            <field>CalculatedSubscriptionTerm__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Calculated Annual Payment</displayNameOverride>
+            <field>Calculated_Annual_Payment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Camera Only Deal</displayNameOverride>
+            <field>Camera_Only_Deal__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ClonedQuoteAppendName</displayNameOverride>
+            <field>ClonedQuoteAppendName__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Close Date</displayNameOverride>
+            <field>Close_Date__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Co-Termination</displayNameOverride>
+            <field>Co_Termination__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Conga Template Availability</displayNameOverride>
+            <field>Conga_Template_Availability__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact Buyout</displayNameOverride>
+            <field>Contact_Buyout__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract End Date</displayNameOverride>
+            <field>Contract_End_Date__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Max Credit Limit</displayNameOverride>
+            <field>Credit_Limit__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Custom License Term</displayNameOverride>
+            <field>Custom_License_Term__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deactivate Gateways and License Credits</displayNameOverride>
+            <field>Deactivate_Gateways_and_License_Credits__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Deal Registration Discount</displayNameOverride>
+            <field>Deal_Registration_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Discount Approval Needed</displayNameOverride>
+            <field>Discount_Approval_Needed__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Discount Approved?</displayNameOverride>
+            <field>Discount_Approval_Required__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Early Cancelation Clause</displayNameOverride>
+            <field>Early_Cancelation_Clause__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Enterprise Role</displayNameOverride>
+            <field>Enterprise_Role__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met For DiscApprovalNoDir</displayNameOverride>
+            <field>Entry_Criteria_Met_For_DiscApprovalNoDir__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for Chan. Rev. Oppty.</displayNameOverride>
+            <field>Entry_Criteria_Met_for_Chan_Rev_Oppty__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for Ind. Disc. Blend</displayNameOverride>
+            <field>Entry_Criteria_Met_for_Ind_Disc_Blend__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for Ind. NFR Disc.</displayNameOverride>
+            <field>Entry_Criteria_Met_for_Ind_NFR_Disc__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for IntFinDiscENTDIR.</displayNameOverride>
+            <field>Entry_Criteria_Met_for_IntFinDiscENTDIR__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for IntFinDiscENTSLED</displayNameOverride>
+            <field>Entry_Criteria_Met_for_IntFinDiscENTSLED__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for IntFinDiscENT</displayNameOverride>
+            <field>Entry_Criteria_Met_for_IntFinDiscENT__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for MM Rev Oppty</displayNameOverride>
+            <field>Entry_Criteria_Met_for_Int_Fin_Disc__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for Promo Disc.</displayNameOverride>
+            <field>Entry_Criteria_Met_for_Promo_Disc__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Est Annual Payment</displayNameOverride>
+            <field>Estimated_Annual_Payment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Estimated Monthly Payment</displayNameOverride>
+            <field>Estimated_Monthly_Payment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Upfront HW Payment</displayNameOverride>
+            <field>Estimated_Upfront_Amount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Express Payment Type</displayNameOverride>
+            <field>Express_Payment_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Extended Return Period</displayNameOverride>
+            <field>Extended_Return_Period__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Extended Return Policy</displayNameOverride>
+            <field>Extended_Return_Policy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Finance Partner - Estimated Monthly</displayNameOverride>
+            <field>Finance_Partner_Estimated_Monthly__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Finance Partner</displayNameOverride>
+            <field>Finance_Partner__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Annual Payment</displayNameOverride>
+            <field>First_Annual_Payment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>First Month Payment</displayNameOverride>
+            <field>First_Months_Payment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Free Trial</displayNameOverride>
+            <field>Free_Trial__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Freight Cost</displayNameOverride>
+            <field>Freight_Cost__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Guaranteed Pricing?</displayNameOverride>
+            <field>Guaranteed_Pricing__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hardware Discount (%)</displayNameOverride>
+            <field>Hardware_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hardware Upgrade</displayNameOverride>
+            <field>Hardware_Upgrade__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>License Discount (%)</displayNameOverride>
+            <field>License_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>License Term Defaulted</displayNameOverride>
+            <field>License_Term_Defaulted__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>License Term</displayNameOverride>
+            <field>License_Term__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Manager 1</displayNameOverride>
+            <field>Manager_1__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Manager 2</displayNameOverride>
+            <field>Manager_2__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Manager 3</displayNameOverride>
+            <field>Manager_3__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Manager 4</displayNameOverride>
+            <field>Manager_4__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Monthly Credit Remaining on Account</displayNameOverride>
+            <field>Monthly_Credit_Remaining_on_Account__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Monthly License Sales Tax</displayNameOverride>
+            <field>Monthly_License_Sales_Tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Monthly License with Tax</displayNameOverride>
+            <field>Monthly_License_with_Tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Trial Period</displayNameOverride>
+            <field>Opportunity_Trial_Period__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner Segment</displayNameOverride>
+            <field>Owner_Segment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partial Use/Seasonal</displayNameOverride>
+            <field>Partial_Use_Seasonal__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Partner Rebate Amount</displayNameOverride>
+            <field>Partner_Rebate_Amount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Performance Guarantee</displayNameOverride>
+            <field>Performance_Guarantee__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Price Stability - Price Lock</displayNameOverride>
+            <field>Price_Stability_Price_Lock__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Price Stability - Renewal</displayNameOverride>
+            <field>Price_Stability_Renewal__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pricebook Name</displayNameOverride>
+            <field>Pricebook_Name__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ProductApprovalNeeded</displayNameOverride>
+            <field>ProductApprovalNeeded__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Product Approval?</displayNameOverride>
+            <field>Product_Approval__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ACV Bookings</displayNameOverride>
+            <field>Quote_ACV__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Monthly Credit Limit Increase Required</displayNameOverride>
+            <field>Quote_Amount_Greater_Than_Remain_Credit__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Accessory Discount (%)</displayNameOverride>
+            <field>Accessory_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote Name</displayNameOverride>
+            <field>Quote_Name__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reason for Discount</displayNameOverride>
+            <field>Reason_for_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Recalculate tax</displayNameOverride>
+            <field>Recalculate_tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Tax Historical</displayNameOverride>
+            <field>Sales_Tax_Historical__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Tax Rate</displayNameOverride>
+            <field>Sales_Tax_Rate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Tax</displayNameOverride>
+            <field>Sales_Tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Selected Payment Rule Trigger</displayNameOverride>
+            <field>Selected_Payment_Rule_Trigger__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Selected Payment Type</displayNameOverride>
+            <field>Selected_Payment_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ship From Location</displayNameOverride>
+            <field>Ship_From_Location__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Account Type</displayNameOverride>
+            <field>Shipping_Account_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Address - NEW</displayNameOverride>
+            <field>Shipping_Address_NEW__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Carrier</displayNameOverride>
+            <field>Shipping_Carrier__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Country</displayNameOverride>
+            <field>Shipping_Country__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Method</displayNameOverride>
+            <field>Shipping_Method__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping State</displayNameOverride>
+            <field>Shipping_State__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Zone</displayNameOverride>
+            <field>Shipping_Zone__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping and Handling - Manual</displayNameOverride>
+            <field>Shipping_and_Handling_Manual__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping and Handling</displayNameOverride>
+            <field>Shipping_and_Handling__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Show Total Savings</displayNameOverride>
+            <field>Show_Total_Savings__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Submitted Date</displayNameOverride>
+            <field>SubmittedDate__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Submitted User</displayNameOverride>
+            <field>SubmittedUser__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Subsidy Amount</displayNameOverride>
+            <field>Subsidy_Amount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Tax Exempt</displayNameOverride>
+            <field>Tax_Exempt__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Hardware Due</displayNameOverride>
+            <field>Total_Hardware_Due__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total License Due</displayNameOverride>
+            <field>Total_License_Due__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total License Price</displayNameOverride>
+            <field>Total_License_Price__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Product Dimensions</displayNameOverride>
+            <field>Total_Product_Dimensions__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Total Weight (oz)</displayNameOverride>
+            <field>Total_Weight_oz__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>With List and Discount?</displayNameOverride>
+            <field>With_List_and_Discount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>isManager</displayNameOverride>
+            <field>isManager__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Accessories</displayNameOverride>
+            <field>of_Accessories__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of HW Products</displayNameOverride>
+            <field>of_HW_Products__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Hardware Sales Tax</displayNameOverride>
+            <field>Hardware_Sales_Tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>License Sales Tax</displayNameOverride>
+            <field>License_Sales_Tax__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>List Price Less Default Discounts</displayNameOverride>
+            <field>List_Price_Less_Default_Discounts__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number of Quote Lines</displayNameOverride>
+            <field>Number_of_Quote_Lines__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote Subtotal</displayNameOverride>
+            <field>Quote_Subtotal__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>3rd Party Products &amp; Services</displayNameOverride>
+            <field>X3rd_Party_Products_Services__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Cable Selection Link</displayNameOverride>
+            <field>Cable_Selection_Link__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>RejectedAddOn</displayNameOverride>
+            <field>RejectedAddOn__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>FireDiscountApprovals</displayNameOverride>
+            <field>FireDiscountApprovals__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Coordinator UserID</displayNameOverride>
+            <field>Coordinator_UserID__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>NumOfProductsNeedingApproval</displayNameOverride>
+            <field>NumOfProductsNeedingApproval__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ApprovedProductsCount</displayNameOverride>
+            <field>ApprovedProductsCount__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Product Approval Needed?</displayNameOverride>
+            <field>Product_Approval_Needed__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Amount Less Subsidy</displayNameOverride>
+            <field>Amount_Less_Subsidy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Urgent Opportunity?</displayNameOverride>
+            <field>High_Priority_Opportunity__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Entry Criteria Met for MV Disc. Blended</displayNameOverride>
+            <field>Entry_Criteria_Met_for_MV_Disc_Blended__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Ops Notes</displayNameOverride>
+            <field>Sales_Ops_Notes__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industrial Discount Approval Needed</displayNameOverride>
+            <field>Industrial_Discount_Approval_Needed__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industrial Discount Approved?</displayNameOverride>
+            <field>Industrial_Discount_Approved__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Industrial License Term</displayNameOverride>
+            <field>Industrial_License_Term__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Number Of Approved Products</displayNameOverride>
+            <field>Number_Of_Approved_Products__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Record Type</displayNameOverride>
+            <field>Opportunity_Record_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rejected Promo</displayNameOverride>
+            <field>Rejected_Promo__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Renewal</displayNameOverride>
+            <field>Renewal__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>User Profile</displayNameOverride>
+            <field>User_Profile__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Standalone AG24 HW Count</displayNameOverride>
+            <field>Standalone_AG24_HW_Count__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Stripe Microdeposit Verification Link</displayNameOverride>
+            <field>stripe_micro_link__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>User Profile</displayNameOverride>
+            <field>User_Profile1__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Stage</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.StageName</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Segment (Sales Role)</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Segment_Sales_Role__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Owner Role Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner_Role_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Opportunity Owner</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Owner Manager Email Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner_Manager_Email_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Owner Manager Name Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner_Manager_Name_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Owner Manager Role Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner_Manager_Role_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Owner AVP Role Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner_AVP_Role_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Owner AVP Name Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner_AVP_Name_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Selected Payment Type</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Selected_Payment_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : ACV Bookings</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.ACV_Bookings_SOT__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : ACV Bookings Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.ACV_Bookings_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : ACV Bookings Rollup</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.ACV_Bookings__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : ACV from Formula</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.ACV_Formula__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : 18 Digit Opportunity ID</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.X18_Digit_Opportunity_ID__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Close Date</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.CloseDate</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Fiscal Quarter</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Fiscal_Quarter__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Fiscal Year</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Fiscal_Year__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : First Purchase</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.First_Purchase__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : # of LIC Products</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.of_LIC_Products__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity_Owner_Segment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : # of HW Products</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.of_HW_Products__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : # of Accessories</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.of_Accessories__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>LIC-VG Basic Count</displayNameOverride>
+            <field>LIC_VG_Basic_Count__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Owner Director Name Copy</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Owner_Director_Name_Copy__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Account : Active ACV [USD]</displayNameOverride>
+            <field>SBQQ__Account__c.Customer_ARR__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>P&amp;P Pilot Flag</displayNameOverride>
+            <field>P_P_Pilot_Flag__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Account : In Flight Legacy Deals</displayNameOverride>
+            <field>SBQQ__Account__c.IFL_Deals__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Account : P&amp;P Pilot Customer</displayNameOverride>
+            <field>SBQQ__Account__c.P_P_Pilot_Customer__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Sales Rep : P&amp;P Pilot</displayNameOverride>
+            <field>SBQQ__SalesRep__c.P_P_Pilot__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>CPQ Quote : Opportunity : Sub - Type</displayNameOverride>
+            <field>SBQQ__Opportunity2__c.Sub_Type__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SBQQ__Account__c.C360_Processed__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Deal_Health__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <masterLabel>CPQ Quotes</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval ID</displayNameOverride>
+            <field>Id</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Owner</displayNameOverride>
+            <field>Owner</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Auto_Approved__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Approval #</displayNameOverride>
+            <field>Name</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Currency</displayNameOverride>
+            <field>CurrencyIsoCode</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created By</displayNameOverride>
+            <field>CreatedBy</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified Date</displayNameOverride>
+            <field>LastModifiedDate</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified By</displayNameOverride>
+            <field>LastModifiedBy</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Actions</displayNameOverride>
+            <field>sbaa__Actions__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval Chain</displayNameOverride>
+            <field>sbaa__ApprovalChain__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval Step</displayNameOverride>
+            <field>sbaa__ApprovalStep__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval Template Id</displayNameOverride>
+            <field>sbaa__ApprovalTemplateId__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approved By</displayNameOverride>
+            <field>sbaa__ApprovedBy__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approver Field</displayNameOverride>
+            <field>sbaa__ApproverField__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approver</displayNameOverride>
+            <field>sbaa__Approver__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Archived</displayNameOverride>
+            <field>sbaa__Archived__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Assigned Group Id</displayNameOverride>
+            <field>sbaa__AssignedGroupId__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Assigned To Me</displayNameOverride>
+            <field>sbaa__AssignedToMe__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Assigned To</displayNameOverride>
+            <field>sbaa__AssignedTo__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Comments</displayNameOverride>
+            <field>sbaa__CommentsLong__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Delegated Approver</displayNameOverride>
+            <field>sbaa__DelegatedApprover__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity</displayNameOverride>
+            <field>sbaa__Opportunity__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Recall Template Id</displayNameOverride>
+            <field>sbaa__RecallTemplateId__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Record Field</displayNameOverride>
+            <field>sbaa__RecordField__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rejected By</displayNameOverride>
+            <field>sbaa__RejectedBy__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rejection Template Id</displayNameOverride>
+            <field>sbaa__RejectionTemplateId__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Request Template Id</displayNameOverride>
+            <field>sbaa__RequestTemplateId__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Require Explicit Approval</displayNameOverride>
+            <field>sbaa__RequireExplicitApproval__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rule</displayNameOverride>
+            <field>sbaa__Rule__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Status</displayNameOverride>
+            <field>sbaa__Status__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Unanimous</displayNameOverride>
+            <field>sbaa__Unanimous__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approved Discount (%)</displayNameOverride>
+            <field>Approved_Amount__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Created At</displayNameOverride>
+            <field>Created_At__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Current User ID</displayNameOverride>
+            <field>Current_User_ID__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Last Modified At</displayNameOverride>
+            <field>Last_Modified_At__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval : Approval Chain : Chain Name</displayNameOverride>
+            <field>sbaa__ApprovalChain__c.Name</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval : Approver : Approver Name</displayNameOverride>
+            <field>sbaa__Approver__c.Name</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval : Rule : Active</displayNameOverride>
+            <field>sbaa__Rule__c.sbaa__Active__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval : Rule : Approval Chain</displayNameOverride>
+            <field>sbaa__Rule__c.sbaa__ApprovalChain__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval : Rule : Approval Step</displayNameOverride>
+            <field>sbaa__Rule__c.sbaa__ApprovalStep__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Approval : Rule : Rule Name</displayNameOverride>
+            <field>sbaa__Rule__c.Name</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>sbaa__Rule__c.Is_approval_required_check_available__c</field>
+            <table>SBQQ__Quote__c.AAE_Approvals__r</table>
+        </columns>
+        <masterLabel>Approvals</masterLabel>
+    </sections>
+</ReportType>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Protocol__c</fullName>
+    <inlineHelpText>Identify each protocol over which the IG(s) will receive data</inlineHelpText>
+    <label>Industrial Protocol</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IG41 - CAN</fullName>
+                <default>false</default>
+                <label>IG41 - CAN</label>
+            </value>
+            <value>
+                <fullName>IG41 - Modbus</fullName>
+                <default>false</default>
+                <label>IG41 - Modbus</label>
+            </value>
+            <value>
+                <fullName>IG41 - Ethernet/IP</fullName>
+                <default>false</default>
+                <label>IG41 - Ethernet/IP</label>
+            </value>
+            <value>
+                <fullName>IG41 - ROC Protocol</fullName>
+                <default>false</default>
+                <label>IG41 - ROC Protocol</label>
+            </value>
+            <value>
+                <fullName>IG41 - Siemens S7</fullName>
+                <default>false</default>
+                <label>IG41 - Siemens S7</label>
+            </value>
+            <value>
+                <fullName>IG41 - Analog</fullName>
+                <default>false</default>
+                <label>IG41 - Analog</label>
+            </value>
+            <value>
+                <fullName>IG41 - API</fullName>
+                <default>false</default>
+                <label>IG41 - API</label>
+            </value>
+            <value>
+                <fullName>IG41 - Other</fullName>
+                <default>false</default>
+                <label>IG41 - Other</label>
+            </value>
+            <value>
+                <fullName>IG15 - CAN</fullName>
+                <default>false</default>
+                <label>IG15 - CAN</label>
+            </value>
+            <value>
+                <fullName>IG15 - CAN+IO</fullName>
+                <default>false</default>
+                <label>IG15 - CAN+IO</label>
+            </value>
+            <value>
+                <fullName>IG15 - Other</fullName>
+                <default>false</default>
+                <label>IG15 - Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

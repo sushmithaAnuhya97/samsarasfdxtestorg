@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__PIM_Attribute_Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>PIM Attribute Group</label>
+    <referenceTo>PDLM__Attribute_Group__c</referenceTo>
+    <relationshipLabel>PIM Attribute Labels</relationshipLabel>
+    <relationshipName>PIM_Attribute_Labels</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

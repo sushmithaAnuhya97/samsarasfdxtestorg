@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selected_Payment_Type_Group_1__c</fullName>
+    <formula>IF(OR(TEXT(Selected_Payment_Type__c)=&apos;Upfront Payments&apos;, TEXT(Selected_Payment_Type__c)=&apos;Direct Annual&apos;, TEXT(Selected_Payment_Type__c)=&apos;&apos;),TRUE,FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>this field contains indicator logic when Selected Payment Type is to Upfront Payments, Direct Annual or Blank</inlineHelpText>
+    <label>Selected Payment Type Group 1</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

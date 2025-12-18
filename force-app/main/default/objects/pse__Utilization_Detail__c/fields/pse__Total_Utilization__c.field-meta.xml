@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Total_Utilization__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF (
+  AND(
+    (pse__Scheduled_Calendar_Hours__c + pse__Historical_Calendar_Hours__c - pse__Scheduled_Excluded_Hours__c - pse__Historical_Excluded_Hours__c) = 0,
+    (pse__Scheduled_Billable_Hours__c + pse__Historical_Billable_Hours__c + pse__Scheduled_Credited_Hours__c + pse__Historical_Credited_Hours__c &gt; 0)
+  ), 1, IF (
+    AND(
+      (pse__Scheduled_Calendar_Hours__c + pse__Historical_Calendar_Hours__c - pse__Scheduled_Excluded_Hours__c - pse__Historical_Excluded_Hours__c) = 0,
+      (pse__Scheduled_Billable_Hours__c + pse__Historical_Billable_Hours__c + pse__Scheduled_Credited_Hours__c + pse__Historical_Credited_Hours__c = 0)
+    ), 0,
+    ((pse__Scheduled_Billable_Hours__c + pse__Historical_Billable_Hours__c + pse__Scheduled_Credited_Hours__c + pse__Historical_Credited_Hours__c) / (pse__Scheduled_Calendar_Hours__c + pse__Historical_Calendar_Hours__c - pse__Scheduled_Excluded_Hours__c - pse__Historical_Excluded_Hours__c))
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Utilization</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Opportunity Submit to Closing Flow Screen 1</masterLabel>
+    <description>Component for submitting opportunities to closing in a flow</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="account" type="@salesforce/schema/Account" label="Account" description="The account record"/>
+            <property name="loggedInUser" type="@salesforce/schema/User" label="Logged In User" description="The current user"/>
+            <property name="opportunity" type="@salesforce/schema/Opportunity" label="Opportunity" description="The opportunity record"/>
+            <property name="userProfile" type="@salesforce/schema/Profile" label="User Profile" description="The user's profile"/>
+            <property name="userRole" type="@salesforce/schema/UserRole" label="User Role" description="The user's role"/>
+            <property name="partnerInvolvedBoolean" type="Boolean" label="Partner Involved" description="Is a partner involved in this deal?" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

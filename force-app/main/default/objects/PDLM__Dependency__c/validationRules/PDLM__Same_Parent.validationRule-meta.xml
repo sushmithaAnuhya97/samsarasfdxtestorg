@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Same_Parent</fullName>
+    <active>true</active>
+    <description>Dependency predecessor and successor must have the same parent</description>
+    <errorConditionFormula>PDLM__Predecessor__r.PDLM__Parent_Activity__c  !=  PDLM__Successor__r.PDLM__Parent_Activity__c</errorConditionFormula>
+    <errorMessage>Dependencies can only be created between activities on the same level.</errorMessage>
+</ValidationRule>

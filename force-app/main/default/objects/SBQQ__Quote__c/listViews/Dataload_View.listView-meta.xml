@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dataload_View</fullName>
+    <columns>NAME</columns>
+    <columns>Configuration_Segment__c</columns>
+    <columns>Associated_Opportunity_Probability__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Pricebook_Name__c</field>
+        <operation>contains</operation>
+        <value>Standard</value>
+    </filters>
+    <filters>
+        <field>Configuration_Segment__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Associated_Opportunity_Probability__c</field>
+        <operation>lessOrEqual</operation>
+        <value>90</value>
+    </filters>
+    <filters>
+        <field>Associated_Opportunity_Type__c</field>
+        <operation>contains</operation>
+        <value>Revenue</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>SBQQ__Quote__c.AAE_Draft_Quote</value>
+    </filters>
+    <label>Dataload View</label>
+    <language>en_US</language>
+</ListView>

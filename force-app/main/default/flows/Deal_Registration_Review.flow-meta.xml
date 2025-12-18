@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Registration_Status</name>
+        <label>Check Registration Status</label>
+        <locationX>753</locationX>
+        <locationY>408</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_Registration_Info.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Login_User_Eligible_To_Approve_PR</targetReference>
+            </connector>
+            <label>Is New</label>
+        </rules>
+        <rules>
+            <name>Is_PAM_Approved</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_Registration_Info.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Login_User_Eligible_To_Approve_PR</targetReference>
+            </connector>
+            <label>Is PAM Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GTMS-29431: To check if the current login user is eligible to approve the deal registration</description>
+        <name>Is_Login_User_Eligible_To_Approve_PR</name>
+        <label>Is Login User Eligible To Approve PR</label>
+        <locationX>750</locationX>
+        <locationY>675</locationY>
+        <defaultConnector>
+            <targetReference>UnEligible_User_Error_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No, User is Not Eligible for Approval</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Is_Eligible_for_PAM_Approval</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_Registration_Info.Show_Review_Deal_Registration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Partner_Registration_Info.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_PAM_Approval_Rejection</targetReference>
+            </connector>
+            <label>Yes, Is Eligible for PAM Approval</label>
+        </rules>
+        <rules>
+            <name>Yes_Is_Eligible_For_AE_Approval</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Partner_Registration_Info.Show_Review_Deal_Registration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Partner_Registration_Info.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PAM Reviewed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Registration_AE_Approval_Rejection</targetReference>
+            </connector>
+            <label>Yes, Is Eligible For AE Approval</label>
+        </rules>
+    </decisions>
+    <description>05/22/24: Updated get Partner Registration Element to fetch all field avalues - GTMS-20575
+GTMS-22784: Replaced PAM Approved value with PAM Reviewed and removed AE Accepted picklist condition in if element
+GTMs-29431: Added login user eligibility check for approval.</description>
+    <environments>Default</environments>
+    <interviewLabel>Deal Registration Review {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Deal Registration Review</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Partner_Registration_Info</name>
+        <label>Get Partner Registration Info</label>
+        <locationX>776</locationX>
+        <locationY>207</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Registration_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Partner_Registration__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <description>GTMS-29431: Created to show the error message for Uneligible User Error Screen</description>
+        <name>UnEligible_User_Error_Screen</name>
+        <label>UnEligible User Error Screen</label>
+        <locationX>760</locationX>
+        <locationY>892</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>InEligible_User_Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(215, 14, 14);&quot;&gt;You are not eligible to approve this Deal Registration. Please reach out the respective Owner &lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Partner_Registration_Info</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Deal_Registration_AE_Approval_Rejection</name>
+        <label>Deal Registration AE Approval/Rejection</label>
+        <locationX>551</locationX>
+        <locationY>396</locationY>
+        <flowName>Deal_Registration_AE_Approval_Rejection</flowName>
+        <inputAssignments>
+            <name>currentPartnerRegistration</name>
+            <value>
+                <elementReference>Get_Partner_Registration_Info</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>currentRecordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Deal_Registration_PAM_Approval_Rejection</name>
+        <label>Deal Registration PAM Approval/Rejection</label>
+        <locationX>975</locationX>
+        <locationY>411</locationY>
+        <flowName>Deal_Registration_PAM_Approval_Rejection</flowName>
+        <inputAssignments>
+            <name>Partner_Registration_Record</name>
+            <value>
+                <elementReference>Get_Partner_Registration_Info</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>PR_RecordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>currentPartnerRegistration</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Partner_Registration__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

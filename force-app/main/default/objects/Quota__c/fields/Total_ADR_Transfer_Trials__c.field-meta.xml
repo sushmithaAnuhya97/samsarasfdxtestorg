@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_ADR_Transfer_Trials__c</fullName>
+    <description>A formula field that counts the total number of ADR transfers where the ‘Transfer Points at Trial+ ’field is greater than or equal to 1, by the owner of the record.</description>
+    <label>Total ADR Transfer Trials</label>
+    <summaryFilterItems>
+        <field>Quota_Transfer_Log__c.ADR_Transfer_Points_at_Trial__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Quota_Transfer_Log__c.Related_Quota_for_the_ADR_Log__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

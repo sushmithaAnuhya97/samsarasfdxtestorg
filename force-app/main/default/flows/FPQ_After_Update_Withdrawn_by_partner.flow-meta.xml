@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>GTMS-16451: Created as part of 3PF phase 2 project</description>
+        <name>Approval_Withdrawn_Email_For_Opp_owner</name>
+        <label>Approval Withdrawn Email For Opp owner</label>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
+        <actionName>Finance_Partner_Quote__c.X3PF_Approval_Withdrawn_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Finance_Partner_Quote__c.X3PF_Approval_Withdrawn_Email_Alert</nameSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>GTMS-16451: Created as part of 3PF Phase 2 project</description>
+        <name>Has_AE_Email_Mapped</name>
+        <label>Has AE Email Mapped</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Approval_Withdrawn_Email_For_Opp_owner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_owner_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Owner_Manager_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_owner_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Opportunity__r.Owner.Email</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Owner_Manager_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Opportunity__r.Owner.Manager.Email</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Map_Opportunity_Owner_Email</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <description>GTMS-16451: Created as part of 3PF Phase 2 proejct
+2/12/24: Added Mapping of Opportunity Owner Manager Email</description>
+    <environments>Default</environments>
+    <interviewLabel>FPQ After Update (Withdrawn by partner) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FPQ After Update (Withdrawn by partner)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>GTMS-16451: Created as part of 3PF phase 2 Project</description>
+        <name>Map_Opportunity_Owner_Email</name>
+        <label>Map Opportunity Owner Email</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Approval_Withdrawn_Email_For_Opp_owner</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Opportunity_Owner_Manager_Email__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Owner.Manager.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity_owner_Email__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Owner.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Has_AE_Email_Mapped</targetReference>
+        </connector>
+        <filterFormula>AND(
+ISCHANGED({!$Record.Financing_Decision__c}),
+ISPICKVAL({!$Record.Financing_Decision__c},&apos;Withdrawn&apos;),
+CONTAINS({!$Profile.Name}, &apos;Partner&apos;)
+)</filterFormula>
+        <object>Finance_Partner_Quote__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

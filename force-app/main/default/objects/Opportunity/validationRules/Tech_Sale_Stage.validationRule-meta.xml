@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Sale_Stage</fullName>
+    <active>true</active>
+    <description>Lock tech sale stage if opportunity stage is decision or higher</description>
+    <errorConditionFormula>AND( 
+OR( 
+    ISPICKVAL(StageName, &quot;Purchase&quot;),
+    ISPICKVAL(StageName, &quot;Closing&quot;),
+    ISPICKVAL(StageName, &quot;Orders Processing&quot;),
+    ISPICKVAL(StageName, &quot;Ready to Ship&quot;),
+    ISPICKVAL(StageName, &quot;Closed Won&quot;),
+    ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+ISCHANGED( Tech_Sale_Stage__c ) )</errorConditionFormula>
+    <errorMessage>The Tech Sale Stage cannot be changed if an opportunity is at 75% or greater</errorMessage>
+</ValidationRule>

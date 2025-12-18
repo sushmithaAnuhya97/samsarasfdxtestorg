@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Check_For_Previous_Week_Timecards__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If true,  on initial load of new Timecard UI it will check for previous week timecards. If there is no timecards filled for the previous week, UI will show confirmation window asking user to load previous week or current week.  If false, work as normal i.e no confirmation window and load current week.</description>
+    <inlineHelpText>If true,  on initial load of  new Timecard UI it will check for previous week timecards. If there is no timecards filled for the previous week, UI will show confirmation window asking user to load previous week or current week.  If false, work as normal.</inlineHelpText>
+    <label>Check For Previous Week Timecards</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

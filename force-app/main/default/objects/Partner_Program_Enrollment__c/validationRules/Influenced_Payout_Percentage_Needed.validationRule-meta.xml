@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Influenced_Payout_Percentage_Needed</fullName>
+    <active>true</active>
+    <description>GTMS-26117: Created as part of Partners H1 project to throw error if Influenced Payout % field is empty when Influenced Payout Model is selected as Percentage</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Influence_Payout_Model__c ,&apos;Percentage&apos;),
+OR(
+Influence_Payout_Percentage__c &lt; 0,
+Influence_Payout_Percentage__c &gt; 1,
+ISNULL(Influence_Payout_Percentage__c)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Influence_Payout_Percentage__c</errorDisplayField>
+    <errorMessage>You’ve selected ‘Percentage’ for the Influenced Payout Model, but have not included the desired percentage amount. Please update the &apos;Influence Payout Percentage” to a number greater than 0 and lower than 100 to save this program.</errorMessage>
+</ValidationRule>

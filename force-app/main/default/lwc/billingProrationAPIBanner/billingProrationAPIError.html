@@ -1,0 +1,35 @@
+<template>
+    <template if:true={showBanner}>
+      <div class="slds-theme_alert-texture slds-theme_error" style="background:#e4001d; color:white; padding:5px 32px;">
+        <template if:true={showErrorHeading}>
+            <span class="error-icon">
+                <lightning-icon icon-name="utility:error" class="slds-m-right_x-small" alternative-text="Error!" title="Error" variant="inverse" size="x-small"></lightning-icon>
+                <h1 style="font-size: 1rem;">Error:&nbsp;</h1>
+            </span>
+        </template>
+      <span class="error-body slds-text-color_inverse" style="font-size: 1rem; font-weight:100;">      
+        <lightning-formatted-rich-text
+          value={prefixError}>
+        </lightning-formatted-rich-text>&nbsp;
+        <lightning-formatted-rich-text
+          value={errorMessage}>
+        </lightning-formatted-rich-text>&nbsp;
+         <a href="#" onclick={handleRetry} class={linkClass}>Please click here</a>&nbsp;
+        <lightning-formatted-rich-text
+          value={suffixError}>
+        </lightning-formatted-rich-text>
+      </span>
+    </div>       
+    </template>
+    <!-- <template if:true={errorInQuoteGeneration}>
+      <div class="slds-theme_alert-texture slds-theme_error" style="background:#e4001d; color:white; padding:5px 32px;">
+        <template if:true={showErrorHeading}>
+          <span class="error-icon">
+            <lightning-icon icon-name="utility:error" class="slds-m-right_x-small" alternative-text="Error!" title="Error" variant="inverse" size="x-small"></lightning-icon>
+            <h1 style="font-size: 1rem;">Error:</h1>
+          </span>
+        </template>
+        <p style="font-size: 1rem; font-weight:100;">The quote document cannot be generated yet. The system was not able to calculate the prorated amount. Please click this link to <a href="#" onclick={handleRetry} class={linkClass}>retry</a> calculating the Prorated Amount. This process can take a few minutes.</p>
+      </div>
+  </template> -->
+  </template>

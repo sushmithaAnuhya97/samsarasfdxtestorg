@@ -1,0 +1,61 @@
+<template>
+    <template if:false={showEdit}>
+        <lightning-record-view-form
+        record-id={recordId}
+        object-api-name="Account"
+    >
+        <div class="slds-box">
+            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right">
+                <lightning-output-field field-name="Description" > </lightning-output-field><button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                    <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                      <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                    </svg>
+                    
+                  </button>
+            </div>
+            <!--div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name="Description"> </lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Edit" onclick={performEdit}>
+                        <svg class="slds-button__icon slds-icon-text-light" aria-hidden="true">
+                          <use xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Clear</span>
+                      </button>
+                </div>
+            </div-->
+            
+            
+        </div>
+    </lightning-record-view-form>
+    </template>
+    <template if:true={showEdit}>
+        <lightning-record-edit-form
+        record-id={recordId}
+        object-api-name="Account" onsuccess={hideEdit}
+    >
+        <lightning-messages> </lightning-messages>
+        <lightning-input-field field-name="Description"> </lightning-input-field>
+        <lightning-button
+            class="slds-m-top_small"
+            variant="brand"
+            type="submit"
+            name="save"
+            label="Save"
+        >
+        </lightning-button>
+        <lightning-button
+            class="slds-m-top_small"
+            variant="brand"
+            type="button"
+            name="cancel"
+            label="Cancel"
+            onclick={hideEdit}
+        >
+        </lightning-button>
+        </lightning-record-edit-form>
+    </template>
+   
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Next_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>IF( refedge__Enable_Rescheduling__c , refedge__End_Date__c + ( refedge__End_Date__c -  refedge__Start_Date__c ) , NULL)</formula>
+    <label>Next Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

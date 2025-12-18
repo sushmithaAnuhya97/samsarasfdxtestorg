@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Stop_Ship</fullName>
+    <columns>NAME</columns>
+    <columns>PDLM__Title__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Propel_Change_Owner__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>PDLM__Approved_Date__c</columns>
+    <columns>PDLM__Status_lk__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>QH</value>
+    </filters>
+    <label>All Stop Ship</label>
+</ListView>

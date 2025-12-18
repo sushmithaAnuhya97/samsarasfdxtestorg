@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Referral_Deal_Closing</fullName>
+    <active>false</active>
+    <description>Only allow partner referral revenue opportunities past Qualified stage if there&apos;s a partner referral rebate attached to the account</description>
+    <errorConditionFormula>AND (NOT($Permission.Validation_Rule_Exemption), 
+$Profile.Name &lt;&gt; &quot;Order Operations Admin&quot;, 
+ISPICKVAL(Type,&quot;Revenue Opportunity&quot;), 
+ISBLANK(Partner_Referral_Opportunity__c), 
+Partner_Referral_Payout_Amount_V2__c!=0, 
+ISCHANGED(StageName), 
+OR( 
+ISPICKVAL(StageName, &quot;Trial&quot;),
+ISPICKVAL(StageName, &quot;Decision&quot;),  
+ISPICKVAL(StageName, &quot;Purchase&quot;), 
+ISPICKVAL(StageName, &quot;Closing&quot;), 
+ISPICKVAL(StageName, &quot;Ready to Ship&quot;), 
+ISPICKVAL(StageName, &quot;Closed Won&quot;) 
+))</errorConditionFormula>
+    <errorMessage>Cannot move Partner Referral Revenue Opportunity past Qualified stage without first creating and linking a rebate opportunity in the Partner Referral Opportunity field.</errorMessage>
+</ValidationRule>

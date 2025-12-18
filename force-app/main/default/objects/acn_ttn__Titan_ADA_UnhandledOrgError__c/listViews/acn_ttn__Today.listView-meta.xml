@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acn_ttn__Today</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>acn_ttn__Subject__c</columns>
+    <columns>acn_ttn__Type_of_Exception__c</columns>
+    <columns>acn_ttn__CausedByClass__c</columns>
+    <columns>acn_ttn__Frequency__c</columns>
+    <columns>acn_ttn__AssignedTo__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>acn_ttn__Last_Occurence_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>acn_ttn__Last_Occurence_Date__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Today</label>
+    <language>en_US</language>
+</ListView>

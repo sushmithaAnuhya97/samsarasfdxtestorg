@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Campaign_Interaction_Type__c</fullName>
+    <description>Picklist showing whether the campaign made first contact during business hours or not for IRT calculation</description>
+    <label>Campaign Interaction Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>On Hours</fullName>
+                <default>false</default>
+                <label>On Hours</label>
+            </value>
+            <value>
+                <fullName>Off Hours</fullName>
+                <default>false</default>
+                <label>Off Hours</label>
+            </value>
+            <value>
+                <fullName>Weekend</fullName>
+                <default>false</default>
+                <label>Weekend</label>
+            </value>
+            <value>
+                <fullName>Batched</fullName>
+                <default>false</default>
+                <label>Batched</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

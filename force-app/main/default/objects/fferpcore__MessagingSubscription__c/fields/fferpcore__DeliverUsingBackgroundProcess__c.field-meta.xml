@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DeliverUsingBackgroundProcess__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines whether messages are delivered using a background process when the sender specifies that they are to be delivered now rather than later. If messages are scheduled for delivery later, the messages are delivered using a background process and this setting has no effect. When Capacity is selected, messages are delivered using a background process if the number of messages to be delivered exceeds the value set in the Synchronous Delivery Capacity field. The default value is Never.</description>
+    <inlineHelpText>Determines whether messages are delivered using a background process when the sender specifies that they are to be delivered now.</inlineHelpText>
+    <label>Deliver Using Background Process</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Never</fullName>
+                <default>true</default>
+                <label>Never</label>
+            </value>
+            <value>
+                <fullName>Always</fullName>
+                <default>false</default>
+                <label>Always</label>
+            </value>
+            <value>
+                <fullName>Capacity</fullName>
+                <default>false</default>
+                <label>Capacity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

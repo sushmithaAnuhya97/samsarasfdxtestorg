@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Weight_and_Dimensions_Required_for_HW</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+TEXT(Status__c) = &apos;Ready to Approve&apos;,
+OR(
+ISBLANK(Weight_oz__c),
+ISBLANK(Dimensions_cm3__c)
+)
+)</errorConditionFormula>
+    <errorMessage>Weight and Dimensions must be filled out for hardware products before submitting for approval .</errorMessage>
+</ValidationRule>

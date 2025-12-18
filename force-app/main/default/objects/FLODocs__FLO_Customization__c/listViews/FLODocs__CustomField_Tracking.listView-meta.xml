@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__CustomField_Tracking</fullName>
+    <columns>FLODocs__Namespace_Prefix__c</columns>
+    <columns>FLODocs__Parent__c</columns>
+    <columns>NAME</columns>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>FLODocs__Data_Change_Tracking__c</columns>
+    <columns>FLODocs__Data_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>FLODocs__FLO_Customization__c.FLODocs__Objects_Fields</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>equals</operation>
+        <value>CustomField</value>
+    </filters>
+    <filters>
+        <field>FLODocs__Namespace_Prefix__c</field>
+        <operation>notEqual</operation>
+        <value>FLODocs</value>
+    </filters>
+    <filters>
+        <field>FLODocs__ScriptId__c</field>
+        <operation>contains</operation>
+        <value>User.</value>
+    </filters>
+    <label>CustomField Tracking</label>
+</ListView>

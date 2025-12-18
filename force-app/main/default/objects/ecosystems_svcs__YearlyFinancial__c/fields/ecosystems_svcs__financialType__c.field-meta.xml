@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ecosystems_svcs__financialType__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Financial Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BENEFIT</fullName>
+                <default>false</default>
+                <label>BENEFIT</label>
+            </value>
+            <value>
+                <fullName>AVOIDED COST</fullName>
+                <default>false</default>
+                <label>AVOIDED COST</label>
+            </value>
+            <value>
+                <fullName>INVESTMENT</fullName>
+                <default>false</default>
+                <label>INVESTMENT</label>
+            </value>
+            <value>
+                <fullName>ADJUSTED BENEFIT</fullName>
+                <default>false</default>
+                <label>ADJUSTED BENEFIT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

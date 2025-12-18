@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>After_First_Purchase__c</fullName>
+    <formula>Related_Contact__r.Account.First_Purchase_Date__c &lt; DATEVALUE(CreatedDate)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>After First Purchase</label>
+    <type>Checkbox</type>
+</CustomField>

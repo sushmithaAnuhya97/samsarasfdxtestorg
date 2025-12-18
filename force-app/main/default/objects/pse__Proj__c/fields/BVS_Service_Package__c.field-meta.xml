@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BVS_Service_Package__c</fullName>
+    <description>Defines the tier and scope of the project. Packages defined</description>
+    <inlineHelpText>Refer to the https://docs.google.com/spreadsheets/d/1VEORmgEr9L0XnPfavC3t8wrj8kWx4YJPcgIBfdoGSwg/edit#gid=522218093 for additional details</inlineHelpText>
+    <label>BVS Service Package</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>BVS Consultation</fullName>
+                <default>false</default>
+                <label>BVS Consultation</label>
+            </value>
+            <value>
+                <fullName>BVS Custom Business Case</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BVS Custom Business Case</label>
+            </value>
+            <value>
+                <fullName>BVS Industry ROI Only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BVS Industry ROI Only</label>
+            </value>
+            <value>
+                <fullName>BVS ROI Only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BVS ROI Only</label>
+            </value>
+            <value>
+                <fullName>BVS Standard Business Case</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>BVS Standard Business Case</label>
+            </value>
+            <value>
+                <fullName>BVS Value Realization</fullName>
+                <default>false</default>
+                <label>BVS Value Realization</label>
+            </value>
+            <value>
+                <fullName>Full business case (Trial analysis + ROI)</fullName>
+                <default>false</default>
+                <label>Full business case (Trial analysis + ROI)</label>
+            </value>
+            <value>
+                <fullName>Industry ROI only (outside-in data w no customer data)</fullName>
+                <default>false</default>
+                <label>Industry ROI only (outside-in data w no customer data)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other (w free text input)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other (w free text input)</label>
+            </value>
+            <value>
+                <fullName>OTHER - Non-standard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OTHER - Non-standard</label>
+            </value>
+            <value>
+                <fullName>ROI only</fullName>
+                <default>false</default>
+                <label>ROI only</label>
+            </value>
+            <value>
+                <fullName>Tier 1: Advanced trial - Full trial support</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 1: Advanced trial - Full trial support</label>
+            </value>
+            <value>
+                <fullName>Tier 1: Full trial support</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 1: Full trial support</label>
+            </value>
+            <value>
+                <fullName>Tier 1: POSTSALE - Impact &amp; realized ROI</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 1: POSTSALE - Impact &amp; realized ROI</label>
+            </value>
+            <value>
+                <fullName>Tier 1: POSTSALE - Impact analysis</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 1: POSTSALE - Impact analysis</label>
+            </value>
+            <value>
+                <fullName>Tier 1: POSTSALE - Realized ROI analysis</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 1: POSTSALE - Realized ROI analysis</label>
+            </value>
+            <value>
+                <fullName>Tier 2: Final pilot readout only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 2: Final pilot readout only</label>
+            </value>
+            <value>
+                <fullName>Tier 2: ROI / TCO only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 2: ROI / TCO only</label>
+            </value>
+            <value>
+                <fullName>Tier 2: Templatized trial support</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 2: Templatized trial support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

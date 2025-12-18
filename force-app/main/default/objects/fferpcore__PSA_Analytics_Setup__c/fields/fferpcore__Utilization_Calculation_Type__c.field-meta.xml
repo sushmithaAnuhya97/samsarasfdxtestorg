@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Utilization_Calculation_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If Utilization Setup is selected, creates the Utilization Results dataset. If Utilization Calculation is selected, creates data in the Capacity and Utilization dataset. If Both Calculation Types (for migration purposes) is selected, creates the Utilization Results, Utilization Summary/Detail and Utilization datasets. For information about the dashboards and apps that can be created from these datasets, see the Business Analytics Help.</description>
+    <inlineHelpText>If Utilization Setup is selected, creates the Utilization Results dataset. If Utilization Calculation is selected, creates data in the Capacity and Utilization dataset. If Both Calculation Types (for migration purposes) is selected, creates the Utilization Results, Utilization Summary/Detail and Utilization datasets. For information about the dashboards and apps that can be created from these datasets, see the Business Analytics Help.</inlineHelpText>
+    <label>Utilization Calculation Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Utilization Setup</fullName>
+                <default>false</default>
+                <label>Utilization Setup</label>
+            </value>
+            <value>
+                <fullName>Utilization Calculation</fullName>
+                <default>false</default>
+                <label>Utilization Calculation</label>
+            </value>
+            <value>
+                <fullName>Both Calculation Types (for migration purposes)</fullName>
+                <default>true</default>
+                <label>Both Calculation Types (for migration purposes)</label>
+            </value>
+            <value>
+                <fullName>Utilization Result</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Utilization Result</label>
+            </value>
+            <value>
+                <fullName>Utilization Result and Summary/Detail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Utilization Result and Summary/Detail</label>
+            </value>
+            <value>
+                <fullName>Utilization Summary/Detail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Utilization Summary/Detail</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

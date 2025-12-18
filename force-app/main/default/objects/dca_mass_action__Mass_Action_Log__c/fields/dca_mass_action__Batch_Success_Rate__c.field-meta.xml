@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dca_mass_action__Batch_Success_Rate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Visualizes the batch success percentage in color. Uses https://shields.io to generage the image in real-time.</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(
+  &apos;https://img.shields.io/static/v1.svg?label=&amp;message=&apos; &amp;
+  TEXT( ROUND( dca_mass_action__Batch_Success_Percentage__c * 100, 0 ) )  &amp; &apos;%&apos; &amp;
+  &apos;&amp;color=&apos; &amp;
+  IF( dca_mass_action__Batch_Success_Percentage__c &gt;= 0.90, &apos;4CC620&apos;, /* brightgreen */
+    IF( dca_mass_action__Batch_Success_Percentage__c &gt;= 0.80, &apos;4bca81&apos;, /* green */
+      IF( dca_mass_action__Batch_Success_Percentage__c &gt;= 0.50, &apos;ffb75d&apos;, /* orange */
+        &apos;d4504c&apos; /* red */
+      )
+    )
+  ),
+  TEXT( ROUND( dca_mass_action__Batch_Success_Percentage__c * 100, 0 ) ) &amp; &apos;%&apos;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Visualizes the batch success percentage in color.</inlineHelpText>
+    <label>Batch Success Rate</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Data_Input_Fields__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Data input to test - or to make any Regression, Exploratory test</description>
+    <inlineHelpText>Data input to test - or to make any Regression, Exploratory test</inlineHelpText>
+    <label>Data Input Fields</label>
+    <referenceTo>FLODocs__FLO_Customization__c</referenceTo>
+    <relationshipLabel>Test Records (Data Input Fields)</relationshipLabel>
+    <relationshipName>FLO_Test_Records1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

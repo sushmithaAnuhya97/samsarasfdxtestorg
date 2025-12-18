@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The status of the information to be applied to the Salesforce user.</description>
+    <inlineHelpText>The status of the information to be applied to the Salesforce User.</inlineHelpText>
+    <label>Status</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending Create</fullName>
+                <default>true</default>
+                <label>Pending Create</label>
+            </value>
+            <value>
+                <fullName>Pending Update</fullName>
+                <default>false</default>
+                <label>Pending Update</label>
+            </value>
+            <value>
+                <fullName>Pending Activation</fullName>
+                <default>false</default>
+                <label>Pending Activation</label>
+            </value>
+            <value>
+                <fullName>Pending Deactivation</fullName>
+                <default>false</default>
+                <label>Pending Deactivation</label>
+            </value>
+            <value>
+                <fullName>Creating</fullName>
+                <default>false</default>
+                <label>Creating</label>
+            </value>
+            <value>
+                <fullName>Updating</fullName>
+                <default>false</default>
+                <label>Updating</label>
+            </value>
+            <value>
+                <fullName>Deactivating</fullName>
+                <default>false</default>
+                <label>Deactivating</label>
+            </value>
+            <value>
+                <fullName>Activating</fullName>
+                <default>false</default>
+                <label>Activating</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+                <label>Deactivated</label>
+            </value>
+            <value>
+                <fullName>Failed to Create</fullName>
+                <default>false</default>
+                <label>Failed to Create</label>
+            </value>
+            <value>
+                <fullName>Failed to Update</fullName>
+                <default>false</default>
+                <label>Failed to Update</label>
+            </value>
+            <value>
+                <fullName>Failed to Activate</fullName>
+                <default>false</default>
+                <label>Failed to Activate</label>
+            </value>
+            <value>
+                <fullName>Failed to Deactivate</fullName>
+                <default>false</default>
+                <label>Failed to Deactivate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

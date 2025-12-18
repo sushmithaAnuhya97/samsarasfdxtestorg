@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkups__SaveAsLead</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Save as Lead</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/{!$ObjectType.Lead}/e?retURL=/{!zkups__UPSShipment__c.Id}&amp;lea3={!zkups__UPSShipment__c.zkups__RecipientCompany__c}&amp;lea8={!zkups__UPSShipment__c.zkups__RecipientPhone__c}&amp;lea16street={!zkups__UPSShipment__c.zkups__RecipientStreet__c}&amp;lea16city={!zkups__UPSShipment__c.zkups__RecipientCity__c}&amp;lea16state={!zkups__UPSShipment__c.zkups__RecipientState__c}&amp;lea16zip={!zkups__UPSShipment__c.zkups__RecipientPostalCode__c}&amp;lea16country={!zkups__UPSShipment__c.zkups__RecipientCountry__c}&amp;lea11={!zkups__UPSShipment__c.zkups__RecipientEmail__c}&amp;name_lastlea2={!zkups__UPSShipment__c.zkups__RecipientName__c}</url>
+</WebLink>

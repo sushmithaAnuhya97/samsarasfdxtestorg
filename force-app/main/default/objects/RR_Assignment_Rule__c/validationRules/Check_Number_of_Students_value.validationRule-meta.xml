@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Number_of_Students_value</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+NOT(CONTAINS(Number_of_Students__c,&apos;==&apos;)),
+NOT(CONTAINS(Number_of_Students__c,&apos;&gt;=&apos;)),
+NOT(CONTAINS(Number_of_Students__c,&apos;&lt;=&apos;)),
+NOT(CONTAINS(Number_of_Students__c,&apos;&gt; &apos;)),
+NOT(CONTAINS(Number_of_Students__c,&apos;&lt; &apos;))
+)</errorConditionFormula>
+    <errorMessage>Please enter correct value for &apos;Number of Students&apos; i.e. ==100, &lt;=100, &gt;=100, &lt; 100, &gt; 100</errorMessage>
+</ValidationRule>

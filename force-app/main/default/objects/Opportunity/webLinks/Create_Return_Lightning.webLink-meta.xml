@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Return_Lightning</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create Return</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/lightning/o/Opportunity/new?recordTypeId=0121a000000ARoKAAW&amp;defaultFieldValues=
+AccountId={!Opportunity.AccountId},
+Name={!URLENCODE(Opportunity.Name)}%20-RTN,
+Type=Remorse%20Refund,
+StageName=Return%20Created,
+Probability=10,
+Amount=0,
+CurrencyIsoCode={!Opportunity.CurrencyIsoCode},
+OwnerId={!Opportunity.OwnerId},
+Returning_Opportunity__c={!Opportunity.Id},
+Return_Products_To__c=Operations,
+Owner_Manager_Email_Copy__c={!Opportunity.Owner_Manager_Email_Copy__c},
+Owner_Manager_Role_Copy__c={!Opportunity.Owner_Manager_Role_Copy__c},
+Owner_Role_Copy__c={!Opportunity.Owner_Role_Copy__c},
+License_Term__c={!Opportunity.License_Term__c},
+Return_Oppty_Owner_Email__c={!Opportunity.OwnerEmail},
+CloseDate={!TEXT(TODAY())},
+Shipping_Address_NEW__c={!Opportunity.Shipping_Address_NEWId__c},
+Owner_Manager_Name_Copy__c={!Opportunity.Owner_Manager_Name_CopyId__c},
+Finance_Partner__c={!Opportunity.Finance_Partner__c}</url>
+</WebLink>

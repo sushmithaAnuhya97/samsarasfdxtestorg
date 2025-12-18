@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Timeline_New__c</fullName>
+    <formula>IF(
+  TEXT(ADR_Transfer_Status__c)=&quot;Rejected&quot;,
+  IF(
+    AND(CONTAINS(AE_Role_Copy_at_Transfer__c,&quot;AE1&quot;),OR(TEXT(AE_Timeline__c)=&quot;1 - 3 Months&quot;,TEXT(AE_Timeline__c)=&quot;Immediate&quot;,TEXT(AE_Timeline__c)=&quot;&lt; 1 Month&quot;)),
+      FALSE,
+      IF(
+        AND(CONTAINS(AE_Role_Copy_at_Transfer__c,&quot;AE2&quot;),OR(TEXT(AE_Timeline__c)=&quot;1 - 3 Months&quot;,TEXT(AE_Timeline__c)=&quot;Immediate&quot;,TEXT(AE_Timeline__c)=&quot;&lt; 1 Month&quot;,TEXT(AE_Timeline__c)=&quot;4 - 6 Months&quot;,TEXT(AE_Timeline__c)=&quot;7 - 12 Months&quot;)),
+          FALSE,
+          IF(
+            AND(OR(CONTAINS(AE_Role_Copy_at_Transfer__c,&quot;ENT&quot;),CONTAINS(AE_Role_Copy_at_Transfer__c,&quot;Major&quot;)),OR(TEXT(AE_Timeline__c)=&quot;18+ Months&quot;,TEXT(AE_Timeline__c)=&quot;Immediate&quot;,TEXT(AE_Timeline__c)=&quot;&lt; 1 Month&quot;,TEXT(AE_Timeline__c)=&quot;4 - 6 Months&quot;,TEXT(AE_Timeline__c)=&quot;7 - 12 Months&quot;,TEXT(AE_Timeline__c)=&quot;12 - 18 Months&quot;)),
+              FALSE,
+              TRUE))),FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Missing Timeline</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

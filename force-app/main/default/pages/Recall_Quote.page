@@ -1,0 +1,95 @@
+<apex:page standardController="SBQQ__Quote__c" extensions="QuoteExtController" showHeader="true" sidebar="false" lightningStylesheets="true">
+
+    <apex:form id="form" style="position: relative;">
+        <style>
+            .overlay {
+                position: absolute; 
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.8); 
+                z-index: 1000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .spinner {
+                text-align: center;
+            }
+
+            .spinner img {
+                width: 75px;
+                height: 75px;
+            }
+
+            .spinner .format-message {
+                margin-top: 10px;
+                font-size: 16px;
+                color: #333;
+            }
+        </style>
+
+        <!-- Content for Non-Renewal Quotes -->
+        <apex:outputPanel rendered="{!NOT(isRenewal)}">
+            <apex:pageBlock >
+                <p><b>{!$Label.Recall_Quote_Head_Message}</b></p>
+
+                <apex:outputPanel layout="block" style="padding:15px; font-size:14px;">
+                    <ul style="margin-left: 20px;">
+                        <li>Blended Discount <span style="text-decoration: underline;">Increase</span> (e.g. 30% ➝ 31%)</li>
+                        <li>Payment Frequency <span style="text-decoration: underline;">Decrease</span> (e.g. Annual ➝ Monthly)</li>
+                        <li><span style="text-decoration: underline;">Any changes</span> to Payment Terms (e.g. Net 30 ➝ Net 45)</li>
+                        <li>Product Pricing (Price * Term * Quantity) <span style="text-decoration: underline;">Decrease</span> (e.g. $3,600 ➝ $3,200)</li>
+                        <li>Product Quantity <span style="text-decoration: underline;">Decrease</span> (e.g. 50 VGs ➝ 45 VGs)</li>
+                        <li><span style="text-decoration: underline;">Any changes</span> to Non-Standard Terms</li>
+                    </ul>
+                    
+                    <p>{!$Label.Recall_Quote_Message}
+                        <apex:outputLink value="{!$Label.Recall_Quote_URL}" 
+                                         style="background-color: yellow; padding: 5px; text-decoration: none; color: black; border-radius: 3px;">
+                            see here.
+                        </apex:outputLink>
+                    </p>
+                </apex:outputPanel>
+
+                <apex:actionStatus id="processingStatus">
+                    <apex:facet name="start">
+                        <div class="overlay">
+                            <div class="spinner">
+                                <img src="{!URLFOR($Resource.LoadingImageAdvancedApprovals)}" />
+                                <div class="format-message">Recalling Quote approval...</div>
+                            </div>
+                        </div>
+                    </apex:facet>
+                </apex:actionStatus>
+
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Cancel" action="{!onCancel}" />
+                    <apex:commandButton value="Continue" action="{!onRecall}" status="processingStatus" rerender="form"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:outputPanel>
+
+        <!-- Content for Renewal Quotes -->
+        <apex:outputPanel rendered="{!isRenewal}">
+            <apex:pageMessages escape="false" />
+            <apex:actionFunction name="onRecall" action="{!onRecall}" status="processing" reRender="form" />
+            <apex:actionStatus id="processing">
+                <apex:facet name="start">
+                    <div align="center">
+                        <img width="75" height="75" src="{!URLFOR($Resource.LoadingImageAdvancedApprovals)}" />
+                        <div class="format-message "> Recalling Quote approval ... </div>
+                    </div>
+                </apex:facet>
+                <apex:facet name="stop">
+                    <apex:commandButton style="float:right" value="Return to Quote" action="{!onCancel}"/>
+                </apex:facet>            
+            </apex:actionStatus>
+        </apex:outputPanel>
+    </apex:form>
+    <script>
+        onRecall();
+    </script>
+</apex:page>

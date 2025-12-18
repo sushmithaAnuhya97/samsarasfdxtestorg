@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Project_Location_Tue__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Project Location - Tuesday</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>pse__Project_Location__c.pse__Project__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.pse__Project__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>pse__Project_Location__c</referenceTo>
+    <relationshipLabel>Tuesday Location For Timecards</relationshipLabel>
+    <relationshipName>Tuesday_Location_For_Timecards</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

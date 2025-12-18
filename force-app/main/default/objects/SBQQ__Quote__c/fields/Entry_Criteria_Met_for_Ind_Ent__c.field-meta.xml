@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Criteria_Met_for_Ind_Ent__c</fullName>
+    <formula>AND(
+Blended_Discount__c &gt; Approved_Discount__c,
+Associated_Opportunity_Type__c = &apos;Revenue Opportunity&apos;,
+SBQQ__Opportunity2__r.RecordType.Id = &apos;0121a000000VnAB&apos;,
+SBQQ__Opportunity2__r.Account.RecordType.Id != &apos;0121a000000VnIa&apos;,
+CONTAINS(Owner:User.UserRole.Name, &apos;IND ENT AE NA&apos;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Entry Criteria Met for Ind Ent</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

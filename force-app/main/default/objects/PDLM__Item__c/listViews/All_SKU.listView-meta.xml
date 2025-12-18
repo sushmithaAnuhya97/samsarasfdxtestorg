@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_SKU</fullName>
+    <columns>PDLM__Revision__c</columns>
+    <columns>NAME</columns>
+    <columns>PDLM__Category__c</columns>
+    <columns>PDLM__Description__c</columns>
+    <columns>PDLM__Latest_Lifecycle_Phase__c</columns>
+    <columns>PDLM__Has_Bom__c</columns>
+    <columns>PDLM__Has_Pending_Revision__c</columns>
+    <columns>PDLM__Has_Attachments__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>PDLM__Product__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PDLM__Category__c</field>
+        <operation>equals</operation>
+        <value>SKU</value>
+    </filters>
+    <label>All SKU</label>
+</ListView>

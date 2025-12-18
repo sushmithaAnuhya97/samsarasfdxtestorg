@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Recs</fullName>
+    <columns>NAME</columns>
+    <columns>Contract__c</columns>
+    <columns>All_Amendments__c</columns>
+    <columns>OpportunitiesToContract__c</columns>
+    <columns>AmendOppsToNewContract__c</columns>
+    <columns>Skip__c</columns>
+    <columns>Progress__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Progress__c</field>
+        <operation>notEqual</operation>
+        <value>Step 12 Completed</value>
+    </filters>
+    <label>In Progress</label>
+</ListView>

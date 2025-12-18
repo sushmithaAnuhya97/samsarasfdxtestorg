@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_BANT_reason</fullName>
+    <active>false</active>
+    <description>Require AEs to fill out No BANT reason field when setting contact status to Demo Completed - Not Qualified</description>
+    <errorConditionFormula>AND(TEXT( Status__c ) = &quot;Demo Completed - Not Qualified&quot;,ISCHANGED(Status__c),(ISBLANK(Missing_BANT_Criteria__c)|| ISBLANK(No_BANT_Reason__c)))</errorConditionFormula>
+    <errorMessage>Fill in the No BANT Reason and select Missing BANT Criteria to save a contact under the Demo Completed - Not Qualified status.</errorMessage>
+</ValidationRule>

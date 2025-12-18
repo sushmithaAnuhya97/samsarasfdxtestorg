@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Change_Level__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>CASE
+(
+  FLODocs__Metadata_Type__c,
+  &quot;ApexClass&quot;, TEXT(FLODocs__Policy__r.FLODocs__Scripted_Objects_Changes__c),
+  &quot;ApexPage&quot;, TEXT(FLODocs__Policy__r.FLODocs__Scripted_Objects_Changes__c),
+  &quot;ApexTrigger&quot;, TEXT(FLODocs__Policy__r.FLODocs__Scripted_Objects_Changes__c),
+  &quot;CustomField&quot;, TEXT(FLODocs__Policy__r.FLODocs__Scripted_Objects_Changes__c),
+  null
+)</formula>
+    <label>Change Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

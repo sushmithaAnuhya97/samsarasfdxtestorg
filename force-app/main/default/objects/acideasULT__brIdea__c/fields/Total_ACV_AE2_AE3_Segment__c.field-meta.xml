@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_ACV_AE2_AE3_Segment__c</fullName>
+    <description>GTMS-24022: Created as part of Feature request phase 2 project to roll up the related opportunity ACV field values based on AE12/AE3Account Size Segment</description>
+    <label>Total ACV(AE2/AE3 Segment)</label>
+    <summarizedField>Opportunity_Idea_Assignment__c.ACV__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity_Idea_Assignment__c.Account_Size_Segment__c</field>
+        <operation>equals</operation>
+        <value>AE2/AE3</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity_Idea_Assignment__c.AC_Idea__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

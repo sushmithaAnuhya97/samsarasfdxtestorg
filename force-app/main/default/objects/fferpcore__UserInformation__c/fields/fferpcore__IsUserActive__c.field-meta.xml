@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__IsUserActive__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates whether the related Salesforce user is active.</description>
+    <formula>fferpcore__User__r.IsActive</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates whether the related Salesforce user is active.</inlineHelpText>
+    <label>User Active</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Number_of_In_Progress_Activities__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field rolls up the number of In-Progress Activities on the Activities tab</description>
+    <inlineHelpText>This field rolls up the number of In-Progress Activities on the Activities tab</inlineHelpText>
+    <label>Number of In-Progress Activities</label>
+    <summaryFilterItems>
+        <field>PDLM__Deliverable__c.PDLM__Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress</value>
+    </summaryFilterItems>
+    <summaryForeignKey>PDLM__Deliverable__c.PDLM__Project__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

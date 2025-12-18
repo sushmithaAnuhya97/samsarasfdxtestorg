@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Express_First_Annual_Payment__c</fullName>
+    <formula>IF(AND(
+SBQQ__Opportunity2__r.Billing_360_Transaction__c,
+Prorated_Amount__c &gt; 0) , Prorated_Amount__c , Estimated_Annual_Payment__c )
++IF(
+AND(ISPICKVAL(Configuration_Segment__c, &quot;Express&quot;),ISPICKVAL (Selected_Payment_Type__c, &apos;Direct Annual&apos;)),
+IF(
+AND(
+SBQQ__Opportunity2__r.CloseDate &lt; DATEVALUE($Label.Opportunity_Close_Date_Limit),
+Renewal__c
+),
+0,
+IF(
+AND(
+SBQQ__Opportunity2__r.CloseDate &gt;= DATEVALUE($Label.Opportunity_Close_Date_Limit),
+NOT(ISBLANK(SBQQ__Opportunity2__r.SBQQ__RenewedContract__c))
+), If(AND(
+SBQQ__Opportunity2__r.Billing_360_Transaction__c,
+Prorated_Amount__c &gt; 0),Prorated_Amount_with_Tax__c - Prorated_Amount__c,Annual_License_Sales_Tax__c)
+,
+-IF(AND(
+SBQQ__Opportunity2__r.Billing_360_Transaction__c,
+Prorated_Amount__c &gt; 0),Prorated_Amount__c,Estimated_Annual_Payment__c* 10 / 100)
+)
+),0)
+- IF(AND(ISPICKVAL(Finance_Partner__c, &quot;&quot;),ISBLANK(Finance_Partner_Account__c)),Competitor_Buyout_Amount__c - Buyout_Sales_Tax__c,0)
++ ABS(IF(ISPICKVAL(Is_Installation_Reimbursable__c, &apos;Yes&apos;),Total_Estimated_Installation_Costs__c,0))
+- IF(Future_Free_Months_Amount__c &gt; 0,Future_Free_Months_Amount__c - Free_Service_Sales_Tax__c,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Express First Annual Payment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

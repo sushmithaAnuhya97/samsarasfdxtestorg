@@ -1,0 +1,144 @@
+.matrix-container {
+    margin-bottom: 20px;
+} 
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers vertically */
+    margin: 5px 0;
+    padding: 0 10px; /* Adds padding for spacing */
+    box-sizing: border-box;
+}
+
+.discount-label, .discount-value, .Recommended-value {
+    width: 50%; /* Each label and value take 50% of the row */
+    text-align: center; /* Center content */
+}
+
+.discount-label {
+    font-weight: bold;
+    text-align: right; /* Align the label to the right */
+    padding-right: 10px; /* Space between label and value */
+}
+
+.discount-value, .Recommended-value {
+    display: flex;
+    justify-content: center; /* Center content inside discount-value and recommended-value */
+    align-items: center; /* Align items vertically in the center */
+    flex-grow: 1; /* Allow the div to grow and take available space */
+    padding-left: 1px; /* Space between value and label */
+    color: rgb(34, 34, 34);
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.Recommended-value:hover {
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Deal Health Bar Color Classes */
+.green, .yellow, .orange, .red-dark, .grey {
+    width: 200px;
+    height: 25px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth effect */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.green {
+    background: linear-gradient(to bottom, rgb(46, 132, 74) 0%, rgb(46, 132, 74) 100%);
+}
+
+.yellow {
+    background: linear-gradient(to bottom, rgb(252, 192, 3) 0%, rgb(252, 192, 3) 100%);
+}
+
+.orange {
+    background: linear-gradient(to bottom, rgb(221, 122, 1) 0%, rgb(221, 122, 1) 100%);
+}
+
+.red-dark {
+    background: linear-gradient(to bottom, rgb(186, 5, 23) 0%, rgb(186, 5, 23) 100%);
+}
+.grey {
+    background: linear-gradient(to bottom, rgb(116, 116, 116) 0%, rgb(116, 116, 116)100%);
+    color: white; /* Set the text color */
+    text-align: center; /* Align text to the center */
+    line-height: 25px; /* Vertically center text */
+    font-weight: bold; /* Make the text bold */
+    /* margin-bottom: 20px; */
+}
+
+.green:hover, .yellow:hover, .orange:hover, .red-dark:hover,.grey:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Spinner styles */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.spins {
+    margin: 0 auto;
+}
+
+/* Styling for card components */
+.slds-card__body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack elements vertically */
+    height: 100%; /* Ensure it takes full height for vertical centering */
+    width: 100%;
+    margin: 0 auto;
+}
+.recommended-discount-row {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center vertically */
+}
+.recommended-discount-row-with-padding {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center vertically */
+    padding-bottom: 15px;
+}
+
+.slds-card {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+}
+
+.slds-card__header {
+    padding: 0.75rem;
+    border-bottom: 1px solid #d8dde6;
+}
+
+.slds-card__footer {
+    padding: 0.75rem;
+    border-top: 1px solid #d8dde6;
+}
+.related-list-container {
+    --slds-c-background-color: var(--lwc-colorBackground);
+    --slds-c-text-color: var(--lwc-colorTextDefault);
+    background-color: var(--slds-c-background-color);
+    color: var(--slds-c-text-color);
+}
+.no-border {
+    border-bottom: none;
+}
+.icon-heading-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow values as needed */
+    padding: 10px; /* Optional: Adds padding inside the box */
+    border-radius: 5px; /* Optional: Rounds the corners */
+    background-color: white; /* Optional: Adds a background for better contrast */
+    display: inline-flex; /* Ensures both the icon and heading are treated as a single inline block */
+    align-items: center; /* Vertically centers the icon and text */
+}

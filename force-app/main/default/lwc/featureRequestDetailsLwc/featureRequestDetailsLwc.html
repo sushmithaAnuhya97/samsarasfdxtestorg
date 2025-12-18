@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+       <article class="slds-card">
+        <template if:true={showProcessing}>
+            <lightning-spinner alternative-text="Processing"></lightning-spinner>
+        </template>
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item padding="around-small">
+                    <template if:false={isUserSubscribed} >
+                        <lightning-button label="Subscribe" variant="brand" class="slds-m-left_x-small" onclick={performSubscribe}></lightning-button>
+                    </template>
+                    
+                    <template if:true={isUserSubscribed} >
+                        <lightning-button label="Unsubscribe" variant="brand" class="slds-m-left_x-small" onclick={performUnsubscribe}></lightning-button>
+                    </template>
+                    
+                </lightning-layout-item>
+            </lightning-layout>
+        </article>
+    </lightning-card>
+</template>

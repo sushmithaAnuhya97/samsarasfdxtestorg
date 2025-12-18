@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Contact_List_IB_CB</fullName>
+    <booleanFilter>(1 AND 2) or (1 AND 3)</booleanFilter>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>Inbound_Form_Message__c</columns>
+    <columns>Last_Call__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account.Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Bart Pickett</value>
+    </filters>
+    <filters>
+        <field>Last_Marketing_Engagement_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Demo_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Master Contact List + IB (CB)</label>
+</ListView>

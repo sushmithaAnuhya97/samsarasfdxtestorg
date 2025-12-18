@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Create_Change_Request</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Request Approval for Policy Change</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/FLODocs__FloChangeRequestEditNew?pid={!FLODocs__FLO_Change_Approval_Policy__c.Id}&amp;retURL=/{!URLENCODE(FLODocs__FLO_Change_Approval_Policy__c.Id)}</url>
+</WebLink>

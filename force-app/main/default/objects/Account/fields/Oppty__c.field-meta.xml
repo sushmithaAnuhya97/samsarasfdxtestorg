@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty__c</fullName>
+    <description>Marks whether or not an account has a first oppty creation date. 1.00 if yes, 0.00 if not (Kiriti)</description>
+    <formula>If(ISBLANK(First_Revenue_Oppty_Creation_Date__c)=True,0.00,1.00)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Marks whether or not an account has a first oppty creation date. 1.00 if yes, 0.00 if not (Kiriti)</inlineHelpText>
+    <label>Oppty?</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

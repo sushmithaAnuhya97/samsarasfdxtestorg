@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lost_Renewal_Sub_reason__c</fullName>
+    <label>Risk/Loss Renewal Sub-Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Closed_Lost_Renewal_Reason__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Performance Issues</fullName>
+                <default>false</default>
+                <label>Performance Issues</label>
+            </value>
+            <value>
+                <fullName>Integration Issues</fullName>
+                <default>false</default>
+                <label>Integration Issues</label>
+            </value>
+            <value>
+                <fullName>Hardware Reliability</fullName>
+                <default>false</default>
+                <label>Hardware Reliability</label>
+            </value>
+            <value>
+                <fullName>Security/Compliance Gaps</fullName>
+                <default>false</default>
+                <label>Security/Compliance Gaps</label>
+            </value>
+            <value>
+                <fullName>Connectivity Issues</fullName>
+                <default>false</default>
+                <label>Connectivity Issues</label>
+            </value>
+            <value>
+                <fullName>Onboarding &amp; Implementation Issues</fullName>
+                <default>false</default>
+                <label>Onboarding &amp; Implementation Issues</label>
+            </value>
+            <value>
+                <fullName>Low Adoption / Underutilization</fullName>
+                <default>false</default>
+                <label>Low Adoption / Underutilization</label>
+            </value>
+            <value>
+                <fullName>Low ROI / Value Realization</fullName>
+                <default>false</default>
+                <label>Low ROI / Value Realization</label>
+            </value>
+            <value>
+                <fullName>Feature Gaps</fullName>
+                <default>false</default>
+                <label>Feature Gaps</label>
+            </value>
+            <value>
+                <fullName>Missing 3rd Party Integration</fullName>
+                <default>false</default>
+                <label>Missing 3rd Party Integration</label>
+            </value>
+            <value>
+                <fullName>Fleet Downsize Due to Business Changes</fullName>
+                <default>false</default>
+                <label>Fleet Downsize Due to Business Changes</label>
+            </value>
+            <value>
+                <fullName>Overpurchase Due Customer Overprojection</fullName>
+                <default>false</default>
+                <label>Overpurchase Due Customer Overprojection</label>
+            </value>
+            <value>
+                <fullName>Overpurchased Due to Billing/Usage Transparency Issues</fullName>
+                <default>false</default>
+                <label>Overpurchased Due to Billing/Usage Transparency Issues</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy / Business Closure</fullName>
+                <default>false</default>
+                <label>Bankruptcy / Business Closure</label>
+            </value>
+            <value>
+                <fullName>Merger &amp; Acquisition</fullName>
+                <default>false</default>
+                <label>Merger &amp; Acquisition</label>
+            </value>
+            <value>
+                <fullName>Budget Cuts / Cost Reduction</fullName>
+                <default>false</default>
+                <label>Budget Cuts / Cost Reduction</label>
+            </value>
+            <value>
+                <fullName>Competitive Price Pressure</fullName>
+                <default>false</default>
+                <label>Competitive Price Pressure</label>
+            </value>
+            <value>
+                <fullName>Competitor Commercial Terms</fullName>
+                <default>false</default>
+                <label>Competitor Commercial Terms</label>
+            </value>
+            <value>
+                <fullName>Vendor Tool Consolidation</fullName>
+                <default>false</default>
+                <label>Vendor Tool Consolidation</label>
+            </value>
+            <value>
+                <fullName>Technical Support Experience</fullName>
+                <default>false</default>
+                <label>Technical Support Experience</label>
+            </value>
+            <value>
+                <fullName>Sales/Renewal Experience</fullName>
+                <default>false</default>
+                <label>Sales/Renewal Experience</label>
+            </value>
+            <value>
+                <fullName>Customer Success Experience</fullName>
+                <default>false</default>
+                <label>Customer Success Experience</label>
+            </value>
+            <value>
+                <fullName>Billing Experience</fullName>
+                <default>false</default>
+                <label>Billing Experience</label>
+            </value>
+            <value>
+                <fullName>New Leader Preference</fullName>
+                <default>false</default>
+                <label>New Leader Preference</label>
+            </value>
+            <value>
+                <fullName>Unresponsive / No Customer Feedback</fullName>
+                <default>false</default>
+                <label>Unresponsive / No Customer Feedback</label>
+            </value>
+            <value>
+                <fullName>Consolidated renewal</fullName>
+                <default>false</default>
+                <label>Consolidated Renewal</label>
+            </value>
+            <value>
+                <fullName>Write-Off</fullName>
+                <default>false</default>
+                <label>Write-Off</label>
+            </value>
+            <value>
+                <fullName>System Error</fullName>
+                <default>false</default>
+                <label>System Error</label>
+            </value>
+            <value>
+                <fullName>Previously churned</fullName>
+                <default>false</default>
+                <label>Non-Renewable Contract</label>
+            </value>
+            <value>
+                <fullName>Account Executive experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Account Executive experience</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Business priority shift</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business priority shift</label>
+            </value>
+            <value>
+                <fullName>Buyout</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Buyout</label>
+            </value>
+            <value>
+                <fullName>COVID-19</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COVID-19</label>
+            </value>
+            <value>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Compliance</label>
+            </value>
+            <value>
+                <fullName>Connectivity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Connectivity</label>
+            </value>
+            <value>
+                <fullName>Contract term length</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contract term length</label>
+            </value>
+            <value>
+                <fullName>Core use case not supported</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Core use case not supported</label>
+            </value>
+            <value>
+                <fullName>Customer availability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer availability</label>
+            </value>
+            <value>
+                <fullName>Dashboard performance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dashboard performance</label>
+            </value>
+            <value>
+                <fullName>Diagnostics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Diagnostics</label>
+            </value>
+            <value>
+                <fullName>Did not meet pre-sales expectations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Did not meet pre-sales expectations</label>
+            </value>
+            <value>
+                <fullName>Driver app performance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Driver app performance</label>
+            </value>
+            <value>
+                <fullName>Feature release experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Feature release experience</label>
+            </value>
+            <value>
+                <fullName>Finance experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Finance experience</label>
+            </value>
+            <value>
+                <fullName>Fleet downsizing or low vehicle usage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fleet downsizing or low vehicle usage</label>
+            </value>
+            <value>
+                <fullName>HW reliability - AG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HW reliability - AG</label>
+            </value>
+            <value>
+                <fullName>HW reliability - CM</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HW reliability - CM</label>
+            </value>
+            <value>
+                <fullName>HW reliability - Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HW reliability - Other</label>
+            </value>
+            <value>
+                <fullName>HW reliability - VG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>HW reliability - VG</label>
+            </value>
+            <value>
+                <fullName>Installation friction</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Installation friction</label>
+            </value>
+            <value>
+                <fullName>Insufficient change mgmt</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Insufficient change mgmt</label>
+            </value>
+            <value>
+                <fullName>Insufficient training</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Insufficient training</label>
+            </value>
+            <value>
+                <fullName>Integration performance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Integration performance</label>
+            </value>
+            <value>
+                <fullName>Loss of champion</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loss of champion</label>
+            </value>
+            <value>
+                <fullName>Merger vendor consolidation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Merger vendor consolidation</label>
+            </value>
+            <value>
+                <fullName>Missing or inaccurate data</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Missing or inaccurate data</label>
+            </value>
+            <value>
+                <fullName>Monthly payment option</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Monthly payment option</label>
+            </value>
+            <value>
+                <fullName>Moved devices to another org</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Moved devices to another org</label>
+            </value>
+            <value>
+                <fullName>Onboarding experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Onboarding experience</label>
+            </value>
+            <value>
+                <fullName>Ongoing engagement experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ongoing engagement experience</label>
+            </value>
+            <value>
+                <fullName>Order process (e.g. fulfillment, shipping)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Order process (e.g. fulfillment, shipping)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other Product Fit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Product Fit</label>
+            </value>
+            <value>
+                <fullName>Outstanding feature/feedback request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Outstanding feature/feedback request</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>RMA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RMA</label>
+            </value>
+            <value>
+                <fullName>Renewal Account Executive experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Renewal Account Executive experience</label>
+            </value>
+            <value>
+                <fullName>Reseller partner experience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reseller partner experience</label>
+            </value>
+            <value>
+                <fullName>Seasonal purchase</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Seasonal purchase</label>
+            </value>
+            <value>
+                <fullName>Terms and conditions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Terms and conditions</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Relationship &amp; Experience</controllingFieldValue>
+            <valueName>Technical Support Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship &amp; Experience</controllingFieldValue>
+            <valueName>Sales/Renewal Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship &amp; Experience</controllingFieldValue>
+            <valueName>Customer Success Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship &amp; Experience</controllingFieldValue>
+            <valueName>Billing Experience</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Relationship &amp; Experience</controllingFieldValue>
+            <valueName>New Leader Preference</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unresponsive / No Customer Feedback</controllingFieldValue>
+            <valueName>Unresponsive / No Customer Feedback</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>Consolidated renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>Write-Off</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>System Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renewal admin issue</controllingFieldValue>
+            <valueName>Previously churned</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Value &amp; Fit</controllingFieldValue>
+            <valueName>Low Adoption / Underutilization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Value &amp; Fit</controllingFieldValue>
+            <valueName>Low ROI / Value Realization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Value &amp; Fit</controllingFieldValue>
+            <valueName>Feature Gaps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Value &amp; Fit</controllingFieldValue>
+            <valueName>Missing 3rd Party Integration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fleet Downsize &amp; Overpurchase</controllingFieldValue>
+            <valueName>Fleet Downsize Due to Business Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fleet Downsize &amp; Overpurchase</controllingFieldValue>
+            <valueName>Overpurchase Due Customer Overprojection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fleet Downsize &amp; Overpurchase</controllingFieldValue>
+            <valueName>Overpurchased Due to Billing/Usage Transparency Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Issues</controllingFieldValue>
+            <valueName>Performance Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Issues</controllingFieldValue>
+            <valueName>Integration Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Issues</controllingFieldValue>
+            <valueName>Hardware Reliability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Issues</controllingFieldValue>
+            <valueName>Security/Compliance Gaps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Issues</controllingFieldValue>
+            <valueName>Connectivity Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product Technical Issues</controllingFieldValue>
+            <valueName>Onboarding &amp; Implementation Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Financial Impact</controllingFieldValue>
+            <valueName>Bankruptcy / Business Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Financial Impact</controllingFieldValue>
+            <valueName>Merger &amp; Acquisition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Financial Impact</controllingFieldValue>
+            <valueName>Budget Cuts / Cost Reduction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Competitive Pressure</controllingFieldValue>
+            <valueName>Competitive Price Pressure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Competitive Pressure</controllingFieldValue>
+            <valueName>Competitor Commercial Terms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Competitive Pressure</controllingFieldValue>
+            <valueName>Vendor Tool Consolidation</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

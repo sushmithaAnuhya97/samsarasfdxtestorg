@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SLED_Role__c</fullName>
+    <formula>OR(
+CONTAINS( SBQQ__Opportunity2__r.Owner_Role_Copy__c , &quot;SLED&quot;),
+CONTAINS(SBQQ__Account__r.Owner_Role_Text_Stamped__c, &quot;SLED&quot;),
+SBQQ__Account__r.SLED_Account_Copy__c,
+CONTAINS(Owner_Profile__c , &quot;Sales Ops&quot;)
+)</formula>
+    <label>SLED Role?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

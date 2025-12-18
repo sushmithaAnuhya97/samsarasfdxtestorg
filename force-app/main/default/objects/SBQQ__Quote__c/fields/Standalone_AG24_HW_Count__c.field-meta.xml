@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standalone_AG24_HW_Count__c</fullName>
+    <label>Standalone AG24 HW Count</label>
+    <summarizedField>SBQQ__QuoteLine__c.SBQQ__Quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>SBQQ__QuoteLine__c.Standalone_Hardware__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>SBQQ__QuoteLine__c.SBQQ__Quote__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

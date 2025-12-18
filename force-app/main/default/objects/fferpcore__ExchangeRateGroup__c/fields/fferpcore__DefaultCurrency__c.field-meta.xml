@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DefaultCurrency__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The default currency for the exchange rate group. Related exchange rates are created relative to this currency.</description>
+    <inlineHelpText>The default currency for the exchange rate group. Related exchange rates are created relative to this currency.</inlineHelpText>
+    <label>Default Currency</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>No active currencies</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

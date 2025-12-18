@@ -1,0 +1,17 @@
+<apex:page standardController="pse__Proj__c" showHeader="false" sidebar="false" title="Gainsight Widget for Project">
+    <style>
+        .gainsight-widget-container {
+            min-height: 1000px; 
+            max-width: 1200px; 
+            margin: 0 auto;  
+            height: auto; 
+            padding: 20px;
+        }
+    </style>
+    <div class="gainsight-widget-container">
+    <JBCXM:GSNxt accountId="{!pse__Proj__c.pse__Account__c}"
+                 showDetailView="true"
+                 showTimeline="true"> 
+    </JBCXM:GSNxt>
+    </div>
+</apex:page>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DerivedUnitPrice__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Average price charged per unit before tax. This can be used for integrating with systems that only allow unit price and quantity, with no other adjustments, or when you want the unit price to accurately reflect what is being charged.</description>
+    <externalId>false</externalId>
+    <formula>IF(fferpcore__NetValue__c = 0, 0, fferpcore__NetValue__c / fferpcore__Quantity__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Average price charged per unit before tax. This may be different from the unit price, as it takes into account adjustments such as proration and discounts that are applied to the line as a whole rather than to individual units.</inlineHelpText>
+    <label>Derived Unit Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>9</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

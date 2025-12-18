@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>appirio_core__Currency__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This lookup references the Currency record for which the dated currency exchange rate applies.  The rate is always defined as how much of the referenced Currency is equal to 1 (one) unit of the Coprorate Currency on the specified effective date.</description>
+    <inlineHelpText>This lookup references the Currency record for which the dated currency exchange rate applies.  The rate is always defined as how much of the referenced Currency is equal to 1 (one) unit of the Coprorate Currency on the specified effective date.</inlineHelpText>
+    <label>Currency</label>
+    <referenceTo>appirio_core__Currency__c</referenceTo>
+    <relationshipLabel>Dated Exchange Rates</relationshipLabel>
+    <relationshipName>Currency_Exchange_Rates</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

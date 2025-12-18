@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Method__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Shipping Method</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Will Call</fullName>
+                <default>true</default>
+                <label>Will Call</label>
+            </value>
+            <value>
+                <fullName>UK Standard</fullName>
+                <default>false</default>
+                <label>UK Standard</label>
+            </value>
+            <value>
+                <fullName>UK Express</fullName>
+                <default>false</default>
+                <label>UK Express</label>
+            </value>
+            <value>
+                <fullName>3 Day Select</fullName>
+                <default>false</default>
+                <label>3 Day Select</label>
+            </value>
+            <value>
+                <fullName>Ground</fullName>
+                <default>false</default>
+                <label>Ground</label>
+            </value>
+            <value>
+                <fullName>Next Day Air</fullName>
+                <default>false</default>
+                <label>Next Day Air</label>
+            </value>
+            <value>
+                <fullName>Worldwide Expedited</fullName>
+                <default>false</default>
+                <label>Worldwide Expedited</label>
+            </value>
+            <value>
+                <fullName>ECONOMY</fullName>
+                <default>false</default>
+                <label>ECONOMY</label>
+            </value>
+            <value>
+                <fullName>Fedex Freight Economy</fullName>
+                <default>false</default>
+                <label>Fedex Freight Economy</label>
+            </value>
+            <value>
+                <fullName>International Priority</fullName>
+                <default>false</default>
+                <label>International Priority</label>
+            </value>
+            <value>
+                <fullName>International Economy</fullName>
+                <default>false</default>
+                <label>International Economy</label>
+            </value>
+            <value>
+                <fullName>Ground - Mexico</fullName>
+                <default>false</default>
+                <label>Ground - Mexico</label>
+            </value>
+            <value>
+                <fullName>MX Standard</fullName>
+                <default>false</default>
+                <label>MX Standard</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

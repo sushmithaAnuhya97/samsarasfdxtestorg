@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial_Closed_Lost_Reason__c</fullName>
+    <description>Dedicated picklist of closed lost reasons specific for Industrial</description>
+    <inlineHelpText>If other, please right a description in the field Closed Lost Reason</inlineHelpText>
+    <label>Industrial Closed Lost Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Canceled Project + No Decision</fullName>
+                <default>false</default>
+                <label>Canceled Project + No Decision</label>
+            </value>
+            <value>
+                <fullName>Duplicate Opportunity</fullName>
+                <default>false</default>
+                <label>Duplicate Opportunity</label>
+            </value>
+            <value>
+                <fullName>Machine Vision End of Sale</fullName>
+                <default>false</default>
+                <label>Machine Vision End of Sale</label>
+            </value>
+            <value>
+                <fullName>Missing Product Feature</fullName>
+                <default>false</default>
+                <label>Missing Product Feature</label>
+            </value>
+            <value>
+                <fullName>Pricing or Budget</fullName>
+                <default>false</default>
+                <label>Pricing or Budget</label>
+            </value>
+            <value>
+                <fullName>Unsuccessful Pilot</fullName>
+                <default>false</default>
+                <label>Unsuccessful Pilot</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

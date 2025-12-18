@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__DeclarativeMappingCount__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Number of Declarative Mappings</label>
+    <summaryForeignKey>fferpcore__DSCustomMapping__c.fferpcore__Subscription__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

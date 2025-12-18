@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Type__c</fullName>
+    <label>Transaction Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>WEBSTORE_ADD_ON_PURCHASE</fullName>
+                <default>false</default>
+                <label>WEBSTORE_ADD_ON_PURCHASE</label>
+            </value>
+            <value>
+                <fullName>WEBSTORE_FIRST_PURCHASE</fullName>
+                <default>false</default>
+                <label>WEBSTORE_FIRST_PURCHASE</label>
+            </value>
+            <value>
+                <fullName>WEBSTORE_COMMERCIAL_CHECKOUT_LINK</fullName>
+                <default>false</default>
+                <label>WEBSTORE_COMMERCIAL_CHECKOUT_LINK</label>
+            </value>
+            <value>
+                <fullName>WEBSTORE_DIGITAL_RENEWAL</fullName>
+                <default>false</default>
+                <label>WEBSTORE_DIGITAL_RENEWAL</label>
+            </value>
+            <value>
+                <fullName>WEBSTORE_MIDMARKET_PLUS_CHECKOUT_LINK</fullName>
+                <default>false</default>
+                <label>WEBSTORE_MIDMARKET_PLUS_CHECKOUT_LINK</label>
+            </value>
+            <value>
+                <fullName>WEBSTORE_FREE_TRIAL</fullName>
+                <default>false</default>
+                <label>WEBSTORE_FREE_TRIAL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

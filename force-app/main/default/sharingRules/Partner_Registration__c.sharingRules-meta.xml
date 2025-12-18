@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>IVS_Partner_Registration</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IVS Partner Registration</label>
+        <sharedTo>
+            <group>Partner_Registration_ISV</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Partner_Team_Alignment__c</field>
+            <operation>equals</operation>
+            <value>ISV</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,133 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="InsideSalesScoreboardController">
+	<html>
+        <head>
+            <META http-equiv="refresh" content="30"/>
+        </head>
+    </html>
+    <style>
+        .tabhead {
+        	background:darkgray;
+        	border-bottom: 2px solid black;
+        }
+        .tabhead:not(.TotalColumn):not(.firstColHeader) {
+        	border-right: 1px solid black;
+        }
+        .tabhead.TotalColumn {
+        	background:peachpuff;
+        }
+        .odd td {
+        	border-bottom: 1px solid black;
+        }
+
+		.PastWeek.WinWeek{
+        	background:limegreen;
+        	color:white;
+        }
+        .PastWeek.LoseWeek{
+        	background:lightgray;
+        	color:dimgray;
+        } 
+        .CurrentWeek{
+        }
+        .FutureWeek{
+       		color:white;
+        }
+
+        div#center {
+            width: 1850px;
+    		height: 25%;
+		    position: absolute;
+		    top:0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+        }
+        
+        div#BottomCenter {
+            width: 1850px;
+    		height: 25%;
+		    margin: auto;
+        }
+        
+        div#imageCenter{
+			position:absolute;
+    	    top:10%;
+        	left:50%;
+        	margin-left:-55px;
+        }
+        
+        .firstColHeader{
+        	font:14px verdana;
+        	font-style:italic;
+        	text-align:right;
+        	background:white;
+	        border-right: 2px solid black;
+        }
+    </style>
+   	<div id="imageCenter">
+    	<apex:image url="{!$Resource.samsaraLogo}" width="110px"/>
+    </div>
+    <div id="center">
+        <apex:dataTable value="{!InsideSalesScoreboardTeams}" var="team" headerClass="tabhead" style="font: 19px 'helvetica neue'; border-right: 2px solid black;" rowClasses="odd, even">
+            <apex:column width="6%" style="font-weight: bold; border-right: 2px solid black;" headerClass="firstColHeader">
+                <apex:facet name="header">
+                	Week-starts: 
+                </apex:facet>
+                <apex:outputText value="{!team.name}"/>
+            </apex:column> 
+            <apex:repeat var="week" value="{!CQWeeks}">
+                <apex:column width="110px" style="text-align:center; border-right: 1px solid black;" styleClass="{!if(week-today() > 0,'FutureWeek',if(week-today()>-7,'CurrentWeek','PastWeek'))} {!if(team.weekWins[week],'WinWeek','LoseWeek')}">
+                	<apex:facet name="header">
+                    	<apex:outputText value="{0,date,MMM-d}"><apex:param value="{!week}"/></apex:outputText>
+                    </apex:facet>
+                    <apex:outputText value="{0,number,$##0k}">
+                        <apex:param value="{!floor(team.weekSales[week]/1000)}"/>
+                    </apex:outputText>
+				</apex:column>
+            </apex:repeat>
+            <apex:column width="7%" style="font-weight: bold; background:peachpuff; text-align:right;" headerClass="TotalColumn">
+                <apex:facet name="header">{!CQName} Total</apex:facet>
+                <apex:outputText value="{0,number,$###,##0k}">
+                    <apex:param value="{!floor(team.total/1000)}"/>
+                </apex:outputText>
+            </apex:column> 
+        </apex:dataTable>
+        <BR/>
+        <h1 style="font-size:42px; font-family:verdana; text-align:center; margin-bottom:10px;">
+			<apex:outputText >Inside Sales - {!CQName}</apex:outputText>
+        </h1>
+        <h1 style="font-size:20px; font-family:verdana; text-align:center;">
+            ({!if(sellingDaysLeft>=0,sellingDaysLeft,0)} selling days remaining)
+        </h1>
+        
+        <div id="SecondaryScoreboards" style="margin-top:100px;">
+            <div style="width:13%; height: 40px; float: left;">                
+            </div>
+            <div style="width:23%; float: left; border: 5px solid black; background:linen; padding:10px;">
+                <h1 style="font-size:19px; font-family:verdana; background:paleturquoise; text-align:center; margin-bottom:10px; margin-top:10px; width:90%; margin-left:auto;margin-right:auto;">
+                    TOP 5 DEALS
+                </h1>
+            	<apex:dataTable value="{!TopAccounts}" var="topAccount" style="margin:auto; width:90%; font-family:'helvetica neue';">
+					<apex:column width="22%;" style="font-weight:bold;">
+                        <apex:outputText value="{!topAccount.place}. {!UPPER(topAccount.team)}"/>
+                    </apex:column>	
+					<apex:column width="58%;" style="text-align:left;">
+						({!left(topAccount.name,if(find(" ",topAccount.name)>0,find(" ",topAccount.name)-1,len(topAccount.name)))} - {!topAccount.rep})
+                    </apex:column>	                    
+                    <apex:column width="20%;" style="text-align:right;">
+                        <apex:outputText value="{0,number,$##0k}">
+                            <apex:param value="{!floor(topAccount.amount/1000)}"/>
+                        </apex:outputText> 
+                    </apex:column>                    
+	        	</apex:dataTable>
+            </div>
+		    <div style="width:28%;height: 40px;  float: left; ">                
+            </div>
+            <div style="width:23%; height: 40px; float: left; ">                
+            </div>            
+		    <div style="width:13%; height: 40px; float: left; ">                
+            </div>            
+        </div>        
+    </div>
+</apex:page>

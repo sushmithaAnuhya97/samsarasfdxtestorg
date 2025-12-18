@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Quarter__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(pse__End_Date__c &gt; DATE(2023,2,4), pse__End_Date__c &lt;= DATE(2023,4,29)),&quot;FY24Q1&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2023,4,29), pse__End_Date__c &lt;= DATE(2023,7,29)),&quot;FY24Q2&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2023,7,29), pse__End_Date__c &lt;= DATE(2023,10,28)),&quot;FY24Q3&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2023,10,28), pse__End_Date__c &lt;= DATE(2024,2,3)),&quot;FY24Q4&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2024,02,04), pse__End_Date__c &lt;= DATE(2024,5,4)),&quot;FY25Q1&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2023,5,5), pse__End_Date__c &lt;= DATE(2024,8,3)),&quot;FY25Q2&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2023,8,4), pse__End_Date__c &lt;= DATE(2024,11,2)),&quot;FY25Q3&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2023,11,3), pse__End_Date__c &lt;= DATE(2025,2,1)),&quot;FY25Q4&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2025,2,2), pse__End_Date__c &lt;= DATE(2025,5,3)),&quot;FY26Q1&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2025,5,4), pse__End_Date__c &lt;= DATE(2025,8,2)),&quot;FY26Q2&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2025,8,3), pse__End_Date__c &lt;= DATE(2025,11,1)),&quot;FY26Q3&quot;,
+IF(AND(pse__End_Date__c &gt; DATE(2025,11,2), pse__End_Date__c &lt;= DATE(2026,1,31)),&quot;FY26Q4&quot;,&apos;&apos;))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fiscal Quarter</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

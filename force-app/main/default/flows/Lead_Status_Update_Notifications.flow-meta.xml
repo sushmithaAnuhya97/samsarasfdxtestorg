@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Partner_Notified_of_Application_Denied</name>
+        <label>Partner Notified of Application Denied</label>
+        <locationX>21</locationX>
+        <locationY>228</locationY>
+        <actionName>Lead.Partner_Notified_of_Application_Denied</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Partner_Notified_of_Application_Denied</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Partner_Notified_of_Country_not_Supported</name>
+        <label>Partner Notified of Country not Supported</label>
+        <locationX>27</locationX>
+        <locationY>440</locationY>
+        <actionName>Lead.Partner_Notified_of_Country_not_Supported</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Partner_Notified_of_Country_not_Supported</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Partner_Notified_of_Denial</name>
+        <label>Partner Notified of Denial</label>
+        <locationX>1391</locationX>
+        <locationY>340</locationY>
+        <actionName>Lead.Partner_Notified_of_Deal_Denied</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Partner_Notified_of_Deal_Denied</nameSegment>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Lead_Status_for_Channel_Registration</name>
+        <label>Check Lead Status for Channel Registration</label>
+        <locationX>1079</locationX>
+        <locationY>345</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Channel_Registration_Lead_Status_is_Disqualified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Disqualified</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Partner_User_lr__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Partner_Notified_of_Denial</targetReference>
+            </connector>
+            <label>Channel Registration Lead Status is Disqualified</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Node to check if Partner Application status is set is disqualified</description>
+        <name>Check_Lead_Status_for_Partner_Application</name>
+        <label>Check Lead Status for Partner Application</label>
+        <locationX>499</locationX>
+        <locationY>347</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Partner_Application_Lead_Status_is_Disqualified</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Disqualified</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unsupported_Country_Check</targetReference>
+            </connector>
+            <label>Partner Application Lead Status is Disqualified</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determine if Record Type is Partner Application or Channel Registration (Deal)</description>
+        <name>Check_Record_Type</name>
+        <label>Check Record Type</label>
+        <locationX>755</locationX>
+        <locationY>348</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Partner_Application</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Partner Application</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Lead_Status_for_Partner_Application</targetReference>
+            </connector>
+            <label>Is Partner Application</label>
+        </rules>
+        <rules>
+            <name>Is_Channel_Registration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Channel Registration</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Lead_Status_for_Channel_Registration</targetReference>
+            </connector>
+            <label>Is Channel Registration</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>GS: A node to check if the partner as selected a country that is not supported by Samsara</description>
+        <name>Unsupported_Country_Check</name>
+        <label>Unsupported Country Check</label>
+        <locationX>241</locationX>
+        <locationY>340</locationY>
+        <defaultConnector>
+            <targetReference>Partner_Notified_of_Application_Denied</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Unsupported_Country</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Application_Denied_Reason_p__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Country is not supported</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Partner_Notified_of_Country_not_Supported</targetReference>
+            </connector>
+            <label>If Unsupported Country</label>
+        </rules>
+    </decisions>
+    <description>To be used for Partner Application and Channel Registration Record Types</description>
+    <interviewLabel>Lead Status Update Notifications {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Status Update Notifications</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>637</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Check_Record_Type</targetReference>
+        </connector>
+        <filterLogic>1</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

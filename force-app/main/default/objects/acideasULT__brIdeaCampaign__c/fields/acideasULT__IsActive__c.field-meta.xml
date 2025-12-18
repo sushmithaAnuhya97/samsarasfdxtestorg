@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acideasULT__IsActive__c</fullName>
+    <deprecated>false</deprecated>
+    <formula>(TODAY() &lt;= acideasULT__End_date__c) &amp;&amp; (TODAY() &gt;= acideasULT__Start_date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

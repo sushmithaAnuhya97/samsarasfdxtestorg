@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overwrite_Validation_Rule__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows validation rules to be temporarily overwritten. This should always be defaulted to FALSE. It can be checked when running a process that needs to give reps ability to bypass a validation rule but should ALWAYS be unchecked again as part of that process.</description>
+    <label>Overwrite Validation Rule</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

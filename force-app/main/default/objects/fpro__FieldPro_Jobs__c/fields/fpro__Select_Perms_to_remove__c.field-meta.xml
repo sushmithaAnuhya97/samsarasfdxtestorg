@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Select_Perms_to_remove__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Select the places from where selected field permissions should be removed</description>
+    <inlineHelpText>Select the places from where selected field permissions should be removed</inlineHelpText>
+    <label>Select Perms to remove</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Profiles</fullName>
+                <default>false</default>
+                <label>Profiles</label>
+            </value>
+            <value>
+                <fullName>Permission Sets</fullName>
+                <default>false</default>
+                <label>Permission Sets</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

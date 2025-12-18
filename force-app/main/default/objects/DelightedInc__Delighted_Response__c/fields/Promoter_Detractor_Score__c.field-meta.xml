@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Promoter_Detractor_Score__c</fullName>
+    <description>NPS Score for Calculation +100 for promoters (score = 9, 10), 0 for neutral (score = 7, 8), and -100 for detractors (score is 6 or less)</description>
+    <externalId>false</externalId>
+    <formula>IF( DelightedInc__Score__c &gt;=9,100,IF(DelightedInc__Score__c &lt;=6,-100,0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Promoter Detractor Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

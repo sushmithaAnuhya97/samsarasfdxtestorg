@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__New_FLO_Change_Request</fullName>
+    <availability>online</availability>
+    <description>Creates Change Request record from the Process Issue</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Change Request</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/apex/FLODocs__FloChangeRequestEditNew?pi={!FLODocs__FLO_Process_Issue__c.Id}&amp;retURL=/{!URLENCODE(FLODocs__FLO_Process_Issue__c.Id)}</url>
+</WebLink>

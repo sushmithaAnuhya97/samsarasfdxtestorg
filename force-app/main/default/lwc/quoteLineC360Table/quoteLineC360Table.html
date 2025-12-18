@@ -1,0 +1,71 @@
+<template>
+
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+
+    <div class="slds-m-around_medium">
+        <div> <!-- class="slds-box" -->
+            <template if:true={quoteId}>
+                <template if:true={error}>
+                    <div class="slds-box">
+                        <div class="slds-text-color_error slds-m-around_medium">
+                            An error occurred while loading quote lines that require approval.
+                        </div>
+                    </div>
+                </template>
+                <template if:false={error}>
+                    <template if:true={hasData}>
+                        <!-- Table: Discounts that will require Approval -->
+                        <template if:true={requiresApproval.length}>
+                            <div class="slds-box">
+                                <h2 class="slds-text-heading_medium slds-m-bottom_small">Customer 360 Information Referenced</h2>
+                                <div class="slds-table--header-fixed_container" style="overflow-x:auto;">
+                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Product Code</th>
+                                                <th>Product Name</th>
+                                                <th>Monthly Unit Price</th>
+                                                <th>C360 MUP</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template for:each={requiresApproval} for:item="line">
+                                                <tr key={line.productCode}>
+                                                    <td>{line.productCode}</td>
+                                                    <td>{line.productName}</td>
+                                                    <td>
+                                                        <lightning-formatted-number value={line.mup} format-style="decimal" maximum-fraction-digits="1"></lightning-formatted-number>
+                                                    </td>
+                                                    <td>
+                                                        <lightning-formatted-number value={line.c360Discount} format-style="decimal" maximum-fraction-digits="1"></lightning-formatted-number>
+                                                    </td>
+                                                </tr>
+                                            </template>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+            </template>
+            <template if:false={quoteId}>
+                <div class="slds-box">
+                    <div class="slds-m-around_medium">
+                        No Quote Id provided.
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <template if:true={showFooter}>
+        <div class="slds-p-around_medium slds-float_right">
+            <lightning-button-group>
+                <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>
+                <lightning-button label="Next" onclick={handleNext} variant="brand"></lightning-button>
+            </lightning-button-group>
+        </div>
+    </template>
+</template>

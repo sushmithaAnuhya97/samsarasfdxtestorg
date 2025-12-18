@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Shipping_Email__c</fullName>
+    <description>This field if checked means the shipping country is in the United States.</description>
+    <formula>OR( 
+Customer_Claim_Email_Enabled__c,
+IF(TEXT(Shipping_Country__c) = &quot;United States&quot;, true, false),
+true
+)</formula>
+    <inlineHelpText>This field if checked means the shipping country is in the United States.</inlineHelpText>
+    <label>New Shipping Email</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

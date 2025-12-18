@@ -1,0 +1,1968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industrial</fullName>
+    <active>true</active>
+    <label>Industrial</label>
+    <picklistValues>
+        <picklist>CE_SE_Next_Step__c</picklist>
+        <values>
+            <fullName>Feature Request Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Acceptance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meet with AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None - Tech Work Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution Review with Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Solution Acceptance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial Check-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Generalist SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Specialist SE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CE_Tech_Sale_Stage__c</picklist>
+        <values>
+            <fullName>Commercial loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New key account identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-trial phase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech win</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CS_SE_Next_Step__c</picklist>
+        <values>
+            <fullName>Feature Request Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feature Request Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Acceptance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meet with AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None - Tech Work Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution Review with Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Solution Acceptance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial Check-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Generalist SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Specialist SE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CS_Tech_Sale_Stage__c</picklist>
+        <values>
+            <fullName>Commercial loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New key account identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-trial phase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech win</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cell_Survey_Status__c</picklist>
+        <values>
+            <fullName>Coverage Okay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coverage Unavailable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coverage Unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Competition__c</picklist>
+        <values>
+            <fullName>CE - Ayantra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - OEM Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - OmniMetrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - Power Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - Trackunit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - ZTR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - ACTi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Amcrest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Arecont</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Avigilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Axis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Bosch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Cap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Dahua</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Digital Watchdog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Eagle Eye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Everfocus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Exacq</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Ganz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Genetec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Geovision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - HikVision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Honeywell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - LTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Lorex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - March Networks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Meraki</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Milestone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Salient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Samsung-Hanwha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Seawit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Speco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Trendnet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Ubiquiti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Verkada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Vitek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Vivotek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Wisenet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - 3rd Eye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Actia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Arlo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Astrata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Axxes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Azuga</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Bornemann AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - C-Track</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - CheckedSafe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Compology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Cyntrx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - DAF%2FVolvo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - DKV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Dako</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Datev</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - DigitalAlly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Dossier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - E-road</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Eagle Eye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Earthwave Fleetwatcher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Element</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Elliot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - EquipmentShare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - EverySense</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - EyeDrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FleetCheck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FleetComplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FleetHolster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Fleetboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Fleetio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Fleetmatics %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FonixTelematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS Connect %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS Hero</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS Insight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS TrackIt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Geoflotte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Geotab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Guardian Seeing Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Hallhub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Hirschmann</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - IQ4 Mobility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - InTouchGPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Initions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Intellihub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Isaac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - JJ Keller Encompass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - KeepTruckin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Kienzle Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Lightfoot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - LocTracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - LocalMotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Lytx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - MagicEye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Mandata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Masternaut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - MiX Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Microlise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - MobileEye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Nauto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Navman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Netradyne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - NetworkFleet %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - NexTraq</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Omnitracs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Orbcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Owl Cam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Pedigree Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - PeopleNet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Podfather</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - ProVision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Quartix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Rand McNally</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Roscoe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SafeDrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SkyBitz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Smart Witness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SmartDrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Spedion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Speedio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Spireon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Sterling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Styletronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Sud Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SureCam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SurfCam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SurfSight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Teletrac%2FNavman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Telogis %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Tenna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - TomTom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Transics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Ubiquiti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Vehco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Verizon Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Vodafone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Yellowfox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Zenduit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Zonar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - iDrive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Connected_Equipment_Specialist__c</picklist>
+        <values>
+            <fullName>Alex Olguin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Andrew Chastain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ches Trulson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conor Murphy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emerson Garland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nicholas Schwarzbach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warren Epstein</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Connection_Type__c</picklist>
+        <values>
+            <fullName>IG15 - Custom Cable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG15 - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG15 - Samsara CAN cable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG15 - Samsara IO Cable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Analog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Ethernet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - RS-232</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - RS-485</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Samsara CAN cable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Data_required__c</picklist>
+        <values>
+            <fullName>Analog or Digital Inputs or Outputs %28IG41%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS %2B Engine Data or Analog Inputs %28IG15%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS %2B Run Hours %28AG46P%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS %2B Run Hours %2B DTCs %28AG26%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS Location Only %28AG46%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Protocol Support - Modbus%2FEthernet IP%2FROC %28IG41%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deployment_Type__c</picklist>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fast Start</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrator</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Equipment_Install_Type__c</picklist>
+        <values>
+            <fullName>Partner %2F 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samsara SoW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown%2FOther</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Equipment_mobility__c</picklist>
+        <values>
+            <fullName>Combination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Incumbent__c</picklist>
+        <values>
+            <fullName>CE - Ayantra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - OEM Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - OmniMetrix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - Power Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - Trackunit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE - ZTR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - ACTi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Amcrest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Arecont</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Avigilon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Axis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Bosch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Cap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Dahua</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Digital Watchdog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Eagle Eye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Everfocus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Exacq</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Ganz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Genetec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Geovision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - HikVision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Honeywell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - LTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Lorex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - March Networks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Meraki</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Milestone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Salient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Samsung-Hanwha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Seawit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Speco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Trendnet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Ubiquiti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Verkada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Vitek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Vivotek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS - Wisenet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - 3rd Eye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Actia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Arlo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Astrata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Axxes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Azuga</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Bornemann AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - C-Track</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - CheckedSafe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Compology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Cyntrx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - DAF%2FVolvo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - DKV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Dako</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Datev</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - DigitalAlly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Dossier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - E-road</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Eagle Eye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Earthwave Fleetwatcher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Element</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Elliot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - EquipmentShare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - EverySense</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - EyeDrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FleetCheck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FleetComplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FleetHolster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Fleetboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Fleetio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Fleetmatics %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - FonixTelematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS Connect %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS Hero</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS Insight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - GPS TrackIt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Geoflotte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Geotab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Guardian Seeing Machines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Hallhub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Hirschmann</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - IQ4 Mobility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - InTouchGPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Initions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Intellihub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Isaac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - JJ Keller Encompass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - KeepTruckin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Kienzle Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Lightfoot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - LocTracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - LocalMotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Lytx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - MagicEye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Mandata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Masternaut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - MiX Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Microlise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - MobileEye</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Nauto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Navman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Netradyne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - NetworkFleet %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - NexTraq</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Omnitracs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Orbcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Owl Cam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Pedigree Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - PeopleNet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Podfather</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - ProVision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Quartix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Rand McNally</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Roscoe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SafeDrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SkyBitz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Smart Witness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SmartDrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Spedion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Speedio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Spireon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Sterling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Styletronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Sud Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SureCam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SurfCam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - SurfSight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Teletrac%2FNavman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Telogis %28Verizon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Tenna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - TomTom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Transics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Ubiquiti</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Verizon Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Vodafone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Yellowfox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Zenduit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - Zonar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet - iDrive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industrial_Protocol__c</picklist>
+        <values>
+            <fullName>IG15 - CAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG15 - CAN%2BIO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG15 - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Analog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - CAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Ethernet%2FIP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Modbus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - ROC Protocol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IG41 - Siemens S7</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industrial_SE_Status__c</picklist>
+        <values>
+            <fullName>Waiting on AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Channel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on SE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Installer_Type__c</picklist>
+        <values>
+            <fullName>Existing Cameras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner %2F 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samsara SoW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Install</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Key_Account_Type__c</picklist>
+        <values>
+            <fullName>Cross Sell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upsell</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Network_Setup__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>On_Hold_Reason__c</picklist>
+        <values>
+            <fullName>Capability Gap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Primary_Competitor__c</picklist>
+        <values>
+            <fullName>AddSecure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Azuga</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CameraMatics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS Insight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geotab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inseego</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issac Instruments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lytx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Michelin Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microlise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netradyne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omnitracs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orbcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peoplenet %2F Trimble</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quartix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TomTom Webfleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrackM8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trimble</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verizon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellowfox</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Primary_Equipment_Type__c</picklist>
+        <values>
+            <fullName>Boilers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chillers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compressors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generators</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oil and Gas Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SE_Next_Step__c</picklist>
+        <values>
+            <fullName>Feature Request Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Acceptance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None - Tech Work Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solution Review with Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Solution Acceptance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Close</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Troubleshooting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial Check-In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sentiment__c</picklist>
+        <values>
+            <fullName>Discouraged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Encouraged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sites_Visibility_Specialist__c</picklist>
+        <values>
+            <fullName>Andrew Chastain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chase Ayers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conor Murphy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshall Chambers</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stream_Source__c</picklist>
+        <values>
+            <fullName>Camera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DVR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Encoder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NVR</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tech_Blocker__c</picklist>
+        <values>
+            <fullName>Hardware %283rd Party%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware %28Samsara%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal%2F%2FNDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on Customer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tech_Loss_Reason__c</picklist>
+        <values>
+            <fullName>Feature Gap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Tech Related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Competition</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tech_Stage__c</picklist>
+        <values>
+            <fullName>New Key Account Identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Win</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tech_Win__c</picklist>
+        <values>
+            <fullName>Tech Loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Win</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Undecided</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trail__c</picklist>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-trial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-trial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

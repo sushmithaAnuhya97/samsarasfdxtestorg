@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>Samsara Project Portal</container>
+    <containerType>Network</containerType>
+    <label>Customer Navigation</label>
+    <navigationMenuItem>
+        <defaultListViewId>All_Projects</defaultListViewId>
+        <label>Project</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>pse__Proj__c</target>
+        <type>SalesforceObject</type>
+    </navigationMenuItem>
+</NavigationMenu>

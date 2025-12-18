@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is automatically populated with the status of the job run, such as Log (indicating successful execution with logged details) or Error (indicating a failure). Use this status for reporting to monitor job outcomes and identify issues. Do not modify this field, as it is system-generated and essential for accurate reporting.</description>
+    <inlineHelpText>This field is automatically populated with the status of the job run, such as Log (indicating successful execution with logged details) or Error (indicating a failure). Use this status for reporting to monitor job outcomes and identify issues. Do not modify this field, as it is system-generated and essential for accurate reporting.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Error</fullName>
+                <default>false</default>
+                <label>Error</label>
+            </value>
+            <value>
+                <fullName>Log</fullName>
+                <default>false</default>
+                <label>Log</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Sale_Stage__c</fullName>
+    <description>This field is for sales engineers to track the technical progress of the deal</description>
+    <label>Tech Sale Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Key Account Identified</fullName>
+                <default>false</default>
+                <label>New Key Account Identified</label>
+            </value>
+            <value>
+                <fullName>Technical Discovery</fullName>
+                <default>false</default>
+                <label>Technical Discovery</label>
+            </value>
+            <value>
+                <fullName>Trial Management</fullName>
+                <default>false</default>
+                <label>Trial Management</label>
+            </value>
+            <value>
+                <fullName>Solution Design</fullName>
+                <default>false</default>
+                <label>Solution Design</label>
+            </value>
+            <value>
+                <fullName>Technical Proposal</fullName>
+                <default>false</default>
+                <label>Technical Proposal</label>
+            </value>
+            <value>
+                <fullName>Tech Win</fullName>
+                <default>false</default>
+                <label>Tech Win</label>
+            </value>
+            <value>
+                <fullName>Tech Loss - Competitive</fullName>
+                <default>false</default>
+                <label>Tech Loss - Competitive</label>
+            </value>
+            <value>
+                <fullName>Tech Loss - Feature Gap</fullName>
+                <default>false</default>
+                <label>Tech Loss - Feature Gap</label>
+            </value>
+            <value>
+                <fullName>Tech Loss - Problem Report</fullName>
+                <default>false</default>
+                <label>Tech Loss - Problem Report</label>
+            </value>
+            <value>
+                <fullName>Loss - Not Tech Related</fullName>
+                <default>false</default>
+                <label>Loss - Not Tech Related</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

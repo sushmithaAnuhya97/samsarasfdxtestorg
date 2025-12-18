@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__AccountId__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Id of the Account associated with the related Opportunity, if one exists; otherwise, the Id of the Account associated with the related Project, if one exists.</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(NOT(ISNULL(pse__Opportunity__c)),NOT(pse__Opportunity__c=&apos;&apos;),NOT(ISNULL(pse__Opportunity__r.AccountId)),NOT(pse__Opportunity__r.AccountId=&apos;&apos;)),
+pse__Opportunity__r.AccountId,
+IF(AND(NOT(ISNULL(pse__Project__c)),NOT(pse__Project__c=&apos;&apos;),NOT(ISNULL(pse__Project__r.pse__Account__c)),NOT(pse__Project__r.pse__Account__c=&apos;&apos;)),pse__Project__r.pse__Account__c,null))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The Id of the Account associated with the related Opportunity, if one exists; otherwise, the Id of the Account associated with the related Project, if one exists.</inlineHelpText>
+    <label>AccountId</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

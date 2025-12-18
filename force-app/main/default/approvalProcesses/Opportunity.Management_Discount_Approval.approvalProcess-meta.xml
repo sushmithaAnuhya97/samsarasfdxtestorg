@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Account</field>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Amount</field>
+        <field>License_Term__c</field>
+        <field>Blended_Discretionary_Discount__c</field>
+        <field>Discount__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>andy@samsara.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>VP approval request</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Opportunity.Blended_Discretionary_Discount__c</field>
+                <operation>greaterThan</operation>
+                <value>20.0</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Management Discount Approval - VP Approval</label>
+        <name>VP_Approval</name>
+    </approvalStep>
+    <description>Approvals for revenue opportunities</description>
+    <emailTemplate>unfiled$public/Discount_Approval_Notification_to_Managers</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+ ISPICKVAL(Type , &apos;Revenue Opportunity&apos;),
+ $User.Id = &quot;0051a000002rdZk&quot;
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved_Discounts_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Rejected_Discounts_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Status_Rejectedd</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Management Discount Approval</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>14</processOrder>
+    <recallActions>
+        <action>
+            <name>Status_Recalled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,21 @@
+<template>
+    <template if:true={showBanner}>
+        <lightning-accordion allow-multiple-sections-open active-section-name="exceptionBanner">
+            <lightning-accordion-section name="exceptionBanner" label="Non-Standard Terms Detected" class="custom-accordion-section" is-open>
+                <div class="slds-scoped-notification slds-media slds-media_center slds-theme_info " role="status">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-utility-info" title="info">
+                        </span>
+                        <lightning-icon icon-name="utility:info" variant="inverse" size="small" alternative-text="information"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                      <p><strong>Alert:</strong> Non-Standard Terms Detected: One or more selected contracts contain Non-Standard Terms. Below is a report containing the identified opportunities and non-standard terms:&nbsp;
+                        <strong><a href="javascript:void(0);" onclick={handleNext} target="_blank">This is the report</a></strong>&nbsp;
+                        Please review this report before submitting to Deal Desk to ensure any required Non-Standard Terms are correctly carried over to the new contract during the Cancel and Replace process. For questions or assistance, contact Deal Desk or your manager.
+                      </p>
+                    </div>
+                </div>
+            </lightning-accordion-section> 
+        </lightning-accordion>
+    </template>
+</template>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__IsAddressValidated__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicates that the company site address has been validated against the addresses in the external tax calculation service.</description>
+    <formula>NOT
+            ( ISBLANK(fferpcore__Street__c) &amp;&amp;
+              ISBLANK(fferpcore__City__c) &amp;&amp;
+              ISBLANK(fferpcore__State__c) &amp;&amp;
+              ISBLANK(fferpcore__PostalCode__c) &amp;&amp;
+              ISBLANK(fferpcore__Country__c)
+            ) &amp;&amp;
+            ( fferpcore__Street__c  =  fferpcore__ValidatedStreet__c ) &amp;&amp;
+            ( fferpcore__City__c =  fferpcore__ValidatedCity__c ) &amp;&amp;
+            ( fferpcore__State__c =  fferpcore__ValidatedState__c ) &amp;&amp;
+            ( fferpcore__PostalCode__c =  fferpcore__ValidatedPostalCode__c ) &amp;&amp;
+            ( fferpcore__Country__c =  fferpcore__ValidatedCountry__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Indicates that the company site address has been validated against the addresses in the external tax calculation service.</inlineHelpText>
+    <label>Address Validated</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

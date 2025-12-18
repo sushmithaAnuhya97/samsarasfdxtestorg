@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>acn_ttn__Main_Cards</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>NamespacePrefix</columns>
+    <columns>acn_ttn__Sequence__c</columns>
+    <columns>acn_ttn__Card_Weightage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DeveloperName</field>
+        <operation>contains</operation>
+        <value>_Index</value>
+    </filters>
+    <label>Main Cards</label>
+    <language>en_US</language>
+</ListView>

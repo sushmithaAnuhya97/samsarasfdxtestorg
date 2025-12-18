@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Services_Manager_Name__c</fullName>
+    <description>Formula field to display the full name (First + Last) for Accord integration. This field is read-only and mirrors the pse__Project lookup. Use this field only for reporting or integrations that require text values (e.g., Accord views). Do not use this field for relationships or assignments.</description>
+    <externalId>false</externalId>
+    <formula>Engagement_Services_Manager__r.FirstName &amp; &quot; &quot; &amp; Engagement_Services_Manager__r.LastName</formula>
+    <label>Engagement Services Manager Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

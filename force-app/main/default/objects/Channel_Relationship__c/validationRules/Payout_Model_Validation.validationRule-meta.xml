@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payout_Model_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+				AND(
+								NOT(ISBLANK(Sourced_Payout_Model__c)),
+								Sourced_Payout_Model__c != &apos;Percentage&apos;,
+								Sourced_Payout_Model__c != &apos;Flat Rate&apos;
+								),
+				AND(
+								NOT(ISBLANK(Influence_Payout_Model__c)),
+								Influence_Payout_Model__c != &apos;Percentage&apos;,
+								Influence_Payout_Model__c != &apos;Flat Rate&apos;
+								)
+				)</errorConditionFormula>
+    <errorMessage>Please enter either &quot;Percentage&quot; or &quot;Flat Rate&quot; value as Influence Payout Model and Sourced Payout Model</errorMessage>
+</ValidationRule>

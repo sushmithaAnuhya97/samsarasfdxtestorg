@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Address_NEW__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Shipping Address - NEW</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Shipping_Address__c.Account__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.SBQQ__Account__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Shipping_Address__c</referenceTo>
+    <relationshipLabel>Quotes</relationshipLabel>
+    <relationshipName>Quotes</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

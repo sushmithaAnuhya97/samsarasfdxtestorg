@@ -1,0 +1,109 @@
+<apex:page controller="SolutionPackLandingPageController" sidebar="false">
+    <table>
+        <tr>
+            <td>
+                <img src="{!JSENCODE($Resource.New_Conga_Red_Logo)}" style="width: 50px"/>
+            </td>
+            <td>
+                <br/>
+                <span style="font-size: 1.8em;font-weight: normal;line-height: 1.1em;">Conga Solution Extractor</span>               
+            </td>
+        </tr>
+    </table>
+    <apex:pageMessages />
+    
+    <apex:form > 
+            <!--- In case I need to test what step the user is on for debugging UI issues                 
+                <apex:outputText >canSeeRecordLinks: {!canSeeRecordLinks}</apex:outputText><br/>
+                <apex:outputText >canSeeButton: {!CanSeeButton}</apex:outputText><br/>
+                <apex:outputText >CanUnpackSolutions: {!CanUnpackSolutions}</apex:outputText> <br/>
+                <apex:outputText >NonSolutionTemplatesUnpackedValue: {!NonSolutionTemplatesUnpackedValue}</apex:outputText> 
+            --->     
+                       
+            <!---- For non-linked templates --->
+            <!---<apex:pageBlock rendered="{!IF(AND(NonSolutionTemplatesUnpackedValue = false, CanSeeButton = false, CanSeeRecordLinks = false), true, false)}">--->
+            <apex:pageBlock rendered="{!IF(AND(CanSeeRecordLinks = false, NonSolutionTemplatesUnpackedValue = false), true, false)}">
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSectionItem >
+                           <span style="font-size: 1.2em">
+Conga Template(s) found in the "Non-linked Conga Templates Folder." To extract these Conga Templates, click <b>Extract Non-Linked Conga Templates</b>.
+                        </span>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:commandButton action="{!unpackNonSolutionTemplates}" value="Extract Non-Linked Conga Templates" rendered="{!IF(NonSolutionTemplatesUnpackedValue = false, true, false)}" />                                               
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:pageblock>    
+        <apex:PageBlock >
+
+    <!--- ENTERPRISE EDITION --->                      
+            <apex:pageBlockSection columns="1" id="noSolRecords" rendered="{!IF(CreatedSolutionsSize = 0, true, false)}">
+                <span style="font-size: 1.2em">Select the Conga Solutions to create and click <b>Extract Conga Solutions</b>.</span>                
+                <apex:pageBlockTable id="FolderTable" value="{!DocumentFolders}" var="f">
+                    <apex:column width="20">
+                        <apex:inputCheckbox value="{!f.isSelected}" selected="false"/>
+                    </apex:column>
+                    <apex:column value="{!f.folderName}" headerValue="Conga Solution Name (Master Object Type)" width="500"/>
+                    <apex:column value="{!f.folderDevName}" headerValue="Document Folder Unique Name"/>
+                </apex:pageBlockTable>
+                <apex:commandButton action="{!unpackSolutions}" value="Extract Conga Solutions" rendered="{!IF(CanUnpackSolutions = true, true, false)}" />                
+            </apex:pageBlockSection>                           
+            <apex:pageBlockSection columns="1" id="ExtractSolutionsTable" rendered="{!IF(AND(CanSeeButton = true, OrgType != 'Professional Edition'), true, false)}">                        
+                <span style="font-size: 1.2em">The following Conga Solutions have been created.</span><br/>
+                <apex:pageBlockTable value="{!CreatedSolutionRecords}" var="SolMgr" rendered="{!IF(AND(canSeeButton = true, orgType != 'Professional Edition', CreatedSolutionsSize > 0), true, false)}" title="Unpacked Conga Solutions">
+                    <apex:column title="Conga Solution Name" headerValue="Conga Solution Name" >
+                        <apex:outputLink value="/{!SolMgr.Id}" target="_blank">{!SolMgr.Name}</apex:outputLink>
+                    </apex:column>                                                                    
+                    <apex:column value="{!SolMgr.Id}" title="Conga Solution ID" headerValue="Conga Solution ID" />
+                    <apex:column value="{!SolMgr.APXTConga4__Master_Object_Type__c}" title="Master Object Type" headerValue="Master Object Type" />
+                </apex:pageBlockTable>   
+            </apex:pageBlockSection>                           
+            <apex:pageBlockSection columns="1" id="thankyou" rendered="{!IF(AND(CanSeeButton = true, OrgType != 'Professional Edition'), true, false)}">                        
+                <br/><span style="font-size: 1.2em">(Optional) Use the buttons below to create custom buttons on the corresponding Master Object Type.</span>
+                <apex:panelGrid columns="2">
+                    <apex:image url="{!$Resource.APXTConga4__ComposerSolutionCheckMark}" rendered="{!IF(remoteSiteAdded = false, false, true)}" alt="Added!"/>          
+                    <apex:commandButton onClick="window.open('/0rp/e?SiteName=Conga_Solution_Extractor&EndpointUrl=https://{!NameSpaceVFServerURL}&DescriptionField=Click+Save+and+close+this+window.');" value="Add Remote Site" rendered="{!IF(AND(CanSeeButton = true, orgType != 'Professional Edition'), true, false)}" disabled="{!IF(remoteSiteAdded = false, false, true)}" action="{!setRemoteSiteAdded}" />                    
+                    <apex:outputText value="" />
+                    <apex:commandButton action="{!createButtons}" value="Create Conga Composer Buttons" rendered="{!IF(AND(CanSeeButton = true, orgType != 'Professional Edition'), true, false)}" disabled="{!IF(remoteSiteAdded = true, false, true)}" />               
+                </apex:panelGrid>
+                <!---<apex:panelGrid columns="3">
+                    <apex:commandButton onClick="window.open('/0rp/e?SiteName=Conga_Solution_Extractor&EndpointUrl=https://{!NameSpaceVFServerURL}&DescriptionField=Click+Save+and+close+this+window.');" value="Add Remote Site" rendered="{!IF(AND(CanSeeButton = true, orgType != 'Professional Edition'), true, false)}" action="{!setRemoteSiteAdded}" />
+                </apex:panelGrid>
+                <font size="3">(Optional) Click <b>Create Conga Composer Buttons</b> to create custom buttons on the correspoding Master Object Type.</font>
+                <apex:panelGrid columns="2" rendered="true">       
+                    <apex:commandButton action="{!createButtons}" value="Create Conga Composer Buttons" rendered="{!IF(AND(CanSeeButton = true, orgType != 'Professional Edition'), true, false)}" disabled="{!IF(remoteSiteAdded = true, false, true)}" />               
+                </apex:panelGrid>--->                
+            </apex:pageBlockSection>     
+            
+            <apex:pageBlockSection rendered="{!IF(AND(CanSeeRecordLinks = true, CreatedSolutionsSize > 0, orgType != 'Professional Edition'), true, false)}">
+              <span style="font-size: 1.2em">Click a link below to view the Conga Solution record.</span>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!CreatedSolutionRecords}" var="SolMgr1" rendered="{!IF(AND(CanSeeRecordLinks = true, CreatedSolutionsSize > 0, orgType != 'Professional Edition'), true, false)}">
+                <apex:column title="Conga Solution Name" headerValue="Conga Solution Link" >
+                    <apex:outputLink value="/{!SolMgr1.Id}" target="_blank">{!SolMgr1.Name}</apex:outputLink>                                                    
+                </apex:column>
+                <apex:column value="{!SolMgr1.Id}" title="Conga Solution ID" headerValue="Solution ID">
+                </apex:column>
+                <apex:column value="{!SolMgr1.APXTConga4__Master_Object_Type__c}" title="Master Object Type" headerValue="Master Object Type" />
+            </apex:pageBlockTable>
+    <!--- ENTERPRISE EDITION --->  
+          
+    <!--- PROFESSIONAL EDITION --->
+            <apex:pageBlockSection rendered="{!IF(AND(CreatedSolutionsSize > 0, orgType = 'Professional Edition'), true, false)}">
+               <span style="font-size: 1.2em">Next, click one of the below links to navigate to a Conga Solution record and follow the instructions given.</span>
+            </apex:pageBlockSection>
+    
+            <apex:pageBlockTable value="{!CreatedSolutionRecords}" var="SolMgr2" rendered="{!IF(AND(CreatedSolutionsSize > 0, orgType = 'Professional Edition'), true, false)}">
+                <apex:column title="Conga Solution Name" headerValue="Conga Solution Link" >
+                    <apex:outputLink value="/{!SolMgr2.Id}" target="_blank">{!SolMgr2.Name}</apex:outputLink>                                                    
+                </apex:column>
+                <apex:column value="{!SolMgr2.Id}" title="Conga Solution ID" headerValue="Solution ID">
+                </apex:column>
+                <apex:column value="{!SolMgr2.APXTConga4__Master_Object_Type__c}" title="Master Object Type" headerValue="Master Object Type" />
+            </apex:pageBlockTable>          
+    <!--- PROFESSIONAL EDITION --->
+       
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

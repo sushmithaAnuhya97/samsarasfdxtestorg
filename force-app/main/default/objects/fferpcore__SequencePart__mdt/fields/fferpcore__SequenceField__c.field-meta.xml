@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__SequenceField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Lookup to Sequence Field record to which this sequence part relates.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Lookup to Sequence Field record to which this sequence part relates.</inlineHelpText>
+    <label>Sequence Field</label>
+    <referenceTo>fferpcore__SequenceField__mdt</referenceTo>
+    <relationshipLabel>Parts</relationshipLabel>
+    <relationshipName>Parts</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

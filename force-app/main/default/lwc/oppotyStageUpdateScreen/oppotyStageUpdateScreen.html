@@ -1,0 +1,231 @@
+<!--
+  @description       : 
+  @author            : UNKNOWN
+  @group             : 
+  @last modified on  : 06-27-2025
+  @last modified by  : hitesh.garg@samsara.com
+-->
+<template>
+    <div class="slds-is-relative">
+        <!-- Custom Toast Notifications -->
+        <div class="custom-notification-container">
+            <template if:true={showNotification}>
+                <div class={notificationClass} role="alert">
+                    <lightning-icon 
+                        icon-name={notificationIcon}
+                        size="small" 
+                        class="notification-icon"
+                        variant={notificationIconVariant}>
+                    </lightning-icon>
+                    <div class="notification-content">
+                        <p class="notification-message">{notificationMessage}</p>
+                    </div>
+                    <button class="notification-close" onclick={closeNotification}>
+                        <lightning-icon
+                            icon-name="utility:close"
+                            size="xx-small"
+                            class="close-icon">
+                        </lightning-icon>
+                    </button>
+                    <div class="notification-progress-bar"></div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Loading Spinner -->
+        <template if:true={showSpinner}>
+            <div class="slds-spinner_container">
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error Message 
+        <template if:true={errorMessage}>
+            <div class="section-container">
+                <div class="section-card">
+                    <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                        <span class="slds-assistive-text">error</span>
+                        <h2>{errorMessage}</h2>
+                    </div>
+                </div>
+            </div>
+        </template>-->
+
+        <div class="slds-card main-container">
+            <!-- Header Section -->
+            <div class="header-section">
+                <header class="slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:opportunity" size="small" class="header-icon"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-text-heading_medium">Submit to Closing</h2>
+                    </div>
+                </header>
+            </div>
+            
+            <div class="content-section">  
+                <template if:true={errorMessage}>
+                    <div class="custom-error-container slds-p-around_medium slds-is-relative">
+                        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error error-alert slds-fade-in-open" role="alert">
+                            <div class="error-content-wrapper slds-grid slds-grid_vertical-align-center">
+                                <div class="error-icon-container slds-m-right_medium">
+                                    <lightning-icon 
+                                        icon-name="utility:error"
+                                        alternative-text="Error"
+                                        variant="error"
+                                        size="medium"
+                                        class="error-icon slds-animation-bounce"
+                                    ></lightning-icon>
+                                </div>
+                                <div class="error-message-container slds-grow">
+                                    <h2 class="slds-text-heading_medium slds-text-color_error slds-m-bottom_x-small">{userFriendlyErrorMessage}</h2>
+                                    <p class="slds-text-body_regular slds-text-color_default">Please review the information and try again.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="next-btn-container slds-m-top_medium slds-align_absolute-center">
+                            <lightning-button
+                                label={nextButtonLabel}
+                                onclick={handleNext}
+                                variant="brand"
+                                class="next-btn slds-button_brand slds-button_stretch"
+                                icon-name="utility:right"
+                                icon-position="right"
+                            ></lightning-button>
+                        </div>
+                    </div>
+                </template>              
+                <!-- Big Deal Form -->
+                <template if:true={isBigDeal}>
+                    <template if:false={stageUpdated}>
+                        <div class="section-container">
+                            <div class="section-card">
+                                <div class="celebration-container">
+                                    <div class="celebration-logo">
+                                    </div>
+                                    <div class="celebration-content">
+                                        <!-- Remove all party/animation elements -->
+                                        <div class="celebration-headline">
+                                            <span class="congrats-text">Congratulations!</span>
+                                            <div class="main-message">
+                                                <span>Your opportunity is now in closing.</span>
+                                                <span class="big-deal-text">It's a BIG DEAL!</span>
+                                            </div>
+                                        </div>
+                                        <div class="celebration-subtext">
+                                            <p>We want everyone at Samsara to know all about it.</p>
+                                            <p>Share your story with the company below and thank all of those that made it possible.</p>
+                                        </div>
+                                        <div class="trophy-icon">
+                                            <lightning-icon icon-name="standard:reward" size="large"></lightning-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-p-around_medium">
+                                    <lightning-textarea 
+                                        name="winStory"
+                                        label="Tell Us Your Win Story:"
+                                        value={winStory}
+                                        onchange={handleInputChange}
+                                        required
+                                        field-level-help="The company would love to know things like how the deal was sourced, who you were competing against, what sealed the deal, etc. Please include details about what problem we are solving for the Customer!"
+                                    ></lightning-textarea>
+                                    <lightning-textarea 
+                                        name="thankYou"
+                                        label="Who Would You Like To Thank:"
+                                        value={thankYou}
+                                        onchange={handleInputChange}
+                                        required
+                                        field-level-help="Give a shout out to your teammates that helped you out on this deal (e.g. ADRs, Sales Engineers, Manager, etc.)"
+                                    ></lightning-textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Preview -->
+                        <template if:true={showBigDealEmailPreview}>
+                            <div class="info-banner">
+                                <div class="info-container">
+                                    <lightning-icon icon-name="standard:email" size="small" class="info-icon"></lightning-icon>
+                                    <div class="info-text">Email Preview</div>
+                                </div>
+                            </div>
+
+                            <div class="section-container">
+                                <div class="section-card">
+                                    <div class="email-preview-wrapper">
+                                        <div class="email-preview-meta">
+                                            <div><span class="email-label">Subject:</span> <span class="email-value">🎉 Big Win! {opportunity.Name} is Closing for {opportunity.Amount}</span></div>
+                                        </div>
+                                        <div class="email-preview-body">
+                                            <p>Congratulations to everyone who helped support this account! The opportunity is ready to ship and is closing for <b>{opportunity.Amount}</b>.</p>
+                                            <div class="email-preview-section">
+                                                <div class="email-preview-label">I Would Like To Thank</div>
+                                                <div>{thankYou}</div>
+                                            </div>
+                                            <div class="email-preview-section">
+                                                <div class="email-preview-label">The Win Story</div>
+                                                <div>{winStory}</div>
+                                            </div>
+                                            <div class="email-preview-section">
+                                                <a href={opportunityUrl} target="_blank">See details at {opportunityUrl}</a>
+                                            </div>
+                                            <div class="email-preview-footer">
+                                                –Samsarus
+                                            </div>
+                                        </div>
+                                        <div class="slds-align_absolute-center slds-p-around_medium">
+                                            <button class="slds-button slds-button_brand confirm-save-button" onclick={handleConfirmEmailPreview} disabled={showSpinner}>
+                                                Confirm and Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+
+                <!-- Standard Deal or Updated Big Deal Success -->
+                <template if:true={showCongrats}>
+                    <div class="section-container">
+                        <div class="section-header">
+                            <lightning-icon icon-name="standard:thanks" size="small" class="section-icon"></lightning-icon>
+                            <h3 class="slds-text-heading_small">Success!</h3>
+                        </div>
+                        <div class="section-card">
+                            <div class="standard-deal-success">
+                                <div class="big-deal-image-container">
+                                    <img src={standardImageUrl} alt="Closing Success" class="big-deal-image">
+                                </div>
+                                <div class="slds-text-heading_medium slds-p-around_medium textColor">
+                                    Your opportunity has been successfully updated to Closing stage!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>     
+            </div>
+            <!-- Navigation Buttons -->
+        <template if:true={showCongrats}>
+            <div class="slds-grid slds-grid_align-spread slds-p-top_medium button-container">
+                <div>
+                    <lightning-button
+                        label="Back"
+                        onclick={handleBack}
+                        variant="neutral">
+                    </lightning-button>
+                </div>
+                <div>
+                    <lightning-button
+                        label={nextButtonLabel}
+                        onclick={handleNext}
+                        variant="brand">
+                    </lightning-button>
+                </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

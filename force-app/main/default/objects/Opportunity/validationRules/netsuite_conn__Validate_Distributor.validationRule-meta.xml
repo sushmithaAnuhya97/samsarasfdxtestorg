@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>netsuite_conn__Validate_Distributor</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND((TEXT(netsuite_conn__Bill_To_Tier__c) == &apos;Distributor&apos;),  (netsuite_conn__Distributor__c == null))</errorConditionFormula>
+    <errorDisplayField>netsuite_conn__Distributor__c</errorDisplayField>
+    <errorMessage>Please enter value as Bill To Tier is selected as Distributor.</errorMessage>
+</ValidationRule>

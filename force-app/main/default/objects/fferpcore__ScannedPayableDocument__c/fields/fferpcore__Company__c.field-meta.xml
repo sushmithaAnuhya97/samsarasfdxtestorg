@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__Company__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The company that relates to the scanned payable document.</description>
+    <inlineHelpText>The company that relates to the scanned payable document.</inlineHelpText>
+    <label>Company</label>
+    <referenceTo>fferpcore__Company__c</referenceTo>
+    <relationshipLabel>Scanned Payable Documents</relationshipLabel>
+    <relationshipName>ScannedPayableDocuments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ready_to_Ship_Orders</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Ship_From_Location__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Went_to_Ready_to_Ship_Date__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Netsuite_Id__c</columns>
+    <columns>Sent_to_NS__c</columns>
+    <columns>Mulesoft_Sync_Error__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Ready to Ship</value>
+    </filters>
+    <filters>
+        <field>Shipping_Email_sent_bypassed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Customer_Claim_Email_Enabled__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Ready to Ship Orders</label>
+    <language>en_US</language>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <role>Management</role>
+        <role>Operations</role>
+    </sharedTo>
+</ListView>

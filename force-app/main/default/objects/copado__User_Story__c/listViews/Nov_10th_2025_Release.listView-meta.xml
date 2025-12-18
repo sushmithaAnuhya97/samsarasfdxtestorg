@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nov_10th_2025_Release</fullName>
+    <booleanFilter>(1 OR 2)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>copado__User_Story_Title__c</columns>
+    <columns>Project_Name__c</columns>
+    <columns>copado__Project__c</columns>
+    <columns>copado__Release__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>copado__Environment__c</columns>
+    <columns>copado__Promote_Change__c</columns>
+    <columns>copado__Developer__c</columns>
+    <columns>copado__Promote_and_Deploy__c</columns>
+    <columns>copado__Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>3512,2919,3072,3250,3307,3406,3409,3439,3444,3449,3482,3501,3504,3511,3517,3523,3530,3534,3543,3547,3549,3550,3551,3552,3554,3561,3563,3566,3569,3577,3581,3582,3584,3588,3589,3592,3593,3596,3598,3600</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>3604,3606,3607,3609,3610,3611,3612,3615,3620,3625,3628,3632,3634,3635,3637,3639,3643,3644,3665</value>
+    </filters>
+    <label>Nov. 10th 2025 Release</label>
+</ListView>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payload_Scope__c</fullName>
+    <label>Payload Scope</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>System administration</fullName>
+                <default>false</default>
+                <label>System administration</label>
+            </value>
+            <value>
+                <fullName>Program ownership</fullName>
+                <default>false</default>
+                <label>Program ownership</label>
+            </value>
+            <value>
+                <fullName>Change management</fullName>
+                <default>false</default>
+                <label>Change management</label>
+            </value>
+            <value>
+                <fullName>Inventory management</fullName>
+                <default>false</default>
+                <label>Inventory management</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

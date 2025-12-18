@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Co_Term_Contract__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>User enters the contract that they want their Renewal Quote&apos;s End Date to match up to. Used in a flow
+Created as part of GTMS-4392</description>
+    <inlineHelpText>Choose the contract you want this renewal quote to co-term to. The End Date of this Quote will be set to align with the End Date of the Contract that you selected.</inlineHelpText>
+    <label>Co-Term Contract</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.SBQQ__Account__c</field>
+            <operation>equals</operation>
+            <valueField>Contract.AccountId</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Contract.Is_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contract</referenceTo>
+    <relationshipLabel>CPQ Quotes (Co-Term Contract)</relationshipLabel>
+    <relationshipName>CPQ_Quotes</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

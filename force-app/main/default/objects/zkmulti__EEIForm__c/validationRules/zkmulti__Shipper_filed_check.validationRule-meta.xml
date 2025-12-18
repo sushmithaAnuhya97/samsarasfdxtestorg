@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zkmulti__Shipper_filed_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(zkmulti__EEIFillingType__c)=&apos;Shipper filed&apos;,TEXT(zkmulti__EEIShipper__c)=null)</errorConditionFormula>
+    <errorDisplayField>zkmulti__EEIShipper__c</errorDisplayField>
+    <errorMessage>Please choose option</errorMessage>
+</ValidationRule>

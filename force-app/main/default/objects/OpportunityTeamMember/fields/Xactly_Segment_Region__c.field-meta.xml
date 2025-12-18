@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Xactly_Segment_Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(Owner_Role__c,&quot;MX&quot;),&quot;MX&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;FR&quot;),&quot;FR&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;UK&quot;),&quot;UK&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;DE&quot;),&quot;DE&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;ES&quot;),&quot;ES&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;DACH&quot;),&quot;DACH&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;NL&quot;),&quot;NL&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;IT&quot;),&quot;IT&quot;,
+IF(CONTAINS(Owner_Role__c,&quot;NA CA&quot;),&quot;CA&quot;,
+&quot;US&quot;)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Xactly Segment (Region)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

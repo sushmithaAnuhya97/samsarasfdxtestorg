@@ -1,0 +1,59 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <!-- Spinner: Shows while loading data -->
+    <template if:true={spinner}>
+        <div class="demo-only" style="height:6rem;position:relative">
+            <div class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Main Content: Shown after data is loaded -->
+    <template if:false={spinner}>
+        <lightning-modal-body>
+            <!-- Data Table: Display Contacts -->
+            <template if:true={showConData}>
+                <c-create-oppty-generic-data-table 
+                    object-name="Contact" 
+                    allowed-records={filterContacts} 
+                    selected-record={selectedRowId} 
+                    columns={columns}
+                    utility-button-label="Create Contact"
+                    onselection={handleSelection}
+                    onutilityclick={handleCreateContact}
+                    table-title = "Choose a buyout contact to proceed with buyout opportunity">
+                </c-create-oppty-generic-data-table>
+            </template>
+
+            <!-- No Contacts Found Message -->
+            <template if:false={showConData}>
+                <div class="slds-scoped-notification textSize slds-align_absolute-center slds-media slds-media_center slds-theme_info"
+                    role="status">
+                    <span>
+                        <lightning-icon variant="inverse" 
+                                        class="slds-m-right_x-small" size="small"
+                                        aria-hidden="true" 
+                                        icon-name="utility:info"
+                                        alternative-text="info">
+                        </lightning-icon>
+                    </span>
+                    <span class="Margn">{label.Contact_Display_Empty_Error}</span>
+                </div>
+            </template>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+				<lightning-button class="slds-float_left" variant="neutral" label="Previous" onclick={handleBack}></lightning-button>
+                <template if:true={showConData}>
+                    <lightning-button variant="brand" label="Next" onclick={handleNext}></lightning-button>
+                </template>
+                <template if:false={showConData}>
+                    <lightning-button variant="brand" label="Create Contact" onclick={handleCreateContact}></lightning-button>
+                </template>
+		</lightning-modal-footer>
+    </template>
+</template>

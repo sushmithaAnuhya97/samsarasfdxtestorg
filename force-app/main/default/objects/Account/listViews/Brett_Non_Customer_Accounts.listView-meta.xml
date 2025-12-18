@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brett_Non_Customer_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Named_List__c</columns>
+    <columns>Status__c</columns>
+    <columns>Open_Opportunity__c</columns>
+    <columns>Revenue_Opportunities_Count__c</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Number_of_Unpowered_Assets__c</columns>
+    <columns>Number_of_Powered_Assets__c</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>Number_of_Calls__c</columns>
+    <columns>Number_of_Calls_by_Current_Owner__c</columns>
+    <columns>Send_to_My_ADR__c</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Brown</value>
+    </filters>
+    <filters>
+        <field>Account_Status_Updated__c</field>
+        <operation>notEqual</operation>
+        <value>Existing Customer</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.FIRST_NAME</field>
+        <operation>equals</operation>
+        <value>Ryan</value>
+    </filters>
+    <label>Brett Non-Customer Accounts</label>
+</ListView>

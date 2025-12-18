@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDLM__Need_Compliance_Status_Lookup</fullName>
+    <active>true</active>
+    <description>Either Manufacturer Part or Item Revision must be filled in.</description>
+    <errorConditionFormula>AND(ISBLANK(PDLM__Manufacturer_Part__c),ISBLANK(PDLM__Item_Revision__c))</errorConditionFormula>
+    <errorMessage>Either Manufacturer Part or Item Revision must be filled in.</errorMessage>
+</ValidationRule>

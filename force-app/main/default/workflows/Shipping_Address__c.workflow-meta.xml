@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Add_Shipping_Email</fullName>
+        <description>If the Shipping Email is blank, but there is a shipping contact assigned to account, update those fields with shipping contact info.</description>
+        <field>Shipping_Email__c</field>
+        <formula>Shipping_Contact__r.Email</formula>
+        <name>Add Shipping Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_Shipping_LastName</fullName>
+        <description>If the Shipping LastName is blank, but there is a shipping contact assigned to account, update those fields with shipping contact info.</description>
+        <field>Shipping_LastName__c</field>
+        <formula>Shipping_Contact__r.LastName</formula>
+        <name>Add Shipping LastName</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_Shipping_Name_Email_Phone</fullName>
+        <description>If the Shipping FirstName is blank in Shipping Address Table, but there is a shipping contact assigned to account, update those fields with shipping contact info.</description>
+        <field>Shipping_FirstName__c</field>
+        <formula>Shipping_Contact__r.FirstName</formula>
+        <name>Add Shipping FirstName</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_Shipping_Phone</fullName>
+        <description>If the Shipping Phone is blank, but there is a shipping contact assigned to account, update those fields with shipping contact info.</description>
+        <field>Shipping_Phone__c</field>
+        <formula>Shipping_Contact__r.Phone</formula>
+        <name>Add Shipping Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Netsuite_ID_Override</fullName>
+        <field>Netsuite_ID_Override__c</field>
+        <name>Clear Netsuite ID Override</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Netsuite_ID_on_Address</fullName>
+        <field>NS_Address_Internal_ID__c</field>
+        <name>Clear Netsuite ID on Address</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Mobile_Phone</fullName>
+        <description>This is to update the Mobile Phone number on the shipping address field</description>
+        <field>Shipping_Mobile_Phone__c</field>
+        <formula>Shipping_Contact__r.MobilePhone</formula>
+        <name>Update Mobile Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Add Shipping Email from Contact if Blank</fullName>
+        <actions>
+            <name>Add_Shipping_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>In the case where Shipping Address Name, Email, and Phone are blank, but there is a shipping contact, we want to automatically populate these fields with the shipping contact info.</description>
+        <formula>AND(NOT(ISBLANK(Shipping_Contact__c)), 
+ISBLANK(Shipping_Email__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Add Shipping Mobile Phone if blank</fullName>
+        <actions>
+            <name>Update_Mobile_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>If the shipping mobile phone in the shipping address object is blank, and there is a shipping contact associated with the shipping address, populate this field with the shipping contact&apos;s phone number</description>
+        <formula>AND(NOT(ISBLANK(Shipping_Contact__c)),  ISBLANK( Shipping_Mobile_Phone__c ))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Add Shipping Name from Contact if Blank</fullName>
+        <actions>
+            <name>Add_Shipping_LastName</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Add_Shipping_Name_Email_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>If the Shipping first and last name in the shipping address table are blank, and there is a shipping contact associated with the Shipping Address, populate shipping name with shipping contact info</description>
+        <formula>AND(NOT(ISBLANK(Shipping_Contact__c)), ISBLANK(Shipping_FirstName__c), 
+ISBLANK(Shipping_LastName__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Add Shipping Phone from Contact if Blank</fullName>
+        <actions>
+            <name>Add_Shipping_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>If the shipping phone number in the shipping address object is blank, and there is a shipping contact associated with the shipping address, populate this field with the shipping contact&apos;s phone number</description>
+        <formula>AND(NOT(ISBLANK(Shipping_Contact__c)), 
+ISBLANK(Shipping_Phone__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Clear Netsuite ID on Creation</fullName>
+        <actions>
+            <name>Clear_Netsuite_ID_Override</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_Netsuite_ID_on_Address</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Shipping_Address__c.NS_Address_Internal_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_Remorse_Refund__c</fullName>
+    <description>Satisfies the &apos;Created Remorse Refund?&apos; criteria node on the Consolidated Returns Process Builder</description>
+    <formula>AND(
+ OR(
+  Finance_Approved_Return__c = TRUE,
+  AND(
+   NOT(ISNULL(Reseller__c)),
+   NOT(ISNULL(Finance_Partner__c))
+  )
+ ),
+ ISPICKVAL(Type, &quot;Remorse Refund&quot;)
+)</formula>
+    <label>Created Remorse Refund?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

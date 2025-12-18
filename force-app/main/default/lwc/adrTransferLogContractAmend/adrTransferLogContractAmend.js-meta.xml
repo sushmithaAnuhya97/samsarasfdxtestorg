@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <propertyType name="ContractRecordsCollection" extends="SObject" label="Contract Records Collection" description="Collection of Contract records"/>
+            <property name="contractRecords" type="{ContractRecordsCollection[]}" label="Contracts Collection" description="Collection of contract records from Flow" role="inputOnly"/>
+            <property name="accountId" type="String" label="Account Id" description="Account Id from Flow"/>
+            <property name="latestContractId" type="String" label="Latest Contract Id" description="Id of the latest contract (optional)"/>
+            <property name="selectedContractId" type="String" label="Selected Contract Id" description="Id of the selected contract (output)" role="outputOnly"/>
+            <property name="outputSelectedContractId" type="String" label="Output Selected Contract Id" description="Id of the selected contract passed to flow" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

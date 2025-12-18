@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NS_Custom_Form_ID__c</fullName>
+    <description>If Opportunity has a contract and is a revenue opportunity, it will stamp the samsara sales order form else it will be the samsara sales order no contract form</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ AND(
+   ISPICKVAL(Type, &quot;Revenue Opportunity&quot;),
+   NOT(ISNULL( ContractId )),
+   NOT(ISBLANK( ContractId ))
+    ), 104, 162
+)</formula>
+    <inlineHelpText>If Opportunity has a contract and is a revenue opportunity, it will stamp the samsara sales order form else it will be the samsara sales order no contract form</inlineHelpText>
+    <label>NS Custom Form ID</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

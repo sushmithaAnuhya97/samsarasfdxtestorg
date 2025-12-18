@@ -1,0 +1,49 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-28-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="slds-card slds-m-bottom_medium">
+        <div class="slds-card__header">
+            <div class="slds-media">
+                <div class="slds-media__body">
+                    <div class="slds-grid slds-grid_vertical-align-center" onclick={handleSectionToggle} style="cursor: pointer;">
+                        <button 
+                            class="slds-button slds-button_icon slds-m-right_x-small custom-toggle-button"
+                            aria-expanded={isExpanded}
+                        >
+                            <div class="circle-container">
+                                <div class="triangle" data-expanded={isExpanded}></div>
+                            </div>
+                        </button>
+                        <div class="slds-truncate">
+                            <span class="section-title">Selected Contracts ({totalContracts})</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <template if:true={isExpanded}>
+            <div class="slds-card__body">
+                <lightning-datatable
+                    key-field="Id"
+                    data={contracts}
+                    columns={columns}
+                    hide-checkbox-column>
+                </lightning-datatable>
+
+           <!-- c-flex-contract-consolidation
+            contract-ids={contractIds}
+            card-title="Consolidated Products"
+            price-book-id="01s4p000004cVodAAE"
+            show-selection-controls={showSelectionControls}
+            show-replacement-controls={showReplacementControls
+c-flex-contract-consolidatio  -->                     
+            </div>
+        </template>
+    </div>
+</template>

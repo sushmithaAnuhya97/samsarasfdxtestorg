@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACV_Bookings__c</fullName>
+    <label>ACV Bookings Rollup</label>
+    <summarizedField>OpportunityLineItem.ACV_Total_Price_Stamp__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Is_ACV__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

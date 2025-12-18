@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sbaa__FilterField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Select the field to use when filtering items for inclusion in this approval variable.</description>
+    <inlineHelpText>Select the field to use when filtering items for inclusion in this approval variable.</inlineHelpText>
+    <label>Filter Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>sbaa__TargetObject__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Family</fullName>
+                <default>false</default>
+                <label>Product Family</label>
+            </value>
+            <value>
+                <fullName>Product_Code__c</fullName>
+                <default>false</default>
+                <label>Product_Code__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ProductCode__c</fullName>
+                <default>false</default>
+                <label>SBQQ__ProductCode__c</label>
+            </value>
+            <value>
+                <fullName>HW_AG24_Alacarte__c</fullName>
+                <default>false</default>
+                <label>HW_AG24_Alacarte__c</label>
+            </value>
+            <value>
+                <fullName>isStandaloneAG24__c</fullName>
+                <default>false</default>
+                <label>isStandaloneAG24__c</label>
+            </value>
+            <value>
+                <fullName>LineItem_type__c</fullName>
+                <default>false</default>
+                <label>LineItem_type__c</label>
+            </value>
+            <value>
+                <fullName>Approval_Required__c</fullName>
+                <default>false</default>
+                <label>Approval_Required__c</label>
+            </value>
+            <value>
+                <fullName>Product_Code_LineItem_Type__c</fullName>
+                <default>false</default>
+                <label>Product_Code_LineItem_Type__c</label>
+            </value>
+            <value>
+                <fullName>MappingGroup__c</fullName>
+                <default>false</default>
+                <label>MappingGroup__c</label>
+            </value>
+            <value>
+                <fullName>Product_Code_RequiredBy__c</fullName>
+                <default>false</default>
+                <label>Product_Code_RequiredBy__c</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Opportunity Product</controllingFieldValue>
+            <valueName>Product Family</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity Product</controllingFieldValue>
+            <valueName>Product_Code__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>SBQQ__ProductCode__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>HW_AG24_Alacarte__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>isStandaloneAG24__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>LineItem_type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Approval_Required__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Product_Code_LineItem_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>MappingGroup__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Product_Code_RequiredBy__c</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

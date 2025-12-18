@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Next_Process__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is a link to another process record - not the parent.</description>
+    <inlineHelpText>This is a link to another process record - not the parent.</inlineHelpText>
+    <label>Next Process</label>
+    <referenceTo>FLODocs__FLO_Process__c</referenceTo>
+    <relationshipName>FLO_Processes4</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Starter_IC_Cleanup</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 AND 6 AND 7)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Status_Updated__c</columns>
+    <columns>CS_Tier__c</columns>
+    <columns>Owner_Role__c</columns>
+    <columns>First_Purchase_Date__c</columns>
+    <columns>Total_parent_child_ARR__c</columns>
+    <columns>Lifetime_ACV_to_USD__c</columns>
+    <columns>Account_Lifetime_ACV__c</columns>
+    <columns>Customer_ARR__c</columns>
+    <columns>CSM__c</columns>
+    <columns>Initiate_Round_Robin__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>First_Purchase_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_N_DAYS:21</value>
+    </filters>
+    <filters>
+        <field>Owner_Role__c</field>
+        <operation>notContain</operation>
+        <value>emea,mx</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>CS_Tier__c</field>
+        <operation>notEqual</operation>
+        <value>Premier,Elite,Core Standard,Core High,Select Standard,Select High,Strategic Standard,Strategic High</value>
+    </filters>
+    <filters>
+        <field>Customer_ARR__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Customer_ARR__c</field>
+        <operation>lessOrEqual</operation>
+        <value>10000</value>
+    </filters>
+    <filters>
+        <field>CSM__c</field>
+        <operation>notEqual</operation>
+        <value>Samsara Customer Success</value>
+    </filters>
+    <label>Scale IC Cleanup</label>
+</ListView>

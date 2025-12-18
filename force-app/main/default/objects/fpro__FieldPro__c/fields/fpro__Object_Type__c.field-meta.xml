@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fpro__Object_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( CONTAINS(fpro__Object_API_Name__c, &apos;__cmt&apos;), &apos;Custom Settings&apos;,
+IF( CONTAINS(fpro__Object_API_Name__c, &apos;__mdt&apos;), &apos;Custom Metadata Type&apos;,
+IF( CONTAINS(fpro__Object_API_Name__c, &apos;__&apos;), &apos;Custom Object&apos;,
+&apos;Standard Object&apos;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Object Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

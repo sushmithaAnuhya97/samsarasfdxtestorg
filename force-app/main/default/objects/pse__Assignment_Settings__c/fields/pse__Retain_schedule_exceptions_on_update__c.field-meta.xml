@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Retain_schedule_exceptions_on_update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If deselected, when a schedule&apos;s date range is changed, schedule exceptions that are partly or wholly outside the schedule&apos;s date range are deleted. Note: This potentially alters part of the schedule that is still within range. If selected, when a schedule&apos;s date range is changed, schedule exceptions that are wholly outside the schedule&apos;s date range are deleted. Schedule exceptions that are partly outside the schedule&apos;s date range are shortened to fit within the new schedule date range.</description>
+    <inlineHelpText>When true, schedule exceptions are retained on update in the Edit Assignment Schedule screen. When false, exceptions are deleted. Default value is false.</inlineHelpText>
+    <label>Retain schedule exceptions on update</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

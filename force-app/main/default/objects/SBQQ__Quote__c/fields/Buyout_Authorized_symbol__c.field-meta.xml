@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buyout_Authorized_symbol__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+   ISBLANK( Buyout_Amount__c),
+   Buyout_Amount__c = 0
+  )
+,
+   IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;No:&quot;, 20, 20) + &quot;No buyout included&quot;,
+ IF(
+  AND(
+   Buyout_Authorized__c = TRUE,
+   Buyout_Amount__c &gt; 0
+  ),
+    IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;No:&quot;, 20, 20) + &quot;Approved if within discount thresholds&quot;, 
+    IMAGE(&quot;/img/msg_icons/error16.png&quot;,&quot;Yes:&quot;,20,20)+ &quot;Not authorized with annual or monthly payment terms&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Buyout/Subsidy Authorized?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

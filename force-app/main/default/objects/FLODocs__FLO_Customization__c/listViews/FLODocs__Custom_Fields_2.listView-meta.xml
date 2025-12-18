@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Custom_Fields_2</fullName>
+    <columns>NAME</columns>
+    <columns>FLODocs__ScriptId__c</columns>
+    <columns>FLODocs__Customization_Last_Modified_By__c</columns>
+    <columns>FLODocs__Scripts__c</columns>
+    <columns>FLODocs__Forms__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>FLODocs__Salesforce_Types__c</field>
+        <operation>equals</operation>
+        <value>CustomField</value>
+    </filters>
+    <filters>
+        <field>FLODocs__ScriptId__c</field>
+        <operation>contains</operation>
+        <value>__c</value>
+    </filters>
+    <label>Custom Fields (v2)</label>
+</ListView>

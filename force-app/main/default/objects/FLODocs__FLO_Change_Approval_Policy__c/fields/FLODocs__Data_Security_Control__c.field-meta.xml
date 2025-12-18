@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FLODocs__Data_Security_Control__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Changes to Data Security Changes, like TransactionSecurity and History Retention Policy</description>
+    <inlineHelpText>Changes to Data Security Changes, like TransactionSecurity and History Retention Policy</inlineHelpText>
+    <label>Data Security Changes</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Log Changes Only</fullName>
+                <default>true</default>
+                <label>Log Changes Only</label>
+            </value>
+            <value>
+                <fullName>Process Issue Only</fullName>
+                <default>false</default>
+                <label>Process Issue Only</label>
+            </value>
+            <value>
+                <fullName>Change Request</fullName>
+                <default>false</default>
+                <label>Change Request</label>
+            </value>
+            <value>
+                <fullName>Sandbox Development &amp; Testing</fullName>
+                <default>false</default>
+                <label>Sandbox Development &amp; Testing</label>
+            </value>
+            <value>
+                <fullName>Full Software Development Lifecycle</fullName>
+                <default>false</default>
+                <label>Full Software Development Lifecycle</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

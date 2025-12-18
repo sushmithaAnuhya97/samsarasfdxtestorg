@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Account_List_DV_Filter</fullName>
+    <columns>Validation_Complete__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Status__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>Enterprise_Experiments__c</columns>
+    <columns>Number_of_Vehicles__c</columns>
+    <columns>Last_Marketing_Engagement_Date__c</columns>
+    <columns>Last_Contacted__c</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>Last_Call__c</columns>
+    <columns>Closed_Lost_Opportunities__c</columns>
+    <columns>Number_of_Calls__c</columns>
+    <columns>Number_of_Calls_by_Current_Owner__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Validation_Complete_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Enterprise_Assignment__c</field>
+        <operation>equals</operation>
+        <value>Nick Falco,Travis Walker</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>notEqual</operation>
+        <value>mulri</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Fleet</value>
+    </filters>
+    <filters>
+        <field>Account_Book_Owner__c</field>
+        <operation>equals</operation>
+        <value>Chineye Nnorom</value>
+    </filters>
+    <label>Master Account List (DV Filter)</label>
+</ListView>

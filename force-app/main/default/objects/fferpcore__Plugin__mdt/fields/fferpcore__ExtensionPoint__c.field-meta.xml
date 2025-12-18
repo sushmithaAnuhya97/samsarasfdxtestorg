@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fferpcore__ExtensionPoint__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The interface that the plugin plugs in to.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>This string is used by the plugin consumer to locate its plugins. By convention it will be the name of the plugin interface. See the documentation for the extended function.</inlineHelpText>
+    <label>Extension Point</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

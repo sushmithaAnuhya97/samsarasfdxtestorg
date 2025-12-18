@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Exchange</fullName>
+    <availability>online</availability>
+    <description>Creates a return opportunity which is an Exchange oppty by default and passes: AccountId, Owner Manager Name Cope, Stage (return created), returning opportunity &amp; shipping address new.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create Exchange</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/006/e?retURL=%2F006%2Fo&amp;RecordType=0121a000000ARoK
+&amp;accid={!Opportunity.AccountId} 
+&amp;opp3={!Opportunity.Account}%20-RMA%20Return
+&amp;opp9={!TODAY()} 
+&amp;opp11=Return%20Created 
+&amp;opp12=10 
+&amp;opp5=Exchange
+&amp;CF00N1a000008bLcs={!Opportunity.Name} 
+&amp;CF00N1a000008bLcs_lkid={!Opportunity.Id} 
+&amp;00N1a000008ztGB=Operations 
+&amp;CF00N1a000009fpLK={!Opportunity.Shipping_Address_NEW__c} 
+&amp;CF00N1a000009fpLK_lkid={!Opportunity.Shipping_Address_NEWId__c} 
+&amp;00N1a00000A8HGM={!Opportunity.Owner_Manager_Name_Copy__c} 
+&amp;00N1a000009g0h0={!Opportunity.Owner_Manager_Role_Copy__c} 
+&amp;00N1a000009g0h5={!Opportunity.Owner_Manager_Email_Copy__c} 
+&amp;00N1a000009efLv={!Opportunity.Owner_Role_Copy__c} 
+&amp;00N1a000009qC7k={!Opportunity.OwnerEmail} 
+&amp;00N1a000009fjpv={!Opportunity.License_Term__c}
+&amp;ownerid={!Opportunity.OwnerId} 
+&amp;Amount=0</url>
+</WebLink>

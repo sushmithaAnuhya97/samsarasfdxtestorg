@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Re-Push Automation Tool" icon-name="standard:opportunity">
+        <template if:true={isLoading}>
+                <div class="slds-m-top_small">
+                    <lightning-spinner alternative-text="Loading..." size="medium" variant="brand"></lightning-spinner>
+                </div>
+            </template>
+        <div class="slds-text-align_center">
+            <lightning-button label="Send To Warehouse" variant="brand" onclick={handleProcessSelected}
+                disabled={isSelected}>
+            </lightning-button>           
+        </div>
+        <div class="slds-m-around_medium">
+            <!-- Scrollable container for drag-drop column reorder row -->
+            <div class="scrollable-table">
+                <template if:true={columns}>
+                    <div class="slds-m-bottom_x-small">
+                        <div class="slds-grid draggable-header-bar">
+                            <template for:each={columns} for:item="col" for:index="index">
+                                <div key={col.fieldName} class="slds-col slds-p-around_x-small draggable slds-box"
+                                    draggable="true" data-index={index} ondragstart={handleColDragStart}
+                                    ondragover={handleColDragOver} ondrop={handleColDrop}
+                                    style="display:inline-block;text-align: center;border:1px solid #d8dde6; padding:2px 6px; margin-right:6px; margin-bottom: 6px; background:#f3f3f3; cursor:grab; font-family:'Salesforce Sans', Arial, sans-serif; font-weight:600;">
+                                    <span style="font-weight: bold; color: #3e2e2e; font-size: 0.75rem; white-space: normal;  overflow-wrap: break-word;">{col.label}</span>
+
+                                </div>
+                            </template>
+                        </div>
+
+                    </div>
+                </template>
+                <div lwc:if={noRecords}>
+                    <b style="font-size:large; color: red">No matching records found to send the products to Warehouse!</b>
+                </div>
+                <div lwc:else>
+                    <lightning-layout>
+                        <lightning-layout-item flexibility="auto" size="12" padding="around-medium">
+                            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                                <lightning-datatable key-field="Id" data={opportunities} columns={columns}
+                                    onsort={handleSort} sorted-by={sortBy} sorted-direction={sortDirection}
+                                    column-widths-mode="auto" onrowselection={handleRowSelection} show-row-number-column
+                                    max-row-selection="25" max-height="50px">
+                                </lightning-datatable>
+                            </div>
+                        </lightning-layout-item>  
+                    </lightning-layout>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

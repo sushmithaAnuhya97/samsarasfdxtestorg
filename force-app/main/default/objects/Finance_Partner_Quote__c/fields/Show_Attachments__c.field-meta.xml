@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Attachments__c</fullName>
+    <formula>$User.Id == Opportunity__r.OwnerId || $User.Id == Opportunity__r.Owner_Manager_ID__c || $User.ContactId == Partner_Contact__c || $Profile.Name == &apos;Samsara - Finance&apos; || $Profile.Name == &apos;Samsara - Finance Admin&apos;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Show Attachments</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

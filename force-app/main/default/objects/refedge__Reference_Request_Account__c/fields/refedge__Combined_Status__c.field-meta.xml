@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Combined_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(OR(TEXT(refedge__Account_Request_Status__c) = &apos;In Progress&apos;, TEXT(refedge__Account_Request_Status__c) = &apos;On Hold&apos;, TEXT(refedge__Account_Request_Status__c) = &apos;Not Started&apos; ),
+            IF(TEXT(refedge__Account_Request_Status__c) = &apos;In Progress&apos;, &quot;In Progress&quot;, IF(TEXT(refedge__Account_Request_Status__c) = &apos;On Hold&apos;, &quot;On Hold&quot;,&quot;Not Started&quot;)), 
+            IF(ISBLANK(TEXT(refedge__Approval_Status__c)),
+            IF(TEXT(refedge__Account_Request_Status__c) = &apos;Completed&apos;, &quot;Completed&quot;, 
+            IF(TEXT(refedge__Account_Request_Status__c) = &apos;No Response&apos;,&quot;No Response&quot;, 
+            IF(TEXT(refedge__Account_Request_Status__c) = &apos;Unavailable&apos;, &quot;Unavailable&quot;, 
+            IF(TEXT(refedge__Account_Request_Status__c) = &apos;No Longer Needed&apos;, &quot;No Longer Needed&quot;, 
+            IF( CONTAINS(TEXT(refedge__Account_Request_Status__c), &quot;Give Up&quot;) , &quot;Give Up&quot;, TEXT(refedge__Account_Request_Status__c ) ))))),
+            TEXT(refedge__Approval_Status__c)) &amp; &quot; - &quot; &amp; TEXT(refedge__Process__c))</formula>
+    <label>Account Request Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Category__c</columns>
+    <columns>PM_Owner__c</columns>
+    <columns>Status__c</columns>
+    <columns>Sum_Opportunity_Amounts__c</columns>
+    <columns>Description__c</columns>
+    <columns>PM_Comments__c</columns>
+    <columns>SE_Comments__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>equals</operation>
+        <value>Industrial: 4.0</value>
+    </filters>
+    <filters>
+        <field>Completed__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>i4</label>
+    <language>en_US</language>
+</ListView>

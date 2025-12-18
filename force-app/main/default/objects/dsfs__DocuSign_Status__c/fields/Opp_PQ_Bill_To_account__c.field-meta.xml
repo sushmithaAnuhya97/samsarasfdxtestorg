@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_PQ_Bill_To_account__c</fullName>
+    <description>allows users to see  docusign status&apos;s opportunity&apos;s primary quote&apos;s bill to account</description>
+    <externalId>false</externalId>
+    <formula>dsfs__Opportunity__r.SBQQ__PrimaryQuote__r.Bill_to_Account__c</formula>
+    <label>Opp PQ Bill To account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

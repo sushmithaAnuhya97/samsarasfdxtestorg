@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Generate_Quote_Document</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://samsara--apxtconga4.visualforce.com/a1X1P000004HJIpUAO
+07-Sep-2019 05:44:00 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Quote Document</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/QuoteCustomCongaComposer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!SBQQ__Quote__c.Id}
+&amp;QueryId=[Annual]a1R1P000002icZk,
+[UpfrontLIC]a1R1P000002icZl,
+[Monthly]a1R1P000002icZm,
+[CPQuery]a1R1P000002icZn,
+[CPQQuote]a1R1P000002icZo,
+[ShipToLocation]a1R1P000002icZp,
+[Reseller]a1RWR000001ktvN2AQ,
+[Bundle]a1R1P000002DI3b,
+[Terms]a1R5e000001jxNBEAY,
+[LICPS]a1R1P000002DI3W,
+[HWPS]a1R1P000002DI3R,
+[Opportunity]a1R4p000003A6xK,
+[DC]a1RWR00000Ex36f2AB,
+[DCFP]a1RWR00000EwLvI2AV
+&amp;DefaultLocal=0
+&amp;DS8=1
+&amp;OFN={!SBQQ__Quote__c.SBQQ__Account__c}+-+{Template.Label}
+&amp;FP0=1
+&amp;SC1=Attachments
+&amp;SC0=1
+&amp;DS6=1
+&amp;TemplateGroup={!SBQQ__Quote__c.Conga_Template_Availability__c}
+&amp;DocuSignVisible=1
+&amp;DocuSignR1Role=Signer+1
+&amp;DocuSignExpireIn=5
+&amp;DocuSignR1RoutingOrder=1
+&amp;DocuSignR1Type=Signer
+&amp;DocuSignR1ID={!SBQQ__Quote__c.SBQQ__PrimaryContactId__c}&amp;Culture={!CASE( ( SBQQ__Quote__c.Account_Billing_Country__c+TEXT(SBQQ__Quote__c.CurrencyIsoCode)) ,&quot;AlbaniaEUR&quot;,&quot;de-DE&quot;,&quot;AndorraEUR&quot;,&quot;de-DE&quot;,&quot;AustriaEUR&quot;,&quot;de-AT&quot;,&quot;BelgiumEUR&quot;,&quot;nl-BE&quot;,&quot;CanadaCAD&quot;,&quot;en-CA&quot;,&quot;CroatiaEUR&quot;,&quot;de-DE&quot;,&quot;Czech RepublicEUR&quot;,&quot;de-DE&quot;,&quot;DenmarkEUR&quot;,&quot;de-DE&quot;,&quot;EstoniaEUR&quot;,&quot;de-DE&quot;,&quot;FinlandEUR&quot;,&quot;de-DE&quot;,&quot;FranceEUR&quot;,&quot;fr-FR&quot;,&quot;GeorgiaEUR&quot;,&quot;de-DE&quot;,&quot;GermanyEUR&quot;,&quot;de-DE&quot;,&quot;GreeceEUR&quot;,&quot;de-DE&quot;,&quot;GuernseyGBP&quot;,&quot;en-GB&quot;,&quot;HungaryEUR&quot;,&quot;de-DE&quot;,&quot;IrelandEUR&quot;,&quot;en-IE&quot;,&quot;Isle of ManGBP&quot;,&quot;en-GB&quot;,&quot;ItalyEUR&quot;,&quot;it-IT&quot;,&quot;JerseyGBP&quot;,&quot;en-GB&quot;,&quot;LatviaEUR&quot;,&quot;de-DE&quot;,&quot;LiechtensteinEUR&quot;,&quot;de-DE&quot;,&quot;LithuaniaEUR&quot;,&quot;de-DE&quot;,&quot;LuxembourgEUR&quot;,&quot;de-LU&quot;,&quot;MaltaEUR&quot;,&quot;de-DE&quot;,&quot;MexicoMXN&quot;,&quot;es-MX&quot;,&quot;MontenegroEUR&quot;,&quot;fr-FR&quot;,&quot;NetherlandsEUR&quot;,&quot;nl-NL&quot;,&quot;NorwayEUR&quot;,&quot;de-DE&quot;,&quot;PolandEUR&quot;,&quot;de-DE&quot;,&quot;PortugalEUR&quot;,&quot;fr-FR&quot;,&quot;RomaniaEUR&quot;,&quot;de-DE&quot;,&quot;SlovakiaEUR&quot;,&quot;de-DE&quot;,&quot;SloveniaEUR&quot;,&quot;de-DE&quot;,&quot;SpainEUR&quot;,&quot;es-ES&quot;,&quot;SwedenEUR&quot;,&quot;de-DE&quot;,&quot;SwitzerlandEUR&quot;,&quot;de-DE&quot;,&quot;UkraineEUR&quot;,&quot;de-DE&quot;,&quot;United KingdomGBP&quot;,&quot;en-GB&quot;,&quot;&quot;)}</url>
+    <width>900</width>
+</WebLink>

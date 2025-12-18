@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckFinancePartnerSelectedPaymentType</fullName>
+    <active>true</active>
+    <description>added for GTMS-16224</description>
+    <errorConditionFormula>AND ( 
+NOT($Setup.Global_Automation_Settings__c.Skip_Validation_Rule__c),
+OR( TEXT(SBQQ__Type__c) = &apos;Amendment&apos;, TEXT(SBQQ__Type__c) = &apos;Renewal&apos;),
+ Is_Webstore_Upsell_Quote__c = false,
+Finance_Partner_Account__c != &apos;&apos;,
+TEXT(Selected_Payment_Type__c) != &apos;Upfront Payments&apos;,
+TEXT(Process_Eligibility__c) != &apos;Digital Renewals&apos;
+)</errorConditionFormula>
+    <errorMessage>Please delete the Finance Partner from the relevant CPQ field before modifying the Selected Payment Type and remove any 3PF subsidy, if applicable</errorMessage>
+</ValidationRule>

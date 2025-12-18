@@ -1,0 +1,149 @@
+<apex:page controller="SolutionPackPackager">
+    <table>
+        <tr>
+            <td>
+                <img src="{!JSENCODE($Resource.APXTConga4__Conga_O_Logo_SM)}" width="32"/>
+            </td>
+            <td>
+                <span style="font-size: .9em;font-weight: bold;color: #4a4a56;padding-left: 1px;"><br/></span>            
+                <span style="font-size: 1.8em;font-weight: normal;line-height: 1.1em;">Conga Solution Packager</span>
+            </td>
+        </tr>
+    </table>  
+    <apex:form >
+    <apex:pageMessages />
+        <!---
+        <apex:image value="{!$Resource.GenericComposerButton}" width="200" height="30" />&nbsp;&nbsp;
+        <apex:image value="{!$Resource.RightArrow}" width="40" height="35" />&nbsp;&nbsp;
+        <apex:image value="{!$Resource.congasm}" width="270" height="30" />&nbsp;&nbsp;&nbsp;
+        <br/>
+        <b>Use this section to create a Conga Solution from an existing Composer button.</b>
+        --->
+        
+        <!--
+        <table style="border-top: solid #1797C0 3px; width:100%">
+            <tr>
+                <th>Use this section to create a Conga Solution from an existing Composer button.</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <apex:image value="{!$Resource.GenericComposerButton}" width="35" height="30" />&nbsp;&nbsp;
+                    <apex:image value="{!$Resource.RightArrow}" width="40" height="35" />&nbsp;&nbsp;
+                    <apex:image value="{!$Resource.SolutionPuzzle}" width="40" height="35" />&nbsp;&nbsp;&nbsp;
+                </td>
+                <td style="vertical-align: middle">
+                    
+                </td>
+            </tr>
+        </table>
+        -->
+        <!---
+        <apex:pageblock >
+            <apex:pageBlockSection columns="4">
+               <apex:pageBlockSectionItem helpText="Use this dropdown list to select an existing Composer button to be used for your new solution,  then click 'Create Solution'.">
+                    <font color="black"><b>Composer Button Name</b></font>
+                    <apex:SelectList value="{!selectedButton}" size="1">
+                            <apex:selectOptions value="{!ButtonList}"></apex:selectOptions>
+                            <apex:actionSupport event="onchange" action="{!ShowButtonMetadata}" reRender="buttonDataPanel">
+                                <apex:param name="selectedButton" value="{!selectedButton}" />
+                            </apex:actionSupport>
+                        </apex:SelectList>
+                </apex:pageBlockSectionItem>
+                <apex:commandButton styleClass="solutionPackButton" id="makeSolution" value="Create Solution" action="{!makeSolution}" />
+            </apex:pageBlockSection>
+ 
+            <apex:outputPanel id="buttonDataPanel">
+                <apex:pageBlockTable value="{!Button}" var="item" rendered="{!display}">
+                    <apex:column headerValue="Button Data">
+                        <apex:outputText value="{!item}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+
+        </apex:pageblock>
+        --->
+         
+        <!-- ###################################################################################################################### -->
+        <!---<br/><br/><br/><br/>
+        <apex:image value="{!$Resource.congasm}" width="270" height="30" />&nbsp;&nbsp;&nbsp;
+        <apex:image value="{!$Resource.RightArrow}" width="40" height="35" />&nbsp;&nbsp;
+        <apex:image value="{!$Resource.sfCloud}" width="40" height="35" />&nbsp;&nbsp;&nbsp;
+        <apex:image value="{!$Resource.SFDCPackage}" width="40" height="35" />&nbsp;&nbsp;&nbsp;--->
+         <br/>
+        <b>Select a Conga Solution below to assemble its components for packaging.</b>
+        
+        <apex:pageblock >
+            <apex:pageBlockSection columns="4">
+                <apex:pageBlockSectionItem helpText="Select a Conga Solution to package. An empty Document Folder with the proper naming convention is required. e.g., Solution Name (Master Object Type)">
+                    <font color="black"><b>Conga Solution Name</b></font>
+                    <apex:SelectList value="{!selectedSolution}" size="1">
+                        <apex:selectOptions value="{!Solutions}"></apex:selectOptions>
+                        <apex:actionSupport event="onchange" action="{!ShowSolutionData}" reRender="solutionDataPanel">
+                            <apex:param name="selectedSolution" value="{!selectedSolution}" />
+                        </apex:actionSupport>
+                    </apex:SelectList>
+                </apex:pageBlockSectionItem>
+                <apex:commandButton value="Assemble Conga Solution Components" action="{!createDocumentsPackage}" />
+            </apex:pageBlockSection>
+                      
+                <apex:outputPanel id="solutionDataPanel">
+
+                    <apex:pageBlockSection columns="1" rendered="{!displaySolutionData}">
+                        <apex:pageBlockTable value="{!Qvars}" var="pitem">
+                        <apex:column headerValue="QVars">
+                            <apex:outputText value="{!pitem}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection columns="1" rendered="{!displaySolutionData}">
+                        <apex:pageBlockTable value="{!Reports}" var="pitem">
+                        <apex:column headerValue="Reports">
+                            <apex:outputText value="{!pitem}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection columns="1" rendered="{!displaySolutionData}">
+                        <apex:pageBlockTable value="{!Queries}"  var="pitem">
+                        <apex:column headerValue="Queries">
+                            <apex:outputText value="{!pitem}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                                      
+                    <apex:pageBlockSection columns="1" rendered="{!displaySolutionData}">
+                        <apex:pageBlockTable value="{!Templates}" var="pitem">
+                        <apex:column headerValue="Conga Templates">
+                            <apex:outputText value="{!pitem}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                   
+                    <apex:pageBlockSection columns="1" rendered="{!displaySolutionData}">
+                        <apex:pageBlockTable value="{!EmailTemplates}" var="pitem">
+                        <apex:column headerValue="Conga Email Template">
+                            <apex:outputText value="{!pitem}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                   
+                    <apex:pageBlockSection columns="1" rendered="{!displaySolutionData}">
+                        <apex:pageBlockTable value="{!Parameters}" var="pitem">
+                        <apex:column headerValue="Parameters">
+                            <apex:outputText value="{!pitem}"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                    
+                </apex:outputPanel>            
+        </apex:pageblock>
+        
+        <apex:pageBlock rendered="{!IF(CanSeeCreateTemplateStoreButton = true, true, false)}">
+            <b>Use the button below to assemble Conga Templates and Conga Email Templates that are not linked to a Conga Solution.</b><br/><br/>
+            <apex:commandButton action="{!createTemplateStore}" title="Assemble Non-linked Conga Templates" value="Assemble Non-linked Conga Templates"/>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

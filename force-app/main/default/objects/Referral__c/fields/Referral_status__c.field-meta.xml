@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_status__c</fullName>
+    <label>Referral Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Ready for review</fullName>
+                <default>false</default>
+                <label>Ready for review</label>
+            </value>
+            <value>
+                <fullName>Processed</fullName>
+                <default>false</default>
+                <label>Processed</label>
+            </value>
+            <value>
+                <fullName>Contacting invitee</fullName>
+                <default>false</default>
+                <label>Contacting invitee</label>
+            </value>
+            <value>
+                <fullName>Attempted - couldn&apos;t connect</fullName>
+                <default>false</default>
+                <label>Attempted - couldn&apos;t connect</label>
+            </value>
+            <value>
+                <fullName>In progress - contact made</fullName>
+                <default>false</default>
+                <label>In progress - contact made</label>
+            </value>
+            <value>
+                <fullName>In progress - active deal</fullName>
+                <default>false</default>
+                <label>In progress - active deal</label>
+            </value>
+            <value>
+                <fullName>Pending - 30-day return policy</fullName>
+                <default>false</default>
+                <label>Pending - 30-day return policy</label>
+            </value>
+            <value>
+                <fullName>Disqualified - order did not meet criteria</fullName>
+                <default>false</default>
+                <label>Disqualified - order did not meet criteria</label>
+            </value>
+            <value>
+                <fullName>Disqualified - check FAQ</fullName>
+                <default>false</default>
+                <label>Disqualified - check FAQ</label>
+            </value>
+            <value>
+                <fullName>Under manual review</fullName>
+                <default>false</default>
+                <label>Under manual review</label>
+            </value>
+            <value>
+                <fullName>Gift card available</fullName>
+                <default>false</default>
+                <label>Gift card available</label>
+            </value>
+            <value>
+                <fullName>Gift card sent</fullName>
+                <default>false</default>
+                <label>Gift card sent</label>
+            </value>
+            <value>
+                <fullName>Gift card available - Portal Customer</fullName>
+                <default>false</default>
+                <label>Gift card available - Portal Customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

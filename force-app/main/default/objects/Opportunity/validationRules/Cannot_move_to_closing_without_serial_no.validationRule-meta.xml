@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_move_to_closing_without_serial_no</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT( 
+        OR(
+          $User.Id = $Label.Automated_Process_UserId
+        )
+    ),
+    ISBLANK( FT_Conversion_Serial_No__c),
+    ISPICKVAL(Free_Trial_Purchase__c ,&quot;Partial Buy&quot;),
+    ISCHANGED(StageName),
+       ISPICKVAL(StageName,&quot;Closing&quot;),
+    ISPICKVAL(Type,&quot;Revenue Opportunity&quot;),
+    CONTAINS( $Profile.Name ,&apos;Sales&apos;),
+    NOT(ISBLANK( Original_FT_Oppty_Line_Item_SF_Ids__c ))
+)</errorConditionFormula>
+    <errorMessage>Please fill serial numbers prior to moving this deal to the closing stage</errorMessage>
+</ValidationRule>

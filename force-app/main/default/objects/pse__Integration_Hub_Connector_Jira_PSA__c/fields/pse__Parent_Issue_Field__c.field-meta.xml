@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Parent_Issue_Field__c</fullName>
+    <defaultValue>&apos;Parent Link&apos;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Name of the Jira custom field used to link an issue to a parent issue type.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Name of the Jira custom field used to link an issue to a parent issue type, for example, Parent Link. The relationship can have multiple levels, but the issue type defined in Jira Issue Type is the highest one taken into account.</inlineHelpText>
+    <label>Parent Issue Field</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
